@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#1a1210">
+  <meta name="theme-color" content="#3a2a22">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>NecroCounter</title>
@@ -13,17 +13,17 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Bitter:wght@400;600;700&display=swap">
   <style>
     :root {
-      --bg: #1a1210;
-      --bg-2: #241815;
-      --panel: #2b1c16;
-      --panel-2: #3a261c;
-      --line: #4a3224;
-      --text: #e8dcc8;
-      --muted: #a89880;
-      --amber: #e8a020;
-      --amber-dim: #c45c12;
-      --danger: #8b2e1f;
-      --bar: #1a1210;
+      --bg: #2f2420;
+      --bg-2: #3a2c26;
+      --panel: #46352c;
+      --panel-2: #523f34;
+      --line: #6b5344;
+      --text: #f3e6d4;
+      --muted: #c4b09a;
+      --amber: #f0b040;
+      --amber-dim: #d47820;
+      --danger: #a33a2a;
+      --bar: #3a2a22;
       --navh: 58px;
       --display: "Oswald", system-ui, sans-serif;
       --body: "Bitter", Georgia, serif;
@@ -34,9 +34,9 @@
     a { color: var(--amber); }
     .bar {
       position: sticky; top: 0; z-index: 10;
-      background: linear-gradient(180deg, #2a1812 0%, var(--bar) 100%);
+      background: linear-gradient(180deg, #4a3428 0%, var(--bar) 100%);
       border-bottom: 2px solid var(--amber-dim);
-      box-shadow: 0 2px 12px rgba(0,0,0,.45);
+      box-shadow: 0 2px 12px rgba(0,0,0,.28);
     }
     .bar .in {
       display: flex; align-items: center; gap: 10px;
@@ -73,13 +73,13 @@
       background: linear-gradient(145deg, var(--panel-2), var(--panel));
       border: 1px solid var(--line);
       text-decoration: none; color: inherit;
-      box-shadow: inset 0 1px 0 rgba(232,160,32,.08), 0 4px 14px rgba(0,0,0,.25);
+      box-shadow: inset 0 1px 0 rgba(240,176,64,.12), 0 4px 14px rgba(0,0,0,.18);
     }
     .fcard:active { border-color: var(--amber-dim); }
     .ficon {
       flex: none; width: 42px; height: 42px; border-radius: 50%;
       display: grid; place-items: center;
-      background: radial-gradient(circle at 30% 30%, #5a3a22, #2a1812);
+      background: radial-gradient(circle at 30% 30%, #7a5234, #3d2a20);
       border: 1px solid var(--amber-dim); color: var(--amber);
     }
     .ficon svg { width: 22px; height: 22px; }
@@ -89,15 +89,15 @@
     .btn-link {
       display: block; text-align: center; padding: 12px 14px;
       border: 1px solid var(--line); border-radius: 10px;
-      background: rgba(0,0,0,.2); color: var(--amber);
+      background: rgba(0,0,0,.12); color: var(--amber);
       font: 600 14px var(--display); text-decoration: none; letter-spacing: .04em;
     }
     .btn-link:active { background: rgba(232,160,32,.1); }
     .copy {
       margin: 28px 0 0; text-align: center;
-      font: 400 11px/1.4 var(--body); color: #6e5e4e; letter-spacing: .03em;
+      font: 400 11px/1.4 var(--body); color: #9a8774; letter-spacing: .03em;
     }
-    .copy .legal { display: inline-block; margin-top: 3px; font-size: 9px; line-height: 1.3; color: #5a4a3a; }
+    .copy .legal { display: inline-block; margin-top: 3px; font-size: 9px; line-height: 1.3; color: #8a7664; }
     .page h2 {
       margin: 0 0 10px; font: 700 22px/1.2 var(--display);
       letter-spacing: .05em; text-transform: uppercase; color: var(--amber);
@@ -109,7 +109,7 @@
     }
     .panel .sec {
       margin: 0; padding: 10px 14px;
-      background: linear-gradient(90deg, #5a3a18, #3a2610);
+      background: linear-gradient(90deg, #7a5224, #5a3a1c);
       color: var(--amber); font: 700 13px/1.2 var(--display);
       letter-spacing: .08em; text-transform: uppercase;
     }
@@ -120,11 +120,11 @@
       font: 700 15px/1.2 var(--display); letter-spacing: .05em; text-transform: uppercase;
       text-decoration: none; cursor: pointer;
     }
-    .btn.primary { background: linear-gradient(180deg, #e8a020, #c45c12); color: #1a1210; }
+    .btn.primary { background: linear-gradient(180deg, #e8a020, #c45c12); color: #2a1c14; }
     .btn.primary:active { filter: brightness(1.05); }
     .bnav {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 8;
-      background: #140e0c; border-top: 1px solid var(--line);
+      background: #2a201c; border-top: 1px solid var(--line);
       padding-bottom: env(safe-area-inset-bottom, 0px);
       box-shadow: 0 -2px 12px rgba(0,0,0,.4);
     }
@@ -160,7 +160,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.1.0 · MAJ 05-11-2026<br>
+      NecroCounter version 0.1.1 · MAJ 05-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
@@ -202,7 +202,7 @@
     function homeHtml() {
       return `<div class="welcome">
         <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="32" r="30" fill="#1a1210"/>
+          <circle cx="32" cy="32" r="30" fill="#3a2a22"/>
           <circle cx="32" cy="32" r="25" fill="none" stroke="#e8a020" stroke-width="2.5"/>
           <path d="M22 20v24M42 20v24M22 20l20 24" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
