@@ -1,0 +1,36 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre de règles N23 (version française)",
+  "maisons": [
+    {
+      "id": "cawdor",
+      "nom": "Cawdor",
+      "fichier": "maisons/cawdor.json"
+    },
+    {
+      "id": "delaque",
+      "nom": "Delaque",
+      "fichier": "maisons/delaque.json"
+    },
+    {
+      "id": "escher",
+      "nom": "Escher",
+      "fichier": "maisons/escher.json"
+    },
+    {
+      "id": "goliath",
+      "nom": "Goliath",
+      "fichier": "maisons/goliath.json"
+    },
+    {
+      "id": "orlock",
+      "nom": "Orlock",
+      "fichier": "maisons/orlock.json"
+    },
+    {
+      "id": "van-saar",
+      "nom": "Van Saar",
+      "fichier": "maisons/van-saar.json"
+    }
+  ]
+}

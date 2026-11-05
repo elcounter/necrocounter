@@ -1,0 +1,416 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre de règles N23 (version française)",
+  "reglesDeCreation": {
+    "novice": "Un Novice ne peut pas recevoir d'objet d'une valeur supérieure à 20 crédits lorsqu'il est ajouté au gang. Cette limite cesse après sa première Progression.",
+    "armeSpeciale": "À la création du gang, un seul Ganger peut être équipé d'une Arme Spéciale. En campagne, les Gangers recrutés ensuite peuvent aussi en recevoir.",
+    "chefEtChampion": "Le Chef et les Champions ne sont soumis à aucune restriction d'armes et commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "escher",
+  "nom": "Escher",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Chef",
+      "cout": 120,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "2+",
+        "A": "3",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Armure Flak"
+      ]
+    },
+    {
+      "id": "champion",
+      "role": "Champion",
+      "cout": 95,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "2+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "7+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Armure Flak"
+      ]
+    },
+    {
+      "id": "novice",
+      "role": "Novice",
+      "cout": 20,
+      "profil": {
+        "M": "6\"",
+        "CC": "4+",
+        "CT": "5+",
+        "F": "2",
+        "E": "3",
+        "PV": "1",
+        "I": "2+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "9+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "ganger",
+      "role": "Ganger",
+      "cout": 50,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "8+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Armure Flak"
+      ]
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Agilité",
+        "Combat",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Férocité"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Agilité",
+        "Combat"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Férocité",
+        "Autorité"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Agilité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Agilité",
+        "Combat"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Férocité"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 5,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-energetique",
+      "arme": "couteau-energetique"
+    },
+    {
+      "nom": "Électrofouet",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "electrofouet",
+      "arme": "electrofouet"
+    },
+    {
+      "nom": "Épée énergétique",
+      "prix": 45,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-energetique",
+      "arme": "epee-energetique"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-tronconneuse",
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Rapière",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "rapiere",
+      "arme": "rapiere"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "stylet",
+      "arme": "stylet"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "arme": "flingue"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Pistolet à aiguilles",
+      "prix": 25,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-aiguilles",
+      "arme": "pistolet-a-aiguilles"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-plasma",
+      "arme": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Arme combinée (bolter à aiguille)",
+      "prix": 80,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-a-aiguille",
+      "modes": [
+        "bolter",
+        "arme à aiguilles"
+      ],
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "fuseur",
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Fusil à aiguilles",
+      "prix": 35,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-aiguilles",
+      "arme": "fusil-a-aiguilles"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-plasma",
+      "arme": "fusil-a-plasma"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Projecteur chimique \"Belladone\"",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "projecteur-chimique-belladone",
+      "arme": "projecteur-chimique-belladone"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse",
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-aveuglantes",
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "grenades-cauchemar",
+      "arme": "grenades-cauchemar"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Balles acides (pour fusil à pompe)",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "balles-acides-pour-fusil-a-pompe"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "balles-dum-dum-pour-flingue"
+    },
+    {
+      "nom": "Chimiosynth",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "chimiosynth"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Pointeur laser",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "pointeur-laser"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    }
+  ]
+}

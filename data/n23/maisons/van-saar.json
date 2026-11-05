@@ -1,0 +1,420 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre de règles N23 (version française)",
+  "reglesDeCreation": {
+    "novice": "Un Novice ne peut pas recevoir d'objet d'une valeur supérieure à 20 crédits lorsqu'il est ajouté au gang. Cette limite cesse après sa première Progression.",
+    "armeSpeciale": "À la création du gang, un seul Ganger peut être équipé d'une Arme Spéciale. En campagne, les Gangers recrutés ensuite peuvent aussi en recevoir.",
+    "chefEtChampion": "Le Chef et les Champions ne sont soumis à aucune restriction d'armes et commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "van-saar",
+  "nom": "Van Saar",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Chef",
+      "cout": 130,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "2+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "5+",
+        "A": "2",
+        "CD": "4+",
+        "SF": "5+",
+        "V": "5+",
+        "INT": "4+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé"
+      ]
+    },
+    {
+      "id": "champion",
+      "role": "Champion",
+      "cout": 110,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "2+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "1",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "5+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé"
+      ]
+    },
+    {
+      "id": "novice",
+      "role": "Novice",
+      "cout": 35,
+      "profil": {
+        "M": "5\"",
+        "CC": "5+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "8+",
+        "V": "9+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé"
+      ]
+    },
+    {
+      "id": "ganger",
+      "role": "Ganger",
+      "cout": 65,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5+",
+        "A": "1",
+        "CD": "6+",
+        "SF": "7+",
+        "V": "7+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé"
+      ]
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Autorité",
+        "Tir",
+        "Savoir"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Ruse"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Tir",
+        "Savoir"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse",
+        "Autorité"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Agilité"
+      ],
+      "secondaires": [
+        "Tir",
+        "Savoir"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Tir",
+        "Savoir"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Carabine laser",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "carabine-laser",
+      "arme": "carabine-laser"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Laser de suppression",
+      "prix": 40,
+      "categorie": "Armes de base",
+      "id": "laser-de-suppression",
+      "arme": "laser-de-suppression"
+    },
+    {
+      "nom": "Bouclier d'énergie modèle \"Hystrar\"",
+      "prix": 50,
+      "categorie": "Armes de corps à corps",
+      "id": "bouclier-d-energie-modele-hystrar",
+      "arme": "bouclier-d-energie-modele-hystrar"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-energetique",
+      "arme": "couteau-energetique"
+    },
+    {
+      "nom": "Électrobâton",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "electrobaton",
+      "arme": "electrobaton"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "electrosceptre",
+      "arme": "electrosceptre"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "servopince",
+      "arme": "servopince"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Mitraillette laser",
+      "prix": 15,
+      "categorie": "Pistolets",
+      "id": "mitraillette-laser",
+      "arme": "mitraillette-laser"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-plasma",
+      "arme": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Arme combinée (fusil laser/fuseur)",
+      "prix": 120,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-fusil-laser-fuseur",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil laser",
+        "fuseur"
+      ]
+    },
+    {
+      "nom": "Arme combinée (fusil laser/fusil à plasma)",
+      "prix": 75,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-fusil-laser-fusil-a-plasma",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil laser",
+        "fusil à plasma"
+      ]
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "fuseur",
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-gravitons",
+      "arme": "fusil-a-gravitons"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-plasma",
+      "arme": "fusil-a-plasma"
+    },
+    {
+      "nom": "Fusil à radiations",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-radiations",
+      "arme": "fusil-a-radiations"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Canon à plasma",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "canon-a-plasma",
+      "arme": "canon-a-plasma"
+    },
+    {
+      "nom": "Canon à radiations",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "canon-a-radiations",
+      "arme": "canon-a-radiations"
+    },
+    {
+      "nom": "Multi-fuseur",
+      "prix": 180,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "multi-fuseur",
+      "arme": "multi-fuseur"
+    },
+    {
+      "nom": "Grenades à radiations",
+      "prix": 25,
+      "categorie": "Grenades",
+      "id": "grenades-a-radiations",
+      "arme": "grenades-a-radiations"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 12,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Grav-chute",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "grav-chute"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "lunette"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 40,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "lunette-infrarouge"
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "lunette-telescopique"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Pointeur laser",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "pointeur-laser"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Suspenseur",
+      "prix": 60,
+      "categorie": "Équipement personnel",
+      "id": "suspenseur"
+    }
+  ]
+}

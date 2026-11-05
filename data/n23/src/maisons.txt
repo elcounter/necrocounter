@@ -1,0 +1,349 @@
+# Listes de gangs des Maisons — Necromunda N23
+# "= Maison" ouvre une maison.
+# combattant: rôle | coût | M CC CT F E PV I A CD SF V INT | équipement de départ
+# competences: rôle | Catégorie P(rimaire)/S(econdaire), ...
+# "## Section" puis "objet | prix" : liste d'équipement de la maison.
+# Troisième colonne facultative "mode; mode" : profils d'arme inclus dans le prix.
+# "*" en fin de nom : compte pour deux armes. "'" en fin de nom : accessoire non cumulable.
+
+= Cawdor
+combattant: Chef | 105 | 5" 3+ 4+ 3 3 2 4+ 2 4+ 6+ 5+ 6+ | Armure Flak
+combattant: Champion | 95 | 5" 4+ 3+ 3 3 2 4+ 2 5+ 6+ 7+ 6+ | Armure Flak
+combattant: Novice | 20 | 6" 5+ 5+ 3 3 1 3+ 1 8+ 8+ 8+ 9+ |
+combattant: Ganger | 45 | 5" 4+ 4+ 3 3 1 4+ 1 7+ 7+ 7+ 7+ | Armure Flak
+competences: Chef | Muscle P, Combat P, Férocité S, Autorité P, Savoir S
+competences: Champion | Agilité S, Muscle P, Combat P, Férocité S, Autorité S
+competences: Novice | Agilité S, Combat S, Férocité P
+competences: Spécialiste | Agilité S, Muscle S, Combat P, Férocité P
+## Armes de base
+Haste avec fusil d'assaut Cawdor* | 20
+Haste avec tromblon Cawdor* (munitions à grappe & Purgation) | 40 | haste; tromblon, grappe; tromblon, Purgation
+Fusil à canon scié | 15
+Fusil d'assaut de récup' | 10
+## Armes de corps à corps
+Couteau de combat | 15
+Fléau | 20
+Hache | 10
+Hache à deux mains* | 25
+Marteau à deux mains* | 35
+Masse (matraque) | 10
+Vouge tronçonneur* | 60
+## Pistolets
+Flingue | 5
+Lance-flammes léger | 75
+Pistolet-mitrailleur de récup' | 5
+## Armes spéciales
+Arme combinée (fusil d'assaut/lance-flammes) | 110
+Lance-flammes | 130
+Long fusil | 30
+## Armes lourdes
+Arbalète lourde Cawdor* (carreaux Frag & Krak) | 125
+Lance-flammes lourd* | 195
+Mitrailleuse* | 130
+## Grenades
+Charges explosives | 35
+Charges incendiaires | 40
+Grenades asphyxiantes | 50
+Grenades Frag | 30
+Grenades fumigènes | 15
+Grenades Krak | 45
+## Armures
+Armure composite | 15
+Armure Flak | 10
+## Équipement personnel
+Balles dum-dum (pour flingue) | 5
+Balles Emperor's Wrath (pour tromblon) | 35
+Filin | 10
+Filtre nasal | 10
+Icône du Culte | 40
+Kit de démontage | 15
+Lame sous-cutanée | 10
+Lunette' | 35
+Photolunettes | 35
+Rats lyreurs de bombes | 30
+Respirateur | 15
+
+= Delaque
+combattant: Chef | 110 | 5" 3+ 3+ 3 3 2 3+ 2 6+ 6+ 5+ 6+ | Armure Flak
+combattant: Champion | 95 | 5" 3+ 3+ 3 3 2 4+ 2 7+ 6+ 6+ 6+ | Armure Flak
+combattant: Novice | 25 | 6" 5+ 5+ 3 3 1 3+ 1 9+ 7+ 8+ 8+ |
+combattant: Ganger | 50 | 5" 4+ 4+ 3 3 1 4+ 1 7+ 6+ 7+ 7+ | Armure Flak
+competences: Chef | Agilité P, Ruse P, Autorité P, Tir S, Savoir S
+competences: Champion | Agilité S, Ruse P, Autorité S, Tir P, Savoir S
+competences: Novice | Agilité S, Ruse P, Tir S
+competences: Spécialiste | Agilité S, Combat S, Ruse P, Tir P
+## Armes de base
+Couteaux de lancer | 10
+Fusil à pompe (balles & grenaille) | 30 | balles; grenaille
+Fusil d'assaut | 15
+Fusil laser | 15
+## Armes de corps à corps
+Digilaser | 25
+Électrosceptre | 25
+Gantelet lance-toile | 35
+Stylet | 20
+## Pistolets
+Flingue | 5
+Lance-flammes léger | 75
+Lance-toile léger | 80
+Pistolet à fléchettes (projectiles solides & Flashbane) | 30
+Pistolet à plasma | 50
+Pistolet laser | 10
+Pistolet-mitrailleur | 5
+## Armes spéciales
+Fuseur | 135
+Fusil à gravitons | 120
+Fusil à plasma | 100
+Lance-flammes | 140
+Lance-toile | 115
+Long fusil | 30
+## Armes lourdes
+Lance-flammes lourd* | 195
+## Grenades
+Grenades aveuglantes | 15
+Grenades asphyxiantes | 50
+Grenades cauchemar | 40
+Grenades fumigènes | 15
+Grenades incapacitantes | 10
+## Armures
+Armure composite | 15
+Armure Flak | 10
+## Équipement personnel
+Bio-scanner | 30
+Filtre nasal | 10
+Lame sous-cutanée | 10
+Lance-grappin | 25
+Lunette' | 35
+Lunette infrarouge' | 35
+Photolunettes | 20
+Respirateur | 15
+Solvant à toile | 15
+Suppresseur | 10
+
+= Escher
+combattant: Chef | 120 | 5" 3+ 3+ 3 3 2 2+ 3 5+ 6+ 6+ 7+ | Armure Flak
+combattant: Champion | 95 | 5" 3+ 3+ 3 3 2 2+ 2 6+ 7+ 6+ 6+ | Armure Flak
+combattant: Novice | 20 | 6" 4+ 5+ 2 3 1 2+ 1 8+ 9+ 8+ 8+ |
+combattant: Ganger | 50 | 5" 4+ 4+ 3 3 1 3+ 1 7+ 8+ 7+ 7+ | Armure Flak
+competences: Chef | Agilité P, Combat P, Ruse S, Férocité S, Autorité P
+competences: Champion | Agilité P, Combat P, Ruse S, Férocité S, Autorité S
+competences: Novice | Agilité P, Combat S, Ruse S
+competences: Spécialiste | Agilité P, Combat P, Ruse S, Férocité S
+## Armes de base
+Fusil à pompe (balles & grenaille) | 30 | balles; grenaille
+Fusil d'assaut | 15
+Fusil laser | 5
+## Armes de corps à corps
+Couteau de combat | 15
+Couteau énergétique | 25
+Électrofouet | 25
+Épée énergétique | 45
+Épée tronçonneuse | 25
+Rapière | 30
+Stylet | 20
+## Pistolets
+Flingue | 5
+Lance-flammes léger | 75
+Pistolet à aiguilles | 25
+Pistolet à plasma | 50
+Pistolet laser | 10
+Pistolet-mitrailleur | 10
+## Armes spéciales
+Arme combinée (bolter à aiguille) | 80 | bolter; arme à aiguilles
+Fuseur | 135
+Fusil à aiguilles | 35
+Fusil à plasma | 100
+Lance-flammes | 140
+Projecteur chimique "Belladone" | 135
+## Armes lourdes
+Mitrailleuse* | 130
+## Grenades
+Grenades asphyxiantes | 45
+Grenades aveuglantes | 15
+Grenades cauchemar | 40
+Grenades Frag | 30
+Grenades fumigènes | 15
+Grenades Krak | 45
+## Armures
+Armure composite | 15
+Armure Flak | 10
+## Équipement personnel
+Balles acides (pour fusil à pompe) | 15
+Balles dum-dum (pour flingue) | 5
+Chimiosynth | 15
+Filin | 10
+Filtre nasal | 10
+Photolunettes | 35
+Pointeur laser | 35
+Respirateur | 15
+
+= Goliath
+combattant: Chef | 145 | 4" 3+ 3+ 4 4 2 3+ 3 5+ 4+ 8+ 7+ | Plates de fourneau
+combattant: Champion | 110 | 4" 3+ 4+ 4 4 2 4+ 2 6+ 5+ 8+ 8+ | Plates de fourneau
+combattant: Novice | 25 | 5" 4+ 5+ 3 3 1 3+ 1 9+ 5+ 10+ 9+ |
+combattant: Ganger | 60 | 4" 4+ 4+ 4 4 1 4+ 1 8+ 5+ 9+ 8+ | Plates de fourneau
+competences: Chef | Muscle P, Combat S, Férocité P, Autorité P, Tir S
+competences: Champion | Muscle P, Combat S, Férocité P, Autorité S, Tir S
+competences: Novice | Agilité S, Muscle S, Férocité P
+competences: Spécialiste | Muscle P, Combat S, Férocité P, Tir S
+## Armes de base
+Bolter | 55
+Canon de poing | 20
+Fusil à pompe (balles & grenaille) | 30 | balles; grenaille
+Fusil de combat (salve & nuage de grenaille) | 60 | salve; nuage de grenaille
+## Armes de corps à corps
+Couteau de combat | 10
+Dérouilleuse | 15
+Épée tronçonneuse | 25
+Hache | 10
+Hache à deux mains* | 25
+Hache dentelée "déchiqueteuse"* | 40
+Hache énergétique | 35
+Hachoir de brute | 20
+Marteau à deux mains* | 35
+Marteau énergétique | 45
+Masse (matraque) | 10
+## Pistolets
+Combi-pistolet (flingue/pistolet à plasma) | 40
+Flingue | 5
+Lance-flammes léger | 75
+Pistolet bolter | 45
+## Armes spéciales
+Arme combinée (bolter/fuseur) | 165
+Arme combinée (bolter/lance-flammes) | 175
+Fuseur | 135
+Lance-flammes | 140
+Lance-grenades (grenades Frag & Krak) | 55 | grenades Frag; grenades Krak
+## Armes lourdes
+Bolter lourd* | 160
+Canon à rivets "Cribleur"* | 70
+Lance-flammes lourd* | 195
+Mitrailleuse* | 130
+## Grenades
+Charges explosives | 35
+Grenades Frag | 30
+Grenades fumigènes | 15
+Grenades Krak | 45
+## Armures
+Plates de fourneau | 10
+## Équipement personnel
+Balles dum-dum (pour flingue) | 5
+Bio-booster | 35
+Filin | 10
+Photolunettes | 35
+Planque de stim' | 25
+Respirateur | 15
+
+= Orlock
+combattant: Chef | 120 | 5" 3+ 3+ 3 3 3 4+ 2 4+ 5+ 5+ 5+ | Armure composite
+combattant: Champion | 95 | 5" 4+ 3+ 3 3 2 4+ 2 5+ 6+ 6+ 6+ | Armure composite
+combattant: Novice | 30 | 6" 5+ 5+ 3 3 1 3+ 1 7+ 8+ 8+ 8+ |
+combattant: Ganger | 55 | 5" 4+ 4+ 3 3 1 4+ 1 6+ 7+ 7+ 7+ | Armure composite
+competences: Chef | Muscle S, Férocité P, Autorité P, Tir S, Savoir P
+competences: Champion | Muscle S, Férocité P, Autorité S, Tir P, Savoir P
+competences: Novice | Férocité P, Tir S, Savoir S
+competences: Spécialiste | Muscle S, Férocité P, Tir S, Savoir P
+## Armes de base
+Bolter | 55
+Fusil à canon scié | 15
+Fusil à pompe (balles & grenaille) | 25 | balles; grenaille
+Fusil d'assaut | 15
+Fusil de combat (salve & nuage de grenaille) | 55 | salve; nuage de grenaille
+## Armes de corps à corps
+Couteau de combat | 15
+Couteau énergétique | 25
+Épée tronçonneuse | 25
+Fléau | 20
+Marteau à deux mains* | 35
+Masse (matraque) | 10
+Servopince | 30
+## Pistolets
+Flingue | 5
+Lance-flammes léger | 75
+Pistolet à plasma | 50
+Pistolet bolter | 45
+Pistolet-mitrailleur | 10
+## Armes spéciales
+Arme combinée (bolter/fuseur) | 165
+Lance-flammes | 140
+Lance-grenades (grenades Frag & Krak) | 65 | grenades Frag; grenades Krak
+Fusil à plasma | 100
+Fuseur | 135
+## Armes lourdes
+Bolter lourd* | 160
+Lance-flammes lourd* | 195
+Lance-harpon* | 110
+Mitrailleuse* | 130
+## Grenades
+Charges de démolition | 45
+Charges explosives | 35
+Grenades Frag | 30
+Grenades Krak | 45
+## Armures
+Armure composite | 15
+Armure Flak | 10
+## Équipement personnel
+Balles dum-dum (pour flingue) | 5
+Bio-booster | 35
+Filin | 10
+Filtre nasal | 10
+Lunette télescopique' | 25
+Photolunettes | 35
+Respirateur | 15
+
+= Van Saar
+combattant: Chef | 130 | 4" 4+ 2+ 3 3 2 5+ 2 4+ 5+ 5+ 4+ | Justaucorps renforcé
+combattant: Champion | 110 | 4" 4+ 2+ 3 3 2 4+ 1 5+ 6+ 6+ 5+ | Justaucorps renforcé
+combattant: Novice | 35 | 5" 5+ 4+ 3 3 1 4+ 1 9+ 8+ 9+ 7+ | Justaucorps renforcé
+combattant: Ganger | 65 | 4" 4+ 3+ 3 3 1 5+ 1 6+ 7+ 7+ 6+ | Justaucorps renforcé
+competences: Chef | Agilité S, Ruse S, Autorité P, Tir P, Savoir P
+competences: Champion | Combat S, Ruse S, Autorité S, Tir P, Savoir P
+competences: Novice | Agilité P, Tir S, Savoir S
+competences: Spécialiste | Combat S, Ruse S, Tir P, Savoir P
+## Armes de base
+Carabine laser | 20
+Fusil laser | 10
+Laser de suppression | 40
+## Armes de corps à corps
+Bouclier d'énergie modèle "Hystrar" | 50
+Couteau énergétique | 25
+Électrobâton | 30
+Électrosceptre | 25
+Servopince | 30
+## Pistolets
+Lance-flammes léger | 75
+Mitraillette laser | 15
+Pistolet à plasma | 50
+Pistolet laser | 5
+## Armes spéciales
+Arme combinée (fusil laser/fuseur) | 120
+Arme combinée (fusil laser/fusil à plasma) | 75
+Fuseur | 135
+Fusil à gravitons | 120
+Fusil à plasma | 100
+Fusil à radiations | 100
+Lance-flammes | 140
+## Armes lourdes
+Canon à plasma* | 130
+Canon à radiations* | 130
+Multi-fuseur* | 180
+## Grenades
+Grenades à radiations | 25
+Grenades Frag | 30
+Grenades fumigènes | 12
+Grenades Krak | 45
+## Armures
+Armure composite | 15
+Armure Flak | 10
+## Équipement personnel
+Bio-booster | 35
+Filin | 10
+Filtre nasal | 10
+Grav-chute | 40
+Lunette' | 35
+Lunette infrarouge' | 40
+Lunette télescopique' | 25
+Photolunettes | 35
+Pointeur laser | 35
+Respirateur | 15
+Suspenseur | 60

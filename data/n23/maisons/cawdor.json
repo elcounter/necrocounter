@@ -1,0 +1,422 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre de règles N23 (version française)",
+  "reglesDeCreation": {
+    "novice": "Un Novice ne peut pas recevoir d'objet d'une valeur supérieure à 20 crédits lorsqu'il est ajouté au gang. Cette limite cesse après sa première Progression.",
+    "armeSpeciale": "À la création du gang, un seul Ganger peut être équipé d'une Arme Spéciale. En campagne, les Gangers recrutés ensuite peuvent aussi en recevoir.",
+    "chefEtChampion": "Le Chef et les Champions ne sont soumis à aucune restriction d'armes et commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "cawdor",
+  "nom": "Cawdor",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Chef",
+      "cout": 105,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "4+",
+        "SF": "6+",
+        "V": "5+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Armure Flak"
+      ]
+    },
+    {
+      "id": "champion",
+      "role": "Champion",
+      "cout": 95,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Armure Flak"
+      ]
+    },
+    {
+      "id": "novice",
+      "role": "Novice",
+      "cout": 20,
+      "profil": {
+        "M": "6\"",
+        "CC": "5+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "8+",
+        "V": "8+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "ganger",
+      "role": "Ganger",
+      "cout": 45,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "7+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Armure Flak"
+      ]
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Muscle",
+        "Combat",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Férocité",
+        "Savoir"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Muscle",
+        "Combat"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Férocité",
+        "Autorité"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Férocité"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Combat"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Combat",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Muscle"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Haste avec fusil d'assaut Cawdor",
+      "prix": 20,
+      "compteDouble": true,
+      "categorie": "Armes de base",
+      "id": "haste-avec-fusil-d-assaut-cawdor",
+      "arme": "haste-avec-fusil-d-assaut-cawdor"
+    },
+    {
+      "nom": "Haste avec tromblon Cawdor (munitions à grappe & Purgation)",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Armes de base",
+      "id": "haste-avec-tromblon-cawdor-munitions-a-grappe-purgation",
+      "modes": [
+        "haste",
+        "tromblon, grappe",
+        "tromblon, Purgation"
+      ],
+      "arme": "haste-avec-tromblon-cawdor"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-a-canon-scie",
+      "arme": "fusil-a-canon-scie"
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-de-recup",
+      "arme": "fusil-d-assaut-de-recup"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "fleau",
+      "arme": "fleau"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "hache",
+      "arme": "hache"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-a-deux-mains",
+      "arme": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "masse-matraque",
+      "arme": "masse-matraque"
+    },
+    {
+      "nom": "Vouge tronçonneur",
+      "prix": 60,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "vouge-tronconneur",
+      "arme": "vouge-tronconneur"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "arme": "flingue"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-de-recup",
+      "arme": "pistolet-mitrailleur-de-recup"
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-flammes)",
+      "prix": 110,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-fusil-d-assaut-lance-flammes",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil d'assaut",
+        "lance-flammes"
+      ]
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 130,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil",
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Arbalète lourde Cawdor (carreaux Frag & Krak)",
+      "prix": 125,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "arbalete-lourde-cawdor-carreaux-frag-krak",
+      "arme": "arbalete-lourde-cawdor"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd",
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse",
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Grenades",
+      "id": "charges-explosives",
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "charges-incendiaires",
+      "arme": "charges-incendiaires"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Grenades",
+      "id": "grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "balles-dum-dum-pour-flingue"
+    },
+    {
+      "nom": "Balles Emperor's Wrath (pour tromblon)",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "balles-emperor-s-wrath-pour-tromblon"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Icône du Culte",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "icone-du-culte"
+    },
+    {
+      "nom": "Kit de démontage",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "kit-de-demontage"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "lame-sous-cutanee"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "lunette"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Rats lyreurs de bombes",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "rats-lyreurs-de-bombes"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    }
+  ]
+}

@@ -1,0 +1,199 @@
+# Profils d'armes — Necromunda N23, Tableaux de référence des armes
+# Colonnes : nom | Por C | Por L | Pré C | Pré L | F | PA | D | Mu | traits
+# Une ligne sans colonnes ouvre une arme à plusieurs profils ; les lignes "- " suivantes en sont les profils.
+# Une ligne terminée par "?" signale une valeur douteuse à vérifier dans le livre.
+
+## Armes de base
+Haste avec fusil d'assaut Cawdor
+- haste | E | 2" | -1 | - | F+1 | - | 1 | - | Mêlée, Encombrant, Polyvalent
+- fusil d'assaut | 8" | 24" | +1 | - | 3 | - | 1 | 5+ | Tir Rapide (1)
+Haste avec tromblon Cawdor
+- haste | E | 2" | -1 | - | F+1 | - | 1 | - | Mêlée, Encombrant, Polyvalent
+- tromblon, grappe | - | S | - | - | 2 | - | 1 | 6+ | Abondance, Mitraille
+- tromblon, Purgation | - | S | - | - | 3 | - | 1 | 6+ | Incendiaire, Rareté
+- tromblon, Emperor's Wrath | 8" | 12" | -1 | - | 4 | -1 | 2 | 4+ | Contrecoup, Pulvériser
+Bolter | 12" | 24" | +1 | - | 4 | -1 | 2 | 6+ | Tir Rapide (1)
+Canon de poing | 9" | 18" | - | - | 5 | - | 1 | 3+ | Contrecoup
+Carabine laser | 10" | 24" | +1 | - | 3 | - | 1 | 4+ | Abondance, Tir Rapide (1)
+Couteaux de lancer | Fx2 | Fx4 | - | -1 | - | -1 | - | 5+ | Rareté, Silencieux, Toxine
+Fusil à canon scié | 4" | 8" | +2 | - | 3 | - | 1 | 6+ | Abondance, Mitraille
+Fusil à pompe
+- balles acides | 4" | 8" | +1 | - | 3 | -1 | 1 | 5+ | Incendiaire, Mitraille
+- balles | 8" | 16" | +1 | - | 4 | - | 2 | 4+ | Contrecoup
+- grenaille | 4" | 8" | +2 | - | 2 | - | 1 | 4+ | Mitraille
+- Executioner | 4" | 16" | -1 | +1 | 4 | -2 | 2 | 6+ | Contrecoup, Limité
+- Inferno | 4" | 16" | +1 | - | 4 | - | 2 | 5+ | Incendiaire, Limité
+Fusil d'assaut | 8" | 24" | +1 | - | 3 | - | 1 | 4+ | Tir Rapide (1)
+Fusil d'assaut de récup' | 8" | 24" | +1 | - | 3 | - | 1 | 5+ | Tir Rapide (1)
+Fusil de combat
+- salve | 4" | 12" | +1 | - | 4 | - | 2 | 4+ | Contrecoup, Tir Rapide (1)
+- nuage de grenaille | - | S | - | - | 2 | - | 1 | 4+ | Mitraille, Souffle
+- Firestorm | - | S | - | - | 5 | -1 | 1 | 6+ | Incendiaire, Limité, Souffle
+Fusil laser | 18" | 24" | +1 | - | 3 | - | 1 | 2+ | Abondance
+Laser de suppression
+- faisceau large | 4" | 8" | +2 | - | 2 | - | 1 | 4+ | Abondance, Mitraille
+- faisceau court | 8" | 16" | +1 | - | 4 | - | 2 | 4+ | Contrecoup, Abondance
+
+## Pistolets
+Combi-pistolet
+- flingue | 6" | 12" | +2 | - | 3 | - | 1 | 4+ | Abondance, Arme de Poing, Combi
+- pistolet-mitrailleur | 4" | 12" | +1 | - | 3 | - | 1 | 4+ | Arme de Poing, Combi, Tir Rapide (1)
+- pistolet bolter | 6" | 12" | +1 | - | 4 | -1 | 2 | 6+ | Arme de Poing, Combi
+- lance-flammes léger | - | S | - | - | 3 | - | 1 | 5+ | Combi, Incendiaire, Instable, Souffle
+- pistolet à plasma | 6" | 12" | +2 | - | 5 | -1 | 2 | 5+ | Arme de Poing, Combi, Rareté
+Flingue | 6" | 12" | +2 | - | 3 | - | 1 | 4+ | Abondance, Arme de Poing
+Flingue avec balles dum-dum | 5" | 10" | +1 | - | 4 | - | 1 | 4+ | Arme de Poing, Limité
+Lance-flammes léger | - | S | - | - | 3 | - | 1 | 5+ | Incendiaire, Souffle
+Lance-toile léger | - | S | - | - | 4 | - | - | 6+ | Silencieux, Souffle, Toile
+Mitraillette laser | 4" | 12" | +1 | - | 3 | - | 1 | 4+ | Abondance, Arme de Poing, Tir Rapide (1)
+Pistolet à aiguilles | 4" | 9" | +2 | - | - | -1 | - | 6+ | Arme de Poing, Rareté, Silencieux, Toxine
+Pistolet à fléchettes
+- projectile solide | 4" | 12" | +1 | - | 3 | - | 1 | 4+ | Arme de Poing, Silencieux, Tir Rapide (1)
+- Flashbane | 4" | 12" | - | - | - | - | - | 6+ | Arme de Poing, Rareté, Silencieux, Tir Rapide (1), Toxine
+Pistolet à plasma
+- basse puissance | 6" | 12" | +2 | - | 5 | -1 | 2 | 5+ | Arme de Poing, Rareté
+- puissance maximale | 6" | 12" | +1 | - | 7 | -2 | 3 | 5+ | Arme de Poing, Instable, Rareté
+Pistolet bolter | 6" | 12" | +1 | - | 4 | -1 | 2 | 6+ | Arme de Poing
+Pistolet laser | 8" | 12" | +1 | - | 3 | - | 1 | 2+ | Abondance, Arme de Poing
+Pistolet-mitrailleur | 4" | 12" | +1 | - | 3 | - | 1 | 4+ | Arme de Poing, Tir Rapide (1)
+Pistolet-mitrailleur compact (pistocrâne) | 4" | 12" | +1 | - | 2 | - | 1 | 4+ | Rareté, Tir Rapide (1)
+Pistolet-mitrailleur de récup' | 4" | 12" | +1 | - | 3 | - | 1 | 5+ | Arme de Poing, Tir Rapide (1)
+Projecteur de toile (Cyberachnid Van Saar) | - | S | - | - | 2 | - | - | 6+ | Rareté, Souffle, Toile
+
+## Armes spéciales
+Arme combinée
+- bolter | 12" | 24" | +1 | - | 4 | -1 | 2 | 6+ | Combi, Tir Rapide (1)
+- fusil laser | 18" | 24" | +1 | - | 3 | - | 1 | 2+ | Abondance, Combi
+- fusil d'assaut | 8" | 24" | +1 | - | 3 | - | 1 | 4+ | Combi, Tir Rapide (1)
+- lance-flammes | - | S | - | - | 4 | -1 | 1 | 5+ | Combi, Incendiaire, Instable, Souffle
+- lance-grenades (Frag) | 6" | 24" | -1 | - | 3 | - | 1 | * | Contrecoup, Explosion (3"), Usage Unique
+- fuseur | 6" | 12" | +1 | - | 8 | -4 | 3 | 4+ | Combi, Fusion, Rareté
+- arme à aiguilles | 9" | 18" | +1 | - | - | -1 | - | 6+ | Combi, Rareté, Silencieux, Toxine
+- fusil à plasma | 12" | 24" | +2 | - | 5 | -1 | 2 | 5+ | Combi, Rareté, Tir Rapide (1)
+Fuseur | 6" | 12" | +1 | - | 8 | -4 | 3 | 4+ | Fusion, Rareté
+Fusil à aiguilles | 9" | 18" | +2 | - | - | -1 | - | 6+ | Rareté, Silencieux, Toxine
+Fusil à gravitons | 9" | 18" | +1 | - | * | -1 | 2 | 5+ | Commotion, Explosion (3"), Gravitons
+Fusil à plasma
+- basse puissance | 12" | 24" | +2 | - | 5 | -1 | 2 | 5+ | Rareté, Tir Rapide (1)
+- puissance maximale | 12" | 24" | +1 | - | 7 | -2 | 3 | 5+ | Instable, Rareté
+Fusil à radiations | - | S | - | - | 2 | -2 | 1 | 4+ | Radiations, Souffle
+Lance-flammes | - | S | - | - | 4 | -1 | 1 | 5+ | Incendiaire, Souffle
+Lance-grenades
+- grenades Frag | 6" | 24" | -1 | - | 3 | - | 1 | 6+ | Contrecoup, Explosion (3")
+- grenades Krak | 6" | 24" | -1 | - | 6 | -2 | 2 | 6+ | -
+- grenades asphyxiantes | 6" | 24" | -1 | - | - | - | - | 5+ | Explosion (3"), Gaz, Limité
+- grenades aveuglantes | 6" | 24" | -1 | - | - | - | - | 5+ | Aveuglant, Explosion (5")
+- grenades cauchemar | 6" | 24" | -1 | - | - | - | - | 6+ | Explosion (3"), Gaz, Limité, Peur
+- grenades fumigènes | 6" | 24" | -1 | - | - | - | - | 4+ | Fumée
+Lance-toile | - | S | - | - | 5 | - | - | 5+ | Silencieux, Souffle, Toile
+Long fusil | 24" | 48" | - | +1 | 4 | -1 | 1 | 4+ | Contrecoup
+Long fusil laser | 18" | 36" | - | +1 | 4 | - | 1 | 2+ | Abondance
+Projecteur chimique "Belladone" | - | S | - | - | - | - | - | 5+ | Gaz, Silencieux, Souffle
+Souffle à éruption gazeuse (Khimerix Escher) | - | S | - | - | - | - | - | - | Gaz, Souffle
+Souffle à nuage chimique (Khimerix Escher) | 6" | 12" | +1 | - | 3 | -1 | 1 | - | Explosion (3")
+
+## Armes lourdes
+Arbalète lourde Cawdor
+- Frag | 15" | 30" | - | -1 | 4 | - | 1 | 4+ | Contrecoup, Encombrant, Explosion (5")
+- Krak | 15" | 30" | - | -1 | 6 | -2 | 2 | 6+ | Encombrant
+Bolter lourd | 18" | 36" | +1 | - | 5 | -2 | 2 | 6+ | Encombrant, Tir Rapide (2)
+Canon à plasma
+- basse puissance | 18" | 36" | +1 | - | 6 | -1 | 2 | 5+ | Encombrant, Rareté, Tir Rapide (1)
+- puissance maximale | 18" | 36" | +1 | - | 8 | -2 | 3 | 5+ | Encombrant, Explosion (3"), Instable, Rareté
+Canon à radiations | 16" | 32" | - | -1 | 2 | -2 | 1 | 4+ | Encombrant, Explosion (5"), Radiations
+Canon à rivets "Cribleur"
+- tir rapide | 3" | 9" | +2 | - | 4 | -1 | 2 | 3+ | Perforant, Tir Rapide (1)
+- rivet surchauffé | 3" | 9" | +2 | - | 6 | -2 | 2 | 3+ | Incendiaire, Perforant
+Canon laser | 24" | 48" | - | +1 | 10 | -3 | 3 | 4+ | Contrecoup, Encombrant
+Canon sismique
+- onde courte | 12" | 24" | - | -1 | 6 | -1 | 2 | 5+ | Contrecoup, Encombrant, Sismique, Tir Rapide (1)
+- onde longue | 12" | 24" | -1 | - | 3 | - | 1 | 5+ | Contrecoup, Encombrant, Sismique, Tir Rapide (2)
+Carabine laser lourde jumelée (Arachnirig Van Saar) | 15" | 30" | +1 | - | 4 | - | 1 | 4+ | Abondance, Tir Rapide (3)
+Lance-flammes lourd | - | S | - | - | 5 | -2 | 1 | 5+ | Encombrant, Incendiaire, Souffle
+Lance-harpon | 6" | 18" | +2 | - | 5 | -3 | 1 | 5+ | Empalement, Rareté, Traction
+Lance-missiles
+- missile Frag | 24" | 48" | +1 | - | 4 | -1 | 1 | 6+ | Contrecoup, Encombrant, Explosion (5")
+- missile Krak | 24" | 48" | +1 | - | 6 | -2 | 3 | 6+ | Encombrant
+Laser minier | 18" | 24" | - | -1 | 9 | -3 | 3 | 3+ | Encombrant
+Mitrailleuse | 20" | 40" | - | -1 | 4 | -1 | 1 | 4+ | Encombrant, Tir Rapide (2)
+Mitrailleuse jumelée (Stig-Shambler Cawdor) | 20" | 40" | - | -1 | 4 | -1 | 2 | 4+ | Encombrant, Tir Rapide (3)
+Multi-fuseur | 12" | 24" | +1 | - | 8 | -4 | 3 | 4+ | Encombrant, Explosion (3"), Fusion, Rareté
+
+## Grenades
+Bombes à fusion | - | Fx3 | - | -1 | 8 | -4 | 3 | 6+ | Démolition, Fusion, Grenade, Rareté
+Charges de démolition | - | Fx2 | - | - | 6 | -3 | 2 | * | Explosion (5"), Grenade, Usage Unique
+Charges explosives | - | Fx2 | - | - | 5 | -1 | 2 | 5+ | Contrecoup, Explosion (5"), Grenade
+Charges incendiaires | - | Fx3 | - | - | 3 | - | 1 | 5+ | Explosion (5"), Grenade, Incendiaire
+Grenades à radiations | - | Fx3 | - | - | 2 | -2 | 1 | 4+ | Explosion (5"), Grenade, Radiations
+Grenades asphyxiantes | - | Fx3 | - | - | - | - | - | 5+ | Explosion (3"), Gaz, Grenade
+Grenades aveuglantes | - | Fx3 | - | - | - | - | - | 5+ | Aveuglant, Explosion (5"), Grenade
+Grenades cauchemar | - | Fx3 | - | - | - | - | - | 6+ | Explosion (3"), Gaz, Grenade, Peur
+Grenades Frag | - | Fx3 | - | - | 3 | - | 1 | 4+ | Contrecoup, Explosion (3"), Grenade
+Grenades fumigènes | - | Fx3 | - | - | - | - | - | 4+ | Fumée, Grenade
+Grenades incapacitantes | - | Fx3 | - | - | 2 | -1 | 1 | 4+ | Commotion, Grenade
+Grenades Krak | - | Fx3 | - | -1 | 6 | -2 | 2 | 4+ | Démolition, Grenade
+
+## Pièges
+Piège à Frag | - | - | - | - | 3 | - | 1 | - | Contrecoup, Explosion (5"), Usage Unique
+Piège à fusion | - | - | - | - | 8 | -4 | 3 | - | Explosion (5"), Fusion, Usage Unique
+Piège à gaz | - | - | - | - | - | - | - | - | Explosion (5"), Gaz, Usage Unique
+
+## Armes de corps à corps
+Couteau de combat | - | E | - | - | F | -1 | 1 | - | Coup en Traître, Mêlée
+Couteau énergétique | - | E | - | - | F+1 | -2 | 1 | - | Coup en Traître, Mêlée, Énergétique
+Stylet | - | E | - | - | - | - | - | - | Mêlée, Toxine
+Haste Cawdor (Stig-shambler Cawdor) | E | 2" | -1 | - | F+1 | - | 1 | - | Mêlée, Encombrant, Polyvalent
+Arme de mêlée de Servitor (Orlock Lugger) | - | E | - | - | F | -1 | 1 | - | Contrecoup, Mêlée
+Bec & serres (Sheen bird Cawdor) | - | E | - | - | F | -1 | 2 | - | Mêlée, Perforant
+Dérouilleuse | - | E | - | - | F+1 | - | 1 | - | Contrecoup, Mêlée
+Digilaser | E | 3" | - | - | 1 | - | 1 | 6+ | Digi, Mêlée, Polyvalent
+Épée | - | E | - | +1 | F | -1 | 1 | - | Mêlée, Parade
+Épée tronçonneuse | - | E | - | +1 | F+1 | -1 | 1 | - | Mêlée, Parade, Perforant
+Fléau | - | E | - | +1 | F+1 | - | 1 | - | Empêtrement, Mêlée
+Gantelet à gravitons (Ambot)
+- mêlée | - | E | - | - | F | -1 | 2 | - | Mêlée, Pulvériser
+- tir | 6" | 12" | +1 | - | * | -1 | 2 | 5+ | Explosion (3"), Gravitons, Commotion
+Gantelet lance-toile | - | E | - | +1 | 3 | - | - | - | Coup en Traître, Mêlée, Toile
+Griffes (Khimerix Escher et Phyrr Cat Escher) | - | E | - | - | F | -1 | 2 | - | Mêlée, Pulvériser
+Griffes excavatrices (Ambot)
+- mêlée | - | E | - | - | F | -1 | 2 | - | Mêlée
+- tir | 2" | 4" | - | - | 6 | -2 | 2 | 5+ | Fusion, Rareté, Polyvalent
+Griffes rasoirs (Khimerix Escher) | - | E | - | - | F+1 | -2 | 3 | - | Mêlée, Perforant
+Hache | - | E | - | - | F+1 | - | 1 | - | Désarmement, Mêlée
+Hache tronçonneuse | - | E | - | +1 | F+1 | -1 | 1 | - | Désarmement, Mêlée, Parade, Perforant
+Hachoir de brute | - | E | - | - | F | -1 | 1 | - | Désarmement, Mêlée
+Mâchoires féroces (Sumpkroc Goliath) | - | E | - | - | F | - | 1 | - | Mêlée, Perforant
+Mains nues (Zerker Goliath) | - | E | - | - | F | -1 | 1 | - | Contrecoup, Mêlée
+Masse (matraque) | - | E | - | - | F | +1 | 2 | - | Mêlée
+Matraque lourde (Stig-shambler Cawdor) | - | E | - | - | F | - | 2 | - | Mêlée
+Morsure sauvage (Cyber-mastiff) | - | E | - | - | F | -2 | 1 | - | Désarmement, Mêlée
+Morsure venimeuse (Cyberachnid Van Saar) | - | E | - | - | - | - | - | - | Mêlée, Toxine
+Poing augmentique ("Jotunn" Servitor) | - | E | - | - | F+1 | -1 | 2 | - | Contrecoup, Mêlée
+Poings mutants & excroissances osseuses (Zerker Goliath) | E | 2" | - | - | F+1 | -2 | 2 | - | Contrecoup, Mêlée, Pulvériser, Polyvalent
+Rapière | - | E | - | - | - | -1 | - | - | Mêlée, Parade, Toxine
+Servobras (Servo-suit Van Saar) | E | 3" | - | +1 | F | - | 1 | - | Mêlée, Polyvalent
+Servopince | - | E | - | - | F+2 | - | 2 | - | Mêlée
+Soudeuse à l'arc ("Jotunn" Servitor) | - | E | - | - | F+2 | -3 | 3 | - | Incendiaire, Mêlée
+
+## Armes à énergie/choc
+Bouclier d'énergie modèle "Hystrar" | - | E | - | - | F | - | 1 | - | Bouclier à énergie, Contrecoup, Mêlée
+Découpeur laser | E | 2" | +1 | - | 9 | -3 | 2 | 6+ | Mêlée, Rareté, Polyvalent
+Électrobâton | - | E | - | - | F | - | 1 | - | Mêlée, Parade, Choc
+Électrofouet | E | 3" | -1 | - | F+1 | - | 1 | - | Mêlée, Choc, Polyvalent
+Électrosceptre | E | 2" | - | - | F+1 | - | 1 | - | Mêlée, Choc, Polyvalent
+Électrovrilles (Cephalopod Spekter Delaque) | E | 2" | - | - | F+1 | - | 1 | - | Mêlée, Choc, Polyvalent
+Épée énergétique | - | E | - | - | F+1 | -2 | 1 | - | Mêlée, Parade, Énergétique
+Hache énergétique | - | E | - | - | F+2 | -2 | 1 | - | Désarmement, Mêlée, Énergétique
+Marteau énergétique | - | E | - | - | F+1 | -1 | 2 | - | Mêlée, Énergétique
+Marteau Thunder | - | E | - | - | F+1 | -1 | 3 | - | Mêlée, Énergétique, Choc
+Masse énergétique | - | E | - | - | F+2 | -1 | 1 | - | Mêlée, Énergétique
+Pioche énergétique | - | E | - | - | F+1 | -3 | 1 | - | Mêlée, Énergétique, Pulvériser
+
+## Armes à deux mains
+Cisaille lourde | - | E | - | - | F+4 | -4 | 3 | - | Mêlée, Encombrant
+Disqueuse lourde | - | E | - | +1 | F+3 | -3 | 2 | - | Mêlée, Perforant, Encombrant
+Foreuse lourde | - | E | - | - | F+2 | -3 | 2 | - | Mêlée, Pulvériser, Encombrant
+Hache à deux mains | - | E | - | -1 | F+2 | - | 2 | - | Mêlée, Encombrant
+Hache dentelée "déchiqueteuse" | - | E | - | - | F+2 | -1 | 2 | - | Mêlée, Pulvériser, Encombrant
+Marteau à deux mains | - | E | - | -1 | F+1 | - | 3 | - | Contrecoup, Mêlée, Encombrant
+Vouge tronçonneur | E | 2" | -1 | - | F+2 | -2 | 2 | - | Mêlée, Encombrant, Polyvalent

@@ -1,0 +1,442 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre de règles N23 (version française)",
+  "reglesDeCreation": {
+    "novice": "Un Novice ne peut pas recevoir d'objet d'une valeur supérieure à 20 crédits lorsqu'il est ajouté au gang. Cette limite cesse après sa première Progression.",
+    "armeSpeciale": "À la création du gang, un seul Ganger peut être équipé d'une Arme Spéciale. En campagne, les Gangers recrutés ensuite peuvent aussi en recevoir.",
+    "chefEtChampion": "Le Chef et les Champions ne sont soumis à aucune restriction d'armes et commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "goliath",
+  "nom": "Goliath",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Chef",
+      "cout": 145,
+      "profil": {
+        "M": "4\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "4",
+        "E": "4",
+        "PV": "2",
+        "I": "3+",
+        "A": "3",
+        "CD": "5+",
+        "SF": "4+",
+        "V": "8+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Plates de fourneau"
+      ]
+    },
+    {
+      "id": "champion",
+      "role": "Champion",
+      "cout": 110,
+      "profil": {
+        "M": "4\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "4",
+        "E": "4",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "5+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": [
+        "Plates de fourneau"
+      ]
+    },
+    {
+      "id": "novice",
+      "role": "Novice",
+      "cout": 25,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "5+",
+        "V": "10+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "ganger",
+      "role": "Ganger",
+      "cout": 60,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "4",
+        "E": "4",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "5+",
+        "V": "9+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": [
+        "Plates de fourneau"
+      ]
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Muscle",
+        "Férocité",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Tir"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Muscle",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Autorité",
+        "Tir"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Férocité"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Muscle"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Muscle",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Tir"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "categorie": "Armes de base",
+      "id": "bolter",
+      "arme": "bolter"
+    },
+    {
+      "nom": "Canon de poing",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "canon-de-poing",
+      "arme": "canon-de-poing"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil de combat (salve & nuage de grenaille)",
+      "prix": 60,
+      "categorie": "Armes de base",
+      "id": "fusil-de-combat-salve-nuage-de-grenaille",
+      "modes": [
+        "salve",
+        "nuage de grenaille"
+      ],
+      "arme": "fusil-de-combat"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Dérouilleuse",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "derouilleuse",
+      "arme": "derouilleuse"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-tronconneuse",
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "hache",
+      "arme": "hache"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-a-deux-mains",
+      "arme": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Hache dentelée \"déchiqueteuse\"",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-dentelee-dechiqueteuse",
+      "arme": "hache-dentelee-dechiqueteuse"
+    },
+    {
+      "nom": "Hache énergétique",
+      "prix": 35,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-energetique",
+      "arme": "hache-energetique"
+    },
+    {
+      "nom": "Hachoir de brute",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "hachoir-de-brute",
+      "arme": "hachoir-de-brute"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Marteau énergétique",
+      "prix": 45,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-energetique",
+      "arme": "marteau-energetique"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "masse-matraque",
+      "arme": "masse-matraque"
+    },
+    {
+      "nom": "Combi-pistolet (flingue/pistolet à plasma)",
+      "prix": 40,
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-flingue-pistolet-a-plasma",
+      "arme": "combi-pistolet",
+      "modes": [
+        "flingue",
+        "pistolet à plasma"
+      ]
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "arme": "flingue"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Pistolet bolter",
+      "prix": 45,
+      "categorie": "Pistolets",
+      "id": "pistolet-bolter",
+      "arme": "pistolet-bolter"
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 165,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-fuseur",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fuseur"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-flammes)",
+      "prix": 175,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-lance-flammes",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "lance-flammes"
+      ]
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "fuseur",
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 55,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-frag-krak",
+      "modes": [
+        "grenades Frag",
+        "grenades Krak"
+      ],
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Bolter lourd",
+      "prix": 160,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "bolter-lourd",
+      "arme": "bolter-lourd"
+    },
+    {
+      "nom": "Canon à rivets \"Cribleur\"",
+      "prix": 70,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "canon-a-rivets-cribleur",
+      "arme": "canon-a-rivets-cribleur"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd",
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse",
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Grenades",
+      "id": "charges-explosives",
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Plates de fourneau",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "plates-de-fourneau"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "balles-dum-dum-pour-flingue"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Planque de stim",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "planque-de-stim"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    }
+  ]
+}

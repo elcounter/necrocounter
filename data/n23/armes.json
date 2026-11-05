@@ -1,0 +1,3310 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre de règles N23 (version française)",
+  "armes": [
+    {
+      "id": "haste-avec-fusil-d-assaut-cawdor",
+      "nom": "Haste avec fusil d'assaut Cawdor",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": "haste",
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Encombrant",
+            "Polyvalent"
+          ]
+        },
+        {
+          "mode": "fusil d'assaut",
+          "porC": "8\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haste-avec-tromblon-cawdor",
+      "nom": "Haste avec tromblon Cawdor",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": "haste",
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Encombrant",
+            "Polyvalent"
+          ]
+        },
+        {
+          "mode": "tromblon, grappe",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Abondance",
+            "Mitraille"
+          ]
+        },
+        {
+          "mode": "tromblon, Purgation",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Incendiaire",
+            "Rareté"
+          ]
+        },
+        {
+          "mode": "tromblon, Emperor's Wrath",
+          "porC": "8\"",
+          "porL": "12\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup",
+            "Pulvériser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bolter",
+      "nom": "Bolter",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canon-de-poing",
+      "nom": "Canon de poing",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "9\"",
+          "porL": "18\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-",
+          "D": "1",
+          "Mu": "3+",
+          "traits": [
+            "Contrecoup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carabine-laser",
+      "nom": "Carabine laser",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "10\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Abondance",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "couteaux-de-lancer",
+      "nom": "Couteaux de lancer",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "Fx2",
+          "porL": "Fx4",
+          "preC": "-",
+          "preL": "-1",
+          "F": "-",
+          "PA": "-1",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Rareté",
+            "Silencieux",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-a-canon-scie",
+      "nom": "Fusil à canon scié",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "4\"",
+          "porL": "8\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Abondance",
+            "Mitraille"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-a-pompe",
+      "nom": "Fusil à pompe",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": "balles acides",
+          "porC": "4\"",
+          "porL": "8\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Incendiaire",
+            "Mitraille"
+          ]
+        },
+        {
+          "mode": "balles",
+          "porC": "8\"",
+          "porL": "16\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup"
+          ]
+        },
+        {
+          "mode": "grenaille",
+          "porC": "4\"",
+          "porL": "8\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Mitraille"
+          ]
+        },
+        {
+          "mode": "Executioner",
+          "porC": "4\"",
+          "porL": "16\"",
+          "preC": "-1",
+          "preL": "+1",
+          "F": "4",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Contrecoup",
+            "Limité"
+          ]
+        },
+        {
+          "mode": "Inferno",
+          "porC": "4\"",
+          "porL": "16\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Incendiaire",
+            "Limité"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-d-assaut",
+      "nom": "Fusil d'assaut",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "8\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-d-assaut-de-recup",
+      "nom": "Fusil d'assaut de récup'",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "8\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-de-combat",
+      "nom": "Fusil de combat",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": "salve",
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "nuage de grenaille",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Mitraille",
+            "Souffle"
+          ]
+        },
+        {
+          "mode": "Firestorm",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Incendiaire",
+            "Limité",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-laser",
+      "nom": "Fusil laser",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "18\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "2+",
+          "traits": [
+            "Abondance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laser-de-suppression",
+      "nom": "Laser de suppression",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": "faisceau large",
+          "porC": "4\"",
+          "porL": "8\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Abondance",
+            "Mitraille"
+          ]
+        },
+        {
+          "mode": "faisceau court",
+          "porC": "8\"",
+          "porL": "16\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup",
+            "Abondance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combi-pistolet",
+      "nom": "Combi-pistolet",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": "flingue",
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Abondance",
+            "Arme de Poing",
+            "Combi"
+          ]
+        },
+        {
+          "mode": "pistolet-mitrailleur",
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Arme de Poing",
+            "Combi",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "pistolet bolter",
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Arme de Poing",
+            "Combi"
+          ]
+        },
+        {
+          "mode": "lance-flammes léger",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Combi",
+            "Incendiaire",
+            "Instable",
+            "Souffle"
+          ]
+        },
+        {
+          "mode": "pistolet à plasma",
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "5",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Arme de Poing",
+            "Combi",
+            "Rareté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flingue",
+      "nom": "Flingue",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Abondance",
+            "Arme de Poing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flingue-avec-balles-dum-dum",
+      "nom": "Flingue avec balles dum-dum",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "5\"",
+          "porL": "10\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Arme de Poing",
+            "Limité"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-flammes-leger",
+      "nom": "Lance-flammes léger",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Incendiaire",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-toile-leger",
+      "nom": "Lance-toile léger",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Silencieux",
+            "Souffle",
+            "Toile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mitraillette-laser",
+      "nom": "Mitraillette laser",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Abondance",
+            "Arme de Poing",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-a-aiguilles",
+      "nom": "Pistolet à aiguilles",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "4\"",
+          "porL": "9\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "-",
+          "PA": "-1",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Arme de Poing",
+            "Rareté",
+            "Silencieux",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-a-flechettes",
+      "nom": "Pistolet à fléchettes",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": "projectile solide",
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Arme de Poing",
+            "Silencieux",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "Flashbane",
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Arme de Poing",
+            "Rareté",
+            "Silencieux",
+            "Tir Rapide (1)",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-a-plasma",
+      "nom": "Pistolet à plasma",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": "basse puissance",
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "5",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Arme de Poing",
+            "Rareté"
+          ]
+        },
+        {
+          "mode": "puissance maximale",
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "7",
+          "PA": "-2",
+          "D": "3",
+          "Mu": "5+",
+          "traits": [
+            "Arme de Poing",
+            "Instable",
+            "Rareté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-bolter",
+      "nom": "Pistolet bolter",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Arme de Poing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-laser",
+      "nom": "Pistolet laser",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "8\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "2+",
+          "traits": [
+            "Abondance",
+            "Arme de Poing"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-mitrailleur",
+      "nom": "Pistolet-mitrailleur",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Arme de Poing",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-mitrailleur-compact-pistocrane",
+      "nom": "Pistolet-mitrailleur compact (pistocrâne)",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Rareté",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-mitrailleur-de-recup",
+      "nom": "Pistolet-mitrailleur de récup'",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Arme de Poing",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "projecteur-de-toile-cyberachnid-van-saar",
+      "nom": "Projecteur de toile (Cyberachnid Van Saar)",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Rareté",
+            "Souffle",
+            "Toile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arme-combinee",
+      "nom": "Arme combinée",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": "bolter",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Combi",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "fusil laser",
+          "porC": "18\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "2+",
+          "traits": [
+            "Abondance",
+            "Combi"
+          ]
+        },
+        {
+          "mode": "fusil d'assaut",
+          "porC": "8\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Combi",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "lance-flammes",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Combi",
+            "Incendiaire",
+            "Instable",
+            "Souffle"
+          ]
+        },
+        {
+          "mode": "lance-grenades (Frag)",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "*",
+          "traits": [
+            "Contrecoup",
+            "Explosion (3\")",
+            "Usage Unique"
+          ]
+        },
+        {
+          "mode": "fuseur",
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "8",
+          "PA": "-4",
+          "D": "3",
+          "Mu": "4+",
+          "traits": [
+            "Combi",
+            "Fusion",
+            "Rareté"
+          ]
+        },
+        {
+          "mode": "arme à aiguilles",
+          "porC": "9\"",
+          "porL": "18\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-1",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Combi",
+            "Rareté",
+            "Silencieux",
+            "Toxine"
+          ]
+        },
+        {
+          "mode": "fusil à plasma",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "5",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Combi",
+            "Rareté",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fuseur",
+      "nom": "Fuseur",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "8",
+          "PA": "-4",
+          "D": "3",
+          "Mu": "4+",
+          "traits": [
+            "Fusion",
+            "Rareté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-a-aiguilles",
+      "nom": "Fusil à aiguilles",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "9\"",
+          "porL": "18\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "-",
+          "PA": "-1",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Rareté",
+            "Silencieux",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-a-gravitons",
+      "nom": "Fusil à gravitons",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "9\"",
+          "porL": "18\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "*",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Commotion",
+            "Explosion (3\")",
+            "Gravitons"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-a-plasma",
+      "nom": "Fusil à plasma",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": "basse puissance",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "5",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Rareté",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "puissance maximale",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "7",
+          "PA": "-2",
+          "D": "3",
+          "Mu": "5+",
+          "traits": [
+            "Instable",
+            "Rareté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-a-radiations",
+      "nom": "Fusil à radiations",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Radiations",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-flammes",
+      "nom": "Lance-flammes",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Incendiaire",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-grenades",
+      "nom": "Lance-grenades",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": "grenades Frag",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Contrecoup",
+            "Explosion (3\")"
+          ]
+        },
+        {
+          "mode": "grenades Krak",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "6",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "6+",
+          "traits": []
+        },
+        {
+          "mode": "grenades asphyxiantes",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Explosion (3\")",
+            "Gaz",
+            "Limité"
+          ]
+        },
+        {
+          "mode": "grenades aveuglantes",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Aveuglant",
+            "Explosion (5\")"
+          ]
+        },
+        {
+          "mode": "grenades cauchemar",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Explosion (3\")",
+            "Gaz",
+            "Limité",
+            "Peur"
+          ]
+        },
+        {
+          "mode": "grenades fumigènes",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "4+",
+          "traits": [
+            "Fumée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-toile",
+      "nom": "Lance-toile",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Silencieux",
+            "Souffle",
+            "Toile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "long-fusil",
+      "nom": "Long fusil",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "24\"",
+          "porL": "48\"",
+          "preC": "-",
+          "preL": "+1",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "long-fusil-laser",
+      "nom": "Long fusil laser",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "18\"",
+          "porL": "36\"",
+          "preC": "-",
+          "preL": "+1",
+          "F": "4",
+          "PA": "-",
+          "D": "1",
+          "Mu": "2+",
+          "traits": [
+            "Abondance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "projecteur-chimique-belladone",
+      "nom": "Projecteur chimique \"Belladone\"",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Gaz",
+            "Silencieux",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "souffle-a-eruption-gazeuse-khimerix-escher",
+      "nom": "Souffle à éruption gazeuse (Khimerix Escher)",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Gaz",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "souffle-a-nuage-chimique-khimerix-escher",
+      "nom": "Souffle à nuage chimique (Khimerix Escher)",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Explosion (3\")"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arbalete-lourde-cawdor",
+      "nom": "Arbalète lourde Cawdor",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": "Frag",
+          "porC": "15\"",
+          "porL": "30\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "4",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup",
+            "Encombrant",
+            "Explosion (5\")"
+          ]
+        },
+        {
+          "mode": "Krak",
+          "porC": "15\"",
+          "porL": "30\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "6",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bolter-lourd",
+      "nom": "Bolter lourd",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "18\"",
+          "porL": "36\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "5",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Encombrant",
+            "Tir Rapide (2)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canon-a-plasma",
+      "nom": "Canon à plasma",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": "basse puissance",
+          "porC": "18\"",
+          "porL": "36\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "6",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Encombrant",
+            "Rareté",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "puissance maximale",
+          "porC": "18\"",
+          "porL": "36\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "8",
+          "PA": "-2",
+          "D": "3",
+          "Mu": "5+",
+          "traits": [
+            "Encombrant",
+            "Explosion (3\")",
+            "Instable",
+            "Rareté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canon-a-radiations",
+      "nom": "Canon à radiations",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "16\"",
+          "porL": "32\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "2",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Encombrant",
+            "Explosion (5\")",
+            "Radiations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canon-a-rivets-cribleur",
+      "nom": "Canon à rivets \"Cribleur\"",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": "tir rapide",
+          "porC": "3\"",
+          "porL": "9\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "3+",
+          "traits": [
+            "Perforant",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "rivet surchauffé",
+          "porC": "3\"",
+          "porL": "9\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "6",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "3+",
+          "traits": [
+            "Incendiaire",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canon-laser",
+      "nom": "Canon laser",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "24\"",
+          "porL": "48\"",
+          "preC": "-",
+          "preL": "+1",
+          "F": "10",
+          "PA": "-3",
+          "D": "3",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup",
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "canon-sismique",
+      "nom": "Canon sismique",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": "onde courte",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "6",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Contrecoup",
+            "Encombrant",
+            "Sismique",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "onde longue",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Contrecoup",
+            "Encombrant",
+            "Sismique",
+            "Tir Rapide (2)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "carabine-laser-lourde-jumelee-arachnirig-van-saar",
+      "nom": "Carabine laser lourde jumelée (Arachnirig Van Saar)",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "15\"",
+          "porL": "30\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Abondance",
+            "Tir Rapide (3)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-flammes-lourd",
+      "nom": "Lance-flammes lourd",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Encombrant",
+            "Incendiaire",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-harpon",
+      "nom": "Lance-harpon",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "6\"",
+          "porL": "18\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "5",
+          "PA": "-3",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Empalement",
+            "Rareté",
+            "Traction"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-missiles",
+      "nom": "Lance-missiles",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": "missile Frag",
+          "porC": "24\"",
+          "porL": "48\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Contrecoup",
+            "Encombrant",
+            "Explosion (5\")"
+          ]
+        },
+        {
+          "mode": "missile Krak",
+          "porC": "24\"",
+          "porL": "48\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "6",
+          "PA": "-2",
+          "D": "3",
+          "Mu": "6+",
+          "traits": [
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "laser-minier",
+      "nom": "Laser minier",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "18\"",
+          "porL": "24\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "9",
+          "PA": "-3",
+          "D": "3",
+          "Mu": "3+",
+          "traits": [
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mitrailleuse",
+      "nom": "Mitrailleuse",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "20\"",
+          "porL": "40\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Encombrant",
+            "Tir Rapide (2)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mitrailleuse-jumelee-stig-shambler-cawdor",
+      "nom": "Mitrailleuse jumelée (Stig-Shambler Cawdor)",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "20\"",
+          "porL": "40\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Encombrant",
+            "Tir Rapide (3)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multi-fuseur",
+      "nom": "Multi-fuseur",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "8",
+          "PA": "-4",
+          "D": "3",
+          "Mu": "4+",
+          "traits": [
+            "Encombrant",
+            "Explosion (3\")",
+            "Fusion",
+            "Rareté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bombes-a-fusion",
+      "nom": "Bombes à fusion",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-1",
+          "F": "8",
+          "PA": "-4",
+          "D": "3",
+          "Mu": "6+",
+          "traits": [
+            "Démolition",
+            "Fusion",
+            "Grenade",
+            "Rareté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "charges-de-demolition",
+      "nom": "Charges de démolition",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx2",
+          "preC": "-",
+          "preL": "-",
+          "F": "6",
+          "PA": "-3",
+          "D": "2",
+          "Mu": "*",
+          "traits": [
+            "Explosion (5\")",
+            "Grenade",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "charges-explosives",
+      "nom": "Charges explosives",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx2",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Contrecoup",
+            "Explosion (5\")",
+            "Grenade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "charges-incendiaires",
+      "nom": "Charges incendiaires",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Explosion (5\")",
+            "Grenade",
+            "Incendiaire"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grenades-a-radiations",
+      "nom": "Grenades à radiations",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Explosion (5\")",
+            "Grenade",
+            "Radiations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grenades-asphyxiantes",
+      "nom": "Grenades asphyxiantes",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Explosion (3\")",
+            "Gaz",
+            "Grenade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grenades-aveuglantes",
+      "nom": "Grenades aveuglantes",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Aveuglant",
+            "Explosion (5\")",
+            "Grenade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grenades-cauchemar",
+      "nom": "Grenades cauchemar",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Explosion (3\")",
+            "Gaz",
+            "Grenade",
+            "Peur"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grenades-frag",
+      "nom": "Grenades Frag",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup",
+            "Explosion (3\")",
+            "Grenade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grenades-fumigenes",
+      "nom": "Grenades fumigènes",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "4+",
+          "traits": [
+            "Fumée",
+            "Grenade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grenades-incapacitantes",
+      "nom": "Grenades incapacitantes",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Commotion",
+            "Grenade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "grenades-krak",
+      "nom": "Grenades Krak",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-1",
+          "F": "6",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Démolition",
+            "Grenade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "piege-a-frag",
+      "nom": "Piège à Frag",
+      "categorie": "Pièges",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "-",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Explosion (5\")",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "piege-a-fusion",
+      "nom": "Piège à fusion",
+      "categorie": "Pièges",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "-",
+          "preC": "-",
+          "preL": "-",
+          "F": "8",
+          "PA": "-4",
+          "D": "3",
+          "Mu": "-",
+          "traits": [
+            "Explosion (5\")",
+            "Fusion",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "piege-a-gaz",
+      "nom": "Piège à gaz",
+      "categorie": "Pièges",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "-",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Explosion (5\")",
+            "Gaz",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "couteau-de-combat",
+      "nom": "Couteau de combat",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Coup en Traître",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "couteau-energetique",
+      "nom": "Couteau énergétique",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Coup en Traître",
+            "Mêlée",
+            "Énergétique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stylet",
+      "nom": "Stylet",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haste-cawdor-stig-shambler-cawdor",
+      "nom": "Haste Cawdor (Stig-shambler Cawdor)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Encombrant",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arme-de-melee-de-servitor-orlock-lugger",
+      "nom": "Arme de mêlée de Servitor (Orlock Lugger)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bec-serres-sheen-bird-cawdor",
+      "nom": "Bec & serres (Sheen bird Cawdor)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "derouilleuse",
+      "nom": "Dérouilleuse",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digilaser",
+      "nom": "Digilaser",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "3\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Digi",
+            "Mêlée",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epee",
+      "nom": "Épée",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Parade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epee-tronconneuse",
+      "nom": "Épée tronçonneuse",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Parade",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fleau",
+      "nom": "Fléau",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Empêtrement",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gantelet-a-gravitons-ambot",
+      "nom": "Gantelet à gravitons (Ambot)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": "mêlée",
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Pulvériser"
+          ]
+        },
+        {
+          "mode": "tir",
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "*",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Explosion (3\")",
+            "Gravitons",
+            "Commotion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gantelet-lance-toile",
+      "nom": "Gantelet lance-toile",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "3",
+          "PA": "-",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Coup en Traître",
+            "Mêlée",
+            "Toile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "griffes-khimerix-escher-et-phyrr-cat-escher",
+      "nom": "Griffes (Khimerix Escher et Phyrr Cat Escher)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Pulvériser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "griffes-excavatrices-ambot",
+      "nom": "Griffes excavatrices (Ambot)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": "mêlée",
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée"
+          ]
+        },
+        {
+          "mode": "tir",
+          "porC": "2\"",
+          "porL": "4\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "6",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Fusion",
+            "Rareté",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "griffes-rasoirs-khimerix-escher",
+      "nom": "Griffes rasoirs (Khimerix Escher)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-2",
+          "D": "3",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hache",
+      "nom": "Hache",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Désarmement",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hache-tronconneuse",
+      "nom": "Hache tronçonneuse",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Désarmement",
+            "Mêlée",
+            "Parade",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hachoir-de-brute",
+      "nom": "Hachoir de brute",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Désarmement",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "machoires-feroces-sumpkroc-goliath",
+      "nom": "Mâchoires féroces (Sumpkroc Goliath)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mains-nues-zerker-goliath",
+      "nom": "Mains nues (Zerker Goliath)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masse-matraque",
+      "nom": "Masse (matraque)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "+1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "matraque-lourde-stig-shambler-cawdor",
+      "nom": "Matraque lourde (Stig-shambler Cawdor)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morsure-sauvage-cyber-mastiff",
+      "nom": "Morsure sauvage (Cyber-mastiff)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Désarmement",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "morsure-venimeuse-cyberachnid-van-saar",
+      "nom": "Morsure venimeuse (Cyberachnid Van Saar)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poing-augmentique-jotunn-servitor",
+      "nom": "Poing augmentique (\"Jotunn\" Servitor)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poings-mutants-excroissances-osseuses-zerker-goliath",
+      "nom": "Poings mutants & excroissances osseuses (Zerker Goliath)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Mêlée",
+            "Pulvériser",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rapiere",
+      "nom": "Rapière",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-1",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Parade",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "servobras-servo-suit-van-saar",
+      "nom": "Servobras (Servo-suit Van Saar)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "3\"",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "servopince",
+      "nom": "Servopince",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soudeuse-a-l-arc-jotunn-servitor",
+      "nom": "Soudeuse à l'arc (\"Jotunn\" Servitor)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-3",
+          "D": "3",
+          "Mu": "-",
+          "traits": [
+            "Incendiaire",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bouclier-d-energie-modele-hystrar",
+      "nom": "Bouclier d'énergie modèle \"Hystrar\"",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Bouclier à énergie",
+            "Contrecoup",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decoupeur-laser",
+      "nom": "Découpeur laser",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "9",
+          "PA": "-3",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Mêlée",
+            "Rareté",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "electrobaton",
+      "nom": "Électrobâton",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Parade",
+            "Choc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "electrofouet",
+      "nom": "Électrofouet",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "3\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Choc",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "electrosceptre",
+      "nom": "Électrosceptre",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Choc",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "electrovrilles-cephalopod-spekter-delaque",
+      "nom": "Électrovrilles (Cephalopod Spekter Delaque)",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Choc",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epee-energetique",
+      "nom": "Épée énergétique",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Parade",
+            "Énergétique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hache-energetique",
+      "nom": "Hache énergétique",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Désarmement",
+            "Mêlée",
+            "Énergétique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marteau-energetique",
+      "nom": "Marteau énergétique",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Énergétique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marteau-thunder",
+      "nom": "Marteau Thunder",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "3",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Énergétique",
+            "Choc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "masse-energetique",
+      "nom": "Masse énergétique",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Énergétique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pioche-energetique",
+      "nom": "Pioche énergétique",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-3",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Énergétique",
+            "Pulvériser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cisaille-lourde",
+      "nom": "Cisaille lourde",
+      "categorie": "Armes à deux mains",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+4",
+          "PA": "-4",
+          "D": "3",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "disqueuse-lourde",
+      "nom": "Disqueuse lourde",
+      "categorie": "Armes à deux mains",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F+3",
+          "PA": "-3",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Perforant",
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "foreuse-lourde",
+      "nom": "Foreuse lourde",
+      "categorie": "Armes à deux mains",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-3",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Pulvériser",
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hache-a-deux-mains",
+      "nom": "Hache à deux mains",
+      "categorie": "Armes à deux mains",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-1",
+          "F": "F+2",
+          "PA": "-",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hache-dentelee-dechiqueteuse",
+      "nom": "Hache dentelée \"déchiqueteuse\"",
+      "categorie": "Armes à deux mains",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Pulvériser",
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marteau-a-deux-mains",
+      "nom": "Marteau à deux mains",
+      "categorie": "Armes à deux mains",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-1",
+          "F": "F+1",
+          "PA": "-",
+          "D": "3",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Mêlée",
+            "Encombrant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vouge-tronconneur",
+      "nom": "Vouge tronçonneur",
+      "categorie": "Armes à deux mains",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Encombrant",
+            "Polyvalent"
+          ]
+        }
+      ]
+    }
+  ]
+}

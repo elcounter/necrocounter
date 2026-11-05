@@ -1,0 +1,1101 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre de règles N23 (version française)",
+  "objets": [
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "rarete": "Rare (8)",
+      "categorie": "Armes de base",
+      "id": "bolter"
+    },
+    {
+      "nom": "Couteaux de lancer",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Armes de base",
+      "id": "couteaux-de-lancer"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "rarete": "Commune",
+      "categorie": "Armes de base",
+      "id": "fusil-a-canon-scie"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "rarete": "Commune",
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-grenaille"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Executioner)",
+      "prix": 20,
+      "rarete": "Rare (9)",
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-executioner"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Inferno)",
+      "prix": 15,
+      "rarete": "Rare (8)",
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-inferno"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "rarete": "Commune",
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-de-recup"
+    },
+    {
+      "nom": "Fusil de combat (salve & nuage de grenaille)",
+      "prix": 70,
+      "rarete": "Rare (7)",
+      "categorie": "Armes de base",
+      "id": "fusil-de-combat-salve-nuage-de-grenaille"
+    },
+    {
+      "nom": "Fusil de combat (munitions Firestorm)",
+      "prix": 30,
+      "rarete": "Rare (8)",
+      "categorie": "Armes de base",
+      "id": "fusil-de-combat-munitions-firestorm"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "rarete": "Commune",
+      "categorie": "Armes de base",
+      "id": "fusil-laser"
+    },
+    {
+      "nom": "Combi-pistolet (pistolet-mitrailleur/lance-flammes léger)",
+      "prix": 65,
+      "rarete": "Rare (10)",
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-pistolet-mitrailleur-lance-flammes-leger"
+    },
+    {
+      "nom": "Combi-pistolet (pistolet-mitrailleur/pistolet à plasma)",
+      "prix": 50,
+      "rarete": "Rare (10)",
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-pistolet-mitrailleur-pistolet-a-plasma"
+    },
+    {
+      "nom": "Combi-pistolet (pistolet bolter/lance-flammes léger)",
+      "prix": 110,
+      "rarete": "Rare (11)",
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-pistolet-bolter-lance-flammes-leger"
+    },
+    {
+      "nom": "Combi-pistolet (pistolet bolter/pistolet à plasma)",
+      "prix": 80,
+      "rarete": "Rare (11)",
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-pistolet-bolter-pistolet-a-plasma"
+    },
+    {
+      "nom": "Combi-pistolet (flingue/pistolet à plasma)",
+      "prix": 40,
+      "rarete": "Rare (8)",
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-flingue-pistolet-a-plasma"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "rarete": "Commune",
+      "categorie": "Pistolets",
+      "id": "flingue"
+    },
+    {
+      "nom": "Balles dum-dum",
+      "prix": 5,
+      "rarete": "Rare (7)",
+      "categorie": "Pistolets",
+      "id": "balles-dum-dum"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "rarete": "Rare (8)",
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger"
+    },
+    {
+      "nom": "Lance-toile léger",
+      "prix": 90,
+      "rarete": "Rare (9)",
+      "categorie": "Pistolets",
+      "id": "lance-toile-leger"
+    },
+    {
+      "nom": "Pistolet à aiguilles",
+      "prix": 30,
+      "rarete": "Rare (9)",
+      "categorie": "Pistolets",
+      "id": "pistolet-a-aiguilles"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "rarete": "Rare (9)",
+      "categorie": "Pistolets",
+      "id": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Pistolet bolter",
+      "prix": 45,
+      "rarete": "Rare (8)",
+      "categorie": "Pistolets",
+      "id": "pistolet-bolter"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Pistolets",
+      "id": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "rarete": "Commune",
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-de-recup"
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-flammes)",
+      "prix": 110,
+      "rarete": "Rare (10)",
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-fusil-d-assaut-lance-flammes"
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-grenades (Frag))",
+      "prix": 30,
+      "rarete": "Rare (7)",
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-fusil-d-assaut-lance-grenades-frag"
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-flammes)",
+      "prix": 180,
+      "rarete": "Rare (8)",
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-lance-flammes"
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-grenades (Frag))",
+      "prix": 60,
+      "rarete": "Rare (8)",
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-lance-grenades-frag"
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 170,
+      "rarete": "Rare (12)",
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-fuseur"
+    },
+    {
+      "nom": "Arme combinée (bolter à aiguille)",
+      "prix": 90,
+      "rarete": "Rare (10)",
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-a-aiguille"
+    },
+    {
+      "nom": "Arme combinée (bolter/plasma)",
+      "prix": 115,
+      "rarete": "Rare (10)",
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-plasma"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "rarete": "Rare (11)",
+      "categorie": "Armes spéciales",
+      "id": "fuseur"
+    },
+    {
+      "nom": "Fusil à aiguilles",
+      "prix": 40,
+      "rarete": "Rare (9)",
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-aiguilles"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "rarete": "Rare (11)",
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-gravitons"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "rarete": "Rare (9)",
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-plasma"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 65,
+      "rarete": "Rare (8)",
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-frag-krak"
+    },
+    {
+      "nom": "Lance-grenades (grenades asphyxiantes)",
+      "prix": 35,
+      "rarete": "Rare (9)",
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-asphyxiantes"
+    },
+    {
+      "nom": "Lance-grenades (grenades aveuglantes)",
+      "prix": 15,
+      "rarete": "Rare (9)",
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-aveuglantes"
+    },
+    {
+      "nom": "Lance-grenades (grenades cauchemar)",
+      "prix": 45,
+      "rarete": "Rare (10)",
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-cauchemar"
+    },
+    {
+      "nom": "Lance-grenades (grenades fumigènes)",
+      "prix": 15,
+      "rarete": "Commune",
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-fumigenes"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "rarete": "Rare (7)",
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes"
+    },
+    {
+      "nom": "Lance-toile",
+      "prix": 125,
+      "rarete": "Rare (9)",
+      "categorie": "Armes spéciales",
+      "id": "lance-toile"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "rarete": "Rare (7)",
+      "categorie": "Armes spéciales",
+      "id": "long-fusil"
+    },
+    {
+      "nom": "Long fusil laser",
+      "prix": 20,
+      "rarete": "Commune",
+      "categorie": "Armes spéciales",
+      "id": "long-fusil-laser"
+    },
+    {
+      "nom": "Bolter lourd",
+      "prix": 160,
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "categorie": "Armes lourdes",
+      "id": "bolter-lourd"
+    },
+    {
+      "nom": "Canon à plasma",
+      "prix": 130,
+      "compteDouble": true,
+      "rarete": "Rare (11)",
+      "categorie": "Armes lourdes",
+      "id": "canon-a-plasma"
+    },
+    {
+      "nom": "Canon laser",
+      "prix": 155,
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "categorie": "Armes lourdes",
+      "id": "canon-laser"
+    },
+    {
+      "nom": "Canon sismique",
+      "prix": 140,
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "categorie": "Armes lourdes",
+      "id": "canon-sismique"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Lance-harpon",
+      "prix": 110,
+      "compteDouble": true,
+      "rarete": "Rare (9)",
+      "categorie": "Armes lourdes",
+      "id": "lance-harpon"
+    },
+    {
+      "nom": "Lance-missiles (avec missiles Frag & Krak)",
+      "prix": 165,
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "categorie": "Armes lourdes",
+      "id": "lance-missiles-avec-missiles-frag-krak"
+    },
+    {
+      "nom": "Laser minier",
+      "prix": 125,
+      "compteDouble": true,
+      "rarete": "Rare (9); Rare (8 Orlock)",
+      "categorie": "Armes lourdes",
+      "id": "laser-minier"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "rarete": "Rare (7)",
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse"
+    },
+    {
+      "nom": "Multi-fuseur",
+      "prix": 180,
+      "compteDouble": true,
+      "rarete": "Rare (11)",
+      "categorie": "Armes lourdes",
+      "id": "multi-fuseur"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "rarete": "Commune",
+      "categorie": "Couteaux",
+      "id": "couteau-de-combat"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "rarete": "Rare (9)",
+      "categorie": "Couteaux",
+      "id": "couteau-energetique"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "rarete": "Rare (9)",
+      "categorie": "Couteaux",
+      "id": "stylet"
+    },
+    {
+      "nom": "Digilaser",
+      "prix": 25,
+      "rarete": "Rare (10)",
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "digilaser"
+    },
+    {
+      "nom": "Épée",
+      "prix": 20,
+      "rarete": "Rare (6)",
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "epee"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "rarete": "Rare (8)",
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "epee-tronconneuse"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "rarete": "Commune",
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "fleau"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "hache"
+    },
+    {
+      "nom": "Hache tronçonneuse",
+      "prix": 30,
+      "rarete": "Rare (9)",
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "hache-tronconneuse"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "masse-matraque"
+    },
+    {
+      "nom": "Rapière",
+      "prix": 35,
+      "rarete": "Rare (9)",
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "rapiere"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 35,
+      "rarete": "Rare (10)",
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "servopince"
+    },
+    {
+      "nom": "Découpeur laser",
+      "prix": 85,
+      "rarete": "Rare (10)",
+      "categorie": "Armes à énergie/choc",
+      "id": "decoupeur-laser"
+    },
+    {
+      "nom": "Électrobâton",
+      "prix": 30,
+      "rarete": "Rare (8)",
+      "categorie": "Armes à énergie/choc",
+      "id": "electrobaton"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "rarete": "Rare (9)",
+      "categorie": "Armes à énergie/choc",
+      "id": "electrosceptre"
+    },
+    {
+      "nom": "Épée énergétique",
+      "prix": 50,
+      "rarete": "Rare (9)",
+      "categorie": "Armes à énergie/choc",
+      "id": "epee-energetique"
+    },
+    {
+      "nom": "Hache énergétique",
+      "prix": 35,
+      "rarete": "Rare (8)",
+      "categorie": "Armes à énergie/choc",
+      "id": "hache-energetique"
+    },
+    {
+      "nom": "Marteau énergétique",
+      "prix": 45,
+      "rarete": "Rare (8)",
+      "categorie": "Armes à énergie/choc",
+      "id": "marteau-energetique"
+    },
+    {
+      "nom": "Marteau Thunder",
+      "prix": 70,
+      "rarete": "Rare (11)",
+      "categorie": "Armes à énergie/choc",
+      "id": "marteau-thunder"
+    },
+    {
+      "nom": "Masse énergétique",
+      "prix": 30,
+      "rarete": "Rare (8)",
+      "categorie": "Armes à énergie/choc",
+      "id": "masse-energetique"
+    },
+    {
+      "nom": "Pioche énergétique",
+      "prix": 40,
+      "rarete": "Rare (8)",
+      "categorie": "Armes à énergie/choc",
+      "id": "pioche-energetique"
+    },
+    {
+      "nom": "Cisaille lourde",
+      "prix": 135,
+      "compteDouble": true,
+      "rarete": "Rare (9); Rare (8 Goliath & Orlock)",
+      "categorie": "Armes à deux mains",
+      "id": "cisaille-lourde"
+    },
+    {
+      "nom": "Disqueuse lourde",
+      "prix": 120,
+      "compteDouble": true,
+      "rarete": "Rare (9)",
+      "categorie": "Armes à deux mains",
+      "id": "disqueuse-lourde"
+    },
+    {
+      "nom": "Foreuse lourde",
+      "prix": 90,
+      "compteDouble": true,
+      "rarete": "Rare (9)",
+      "categorie": "Armes à deux mains",
+      "id": "foreuse-lourde"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "rarete": "Commune",
+      "categorie": "Armes à deux mains",
+      "id": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "rarete": "Commune",
+      "categorie": "Armes à deux mains",
+      "id": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Vouge tronçonneur",
+      "prix": 60,
+      "compteDouble": true,
+      "rarete": "Rare (7)",
+      "categorie": "Armes à deux mains",
+      "id": "vouge-tronconneur"
+    },
+    {
+      "nom": "Bombes à fusion",
+      "prix": 60,
+      "rarete": "Rare (11)",
+      "categorie": "Grenades",
+      "id": "bombes-a-fusion"
+    },
+    {
+      "nom": "Charges de démolition",
+      "prix": 50,
+      "rarete": "Rare (12)",
+      "categorie": "Grenades",
+      "id": "charges-de-demolition"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "rarete": "Rare (8)",
+      "categorie": "Grenades",
+      "id": "charges-explosives"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "rarete": "Rare (7)",
+      "categorie": "Grenades",
+      "id": "charges-incendiaires"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "rarete": "Rare (9)",
+      "categorie": "Grenades",
+      "id": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "rarete": "Rare (9)",
+      "categorie": "Grenades",
+      "id": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 45,
+      "rarete": "Rare (10)",
+      "categorie": "Grenades",
+      "id": "grenades-cauchemar"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "rarete": "Commune",
+      "categorie": "Grenades",
+      "id": "grenades-frag"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "rarete": "Commune",
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 15,
+      "rarete": "Rare (8)",
+      "categorie": "Grenades",
+      "id": "grenades-incapacitantes"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "rarete": "Rare (8)",
+      "categorie": "Grenades",
+      "id": "grenades-krak"
+    },
+    {
+      "nom": "Armure carapace (légère)",
+      "prix": 80,
+      "rarete": "Rare (10)",
+      "categorie": "Armures",
+      "id": "armure-carapace-legere"
+    },
+    {
+      "nom": "Armure carapace (lourde)",
+      "prix": 100,
+      "rarete": "Rare (11)",
+      "categorie": "Armures",
+      "id": "armure-carapace-lourde"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "rarete": "Commune",
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Combinaison NBC",
+      "prix": 10,
+      "rarete": "Rare (10)",
+      "categorie": "Armures",
+      "id": "combinaison-nbc"
+    },
+    {
+      "nom": "Champ convecteur",
+      "prix": 60,
+      "rarete": "Rare (11)",
+      "categorie": "Champs protecteurs",
+      "id": "champ-convecteur"
+    },
+    {
+      "nom": "Champ réfracteur",
+      "prix": 50,
+      "rarete": "Rare (10)",
+      "categorie": "Champs protecteurs",
+      "id": "champ-refracteur"
+    },
+    {
+      "nom": "Champ téléporteur",
+      "prix": 70,
+      "rarete": "Rare (12)",
+      "categorie": "Champs protecteurs",
+      "id": "champ-teleporteur"
+    },
+    {
+      "nom": "Bras bionique, ordinaire",
+      "prix": 45,
+      "rarete": "Rare (13)",
+      "categorie": "Bioniques",
+      "id": "bras-bionique-ordinaire"
+    },
+    {
+      "nom": "Cogitateur cortical, amélioré",
+      "prix": 30,
+      "rarete": "Rare (12)",
+      "categorie": "Bioniques",
+      "id": "cogitateur-cortical-ameliore"
+    },
+    {
+      "nom": "Cogitateur cortical, ordinaire",
+      "prix": 15,
+      "rarete": "Rare (11)",
+      "categorie": "Bioniques",
+      "id": "cogitateur-cortical-ordinaire"
+    },
+    {
+      "nom": "Jambe bionique, ordinaire",
+      "prix": 25,
+      "rarete": "Rare (12)",
+      "categorie": "Bioniques",
+      "id": "jambe-bionique-ordinaire"
+    },
+    {
+      "nom": "Lobo-puce, améliorée",
+      "prix": 45,
+      "rarete": "Rare (12)",
+      "categorie": "Bioniques",
+      "id": "lobo-puce-amelioree"
+    },
+    {
+      "nom": "Lobo-puce, ordinaire",
+      "prix": 20,
+      "rarete": "Rare (11)",
+      "categorie": "Bioniques",
+      "id": "lobo-puce-ordinaire"
+    },
+    {
+      "nom": "Œil bionique, ordinaire",
+      "prix": 45,
+      "rarete": "Rare (13)",
+      "categorie": "Bioniques",
+      "id": "il-bionique-ordinaire"
+    },
+    {
+      "nom": "Renforts squelettiques, ordinaires",
+      "prix": 70,
+      "rarete": "Rare (13)",
+      "categorie": "Bioniques",
+      "id": "renforts-squelettiques-ordinaires"
+    },
+    {
+      "nom": "Surpresseur aortique, ordinaire",
+      "prix": 65,
+      "rarete": "Rare (13)",
+      "categorie": "Bioniques",
+      "id": "surpresseur-aortique-ordinaire"
+    },
+    {
+      "nom": "Cache de munitions",
+      "prix": 60,
+      "rarete": "Rare (8)",
+      "categorie": "Équipement de gang",
+      "id": "cache-de-munitions"
+    },
+    {
+      "nom": "Pièges (piège à Frag)",
+      "prix": 20,
+      "rarete": "Commune",
+      "categorie": "Équipement de gang",
+      "id": "pieges-piege-a-frag"
+    },
+    {
+      "nom": "Pièges (piège à fusion)",
+      "prix": 50,
+      "rarete": "Rare (10)",
+      "categorie": "Équipement de gang",
+      "id": "pieges-piege-a-fusion"
+    },
+    {
+      "nom": "Pièges (piège à gaz)",
+      "prix": 40,
+      "rarete": "Rare (8)",
+      "categorie": "Équipement de gang",
+      "id": "pieges-piege-a-gaz"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "rarete": "Rare (8)",
+      "categorie": "Équipement personnel",
+      "id": "bio-booster"
+    },
+    {
+      "nom": "Bio-scanner",
+      "prix": 30,
+      "rarete": "Rare (8)",
+      "categorie": "Équipement personnel",
+      "id": "bio-scanner"
+    },
+    {
+      "nom": "Chimiosynth",
+      "prix": 15,
+      "rarete": "Rare (12)",
+      "categorie": "Équipement personnel",
+      "id": "chimiosynth"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Équipement personnel",
+      "id": "filin"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Grav-chute",
+      "prix": 50,
+      "rarete": "Rare (10)",
+      "categorie": "Équipement personnel",
+      "id": "grav-chute"
+    },
+    {
+      "nom": "Kit de démontage",
+      "prix": 15,
+      "rarete": "Commune",
+      "categorie": "Équipement personnel",
+      "id": "kit-de-demontage"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "rarete": "Commune",
+      "categorie": "Équipement personnel",
+      "id": "lame-sous-cutanee"
+    },
+    {
+      "nom": "Lance-grappin",
+      "prix": 25,
+      "rarete": "Commune",
+      "categorie": "Équipement personnel",
+      "id": "lance-grappin"
+    },
+    {
+      "nom": "Médikit",
+      "prix": 30,
+      "rarete": "Rare (9)",
+      "categorie": "Équipement personnel",
+      "id": "medikit"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "rarete": "Rare (9)",
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Planque de stim",
+      "prix": 30,
+      "accessoireUnique": true,
+      "rarete": "Rare (7)",
+      "categorie": "Équipement personnel",
+      "id": "planque-de-stim"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "rarete": "Commune",
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Servo-harnais, intégral",
+      "prix": 160,
+      "rarete": "Rare (12); Rare (11 Goliath & Orlock); Rare (10 Van Saar)",
+      "categorie": "Équipement personnel",
+      "id": "servo-harnais-integral"
+    },
+    {
+      "nom": "Servo-harnais, partiel",
+      "prix": 130,
+      "rarete": "Rare (12); Rare (11 Goliath & Orlock); Rare (10 Van Saar)",
+      "categorie": "Équipement personnel",
+      "id": "servo-harnais-partiel"
+    },
+    {
+      "nom": "Solvant à toile",
+      "prix": 25,
+      "rarete": "Rare (8)",
+      "categorie": "Équipement personnel",
+      "id": "solvant-a-toile"
+    },
+    {
+      "nom": "Sous-combinaison renforcée",
+      "prix": 25,
+      "rarete": "Rare (7)",
+      "categorie": "Équipement personnel",
+      "id": "sous-combinaison-renforcee"
+    },
+    {
+      "nom": "Lunette (armes de base, spéciales et lourdes)",
+      "prix": 35,
+      "rarete": "Rare (9)",
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-armes-de-base-speciales-et-lourdes"
+    },
+    {
+      "nom": "Lunette infrarouge (toute arme de tir)",
+      "prix": 40,
+      "rarete": "Rare (8)",
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-infrarouge-toute-arme-de-tir"
+    },
+    {
+      "nom": "Lunette télescopique (pistolets, armes de base et spéciales)",
+      "prix": 25,
+      "rarete": "Commune",
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-telescopique-pistolets-armes-de-base-et-speciales"
+    },
+    {
+      "nom": "Pointeur laser (pistolets, armes de base et spéciales)",
+      "prix": 35,
+      "rarete": "Rare (9)",
+      "categorie": "Accessoires d'armes",
+      "id": "pointeur-laser-pistolets-armes-de-base-et-speciales"
+    },
+    {
+      "nom": "Suppresseur (armes de base et pistolets)",
+      "prix": 20,
+      "rarete": "Rare (8)",
+      "categorie": "Accessoires d'armes",
+      "id": "suppresseur-armes-de-base-et-pistolets"
+    },
+    {
+      "nom": "Surgénérateur d'arme laser (fusil laser et pistolet laser)",
+      "prix": 20,
+      "rarete": "Commune",
+      "categorie": "Accessoires d'armes",
+      "id": "surgenerateur-d-arme-laser-fusil-laser-et-pistolet-laser"
+    },
+    {
+      "nom": "Suspenseur (armes lourdes)",
+      "prix": 60,
+      "rarete": "Rare (10)",
+      "categorie": "Accessoires d'armes",
+      "id": "suspenseur-armes-lourdes"
+    },
+    {
+      "nom": "Arme de maître (coût de l'arme +25 %, arrondi aux 5 crédits)",
+      "prix": 0,
+      "rarete": "Rare (10)",
+      "categorie": "Objets de prestige",
+      "id": "arme-de-maitre-cout-de-l-arme-25-arrondi-aux-5-credits"
+    },
+    {
+      "nom": "Arme plaquée or",
+      "prix": 40,
+      "rarete": "Rare (10)",
+      "categorie": "Objets de prestige",
+      "id": "arme-plaquee-or"
+    },
+    {
+      "nom": "Atours de la Spire",
+      "prix": 50,
+      "rarete": "Rare (10)",
+      "categorie": "Objets de prestige",
+      "id": "atours-de-la-spire"
+    },
+    {
+      "nom": "Bijoux opulents",
+      "prix": 80,
+      "rarete": "Rare (11)",
+      "categorie": "Objets de prestige",
+      "id": "bijoux-opulents"
+    },
+    {
+      "nom": "Fourrures exotiques",
+      "prix": 50,
+      "rarete": "Rare (12)",
+      "categorie": "Objets de prestige",
+      "id": "fourrures-exotiques"
+    },
+    {
+      "nom": "Médicrâne",
+      "prix": 80,
+      "rarete": "Rare (12)",
+      "categorie": "Objets de prestige",
+      "id": "medicrane"
+    },
+    {
+      "nom": "Pistocrâne",
+      "prix": 65,
+      "rarete": "Rare (12)",
+      "categorie": "Objets de prestige",
+      "id": "pistocrane"
+    },
+    {
+      "nom": "Sensocrâne",
+      "prix": 60,
+      "rarete": "Rare (12)",
+      "categorie": "Objets de prestige",
+      "id": "sensocrane"
+    },
+    {
+      "nom": "Caryatid (voir entrée, page 114)",
+      "prix": 0,
+      "rarete": "Rare (15)",
+      "categorie": "Bêtes exotiques",
+      "id": "caryatid-voir-entree-page-114"
+    },
+    {
+      "nom": "Cephalopod Spekter",
+      "prix": 100,
+      "rarete": "Rare (11 Delaque seulement)",
+      "categorie": "Bêtes exotiques",
+      "id": "cephalopod-spekter"
+    },
+    {
+      "nom": "Cyberachnid",
+      "prix": 75,
+      "rarete": "Rare (10 Van Saar seulement)",
+      "categorie": "Bêtes exotiques",
+      "id": "cyberachnid"
+    },
+    {
+      "nom": "Cyber-mastiff",
+      "prix": 100,
+      "rarete": "Rare (10 Orlock seulement)",
+      "categorie": "Bêtes exotiques",
+      "id": "cyber-mastiff"
+    },
+    {
+      "nom": "Phyrr Cat",
+      "prix": 120,
+      "rarete": "Rare (12 Escher seulement)",
+      "categorie": "Bêtes exotiques",
+      "id": "phyrr-cat"
+    },
+    {
+      "nom": "Sheen bird",
+      "prix": 90,
+      "rarete": "Rare (12 Cawdor seulement)",
+      "categorie": "Bêtes exotiques",
+      "id": "sheen-bird"
+    },
+    {
+      "nom": "Sumpkroc",
+      "prix": 130,
+      "rarete": "Rare (11 Goliath seulement)",
+      "categorie": "Bêtes exotiques",
+      "id": "sumpkroc"
+    }
+  ]
+}

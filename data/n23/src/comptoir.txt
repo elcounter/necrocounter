@@ -1,0 +1,201 @@
+# Comptoir Commercial — Necromunda N23
+# Colonnes : nom | prix (crédits) | rareté
+# "*" en fin de nom : compte pour deux armes. "'" en fin de nom : accessoire non cumulable.
+# Une ligne sans colonnes ouvre un objet à plusieurs variantes ; les lignes "- " suivantes en sont les variantes.
+# Rareté : "Commune", "Rare (N)" ou "Rare (N); Rare (M Maison)" pour un seuil propre à une maison.
+# Une ligne terminée par "?" signale une valeur douteuse à vérifier dans le livre.
+
+## Armes de base
+Bolter | 55 | Rare (8)
+Couteaux de lancer | 10 | Commune
+Fusil à canon scié | 15 | Commune
+Fusil à pompe
+- balles & grenaille | 30 | Commune
+- munitions Executioner | 20 | Rare (9)
+- munitions Inferno | 15 | Rare (8)
+Fusil d'assaut | 15 | Commune
+Fusil d'assaut de récup' | 10 | Commune
+Fusil de combat
+- salve & nuage de grenaille | 70 | Rare (7)
+- munitions Firestorm | 30 | Rare (8)
+Fusil laser | 15 | Commune
+
+## Pistolets
+Combi-pistolet
+- pistolet-mitrailleur/lance-flammes léger | 65 | Rare (10)
+- pistolet-mitrailleur/pistolet à plasma | 50 | Rare (10)
+- pistolet bolter/lance-flammes léger | 110 | Rare (11)
+- pistolet bolter/pistolet à plasma | 80 | Rare (11)
+- flingue/pistolet à plasma | 40 | Rare (8)
+Flingue | 5 | Commune
+Balles dum-dum | 5 | Rare (7)
+Lance-flammes léger | 75 | Rare (8)
+Lance-toile léger | 90 | Rare (9)
+Pistolet à aiguilles | 30 | Rare (9)
+Pistolet à plasma | 50 | Rare (9)
+Pistolet bolter | 45 | Rare (8)
+Pistolet laser | 10 | Commune
+Pistolet-mitrailleur | 10 | Commune
+Pistolet-mitrailleur de récup' | 5 | Commune
+
+## Armes spéciales
+Arme combinée
+- fusil d'assaut/lance-flammes | 110 | Rare (10)
+- fusil d'assaut/lance-grenades (Frag) | 30 | Rare (7)
+- bolter/lance-flammes | 180 | Rare (8)
+- bolter/lance-grenades (Frag) | 60 | Rare (8)
+- bolter/fuseur | 170 | Rare (12)
+- bolter à aiguille | 90 | Rare (10)
+- bolter/plasma | 115 | Rare (10)
+Fuseur | 135 | Rare (11)
+Fusil à aiguilles | 40 | Rare (9)
+Fusil à gravitons | 120 | Rare (11)
+Fusil à plasma | 100 | Rare (9)
+Lance-grenades
+- grenades Frag & Krak | 65 | Rare (8)
+- grenades asphyxiantes | 35 | Rare (9)
+- grenades aveuglantes | 15 | Rare (9)
+- grenades cauchemar | 45 | Rare (10)
+- grenades fumigènes | 15 | Commune
+Lance-flammes | 140 | Rare (7)
+Lance-toile | 125 | Rare (9)
+Long fusil | 30 | Rare (7)
+Long fusil laser | 20 | Commune
+
+## Armes lourdes
+Bolter lourd* | 160 | Rare (10)
+Canon à plasma* | 130 | Rare (11)
+Canon laser* | 155 | Rare (10)
+Canon sismique* | 140 | Rare (10)
+Lance-flammes lourd* | 195 | Rare (10)
+Lance-harpon* | 110 | Rare (9)
+Lance-missiles (avec missiles Frag & Krak)* | 165 | Rare (10)
+Laser minier* | 125 | Rare (9); Rare (8 Orlock)
+Mitrailleuse* | 130 | Rare (7)
+Multi-fuseur* | 180 | Rare (11)
+
+## Couteaux
+Couteau de combat | 15 | Commune
+Couteau énergétique | 25 | Rare (9)
+Stylet | 20 | Rare (9)
+
+## Armes de corps à corps ordinaires
+Digilaser | 25 | Rare (10)
+Épée | 20 | Rare (6)
+Épée tronçonneuse | 25 | Rare (8)
+Fléau | 20 | Commune
+Hache | 10 | Commune
+Hache tronçonneuse | 30 | Rare (9)
+Masse (matraque) | 10 | Commune
+Rapière | 35 | Rare (9)
+Servopince | 35 | Rare (10)
+
+## Armes à énergie/choc
+Découpeur laser | 85 | Rare (10)
+Électrobâton | 30 | Rare (8)
+Électrosceptre | 25 | Rare (9)
+Épée énergétique | 50 | Rare (9)
+Hache énergétique | 35 | Rare (8)
+Marteau énergétique | 45 | Rare (8)
+Marteau Thunder | 70 | Rare (11)
+Masse énergétique | 30 | Rare (8)
+Pioche énergétique | 40 | Rare (8)
+
+## Armes à deux mains
+Cisaille lourde* | 135 | Rare (9); Rare (8 Goliath & Orlock)
+Disqueuse lourde* | 120 | Rare (9)
+Foreuse lourde* | 90 | Rare (9)
+Hache à deux mains* | 25 | Commune
+Marteau à deux mains* | 35 | Commune
+Vouge tronçonneur* | 60 | Rare (7)
+
+## Grenades
+Bombes à fusion | 60 | Rare (11)
+Charges de démolition | 50 | Rare (12)
+Charges explosives | 35 | Rare (8)
+Charges incendiaires | 40 | Rare (7)
+Grenades asphyxiantes | 50 | Rare (9)
+Grenades aveuglantes | 15 | Rare (9)
+Grenades cauchemar | 45 | Rare (10)
+Grenades Frag | 30 | Commune
+Grenades fumigènes | 15 | Commune
+Grenades incapacitantes | 15 | Rare (8)
+Grenades Krak | 45 | Rare (8)
+
+## Armures
+Armure carapace
+- légère | 80 | Rare (10)
+- lourde | 100 | Rare (11)
+Armure composite | 15 | Commune
+Armure Flak | 10 | Commune
+Combinaison NBC | 10 | Rare (10)
+
+## Champs protecteurs
+Champ convecteur | 60 | Rare (11)
+Champ réfracteur | 50 | Rare (10)
+Champ téléporteur | 70 | Rare (12)
+
+## Bioniques
+Bras bionique, ordinaire | 45 | Rare (13)
+Cogitateur cortical, amélioré | 30 | Rare (12)
+Cogitateur cortical, ordinaire | 15 | Rare (11)
+Jambe bionique, ordinaire | 25 | Rare (12)
+Lobo-puce, améliorée | 45 | Rare (12)
+Lobo-puce, ordinaire | 20 | Rare (11)
+Œil bionique, ordinaire | 45 | Rare (13)
+Renforts squelettiques, ordinaires | 70 | Rare (13)
+Surpresseur aortique, ordinaire | 65 | Rare (13)
+
+## Équipement de gang
+Cache de munitions | 60 | Rare (8)
+Pièges
+- piège à Frag | 20 | Commune
+- piège à fusion | 50 | Rare (10)
+- piège à gaz | 40 | Rare (8)
+
+## Équipement personnel
+Bio-booster | 35 | Rare (8)
+Bio-scanner | 30 | Rare (8)
+Chimiosynth | 15 | Rare (12)
+Filin | 10 | Commune
+Filtre nasal | 10 | Commune
+Grav-chute | 50 | Rare (10)
+Kit de démontage | 15 | Commune
+Lame sous-cutanée | 10 | Commune
+Lance-grappin | 25 | Commune
+Médikit | 30 | Rare (9)
+Photolunettes | 35 | Rare (9)
+Planque de stim' | 30 | Rare (7)
+Respirateur | 15 | Commune
+Servo-harnais, intégral | 160 | Rare (12); Rare (11 Goliath & Orlock); Rare (10 Van Saar)
+Servo-harnais, partiel | 130 | Rare (12); Rare (11 Goliath & Orlock); Rare (10 Van Saar)
+Solvant à toile | 25 | Rare (8)
+Sous-combinaison renforcée | 25 | Rare (7)
+
+## Accessoires d'armes
+Lunette' (armes de base, spéciales et lourdes) | 35 | Rare (9)
+Lunette infrarouge' (toute arme de tir) | 40 | Rare (8)
+Lunette télescopique' (pistolets, armes de base et spéciales) | 25 | Commune
+Pointeur laser (pistolets, armes de base et spéciales) | 35 | Rare (9)
+Suppresseur (armes de base et pistolets) | 20 | Rare (8)
+Surgénérateur d'arme laser (fusil laser et pistolet laser) | 20 | Commune
+Suspenseur (armes lourdes) | 60 | Rare (10)
+
+## Objets de prestige
+Arme de maître (coût de l'arme +25 %, arrondi aux 5 crédits) | 0 | Rare (10)
+Arme plaquée or | 40 | Rare (10)
+Atours de la Spire | 50 | Rare (10)
+Bijoux opulents | 80 | Rare (11)
+Fourrures exotiques | 50 | Rare (12)
+Médicrâne | 80 | Rare (12)
+Pistocrâne | 65 | Rare (12)
+Sensocrâne | 60 | Rare (12)
+
+## Bêtes exotiques
+Caryatid (voir entrée, page 114) | 0 | Rare (15)
+Cephalopod Spekter | 100 | Rare (11 Delaque seulement)
+Cyberachnid | 75 | Rare (10 Van Saar seulement)
+Cyber-mastiff | 100 | Rare (10 Orlock seulement)
+Phyrr Cat | 120 | Rare (12 Escher seulement)
+Sheen bird | 90 | Rare (12 Cawdor seulement)
+Sumpkroc | 130 | Rare (11 Goliath seulement)

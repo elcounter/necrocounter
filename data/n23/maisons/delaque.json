@@ -1,0 +1,412 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre de règles N23 (version française)",
+  "reglesDeCreation": {
+    "novice": "Un Novice ne peut pas recevoir d'objet d'une valeur supérieure à 20 crédits lorsqu'il est ajouté au gang. Cette limite cesse après sa première Progression.",
+    "armeSpeciale": "À la création du gang, un seul Ganger peut être équipé d'une Arme Spéciale. En campagne, les Gangers recrutés ensuite peuvent aussi en recevoir.",
+    "chefEtChampion": "Le Chef et les Champions ne sont soumis à aucune restriction d'armes et commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "delaque",
+  "nom": "Delaque",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Chef",
+      "cout": 110,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "5+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Armure Flak"
+      ]
+    },
+    {
+      "id": "champion",
+      "role": "Champion",
+      "cout": 95,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Armure Flak"
+      ]
+    },
+    {
+      "id": "novice",
+      "role": "Novice",
+      "cout": 25,
+      "profil": {
+        "M": "6\"",
+        "CC": "5+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "7+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "ganger",
+      "role": "Ganger",
+      "cout": 50,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Armure Flak"
+      ]
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Agilité",
+        "Ruse",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Tir",
+        "Savoir"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Ruse",
+        "Tir"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Autorité",
+        "Savoir"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Ruse"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Tir"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Ruse",
+        "Tir"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Combat"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Couteaux de lancer",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "couteaux-de-lancer",
+      "arme": "couteaux-de-lancer"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Digilaser",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "digilaser",
+      "arme": "digilaser"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "electrosceptre",
+      "arme": "electrosceptre"
+    },
+    {
+      "nom": "Gantelet lance-toile",
+      "prix": 35,
+      "categorie": "Armes de corps à corps",
+      "id": "gantelet-lance-toile",
+      "arme": "gantelet-lance-toile"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "stylet",
+      "arme": "stylet"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "arme": "flingue"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Lance-toile léger",
+      "prix": 80,
+      "categorie": "Pistolets",
+      "id": "lance-toile-leger",
+      "arme": "lance-toile-leger"
+    },
+    {
+      "nom": "Pistolet à fléchettes (projectiles solides & Flashbane)",
+      "prix": 30,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-flechettes-projectiles-solides-flashbane",
+      "arme": "pistolet-a-flechettes"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-plasma",
+      "arme": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "fuseur",
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-gravitons",
+      "arme": "fusil-a-gravitons"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-plasma",
+      "arme": "fusil-a-plasma"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Lance-toile",
+      "prix": 115,
+      "categorie": "Armes spéciales",
+      "id": "lance-toile",
+      "arme": "lance-toile"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil",
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd",
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-aveuglantes",
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Grenades",
+      "id": "grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "grenades-cauchemar",
+      "arme": "grenades-cauchemar"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 10,
+      "categorie": "Grenades",
+      "id": "grenades-incapacitantes",
+      "arme": "grenades-incapacitantes"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Bio-scanner",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "bio-scanner"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "lame-sous-cutanee"
+    },
+    {
+      "nom": "Lance-grappin",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "lance-grappin"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "lunette"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "lunette-infrarouge"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 20,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Solvant à toile",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "solvant-a-toile"
+    },
+    {
+      "nom": "Suppresseur",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "suppresseur"
+    }
+  ]
+}
