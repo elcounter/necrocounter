@@ -136,7 +136,7 @@
       box-shadow: 0 -2px 12px rgba(0,0,0,.4);
     }
     .bnav .in {
-      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
       max-width: 820px; margin: 0 auto;
     }
     .bnav a {
@@ -151,6 +151,43 @@
       margin-top: 12px; padding: 16px; border-radius: 12px;
       border: 1px dashed var(--line); color: var(--muted); text-align: center;
     }
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 6px;
+      border: 1px solid var(--amber-dim); color: var(--amber);
+      font: 600 11px/1.4 var(--display); letter-spacing: .08em; text-transform: uppercase;
+    }
+    .houses { display: grid; gap: 10px; margin-top: 16px; }
+    .fcard.off { opacity: .45; pointer-events: none; }
+    .fighter + .fighter { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .fhead { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+    .fhead b { font: 700 17px/1.2 var(--display); letter-spacing: .05em; text-transform: uppercase; }
+    .cost { color: var(--amber); font: 600 14px var(--display); white-space: nowrap; }
+    .stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; margin-top: 8px; }
+    .stat { text-align: center; padding: 4px 2px; border-radius: 6px; background: rgba(0,0,0,.18); }
+    .stat small { display: block; color: var(--muted); font: 500 10px var(--display); letter-spacing: .06em; }
+    .stat span { font: 600 15px var(--display); }
+    .note { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
+    .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table.grid { width: 100%; border-collapse: collapse; font-size: 13px; }
+    table.grid th, table.grid td { padding: 6px 5px; text-align: center; border-bottom: 1px solid rgba(92,99,108,.5); white-space: nowrap; }
+    table.grid th { color: var(--muted); font: 500 11px var(--display); letter-spacing: .05em; text-transform: uppercase; }
+    table.grid td:first-child, table.grid th:first-child { text-align: left; }
+    td.p { color: var(--amber); font-weight: 700; }
+    td.s { color: var(--text); }
+    .eqcat { margin: 14px 0 4px; color: var(--amber); font: 600 13px var(--display); letter-spacing: .06em; text-transform: uppercase; }
+    .eqcat:first-child { margin-top: 0; }
+    .eq { border-bottom: 1px solid rgba(92,99,108,.5); }
+    .eq summary, .eq .row { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; list-style: none; }
+    .eq summary { cursor: pointer; }
+    .eq summary::-webkit-details-marker { display: none; }
+    .eq summary .nm::before { content: "+ "; color: var(--amber); }
+    .eq[open] summary .nm::before { content: "- "; }
+    .eq .pr { color: var(--amber); font: 600 14px var(--display); white-space: nowrap; }
+    .eq .tag { color: var(--muted); font-size: 12px; }
+    .prof { padding: 0 0 10px; }
+    .prof .traits { margin: 2px 0 8px; color: var(--muted); font-size: 13px; text-align: left; white-space: normal; }
+    ul.rules { margin: 0; padding-left: 18px; color: var(--muted); }
+    ul.rules li + li { margin-top: 6px; }
   </style>
 </head>
 <body>
@@ -170,16 +207,16 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.1.6 · Necromunda N23 · MAJ 05-11-2026<br>
+      NecroCounter version 0.1.7 · Necromunda N23 · MAJ 05-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
 
   <nav class="bnav" aria-label="Navigation principale">
     <div class="in">
-      <a href="#accueil" id="nav-home">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
-        <span>Accueil</span>
+      <a href="#regles" id="nav-regles">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/></svg>
+        <span>Règles</span>
       </a>
       <a href="#gangs" id="nav-gangs">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -188,10 +225,6 @@
       <a href="#partie" id="nav-partie">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/><circle cx="15" cy="9" r="1.2" fill="currentColor"/><circle cx="9" cy="15" r="1.2" fill="currentColor"/></svg>
         <span>Partie</span>
-      </a>
-      <a href="#regles" id="nav-regles">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/></svg>
-        <span>Règles</span>
       </a>
     </div>
   </nav>
@@ -204,9 +237,9 @@
     const I = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 
     const FEATURES = [
-      ["gangs", "Gangs", "Crée et gère tes gangs et tes combattants.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
-      ["partie", "Partie", "Suis une partie en cours dans l'underhive.", '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/>'],
-      ["regles", "Règles", "Rappels de règles et aides de jeu.", '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/>']
+      ["regles", "Règles", "Règles de Necromunda N23.", '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/>'],
+      ["gangs", "Gangs", "Maisons, combattants, profils et équipement N23.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
+      ["partie", "Partie", "Suis une partie en cours dans l'underhive.", '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/>']
     ];
 
     function homeHtml() {
@@ -244,28 +277,150 @@
       </div>`;
     }
 
+    // ---- Données Necromunda N23 ----
+    const DATA = "data/n23/";
+    const ACTIVE_HOUSES = ["goliath"]; // maisons ouvertes en test
+    const STAT_KEYS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"];
+    const SKILL_CATS = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir"];
+    const ROLE_LABEL = { chef: "Chef", champion: "Champion", novice: "Novice", specialiste: "Spécialiste" };
+    const cache = {};
+
+    function load(file) {
+      if (!cache[file]) {
+        cache[file] = fetch(DATA + file).then(r => {
+          if (!r.ok) throw new Error(file + " : " + r.status);
+          return r.json();
+        }).catch(err => { delete cache[file]; throw err; });
+      }
+      return cache[file];
+    }
+
+    function errorHtml(err) {
+      return `<div class="placeholder">Impossible de charger les données (${esc(err.message)}). Vérifie ta connexion puis recharge la page.</div>`;
+    }
+
+    function housesHtml(index) {
+      return `<div class="page">
+        <h2>Gangs</h2>
+        <p><span class="badge">Necromunda N23</span></p>
+        <p>Choisis une Maison pour voir ses combattants, ses compétences et sa liste d'équipement.</p>
+        <div class="houses">${index.maisons.map(m => {
+          const on = ACTIVE_HOUSES.includes(m.id);
+          return `<a class="fcard${on ? "" : " off"}" href="#gangs/${esc(m.id)}"${on ? "" : ' aria-disabled="true" tabindex="-1"'}>
+            <span><b>Maison ${esc(m.nom)}</b><br><span>${on ? "Listes de gang N23" : "Bientôt disponible"}</span></span></a>`;
+        }).join("")}</div>
+      </div>`;
+    }
+
+    function statsHtml(profil) {
+      return `<div class="stats">${STAT_KEYS.map(k =>
+        `<div class="stat"><small>${k}</small><span>${esc(profil[k])}</span></div>`).join("")}</div>`;
+    }
+
+    function fightersHtml(h) {
+      return h.combattants.map(f => `<div class="fighter">
+        <div class="fhead"><b>${esc(f.role)}</b><span class="cost">${f.cout} crédits</span></div>
+        ${statsHtml(f.profil)}
+        <p class="note">${f.equipementDeDepart.length
+          ? "Équipement de départ : " + esc(f.equipementDeDepart.join(", "))
+          : "Commence sans équipement."}</p>
+      </div>`).join("");
+    }
+
+    function skillsHtml(h) {
+      const roles = Object.keys(h.competences);
+      const cell = (role, cat) => {
+        const c = h.competences[role];
+        if (c.primaires.includes(cat)) return '<td class="p">Prim.</td>';
+        if (c.secondaires.includes(cat)) return '<td class="s">Sec.</td>';
+        return "<td>-</td>";
+      };
+      return `<div class="scroll"><table class="grid">
+        <thead><tr><th></th>${roles.map(r => `<th>${esc(ROLE_LABEL[r] || r)}</th>`).join("")}</tr></thead>
+        <tbody>${SKILL_CATS.map(c => `<tr><td>${c}</td>${roles.map(r => cell(r, c)).join("")}</tr>`).join("")}</tbody>
+      </table></div>
+      <p class="note">Prim. : set Primaire · Sec. : set Secondaire</p>`;
+    }
+
+    function profileHtml(weapon, modes) {
+      const rows = weapon.profils.filter(p => !modes || !p.mode || modes.includes(p.mode));
+      return `<div class="prof scroll"><table class="grid">
+        <thead><tr><th>Profil</th><th>Por C</th><th>Por L</th><th>Pré C</th><th>Pré L</th><th>F</th><th>PA</th><th>D</th><th>Mu</th></tr></thead>
+        <tbody>${rows.map(p => `<tr><td>${esc(p.mode || weapon.nom)}</td>${["porC", "porL", "preC", "preL", "F", "PA", "D", "Mu"]
+          .map(k => `<td>${esc(p[k])}</td>`).join("")}</tr>
+          <tr><td class="traits" colspan="9">${p.traits.length ? esc(p.traits.join(", ")) : "Aucun trait"}</td></tr>`).join("")}</tbody>
+      </table></div>`;
+    }
+
+    function equipmentHtml(h, armes) {
+      const byId = Object.fromEntries(armes.armes.map(a => [a.id, a]));
+      const groups = [];
+      h.equipement.forEach(item => {
+        let g = groups.find(x => x.cat === item.categorie);
+        if (!g) groups.push(g = { cat: item.categorie, items: [] });
+        g.items.push(item);
+      });
+      const tags = item => [item.compteDouble ? "compte pour deux armes" : "", item.accessoireUnique ? "non cumulable" : ""]
+        .filter(Boolean).map(t => `<span class="tag"> (${t})</span>`).join("");
+      return groups.map(g => `<div class="eqcat">${esc(g.cat)}</div>${g.items.map(item => {
+        const weapon = item.arme && byId[item.arme];
+        const head = `<span class="nm">${esc(item.nom)}${tags(item)}</span><span class="pr">${item.prix} cr</span>`;
+        return weapon
+          ? `<details class="eq"><summary>${head}</summary>${profileHtml(weapon, item.modes)}</details>`
+          : `<div class="eq"><div class="row">${head.replace('class="nm"', 'class="nm plain"')}</div></div>`;
+      }).join("")}`).join("");
+    }
+
+    function houseHtml(h, armes) {
+      const r = h.reglesDeCreation;
+      return `<div class="page">
+        <h2>Maison ${esc(h.nom)}</h2>
+        <p><span class="badge">Necromunda N23</span></p>
+        <div class="panel"><h3 class="sec">Combattants</h3><div class="body">${fightersHtml(h)}</div></div>
+        <div class="panel"><h3 class="sec">Compétences accessibles</h3><div class="body">${skillsHtml(h)}</div></div>
+        <div class="panel"><h3 class="sec">Règles de création</h3><div class="body"><ul class="rules">
+          <li>${esc(r.chefEtChampion)}</li><li>${esc(r.novice)}</li><li>${esc(r.armeSpeciale)}</li>
+        </ul></div></div>
+        <div class="panel"><h3 class="sec">Liste d'équipement</h3><div class="body">
+          <p class="note" style="margin-top:0">Touche une arme pour afficher son profil.</p>
+          ${equipmentHtml(h, armes)}
+        </div></div>
+      </div>`;
+    }
+
+    function showAsync(view, promise, render) {
+      const token = location.hash;
+      view.innerHTML = '<div class="placeholder">Chargement…</div>';
+      promise.then(data => { if (location.hash === token) view.innerHTML = render(data); })
+        .catch(err => { if (location.hash === token) view.innerHTML = errorHtml(err); });
+    }
+
     function route() {
       const h = location.hash.slice(1) || "accueil";
+      const [section, sub] = h.split("/");
       const back = $("back");
       const title = $("title");
       const view = $("view");
 
-      const tabs = { accueil: "nav-home", gangs: "nav-gangs", partie: "nav-partie", regles: "nav-regles" };
+      const tabs = { gangs: "nav-gangs", partie: "nav-partie", regles: "nav-regles" };
       Object.values(tabs).forEach(id => { const el = $(id); if (el) el.removeAttribute("aria-current"); });
-      if (tabs[h]) $(tabs[h]).setAttribute("aria-current", "page");
+      if (tabs[section]) $(tabs[section]).setAttribute("aria-current", "page");
 
-      back.hidden = !(h === "soutenir");
+      back.hidden = !(h === "soutenir" || (section === "gangs" && sub));
       const homeBtn = $("home-btn");
       if (homeBtn) homeBtn.hidden = (h === "accueil" || h === "");
-      if (h === "gangs") {
+      if (section === "gangs" && sub && ACTIVE_HOUSES.includes(sub)) {
         title.textContent = "Gangs";
-        view.innerHTML = placeholder("Gangs", "Crée tes gangs, gère tes combattants et leur équipement.");
+        showAsync(view, Promise.all([load("maisons/" + sub + ".json"), load("armes.json")]), ([house, armes]) => houseHtml(house, armes));
+      } else if (section === "gangs") {
+        title.textContent = "Gangs";
+        showAsync(view, load("index.json"), housesHtml);
       } else if (h === "partie") {
         title.textContent = "Partie";
         view.innerHTML = placeholder("Partie", "Suivi de partie : blessures, status, priorités.");
       } else if (h === "regles") {
         title.textContent = "Règles";
-        view.innerHTML = placeholder("Règles", "Aides de jeu et rappels pour la table.");
+        view.innerHTML = placeholder("Règles", "Les règles de Necromunda N23 arriveront ici.");
       } else if (h === "soutenir") {
         title.textContent = "Soutenir";
         view.innerHTML = supportHtml();
@@ -276,7 +431,9 @@
       window.scrollTo(0, 0);
     }
 
-    $("back").addEventListener("click", () => { location.hash = "accueil"; });
+    $("back").addEventListener("click", () => {
+      location.hash = location.hash.startsWith("#gangs/") ? "gangs" : "accueil";
+    });
     window.addEventListener("hashchange", route);
     route();
 
