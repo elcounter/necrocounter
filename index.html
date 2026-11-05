@@ -187,6 +187,32 @@
     .prof { padding: 0 0 10px; }
     .prof .traits { margin: 2px 0 8px; color: var(--muted); font-size: 13px; text-align: left; white-space: normal; }
     ul.rules { margin: 0; padding-left: 18px; color: var(--muted); }
+    .btn-install {
+      display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
+      margin: 18px 0 0; padding: 13px 16px; border: 0; border-radius: 10px; cursor: pointer;
+      background: linear-gradient(180deg, #e8a020, #c45c12); color: #2a1c14; text-decoration: none;
+      font: 700 15px var(--display); text-transform: uppercase; letter-spacing: .06em;
+      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+    .btn-install[hidden] { display: none; }
+    .btn-install svg { width: 22px; height: 22px; }
+    .inst-lead { margin: 0 0 4px; color: var(--muted); }
+    .rh { margin: 22px 0 10px; font: 700 16px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--amber); }
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .steps li {
+      display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 10px;
+      background: var(--panel); border: 1px solid var(--line); line-height: 1.4; font-size: 14px;
+    }
+    .snum {
+      flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+      background: var(--amber); color: #2a1c14; font: 700 15px var(--display);
+    }
+    .hint { color: var(--muted); font-size: 13px; }
+    .inst-pc { display: none; }
+    @media (hover: hover) and (pointer: fine) {
+      .inst-mobile { display: none; }
+      #direct-install[hidden] + .inst-pc { display: block; color: var(--muted); font-size: 13px; margin-top: 14px; }
+    }
     .h3 { margin: 22px 0 10px; font: 700 18px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--text); }
     .folds { display: grid; gap: 8px; }
     .fold { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
@@ -222,7 +248,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.1.8 · Necromunda N23 · MAJ 05-11-2026<br>
+      NecroCounter version 0.1.9 · Necromunda N23 · MAJ 05-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
@@ -257,6 +283,50 @@
       ["partie", "Partie", "Suis une partie en cours dans l'underhive.", '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/>']
     ];
 
+    const STANDALONE = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+    const INSTALL_ICON = '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 19h14"/>';
+    let deferredPrompt = null;
+    window.addEventListener("beforeinstallprompt", e => {
+      e.preventDefault(); deferredPrompt = e;
+      const b = $("direct-install"); if (b) b.hidden = false;
+    });
+    window.addEventListener("appinstalled", () => {
+      deferredPrompt = null;
+      const b = $("direct-install"); if (b) b.hidden = true;
+    });
+    document.addEventListener("click", async e => {
+      if (!e.target.closest("#direct-install") || !deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice;
+      deferredPrompt = null;
+      $("direct-install").hidden = true;
+    });
+
+    function installHtml() {
+      const step = (n, t) => `<li><span class="snum">${n}</span><span>${t}</span></li>`;
+      return `<div class="page">
+        <h2>Installer l'app</h2>
+        <p class="inst-lead">Installe NecroCounter sur ton téléphone ou ton ordinateur : elle s'ouvre en plein écran, comme une vraie application, et fonctionne même sans réseau une fois les pages visitées.</p>
+        <button type="button" class="btn-install" id="direct-install"${deferredPrompt ? "" : " hidden"}>${I(INSTALL_ICON)}<span>Installer maintenant</span></button>
+        <p class="inst-pc">Sur ordinateur, si le bouton n'apparaît pas, ouvre NecroCounter avec Chrome ou Edge.</p>
+        <div class="inst-mobile">
+          <h3 class="rh">Android (Chrome)</h3>
+          <ol class="steps">
+            ${step(1, "Appuie sur les <b>3 petits points</b> en haut à droite de ton navigateur.")}
+            ${step(2, "Appuie sur <b>Ajouter à l'écran d'accueil</b> (ou <b>Installer l'application</b>).")}
+            ${step(3, "Choisis <b>Installer</b> (et non « Créer un raccourci »), puis confirme avec <b>Installer</b>.")}
+            ${step(4, "L'icône <b>N</b> de NecroCounter apparaît sur l'écran d'accueil de ton téléphone. C'est prêt !")}
+          </ol>
+          <h3 class="rh">iPhone (Safari)</h3>
+          <ol class="steps">
+            ${step(1, "Appuie sur le bouton <b>Partager</b> (le carré avec une flèche vers le haut).")}
+            ${step(2, "Choisis <b>Sur l'écran d'accueil</b>, puis <b>Ajouter</b>.")}
+          </ol>
+          <p class="hint">Si le bouton « Installer maintenant » apparaît en haut de cette page, il suffit de l'utiliser.</p>
+        </div>
+      </div>`;
+    }
+
     function homeHtml() {
       return `<div class="welcome">
         <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
@@ -267,6 +337,7 @@
         <h2>NecroCounter</h2>
         <p>Ton compagnon pour Necromunda N23.</p>
       </div>
+      ${STANDALONE ? "" : `<a class="btn-install" href="#installer">${I(INSTALL_ICON)}<span>Installer l'app</span></a>`}
       <div class="feat">${FEATURES.map(([id, n, d, svg]) =>
         `<a class="fcard" href="#${id}"><span class="ficon">${I(svg)}</span><span><b>${n}</b><br><span>${d}</span></span></a>`
       ).join("")}</div>
@@ -480,7 +551,7 @@
       Object.values(tabs).forEach(id => { const el = $(id); if (el) el.removeAttribute("aria-current"); });
       if (tabs[section]) $(tabs[section]).setAttribute("aria-current", "page");
 
-      back.hidden = !(h === "soutenir" || (section === "gangs" && sub));
+      back.hidden = !(h === "soutenir" || h === "installer" || (section === "gangs" && sub));
       const homeBtn = $("home-btn");
       if (homeBtn) homeBtn.hidden = (h === "accueil" || h === "");
       if (section === "gangs" && sub && ACTIVE_HOUSES.includes(sub)) {
@@ -495,6 +566,9 @@
       } else if (h === "regles") {
         title.textContent = "Règles";
         showAsync(view, Promise.all([load("armes.json"), load("comptoir.json")]), armouryHtml);
+      } else if (h === "installer") {
+        title.textContent = "Installer";
+        view.innerHTML = installHtml();
       } else if (h === "soutenir") {
         title.textContent = "Soutenir";
         view.innerHTML = supportHtml();
