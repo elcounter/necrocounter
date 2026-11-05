@@ -1,7 +1,7 @@
 {
   "name": "NecroCounter",
   "short_name": "NecroCounter",
-  "description": "Ton compagnon pour Necromunda",
+  "description": "Ton compagnon pour Necromunda N23",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#32363c",
