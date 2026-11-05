@@ -55,6 +55,13 @@
     }
     .back:active { background: rgba(232,160,32,.12); }
     .back[hidden] { display: none; }
+    .hm {
+      flex: none; width: 40px; height: 40px; border-radius: 10px;
+      display: grid; place-items: center; color: var(--text); text-decoration: none;
+    }
+    .hm:active { background: rgba(240,176,64,.12); }
+    .hm svg { width: 22px; height: 22px; }
+    .hm[hidden] { display: none; }
     main.in { max-width: 820px; margin: 0 auto; padding: 18px 16px 28px; }
     .welcome { text-align: center; padding: 18px 8px 8px; }
     .mark {
@@ -153,6 +160,9 @@
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
       <h1 id="title">NecroCounter</h1>
+      <a class="hm" id="home-btn" href="#accueil" aria-label="Accueil" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+      </a>
     </div>
   </header>
 
@@ -160,7 +170,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.1.4 · MAJ 05-11-2026<br>
+      NecroCounter version 0.1.5 · MAJ 05-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
@@ -245,6 +255,8 @@
       if (tabs[h]) $(tabs[h]).setAttribute("aria-current", "page");
 
       back.hidden = !(h === "soutenir");
+      const homeBtn = $("home-btn");
+      if (homeBtn) homeBtn.hidden = (h === "accueil" || h === "");
       if (h === "gangs") {
         title.textContent = "Gangs";
         view.innerHTML = placeholder("Gangs", "Crée tes gangs, gère tes combattants et leur équipement.");
