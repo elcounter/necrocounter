@@ -4,8 +4,8 @@
   "description": "Ton compagnon pour Necromunda",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#5a4538",
-  "theme_color": "#5a4538",
+  "background_color": "#32363c",
+  "theme_color": "#32363c",
   "lang": "fr",
   "icons": [
     { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
