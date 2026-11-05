@@ -187,6 +187,21 @@
     .prof { padding: 0 0 10px; }
     .prof .traits { margin: 2px 0 8px; color: var(--muted); font-size: 13px; text-align: left; white-space: normal; }
     ul.rules { margin: 0; padding-left: 18px; color: var(--muted); }
+    .h3 { margin: 22px 0 10px; font: 700 18px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--text); }
+    .folds { display: grid; gap: 8px; }
+    .fold { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+    .fold > summary {
+      list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px;
+      padding: 13px 16px; background: linear-gradient(90deg, #6a5228, #4a3a1c);
+      color: var(--amber); font: 700 15px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase;
+    }
+    .fold > summary::-webkit-details-marker { display: none; }
+    .fold > summary::after { content: "+"; font-size: 20px; line-height: 1; color: var(--amber); }
+    .fold[open] > summary::after { content: "-"; }
+    .fold > summary small { margin-left: auto; color: var(--muted); font: 500 12px var(--display); letter-spacing: .04em; }
+    .fold-body { padding: 4px 14px 12px; }
+    .shop { margin: 0 0 6px; color: var(--muted); font-size: 13px; }
+    .shop b { color: var(--amber); font-weight: 600; }
     ul.rules li + li { margin-top: 6px; }
   </style>
 </head>
@@ -207,7 +222,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.1.7 · Necromunda N23 · MAJ 05-11-2026<br>
+      NecroCounter version 0.1.8 · Necromunda N23 · MAJ 05-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
@@ -388,6 +403,65 @@
       </div>`;
     }
 
+    // ---- Armurerie N23 (onglet Règles) ----
+    const EQUIP_CATS = ["Armures", "Champs protecteurs", "Bioniques", "Équipement de gang",
+      "Équipement personnel", "Accessoires d'armes", "Objets de prestige", "Bêtes exotiques"];
+
+    function shopLine(o, label) {
+      return `${label ? esc(label) + " : " : ""}<b>${o.prix ? o.prix + " cr" : "voir règle"}</b> · ${esc(o.rarete)}`;
+    }
+
+    function armouryHtml([armes, comptoir]) {
+      const weapons = armes.armes;
+      const ids = weapons.map(w => w.id).sort((a, b) => b.length - a.length);
+      const shop = {}, loose = {};
+      comptoir.objets.forEach(o => {
+        const key = o.id.replace(/^pieges-/, "");
+        const target = ids.find(i => key === i || key.startsWith(i + "-"));
+        if (target) (shop[target] = shop[target] || []).push(o);
+        else (loose[o.categorie] = loose[o.categorie] || []).push(o);
+      });
+
+      const flags = o => [o.compteDouble ? "compte pour deux armes" : "", o.accessoireUnique ? "non cumulable" : ""]
+        .filter(Boolean).map(t => `<span class="tag"> (${t})</span>`).join("");
+      const plainRow = o => `<div class="eq"><div class="row"><span class="nm">${esc(o.nom)}${flags(o)}</span>
+        <span class="pr">${o.prix ? o.prix + " cr" : "-"}</span></div><p class="shop">${esc(o.rarete)}</p></div>`;
+
+      const weaponRow = w => {
+        const offers = shop[w.id] || [];
+        const lead = offers.length === 1 ? offers[0] : null;
+        const price = lead ? `${lead.prix} cr` : offers.length ? "variable" : "";
+        const shopInfo = offers.length > 1
+          ? offers.map(o => `<p class="shop">${shopLine(o, o.nom.replace(w.nom, "").replace(/^\s*\(|\)\s*$/g, "") || w.nom)}</p>`).join("")
+          : lead ? `<p class="shop">Comptoir : ${shopLine(lead)}${flags(lead)}</p>`
+          : '<p class="shop">Hors Comptoir Commercial (liste de Maison ou créature).</p>';
+        return `<details class="eq"><summary><span class="nm">${esc(w.nom)}${lead ? flags(lead) : ""}</span>
+          <span class="pr">${price}</span></summary>${shopInfo}${profileHtml(w)}</details>`;
+      };
+
+      const cats = [];
+      weapons.forEach(w => { if (!cats.includes(w.categorie)) cats.push(w.categorie); });
+      const weaponFolds = cats.map(cat => {
+        const list = weapons.filter(w => w.categorie === cat);
+        const extra = loose[cat] || [];
+        return `<details class="fold"><summary><span>${esc(cat)}</span><small>${list.length + extra.length}</small></summary>
+          <div class="fold-body">${list.map(weaponRow).join("")}${extra.map(plainRow).join("")}</div></details>`;
+      }).join("");
+      const equipFolds = EQUIP_CATS.filter(c => loose[c]).map(cat =>
+        `<details class="fold"><summary><span>${esc(cat)}</span><small>${loose[cat].length}</small></summary>
+          <div class="fold-body">${loose[cat].map(plainRow).join("")}</div></details>`).join("");
+
+      return `<div class="page">
+        <h2>Règles</h2>
+        <p><span class="badge">Necromunda N23</span></p>
+        <h3 class="h3">Armurerie</h3>
+        <p class="note">Profils de toutes les armes, avec le prix et la rareté au Comptoir Commercial. Touche une catégorie pour l'ouvrir, puis une arme pour voir son profil.</p>
+        <div class="folds" style="margin-top:12px">${weaponFolds}</div>
+        <h3 class="h3">Équipement</h3>
+        <div class="folds">${equipFolds}</div>
+      </div>`;
+    }
+
     function showAsync(view, promise, render) {
       const token = location.hash;
       view.innerHTML = '<div class="placeholder">Chargement…</div>';
@@ -420,7 +494,7 @@
         view.innerHTML = placeholder("Partie", "Suivi de partie : blessures, status, priorités.");
       } else if (h === "regles") {
         title.textContent = "Règles";
-        view.innerHTML = placeholder("Règles", "Les règles de Necromunda N23 arriveront ici.");
+        showAsync(view, Promise.all([load("armes.json"), load("comptoir.json")]), armouryHtml);
       } else if (h === "soutenir") {
         title.textContent = "Soutenir";
         view.innerHTML = supportHtml();
