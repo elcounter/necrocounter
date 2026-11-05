@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#5a4538">
+  <meta name="theme-color" content="#32363c">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>NecroCounter</title>
@@ -13,17 +13,17 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Bitter:wght@400;600;700&display=swap">
   <style>
     :root {
-      --bg: #4a3b32;
-      --bg-2: #56453b;
-      --panel: #635247;
-      --panel-2: #6f5c50;
-      --line: #8a7363;
-      --text: #faf3e8;
-      --muted: #d4c4b0;
-      --amber: #f2b84a;
-      --amber-dim: #e08a28;
+      --bg: #2a2c30;
+      --bg-2: #32353a;
+      --panel: #3a3e44;
+      --panel-2: #454a51;
+      --line: #5c636c;
+      --text: #eef1f4;
+      --muted: #a8b0ba;
+      --amber: #f0b040;
+      --amber-dim: #d47820;
       --danger: #b04434;
-      --bar: #5a4538;
+      --bar: #32363c;
       --navh: 58px;
       --display: "Oswald", system-ui, sans-serif;
       --body: "Bitter", Georgia, serif;
@@ -34,8 +34,8 @@
     a { color: var(--amber); }
     .bar {
       position: sticky; top: 0; z-index: 10;
-      background: linear-gradient(180deg, #6a5242 0%, var(--bar) 100%);
-      border-bottom: 2px solid var(--amber-dim);
+      background: linear-gradient(180deg, #3c4148 0%, var(--bar) 100%);
+      border-bottom: 2px solid var(--amber);
       box-shadow: 0 2px 12px rgba(0,0,0,.28);
     }
     .bar .in {
@@ -79,7 +79,7 @@
     .ficon {
       flex: none; width: 42px; height: 42px; border-radius: 50%;
       display: grid; place-items: center;
-      background: radial-gradient(circle at 30% 30%, #9a6a40, #5a4030);
+      background: radial-gradient(circle at 30% 30%, #5a6068, #353a40);
       border: 1px solid var(--amber-dim); color: var(--amber);
     }
     .ficon svg { width: 22px; height: 22px; }
@@ -95,9 +95,9 @@
     .btn-link:active { background: rgba(232,160,32,.1); }
     .copy {
       margin: 28px 0 0; text-align: center;
-      font: 400 11px/1.4 var(--body); color: #b8a490; letter-spacing: .03em;
+      font: 400 11px/1.4 var(--body); color: #8a929c; letter-spacing: .03em;
     }
-    .copy .legal { display: inline-block; margin-top: 3px; font-size: 9px; line-height: 1.3; color: #a8927c; }
+    .copy .legal { display: inline-block; margin-top: 3px; font-size: 9px; line-height: 1.3; color: #7a828c; }
     .page h2 {
       margin: 0 0 10px; font: 700 22px/1.2 var(--display);
       letter-spacing: .05em; text-transform: uppercase; color: var(--amber);
@@ -109,7 +109,7 @@
     }
     .panel .sec {
       margin: 0; padding: 10px 14px;
-      background: linear-gradient(90deg, #9a6a30, #7a5224);
+      background: linear-gradient(90deg, #6a5228, #4a3a1c);
       color: var(--amber); font: 700 13px/1.2 var(--display);
       letter-spacing: .08em; text-transform: uppercase;
     }
@@ -124,7 +124,7 @@
     .btn.primary:active { filter: brightness(1.05); }
     .bnav {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 8;
-      background: #3f322a; border-top: 1px solid var(--line);
+      background: #26292e; border-top: 1px solid var(--line);
       padding-bottom: env(safe-area-inset-bottom, 0px);
       box-shadow: 0 -2px 12px rgba(0,0,0,.4);
     }
@@ -160,7 +160,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.1.2 · MAJ 05-11-2026<br>
+      NecroCounter version 0.1.3 · MAJ 05-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
@@ -202,7 +202,7 @@
     function homeHtml() {
       return `<div class="welcome">
         <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-          <circle cx="32" cy="32" r="30" fill="#5a4538"/>
+          <circle cx="32" cy="32" r="30" fill="#32363c"/>
           <circle cx="32" cy="32" r="25" fill="none" stroke="#e8a020" stroke-width="2.5"/>
           <path d="M22 20v24M42 20v24M22 20l20 24" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
