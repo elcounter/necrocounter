@@ -23,6 +23,7 @@
       --amber: #f0b040;
       --amber-dim: #d47820;
       --danger: #b04434;
+      --ok: #3d8b5c;
       --bar: #32363c;
       --navh: 58px;
       --display: "Oswald", system-ui, sans-serif;
@@ -100,15 +101,6 @@
       font: 600 14px var(--display); text-decoration: none; letter-spacing: .04em;
     }
     .btn-link:active { background: rgba(232,160,32,.1); }
-    .btn-warcounter {
-      display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 10px;
-      background: #6b2119; border: 1px solid #d4ae3f; color: #fff; text-decoration: none;
-      box-shadow: 0 2px 10px rgba(0,0,0,.25);
-    }
-    .btn-warcounter:active { background: #7d2a20; }
-    .btn-warcounter svg { flex: none; width: 34px; height: 34px; }
-    .btn-warcounter b { display: block; color: #d4ae3f; font: 700 15px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; }
-    .btn-warcounter small { display: block; margin-top: 2px; font-size: 13px; opacity: .9; }
     .copy {
       margin: 28px 0 0; text-align: center;
       font: 400 11px/1.4 var(--body); color: #8a929c; letter-spacing: .03em;
@@ -120,7 +112,7 @@
     }
     .page p { color: var(--muted); }
     .panel {
-      margin-top: 16px; border-radius: 12px; overflow: hidden;
+      margin-top: 14px; border-radius: 12px; overflow: hidden;
       border: 1px solid var(--line); background: var(--panel);
     }
     .panel .sec {
@@ -134,10 +126,100 @@
       display: inline-block; width: 100%; text-align: center;
       padding: 12px 16px; border-radius: 10px; border: 0;
       font: 700 15px/1.2 var(--display); letter-spacing: .05em; text-transform: uppercase;
-      text-decoration: none; cursor: pointer;
+      text-decoration: none; cursor: pointer; color: #2a1c14;
     }
-    .btn.primary { background: linear-gradient(180deg, #e8a020, #c45c12); color: #2a1c14; }
-    .btn.primary:active { filter: brightness(1.05); }
+    .btn.primary { background: linear-gradient(180deg, #f0b040, #d47820); }
+    .btn.ghost {
+      background: transparent; color: var(--amber); border: 1px solid var(--line);
+    }
+    .btn.danger { background: linear-gradient(180deg, #c45a48, #8b2e1f); color: #fff; }
+    .btn.small { width: auto; padding: 8px 12px; font-size: 12px; }
+    .btn + .btn { margin-top: 8px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn-row .btn { width: auto; flex: 1 1 auto; margin-top: 0; }
+    .fld { display: block; margin-bottom: 12px; }
+    .fld span { display: block; margin-bottom: 4px; font: 600 12px var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+    .fld input, .fld select, .fld textarea {
+      width: 100%; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid var(--line); background: var(--bg); color: var(--text);
+      font: 400 15px var(--body);
+    }
+    .fld textarea { min-height: 80px; resize: vertical; }
+    .seg { display: flex; flex-wrap: wrap; gap: 6px; }
+    .seg button {
+      flex: 1 1 auto; padding: 8px 10px; border-radius: 8px;
+      border: 1px solid var(--line); background: var(--bg); color: var(--muted);
+      font: 600 13px var(--display); letter-spacing: .04em; text-transform: uppercase; cursor: pointer;
+    }
+    .seg button.on { background: var(--amber); color: #2a1c14; border-color: var(--amber); }
+    .crew-list { display: grid; gap: 8px; }
+    .crew-row {
+      display: grid; grid-template-columns: 1fr 72px 36px; gap: 8px; align-items: center;
+    }
+    .crew-row input {
+      width: 100%; padding: 8px 10px; border-radius: 8px;
+      border: 1px solid var(--line); background: var(--bg); color: var(--text);
+      font: 400 14px var(--body);
+    }
+    .icon-x {
+      border: 0; background: transparent; color: var(--muted); font-size: 18px; cursor: pointer; padding: 6px;
+    }
+    .live-top {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+      margin-bottom: 12px; padding: 12px; border-radius: 12px;
+      background: var(--panel); border: 1px solid var(--line);
+    }
+    .live-top .pill {
+      font: 700 13px var(--display); letter-spacing: .05em; text-transform: uppercase;
+      padding: 6px 10px; border-radius: 999px; background: var(--bg); color: var(--amber);
+    }
+    .fighter {
+      border: 1px solid var(--line); border-radius: 12px; padding: 12px;
+      background: var(--panel); margin-bottom: 8px;
+    }
+    .fighter.ooa { opacity: .55; }
+    .fighter .fname {
+      display: flex; justify-content: space-between; gap: 8px; align-items: baseline;
+      font: 700 15px var(--display); letter-spacing: .03em; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .fighter .fname small { color: var(--muted); font: 400 12px var(--body); text-transform: none; letter-spacing: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+    .tag {
+      font: 600 11px var(--display); letter-spacing: .04em; text-transform: uppercase;
+      padding: 4px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); cursor: pointer;
+      background: var(--bg);
+    }
+    .tag.on { background: var(--amber); color: #2a1c14; border-color: var(--amber); }
+    .tag.danger.on { background: var(--danger); color: #fff; border-color: var(--danger); }
+    .wounds { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .wounds button {
+      width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--line);
+      background: var(--bg); color: var(--text); font-size: 18px; cursor: pointer;
+    }
+    .wounds b { min-width: 3ch; text-align: center; font: 700 16px var(--display); }
+    .ready-btn {
+      width: 100%; padding: 8px; border-radius: 8px; border: 1px solid var(--line);
+      background: var(--bg); color: var(--muted); font: 700 12px var(--display);
+      letter-spacing: .06em; text-transform: uppercase; cursor: pointer;
+    }
+    .ready-btn.on { background: var(--ok); color: #fff; border-color: var(--ok); }
+    .gang-col { margin-bottom: 16px; }
+    .gang-col h3 {
+      margin: 0 0 8px; font: 700 14px var(--display); letter-spacing: .08em;
+      text-transform: uppercase; color: var(--amber);
+    }
+    .hint { color: var(--muted); font-size: 13px; margin: 0 0 10px; }
+    .placeholder {
+      margin-top: 12px; padding: 16px; border-radius: 12px;
+      border: 1px dashed var(--line); color: var(--muted); text-align: center;
+    }
+    .history { display: grid; gap: 8px; margin-top: 12px; }
+    .history a {
+      display: block; padding: 12px; border-radius: 10px; border: 1px solid var(--line);
+      background: var(--panel); text-decoration: none; color: inherit;
+    }
+    .history a b { color: var(--amber); font: 700 14px var(--display); letter-spacing: .04em; }
+    .history a span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
     .bnav {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 8;
       background: #26292e; border-top: 1px solid var(--line);
@@ -145,7 +227,7 @@
       box-shadow: 0 -2px 12px rgba(0,0,0,.4);
     }
     .bnav .in {
-      display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
       max-width: 820px; margin: 0 auto;
     }
     .bnav a {
@@ -156,95 +238,6 @@
     }
     .bnav a[aria-current="page"] { color: var(--amber); border-top-color: var(--amber); }
     .bnav svg { width: 22px; height: 22px; }
-    .placeholder {
-      margin-top: 12px; padding: 16px; border-radius: 12px;
-      border: 1px dashed var(--line); color: var(--muted); text-align: center;
-    }
-    .badge {
-      display: inline-block; padding: 2px 8px; border-radius: 6px;
-      border: 1px solid var(--amber-dim); color: var(--amber);
-      font: 600 11px/1.4 var(--display); letter-spacing: .08em; text-transform: uppercase;
-    }
-    .ed-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 2px 0 6px; }
-    .ed {
-      display: inline-block; padding: 7px 12px; border-radius: 8px; border: 1px solid transparent;
-      color: var(--text); text-decoration: none;
-      font: 600 13px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase;
-    }
-    .ed[aria-current="page"] { border-color: var(--amber-dim); color: var(--amber); background: rgba(232,160,32,.06); }
-    .houses { display: grid; gap: 10px; margin-top: 16px; }
-    .fcard.off { opacity: .45; pointer-events: none; }
-    .fighter + .fighter { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
-    .fhead { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-    .fhead b { font: 700 17px/1.2 var(--display); letter-spacing: .05em; text-transform: uppercase; }
-    .cost { color: var(--amber); font: 600 14px var(--display); white-space: nowrap; }
-    .stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; margin-top: 8px; }
-    .stat { text-align: center; padding: 4px 2px; border-radius: 6px; background: rgba(0,0,0,.18); }
-    .stat small { display: block; color: var(--muted); font: 500 10px var(--display); letter-spacing: .06em; }
-    .stat span { font: 600 15px var(--display); }
-    .note { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
-    .scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-    table.grid { width: 100%; border-collapse: collapse; font-size: 13px; }
-    table.grid th, table.grid td { padding: 6px 5px; text-align: center; border-bottom: 1px solid rgba(92,99,108,.5); white-space: nowrap; }
-    table.grid th { color: var(--muted); font: 500 11px var(--display); letter-spacing: .05em; text-transform: uppercase; }
-    table.grid td:first-child, table.grid th:first-child { text-align: left; }
-    td.p { color: var(--amber); font-weight: 700; }
-    td.s { color: var(--text); }
-    .eqcat { margin: 14px 0 4px; color: var(--amber); font: 600 13px var(--display); letter-spacing: .06em; text-transform: uppercase; }
-    .eqcat:first-child { margin-top: 0; }
-    .eq { border-bottom: 1px solid rgba(92,99,108,.5); }
-    .eq summary, .eq .row { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; list-style: none; }
-    .eq summary { cursor: pointer; }
-    .eq summary::-webkit-details-marker { display: none; }
-    .eq summary .nm::before { content: "+ "; color: var(--amber); }
-    .eq[open] summary .nm::before { content: "- "; }
-    .eq .pr { color: var(--amber); font: 600 14px var(--display); white-space: nowrap; }
-    .eq .tag { color: var(--muted); font-size: 12px; }
-    .prof { padding: 0 0 10px; }
-    .prof .traits { margin: 2px 0 8px; color: var(--muted); font-size: 13px; text-align: left; white-space: normal; }
-    ul.rules { margin: 0; padding-left: 18px; color: var(--muted); }
-    .btn-install {
-      display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%;
-      margin: 18px 0 0; padding: 13px 16px; border: 0; border-radius: 10px; cursor: pointer;
-      background: linear-gradient(180deg, #e8a020, #c45c12); color: #2a1c14; text-decoration: none;
-      font: 700 15px var(--display); text-transform: uppercase; letter-spacing: .06em;
-      box-shadow: 0 2px 10px rgba(0,0,0,.25);
-    }
-    .btn-install[hidden] { display: none; }
-    .btn-install svg { width: 22px; height: 22px; }
-    .inst-lead { margin: 0 0 4px; color: var(--muted); }
-    .rh { margin: 22px 0 10px; font: 700 16px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--amber); }
-    .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-    .steps li {
-      display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: 10px;
-      background: var(--panel); border: 1px solid var(--line); line-height: 1.4; font-size: 14px;
-    }
-    .snum {
-      flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
-      background: var(--amber); color: #2a1c14; font: 700 15px var(--display);
-    }
-    .hint { color: var(--muted); font-size: 13px; }
-    .inst-pc { display: none; }
-    @media (hover: hover) and (pointer: fine) {
-      .inst-mobile { display: none; }
-      #direct-install[hidden] + .inst-pc { display: block; color: var(--muted); font-size: 13px; margin-top: 14px; }
-    }
-    .h3 { margin: 22px 0 10px; font: 700 18px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--text); }
-    .folds { display: grid; gap: 8px; }
-    .fold { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
-    .fold > summary {
-      list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 10px;
-      padding: 13px 16px; background: linear-gradient(90deg, #6a5228, #4a3a1c);
-      color: var(--amber); font: 700 15px/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase;
-    }
-    .fold > summary::-webkit-details-marker { display: none; }
-    .fold > summary::after { content: "+"; font-size: 20px; line-height: 1; color: var(--amber); }
-    .fold[open] > summary::after { content: "-"; }
-    .fold > summary small { margin-left: auto; color: var(--muted); font: 500 12px var(--display); letter-spacing: .04em; }
-    .fold-body { padding: 4px 14px 12px; }
-    .shop { margin: 0 0 6px; color: var(--muted); font-size: 13px; }
-    .shop b { color: var(--amber); font-weight: 600; }
-    ul.rules li + li { margin-top: 6px; }
   </style>
 </head>
 <body>
@@ -264,26 +257,28 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.2 Necromunda N23 &amp; N26<br>
-      MAJ 06-11-2026<br>
-      <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
-      Necromunda est une marque de Games Workshop Ltd.</span>
+      NecroCounter version 0.2.0 · MAJ 07-11-2026<br>
+      <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
 
   <nav class="bnav" aria-label="Navigation principale">
     <div class="in">
-      <a href="#regles" id="nav-regles">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/></svg>
-        <span>Règles</span>
+      <a href="#accueil" id="nav-home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+        <span>Accueil</span>
       </a>
       <a href="#gangs" id="nav-gangs">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         <span>Gangs</span>
       </a>
       <a href="#partie" id="nav-partie">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/><circle cx="15" cy="9" r="1.2" fill="currentColor"/><circle cx="9" cy="15" r="1.2" fill="currentColor"/></svg>
         <span>Partie</span>
+      </a>
+      <a href="#regles" id="nav-regles">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/></svg>
+        <span>Règles</span>
       </a>
     </div>
   </nav>
@@ -294,78 +289,81 @@
     const $ = id => document.getElementById(id);
     const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
     const I = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
+    const uid = () => Math.random().toString(36).slice(2, 10);
+    const STORE = "nc_match_v1";
+    const HIST = "nc_match_history_v1";
 
     const FEATURES = [
-      ["regles", "Règles", "Règles de Necromunda N23 et N26.", '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/>'],
-      ["gangs", "Gangs", "Maisons, combattants, profils et équipement.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
-      ["partie", "Partie", "Suis une partie en cours dans l'underhive.", '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/>']
+      ["gangs", "Gangs", "Crée et gère tes gangs et tes combattants.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
+      ["partie", "Partie", "Suis une partie en cours dans l'underhive.", '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/>'],
+      ["regles", "Règles", "Rappels de règles et aides de jeu.", '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/>']
     ];
 
-    const STANDALONE = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
-    const INSTALL_ICON = '<path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 19h14"/>';
-    let deferredPrompt = null;
-    window.addEventListener("beforeinstallprompt", e => {
-      e.preventDefault(); deferredPrompt = e;
-      const b = $("direct-install"); if (b) b.hidden = false;
-    });
-    window.addEventListener("appinstalled", () => {
-      deferredPrompt = null;
-      const b = $("direct-install"); if (b) b.hidden = true;
-    });
-    document.addEventListener("click", async e => {
-      if (!e.target.closest("#direct-install") || !deferredPrompt) return;
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-      deferredPrompt = null;
-      $("direct-install").hidden = true;
-    });
+    const STATUSES = [
+      { id: "fw", label: "Flesh Wound" },
+      { id: "si", label: "Serious Injury" },
+      { id: "ooa", label: "Out of Action", danger: true },
+      { id: "blaze", label: "Blaze" },
+      { id: "pinned", label: "Pinned" },
+      { id: "broken", label: "Broken" }
+    ];
 
-    function installHtml() {
-      const step = (n, t) => `<li><span class="snum">${n}</span><span>${t}</span></li>`;
-      return `<div class="page">
-        <h2>Installer l'app</h2>
-        <p class="inst-lead">Installe NecroCounter sur ton téléphone ou ton ordinateur : elle s'ouvre en plein écran, comme une vraie application, et fonctionne même sans réseau une fois les pages visitées.</p>
-        <button type="button" class="btn-install" id="direct-install"${deferredPrompt ? "" : " hidden"}>${I(INSTALL_ICON)}<span>Installer maintenant</span></button>
-        <p class="inst-pc">Sur ordinateur, si le bouton n'apparaît pas, ouvre NecroCounter avec Chrome ou Edge.</p>
-        <div class="inst-mobile">
-          <h3 class="rh">Android (Chrome)</h3>
-          <ol class="steps">
-            ${step(1, "Appuie sur les <b>3 petits points</b> en haut à droite de ton navigateur.")}
-            ${step(2, "Appuie sur <b>Ajouter à l'écran d'accueil</b> (ou <b>Installer l'application</b>).")}
-            ${step(3, "Choisis <b>Installer</b> (et non « Créer un raccourci »), puis confirme avec <b>Installer</b>.")}
-            ${step(4, "L'icône <b>N</b> de NecroCounter apparaît sur l'écran d'accueil de ton téléphone. C'est prêt !")}
-          </ol>
-          <h3 class="rh">iPhone (Safari)</h3>
-          <ol class="steps">
-            ${step(1, "Appuie sur le bouton <b>Partager</b> (le carré avec une flèche vers le haut).")}
-            ${step(2, "Choisis <b>Sur l'écran d'accueil</b>, puis <b>Ajouter</b>.")}
-          </ol>
-          <p class="hint">Si le bouton « Installer maintenant » apparaît en haut de cette page, il suffit de l'utiliser.</p>
-        </div>
-      </div>`;
+    let match = null;
+    let setupDraft = null;
+
+    function loadMatch() {
+      try { return JSON.parse(localStorage.getItem(STORE) || "null"); } catch (e) { return null; }
+    }
+    function saveMatch() {
+      if (match) localStorage.setItem(STORE, JSON.stringify(match));
+      else localStorage.removeItem(STORE);
+    }
+    function loadHist() {
+      try { return JSON.parse(localStorage.getItem(HIST) || "[]"); } catch (e) { return []; }
+    }
+    function pushHist(m) {
+      const h = loadHist();
+      h.unshift({
+        id: m.id, format: m.format, edition: m.edition,
+        a: m.gangs[0].name, b: m.gangs[1].name,
+        winner: (m.post && m.post.winner) || "",
+        at: m.endedAt || m.createdAt
+      });
+      localStorage.setItem(HIST, JSON.stringify(h.slice(0, 20)));
+    }
+
+    function fighter(name, cost) {
+      return { id: uid(), name: name || "Combattant", cost: cost || 0, wounds: 1, maxWounds: 1, ready: true, status: [] };
+    }
+    function emptyGang(label) {
+      return { name: label, rating: "", crew: [fighter(label === "Gang A" ? "Leader A" : "Leader B", 0)] };
+    }
+    function newDraft() {
+      return {
+        format: "skirmish",
+        edition: "N26",
+        budget: "1000",
+        budgetCustom: "",
+        gangs: [emptyGang("Gang A"), emptyGang("Gang B")]
+      };
     }
 
     function homeHtml() {
       return `<div class="welcome">
         <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
           <circle cx="32" cy="32" r="30" fill="#32363c"/>
-          <circle cx="32" cy="32" r="25" fill="none" stroke="#e8a020" stroke-width="2.5"/>
-          <path d="M22 20v24M42 20v24M22 20l20 24" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="32" cy="32" r="25" fill="none" stroke="#f0b040" stroke-width="2.5"/>
+          <path d="M22 20v24M42 20v24M22 20l20 24" fill="none" stroke="#f0b040" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <h2>NecroCounter</h2>
-        <p>Ton compagnon pour Necromunda N23 et N26.</p>
+        <p>Ton compagnon pour Necromunda.</p>
       </div>
-      ${STANDALONE ? "" : `<a class="btn-install" href="#installer">${I(INSTALL_ICON)}<span>Installer l'app</span></a>`}
       <div class="feat">${FEATURES.map(([id, n, d, svg]) =>
         `<a class="fcard" href="#${id}"><span class="ficon">${I(svg)}</span><span><b>${n}</b><br><span>${d}</span></span></a>`
       ).join("")}</div>
       <div class="home-extra">
         <a class="btn-link" href="mailto:warcounter@proton.me?subject=%5BNecroCounter%5D%20Retour">Signaler un bug / Suggestion</a>
         <a class="btn-link" href="#soutenir">Soutenir le projet</a>
-        <a class="btn-warcounter" href="https://elcounter.github.io/warcounter/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#6b2119"/><circle cx="32" cy="32" r="25" fill="none" stroke="#d4ae3f" stroke-width="2.5"/><path d="M20 18l6 28 6-18 6 18 6-28" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><b>Découvre WarCounter</b><small>Ton compagnon pour Age of Sigmar.</small></span>
-        </a>
       </div>`;
     }
 
@@ -385,241 +383,318 @@
       </div>`;
     }
 
-    // ---- Éditions : N23 / N26 ----
-    const EDITIONS = { n23: "Necromunda N23", n26: "Necromunda N26" };
-    function storedEdition() {
-      try { const e = localStorage.getItem("nc-edition"); return EDITIONS[e] ? e : "n23"; } catch (_) { return "n23"; }
+    function seg(name, options, current) {
+      return `<div class="seg" data-seg="${name}">${options.map(([v, lab]) =>
+        `<button type="button" data-v="${v}" class="${current === v ? "on" : ""}">${lab}</button>`
+      ).join("")}</div>`;
     }
-    function saveEdition(e) { try { localStorage.setItem("nc-edition", e); } catch (_) {} }
-    function editionSwitch(section, current) {
-      return `<div class="ed-switch">${Object.entries(EDITIONS).map(([id, label]) =>
-        `<a class="ed" href="#${section}/${id}"${id === current ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</div>`;
+
+    function crewEditor(gi, g) {
+      return `<div class="panel"><h3 class="sec">${esc(g.name || ("Gang " + (gi + 1)))}</h3><div class="body">
+        <label class="fld"><span>Nom du gang</span><input data-g="${gi}" data-k="name" value="${esc(g.name)}"></label>
+        <label class="fld"><span>Rating (optionnel)</span><input data-g="${gi}" data-k="rating" inputmode="numeric" value="${esc(g.rating)}"></label>
+        <p class="hint">Crew (saisie libre)</p>
+        <div class="crew-list" id="crew-${gi}">
+          ${g.crew.map((f, fi) => `<div class="crew-row">
+            <input data-g="${gi}" data-f="${fi}" data-k="name" value="${esc(f.name)}" placeholder="Nom">
+            <input data-g="${gi}" data-f="${fi}" data-k="cost" inputmode="numeric" value="${f.cost || ""}" placeholder="Cr">
+            <button type="button" class="icon-x" data-del-f="${gi}:${fi}" aria-label="Retirer">×</button>
+          </div>`).join("")}
+        </div>
+        <div class="btn-row" style="margin-top:10px">
+          <button type="button" class="btn ghost small" data-add-f="${gi}">+ Combattant</button>
+        </div>
+      </div></div>`;
     }
-    function comingSoonHtml(heading, section, text) {
+
+    function setupHtml() {
+      const d = setupDraft || newDraft();
+      setupDraft = d;
+      const hist = loadHist();
       return `<div class="page">
-        <h2>${heading}</h2>
-        ${editionSwitch(section, "n26")}
-        <div class="placeholder">${text}</div>
-      </div>`;
-    }
-
-    // ---- Données Necromunda N23 ----
-    const DATA = "data/n23/";
-    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar"];
-    const STAT_KEYS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"];
-    const SKILL_CATS = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir"];
-    const ROLE_LABEL = { chef: "Chef", champion: "Champion", novice: "Novice", specialiste: "Spécialiste" };
-    const cache = {};
-
-    function load(file) {
-      if (!cache[file]) {
-        cache[file] = fetch(DATA + file).then(r => {
-          if (!r.ok) throw new Error(file + " : " + r.status);
-          return r.json();
-        }).catch(err => { delete cache[file]; throw err; });
-      }
-      return cache[file];
-    }
-
-    function errorHtml(err) {
-      return `<div class="placeholder">Impossible de charger les données (${esc(err.message)}). Vérifie ta connexion puis recharge la page.</div>`;
-    }
-
-    function housesHtml(index) {
-      return `<div class="page">
-        <h2>Gangs</h2>
-        ${editionSwitch("gangs", "n23")}
-        <p>Choisis une Maison pour voir ses combattants, ses compétences et sa liste d'équipement.</p>
-        <div class="houses">${index.maisons.map(m => {
-          const on = ACTIVE_HOUSES.includes(m.id);
-          return `<a class="fcard${on ? "" : " off"}" href="#gangs/n23/${esc(m.id)}"${on ? "" : ' aria-disabled="true" tabindex="-1"'}>
-            <span><b>Maison ${esc(m.nom)}</b><br><span>${on ? "Listes de gang N23" : "Bientôt disponible"}</span></span></a>`;
-        }).join("")}</div>
-      </div>`;
-    }
-
-    function statsHtml(profil) {
-      return `<div class="stats">${STAT_KEYS.map(k =>
-        `<div class="stat"><small>${k}</small><span>${esc(profil[k])}</span></div>`).join("")}</div>`;
-    }
-
-    function fightersHtml(h) {
-      return h.combattants.map(f => `<div class="fighter">
-        <div class="fhead"><b>${esc(f.role)}</b><span class="cost">${f.cout} crédits</span></div>
-        ${statsHtml(f.profil)}
-        <p class="note">${f.equipementDeDepart.length
-          ? "Équipement de départ : " + esc(f.equipementDeDepart.join(", "))
-          : "Commence sans équipement."}</p>
-      </div>`).join("");
-    }
-
-    function skillsHtml(h) {
-      const roles = Object.keys(h.competences);
-      const cell = (role, cat) => {
-        const c = h.competences[role];
-        if (c.primaires.includes(cat)) return '<td class="p">Prim.</td>';
-        if (c.secondaires.includes(cat)) return '<td class="s">Sec.</td>';
-        return "<td>-</td>";
-      };
-      return `<div class="scroll"><table class="grid">
-        <thead><tr><th></th>${roles.map(r => `<th>${esc(ROLE_LABEL[r] || r)}</th>`).join("")}</tr></thead>
-        <tbody>${SKILL_CATS.map(c => `<tr><td>${c}</td>${roles.map(r => cell(r, c)).join("")}</tr>`).join("")}</tbody>
-      </table></div>
-      <p class="note">Prim. : set Primaire · Sec. : set Secondaire</p>`;
-    }
-
-    function profileHtml(weapon, modes) {
-      const rows = weapon.profils.filter(p => !modes || !p.mode || modes.includes(p.mode));
-      return `<div class="prof scroll"><table class="grid">
-        <thead><tr><th>Profil</th><th>Por C</th><th>Por L</th><th>Pré C</th><th>Pré L</th><th>F</th><th>PA</th><th>D</th><th>Mu</th></tr></thead>
-        <tbody>${rows.map(p => `<tr><td>${esc(p.mode || weapon.nom)}</td>${["porC", "porL", "preC", "preL", "F", "PA", "D", "Mu"]
-          .map(k => `<td>${esc(p[k])}</td>`).join("")}</tr>
-          <tr><td class="traits" colspan="9">${p.traits.length ? esc(p.traits.join(", ")) : "Aucun trait"}</td></tr>`).join("")}</tbody>
-      </table></div>`;
-    }
-
-    function equipmentHtml(h, armes) {
-      const byId = Object.fromEntries(armes.armes.map(a => [a.id, a]));
-      const groups = [];
-      h.equipement.forEach(item => {
-        let g = groups.find(x => x.cat === item.categorie);
-        if (!g) groups.push(g = { cat: item.categorie, items: [] });
-        g.items.push(item);
-      });
-      const tags = item => [item.compteDouble ? "compte pour deux armes" : "", item.accessoireUnique ? "non cumulable" : ""]
-        .filter(Boolean).map(t => `<span class="tag"> (${t})</span>`).join("");
-      return groups.map(g => `<div class="eqcat">${esc(g.cat)}</div>${g.items.map(item => {
-        const weapon = item.arme && byId[item.arme];
-        const head = `<span class="nm">${esc(item.nom)}${tags(item)}</span><span class="pr">${item.prix} cr</span>`;
-        return weapon
-          ? `<details class="eq"><summary>${head}</summary>${profileHtml(weapon, item.modes)}</details>`
-          : `<div class="eq"><div class="row">${head.replace('class="nm"', 'class="nm plain"')}</div></div>`;
-      }).join("")}`).join("");
-    }
-
-    function houseHtml(h, armes) {
-      const r = h.reglesDeCreation;
-      return `<div class="page">
-        <h2>Maison ${esc(h.nom)}</h2>
-        <p><span class="badge">Necromunda N23</span></p>
-        <div class="panel"><h3 class="sec">Combattants</h3><div class="body">${fightersHtml(h)}</div></div>
-        <div class="panel"><h3 class="sec">Compétences accessibles</h3><div class="body">${skillsHtml(h)}</div></div>
-        <div class="panel"><h3 class="sec">Règles de création</h3><div class="body"><ul class="rules">
-          <li>${esc(r.chefEtChampion)}</li><li>${esc(r.novice)}</li><li>${esc(r.armeSpeciale)}</li>
-        </ul></div></div>
-        <div class="panel"><h3 class="sec">Liste d'équipement</h3><div class="body">
-          <p class="note" style="margin-top:0">Touche une arme pour afficher son profil.</p>
-          ${equipmentHtml(h, armes)}
+        <h2>Nouvelle partie</h2>
+        <p class="hint">Setup libre — N23 / N26 · escarmouche ou campagne.</p>
+        <div class="panel"><h3 class="sec">Format</h3><div class="body">
+          <label class="fld"><span>Type</span>${seg("format", [["skirmish","Escarmouche"],["campaign","Campagne"]], d.format)}</label>
+          <label class="fld"><span>Édition</span>${seg("edition", [["N26","N26"],["N23","N23"]], d.edition)}</label>
+          <label class="fld"><span>Budget crédits</span>${seg("budget", [["800","800"],["1000","1000"],["1250","1250"],["1500","1500"],["libre","Libre"]], d.budget)}</label>
+          <label class="fld" id="budget-custom-wrap" ${d.budget === "libre" ? "" : "hidden"}><span>Budget libre</span><input id="budget-custom" inputmode="numeric" value="${esc(d.budgetCustom)}" placeholder="ex. 1100"></label>
         </div></div>
+        ${crewEditor(0, d.gangs[0])}
+        ${crewEditor(1, d.gangs[1])}
+        <button type="button" class="btn primary" id="start-match">Lancer la partie</button>
+        ${match && match.phase !== "done" ? `<button type="button" class="btn ghost" id="resume-match">Reprendre la partie en cours</button>` : ""}
+        ${hist.length ? `<div class="panel"><h3 class="sec">Historique local</h3><div class="body history">
+          ${hist.slice(0, 5).map(h => `<div><b>${esc(h.a)} vs ${esc(h.b)}</b><span>${esc(h.format)} · ${esc(h.edition)}${h.winner ? " · " + esc(h.winner) : ""}</span></div>`).join("")}
+        </div></div>` : ""}
       </div>`;
     }
 
-    // ---- Armurerie N23 (onglet Règles) ----
-    const EQUIP_CATS = ["Armures", "Champs protecteurs", "Bioniques", "Équipement de gang",
-      "Équipement personnel", "Accessoires d'armes", "Objets de prestige", "Bêtes exotiques"];
-
-    function shopLine(o, label) {
-      return `${label ? esc(label) + " : " : ""}<b>${o.prix ? o.prix + " cr" : "voir règle"}</b> · ${esc(o.rarete)}`;
-    }
-
-    function armouryHtml([armes, comptoir]) {
-      const weapons = armes.armes;
-      const ids = weapons.map(w => w.id).sort((a, b) => b.length - a.length);
-      const shop = {}, loose = {};
-      comptoir.objets.forEach(o => {
-        const key = o.id.replace(/^pieges-/, "");
-        const target = ids.find(i => key === i || key.startsWith(i + "-"));
-        if (target) (shop[target] = shop[target] || []).push(o);
-        else (loose[o.categorie] = loose[o.categorie] || []).push(o);
+    function bindSetup() {
+      const d = setupDraft;
+      $("view").querySelectorAll("[data-seg]").forEach(box => {
+        box.addEventListener("click", e => {
+          const btn = e.target.closest("button[data-v]");
+          if (!btn) return;
+          const key = box.getAttribute("data-seg");
+          d[key] = btn.getAttribute("data-v");
+          box.querySelectorAll("button").forEach(b => b.classList.toggle("on", b === btn));
+          const wrap = $("budget-custom-wrap");
+          if (wrap) wrap.hidden = d.budget !== "libre";
+        });
       });
+      $("view").querySelectorAll("input[data-g]").forEach(inp => {
+        inp.addEventListener("input", () => {
+          const gi = +inp.getAttribute("data-g");
+          const fi = inp.getAttribute("data-f");
+          const k = inp.getAttribute("data-k");
+          if (fi == null) d.gangs[gi][k] = inp.value;
+          else {
+            const v = k === "cost" ? (parseInt(inp.value, 10) || 0) : inp.value;
+            d.gangs[gi].crew[+fi][k] = v;
+          }
+        });
+      });
+      $("view").querySelectorAll("[data-add-f]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const gi = +btn.getAttribute("data-add-f");
+          d.gangs[gi].crew.push(fighter("Combattant", 0));
+          renderPartie();
+        });
+      });
+      $("view").querySelectorAll("[data-del-f]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const [gi, fi] = btn.getAttribute("data-del-f").split(":").map(Number);
+          if (d.gangs[gi].crew.length < 2) return;
+          d.gangs[gi].crew.splice(fi, 1);
+          renderPartie();
+        });
+      });
+      const start = $("start-match");
+      if (start) start.addEventListener("click", () => {
+        const custom = ($("budget-custom") || {}).value || "";
+        d.budgetCustom = custom;
+        match = {
+          id: uid(),
+          format: d.format,
+          edition: d.edition,
+          budget: d.budget === "libre" ? (custom || "libre") : d.budget,
+          phase: "live",
+          round: 1,
+          priority: 0,
+          gangs: d.gangs.map(g => ({
+            name: g.name || "Gang",
+            rating: g.rating || "",
+            crew: g.crew.map(f => ({
+              id: f.id || uid(),
+              name: f.name || "Combattant",
+              cost: f.cost || 0,
+              wounds: 1,
+              maxWounds: 1,
+              ready: true,
+              status: []
+            }))
+          })),
+          post: { winner: "", sideJobA: false, sideJobB: false, creditsA: "", creditsB: "", notes: "" },
+          createdAt: new Date().toISOString()
+        };
+        setupDraft = null;
+        saveMatch();
+        renderPartie();
+      });
+      const resume = $("resume-match");
+      if (resume) resume.addEventListener("click", () => { match = loadMatch(); renderPartie(); });
+    }
 
-      const flags = o => [o.compteDouble ? "compte pour deux armes" : "", o.accessoireUnique ? "non cumulable" : ""]
-        .filter(Boolean).map(t => `<span class="tag"> (${t})</span>`).join("");
-      const plainRow = o => `<div class="eq"><div class="row"><span class="nm">${esc(o.nom)}${flags(o)}</span>
-        <span class="pr">${o.prix ? o.prix + " cr" : "-"}</span></div><p class="shop">${esc(o.rarete)}</p></div>`;
-
-      const weaponRow = w => {
-        const offers = shop[w.id] || [];
-        const lead = offers.length === 1 ? offers[0] : null;
-        const price = lead ? `${lead.prix} cr` : offers.length ? "variable" : "";
-        const shopInfo = offers.length > 1
-          ? offers.map(o => `<p class="shop">${shopLine(o, o.nom.replace(w.nom, "").replace(/^\s*\(|\)\s*$/g, "") || w.nom)}</p>`).join("")
-          : lead ? `<p class="shop">Comptoir : ${shopLine(lead)}${flags(lead)}</p>`
-          : '<p class="shop">Hors Comptoir Commercial (liste de Maison ou créature).</p>';
-        return `<details class="eq"><summary><span class="nm">${esc(w.nom)}${lead ? flags(lead) : ""}</span>
-          <span class="pr">${price}</span></summary>${shopInfo}${profileHtml(w)}</details>`;
-      };
-
-      const cats = [];
-      weapons.forEach(w => { if (!cats.includes(w.categorie)) cats.push(w.categorie); });
-      const weaponFolds = cats.map(cat => {
-        const list = weapons.filter(w => w.categorie === cat);
-        const extra = loose[cat] || [];
-        return `<details class="fold"><summary><span>${esc(cat)}</span><small>${list.length + extra.length}</small></summary>
-          <div class="fold-body">${list.map(weaponRow).join("")}${extra.map(plainRow).join("")}</div></details>`;
-      }).join("");
-      const equipFolds = EQUIP_CATS.filter(c => loose[c]).map(cat =>
-        `<details class="fold"><summary><span>${esc(cat)}</span><small>${loose[cat].length}</small></summary>
-          <div class="fold-body">${loose[cat].map(plainRow).join("")}</div></details>`).join("");
-
-      return `<div class="page">
-        <h2>Règles</h2>
-        ${editionSwitch("regles", "n23")}
-        <h3 class="h3">Armurerie</h3>
-        <p class="note">Profils de toutes les armes, avec le prix et la rareté au Comptoir Commercial. Touche une catégorie pour l'ouvrir, puis une arme pour voir son profil.</p>
-        <div class="folds" style="margin-top:12px">${weaponFolds}</div>
-        <h3 class="h3">Équipement</h3>
-        <div class="folds">${equipFolds}</div>
+    function fighterCard(gi, fi, f) {
+      const ooa = f.status.includes("ooa");
+      return `<div class="fighter ${ooa ? "ooa" : ""}" data-gi="${gi}" data-fi="${fi}">
+        <div class="fname"><span>${esc(f.name)}</span><small>${f.cost ? f.cost + " cr" : ""}</small></div>
+        <div class="wounds">
+          <button type="button" data-w="-">−</button>
+          <b>${f.wounds}</b>
+          <button type="button" data-w="+">+</button>
+          <span class="hint" style="margin:0">Blessures</span>
+        </div>
+        <div class="tags">
+          ${STATUSES.map(s => `<button type="button" class="tag ${s.danger ? "danger " : ""}${f.status.includes(s.id) ? "on" : ""}" data-st="${s.id}">${s.label}</button>`).join("")}
+        </div>
+        <button type="button" class="ready-btn ${f.ready && !ooa ? "on" : ""}" data-ready>${f.ready && !ooa ? "Ready" : "Activé / indispo"}</button>
       </div>`;
     }
 
-    function showAsync(view, promise, render) {
-      const token = location.hash;
-      view.innerHTML = '<div class="placeholder">Chargement…</div>';
-      promise.then(data => { if (location.hash === token) view.innerHTML = render(data); })
-        .catch(err => { if (location.hash === token) view.innerHTML = errorHtml(err); });
+    function liveHtml() {
+      const m = match;
+      return `<div class="page">
+        <h2>Partie live</h2>
+        <div class="live-top">
+          <span class="pill">${esc(m.edition)} · ${m.format === "campaign" ? "Campagne" : "Escarmouche"}</span>
+          <span class="pill">Budget ${esc(String(m.budget))}</span>
+          <span class="pill">Round ${m.round}</span>
+          <span class="pill">Priorité : ${esc(m.gangs[m.priority].name)}</span>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn ghost small" id="tog-priority">Changer priorité</button>
+          <button type="button" class="btn ghost small" id="next-round">Round +1</button>
+          <button type="button" class="btn ghost small" id="reset-ready">Reset Ready</button>
+        </div>
+        ${m.gangs.map((g, gi) => `<div class="gang-col">
+          <h3>${esc(g.name)}${g.rating ? " · " + esc(g.rating) : ""}</h3>
+          ${g.crew.map((f, fi) => fighterCard(gi, fi, f)).join("")}
+        </div>`).join("")}
+        <div class="panel"><h3 class="sec">Bottle / moral</h3><div class="body">
+          <p class="hint">Rappel : teste le bottle quand tu perds assez de combattants (selon scénario / édition). Note le résultat ici si besoin.</p>
+          <label class="fld"><span>Note bottle</span><input id="bottle-note" value="${esc(m.bottleNote || "")}" placeholder="ex. Gang A bottle au round 3"></label>
+        </div></div>
+        <button type="button" class="btn primary" id="to-post">Passer au post-battle</button>
+        <button type="button" class="btn danger" id="abort-match">Abandonner la partie</button>
+      </div>`;
+    }
+
+    function bindLive() {
+      const m = match;
+      $("tog-priority").addEventListener("click", () => { m.priority = m.priority ? 0 : 1; saveMatch(); renderPartie(); });
+      $("next-round").addEventListener("click", () => { m.round += 1; m.gangs.forEach(g => g.crew.forEach(f => { if (!f.status.includes("ooa")) f.ready = true; })); saveMatch(); renderPartie(); });
+      $("reset-ready").addEventListener("click", () => { m.gangs.forEach(g => g.crew.forEach(f => { if (!f.status.includes("ooa")) f.ready = true; })); saveMatch(); renderPartie(); });
+      const bottle = $("bottle-note");
+      if (bottle) bottle.addEventListener("input", () => { m.bottleNote = bottle.value; saveMatch(); });
+      $("view").querySelectorAll(".fighter").forEach(card => {
+        const gi = +card.getAttribute("data-gi");
+        const fi = +card.getAttribute("data-fi");
+        const f = m.gangs[gi].crew[fi];
+        card.querySelectorAll("[data-w]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            f.wounds = Math.max(0, f.wounds + (btn.getAttribute("data-w") === "+" ? 1 : -1));
+            saveMatch(); renderPartie();
+          });
+        });
+        card.querySelectorAll("[data-st]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-st");
+            const i = f.status.indexOf(id);
+            if (i >= 0) f.status.splice(i, 1);
+            else f.status.push(id);
+            if (f.status.includes("ooa")) f.ready = false;
+            saveMatch(); renderPartie();
+          });
+        });
+        const rb = card.querySelector("[data-ready]");
+        if (rb) rb.addEventListener("click", () => {
+          if (f.status.includes("ooa")) return;
+          f.ready = !f.ready;
+          saveMatch(); renderPartie();
+        });
+      });
+      $("to-post").addEventListener("click", () => { m.phase = "post"; saveMatch(); renderPartie(); });
+      $("abort-match").addEventListener("click", () => {
+        if (!confirm("Abandonner la partie en cours ?")) return;
+        match = null; saveMatch(); setupDraft = newDraft(); renderPartie();
+      });
+    }
+
+    function postHtml() {
+      const m = match;
+      const p = m.post || {};
+      return `<div class="page">
+        <h2>Post-battle</h2>
+        <p class="hint">${esc(m.gangs[0].name)} vs ${esc(m.gangs[1].name)} · ${esc(m.edition)} · Round ${m.round}</p>
+        <div class="panel"><h3 class="sec">Résultat</h3><div class="body">
+          <label class="fld"><span>Vainqueur</span>
+            <select id="post-winner">
+              <option value="" ${!p.winner ? "selected" : ""}>—</option>
+              <option value="${esc(m.gangs[0].name)}" ${p.winner === m.gangs[0].name ? "selected" : ""}>${esc(m.gangs[0].name)}</option>
+              <option value="${esc(m.gangs[1].name)}" ${p.winner === m.gangs[1].name ? "selected" : ""}>${esc(m.gangs[1].name)}</option>
+              <option value="draw" ${p.winner === "draw" ? "selected" : ""}>Match nul</option>
+            </select>
+          </label>
+          ${m.edition === "N26" ? `
+          <label class="fld"><span>Side Job ${esc(m.gangs[0].name)}</span>
+            <select id="sj-a"><option value="0" ${!p.sideJobA ? "selected" : ""}>Non</option><option value="1" ${p.sideJobA ? "selected" : ""}>Réussi</option></select>
+          </label>
+          <label class="fld"><span>Side Job ${esc(m.gangs[1].name)}</span>
+            <select id="sj-b"><option value="0" ${!p.sideJobB ? "selected" : ""}>Non</option><option value="1" ${p.sideJobB ? "selected" : ""}>Réussi</option></select>
+          </label>` : ""}
+          <label class="fld"><span>Crédits ${esc(m.gangs[0].name)}</span><input id="cr-a" value="${esc(p.creditsA || "")}" placeholder="ex. 30 ou 2D3×10"></label>
+          <label class="fld"><span>Crédits ${esc(m.gangs[1].name)}</span><input id="cr-b" value="${esc(p.creditsB || "")}" placeholder="ex. 10"></label>
+        </div></div>
+        <div class="panel"><h3 class="sec">Combattants OOA / notes XP</h3><div class="body">
+          ${m.gangs.map((g, gi) => `<div style="margin-bottom:12px"><b style="color:var(--amber)">${esc(g.name)}</b>
+            ${g.crew.map(f => `<div class="hint" style="margin:6px 0">${esc(f.name)} — ${f.status.includes("ooa") ? "OOA" : "OK"} · W${f.wounds}${f.status.length ? " · " + f.status.join(", ") : ""}</div>`).join("")}
+          </div>`).join("")}
+          <label class="fld"><span>Notes (XP, injuries, etc.)</span><textarea id="post-notes" placeholder="Leader A +1 XP, Ganger B lasting injury...">${esc(p.notes || "")}</textarea></label>
+        </div></div>
+        <button type="button" class="btn primary" id="save-post">Enregistrer et terminer</button>
+        <button type="button" class="btn ghost" id="back-live">Retour live</button>
+      </div>`;
+    }
+
+    function bindPost() {
+      const m = match;
+      const sync = () => {
+        m.post = {
+          winner: ($("post-winner") || {}).value || "",
+          sideJobA: ($("sj-a") || {}).value === "1",
+          sideJobB: ($("sj-b") || {}).value === "1",
+          creditsA: ($("cr-a") || {}).value || "",
+          creditsB: ($("cr-b") || {}).value || "",
+          notes: ($("post-notes") || {}).value || ""
+        };
+        saveMatch();
+      };
+      ["post-winner", "sj-a", "sj-b", "cr-a", "cr-b", "post-notes"].forEach(id => {
+        const el = $(id); if (el) el.addEventListener("change", sync), el.addEventListener("input", sync);
+      });
+      $("save-post").addEventListener("click", () => {
+        sync();
+        m.phase = "done";
+        m.endedAt = new Date().toISOString();
+        pushHist(m);
+        match = null;
+        saveMatch();
+        setupDraft = newDraft();
+        renderPartie();
+      });
+      $("back-live").addEventListener("click", () => { sync(); m.phase = "live"; saveMatch(); renderPartie(); });
+    }
+
+    function renderPartie() {
+      match = match || loadMatch();
+      const view = $("view");
+      if (!match || match.phase === "done" || !match.phase) {
+        view.innerHTML = setupHtml();
+        bindSetup();
+      } else if (match.phase === "live") {
+        view.innerHTML = liveHtml();
+        bindLive();
+      } else if (match.phase === "post") {
+        view.innerHTML = postHtml();
+        bindPost();
+      }
     }
 
     function route() {
       const h = location.hash.slice(1) || "accueil";
-      const parts = h.split("/");
-      const section = parts[0];
-      let edition = EDITIONS[parts[1]] ? parts[1] : null;
-      const house = edition ? parts[2] : parts[1];   // ancien lien #gangs/goliath = N23
-      if (!edition) edition = house ? "n23" : storedEdition();
-      if (section === "gangs" || section === "regles") saveEdition(edition);
       const back = $("back");
       const title = $("title");
       const view = $("view");
-
-      const tabs = { gangs: "nav-gangs", partie: "nav-partie", regles: "nav-regles" };
-      Object.values(tabs).forEach(id => { const el = $(id); if (el) el.removeAttribute("aria-current"); });
-      if (tabs[section]) $(tabs[section]).setAttribute("aria-current", "page");
-
-      back.hidden = !(h === "soutenir" || h === "installer" || (section === "gangs" && house));
       const homeBtn = $("home-btn");
+
+      const tabs = { accueil: "nav-home", gangs: "nav-gangs", partie: "nav-partie", regles: "nav-regles" };
+      Object.values(tabs).forEach(id => { const el = $(id); if (el) el.removeAttribute("aria-current"); });
+      if (tabs[h]) $(tabs[h]).setAttribute("aria-current", "page");
+
+      back.hidden = !(h === "soutenir");
       if (homeBtn) homeBtn.hidden = (h === "accueil" || h === "");
-      if (section === "gangs" && edition === "n23" && house && ACTIVE_HOUSES.includes(house)) {
+
+      if (h === "gangs") {
         title.textContent = "Gangs";
-        showAsync(view, Promise.all([load("maisons/" + house + ".json"), load("armes.json")]), ([data, armes]) => houseHtml(data, armes));
-      } else if (section === "gangs" && edition === "n26") {
-        title.textContent = "Gangs";
-        view.innerHTML = comingSoonHtml("Gangs", "gangs", "Les listes de gangs de Necromunda N26 arriveront ici.");
-      } else if (section === "gangs") {
-        title.textContent = "Gangs";
-        showAsync(view, load("index.json"), housesHtml);
+        view.innerHTML = placeholder("Gangs", "Crée tes gangs, gère tes combattants et leur équipement.");
       } else if (h === "partie") {
         title.textContent = "Partie";
-        view.innerHTML = placeholder("Partie", "Suivi de partie : blessures, status, priorités.");
-      } else if (section === "regles" && edition === "n26") {
+        renderPartie();
+      } else if (h === "regles") {
         title.textContent = "Règles";
-        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.");
-      } else if (section === "regles") {
-        title.textContent = "Règles";
-        showAsync(view, Promise.all([load("armes.json"), load("comptoir.json")]), armouryHtml);
-      } else if (h === "installer") {
-        title.textContent = "Installer";
-        view.innerHTML = installHtml();
+        view.innerHTML = placeholder("Règles", "Aides de jeu et rappels pour la table.");
       } else if (h === "soutenir") {
         title.textContent = "Soutenir";
         view.innerHTML = supportHtml();
@@ -630,10 +705,9 @@
       window.scrollTo(0, 0);
     }
 
-    $("back").addEventListener("click", () => {
-      location.hash = location.hash.startsWith("#gangs/") ? "gangs/n23" : "accueil";
-    });
+    $("back").addEventListener("click", () => { location.hash = "accueil"; });
     window.addEventListener("hashchange", route);
+    match = loadMatch();
     route();
 
     if ("serviceWorker" in navigator) {
@@ -641,6 +715,6 @@
     }
   })();
   </script>
-<script data-goatcounter="https://necrocounter.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://necrocounter.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
