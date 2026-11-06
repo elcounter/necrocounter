@@ -156,6 +156,13 @@
       border: 1px solid var(--amber-dim); color: var(--amber);
       font: 600 11px/1.4 var(--display); letter-spacing: .08em; text-transform: uppercase;
     }
+    .ed-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 2px 0 6px; }
+    .ed {
+      display: inline-block; padding: 7px 12px; border-radius: 8px; border: 1px solid transparent;
+      color: var(--text); text-decoration: none;
+      font: 600 13px/1.2 var(--display); letter-spacing: .08em; text-transform: uppercase;
+    }
+    .ed[aria-current="page"] { border-color: var(--amber-dim); color: var(--amber); background: rgba(232,160,32,.06); }
     .houses { display: grid; gap: 10px; margin-top: 16px; }
     .fcard.off { opacity: .45; pointer-events: none; }
     .fighter + .fighter { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
@@ -248,7 +255,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.1.11 · Necromunda N23 · MAJ 06-11-2026<br>
+      NecroCounter version 0.2.0 · Necromunda N23 et N26 · MAJ 06-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
@@ -278,8 +285,8 @@
     const I = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 
     const FEATURES = [
-      ["regles", "Règles", "Règles de Necromunda N23.", '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/>'],
-      ["gangs", "Gangs", "Maisons, combattants, profils et équipement N23.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
+      ["regles", "Règles", "Règles de Necromunda N23 et N26.", '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/>'],
+      ["gangs", "Gangs", "Maisons, combattants, profils et équipement.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
       ["partie", "Partie", "Suis une partie en cours dans l'underhive.", '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/>']
     ];
 
@@ -335,7 +342,7 @@
           <path d="M22 20v24M42 20v24M22 20l20 24" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <h2>NecroCounter</h2>
-        <p>Ton compagnon pour Necromunda N23.</p>
+        <p>Ton compagnon pour Necromunda N23 et N26.</p>
       </div>
       ${STANDALONE ? "" : `<a class="btn-install" href="#installer">${I(INSTALL_ICON)}<span>Installer l'app</span></a>`}
       <div class="feat">${FEATURES.map(([id, n, d, svg]) =>
@@ -360,6 +367,24 @@
         <div class="panel"><h3 class="sec">Faire un don</h3><div class="body">
           <a class="btn primary" href="https://www.paypal.com/qrcodes/p2pqrc/MXBPC6EUBZBGN" target="_blank" rel="noopener">Faire un don avec PayPal</a>
         </div></div>
+      </div>`;
+    }
+
+    // ---- Éditions : N23 / N26 ----
+    const EDITIONS = { n23: "Necromunda N23", n26: "Necromunda N26" };
+    function storedEdition() {
+      try { const e = localStorage.getItem("nc-edition"); return EDITIONS[e] ? e : "n23"; } catch (_) { return "n23"; }
+    }
+    function saveEdition(e) { try { localStorage.setItem("nc-edition", e); } catch (_) {} }
+    function editionSwitch(section, current) {
+      return `<div class="ed-switch">${Object.entries(EDITIONS).map(([id, label]) =>
+        `<a class="ed" href="#${section}/${id}"${id === current ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</div>`;
+    }
+    function comingSoonHtml(heading, section, text) {
+      return `<div class="page">
+        <h2>${heading}</h2>
+        ${editionSwitch(section, "n26")}
+        <div class="placeholder">${text}</div>
       </div>`;
     }
 
@@ -388,11 +413,11 @@
     function housesHtml(index) {
       return `<div class="page">
         <h2>Gangs</h2>
-        <p><span class="badge">Necromunda N23</span></p>
+        ${editionSwitch("gangs", "n23")}
         <p>Choisis une Maison pour voir ses combattants, ses compétences et sa liste d'équipement.</p>
         <div class="houses">${index.maisons.map(m => {
           const on = ACTIVE_HOUSES.includes(m.id);
-          return `<a class="fcard${on ? "" : " off"}" href="#gangs/${esc(m.id)}"${on ? "" : ' aria-disabled="true" tabindex="-1"'}>
+          return `<a class="fcard${on ? "" : " off"}" href="#gangs/n23/${esc(m.id)}"${on ? "" : ' aria-disabled="true" tabindex="-1"'}>
             <span><b>Maison ${esc(m.nom)}</b><br><span>${on ? "Listes de gang N23" : "Bientôt disponible"}</span></span></a>`;
         }).join("")}</div>
       </div>`;
@@ -524,7 +549,7 @@
 
       return `<div class="page">
         <h2>Règles</h2>
-        <p><span class="badge">Necromunda N23</span></p>
+        ${editionSwitch("regles", "n23")}
         <h3 class="h3">Armurerie</h3>
         <p class="note">Profils de toutes les armes, avec le prix et la rareté au Comptoir Commercial. Touche une catégorie pour l'ouvrir, puis une arme pour voir son profil.</p>
         <div class="folds" style="margin-top:12px">${weaponFolds}</div>
@@ -542,7 +567,12 @@
 
     function route() {
       const h = location.hash.slice(1) || "accueil";
-      const [section, sub] = h.split("/");
+      const parts = h.split("/");
+      const section = parts[0];
+      let edition = EDITIONS[parts[1]] ? parts[1] : null;
+      const house = edition ? parts[2] : parts[1];   // ancien lien #gangs/goliath = N23
+      if (!edition) edition = house ? "n23" : storedEdition();
+      if (section === "gangs" || section === "regles") saveEdition(edition);
       const back = $("back");
       const title = $("title");
       const view = $("view");
@@ -551,19 +581,25 @@
       Object.values(tabs).forEach(id => { const el = $(id); if (el) el.removeAttribute("aria-current"); });
       if (tabs[section]) $(tabs[section]).setAttribute("aria-current", "page");
 
-      back.hidden = !(h === "soutenir" || h === "installer" || (section === "gangs" && sub));
+      back.hidden = !(h === "soutenir" || h === "installer" || (section === "gangs" && house));
       const homeBtn = $("home-btn");
       if (homeBtn) homeBtn.hidden = (h === "accueil" || h === "");
-      if (section === "gangs" && sub && ACTIVE_HOUSES.includes(sub)) {
+      if (section === "gangs" && edition === "n23" && house && ACTIVE_HOUSES.includes(house)) {
         title.textContent = "Gangs";
-        showAsync(view, Promise.all([load("maisons/" + sub + ".json"), load("armes.json")]), ([house, armes]) => houseHtml(house, armes));
+        showAsync(view, Promise.all([load("maisons/" + house + ".json"), load("armes.json")]), ([data, armes]) => houseHtml(data, armes));
+      } else if (section === "gangs" && edition === "n26") {
+        title.textContent = "Gangs";
+        view.innerHTML = comingSoonHtml("Gangs", "gangs", "Les listes de gangs de Necromunda N26 arriveront ici.");
       } else if (section === "gangs") {
         title.textContent = "Gangs";
         showAsync(view, load("index.json"), housesHtml);
       } else if (h === "partie") {
         title.textContent = "Partie";
         view.innerHTML = placeholder("Partie", "Suivi de partie : blessures, status, priorités.");
-      } else if (h === "regles") {
+      } else if (section === "regles" && edition === "n26") {
+        title.textContent = "Règles";
+        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.");
+      } else if (section === "regles") {
         title.textContent = "Règles";
         showAsync(view, Promise.all([load("armes.json"), load("comptoir.json")]), armouryHtml);
       } else if (h === "installer") {
@@ -580,7 +616,7 @@
     }
 
     $("back").addEventListener("click", () => {
-      location.hash = location.hash.startsWith("#gangs/") ? "gangs" : "accueil";
+      location.hash = location.hash.startsWith("#gangs/") ? "gangs/n23" : "accueil";
     });
     window.addEventListener("hashchange", route);
     route();
