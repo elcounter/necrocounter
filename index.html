@@ -365,7 +365,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.6 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.2.7 Necromunda N23 &amp; N26<br>
       MAJ 06-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -668,6 +668,62 @@
         <h2>Règles</h2>
         ${editionSwitch("regles", "n23")}
         <a class="fcard" href="#aide" style="margin-bottom:12px"><span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M9 7h6"/></svg></span><span><b>Rappels à table</b><br><span>Round, actions, blessures, bottle, Side Job</span></span></a>
+        <h3 class="h3">Aide de campagne N23</h3>
+        <p class="note">Rappels pour avant / après la bataille. Vérifie toujours dans ton livre en cas de doute.</p>
+        <div class="folds" style="margin-top:12px">
+          <details class="fold"><summary><span>Séquence pré-bataille</span></summary><div class="fold-body">
+            <div class="eq"><div class="abody" style="padding:12px">
+              <ol>
+                <li><b>Crew</b> — choisis les combattants qui participent (selon le scénario).</li>
+                <li><b>Tactics / aides</b> — tire ou choisis les cartes de tactiques de gang si utilisées.</li>
+                <li><b>Terrain &amp; déploiement</b> — selon le scénario.</li>
+                <li><b>Priorité du 1er round</b> — puis c'est parti.</li>
+              </ol>
+            </div></div>
+          </div></details>
+          <details class="fold"><summary><span>Séquence post-bataille</span></summary><div class="fold-body">
+            <div class="eq"><div class="abody" style="padding:12px">
+              <ol>
+                <li><b>Résultat</b> — victoire, défaite ou nul (objectifs du scénario).</li>
+                <li><b>XP</b> — attribue l'expérience gagnée aux combattants concernés.</li>
+                <li><b>Combattants OOA</b> — jets de blessure durable / récupération selon les tables.</li>
+                <li><b>Récompenses</b> — crédits, réputation, territoire selon campagne / scénario.</li>
+                <li><b>Actions de gang</b> — trading post, recrutement, soins, etc. (phase de cycle).</li>
+              </ol>
+              <p class="hint">Le tracker Partie t'aide pour le résultat, les OOA et les notes XP.</p>
+            </div></div>
+          </div></details>
+          <details class="fold"><summary><span>Blessures durables (rappel)</span></summary><div class="fold-body">
+            <div class="eq"><div class="abody" style="padding:12px">
+              <p>Un combattant <b>Out of Action</b> risque une blessure durable après la bataille.</p>
+              <ul>
+                <li>Enchaîne les jets prévus par ton livre (récupération / table de blessures).</li>
+                <li>Résultats typiques : rien de grave, malus permanent, convalescence, ou mort.</li>
+                <li>Note le résultat sur la fiche du combattant (ou dans les notes post-battle).</li>
+              </ul>
+              <p class="hint">Les tables exactes sont dans le livre de règles N23 — cet écran est un pense-bête, pas une copie.</p>
+            </div></div>
+          </div></details>
+          <details class="fold"><summary><span>XP &amp; progression</span></summary><div class="fold-body">
+            <div class="eq"><div class="abody" style="padding:12px">
+              <ul>
+                <li>Les combattants gagnent de l'<b>XP</b> en jouant (éliminations, objectifs, survie… selon règles).</li>
+                <li>Assez d'XP → <b>avancement</b> : +caractéristique, compétence, etc.</li>
+                <li>Chaque rôle (Chef, Champion, Ganger, Novice…) a ses <b>compétences primaires / secondaires</b> de Maison.</li>
+                <li>Voir l'onglet <b>Gangs</b> → Maison pour les sets de compétences.</li>
+              </ul>
+            </div></div>
+          </div></details>
+          <details class="fold"><summary><span>Bottle &amp; fin anticipée</span></summary><div class="fold-body">
+            <div class="eq"><div class="abody" style="padding:12px">
+              <ul>
+                <li>Quand les pertes montent, la gang peut devoir tester le <b>Bottle</b>.</li>
+                <li>Échec → la gang se retire ; la bataille se résout selon le scénario.</li>
+                <li>Utilise le champ « Note bottle » dans Partie live pour t'en souvenir en post-battle.</li>
+              </ul>
+            </div></div>
+          </div></details>
+        </div>
         <h3 class="h3">Armurerie</h3>
         <p class="note">Profils de toutes les armes, avec le prix et la rareté au Comptoir Commercial. Touche une catégorie pour l'ouvrir, puis une arme pour voir son profil.</p>
         <div class="folds" style="margin-top:12px">${weaponFolds}</div>
