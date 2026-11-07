@@ -365,8 +365,8 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.7 Necromunda N23 &amp; N26<br>
-      MAJ 06-11-2026<br>
+      NecroCounter version 0.2.8 Necromunda N23 &amp; N26<br>
+      MAJ 07-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
@@ -624,7 +624,67 @@
       return `${label ? esc(label) + " : " : ""}<b>${o.prix ? o.prix + " cr" : "voir règle"}</b> · ${esc(o.rarete)}`;
     }
 
-    function armouryHtml([armes, comptoir]) {
+
+    function refsFolds(refs) {
+      if (!refs) return "";
+      const traitItems = (refs.traits || []).map(t =>
+        `<details class="eq"><summary><span class="nm">${esc(t.nom)}</span></summary>
+          <p class="shop" style="padding:8px 12px 12px">${esc(t.resume)}</p></details>`
+      ).join("");
+      const skillSets = Object.entries(refs.competences || {}).map(([set, list]) =>
+        `<details class="fold"><summary><span>${esc(set)}</span><small>${list.length}</small></summary>
+          <div class="fold-body">${list.map(s =>
+            `<details class="eq"><summary><span class="nm">${esc(s.nom)}</span></summary>
+              <p class="shop" style="padding:8px 12px 12px">${esc(s.resume)}</p></details>`
+          ).join("")}</div></details>`
+      ).join("");
+      const modRows = (refs.modificateursTir || []).map(m =>
+        `<div class="eq"><div class="row"><span class="nm plain">${esc(m.label)}</span><span class="pr">${esc(m.mod)}</span></div></div>`
+      ).join("");
+      const feRows = (refs.forceEndurance || []).map(m =>
+        `<div class="eq"><div class="row"><span class="nm plain">${esc(m.cas)}</span><span class="pr">${esc(m.d6)}</span></div></div>`
+      ).join("");
+      const statRows = (refs.statuts || []).map(s =>
+        `<details class="eq"><summary><span class="nm">${esc(s.nom)}</span></summary>
+          <p class="shop" style="padding:8px 12px 12px">${esc(s.resume)}</p></details>`
+      ).join("");
+      const condRows = (refs.conditions || []).map(s =>
+        `<details class="eq"><summary><span class="nm">${esc(s.nom)}</span></summary>
+          <p class="shop" style="padding:8px 12px 12px">${esc(s.resume)}</p></details>`
+      ).join("");
+      const injRows = (refs.blessuresPersistantes || []).map(b =>
+        `<div class="eq"><div class="row"><span class="nm plain">${esc(b.plage)}</span><span class="pr" style="max-width:70%;text-align:right;font-size:12px">${esc(b.effet)}</span></div></div>`
+      ).join("");
+      return `
+        <h3 class="h3">Références rapides</h3>
+        <div class="folds" style="margin-top:12px">
+          <details class="fold"><summary><span>Modificateurs de tir</span></summary>
+            <div class="fold-body">${modRows}</div></details>
+          <details class="fold"><summary><span>Force vs Endurance</span></summary>
+            <div class="fold-body">${feRows}</div></details>
+        </div>
+        <h3 class="h3">Traits d'armes</h3>
+        <p class="note">Touche un trait pour le rappel. Vérifie le livre pour le détail exact.</p>
+        <div class="folds" style="margin-top:12px">
+          <details class="fold" open><summary><span>Tous les traits</span><small>${(refs.traits||[]).length}</small></summary>
+            <div class="fold-body">${traitItems}</div></details>
+        </div>
+        <h3 class="h3">Compétences</h3>
+        <p class="note">Par set — résumés pour la table.</p>
+        <div class="folds" style="margin-top:12px">${skillSets}</div>
+        <h3 class="h3">Statuts &amp; conditions</h3>
+        <div class="folds" style="margin-top:12px">
+          <details class="fold"><summary><span>Statuts</span><small>${(refs.statuts||[]).length}</small></summary>
+            <div class="fold-body">${statRows}</div></details>
+          <details class="fold"><summary><span>Conditions</span><small>${(refs.conditions||[]).length}</small></summary>
+            <div class="fold-body">${condRows}</div></details>
+          <details class="fold"><summary><span>Blessures persistantes (D66)</span></summary>
+            <div class="fold-body">${injRows}</div></details>
+        </div>`;
+    }
+
+
+    function armouryHtml([armes, comptoir, refs]) {
       const weapons = armes.armes;
       const ids = weapons.map(w => w.id).sort((a, b) => b.length - a.length);
       const shop = {}, loose = {};
@@ -724,6 +784,7 @@
             </div></div>
           </div></details>
         </div>
+        ${refsFolds(refs)}
         <h3 class="h3">Armurerie</h3>
         <p class="note">Profils de toutes les armes, avec le prix et la rareté au Comptoir Commercial. Touche une catégorie pour l'ouvrir, puis une arme pour voir son profil.</p>
         <div class="folds" style="margin-top:12px">${weaponFolds}</div>
@@ -1161,7 +1222,7 @@
       } else if (section === "regles") {
         title.textContent = "Règles";
         sessionStorage.setItem("nc_aide_from", "regles");
-        showAsync(view, Promise.all([load("armes.json"), load("comptoir.json")]), armouryHtml);
+        showAsync(view, Promise.all([load("armes.json"), load("comptoir.json"), load("refs.json")]), armouryHtml);
       } else if (h === "installer") {
         title.textContent = "Installer";
         view.innerHTML = installHtml();
