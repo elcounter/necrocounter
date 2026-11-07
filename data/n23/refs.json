@@ -1,160 +1,538 @@
 {
   "edition": "Necromunda N23",
-  "note": "Fiches penses-bete pour la table. Verifier le livre en cas de doute.",
+  "note": "Fiches pense-bête pour la table. Vérifie le livre en cas de doute.",
   "modificateursTir": [
-    { "label": "Cible a couvert partiel", "mod": "-1" },
-    { "label": "Cible a couvert total", "mod": "-2" },
-    { "label": "Modificateur de Precision de l'arme", "mod": "+/- ?" },
-    { "label": "Cible Engagee", "mod": "-1" },
-    { "label": "Cible Au Tapis (Longue portee seulement)", "mod": "-1" }
+    {
+      "label": "Cible à couvert partiel",
+      "mod": "-1"
+    },
+    {
+      "label": "Cible à couvert total",
+      "mod": "-2"
+    },
+    {
+      "label": "Modificateur de Précision de l'arme",
+      "mod": "+/- ?"
+    },
+    {
+      "label": "Cible Engagée",
+      "mod": "-1"
+    },
+    {
+      "label": "Cible Au Tapis (Longue portée seulement)",
+      "mod": "-1"
+    }
   ],
   "forceEndurance": [
-    { "cas": "Force >= double Endurance", "d6": "2+" },
-    { "cas": "Force superieure a Endurance", "d6": "3+" },
-    { "cas": "Force egale a Endurance", "d6": "4+" },
-    { "cas": "Force inferieure a Endurance", "d6": "5+" },
-    { "cas": "Force <= moitie Endurance", "d6": "6+" }
+    {
+      "cas": "Force ≥ double Endurance",
+      "d6": "2+"
+    },
+    {
+      "cas": "Force supérieure à Endurance",
+      "d6": "3+"
+    },
+    {
+      "cas": "Force égale à Endurance",
+      "d6": "4+"
+    },
+    {
+      "cas": "Force inférieure à Endurance",
+      "d6": "5+"
+    },
+    {
+      "cas": "Force ≤ moitié Endurance",
+      "d6": "6+"
+    }
   ],
   "traits": [
-    { "nom": "Abondance", "resume": "Munitions courantes : pas de test de Munitions a la recharge ; recharge auto si rate." },
-    { "nom": "Arme de poing", "resume": "Peut tirer et servir au corps a corps (une seule attaque). Bonus de Precision tir ne s'applique pas en melee." },
-    { "nom": "Aveuglant", "resume": "Touche sans blessure : test d'Initiative ou Aveugle (pion Pare perdu, pas d'actions de reaction sauf 6 naturel, etc.)." },
-    { "nom": "Bouclier a energie", "resume": "+2 sauvegarde melee (max 2+) dans l'arc frontal ; +1 vs tir frontal. Certaines explosions peuvent l'ignorer." },
-    { "nom": "Choc", "resume": "Touche sur 6 naturel : blessure auto (pas de jet de blessure)." },
-    { "nom": "Combi", "resume": "Deux profils : choisir lequel utiliser. Souvent moins de munitions ; tests de Munitions separes." },
-    { "nom": "Commotion", "resume": "Figurine touchee : Initiative -2 (min 6+) jusqu'a la fin du tour." },
-    { "nom": "Contrecoup", "resume": "Si Force touchee >= Force cible (avant modifs), poussee d'1\" ; obstacles peuvent bloquer / degats." },
-    { "nom": "Coup en traitre", "resume": "Attaque hors du champ de vision de la cible : +1 Force." },
-    { "nom": "Demolition", "resume": "Grenades : peuvent cibler le decor / objectifs ; une attaque seulement quel que soit le nombre de des." },
-    { "nom": "Desarmement", "resume": "Touche sur 6 : cible ne peut plus utiliser d'armes jusqu'a des attaques de Reaction a la fin du round." },
-    { "nom": "Digi", "resume": "Montée sur anneau/gant ; attaque melee supplementaire ; ne compte pas dans la limite d'armes portees." },
-    { "nom": "Empalement", "resume": "Touche + blessure + sauvegarde ratee : le projectile continue sur une ligne ; peut toucher d'autres cibles." },
-    { "nom": "Empetrement", "resume": "Touches non annulables par Parade. Touche sur 6 : reactions de la cible a -2." },
-    { "nom": "Encombrant", "resume": "Tirer = action Double. En melee, ne peut pas utiliser d'autre arme en meme temps." },
-    { "nom": "Energetique", "resume": "Ignore les champs protecteurs. Touche sur 6 : pas de sauvegarde d'armure (sauf champ) ; degats +1." },
-    { "nom": "Explosion", "resume": "Utilise un gabarit d'Explosion (voir regles gabarit). Ex. Explosion (3\"/5\")." },
-    { "nom": "Fumee", "resume": "Pas de touche/blocage/blessure : place un nuage de fumee (vision / traversée limitees)." },
-    { "nom": "Fusion", "resume": "Si reduit la cible a 0 PV, pas de de de Trauma : Hors de Combat automatique." },
-    { "nom": "Gaz", "resume": "Pas de jet de blessure classique : test vs Endurance ou Trauma (ignore sauvegarde si sous le seuil)." },
-    { "nom": "Gravitons", "resume": "Zone : jets d'Explosion / degats selon Force ; zone persiste et freine le mouvement." },
-    { "nom": "Grenade", "resume": "Action Tirer (Elementaire). Portee = Force x facteur. Pas de de de Puissance de Feu ; test de Munitions apres : echec = plus de cette grenade." },
-    { "nom": "Incendiaire", "resume": "Touche non OOA : 4+ sur D6 = condition Incendie (Force 3, PA-1, Degats 1 puis mouvement force / etouffer)." },
-    { "nom": "Instable", "resume": "Symbole Munitions sur Puissance de Feu : risque de surcharge montee / Hors de Combat pour le tireur." },
-    { "nom": "Limite", "resume": "Munition speciale : echec de Mun de Munitions = type epuise pour le combattant." },
-    { "nom": "Melee", "resume": "Peut servir aux attaques au corps a corps." },
-    { "nom": "Mitraille", "resume": "Cible touchee : D6 jets de blessure au lieu d'1." },
-    { "nom": "Parade", "resume": "Peut tenter d'annuler des touches de melee (selon regles Parade / armes)." },
-    { "nom": "Perforant", "resume": "Blessure sur 6 (apres modifs) : +1 point de degat." },
-    { "nom": "Peur", "resume": "Si l'attaque doit provoquer un Trauma, aucun Trauma n'est inflige ; la cible teste Nervosite a -2 ou est Demoralisee." },
-    { "nom": "Polyvalent", "resume": "Pas besoin d'etre en contact socle pour Engager ; portee d'engagement = Longue portee de l'arme." },
-    { "nom": "Pulveriser", "resume": "Apres un Trauma, D6 vs Endurance : succes (ou 6) peut convertir Blessure Legere en Blessure Grave." },
-    { "nom": "Radiations", "resume": "Apres resolution des touches : D6, 4+ = Blessure Legere supplementaire." },
-    { "nom": "Rarete", "resume": "Munitions difficiles : Court de Munitions = plus utilisable pour le reste de la bataille." },
-    { "nom": "Silencieux", "resume": "N'revele pas le tireur / n'alarme pas selon regles d'Attaque Furtive / scenarios." },
-    { "nom": "Sismique", "resume": "Cible Active non Bloquee par cette attaque pour ne pas etre Bloquee par les tirs. Blessure sur 6 : pas de sauvegarde." },
-    { "nom": "Souffle", "resume": "Utilise le gabarit de Souffle pour determiner les cibles." },
-    { "nom": "Tir rapide (X)", "resume": "Touche reussie = autant de touches que le de de Puissance de Feu. Peut lancer plusieurs des (max X). Tests de Munitions par symbole ; 1 echec = Court, 2+ = enrayee." },
-    { "nom": "Toile", "resume": "Blessure reussie : pas de degats/Trauma ; cible Entoilee (traitee comme Gravement Blessee) + sedatif en fin de bataille." },
-    { "nom": "Toxine", "resume": "A la place du jet de blessure : D6 vs Endurance (6 toujours Trauma, sans tenir compte des PV)." },
-    { "nom": "Traction", "resume": "Cible touchee non OOA : peut etre tractee vers l'attaquant (D6 vs Force)." },
-    { "nom": "Usage unique", "resume": "Une seule utilisation par bataille ; compte ensuite comme test de Munitions rate (sauf si aussi Tir rapide)." }
+    {
+      "nom": "Abondance",
+      "resume": "Munitions courantes : pas de test de Munitions à la recharge ; recharge auto si raté."
+    },
+    {
+      "nom": "Arme de poing",
+      "resume": "Peut tirer et servir au corps à corps (une seule attaque). Le bonus de Précision au tir ne s'applique pas en mêlée."
+    },
+    {
+      "nom": "Aveuglant",
+      "resume": "Touche sans blessure : test d'Initiative ou Aveuglé (pion Paré perdu, réactions limitées sauf 6 naturel, etc.)."
+    },
+    {
+      "nom": "Bouclier à énergie",
+      "resume": "+2 sauvegarde mêlée (max 2+) dans l'arc frontal ; +1 vs tir frontal. Certaines explosions peuvent l'ignorer."
+    },
+    {
+      "nom": "Choc",
+      "resume": "Touche sur 6 naturel : blessure automatique (pas de jet de blessure)."
+    },
+    {
+      "nom": "Combi",
+      "resume": "Deux profils : choisir lequel utiliser. Souvent moins de munitions ; tests de Munitions séparés."
+    },
+    {
+      "nom": "Commotion",
+      "resume": "Figurine touchée : Initiative −2 (min 6+) jusqu'à la fin du tour."
+    },
+    {
+      "nom": "Contrecoup",
+      "resume": "Si Force de l'attaque ≥ Force de la cible (avant modifs), poussée d'1\" ; les obstacles peuvent bloquer ou infliger des dégâts."
+    },
+    {
+      "nom": "Coup en traître",
+      "resume": "Attaque hors du champ de vision de la cible : +1 Force."
+    },
+    {
+      "nom": "Démolition",
+      "resume": "Grenades : peuvent cibler le décor / objectifs ; une seule attaque quel que soit le nombre de dés."
+    },
+    {
+      "nom": "Désarmement",
+      "resume": "Touche sur 6 : la cible ne peut plus utiliser d'armes jusqu'aux attaques de Réaction à la fin du round."
+    },
+    {
+      "nom": "Digi",
+      "resume": "Montée sur anneau/gant ; attaque de mêlée supplémentaire ; ne compte pas dans la limite d'armes portées."
+    },
+    {
+      "nom": "Empalement",
+      "resume": "Touche + blessure + sauvegarde ratée : le projectile continue sur une ligne et peut toucher d'autres cibles."
+    },
+    {
+      "nom": "Empêtrement",
+      "resume": "Touches non annulables par Parade. Touche sur 6 : réactions de la cible à −2."
+    },
+    {
+      "nom": "Encombrant",
+      "resume": "Tirer = action Double. En mêlée, ne peut pas utiliser d'autre arme en même temps."
+    },
+    {
+      "nom": "Énergétique",
+      "resume": "Ignore les champs protecteurs. Touche sur 6 : pas de sauvegarde d'armure (sauf champ) ; dégâts +1."
+    },
+    {
+      "nom": "Explosion",
+      "resume": "Utilise un gabarit d'Explosion (voir règles gabarit). Ex. Explosion (3\"/5\")."
+    },
+    {
+      "nom": "Fumée",
+      "resume": "Pas de touche/blocage/blessure : place un nuage de fumée (vision / traversée limitées)."
+    },
+    {
+      "nom": "Fusion",
+      "resume": "Si réduit la cible à 0 PV, pas de dé de Trauma : Hors de Combat automatique."
+    },
+    {
+      "nom": "Gaz",
+      "resume": "Pas de jet de blessure classique : test vs Endurance ou Trauma (ignore la sauvegarde sous le seuil)."
+    },
+    {
+      "nom": "Gravitons",
+      "resume": "Zone : jets d'Explosion / dégâts selon Force ; la zone persiste et freine le mouvement."
+    },
+    {
+      "nom": "Grenade",
+      "resume": "Action Tirer (Élémentaire). Portée = Force × facteur. Pas de dé de Puissance de Feu ; test de Munitions après : échec = plus de cette grenade."
+    },
+    {
+      "nom": "Incendiaire",
+      "resume": "Touche non OOA : 4+ sur D6 = condition Incendie (Force 3, PA−1, Dégâts 1 puis mouvement forcé / étouffer)."
+    },
+    {
+      "nom": "Instable",
+      "resume": "Symbole Munitions sur Puissance de Feu : risque de surcharge montée / Hors de Combat pour le tireur."
+    },
+    {
+      "nom": "Limité",
+      "resume": "Munition spéciale : échec de Munitions = type épuisé pour le combattant."
+    },
+    {
+      "nom": "Mêlée",
+      "resume": "Peut servir aux attaques au corps à corps."
+    },
+    {
+      "nom": "Mitraille",
+      "resume": "Cible touchée : D6 jets de blessure au lieu d'1."
+    },
+    {
+      "nom": "Parade",
+      "resume": "Peut tenter d'annuler des touches de mêlée (selon règles Parade / armes)."
+    },
+    {
+      "nom": "Perforant",
+      "resume": "Blessure sur 6 (après modifs) : +1 point de dégât."
+    },
+    {
+      "nom": "Peur",
+      "resume": "Si l'attaque doit provoquer un Trauma, aucun Trauma n'est infligé ; la cible teste Nervosité à −2 ou est Démoralisée."
+    },
+    {
+      "nom": "Polyvalent",
+      "resume": "Pas besoin d'être en contact socle pour Engager ; portée d'engagement = Longue portée de l'arme."
+    },
+    {
+      "nom": "Pulvériser",
+      "resume": "Après un Trauma, D6 vs Endurance : succès (ou 6) peut convertir Blessure Légère en Blessure Grave."
+    },
+    {
+      "nom": "Radiations",
+      "resume": "Après résolution des touches : D6, 4+ = Blessure Légère supplémentaire."
+    },
+    {
+      "nom": "Rareté",
+      "resume": "Munitions difficiles : Court de Munitions = plus utilisable pour le reste de la bataille."
+    },
+    {
+      "nom": "Silencieux",
+      "resume": "Ne révèle pas le tireur / n'alarme pas selon règles d'Attaque Furtive / scénarios."
+    },
+    {
+      "nom": "Sismique",
+      "resume": "Cible Active non Bloquée par cette attaque pour ne pas être Bloquée par les tirs. Blessure sur 6 : pas de sauvegarde."
+    },
+    {
+      "nom": "Souffle",
+      "resume": "Utilise le gabarit de Souffle pour déterminer les cibles."
+    },
+    {
+      "nom": "Tir rapide (X)",
+      "resume": "Touche réussie = autant de touches que le dé de Puissance de Feu. Peut lancer plusieurs dés (max X). Tests de Munitions par symbole ; 1 échec = Court, 2+ = enrayée."
+    },
+    {
+      "nom": "Toile",
+      "resume": "Blessure réussie : pas de dégâts/Trauma ; cible Entoilée (traitée comme Gravement Blessée) + sédatif en fin de bataille."
+    },
+    {
+      "nom": "Toxine",
+      "resume": "À la place du jet de blessure : D6 vs Endurance (6 toujours Trauma, sans tenir compte des PV)."
+    },
+    {
+      "nom": "Traction",
+      "resume": "Cible touchée non OOA : peut être tractée vers l'attaquant (D6 vs Force)."
+    },
+    {
+      "nom": "Usage unique",
+      "resume": "Une seule utilisation par bataille ; compte ensuite comme test de Munitions raté (sauf si aussi Tir rapide)."
+    }
   ],
   "competences": {
-    "Agilite": [
-      { "nom": "Reception feline", "resume": "Chute/saut : distance verticale accountée a moitie ; test d'Initiative pour eviter Au Tapis / OOA." },
-      { "nom": "Escalade", "resume": "Escalader/descendre sans diviser le mouvement (compte comme escalade)." },
-      { "nom": "Esquive", "resume": "Sur blessure tir/melee : 6 sur D6 = ignore l'attaque." },
-      { "nom": "Grand bond", "resume": "Saut par-dessus un vide : ignore les 2 premiers pouces de distance." },
-      { "nom": "Sursaut", "resume": "Si Bloque en s'activant : test d'Initiative pour Se Relever gratuitement." },
-      { "nom": "Sprint", "resume": "Deux actions Se Deplacer (Simple) : la seconde peut Sprinter (double mouvement)." }
+    "Agilité": [
+      {
+        "nom": "Réception féline",
+        "resume": "Chute/saut : distance verticale comptée à moitié ; test d'Initiative pour éviter Au Tapis / OOA."
+      },
+      {
+        "nom": "Escalade",
+        "resume": "Escalader/descendre sans diviser le mouvement (compte comme escalade)."
+      },
+      {
+        "nom": "Esquive",
+        "resume": "Sur blessure tir/mêlée : 6 sur D6 = ignore l'attaque."
+      },
+      {
+        "nom": "Grand bond",
+        "resume": "Saut par-dessus un vide : ignore les 2 premiers pouces de distance."
+      },
+      {
+        "nom": "Sursaut",
+        "resume": "Si Bloqué en s'activant : test d'Initiative pour Se Relever gratuitement."
+      },
+      {
+        "nom": "Sprint",
+        "resume": "Deux actions Se Déplacer (Simple) : la seconde peut Sprinter (double mouvement)."
+      }
     ],
     "Muscle": [
-      { "nom": "Charge buffle", "resume": "Charge (Double) : armes de melee gagnent Contrecoup et +1 Force." },
-      { "nom": "Biceps saillants", "resume": "Peut manier une arme Encombrante a une main ; Encombrantes comptent double pour la limite d'armes." },
-      { "nom": "Coup destructeur", "resume": "Avant les jets de touche melee : un de devient Coup Destructeur (+1 F et Degats si touche, pas avec Arme de poing)." },
-      { "nom": "Coup de boule", "resume": "Action elementaire : 2D6 vs Endurance en contact socle ; succes = touche F+2 Degats 2." },
-      { "nom": "Projection", "resume": "Projette un ennemi Engage (test d'Initiative sinon) ; deplacement et possibles degats." },
-      { "nom": "Gueule de fer", "resume": "Endurance +2 vs attaques desarmees ennemies." }
+      {
+        "nom": "Charge buffle",
+        "resume": "Charge (Double) : armes de mêlée gagnent Contrecoup et +1 Force."
+      },
+      {
+        "nom": "Biceps saillants",
+        "resume": "Peut manier une arme Encombrante à une main ; les Encombrantes comptent double pour la limite d'armes."
+      },
+      {
+        "nom": "Coup destructeur",
+        "resume": "Avant les jets de touche mêlée : un dé devient Coup Destructeur (+1 F et Dégâts si touche, pas avec Arme de poing)."
+      },
+      {
+        "nom": "Coup de boule",
+        "resume": "Action élémentaire : 2D6 vs Endurance en contact socle ; succès = touche F+2 Dégâts 2."
+      },
+      {
+        "nom": "Projection",
+        "resume": "Projette un ennemi Engagé (test d'Initiative sinon) ; déplacement et possibles dégâts."
+      },
+      {
+        "nom": "Gueule de fer",
+        "resume": "Endurance +2 vs attaques désarmées ennemies."
+      }
     ],
     "Combat": [
-      { "nom": "Maitre combattant", "resume": "Pas de malus de jets de touche melee pour interferences ; assistance elargie." },
-      { "nom": "Contre-attaque", "resume": "En reactions melee : de d'Attaque supplementaire par attaque ennemie ratee/paree." },
-      { "nom": "Desarmement", "resume": "Armes de melee gagnent Desarmement ; 5+ ou 6 desarme selon le cas." },
-      { "nom": "Parade", "resume": "Peut parer comme avec le trait Parade (cumul possible)." },
-      { "nom": "Pluie de coups", "resume": "Combattre compte comme Simple ; peut combattre deux fois." },
-      { "nom": "Saut de cote", "resume": "Touche en melee : test d'Initiative pour Saut de cote (1/round)." }
+      {
+        "nom": "Maître combattant",
+        "resume": "Pas de malus de jets de touche mêlée pour interférences ; assistance élargie."
+      },
+      {
+        "nom": "Contre-attaque",
+        "resume": "En réactions mêlée : dé d'Attaque supplémentaire par attaque ennemie ratée/parée."
+      },
+      {
+        "nom": "Désarmement",
+        "resume": "Armes de mêlée gagnent Désarmement ; 5+ ou 6 désarme selon le cas."
+      },
+      {
+        "nom": "Parade",
+        "resume": "Peut parer comme avec le trait Parade (cumul possible)."
+      },
+      {
+        "nom": "Pluie de coups",
+        "resume": "Combattre compte comme Simple ; peut combattre deux fois."
+      },
+      {
+        "nom": "Saut de côté",
+        "resume": "Touché en mêlée : test d'Initiative pour Saut de côté (1/round)."
+      }
     ],
     "Ruse": [
-      { "nom": "Coup en traitre", "resume": "Armes Melee gagnent Coup en traitre (+1 F hors champ de vision)." },
-      { "nom": "Roi de l'evasion", "resume": "Se Replier (Elementaire) : +2 Initiative ; chance de capturer / lame sous-cutanee." },
-      { "nom": "Zigzag", "resume": "Cible de tir a decouvert : malus -1 ou -2 selon portee." },
-      { "nom": "Infiltration", "resume": "Deploiement hors champ de vision ennemi (conditions de distance)." },
-      { "nom": "Profil bas", "resume": "Au Tapis : ne peut etre cible de tir qu'a Courte portee." },
-      { "nom": "Etat d'alerte", "resume": "Debout/Actif avec pion Pare : peut interrompre un ennemi visible pour Tirer." }
+      {
+        "nom": "Coup en traître",
+        "resume": "Armes Mêlée gagnent Coup en traître (+1 F hors champ de vision)."
+      },
+      {
+        "nom": "Roi de l'évasion",
+        "resume": "Se Replier (Élémentaire) : +2 Initiative ; chance de capturer / lame sous-cutanée."
+      },
+      {
+        "nom": "Zigzag",
+        "resume": "Cible de tir à découvert : malus −1 ou −2 selon portée."
+      },
+      {
+        "nom": "Infiltration",
+        "resume": "Déploiement hors champ de vision ennemi (conditions de distance)."
+      },
+      {
+        "nom": "Profil bas",
+        "resume": "Au Tapis : ne peut être ciblé de tir qu'à Courte portée."
+      },
+      {
+        "nom": "État d'alerte",
+        "resume": "Debout/Actif avec pion Paré : peut interrompre un ennemi visible pour Tirer."
+      }
     ],
-    "Ferocite": [
-      { "nom": "Berserk", "resume": "Charge (Double) : de d'Attaque melee supplementaire." },
-      { "nom": "Effrayant", "resume": "Ennemi qui charge ce combattant : test de Volonte ou charge impossible / activation finit." },
-      { "nom": "Impetuosite", "resume": "Consolidation apres melee : jusqu'a 4\" au lieu de 2\"." },
-      { "nom": "Nerfs d'acier", "resume": "Touche par un tir : test de Sang-froid pour ne pas etre Bloque." },
-      { "nom": "Dur a cuire", "resume": "Jets de Trauma : un de de moins (min 1) ; choix sur les degats restants." },
-      { "nom": "Inexorable", "resume": "Avant Recuperation en phase de Fin : D6 pour defausser une Blessure Legere / effet." }
+    "Férocité": [
+      {
+        "nom": "Berserk",
+        "resume": "Charge (Double) : dé d'Attaque mêlée supplémentaire."
+      },
+      {
+        "nom": "Effrayant",
+        "resume": "Ennemi qui charge ce combattant : test de Volonté ou charge impossible / activation finit."
+      },
+      {
+        "nom": "Impétuosité",
+        "resume": "Consolidation après mêlée : jusqu'à 4\" au lieu de 2\"."
+      },
+      {
+        "nom": "Nerfs d'acier",
+        "resume": "Touché par un tir : test de Sang-froid pour ne pas être Bloqué."
+      },
+      {
+        "nom": "Dur à cuire",
+        "resume": "Jets de Trauma : un dé de moins (min 1) ; choix sur les dégâts restants."
+      },
+      {
+        "nom": "Inexorable",
+        "resume": "Avant Récupération en phase de Fin : D6 pour défausser une Blessure Légère / effet."
+      }
     ],
-    "Autorite": [
-      { "nom": "Presence autoritaire", "resume": "Activation de groupe : +1 combattant activable (Chef +3, Champion +2)." },
-      { "nom": "Galvanisant", "resume": "Ami a 6\" rate un Sang-froid : peut tester Commandement a la place." },
-      { "nom": "Volonte de fer", "resume": "-1 a tous vos tests de Cran tant que ce combattant est sur le champ et pas Gravement Blesse." },
-      { "nom": "Mentor", "resume": "Test de Commandement a 6\" : succes = +1 XP pour lui, +2 XP pour l'ami." },
-      { "nom": "Superviseur", "resume": "Ordonner (Double) a un ami Prepare a 6\" : deux actions immediatement." },
-      { "nom": "Regroupement", "resume": "Fin d'activation : test de Commandement pour rallier les Demoralises a 6\"." }
+    "Autorité": [
+      {
+        "nom": "Présence autoritaire",
+        "resume": "Activation de groupe : +1 combattant activable (Chef +3, Champion +2)."
+      },
+      {
+        "nom": "Galvanisant",
+        "resume": "Ami à 6\" rate un Sang-froid : peut tester Commandement à la place."
+      },
+      {
+        "nom": "Volonté de fer",
+        "resume": "−1 à tous vos tests de Cran tant que ce combattant est sur le champ et pas Gravement Blessé."
+      },
+      {
+        "nom": "Mentor",
+        "resume": "Test de Commandement à 6\" : succès = +1 XP pour lui, +2 XP pour l'ami."
+      },
+      {
+        "nom": "Superviseur",
+        "resume": "Ordonner (Double) à un ami Préparé à 6\" : deux actions immédiatement."
+      },
+      {
+        "nom": "Regroupement",
+        "resume": "Fin d'activation : test de Commandement pour rallier les Démoralisés à 6\"."
+      }
     ],
     "Tir": [
-      { "nom": "Tir eclair", "resume": "Tirer compte Simple (sauf Encombrant) ; peut ignorer 1 aspect Encombrant." },
-      { "nom": "As du pistolet", "resume": "Deux Armes de poing : pas de malus -1 ; cibles differentes possibles." },
-      { "nom": "Tir au juge", "resume": "Courir et Tirer (Double) : double mouvement puis tir a -1 ; pas d'Encombrant." },
-      { "nom": "Tireur d'elite", "resume": "Ignore Cible Prioritaire ; touche critique (6) double les degats (sauf Explosion)." },
-      { "nom": "Tir precis", "resume": "6 naturel en touche (arme non Explosion) : zone exposee, pas de sauvegarde d'armure." },
-      { "nom": "Tir roublard", "resume": "Pas de malus vs Engage / couvert partiel ; couvert total a -1 au lieu de -2." }
+      {
+        "nom": "Tir éclair",
+        "resume": "Tirer compte Simple (sauf Encombrant) ; peut ignorer 1 aspect Encombrant."
+      },
+      {
+        "nom": "As du pistolet",
+        "resume": "Deux Armes de poing : pas de malus −1 ; cibles différentes possibles."
+      },
+      {
+        "nom": "Tir au jugé",
+        "resume": "Courir et Tirer (Double) : double mouvement puis tir à −1 ; pas d'Encombrant."
+      },
+      {
+        "nom": "Tireur d'élite",
+        "resume": "Ignore Cible Prioritaire ; touche critique (6) double les dégâts (sauf Explosion)."
+      },
+      {
+        "nom": "Tir précis",
+        "resume": "6 naturel en touche (arme non Explosion) : zone exposée, pas de sauvegarde d'armure."
+      },
+      {
+        "nom": "Tir roublard",
+        "resume": "Pas de malus vs Engagé / couvert partiel ; couvert total à −1 au lieu de −2."
+      }
     ],
     "Savoir": [
-      { "nom": "Expert en balistique", "resume": "Action Viser (Elementaire) : test d'Intelligence pour +1 touche." },
-      { "nom": "Relations", "resume": "Peut Commercer en apres-bataille en plus des autres actions." },
-      { "nom": "Debrouillard", "resume": "Etape Recompenses : D3x10 credits si pas Capture / en Recuperation." },
-      { "nom": "Guerisseur", "resume": "Assiste un ami OOA : peut relancer le test de Recuperation." },
-      { "nom": "Armurier", "resume": "Munitions ratees a 6\" (lui ou ami) : peut etre relance." },
-      { "nom": "Negociateur", "resume": "Commercer : +1 dispo objets Rares ; un objet a -20 credits (une fois / type)." }
+      {
+        "nom": "Expert en balistique",
+        "resume": "Action Viser (Élémentaire) : test d'Intelligence pour +1 touche."
+      },
+      {
+        "nom": "Relations",
+        "resume": "Peut Commercer en après-bataille en plus des autres actions."
+      },
+      {
+        "nom": "Débrouillard",
+        "resume": "Étape Récompenses : D3×10 crédits si pas Capturé / en Récupération."
+      },
+      {
+        "nom": "Guérisseur",
+        "resume": "Assiste un ami OOA : peut relancer le test de Récupération."
+      },
+      {
+        "nom": "Armurier",
+        "resume": "Munitions ratées à 6\" (lui ou ami) : peut être relancé."
+      },
+      {
+        "nom": "Négociateur",
+        "resume": "Commercer : +1 dispo objets Rares ; un objet à −20 crédits (une fois / type)."
+      }
     ]
   },
   "statuts": [
-    { "nom": "Debout", "resume": "Sur son socle ; large choix d'actions." },
-    { "nom": "Actif", "resume": "Debout et non Engage : statut par defaut le plus libre." },
-    { "nom": "Engage", "resume": "Socle en contact avec un ennemi ; options orientees melee / repli." },
-    { "nom": "Au Tapis", "resume": "Couche, pas d'orientation ni de champ de vision ; ne bloque pas les LDV." },
-    { "nom": "Bloque", "resume": "Souvent apres un tir ; doit Se Relever pour redevenir Debout/Actif." },
-    { "nom": "Gravement Blesse", "resume": "Au Tapis face contre terre apres Blessure Grave ou 0 PV ; tres vulnerable." }
+    {
+      "nom": "Debout",
+      "resume": "Sur son socle ; large choix d'actions."
+    },
+    {
+      "nom": "Actif",
+      "resume": "Debout et non Engagé : statut par défaut le plus libre."
+    },
+    {
+      "nom": "Engagé",
+      "resume": "Socle en contact avec un ennemi ; options orientées mêlée / repli."
+    },
+    {
+      "nom": "Au Tapis",
+      "resume": "Couché, pas d'orientation ni de champ de vision ; ne bloque pas les LDV."
+    },
+    {
+      "nom": "Bloqué",
+      "resume": "Souvent après un tir ; doit Se Relever pour redevenir Debout/Actif."
+    },
+    {
+      "nom": "Gravement Blessé",
+      "resume": "Au Tapis face contre terre après Blessure Grave ou 0 PV ; très vulnérable."
+    }
   ],
   "conditions": [
-    { "nom": "Prepare", "resume": "Pion Pare en debut de round ; retire a la premiere activation." },
-    { "nom": "Demoralise", "resume": "Fuit / Courir a couvert ; rallie possible en phase de Fin." },
-    { "nom": "A court de munitions", "resume": "Arme inutilisable tant qu'elle n'est pas rechargee." },
-    { "nom": "Incendie", "resume": "En feu : degats et mouvement force ; peut tenter d'etouffer." },
-    { "nom": "Aveugle", "resume": "Vision / actions limitees suite a une arme Aveuglante." },
-    { "nom": "Entoile", "resume": "Immobilise comme Gravement Blesse ; sedatif en fin de bataille possible." },
-    { "nom": "Commotion", "resume": "Initiative reduite suite au trait Commotion." },
-    { "nom": "Cache / Revele", "resume": "Selon scenario ou competence." }
+    {
+      "nom": "Préparé",
+      "resume": "Pion Paré en début de round ; retiré à la première activation."
+    },
+    {
+      "nom": "Démoralisé",
+      "resume": "Fuit / Courir à couvert ; ralliement possible en phase de Fin."
+    },
+    {
+      "nom": "À court de munitions",
+      "resume": "Arme inutilisable tant qu'elle n'est pas rechargée."
+    },
+    {
+      "nom": "Incendie",
+      "resume": "En feu : dégâts et mouvement forcé ; peut tenter d'étouffer."
+    },
+    {
+      "nom": "Aveuglé",
+      "resume": "Vision / actions limitées suite à une arme Aveuglante."
+    },
+    {
+      "nom": "Entoilé",
+      "resume": "Immobilisé comme Gravement Blessé ; sédatif en fin de bataille possible."
+    },
+    {
+      "nom": "Commotion",
+      "resume": "Initiative réduite suite au trait Commotion."
+    },
+    {
+      "nom": "Caché / Révélé",
+      "resume": "Selon scénario ou compétence."
+    }
   ],
   "blessuresPersistantes": [
-    { "plage": "11", "effet": "Lecon retenue — En Recuperation, +D3 XP" },
-    { "plage": "12-26", "effet": "Dans les vapes — aucun effet" },
-    { "plage": "31-45", "effet": "Blessure serieuse — En Recuperation" },
-    { "plage": "46", "effet": "Humilie — En Recuperation, -1 CD et SF" },
-    { "plage": "51", "effet": "Blessure a la tete — En Recuperation, -1 INT et V" },
-    { "plage": "52", "effet": "Borgne — En Recuperation, -1 CT" },
-    { "plage": "53", "effet": "Blessure a la main — En Recuperation, -1 CC" },
-    { "plage": "54", "effet": "Boiteux — En Recuperation, -1 M" },
-    { "plage": "55", "effet": "Lesion vertebrale — En Recuperation, -1 E" },
-    { "plage": "56", "effet": "Affaiblissement — En Recuperation, -1 en F" },
-    { "plage": "61-65", "effet": "Blessure critique — Mort (sauf sauve par Toubib)" },
-    { "plage": "66", "effet": "Mort memorable — Mort, attaquant +1 XP" }
+    {
+      "plage": "11",
+      "effet": "Leçon retenue — En Récupération, +D3 XP"
+    },
+    {
+      "plage": "12-26",
+      "effet": "Dans les vapes — aucun effet"
+    },
+    {
+      "plage": "31-45",
+      "effet": "Blessure sérieuse — En Récupération"
+    },
+    {
+      "plage": "46",
+      "effet": "Humilié — En Récupération, −1 CD et SF"
+    },
+    {
+      "plage": "51",
+      "effet": "Blessure à la tête — En Récupération, −1 INT et V"
+    },
+    {
+      "plage": "52",
+      "effet": "Borgne — En Récupération, −1 CT"
+    },
+    {
+      "plage": "53",
+      "effet": "Blessure à la main — En Récupération, −1 CC"
+    },
+    {
+      "plage": "54",
+      "effet": "Boiteux — En Récupération, −1 M"
+    },
+    {
+      "plage": "55",
+      "effet": "Lésion vertébrale — En Récupération, −1 E"
+    },
+    {
+      "plage": "56",
+      "effet": "Affaiblissement — En Récupération, −1 en F"
+    },
+    {
+      "plage": "61-65",
+      "effet": "Blessure critique — Mort (sauf sauvé par Toubib)"
+    },
+    {
+      "plage": "66",
+      "effet": "Mort mémorable — Mort, attaquant +1 XP"
+    }
   ]
 }
