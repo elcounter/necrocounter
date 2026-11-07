@@ -94,6 +94,23 @@
     .fcard b { font: 700 16px/1.2 var(--display); letter-spacing: .04em; text-transform: uppercase; color: var(--amber); }
     .fcard span span { color: var(--muted); font-size: 14px; }
     .home-extra { display: flex; flex-direction: column; gap: 10px; margin: 22px 0 8px; }
+    .btn-install {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 16px; border-radius: 12px; text-decoration: none;
+      background: linear-gradient(180deg, #f0b040, #d47820); color: #2a1c14;
+      font: 700 15px var(--display); letter-spacing: .05em; text-transform: uppercase;
+      border: 0; cursor: pointer; width: 100%;
+    }
+    .btn-install svg { width: 22px; height: 22px; }
+    .btn-install[hidden] { display: none; }
+    .steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .steps li { display: flex; gap: 12px; align-items: flex-start; }
+    .snum {
+      flex: none; width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: var(--amber); color: #2a1c14;
+      font: 700 13px var(--display);
+    }
     .btn-link {
       display: block; text-align: center; padding: 12px 14px;
       border: 1px solid var(--line); border-radius: 10px;
@@ -257,7 +274,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.0 · MAJ 07-11-2026<br>
+      NecroCounter version 0.2.1 · MAJ 07-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
@@ -362,6 +379,7 @@
         `<a class="fcard" href="#${id}"><span class="ficon">${I(svg)}</span><span><b>${n}</b><br><span>${d}</span></span></a>`
       ).join("")}</div>
       <div class="home-extra">
+        ${STANDALONE ? "" : `<button type="button" class="btn-install" id="home-install">${I('<path d="M12 3v12M7 10l5 5 5-5"/><path d="M5 19h14"/>')}<span>Installer l'app</span></button>`}
         <a class="btn-link" href="mailto:warcounter@proton.me?subject=%5BNecroCounter%5D%20Retour">Signaler un bug / Suggestion</a>
         <a class="btn-link" href="#soutenir">Soutenir le projet</a>
       </div>`;
@@ -370,6 +388,43 @@
     function placeholder(title, text) {
       return `<div class="page"><h2>${esc(title)}</h2><p>${esc(text)}</p>
         <div class="placeholder">Section en construction — prochaines versions.</div></div>`;
+    }
+
+    function installHtml() {
+      const ua = navigator.userAgent || "";
+      const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(ua);
+      const step = (n, t) => `<li><span class="snum">${n}</span><span>${t}</span></li>`;
+      let body;
+      if (isIOS) {
+        body = `<ol class="steps">
+          ${step(1, "Ouvre cette page dans <b>Safari</b> (pas Chrome).")}
+          ${step(2, "Appuie sur le bouton <b>Partager</b> <svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' style='vertical-align:-2px'><path d='M12 16V4M8 8l4-4 4 4M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4'/></svg>.")}
+          ${step(3, "Choisis <b>Sur l'écran d'accueil</b>, puis <b>Ajouter</b>.")}
+          ${step(4, "L'icône NecroCounter apparaît sur ton écran d'accueil.")}
+        </ol>`;
+      } else if (isAndroid) {
+        body = `<ol class="steps">
+          ${step(1, "Ouvre le menu du navigateur (⋮).")}
+          ${step(2, "Appuie sur <b>Installer l'application</b> ou <b>Ajouter à l'écran d'accueil</b>.")}
+          ${step(3, "Confirme l'installation.")}
+          ${step(4, "Lance NecroCounter depuis l'icône installée.")}
+        </ol>
+        <p class="hint" style="margin-top:12px">Sur Chrome, tu peux aussi utiliser le bouton ci-dessous s'il apparaît.</p>
+        <button type="button" class="btn primary" id="direct-install" hidden>Installer maintenant</button>`;
+      } else {
+        body = `<ol class="steps">
+          ${step(1, "Sur ordinateur : menu du navigateur → <b>Installer NecroCounter</b> si proposé.")}
+          ${step(2, "Sur mobile : ouvre cette page dans Chrome ou Safari et utilise « Ajouter à l'écran d'accueil ».")}
+          ${step(3, "L'app s'ouvre ensuite en plein écran, sans barre d'adresse.")}
+        </ol>
+        <button type="button" class="btn primary" id="direct-install" hidden style="margin-top:12px">Installer maintenant</button>`;
+      }
+      return `<div class="page">
+        <h2>Installer l'app</h2>
+        <p class="hint">NecroCounter peut s'installer comme une application : accès rapide, plein écran, usage hors ligne.</p>
+        <div class="panel"><h3 class="sec">Comment faire</h3><div class="body">${body}</div></div>
+      </div>`;
     }
 
     function supportHtml() {
@@ -683,7 +738,7 @@
       Object.values(tabs).forEach(id => { const el = $(id); if (el) el.removeAttribute("aria-current"); });
       if (tabs[h]) $(tabs[h]).setAttribute("aria-current", "page");
 
-      back.hidden = !(h === "soutenir");
+      back.hidden = !(h === "soutenir" || h === "installer");
       if (homeBtn) homeBtn.hidden = (h === "accueil" || h === "");
 
       if (h === "gangs") {
@@ -698,9 +753,32 @@
       } else if (h === "soutenir") {
         title.textContent = "Soutenir";
         view.innerHTML = supportHtml();
+      } else if (h === "installer") {
+        title.textContent = "Installer";
+        view.innerHTML = installHtml();
+        const di = $("direct-install");
+        if (di) {
+          di.hidden = !deferredPrompt;
+          di.addEventListener("click", async () => {
+            if (!deferredPrompt) return;
+            deferredPrompt.prompt();
+            await deferredPrompt.userChoice;
+            deferredPrompt = null;
+            di.hidden = true;
+          });
+        }
       } else {
         title.textContent = "NecroCounter";
         view.innerHTML = homeHtml();
+        const hi = $("home-install");
+        if (hi) hi.addEventListener("click", () => {
+          if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.finally(() => { deferredPrompt = null; });
+          } else {
+            location.hash = "installer";
+          }
+        });
       }
       window.scrollTo(0, 0);
     }
