@@ -215,6 +215,15 @@
     .aide-item .abody ul, .aide-item .abody ol { margin: 6px 0 0; padding-left: 1.2em; }
     .aide-item .abody li { margin: 4px 0; }
     .aide-item .abody b { color: var(--amber); }
+    .refs-search {
+      width: 100%; padding: 12px 14px; margin: 12px 0 4px;
+      border-radius: 10px; border: 1px solid var(--line);
+      background: var(--bg); color: var(--text);
+      font: 400 15px var(--body);
+    }
+    .refs-search::placeholder { color: var(--muted); }
+    .refs-search-hint { color: var(--muted); font-size: 12px; margin: 0 0 12px; }
+    [data-q][hidden] { display: none !important; }
     .page h2 {
       margin: 0 0 10px; font: 700 22px/1.2 var(--display);
       letter-spacing: .05em; text-transform: uppercase; color: var(--amber);
@@ -365,7 +374,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.9 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.3.0 Necromunda N23 &amp; N26<br>
       MAJ 07-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -629,35 +638,40 @@
 
     function refsFolds(refs) {
       if (!refs) return "";
+      const q = (s) => esc(String(s || "").toLowerCase());
       const traitItems = (refs.traits || []).map(t =>
-        `<details class="eq"><summary><span class="nm">${esc(t.nom)}</span></summary>
+        `<details class="eq" data-q="${q(t.nom + " " + t.resume)}"><summary><span class="nm">${esc(t.nom)}</span></summary>
           <p class="shop" style="padding:8px 12px 12px">${esc(t.resume)}</p></details>`
       ).join("");
       const skillSets = Object.entries(refs.competences || {}).map(([set, list]) =>
-        `<details class="fold"><summary><span>${esc(set)}</span><small>${list.length}</small></summary>
+        `<details class="fold" data-fold="${q(set)}"><summary><span>${esc(set)}</span><small>${list.length}</small></summary>
           <div class="fold-body">${list.map(s =>
-            `<details class="eq"><summary><span class="nm">${esc(s.nom)}</span></summary>
+            `<details class="eq" data-q="${q(set + " " + s.nom + " " + s.resume)}"><summary><span class="nm">${esc(s.nom)}</span></summary>
               <p class="shop" style="padding:8px 12px 12px">${esc(s.resume)}</p></details>`
           ).join("")}</div></details>`
       ).join("");
       const modRows = (refs.modificateursTir || []).map(m =>
-        `<div class="eq"><div class="row"><span class="nm plain">${esc(m.label)}</span><span class="pr">${esc(m.mod)}</span></div></div>`
+        `<div class="eq" data-q="${q(m.label + " " + m.mod)}"><div class="row"><span class="nm plain">${esc(m.label)}</span><span class="pr">${esc(m.mod)}</span></div></div>`
       ).join("");
       const feRows = (refs.forceEndurance || []).map(m =>
-        `<div class="eq"><div class="row"><span class="nm plain">${esc(m.cas)}</span><span class="pr">${esc(m.d6)}</span></div></div>`
+        `<div class="eq" data-q="${q(m.cas + " " + m.d6)}"><div class="row"><span class="nm plain">${esc(m.cas)}</span><span class="pr">${esc(m.d6)}</span></div></div>`
       ).join("");
       const statRows = (refs.statuts || []).map(s =>
-        `<details class="eq"><summary><span class="nm">${esc(s.nom)}</span></summary>
+        `<details class="eq" data-q="${q(s.nom + " " + s.resume)}"><summary><span class="nm">${esc(s.nom)}</span></summary>
           <p class="shop" style="padding:8px 12px 12px">${esc(s.resume)}</p></details>`
       ).join("");
       const condRows = (refs.conditions || []).map(s =>
-        `<details class="eq"><summary><span class="nm">${esc(s.nom)}</span></summary>
+        `<details class="eq" data-q="${q(s.nom + " " + s.resume)}"><summary><span class="nm">${esc(s.nom)}</span></summary>
           <p class="shop" style="padding:8px 12px 12px">${esc(s.resume)}</p></details>`
       ).join("");
       const injRows = (refs.blessuresPersistantes || []).map(b =>
-        `<div class="eq"><div class="row"><span class="nm plain">${esc(b.plage)}</span><span class="pr" style="max-width:70%;text-align:right;font-size:12px">${esc(b.effet)}</span></div></div>`
+        `<div class="eq" data-q="${q(b.plage + " " + b.effet)}"><div class="row"><span class="nm plain">${esc(b.plage)}</span><span class="pr" style="max-width:70%;text-align:right;font-size:12px">${esc(b.effet)}</span></div></div>`
       ).join("");
       return `
+        <label class="fld" style="margin-top:14px"><span>Recherche</span>
+          <input class="refs-search" id="refs-search" type="search" placeholder="Trait, compétence, statut, arme…" autocomplete="off">
+        </label>
+        <p class="refs-search-hint">Filtre traits, compétences, statuts, conditions, armurerie…</p>
         <h3 class="h3">Références rapides</h3>
         <div class="folds" style="margin-top:12px">
           <details class="fold"><summary><span>Modificateurs de tir</span></summary>
@@ -699,7 +713,7 @@
 
       const flags = o => [o.compteDouble ? "compte pour deux armes" : "", o.accessoireUnique ? "non cumulable" : ""]
         .filter(Boolean).map(t => `<span class="tag"> (${t})</span>`).join("");
-      const plainRow = o => `<div class="eq"><div class="row"><span class="nm">${esc(o.nom)}${flags(o)}</span>
+      const plainRow = o => `<div class="eq" data-q="${esc((o.nom + " " + (o.categorie || "") + " " + (o.rarete || "")).toLowerCase())}"><div class="row"><span class="nm">${esc(o.nom)}${flags(o)}</span>
         <span class="pr">${o.prix ? o.prix + " cr" : "-"}</span></div><p class="shop">${esc(o.rarete)}</p></div>`;
 
       const weaponRow = w => {
@@ -710,7 +724,7 @@
           ? offers.map(o => `<p class="shop">${shopLine(o, o.nom.replace(w.nom, "").replace(/^\s*\(|\)\s*$/g, "") || w.nom)}</p>`).join("")
           : lead ? `<p class="shop">Comptoir : ${shopLine(lead)}${flags(lead)}</p>`
           : '<p class="shop">Hors Comptoir Commercial (liste de Maison ou créature).</p>';
-        return `<details class="eq"><summary><span class="nm">${esc(w.nom)}${lead ? flags(lead) : ""}</span>
+        return `<details class="eq" data-q="${esc((w.nom + " " + (w.categorie || "") + " " + (w.traits || []).join(" ")).toLowerCase())}"><summary><span class="nm">${esc(w.nom)}${lead ? flags(lead) : ""}</span>
           <span class="pr">${price}</span></summary>${shopInfo}${profileHtml(w)}</details>`;
       };
 
@@ -795,11 +809,37 @@
       </div>`;
     }
 
+
+    function bindRefsSearch() {
+      const input = $("refs-search");
+      if (!input) return;
+      const root = $("view");
+      const norm = s => String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      const apply = () => {
+        const q = norm(input.value.trim());
+        root.querySelectorAll("[data-q]").forEach(el => {
+          el.hidden = !!(q && !norm(el.getAttribute("data-q")).includes(q));
+        });
+        root.querySelectorAll("details.fold").forEach(fold => {
+          const kids = fold.querySelectorAll("[data-q]");
+          if (!kids.length) return;
+          const any = [...kids].some(el => !el.hidden);
+          fold.hidden = !!(q && !any);
+          if (q && any) fold.open = true;
+        });
+      };
+      input.addEventListener("input", apply);
+      input.addEventListener("search", apply);
+    }
+
     function showAsync(view, promise, render) {
       const token = location.hash;
       view.innerHTML = '<div class="placeholder">Chargement…</div>';
-      promise.then(data => { if (location.hash === token) view.innerHTML = render(data); })
-        .catch(err => { if (location.hash === token) view.innerHTML = errorHtml(err); });
+      promise.then(data => {
+        if (location.hash !== token) return;
+        view.innerHTML = render(data);
+        bindRefsSearch();
+      }).catch(err => { if (location.hash === token) view.innerHTML = errorHtml(err); });
     }
 
 
