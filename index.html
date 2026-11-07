@@ -365,7 +365,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.4 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.2.5 Necromunda N23 &amp; N26<br>
       MAJ 06-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -461,6 +461,7 @@
         `<a class="fcard" href="#${id}"><span class="ficon">${I(svg)}</span><span><b>${n}</b><br><span>${d}</span></span></a>`
       ).join("")}</div>
       <div class="home-extra">
+        <a class="btn-link" href="#aide">Rappels de règles à table</a>
         <a class="btn-link" href="mailto:warcounter@proton.me?subject=%5BNecroCounter%5D%20Retour">Signaler un bug / Suggestion</a>
         <a class="btn-link" href="#soutenir">Soutenir le projet</a>
         <a class="btn-warcounter" href="https://elcounter.github.io/warcounter/" target="_blank" rel="noopener">
@@ -666,7 +667,7 @@
       return `<div class="page">
         <h2>Règles</h2>
         ${editionSwitch("regles", "n23")}
-        <a class="mcard" href="#aide" style="margin-bottom:12px"><b>Rappels à table</b><span>Round, actions, blessures, bottle, Side Job</span></a>
+        <a class="fcard" href="#aide" style="margin-bottom:12px"><span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M9 7h6"/></svg></span><span><b>Rappels à table</b><br><span>Round, actions, blessures, bottle, Side Job</span></span></a>
         <h3 class="h3">Armurerie</h3>
         <p class="note">Profils de toutes les armes, avec le prix et la rareté au Comptoir Commercial. Touche une catégorie pour l'ouvrir, puis une arme pour voir son profil.</p>
         <div class="folds" style="margin-top:12px">${weaponFolds}</div>
@@ -990,7 +991,7 @@
     }
 
     function aideHtml(from) {
-      const back = from === "partie" ? "partie" : "regles";
+      const back = from === "partie" ? "partie" : (from === "regles" ? "regles" : "accueil");
       const items = [
         ["round", "Déroulement d'un round", `<ol>
             <li><b>Priorité</b> — déterminez qui a la priorité ce round.</li>
@@ -1090,16 +1091,20 @@
         title.textContent = "Rappels";
         const m = match || loadMatch();
         const fromPartie = !!(m && m.phase && m.phase !== "done");
-        view.innerHTML = aideHtml(fromPartie ? "partie" : "regles");
+        const from = fromPartie ? "partie" : (sessionStorage.getItem("nc_aide_from") || "accueil");
+        view.innerHTML = aideHtml(from === "regles" ? "regles" : (from === "partie" ? "partie" : "accueil"));
         back.hidden = false;
       } else if (h === "partie") {
         title.textContent = "Partie";
+        sessionStorage.setItem("nc_aide_from", "partie");
         renderPartie();
       } else if (section === "regles" && edition === "n26") {
         title.textContent = "Règles";
-        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.") + `<p style="margin-top:12px"><a class="btn ghost" href="#aide" style="display:block;text-align:center">Rappels à table (N23 & N26)</a></p>`;
+        sessionStorage.setItem("nc_aide_from", "regles");
+        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.") + `<p style="margin-top:12px"><a class="btn ghost" href="#aide" style="display:block;text-align:center">Rappels à table · N23 &amp; N26</a></p>`;
       } else if (section === "regles") {
         title.textContent = "Règles";
+        sessionStorage.setItem("nc_aide_from", "regles");
         showAsync(view, Promise.all([load("armes.json"), load("comptoir.json")]), armouryHtml);
       } else if (h === "installer") {
         title.textContent = "Installer";
@@ -1109,6 +1114,7 @@
         view.innerHTML = supportHtml();
       } else {
         title.textContent = "NecroCounter";
+        sessionStorage.setItem("nc_aide_from", "accueil");
         view.innerHTML = homeHtml();
       }
       window.scrollTo(0, 0);
@@ -1118,7 +1124,8 @@
       const hh = location.hash.slice(1);
       if (hh === "aide") {
         const m = match || loadMatch();
-        location.hash = (m && m.phase && m.phase !== "done") ? "partie" : "regles";
+        if (m && m.phase && m.phase !== "done") location.hash = "partie";
+        else location.hash = sessionStorage.getItem("nc_aide_from") || "accueil";
       } else {
         location.hash = location.hash.startsWith("#gangs/") ? "gangs/n23" : "accueil";
       }
