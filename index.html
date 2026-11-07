@@ -365,7 +365,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.5 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.2.6 Necromunda N23 &amp; N26<br>
       MAJ 06-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -759,6 +759,7 @@
       const hist = loadHist();
       return `<div class="page">
         <h2>Nouvelle partie</h2>
+        <a class="fcard" href="#aide" style="margin-bottom:12px"><span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M9 7h6"/></svg></span><span><b>Rappels à table</b><br><span>Round, actions, blessures, bottle, Side Job</span></span></a>
         <p class="hint">Setup libre — N23 / N26 · escarmouche ou campagne.</p>
         <div class="panel"><h3 class="sec">Format</h3><div class="body">
           <label class="fld"><span>Type</span>${seg("format", [["skirmish","Escarmouche"],["campaign","Campagne"]], d.format)}</label>
@@ -769,7 +770,6 @@
         ${crewEditor(0, d.gangs[0])}
         ${crewEditor(1, d.gangs[1])}
         <button type="button" class="btn primary" id="start-match">Lancer la partie</button>
-        <a class="btn ghost" href="#aide" style="display:block;text-align:center;margin-top:8px">Rappels de règles à table</a>
         ${match && match.phase && match.phase !== "done" ? `<button type="button" class="btn ghost" id="resume-match">Reprendre la partie en cours</button>` : ""}
         ${hist.length ? `<div class="panel"><h3 class="sec">Historique local</h3><div class="body history">
           ${hist.slice(0, 5).map(h => `<div><b>${esc(h.a)} vs ${esc(h.b)}</b><span>${esc(h.format)} · ${esc(h.edition)}${h.winner ? " · " + esc(h.winner) : ""}</span></div>`).join("")}
@@ -1101,7 +1101,7 @@
       } else if (section === "regles" && edition === "n26") {
         title.textContent = "Règles";
         sessionStorage.setItem("nc_aide_from", "regles");
-        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.") + `<p style="margin-top:12px"><a class="btn ghost" href="#aide" style="display:block;text-align:center">Rappels à table · N23 &amp; N26</a></p>`;
+        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.") + `<a class="fcard" href="#aide" style="margin-bottom:12px"><span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M9 7h6"/></svg></span><span><b>Rappels à table</b><br><span>Round, actions, blessures, bottle, Side Job</span></span></a>`;
       } else if (section === "regles") {
         title.textContent = "Règles";
         sessionStorage.setItem("nc_aide_from", "regles");
