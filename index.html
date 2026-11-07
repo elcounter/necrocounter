@@ -199,6 +199,22 @@
     .history div b { color: var(--amber); font: 700 14px var(--display); letter-spacing: .04em; }
     .history div span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
 
+    .aide-item {
+      border: 1px solid var(--line); border-radius: 12px; margin-bottom: 8px;
+      background: var(--panel); overflow: hidden;
+    }
+    .aide-item summary {
+      list-style: none; cursor: pointer; padding: 12px 14px;
+      font: 700 14px var(--display); letter-spacing: .05em; text-transform: uppercase;
+      color: var(--amber);
+    }
+    .aide-item summary::-webkit-details-marker { display: none; }
+    .aide-item summary::after { content: "+"; float: right; color: var(--muted); }
+    .aide-item[open] summary::after { content: "−"; }
+    .aide-item .abody { padding: 0 14px 14px; color: var(--text); font-size: 14px; line-height: 1.45; }
+    .aide-item .abody ul, .aide-item .abody ol { margin: 6px 0 0; padding-left: 1.2em; }
+    .aide-item .abody li { margin: 4px 0; }
+    .aide-item .abody b { color: var(--amber); }
     .page h2 {
       margin: 0 0 10px; font: 700 22px/1.2 var(--display);
       letter-spacing: .05em; text-transform: uppercase; color: var(--amber);
@@ -349,7 +365,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.3 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.2.4 Necromunda N23 &amp; N26<br>
       MAJ 06-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -650,6 +666,7 @@
       return `<div class="page">
         <h2>Règles</h2>
         ${editionSwitch("regles", "n23")}
+        <a class="mcard" href="#aide" style="margin-bottom:12px"><b>Rappels à table</b><span>Round, actions, blessures, bottle, Side Job</span></a>
         <h3 class="h3">Armurerie</h3>
         <p class="note">Profils de toutes les armes, avec le prix et la rareté au Comptoir Commercial. Touche une catégorie pour l'ouvrir, puis une arme pour voir son profil.</p>
         <div class="folds" style="margin-top:12px">${weaponFolds}</div>
@@ -751,6 +768,7 @@
         ${crewEditor(0, d.gangs[0])}
         ${crewEditor(1, d.gangs[1])}
         <button type="button" class="btn primary" id="start-match">Lancer la partie</button>
+        <a class="btn ghost" href="#aide" style="display:block;text-align:center;margin-top:8px">Rappels de règles à table</a>
         ${match && match.phase && match.phase !== "done" ? `<button type="button" class="btn ghost" id="resume-match">Reprendre la partie en cours</button>` : ""}
         ${hist.length ? `<div class="panel"><h3 class="sec">Historique local</h3><div class="body history">
           ${hist.slice(0, 5).map(h => `<div><b>${esc(h.a)} vs ${esc(h.b)}</b><span>${esc(h.format)} · ${esc(h.edition)}${h.winner ? " · " + esc(h.winner) : ""}</span></div>`).join("")}
@@ -847,6 +865,7 @@
           <button type="button" class="btn ghost small" id="tog-priority">Changer priorité</button>
           <button type="button" class="btn ghost small" id="next-round">Round +1</button>
           <button type="button" class="btn ghost small" id="reset-ready">Reset Ready</button>
+          <a class="btn ghost small" href="#aide" style="text-align:center">Rappels</a>
         </div>
         ${m.gangs.map((g, gi) => `<div class="gang-col">
           <h3>${esc(g.name)}${g.rating ? " · " + esc(g.rating) : ""}</h3>
@@ -969,6 +988,60 @@
       });
       $("back-live").addEventListener("click", () => { sync(); m.phase = "live"; saveMatch(); renderPartie(); });
     }
+
+    function aideHtml(from) {
+      const back = from === "partie" ? "partie" : "regles";
+      const items = [
+        ["round", "Déroulement d'un round", `<ol>
+            <li><b>Priorité</b> — déterminez qui a la priorité ce round.</li>
+            <li><b>Ready</b> — les combattants en jeu redeviennent Ready.</li>
+            <li><b>Activations</b> — activez à tour de rôle un combattant Ready.</li>
+            <li><b>End phase</b> — effets de fin de round, objectifs, bottle, puis round suivant.</li>
+          </ol>
+          <p class="hint">Le joueur prioritaire active en général en premier, puis on alterne.</p>`],
+        ["actions", "Actions de base", `<ul>
+            <li><b>Move</b> — se déplacer jusqu'à son Mouvement.</li>
+            <li><b>Shoot</b> — tirer avec une arme à distance.</li>
+            <li><b>Charge / Fight</b> — engager ou combattre au contact.</li>
+            <li><b>Aim / Take cover</b> — viser, se mettre à couvert (selon édition).</li>
+            <li><b>Reload</b> — recharger après un Ammo check raté.</li>
+          </ul>
+          <p class="hint">Un combattant Ready fait en général jusqu'à deux actions (selon l'édition).</p>`],
+        ["blessures", "Blessures & statuts", `<ul>
+            <li><b>Flesh Wound</b> — blessure légère (malus, souvent cumulable).</li>
+            <li><b>Serious Injury</b> — hors de combat pour la bataille.</li>
+            <li><b>Out of Action</b> — éliminé ; lasting injuries en post-battle.</li>
+            <li><b>Pinned</b> — à terre / cloué, doit souvent se relever.</li>
+            <li><b>Blaze</b> — en feu (jets / mouvements selon la règle).</li>
+            <li><b>Broken</b> — moral brisé (fuite / ralliement).</li>
+          </ul>`],
+        ["bottle", "Nerve & Bottle", `<ul>
+            <li>Trop de pertes peut forcer un <b>Bottle test</b> pour la gang.</li>
+            <li>Échec → fuite / fin de partie selon le scénario.</li>
+            <li>Les tests de <b>Nerve</b> concernent souvent un combattant (Broken, etc.).</li>
+          </ul>
+          <p class="hint">Tu peux noter le résultat dans le tracker Partie.</p>`],
+        ["ammo", "Munitions (rappel)", `<ul>
+            <li>Certains tirs demandent un <b>Ammo check</b>.</li>
+            <li>Échec → arme vide jusqu'à une action Reload.</li>
+          </ul>`],
+        ["n26", "N26 — Side Job", `<ul>
+            <li>Objectif secondaire en plus du scénario principal.</li>
+            <li>Peut rapporter des crédits même en cas de défaite (campagne).</li>
+            <li>Coche-le en post-battle dans Partie.</li>
+          </ul>`]
+      ];
+      return `<div class="page">
+        <h2>Rappels à table</h2>
+        <p class="hint">Aide rapide — ne remplace pas le livre de règles. N23 &amp; N26.</p>
+        ${items.map(([id, title, body]) =>
+          `<details class="aide-item"><summary>${title}</summary><div class="abody">${body}</div></details>`
+        ).join("")}
+        <a class="btn ghost" href="#${back}" style="display:block;margin-top:14px;text-align:center">Retour</a>
+      </div>`;
+    }
+
+
     function renderPartie() {
       match = match || loadMatch();
       const view = $("view");
@@ -1013,12 +1086,18 @@
       } else if (section === "gangs") {
         title.textContent = "Gangs";
         showAsync(view, load("index.json"), housesHtml);
+      } else if (h === "aide") {
+        title.textContent = "Rappels";
+        const m = match || loadMatch();
+        const fromPartie = !!(m && m.phase && m.phase !== "done");
+        view.innerHTML = aideHtml(fromPartie ? "partie" : "regles");
+        back.hidden = false;
       } else if (h === "partie") {
         title.textContent = "Partie";
         renderPartie();
       } else if (section === "regles" && edition === "n26") {
         title.textContent = "Règles";
-        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.");
+        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.") + `<p style="margin-top:12px"><a class="btn ghost" href="#aide" style="display:block;text-align:center">Rappels à table (N23 & N26)</a></p>`;
       } else if (section === "regles") {
         title.textContent = "Règles";
         showAsync(view, Promise.all([load("armes.json"), load("comptoir.json")]), armouryHtml);
@@ -1036,7 +1115,13 @@
     }
 
     $("back").addEventListener("click", () => {
-      location.hash = location.hash.startsWith("#gangs/") ? "gangs/n23" : "accueil";
+      const hh = location.hash.slice(1);
+      if (hh === "aide") {
+        const m = match || loadMatch();
+        location.hash = (m && m.phase && m.phase !== "done") ? "partie" : "regles";
+      } else {
+        location.hash = location.hash.startsWith("#gangs/") ? "gangs/n23" : "accueil";
+      }
     });
     window.addEventListener("hashchange", route);
     route();
