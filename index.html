@@ -114,6 +114,91 @@
       font: 400 11px/1.4 var(--body); color: #8a929c; letter-spacing: .03em;
     }
     .copy .legal { display: inline-block; margin-top: 3px; font-size: 9px; line-height: 1.3; color: #7a828c; }
+
+    .btn {
+      display: inline-block; width: 100%; text-align: center;
+      padding: 12px 16px; border-radius: 10px; border: 0;
+      font: 700 15px/1.2 var(--display); letter-spacing: .05em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; color: #2a1c14;
+    }
+    .btn.primary { background: linear-gradient(180deg, #f0b040, #d47820); }
+    .btn.ghost { background: transparent; color: var(--amber); border: 1px solid var(--line); }
+    .btn.danger { background: linear-gradient(180deg, #c45a48, #8b2e1f); color: #fff; }
+    .btn.small { width: auto; padding: 8px 12px; font-size: 12px; }
+    .btn + .btn { margin-top: 8px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .btn-row .btn { width: auto; flex: 1 1 auto; margin-top: 0; }
+    .fld { display: block; margin-bottom: 12px; }
+    .fld span { display: block; margin-bottom: 4px; font: 600 12px var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+    .fld input, .fld select, .fld textarea {
+      width: 100%; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid var(--line); background: var(--bg); color: var(--text);
+      font: 400 15px var(--body);
+    }
+    .fld textarea { min-height: 80px; resize: vertical; }
+    .seg { display: flex; flex-wrap: wrap; gap: 6px; }
+    .seg button {
+      flex: 1 1 auto; padding: 8px 10px; border-radius: 8px;
+      border: 1px solid var(--line); background: var(--bg); color: var(--muted);
+      font: 600 13px var(--display); letter-spacing: .04em; text-transform: uppercase; cursor: pointer;
+    }
+    .seg button.on { background: var(--amber); color: #2a1c14; border-color: var(--amber); }
+    .crew-list { display: grid; gap: 8px; }
+    .crew-row { display: grid; grid-template-columns: 1fr 72px 36px; gap: 8px; align-items: center; }
+    .crew-row input {
+      width: 100%; padding: 8px 10px; border-radius: 8px;
+      border: 1px solid var(--line); background: var(--bg); color: var(--text);
+      font: 400 14px var(--body);
+    }
+    .icon-x { border: 0; background: transparent; color: var(--muted); font-size: 18px; cursor: pointer; padding: 6px; }
+    .live-top {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+      margin-bottom: 12px; padding: 12px; border-radius: 12px;
+      background: var(--panel); border: 1px solid var(--line);
+    }
+    .live-top .pill {
+      font: 700 13px var(--display); letter-spacing: .05em; text-transform: uppercase;
+      padding: 6px 10px; border-radius: 999px; background: var(--bg); color: var(--amber);
+    }
+    .fighter {
+      border: 1px solid var(--line); border-radius: 12px; padding: 12px;
+      background: var(--panel); margin-bottom: 8px;
+    }
+    .fighter.ooa { opacity: .55; }
+    .fighter .fname {
+      display: flex; justify-content: space-between; gap: 8px; align-items: baseline;
+      font: 700 15px var(--display); letter-spacing: .03em; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .fighter .fname small { color: var(--muted); font: 400 12px var(--body); text-transform: none; letter-spacing: 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+    .tag {
+      font: 600 11px var(--display); letter-spacing: .04em; text-transform: uppercase;
+      padding: 4px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); cursor: pointer;
+      background: var(--bg);
+    }
+    .tag.on { background: var(--amber); color: #2a1c14; border-color: var(--amber); }
+    .tag.danger.on { background: #b04434; color: #fff; border-color: #b04434; }
+    .wounds { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .wounds button {
+      width: 34px; height: 34px; border-radius: 8px; border: 1px solid var(--line);
+      background: var(--bg); color: var(--text); font-size: 18px; cursor: pointer;
+    }
+    .wounds b { min-width: 3ch; text-align: center; font: 700 16px var(--display); }
+    .ready-btn {
+      width: 100%; padding: 8px; border-radius: 8px; border: 1px solid var(--line);
+      background: var(--bg); color: var(--muted); font: 700 12px var(--display);
+      letter-spacing: .06em; text-transform: uppercase; cursor: pointer;
+    }
+    .ready-btn.on { background: #3d8b5c; color: #fff; border-color: #3d8b5c; }
+    .gang-col { margin-bottom: 16px; }
+    .gang-col h3 {
+      margin: 0 0 8px; font: 700 14px var(--display); letter-spacing: .08em;
+      text-transform: uppercase; color: var(--amber);
+    }
+    .history { display: grid; gap: 8px; margin-top: 12px; }
+    .history div b { color: var(--amber); font: 700 14px var(--display); letter-spacing: .04em; }
+    .history div span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
     .page h2 {
       margin: 0 0 10px; font: 700 22px/1.2 var(--display);
       letter-spacing: .05em; text-transform: uppercase; color: var(--amber);
@@ -264,7 +349,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.2 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.2.3 Necromunda N23 &amp; N26<br>
       MAJ 06-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -580,6 +665,326 @@
         .catch(err => { if (location.hash === token) view.innerHTML = errorHtml(err); });
     }
 
+
+    /* ——— Partie (setup / live / post) ——— */
+    const MATCH_STORE = "nc_match_v1";
+    const MATCH_HIST = "nc_match_history_v1";
+    const MATCH_STATUSES = [
+      { id: "fw", label: "Flesh Wound" },
+      { id: "si", label: "Serious Injury" },
+      { id: "ooa", label: "Out of Action", danger: true },
+      { id: "blaze", label: "Blaze" },
+      { id: "pinned", label: "Pinned" },
+      { id: "broken", label: "Broken" }
+    ];
+    let match = null;
+    let setupDraft = null;
+    const uid = () => Math.random().toString(36).slice(2, 10);
+
+    function loadMatch() {
+      try { return JSON.parse(localStorage.getItem(MATCH_STORE) || "null"); } catch (e) { return null; }
+    }
+    function saveMatch() {
+      if (match) localStorage.setItem(MATCH_STORE, JSON.stringify(match));
+      else localStorage.removeItem(MATCH_STORE);
+    }
+    function loadHist() {
+      try { return JSON.parse(localStorage.getItem(MATCH_HIST) || "[]"); } catch (e) { return []; }
+    }
+    function pushHist(m) {
+      const h = loadHist();
+      h.unshift({
+        id: m.id, format: m.format, edition: m.edition,
+        a: m.gangs[0].name, b: m.gangs[1].name,
+        winner: (m.post && m.post.winner) || "",
+        at: m.endedAt || m.createdAt
+      });
+      localStorage.setItem(MATCH_HIST, JSON.stringify(h.slice(0, 20)));
+    }
+    function mkFighter(name, cost) {
+      return { id: uid(), name: name || "Combattant", cost: cost || 0, wounds: 1, maxWounds: 1, ready: true, status: [] };
+    }
+    function emptyGang(label) {
+      return { name: label, rating: "", crew: [mkFighter(label === "Gang A" ? "Leader A" : "Leader B", 0)] };
+    }
+    function newDraft() {
+      return {
+        format: "skirmish", edition: "N26", budget: "1000", budgetCustom: "",
+        gangs: [emptyGang("Gang A"), emptyGang("Gang B")]
+      };
+    }
+    function seg(name, options, current) {
+      return `<div class="seg" data-seg="${name}">${options.map(([v, lab]) =>
+        `<button type="button" data-v="${v}" class="${current === v ? "on" : ""}">${lab}</button>`
+      ).join("")}</div>`;
+    }
+    function crewEditor(gi, g) {
+      return `<div class="panel"><h3 class="sec">${esc(g.name || ("Gang " + (gi + 1)))}</h3><div class="body">
+        <label class="fld"><span>Nom du gang</span><input data-g="${gi}" data-k="name" value="${esc(g.name)}"></label>
+        <label class="fld"><span>Rating (optionnel)</span><input data-g="${gi}" data-k="rating" inputmode="numeric" value="${esc(g.rating)}"></label>
+        <p class="hint">Crew (saisie libre)</p>
+        <div class="crew-list">
+          ${g.crew.map((f, fi) => `<div class="crew-row">
+            <input data-g="${gi}" data-f="${fi}" data-k="name" value="${esc(f.name)}" placeholder="Nom">
+            <input data-g="${gi}" data-f="${fi}" data-k="cost" inputmode="numeric" value="${f.cost || ""}" placeholder="Cr">
+            <button type="button" class="icon-x" data-del-f="${gi}:${fi}" aria-label="Retirer">×</button>
+          </div>`).join("")}
+        </div>
+        <div class="btn-row" style="margin-top:10px">
+          <button type="button" class="btn ghost small" data-add-f="${gi}">+ Combattant</button>
+        </div>
+      </div></div>`;
+    }
+    function setupHtml() {
+      const d = setupDraft || newDraft();
+      setupDraft = d;
+      const hist = loadHist();
+      return `<div class="page">
+        <h2>Nouvelle partie</h2>
+        <p class="hint">Setup libre — N23 / N26 · escarmouche ou campagne.</p>
+        <div class="panel"><h3 class="sec">Format</h3><div class="body">
+          <label class="fld"><span>Type</span>${seg("format", [["skirmish","Escarmouche"],["campaign","Campagne"]], d.format)}</label>
+          <label class="fld"><span>Édition</span>${seg("edition", [["N26","N26"],["N23","N23"]], d.edition)}</label>
+          <label class="fld"><span>Budget crédits</span>${seg("budget", [["800","800"],["1000","1000"],["1250","1250"],["1500","1500"],["libre","Libre"]], d.budget)}</label>
+          <label class="fld" id="budget-custom-wrap" ${d.budget === "libre" ? "" : "hidden"}><span>Budget libre</span><input id="budget-custom" inputmode="numeric" value="${esc(d.budgetCustom)}" placeholder="ex. 1100"></label>
+        </div></div>
+        ${crewEditor(0, d.gangs[0])}
+        ${crewEditor(1, d.gangs[1])}
+        <button type="button" class="btn primary" id="start-match">Lancer la partie</button>
+        ${match && match.phase && match.phase !== "done" ? `<button type="button" class="btn ghost" id="resume-match">Reprendre la partie en cours</button>` : ""}
+        ${hist.length ? `<div class="panel"><h3 class="sec">Historique local</h3><div class="body history">
+          ${hist.slice(0, 5).map(h => `<div><b>${esc(h.a)} vs ${esc(h.b)}</b><span>${esc(h.format)} · ${esc(h.edition)}${h.winner ? " · " + esc(h.winner) : ""}</span></div>`).join("")}
+        </div></div>` : ""}
+      </div>`;
+    }
+    function bindSetup() {
+      const d = setupDraft;
+      $("view").querySelectorAll("[data-seg]").forEach(box => {
+        box.addEventListener("click", e => {
+          const btn = e.target.closest("button[data-v]");
+          if (!btn) return;
+          d[box.getAttribute("data-seg")] = btn.getAttribute("data-v");
+          box.querySelectorAll("button").forEach(b => b.classList.toggle("on", b === btn));
+          const wrap = $("budget-custom-wrap");
+          if (wrap) wrap.hidden = d.budget !== "libre";
+        });
+      });
+      $("view").querySelectorAll("input[data-g]").forEach(inp => {
+        inp.addEventListener("input", () => {
+          const gi = +inp.getAttribute("data-g");
+          const fi = inp.getAttribute("data-f");
+          const k = inp.getAttribute("data-k");
+          if (fi == null) d.gangs[gi][k] = inp.value;
+          else d.gangs[gi].crew[+fi][k] = k === "cost" ? (parseInt(inp.value, 10) || 0) : inp.value;
+        });
+      });
+      $("view").querySelectorAll("[data-add-f]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          d.gangs[+btn.getAttribute("data-add-f")].crew.push(mkFighter("Combattant", 0));
+          renderPartie();
+        });
+      });
+      $("view").querySelectorAll("[data-del-f]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const [gi, fi] = btn.getAttribute("data-del-f").split(":").map(Number);
+          if (d.gangs[gi].crew.length < 2) return;
+          d.gangs[gi].crew.splice(fi, 1);
+          renderPartie();
+        });
+      });
+      const start = $("start-match");
+      if (start) start.addEventListener("click", () => {
+        const custom = ($("budget-custom") || {}).value || "";
+        d.budgetCustom = custom;
+        match = {
+          id: uid(), format: d.format, edition: d.edition,
+          budget: d.budget === "libre" ? (custom || "libre") : d.budget,
+          phase: "live", round: 1, priority: 0,
+          gangs: d.gangs.map(g => ({
+            name: g.name || "Gang", rating: g.rating || "",
+            crew: g.crew.map(f => ({
+              id: f.id || uid(), name: f.name || "Combattant", cost: f.cost || 0,
+              wounds: 1, maxWounds: 1, ready: true, status: []
+            }))
+          })),
+          post: { winner: "", sideJobA: false, sideJobB: false, creditsA: "", creditsB: "", notes: "" },
+          createdAt: new Date().toISOString()
+        };
+        setupDraft = null;
+        saveMatch();
+        renderPartie();
+      });
+      const resume = $("resume-match");
+      if (resume) resume.addEventListener("click", () => { match = loadMatch(); renderPartie(); });
+    }
+    function fighterCard(gi, fi, f) {
+      const ooa = f.status.includes("ooa");
+      return `<div class="fighter ${ooa ? "ooa" : ""}" data-gi="${gi}" data-fi="${fi}">
+        <div class="fname"><span>${esc(f.name)}</span><small>${f.cost ? f.cost + " cr" : ""}</small></div>
+        <div class="wounds">
+          <button type="button" data-w="-">−</button>
+          <b>${f.wounds}</b>
+          <button type="button" data-w="+">+</button>
+          <span class="hint" style="margin:0">Blessures</span>
+        </div>
+        <div class="tags">
+          ${MATCH_STATUSES.map(s => `<button type="button" class="tag ${s.danger ? "danger " : ""}${f.status.includes(s.id) ? "on" : ""}" data-st="${s.id}">${s.label}</button>`).join("")}
+        </div>
+        <button type="button" class="ready-btn ${f.ready && !ooa ? "on" : ""}" data-ready>${f.ready && !ooa ? "Ready" : "Activé / indispo"}</button>
+      </div>`;
+    }
+    function liveHtml() {
+      const m = match;
+      return `<div class="page">
+        <h2>Partie live</h2>
+        <div class="live-top">
+          <span class="pill">${esc(m.edition)} · ${m.format === "campaign" ? "Campagne" : "Escarmouche"}</span>
+          <span class="pill">Budget ${esc(String(m.budget))}</span>
+          <span class="pill">Round ${m.round}</span>
+          <span class="pill">Priorité : ${esc(m.gangs[m.priority].name)}</span>
+        </div>
+        <div class="btn-row">
+          <button type="button" class="btn ghost small" id="tog-priority">Changer priorité</button>
+          <button type="button" class="btn ghost small" id="next-round">Round +1</button>
+          <button type="button" class="btn ghost small" id="reset-ready">Reset Ready</button>
+        </div>
+        ${m.gangs.map((g, gi) => `<div class="gang-col">
+          <h3>${esc(g.name)}${g.rating ? " · " + esc(g.rating) : ""}</h3>
+          ${g.crew.map((f, fi) => fighterCard(gi, fi, f)).join("")}
+        </div>`).join("")}
+        <div class="panel"><h3 class="sec">Bottle / moral</h3><div class="body">
+          <p class="hint">Rappel : teste le bottle selon le scénario / l'édition. Note le résultat si besoin.</p>
+          <label class="fld"><span>Note bottle</span><input id="bottle-note" value="${esc(m.bottleNote || "")}" placeholder="ex. Gang A bottle au round 3"></label>
+        </div></div>
+        <button type="button" class="btn primary" id="to-post">Passer au post-battle</button>
+        <button type="button" class="btn danger" id="abort-match">Abandonner la partie</button>
+      </div>`;
+    }
+    function bindLive() {
+      const m = match;
+      $("tog-priority").addEventListener("click", () => { m.priority = m.priority ? 0 : 1; saveMatch(); renderPartie(); });
+      $("next-round").addEventListener("click", () => {
+        m.round += 1;
+        m.gangs.forEach(g => g.crew.forEach(f => { if (!f.status.includes("ooa")) f.ready = true; }));
+        saveMatch(); renderPartie();
+      });
+      $("reset-ready").addEventListener("click", () => {
+        m.gangs.forEach(g => g.crew.forEach(f => { if (!f.status.includes("ooa")) f.ready = true; }));
+        saveMatch(); renderPartie();
+      });
+      const bottle = $("bottle-note");
+      if (bottle) bottle.addEventListener("input", () => { m.bottleNote = bottle.value; saveMatch(); });
+      $("view").querySelectorAll(".fighter").forEach(card => {
+        const gi = +card.getAttribute("data-gi");
+        const fi = +card.getAttribute("data-fi");
+        const f = m.gangs[gi].crew[fi];
+        card.querySelectorAll("[data-w]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            f.wounds = Math.max(0, f.wounds + (btn.getAttribute("data-w") === "+" ? 1 : -1));
+            saveMatch(); renderPartie();
+          });
+        });
+        card.querySelectorAll("[data-st]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-st");
+            const i = f.status.indexOf(id);
+            if (i >= 0) f.status.splice(i, 1); else f.status.push(id);
+            if (f.status.includes("ooa")) f.ready = false;
+            saveMatch(); renderPartie();
+          });
+        });
+        const rb = card.querySelector("[data-ready]");
+        if (rb) rb.addEventListener("click", () => {
+          if (f.status.includes("ooa")) return;
+          f.ready = !f.ready;
+          saveMatch(); renderPartie();
+        });
+      });
+      $("to-post").addEventListener("click", () => { m.phase = "post"; saveMatch(); renderPartie(); });
+      $("abort-match").addEventListener("click", () => {
+        if (!confirm("Abandonner la partie en cours ?")) return;
+        match = null; saveMatch(); setupDraft = newDraft(); renderPartie();
+      });
+    }
+    function postHtml() {
+      const m = match;
+      const p = m.post || {};
+      return `<div class="page">
+        <h2>Post-battle</h2>
+        <p class="hint">${esc(m.gangs[0].name)} vs ${esc(m.gangs[1].name)} · ${esc(m.edition)} · Round ${m.round}</p>
+        <div class="panel"><h3 class="sec">Résultat</h3><div class="body">
+          <label class="fld"><span>Vainqueur</span>
+            <select id="post-winner">
+              <option value="" ${!p.winner ? "selected" : ""}>—</option>
+              <option value="${esc(m.gangs[0].name)}" ${p.winner === m.gangs[0].name ? "selected" : ""}>${esc(m.gangs[0].name)}</option>
+              <option value="${esc(m.gangs[1].name)}" ${p.winner === m.gangs[1].name ? "selected" : ""}>${esc(m.gangs[1].name)}</option>
+              <option value="draw" ${p.winner === "draw" ? "selected" : ""}>Match nul</option>
+            </select>
+          </label>
+          ${m.edition === "N26" ? `
+          <label class="fld"><span>Side Job ${esc(m.gangs[0].name)}</span>
+            <select id="sj-a"><option value="0" ${!p.sideJobA ? "selected" : ""}>Non</option><option value="1" ${p.sideJobA ? "selected" : ""}>Réussi</option></select>
+          </label>
+          <label class="fld"><span>Side Job ${esc(m.gangs[1].name)}</span>
+            <select id="sj-b"><option value="0" ${!p.sideJobB ? "selected" : ""}>Non</option><option value="1" ${p.sideJobB ? "selected" : ""}>Réussi</option></select>
+          </label>` : ""}
+          <label class="fld"><span>Crédits ${esc(m.gangs[0].name)}</span><input id="cr-a" value="${esc(p.creditsA || "")}" placeholder="ex. 30 ou 2D3×10"></label>
+          <label class="fld"><span>Crédits ${esc(m.gangs[1].name)}</span><input id="cr-b" value="${esc(p.creditsB || "")}" placeholder="ex. 10"></label>
+        </div></div>
+        <div class="panel"><h3 class="sec">Combattants OOA / notes XP</h3><div class="body">
+          ${m.gangs.map(g => `<div style="margin-bottom:12px"><b style="color:var(--amber)">${esc(g.name)}</b>
+            ${g.crew.map(f => `<div class="hint" style="margin:6px 0">${esc(f.name)} — ${f.status.includes("ooa") ? "OOA" : "OK"} · W${f.wounds}${f.status.length ? " · " + f.status.join(", ") : ""}</div>`).join("")}
+          </div>`).join("")}
+          <label class="fld"><span>Notes (XP, injuries, etc.)</span><textarea id="post-notes" placeholder="Leader A +1 XP, Ganger B lasting injury...">${esc(p.notes || "")}</textarea></label>
+        </div></div>
+        <button type="button" class="btn primary" id="save-post">Enregistrer et terminer</button>
+        <button type="button" class="btn ghost" id="back-live">Retour live</button>
+      </div>`;
+    }
+    function bindPost() {
+      const m = match;
+      const sync = () => {
+        m.post = {
+          winner: ($("post-winner") || {}).value || "",
+          sideJobA: ($("sj-a") || {}).value === "1",
+          sideJobB: ($("sj-b") || {}).value === "1",
+          creditsA: ($("cr-a") || {}).value || "",
+          creditsB: ($("cr-b") || {}).value || "",
+          notes: ($("post-notes") || {}).value || ""
+        };
+        saveMatch();
+      };
+      ["post-winner", "sj-a", "sj-b", "cr-a", "cr-b", "post-notes"].forEach(id => {
+        const el = $(id); if (el) { el.addEventListener("change", sync); el.addEventListener("input", sync); }
+      });
+      $("save-post").addEventListener("click", () => {
+        sync();
+        m.phase = "done";
+        m.endedAt = new Date().toISOString();
+        pushHist(m);
+        match = null;
+        saveMatch();
+        setupDraft = newDraft();
+        renderPartie();
+      });
+      $("back-live").addEventListener("click", () => { sync(); m.phase = "live"; saveMatch(); renderPartie(); });
+    }
+    function renderPartie() {
+      match = match || loadMatch();
+      const view = $("view");
+      if (!match || match.phase === "done" || !match.phase) {
+        view.innerHTML = setupHtml();
+        bindSetup();
+      } else if (match.phase === "live") {
+        view.innerHTML = liveHtml();
+        bindLive();
+      } else if (match.phase === "post") {
+        view.innerHTML = postHtml();
+        bindPost();
+      }
+    }
+
+
     function route() {
       const h = location.hash.slice(1) || "accueil";
       const parts = h.split("/");
@@ -610,7 +1015,7 @@
         showAsync(view, load("index.json"), housesHtml);
       } else if (h === "partie") {
         title.textContent = "Partie";
-        view.innerHTML = placeholder("Partie", "Suivi de partie : blessures, status, priorités.");
+        renderPartie();
       } else if (section === "regles" && edition === "n26") {
         title.textContent = "Règles";
         view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.");
