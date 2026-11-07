@@ -274,7 +274,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.2.1 · MAJ 07-11-2026<br>
+      NecroCounter version 0.2.2 · MAJ 07-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop. Necromunda est une marque de Games Workshop Ltd.</span>
     </p>
   </main>
@@ -309,6 +309,15 @@
     const uid = () => Math.random().toString(36).slice(2, 10);
     const STORE = "nc_match_v1";
     const HIST = "nc_match_history_v1";
+    const STANDALONE = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+    let deferredPrompt = null;
+    window.addEventListener("beforeinstallprompt", e => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const b = document.getElementById("direct-install");
+      if (b) b.hidden = false;
+    });
+    window.addEventListener("appinstalled", () => { deferredPrompt = null; });
 
     const FEATURES = [
       ["gangs", "Gangs", "Crée et gère tes gangs et tes combattants.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
