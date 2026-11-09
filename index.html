@@ -374,7 +374,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.3.3 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.3.4 Necromunda N23 &amp; N26<br>
       MAJ 09-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -743,7 +743,6 @@
       return `<div class="page">
         <h2>Règles</h2>
         ${editionSwitch("regles", "n23")}
-        <a class="fcard" href="#aide" style="margin-bottom:12px"><span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M9 7h6"/></svg></span><span><b>Aperçu rapide des règles</b><br><span>Round, actions, blessures, bottle, Side Job</span></span></a>
         <h3 class="h3">Aide de campagne N23</h3>
         <p class="note">Rappels pour avant / après la bataille. Vérifie toujours dans ton livre en cas de doute.</p>
         <div class="folds" style="margin-top:12px">
@@ -886,7 +885,7 @@
     }
     function newDraft() {
       return {
-        format: "skirmish", edition: "N26", budget: "1000", budgetCustom: "",
+        format: "skirmish", edition: "N23", budget: "1000", budgetCustom: "",
         gangs: [emptyGang("Gang A"), emptyGang("Gang B")]
       };
     }
@@ -922,7 +921,7 @@
         <p class="hint">Setup libre — N23 / N26 · escarmouche ou campagne.</p>
         <div class="panel"><h3 class="sec">Format</h3><div class="body">
           <label class="fld"><span>Type</span>${seg("format", [["skirmish","Escarmouche"],["campaign","Campagne"]], d.format)}</label>
-          <label class="fld"><span>Édition</span>${seg("edition", [["N26","N26"],["N23","N23"]], d.edition)}</label>
+          <label class="fld"><span>Édition</span>${seg("edition", [["N23","N23"],["N26","N26"]], d.edition)}</label>
           <label class="fld"><span>Budget crédits</span>${seg("budget", [["800","800"],["1000","1000"],["1250","1250"],["1500","1500"],["libre","Libre"]], d.budget)}</label>
           <label class="fld" id="budget-custom-wrap" ${d.budget === "libre" ? "" : "hidden"}><span>Budget libre</span><input id="budget-custom" inputmode="numeric" value="${esc(d.budgetCustom)}" placeholder="ex. 1100"></label>
         </div></div>
@@ -1260,7 +1259,7 @@
       } else if (section === "regles" && edition === "n26") {
         title.textContent = "Règles";
         sessionStorage.setItem("nc_aide_from", "regles");
-        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.") + `<a class="fcard" href="#aide" style="margin-bottom:12px"><span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M9 7h6"/></svg></span><span><b>Aperçu rapide des règles</b><br><span>Round, actions, blessures, bottle, Side Job</span></span></a>`;
+        view.innerHTML = comingSoonHtml("Règles", "regles", "Les règles de Necromunda N26 arriveront ici.");
       } else if (section === "regles") {
         title.textContent = "Règles";
         sessionStorage.setItem("nc_aide_from", "regles");
