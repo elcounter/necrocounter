@@ -1,5 +1,5 @@
 // NecroCounter service worker
-const VERSION = "necrocounter-0.3.2";
+const VERSION = "necrocounter-0.3.3";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png", "./favicon-32.png", "./data/n23/refs.json"];
 
 self.addEventListener("install", e => {
