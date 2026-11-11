@@ -199,6 +199,13 @@
     .history { display: grid; gap: 8px; margin-top: 12px; }
     .history div b { color: var(--amber); font: 700 14px var(--display); letter-spacing: .04em; }
     .history div span { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+    .history .hrow { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+    .history .hdel {
+      flex: none; width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--line);
+      background: transparent; color: var(--muted); font-size: 20px; line-height: 1; cursor: pointer;
+    }
+    .history .hdel:active { color: var(--amber); border-color: var(--amber-dim); }
+    .history .hclear { margin-top: 4px; }
 
     .aide-item {
       border: 1px solid var(--line); border-radius: 12px; margin-bottom: 8px;
@@ -390,7 +397,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.3.8 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.3.9 Necromunda N23 &amp; N26<br>
       MAJ 11-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -884,6 +891,17 @@
       if (match) localStorage.setItem(MATCH_STORE, JSON.stringify(match));
       else localStorage.removeItem(MATCH_STORE);
     }
+    function saveHist(h) {
+      try { localStorage.setItem(MATCH_HIST, JSON.stringify(h)); } catch (e) {}
+    }
+    document.addEventListener("click", e => {
+      const del = e.target.closest("[data-hdel]");
+      if (del) {
+        const h = loadHist(); h.splice(Number(del.dataset.hdel), 1); saveHist(h); route();
+      } else if (e.target.closest("#hist-clear") && confirm("Effacer tout l'historique des parties ?")) {
+        saveHist([]); route();
+      }
+    });
     function loadHist() {
       try { return JSON.parse(localStorage.getItem(MATCH_HIST) || "[]"); } catch (e) { return []; }
     }
@@ -950,7 +968,9 @@
         <button type="button" class="btn primary" id="start-match">Lancer la partie</button>
         ${match && match.phase && match.phase !== "done" ? `<button type="button" class="btn ghost" id="resume-match">Reprendre la partie en cours</button>` : ""}
         ${hist.length ? `<div class="panel"><h3 class="sec">Historique local</h3><div class="body history">
-          ${hist.slice(0, 5).map(h => `<div><b>${esc(h.a)} vs ${esc(h.b)}</b><span>${esc(h.format)} · ${esc(h.edition)}${h.winner ? " · " + esc(h.winner) : ""}</span></div>`).join("")}
+          ${hist.slice(0, 5).map((h, i) => `<div class="hrow"><div><b>${esc(h.a)} vs ${esc(h.b)}</b><span>${esc(h.format)} · ${esc(h.edition)}${h.winner ? " · " + esc(h.winner) : ""}</span></div>
+            <button type="button" class="hdel" data-hdel="${i}" aria-label="Supprimer cette partie">×</button></div>`).join("")}
+          <button type="button" class="btn ghost small hclear" id="hist-clear">Effacer tout l'historique</button>
         </div></div>` : ""}
       </div>`;
     }
