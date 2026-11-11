@@ -368,19 +368,13 @@
       background: #32363c; transition: opacity .35s ease, visibility .35s ease;
     }
     #splash.done { opacity: 0; visibility: hidden; }
-    #splash svg { width: 120px; height: 120px; animation: nc-spin 1.4s linear infinite; filter: drop-shadow(0 0 18px rgba(232,160,32,.35)); }
+    #splash img { width: 160px; height: 160px; border-radius: 50%; animation: nc-spin 1.4s linear infinite; }
     @keyframes nc-spin { to { transform: rotate(360deg); } }
-    @media (prefers-reduced-motion: reduce) { #splash svg { animation: none; } }
+    @media (prefers-reduced-motion: reduce) { #splash img { animation: none; } }
   </style>
 </head>
 <body>
-  <div id="splash" aria-hidden="true">
-    <svg viewBox="0 0 64 64">
-      <circle cx="32" cy="32" r="30" fill="#32363c"/>
-      <circle cx="32" cy="32" r="25" fill="none" stroke="#e8a020" stroke-width="2.5"/>
-      <path d="M22 20v24M42 20v24M22 20l20 24" fill="none" stroke="#e8a020" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </div>
+  <div id="splash" aria-hidden="true"><img src="icon-512.png" alt="" width="160" height="160"></div>
   <header class="bar">
     <div class="in top">
       <button class="back" id="back" type="button" aria-label="Retour" hidden>
@@ -397,7 +391,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.3.9 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.3.10 Necromunda N23 &amp; N26<br>
       MAJ 11-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
