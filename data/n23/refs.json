@@ -535,5 +535,265 @@
       "effet": "Mort mémorable — Mort, attaquant +1 XP"
     }
   ],
-  "competencesSource": "Livre de règles N23, p. 184-188 (résumés)"
+  "competencesSource": "Livre de règles N23, p. 184-188 (résumés)",
+  "deroulement": [
+    {
+      "titre": "Séquence du round",
+      "items": [
+        {
+          "nom": "1. Priorité",
+          "resume": "Chaque joueur jette un D6, le plus haut a la Priorité. Égalité : elle va au joueur qui ne l'avait pas au round précédent."
+        },
+        {
+          "nom": "Préparer les combattants",
+          "resume": "Pion Paré sur tous les combattants ; il est retiré quand le combattant est activé."
+        },
+        {
+          "nom": "2. Action",
+          "resume": "Activations en alternance, en commençant par la Priorité (voir Phase d'action)."
+        },
+        {
+          "nom": "3. Fin : test de Cran",
+          "resume": "Un gang avec au moins un Gravement Blessé ou Hors de Combat : D6 + nombre de Gravement Blessés et Hors de Combat. Total supérieur à l'effectif de départ : le gang se dégonfle."
+        },
+        {
+          "nom": "3. Fin : Récupération",
+          "resume": "Chaque Gravement Blessé jette un (ou plusieurs) dé de Trauma et applique le résultat."
+        },
+        {
+          "nom": "3. Fin : Ralliement",
+          "resume": "Test de Sang-froid pour chaque Démoralisé, +1 par ami à 3\" ni Démoralisé, ni Au Tapis et Gravement Blessé. Réussi : il n'est plus Démoralisé."
+        }
+      ]
+    },
+    {
+      "titre": "Phase d'action",
+      "items": [
+        {
+          "nom": "Combattants en fuite",
+          "resume": "Gang dégonflé : avant sa première activation, test de Sang-froid pour chaque combattant (Priorité d'abord). Raté : il fuit, retiré et compté Hors de Combat."
+        },
+        {
+          "nom": "Mener par l'exemple",
+          "resume": "Chef qui réussit : les amis à 12\" réussissent aussi. Champion qui réussit : les amis à 6\" (sauf Chef et Champions) aussi."
+        },
+        {
+          "nom": "Activer un combattant",
+          "resume": "Un combattant Préparé fait jusqu'à deux actions selon son statut. Un joueur sans combattant à activer laisse l'autre activer tous les siens."
+        },
+        {
+          "nom": "Activation de groupe",
+          "resume": "Chef : +2 combattants Préparés à 3\". Champion : +1. Tous désignés avant de commencer, activés l'un après l'autre. Un Chef ou Champion activé ainsi ne lance pas son propre groupe."
+        },
+        {
+          "nom": "Types d'action",
+          "resume": "Élémentaire : une fois par activation. Simple : peut être répétée. Double : compte pour deux actions (impossible s'il n'a qu'une action)."
+        },
+        {
+          "nom": "Orientation",
+          "resume": "Un combattant Debout peut changer d'orientation en étant activé, avant toute action."
+        }
+      ]
+    },
+    {
+      "titre": "Actions : Debout et Actif",
+      "items": [
+        {
+          "nom": "Se Déplacer (Simple)",
+          "resume": "Jusqu'à M ; escalader, traverser un vide pas plus large que le socle, sauter un vide ou vers le bas (p. 63)."
+        },
+        {
+          "nom": "Charger (Double)",
+          "resume": "Mouvement + D3\", peut finir à 1\" d'ennemis s'il peut entrer au contact. Engagé à la fin : action Combattre (Élémentaire) gratuite."
+        },
+        {
+          "nom": "Ramper dans une conduite (Double)",
+          "resume": "À 1\" d'une conduite : placé à 1\" de l'autre extrémité, pas à 1\" d'un ennemi."
+        },
+        {
+          "nom": "Se Mettre à Couvert (Élémentaire)",
+          "resume": "Bouge de M/2 puis Au Tapis et Bloqué."
+        },
+        {
+          "nom": "Tirer (Élémentaire)",
+          "resume": "Une attaque avec une arme de tir."
+        },
+        {
+          "nom": "Viser (Élémentaire)",
+          "resume": "Juste avant Tirer : +1 aux jets de touche."
+        },
+        {
+          "nom": "Tirer à travers une conduite (Élémentaire)",
+          "resume": "Ennemi à 1\" de l'autre extrémité : touche sur 5+ sans CT ni modificateurs ; Souffle : touche auto à 2\"."
+        },
+        {
+          "nom": "Recharger (Simple)",
+          "resume": "Test de Munitions sur une arme À Court de Munitions ; réussi, le pion est retiré."
+        },
+        {
+          "nom": "Porter le Coup de Grâce (Simple)",
+          "resume": "Non Engagé : un ennemi Gravement Blessé à 1\" et en vue est mis Hors de Combat. Possible à la place du Combattre gratuit d'une Charge."
+        },
+        {
+          "nom": "Portes et terminaux",
+          "resume": "Actionner une porte (Simple) à 1\". Accéder au terminal (Élémentaire) : Intelligence -2, ouvre la porte reliée. Forcer une porte (Élémentaire) : D6 + F +2 par ami au contact, 9+ = ouverte."
+        },
+        {
+          "nom": "Caisses de butin",
+          "resume": "Fracturer (Élémentaire) : D6 + F, 6+ = ouverte, -1 au contenu. Crocheter (Élémentaire) : test d'Intelligence. Porter (Simple) : Se Déplacer avec la caisse ou la cache de munitions."
+        }
+      ]
+    },
+    {
+      "titre": "Actions : Debout et Engagé",
+      "items": [
+        {
+          "nom": "Combattre (Élémentaire)",
+          "resume": "Attaques de corps à corps contre un ou plusieurs ennemis Engagés."
+        },
+        {
+          "nom": "Se Replier (Élémentaire)",
+          "resume": "Test d'Initiative ; réussi, Se Déplacer de D6\". Chaque ennemi Engagé fait un test d'Initiative ; réussi, il porte des attaques de Réaction."
+        }
+      ]
+    },
+    {
+      "titre": "Actions : Au Tapis",
+      "items": [
+        {
+          "nom": "Bloqué : Se Relever (Élémentaire)",
+          "resume": "Remis Debout et Actif, orientation au choix."
+        },
+        {
+          "nom": "Bloqué : Ramper (Double)",
+          "resume": "Déplacement jusqu'à M/2."
+        },
+        {
+          "nom": "Bloqué : Tir à l'aveuglette (Double)",
+          "resume": "Tir avec un champ de vision de 360°, -2 aux jets de touche."
+        },
+        {
+          "nom": "Bloqué : Recharger (Simple)",
+          "resume": "Comme pour un combattant Debout."
+        },
+        {
+          "nom": "Gravement Blessé",
+          "resume": "Seule action possible : Ramper (Double)."
+        }
+      ]
+    },
+    {
+      "titre": "Démoralisé et Folie",
+      "items": [
+        {
+          "nom": "Courir à Couvert (Double)",
+          "resume": "Seule action d'un Démoralisé. Debout et Actif : 2D6\". Au Tapis : M/2. Finit si possible à plus de 3\" des ennemis, puis hors de vue, puis à couvert, puis le plus loin possible."
+        },
+        {
+          "nom": "Démoralisé et Engagé",
+          "resume": "Test d'Initiative : réussi, il fuit (les ennemis Engagés réussissant un test d'Initiative portent des Réactions) ; raté, il reste Engagé sans autre action."
+        },
+        {
+          "nom": "Folie (D6 à l'activation)",
+          "resume": "1-2 : Démoralisé (s'il l'était, il fuit). 3-4 : l'adversaire le contrôle pour cette activation. 5-6 : agit normalement, puis test de Volonté pour perdre la Folie."
+        }
+      ]
+    },
+    {
+      "titre": "Séquence de tir",
+      "items": [
+        {
+          "nom": "Cible prioritaire",
+          "resume": "Cibler l'ennemi éligible le plus proche (en vue et en ligne de vue, même Engagé). Ignorable s'il est Au Tapis et Gravement Blessé ou plus dur à toucher ; sinon test de Sang-froid pour viser plus loin. Explosion : peut viser un point du plateau."
+        },
+        {
+          "nom": "1. Déclarer le tir",
+          "resume": "Choisir l'arme et la cible."
+        },
+        {
+          "nom": "2. Portée",
+          "resume": "Au-delà de la Longue portée : raté automatiquement (le dé de Munitions est quand même jeté)."
+        },
+        {
+          "nom": "3. Jet de touche",
+          "resume": "Test de CT avec les modificateurs de tir."
+        },
+        {
+          "nom": "4. Cible Bloquée",
+          "resume": "Une cible Active touchée par un tir est Bloquée."
+        },
+        {
+          "nom": "5. Résoudre les touches",
+          "resume": "Voir Résoudre les touches."
+        },
+        {
+          "nom": "Balles perdues",
+          "resume": "Tir raté : D6 pour chaque combattant Engagé avec la cible ou à 1\" de la ligne de tir, du plus proche du tireur. 1-3 : touché ; 4-6 : passer au suivant."
+        }
+      ]
+    },
+    {
+      "titre": "Séquence de corps à corps",
+      "items": [
+        {
+          "nom": "1. Pivoter",
+          "resume": "Peut faire face où il veut, mais -1 aux jets de touche."
+        },
+        {
+          "nom": "2. Armes",
+          "resume": "Jusqu'à deux armes Mêlée ou Arme de Poing (une seule si Encombrante), sinon attaques désarmées."
+        },
+        {
+          "nom": "3. Dés d'Attaque",
+          "resume": "A + 1 avec deux armes + 1 en Charge. Répartis équitablement entre les armes ; une seule attaque avec une Arme de Poing."
+        },
+        {
+          "nom": "4. Cibles",
+          "resume": "Ennemis Engagés et dans le champ de vision, répartition au choix."
+        },
+        {
+          "nom": "5. Jets de touche",
+          "resume": "Test de CC par dé. +1 par ami Engagé avec la cible qui assiste, -1 par autre ennemi Engagé avec l'attaquant."
+        },
+        {
+          "nom": "6-7. Touches et Réactions",
+          "resume": "Résoudre les touches, puis les ennemis encore Engagés font leurs attaques de Réaction (étapes 1-6)."
+        },
+        {
+          "nom": "8. Consolider",
+          "resume": "Si tous les ennemis Engagés sont Au Tapis et Gravement Blessés ou Hors de Combat : déplacement jusqu'à 2\"."
+        }
+      ]
+    },
+    {
+      "titre": "Résoudre les touches",
+      "items": [
+        {
+          "nom": "1. Jet de blessure",
+          "resume": "Force contre Endurance (voir Force vs Endurance)."
+        },
+        {
+          "nom": "2. Sauvegarde",
+          "resume": "Après la blessure, avant de retirer un PV. Arme à Dégâts « - » qui provoque un dé de Trauma : sauvegarde avant ce dé."
+        },
+        {
+          "nom": "3. Dégâts",
+          "resume": "PV réduits des Dégâts. À 0 PV : un dé de Trauma, plus un par point de Dégâts restant."
+        },
+        {
+          "nom": "Dé de Trauma",
+          "resume": "Blessure Légère : -1 E (à 0, Hors de Combat). Blessure Grave : Au Tapis face contre terre, peut récupérer en phase de Fin, vulnérable au Coup de Grâce. Hors de Combat : retiré du jeu."
+        },
+        {
+          "nom": "Chute",
+          "resume": "3-5\" : F3 D1. 6-7\" : F5 PA-1 D1. 8-9\" : F7 PA-2 D2. 10\"+ : F9 PA-3 D3. Bloqué et activation terminée ; un combattant touché à l'arrivée subit la même touche. Atterrissage à 1/2\" d'un bord : test d'Initiative ou nouvelle chute."
+        },
+        {
+          "nom": "Test de Nervosité",
+          "resume": "Ami Gravement Blessé ou Hors de Combat à 3\" : chaque combattant Actif (pas Engagé ni Au Tapis) teste son Sang-froid, +1 par ami Actif à 3\". Raté : Démoralisé, Courir à Couvert aussitôt."
+        }
+      ]
+    }
+  ],
+  "deroulementSource": "Livre de règles N23, p. 57-60 et Références rapides p. 189-191 (résumés)"
 }

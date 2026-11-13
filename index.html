@@ -483,7 +483,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.6.3 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.6.4 Necromunda N23 &amp; N26<br>
       MAJ 13-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -852,6 +852,13 @@
           <input class="refs-search" id="refs-search" type="search" placeholder="Trait, compétence, statut, arme…" autocomplete="off">
         </label>
         <p class="refs-search-hint">Filtre traits, compétences, statuts, conditions, armurerie…</p>
+        <h3 class="h3">Déroulement d'une partie</h3>
+        <p class="note">Résumés pour la table. Vérifie le livre en cas de doute.</p>
+        <div class="folds" style="margin-top:12px">${(refs.deroulement || []).map(sec =>
+          `<details class="fold" data-fold="${q(sec.titre)}"><summary><span>${esc(sec.titre)}</span><small>${sec.items.length}</small></summary>
+            <div class="fold-body">${sec.items.map(x => `<details class="eq" data-q="${q(sec.titre + " " + x.nom + " " + x.resume)}"><summary><span class="nm">${esc(x.nom)}</span></summary>
+              <p class="shop" style="padding:8px 12px 12px">${esc(x.resume)}</p></details>`).join("")}</div></details>`).join("")}
+        </div>
         <h3 class="h3">Références rapides</h3>
         <div class="folds" style="margin-top:12px">
           <details class="fold"><summary><span>Modificateurs de tir</span></summary>
