@@ -477,7 +477,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.6.1 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.6.2 Necromunda N23 &amp; N26<br>
       MAJ 13-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -1429,8 +1429,8 @@
       saveGangs(list);
     }
     function gangData(houseId) {
-      return Promise.all([load("maisons/" + houseId + ".json"), load("armes.json"), load("mercenaires.json")])
-        .then(([house, armes, mercs]) => ({ house, armes, mercs }));
+      return Promise.all([load("maisons/" + houseId + ".json"), load("armes.json"), load("mercenaires.json"), load("refs.json")])
+        .then(([house, armes, mercs, refs]) => ({ house, armes, mercs, refs }));
     }
     function fighterDef(f, d) {
       return f.kind === "brute"
@@ -1459,6 +1459,8 @@
       });
       const special = g.fighters.filter(f => f.kind !== "brute" && f.type === "ganger" &&
         (f.gear || []).some(id => (itemDef(id, d) || {}).categorie === SPECIAL_CAT)).length;
+      g.fighters.filter(f => f.kind !== "brute" && (f.type === "chef" || f.type === "champion") && !(f.skills || []).length)
+        .forEach(f => w.push(`${f.name || (f.type === "chef" ? "Chef" : "Champion")} : choisis sa compétence de départ (gratuite).`));
       if (special > 1) w.push(`À la création, un seul Ganger peut avoir une Arme Spéciale (${special} actuellement).`);
       const counts = {};
       g.fighters.forEach(f => {
@@ -1514,6 +1516,17 @@
         `<option value="${esc(i.id)}"${f.type === "novice" && i.prix > 20 ? " disabled" : ""}>${esc(i.nom)} (${i.prix} cr)</option>`).join("")}</optgroup>`).join("");
     }
 
+    function skillPickHtml(f, fi, d) {
+      const sets = ((d.house.competences || {})[f.type] || {}).primaires || [];
+      const cur = (f.skills || [])[0] || "";
+      const find = n => { for (const L of Object.values(d.refs.competences || {})) { const x = L.find(k => k.nom === n); if (x) return x; } return null; };
+      const info = cur && find(cur);
+      return `<label class="fld" style="margin:10px 0 4px"><span>Compétence de départ (gratuite, set Primaire)</span>
+        <select data-gb-skill="${fi}"><option value="">Choisir…</option>${sets.map(set => `<optgroup label="${esc(set)}">${((d.refs.competences || {})[set] || [])
+          .map(k => `<option value="${esc(k.nom)}"${k.nom === cur ? " selected" : ""}>${esc(k.nom)}</option>`).join("")}</optgroup>`).join("")}</select></label>
+        ${info ? `<p class="note" style="margin-top:0">${esc(info.resume)}</p>` : ""}`;
+    }
+
     function fighterEditorHtml(f, fi, d) {
       const def = fighterDef(f, d);
       if (!def) return "";
@@ -1531,6 +1544,7 @@
         : `${def.equipementDeDepart.length ? `<p class="note">Inclus : ${esc(def.equipementDeDepart.join(", "))}</p>` : ""}
           <div class="gb-chips">${(f.gear || []).map((id, gi) => { const it = itemDef(id, d); return it ? `<span class="gb-chip">${esc(it.nom)} · ${it.prix} cr<button type="button" data-gb-ungear="${fi}:${gi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
           <select class="gb-add" data-gb-gear="${fi}">${gearOptions(d, f)}</select>
+          ${(f.type === "chef" || f.type === "champion") ? skillPickHtml(f, fi, d) : ""}
           ${(f.type === "chef" || f.type === "champion") && betes.length ? `
             <div class="gb-chips">${(f.betes || []).map((id, bi) => { const b = beteDef(id, d); return b ? `<span class="gb-chip">${esc(b.nom)} · ${b.cout} cr<button type="button" data-gb-unbete="${fi}:${bi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
             <select class="gb-add" data-gb-bete="${fi}"><option value="">+ Ajouter une Bête exotique…</option>${betes.map(b => `<option value="${esc(b.id)}">${esc(b.nom)} (${b.cout} cr, ${esc(b.rarete)})</option>`).join("")}</select>` : ""}`}
@@ -1606,7 +1620,8 @@
         fighters: src.fighters.filter(f => f && (f.kind === "brute" || f.kind === "combattant")).map(f => ({
           id: uid(), kind: f.kind, type: String(f.type), name: String(f.name || "").slice(0, 60),
           gear: Array.isArray(f.gear) ? f.gear.map(String) : [], betes: Array.isArray(f.betes) ? f.betes.map(String) : [],
-          options: Array.isArray(f.options) ? f.options.map(Number).filter(n => n >= 0) : []
+          options: Array.isArray(f.options) ? f.options.map(Number).filter(n => n >= 0) : [],
+          skills: Array.isArray(f.skills) ? f.skills.map(String).slice(0, 4) : []
         })),
         createdAt: new Date().toISOString()
       };
@@ -1638,6 +1653,8 @@
         mutateGang(g => g.fighters.push({ id: uid(), kind: k === "b" ? "brute" : "combattant", type: id, name: "", gear: [], betes: [], options: [] }));
       } else if (t.dataset.gbName != null) {
         gbState.gang.fighters[+t.dataset.gbName].name = t.value.trim(); putGang(gbState.gang);
+      } else if (t.dataset.gbSkill != null) {
+        mutateGang(g => { g.fighters[+t.dataset.gbSkill].skills = t.value ? [t.value] : []; });
       } else if (t.dataset.gbGear != null && t.value) {
         mutateGang(g => g.fighters[+t.dataset.gbGear].gear.push(t.value));
       } else if (t.dataset.gbBete != null && t.value) {
@@ -1692,7 +1709,7 @@
           const def = fighterDef(f, d);
           const label = def ? (f.kind === "brute" ? def.nom : def.role) : "Combattant";
           const pv = def ? parseInt(def.profil.PV, 10) || 1 : 1;
-          return { id: uid(), name: f.name ? `${f.name} (${label})` : label, cost: fighterCost(f, d), wounds: pv, maxWounds: pv, ready: true, status: [] };
+          return { id: uid(), name: (f.name ? `${f.name} (${label})` : label) + ((f.skills || []).length ? " · " + f.skills.join(", ") : ""), cost: fighterCost(f, d), wounds: pv, maxWounds: pv, ready: true, status: [] };
         })
       }));
     }

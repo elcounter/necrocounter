@@ -219,209 +219,209 @@
     "Agilité": [
       {
         "nom": "Réception féline",
-        "resume": "Chute/saut : distance verticale comptée à moitié ; test d'Initiative pour éviter Au Tapis / OOA."
+        "resume": "Chute ou saut vers le bas : distance verticale comptée à moitié (arrondi au-dessus). S'il n'est ni Gravement Blessé ni Hors de Combat, test d'Initiative : réussi, il reste Debout au lieu d'Au Tapis et Bloqué."
       },
       {
         "nom": "Escalade",
-        "resume": "Escalader/descendre sans diviser le mouvement (compte comme escalade)."
+        "resume": "En escalade ou en descente, la distance verticale n'est pas divisée par deux : compte toujours comme une échelle."
       },
       {
         "nom": "Esquive",
-        "resume": "Sur blessure tir/mêlée : 6 sur D6 = ignore l'attaque."
+        "resume": "Blessé par une attaque de tir ou de corps à corps : D6, sur 6 l'attaque est esquivée. Contre Explosion ou Souffle, le 6 n'annule pas mais permet de se déplacer de 2\" avant de vérifier la touche (pas à 1\" d'un ennemi)."
       },
       {
         "nom": "Grand bond",
-        "resume": "Saut par-dessus un vide : ignore les 2 premiers pouces de distance."
+        "resume": "Pour sauter un vide, ignore les 2 premiers pouces : vides de 2\" ou moins franchis sans test d'Initiative."
       },
       {
         "nom": "Sursaut",
-        "resume": "Si Bloqué en s'activant : test d'Initiative pour Se Relever gratuitement."
+        "resume": "Bloqué en s'activant : test d'Initiative, réussi = action Se Relever (Élémentaire) gratuite."
       },
       {
         "nom": "Sprint",
-        "resume": "Deux actions Se Déplacer (Simple) : la seconde peut Sprinter (double mouvement)."
+        "resume": "Avec deux actions Se Déplacer (Simple), la seconde peut être un Sprint : mouvement doublé."
       }
     ],
     "Muscle": [
       {
         "nom": "Charge buffle",
-        "resume": "Charge (Double) : armes de mêlée gagnent Contrecoup et +1 Force."
+        "resume": "Attaques de corps à corps lors d'une Charger (Double) : armes de Mêlée gagnent Contrecoup et +1 en Force."
       },
       {
         "nom": "Biceps saillants",
-        "resume": "Peut manier une arme Encombrante à une main ; les Encombrantes comptent double pour la limite d'armes."
+        "resume": "Peut manier une arme Encombrante d'une main. Les armes Encombrantes comptent toujours pour deux dans la limite d'armes."
       },
       {
         "nom": "Coup destructeur",
-        "resume": "Avant les jets de touche mêlée : un dé devient Coup Destructeur (+1 F et Dégâts si touche, pas avec Arme de poing)."
+        "resume": "Avant les jets de touche de corps à corps, désigne un dé (pas une Arme de Poing) : s'il touche, Force et Dégâts +1."
       },
       {
-        "nom": "Coup de boule",
-        "resume": "Action élémentaire : 2D6 vs Endurance en contact socle ; succès = touche F+2 Dégâts 2."
+        "nom": "Coup d'boule",
+        "resume": "Debout et Engagé : action Coup d'Boule (Élémentaire). 2D6 contre l'Endurance d'un ennemi Engagé : un dé ≥ E = touche F+2, D2. Les deux dés < E : il subit une touche de sa propre Force, D1."
       },
       {
         "nom": "Projection",
-        "resume": "Projette un ennemi Engagé (test d'Initiative sinon) ; déplacement et possibles dégâts."
+        "resume": "Debout et Engagé : action Projection (Élémentaire) sur un ennemi au contact ou Gravement Blessé à 1\". L'ennemi fait un test d'Initiative ; échec = projeté de D3\", Au Tapis et Bloqué. Choc contre un combattant ou un décor : touche F3, D1 (et l'autre combattant aussi, Au Tapis et Bloqué)."
       },
       {
         "nom": "Gueule de fer",
-        "resume": "Endurance +2 vs attaques désarmées ennemies."
+        "resume": "Endurance traitée comme +2 contre les attaques désarmées."
       }
     ],
     "Combat": [
       {
         "nom": "Maître combattant",
-        "resume": "Pas de malus de jets de touche mêlée pour interférences ; assistance élargie."
+        "resume": "Aucun malus de touche dû aux interférences ; peut toujours prêter assistance, quel que soit le nombre d'ennemis Engagés avec lui."
       },
       {
         "nom": "Contre-attaque",
-        "resume": "En réactions mêlée : dé d'Attaque supplémentaire par attaque ennemie ratée/parée."
+        "resume": "Attaques de Réaction : un dé d'Attaque en plus par attaque de l'adversaire qui n'a pas touché (ratée, parée…)."
       },
       {
         "nom": "Désarmement",
-        "resume": "Armes de mêlée gagnent Désarmement ; 5+ ou 6 désarme selon le cas."
+        "resume": "Ses armes de Mêlée gagnent Désarmement. Si l'arme l'a déjà, la cible est désarmée sur 5 ou 6 naturel au lieu de 6."
       },
       {
         "nom": "Parade",
-        "resume": "Peut parer comme avec le trait Parade (cumul possible)."
+        "resume": "Pare comme avec le trait Parade. S'il a déjà une arme Parade, il pare une attaque de plus."
       },
       {
         "nom": "Pluie de coups",
-        "resume": "Combattre compte comme Simple ; peut combattre deux fois."
+        "resume": "Combattre devient une action Simple : peut faire deux actions Combattre par activation."
       },
       {
         "nom": "Saut de côté",
-        "resume": "Touché en mêlée : test d'Initiative pour Saut de côté (1/round)."
+        "resume": "Touché en corps à corps : test d'Initiative, réussi = l'attaque rate. Une seule fois par round de corps à corps."
       }
     ],
     "Ruse": [
       {
         "nom": "Coup en traître",
-        "resume": "Armes Mêlée gagnent Coup en traître (+1 F hors champ de vision)."
+        "resume": "Ses armes de Mêlée gagnent Coup en Traître. Si elles l'ont déjà, +2 en Force au lieu de +1 quand le trait s'applique."
       },
       {
         "nom": "Roi de l'évasion",
-        "resume": "Se Replier (Élémentaire) : +2 Initiative ; chance de capturer / lame sous-cutanée."
+        "resume": "Se Replier (Élémentaire) : +2 au test d'Initiative (1 naturel = échec). Capturé avec une lame sous-cutanée : +1 au dé pour s'échapper."
       },
       {
         "nom": "Zigzag",
-        "resume": "Cible de tir à découvert : malus −1 ou −2 selon portée."
+        "resume": "Ciblé par un tir alors qu'il est Debout, Actif et sans couvert : -1 à la touche, -2 à Longue portée."
       },
       {
         "nom": "Infiltration",
-        "resume": "Déploiement hors champ de vision ennemi (conditions de distance)."
+        "resume": "Mis de côté au déploiement, puis placé juste avant le premier round hors de vue et à plus de 6\" de tout ennemi. Si les deux camps en ont, placement alterné (le gagnant d'un jet commence)."
       },
       {
         "nom": "Profil bas",
-        "resume": "Au Tapis : ne peut être ciblé de tir qu'à Courte portée."
+        "resume": "Au Tapis : ne peut être ciblé par un tir qu'à Courte portée de l'arme (les armes sans Courte portée ne sont pas concernées)."
       },
       {
         "nom": "État d'alerte",
-        "resume": "Debout/Actif avec pion Paré : peut interrompre un ennemi visible pour Tirer."
+        "resume": "Debout, Actif et avec un pion Paré : interrompt l'action déclarée d'un ennemi visible, perd son pion Paré et fait une action Tirer (Élémentaire) sur lui. Si l'ennemi devient Bloqué ou Gravement Blessé, son activation s'arrête."
       }
     ],
     "Férocité": [
       {
         "nom": "Berserk",
-        "resume": "Charge (Double) : dé d'Attaque mêlée supplémentaire."
+        "resume": "Attaques de corps à corps lors d'une Charger (Double) : un dé d'Attaque en plus."
       },
       {
         "nom": "Effrayant",
-        "resume": "Ennemi qui charge ce combattant : test de Volonté ou charge impossible / activation finit."
+        "resume": "Un ennemi qui veut le Charger doit réussir un test de Volonté avant de bouger, sinon son action prend fin."
       },
       {
         "nom": "Impétuosité",
-        "resume": "Consolidation après mêlée : jusqu'à 4\" au lieu de 2\"."
+        "resume": "Consolide jusqu'à 4\" au lieu de 2\" après un corps à corps."
       },
       {
         "nom": "Nerfs d'acier",
-        "resume": "Touché par un tir : test de Sang-froid pour ne pas être Bloqué."
+        "resume": "Touché par un tir : test de Sang-froid, réussi = il peut choisir de ne pas être Bloqué."
       },
       {
         "nom": "Dur à cuire",
-        "resume": "Jets de Trauma : un dé de moins (min 1) ; choix sur les dégâts restants."
+        "resume": "Jets de Trauma : un dé de moins. Contre Dégâts 1, deux dés jetés et il en défausse un avant d'appliquer l'effet."
       },
       {
         "nom": "Inexorable",
-        "resume": "Avant Récupération en phase de Fin : D6 pour défausser une Blessure Légère / effet."
+        "resume": "Avant un test de Récupération en phase de Fin, D6 : sur 4+, défausse 1 Blessure Légère. Sans Blessure Légère et 4+ : un dé de Récupération en plus, il en défausse un."
       }
     ],
     "Autorité": [
       {
         "nom": "Présence autoritaire",
-        "resume": "Activation de groupe : +1 combattant activable (Chef +3, Champion +2)."
+        "resume": "Activation de groupe : un combattant de plus (Champion : 2, Chef : 3)."
       },
       {
         "nom": "Galvanisant",
-        "resume": "Ami à 6\" rate un Sang-froid : peut tester Commandement à la place."
+        "resume": "Un ami à 6\" rate un Sang-froid : test de Commandement pour ce combattant ; réussi, le Sang-froid est réussi."
       },
       {
         "nom": "Volonté de fer",
-        "resume": "−1 à tous vos tests de Cran tant que ce combattant est sur le champ et pas Gravement Blessé."
+        "resume": "-1 au résultat de tous vos tests de Cran tant qu'il est sur le champ de bataille et pas Gravement Blessé."
       },
       {
         "nom": "Mentor",
-        "resume": "Test de Commandement à 6\" : succès = +1 XP pour lui, +2 XP pour l'ami."
+        "resume": "Un ami à 6\" gagne 1 XP : test de Commandement ; réussi, l'ami gagne 2 XP au lieu de 1."
       },
       {
         "nom": "Superviseur",
-        "resume": "Ordonner (Double) à un ami Préparé à 6\" : deux actions immédiatement."
+        "resume": "Debout et Actif : action Ordonner (Double). Un ami à 6\" fait aussitôt deux actions, même s'il n'est pas Préparé (s'il l'est, il le reste)."
       },
       {
         "nom": "Regroupement",
-        "resume": "Fin d'activation : test de Commandement pour rallier les Démoralisés à 6\"."
+        "resume": "Debout et Actif en fin d'activation : test de Commandement ; réussi, les amis Démoralisés à 6\" ne le sont plus."
       }
     ],
     "Tir": [
       {
         "nom": "Tir éclair",
-        "resume": "Tirer compte Simple (sauf Encombrant) ; peut ignorer 1 aspect Encombrant."
+        "resume": "Tirer devient une action Simple, sauf avec une arme Encombrante (même si une compétence permet d'en ignorer un aspect)."
       },
       {
         "nom": "As du pistolet",
-        "resume": "Deux Armes de poing : pas de malus −1 ; cibles différentes possibles."
+        "resume": "Deux Armes de Poing : pas de -1 à la touche, et une cible différente possible pour chaque arme."
       },
       {
         "nom": "Tir au jugé",
-        "resume": "Courir et Tirer (Double) : double mouvement puis tir à −1 ; pas d'Encombrant."
+        "resume": "Debout et Engagé (selon le livre) : action Courir et Tirer (Double), mouvement jusqu'au double de M puis un tir à -1. Jamais avec une arme Encombrante."
       },
       {
         "nom": "Tireur d'élite",
-        "resume": "Ignore Cible Prioritaire ; touche critique (6) double les dégâts (sauf Explosion)."
+        "resume": "Ignore la Cible Prioritaire. 6 naturel à la touche (arme sans Explosion) : touche critique, Dégâts doublés (avec Tir Rapide, seulement la première touche)."
       },
       {
         "nom": "Tir précis",
-        "resume": "6 naturel en touche (arme non Explosion) : zone exposée, pas de sauvegarde d'armure."
+        "resume": "6 naturel à la touche (arme sans Explosion) : zone exposée, aucune sauvegarde d'armure."
       },
       {
         "nom": "Tir roublard",
-        "resume": "Pas de malus vs Engagé / couvert partiel ; couvert total à −1 au lieu de −2."
+        "resume": "Pas de malus contre une cible Engagée ou à couvert partiel ; couvert total à -1 au lieu de -2."
       }
     ],
     "Savoir": [
       {
         "nom": "Expert en balistique",
-        "resume": "Action Viser (Élémentaire) : test d'Intelligence pour +1 touche."
+        "resume": "Action Viser (Élémentaire) : test d'Intelligence, réussi = +1 de plus à la touche."
       },
       {
         "nom": "Relations",
-        "resume": "Peut Commercer en après-bataille en plus des autres actions."
+        "resume": "Peut faire une action Commercer en plus de ses autres actions d'après-bataille (donc deux Commercer possibles), s'il peut agir."
       },
       {
         "nom": "Débrouillard",
-        "resume": "Étape Récompenses : D3×10 crédits si pas Capturé / en Récupération."
+        "resume": "Récolte des Récompenses : +D3×10 crédits pour le gang s'il n'est ni Capturé ni En Récupération, même sans avoir combattu."
       },
       {
         "nom": "Guérisseur",
-        "resume": "Assiste un ami OOA : peut relancer le test de Récupération."
+        "resume": "Quand il assiste un test de Récupération, relance les résultats Hors de Combat (un second Hors de Combat est conservé)."
       },
       {
         "nom": "Armurier",
-        "resume": "Munitions ratées à 6\" (lui ou ami) : peut être relancé."
+        "resume": "Un test de Munitions raté par lui ou un ami à 6\" peut être relancé."
       },
       {
         "nom": "Négociateur",
-        "resume": "Commercer : +1 dispo objets Rares ; un objet à −20 crédits (une fois / type)."
+        "resume": "Commercer : +1 au dé de disponibilité des objets Rares, et un seul objet coûte 20 crédits de moins pendant cette visite."
       }
     ]
   },
@@ -520,11 +520,11 @@
     },
     {
       "plage": "55",
-      "effet": "Lésion vertébrale — En Récupération, −1 E"
+      "effet": "Lésion vertébrale — En Récupération, −1 F"
     },
     {
       "plage": "56",
-      "effet": "Affaiblissement — En Récupération, −1 en F"
+      "effet": "Affaiblissement — En Récupération, −1 E"
     },
     {
       "plage": "61-65",
@@ -534,5 +534,6 @@
       "plage": "66",
       "effet": "Mort mémorable — Mort, attaquant +1 XP"
     }
-  ]
+  ],
+  "competencesSource": "Livre de règles N23, p. 184-188 (résumés)"
 }
