@@ -179,6 +179,12 @@
       background: var(--panel); margin-bottom: 8px;
     }
     .fighter.ooa { opacity: .55; }
+    .fsheet { margin: 8px 0; border: 1px solid var(--line); border-radius: 10px; background: var(--panel-2); padding: 0 10px; }
+    .fsheet > summary { cursor: pointer; padding: 9px 0; color: var(--amber); font: 600 13px var(--display); letter-spacing: .05em; text-transform: uppercase; list-style: none; }
+    .fsheet > summary::-webkit-details-marker { display: none; }
+    .fsheet > summary::before { content: "+ "; }
+    .fsheet[open] > summary::before { content: "- "; }
+    .fsheet[open] { padding-bottom: 10px; }
     .fighter .fname {
       display: flex; justify-content: space-between; gap: 8px; align-items: baseline;
       font: 700 15px var(--display); letter-spacing: .03em; text-transform: uppercase; margin-bottom: 8px;
@@ -477,7 +483,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.6.2 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.6.3 Necromunda N23 &amp; N26<br>
       MAJ 13-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -1020,12 +1026,12 @@
     const MATCH_STORE = "nc_match_v1";
     const MATCH_HIST = "nc_match_history_v1";
     const MATCH_STATUSES = [
-      { id: "fw", label: "Flesh Wound" },
-      { id: "si", label: "Serious Injury" },
-      { id: "ooa", label: "Out of Action", danger: true },
-      { id: "blaze", label: "Blaze" },
-      { id: "pinned", label: "Pinned" },
-      { id: "broken", label: "Broken" }
+      { id: "fw", label: "Blessure Légère" },
+      { id: "si", label: "Gravement Blessé" },
+      { id: "ooa", label: "Hors de Combat", danger: true },
+      { id: "blaze", label: "En Feu" },
+      { id: "pinned", label: "Bloqué" },
+      { id: "broken", label: "Démoralisé" }
     ];
     let match = null;
     let setupDraft = null;
@@ -1175,7 +1181,8 @@
             name: g.name || "Gang", rating: g.rating || "",
             crew: g.crew.map(f => ({
               id: f.id || uid(), name: f.name || "Combattant", cost: f.cost || 0,
-              wounds: 1, maxWounds: 1, ready: true, status: []
+              wounds: f.maxWounds || 1, maxWounds: f.maxWounds || 1, ready: true, status: [],
+              sheet: f.sheet || null
             }))
           })),
           post: { winner: "", sideJobA: false, sideJobB: false, creditsA: "", creditsB: "", notes: "" },
@@ -1188,6 +1195,15 @@
       const resume = $("resume-match");
       if (resume) resume.addEventListener("click", () => { match = loadMatch(); renderPartie(); });
     }
+    function sheetHtml(sh) {
+      return `<details class="fsheet"><summary>Fiche : ${esc(sh.role)}</summary>
+        ${statsHtml(sh.profil)}
+        ${sh.weapons.map(w => `<p class="note"><b>${esc(w.nom)}</b></p>${profileHtml(w)}`).join("") || `<p class="note">Aucune arme (attaques désarmées).</p>`}
+        ${sh.gear.length ? `<p class="note"><b>Équipement :</b> ${esc(sh.gear.join(", "))}</p>` : ""}
+        ${sh.skills.length ? `<p class="note"><b>Compétences</b></p><ul class="rules">${sh.skills.map(k => `<li><b>${esc(k.nom)}</b>${k.resume ? " : " + esc(k.resume) : ""}</li>`).join("")}</ul>` : ""}
+        ${sh.regles.length ? `<p class="note"><b>Règles spéciales</b></p><ul class="rules">${sh.regles.map(r => `<li><b>${esc(r.nom)} :</b> ${esc(r.texte)}</li>`).join("")}</ul>` : ""}
+      </details>`;
+    }
     function fighterCard(gi, fi, f) {
       const ooa = f.status.includes("ooa");
       return `<div class="fighter ${ooa ? "ooa" : ""}" data-gi="${gi}" data-fi="${fi}">
@@ -1196,12 +1212,13 @@
           <button type="button" data-w="-">−</button>
           <b>${f.wounds}</b>
           <button type="button" data-w="+">+</button>
-          <span class="hint" style="margin:0">Blessures</span>
+          <span class="hint" style="margin:0">PV${f.maxWounds > 1 ? " / " + f.maxWounds : ""}</span>
         </div>
+        ${f.sheet ? sheetHtml(f.sheet) : ""}
         <div class="tags">
           ${MATCH_STATUSES.map(s => `<button type="button" class="tag ${s.danger ? "danger " : ""}${f.status.includes(s.id) ? "on" : ""}" data-st="${s.id}">${s.label}</button>`).join("")}
         </div>
-        <button type="button" class="ready-btn ${f.ready && !ooa ? "on" : ""}" data-ready>${f.ready && !ooa ? "Ready" : "Activé / indispo"}</button>
+        <button type="button" class="ready-btn ${f.ready && !ooa ? "on" : ""}" data-ready>${f.ready && !ooa ? "Préparé" : "Activé / indisponible"}</button>
       </div>`;
     }
     function liveHtml() {
@@ -1700,18 +1717,62 @@
     });
 
     // Pour l'onglet Partie : transforme un gang créé en équipe de partie
+    // Fiche complète d'un combattant pour la Partie (profil, armes, équipement, compétences, règles)
+    function weaponSheet(w, modes) {
+      return { nom: w.nom, profils: w.profils.filter(p => !modes || !p.mode || modes.includes(p.mode)) };
+    }
+    function skillInfo(name, d) {
+      for (const L of Object.values(d.refs.competences || {})) { const x = L.find(k => k.nom.toLowerCase() === String(name).toLowerCase()); if (x) return { nom: x.nom, resume: x.resume }; }
+      return { nom: name, resume: "" };
+    }
+    function buildSheet(f, d) {
+      const def = fighterDef(f, d);
+      if (!def) return null;
+      const byId = Object.fromEntries(d.armes.armes.map(a => [a.id, a]));
+      if (f.kind === "brute") {
+        const chosen = (f.options || []).map(i => (def.options || [])[i]).filter(Boolean).map(o => o.nom);
+        const txt = (def.equipement + " " + chosen.join(" ")).toLowerCase();
+        const weapons = (def.armes || []).map(id => byId[id]).filter(Boolean)
+          .filter(w => txt.includes(w.nom.split(" (")[0].toLowerCase()) || txt.includes(w.nom.split(" (")[0].toLowerCase().replace(/s$/, "")));
+        return { role: def.nom, profil: def.profil,
+          weapons: (weapons.length ? weapons : (def.armes || []).map(id => byId[id]).filter(Boolean)).map(w => weaponSheet(w)),
+          gear: [def.equipement].concat(chosen.map(c => "Option : " + c)),
+          skills: (def.competencesDepart || []).map(n => skillInfo(n, d)),
+          regles: def.regles || [] };
+      }
+      const items = (f.gear || []).map(id => itemDef(id, d)).filter(Boolean);
+      return { role: def.role, profil: def.profil,
+        weapons: items.filter(i => i.arme && byId[i.arme]).map(i => weaponSheet(byId[i.arme], i.modes)),
+        gear: def.equipementDeDepart.concat(items.filter(i => !(i.arme && byId[i.arme])).map(i => i.nom)),
+        skills: (f.skills || []).map(n => skillInfo(n, d)), regles: [] };
+    }
+    function beastSheet(id, owner, d) {
+      const b = beteDef(id, d); if (!b) return null;
+      const byId = Object.fromEntries(d.armes.armes.map(a => [a.id, a]));
+      return { role: b.nom + " (Bête de " + owner + ")", profil: b.profil, weapons: (b.armes || []).map(x => byId[x]).filter(Boolean).map(w => weaponSheet(w)),
+        gear: [], skills: [], regles: b.regles || [] };
+    }
+
+    // Pour l'onglet Partie : transforme un gang créé en équipe de partie
     function gangForMatch(id) {
       const g = getGang(id);
       if (!g) return Promise.resolve(null);
-      return gangData(g.house).then(d => ({
-        name: g.name, rating: String(gangCost(g, d)),
-        crew: g.fighters.map(f => {
+      return gangData(g.house).then(d => {
+        const crew = [];
+        g.fighters.forEach(f => {
           const def = fighterDef(f, d);
           const label = def ? (f.kind === "brute" ? def.nom : def.role) : "Combattant";
           const pv = def ? parseInt(def.profil.PV, 10) || 1 : 1;
-          return { id: uid(), name: (f.name ? `${f.name} (${label})` : label) + ((f.skills || []).length ? " · " + f.skills.join(", ") : ""), cost: fighterCost(f, d), wounds: pv, maxWounds: pv, ready: true, status: [] };
-        })
-      }));
+          const name = f.name ? `${f.name} (${label})` : label;
+          crew.push({ id: uid(), name, cost: fighterCost(f, d), wounds: pv, maxWounds: pv, ready: true, status: [], sheet: buildSheet(f, d) });
+          (f.betes || []).forEach(bid => {
+            const sh = beastSheet(bid, f.name || label, d); if (!sh) return;
+            const bpv = parseInt(sh.profil.PV, 10) || 1;
+            crew.push({ id: uid(), name: sh.role, cost: 0, wounds: bpv, maxWounds: bpv, ready: true, status: [], sheet: sh });
+          });
+        });
+        return { name: g.name, rating: String(gangCost(g, d)), crew };
+      });
     }
 
     function route() {
