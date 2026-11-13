@@ -1,0 +1,739 @@
+{
+  "edition": "N23",
+  "source": "Livre de règles Necromunda, Campagne Dominion (p.78-107). Résumé, vérifie le livre en cas de doute.",
+  "phases": [
+    {
+      "nom": "Occupation",
+      "duree": "3 semaines",
+      "resume": "Chaque bataille a pour enjeu un Territoire encore libre ; le vainqueur le prend. Si tous les Territoires sont pris, la phase s'arrête plus tôt."
+    },
+    {
+      "nom": "Temps Mort",
+      "duree": "1 semaine",
+      "resume": "Pause : les combattants En Récupération guérissent, les captifs sont rendus (le ravisseur touche la moitié de leur valeur), les Novices à 5 progressions ou plus deviennent Champions, et chaque gang reçoit 250 crédits à dépenser tout de suite en recrues (complétables avec le Magot). Des batailles en marge sont possibles : XP et blessures comptent, mais ni revenu ni Réputation."
+    },
+    {
+      "nom": "Prise de Contrôle",
+      "duree": "3 semaines",
+      "resume": "Le défieur désigne un Territoire tenu par l'adversaire, ou un Territoire resté libre. Le défieur est l'attaquant si le scénario en demande un (sauf Désolations)."
+    }
+  ],
+  "variantes": [
+    {
+      "nom": "Vieux Royaumes",
+      "resume": "Chaque gang démarre avec 2 Territoires tirés au sort. Pas d'Occupation : deux phases de Prise de Contrôle de 3 semaines séparées par un Temps Mort."
+    },
+    {
+      "nom": "Plongée dans l'Inconnu",
+      "resume": "Les Territoires restent face cachée et ne sont révélés qu'au moment où l'on se bat pour eux."
+    }
+  ],
+  "territoiresParJoueurs": [
+    [
+      3,
+      9
+    ],
+    [
+      4,
+      12
+    ],
+    [
+      5,
+      15
+    ],
+    [
+      6,
+      18
+    ],
+    [
+      7,
+      21
+    ],
+    [
+      8,
+      24
+    ]
+  ],
+  "generation": [
+    "Pour chaque Maison jouée, mettre de côté une pile de ses Territoires à Bénéfice Accru.",
+    "Tirer 1 Territoire de chaque pile (un seul par Maison, quel que soit le nombre de gangs de cette Maison).",
+    "Mélanger tout le reste et compléter jusqu'au nombre prévu.",
+    "Défausser le reste, révéler les Territoires choisis."
+  ],
+  "fondation": [
+    "Budget de départ : 1000 crédits. Les crédits non dépensés vont dans le Magot.",
+    "Valeur du Gang : coût total des combattants (équipement et progressions compris).",
+    "Richesse : Valeur du Gang + Magot (crédits et objets).",
+    "Réputation : commence à 1, ne descend jamais sous 1.",
+    "Chefs et Champions démarrent avec 1 progression (leur compétence de départ).",
+    "Chaque gang possède un Territoire Colonie, impossible à perdre ou à mettre en jeu."
+  ],
+  "gainXP": [
+    "+1 XP par ennemi mis Hors de Combat directement par l'action du combattant (attaque, coup de grâce, grenade…). Pas si l'ennemi tombe plus tard d'autre chose.",
+    "+1 XP supplémentaire si la victime est un Chef ou un Champion.",
+    "+1 XP pour un combattant qui se Rallie.",
+    "Les scénarios donnent aussi de l'XP pour leurs objectifs."
+  ],
+  "progressions": [
+    {
+      "id": "vint",
+      "xp": 3,
+      "cr": 5,
+      "label": "+1 Volonté ou Intelligence",
+      "stats": [
+        "V",
+        "INT"
+      ]
+    },
+    {
+      "id": "cdsf",
+      "xp": 4,
+      "cr": 10,
+      "label": "+1 Commandement ou Sang-froid",
+      "stats": [
+        "CD",
+        "SF"
+      ]
+    },
+    {
+      "id": "i",
+      "xp": 5,
+      "cr": 10,
+      "label": "+1 Initiative",
+      "stats": [
+        "I"
+      ]
+    },
+    {
+      "id": "m",
+      "xp": 5,
+      "cr": 10,
+      "label": "+1\" Mouvement",
+      "stats": [
+        "M"
+      ]
+    },
+    {
+      "id": "ccct",
+      "xp": 6,
+      "cr": 20,
+      "label": "+1 Capacité de Combat ou de Tir",
+      "stats": [
+        "CC",
+        "CT"
+      ]
+    },
+    {
+      "id": "rndP",
+      "xp": 6,
+      "cr": 20,
+      "label": "Compétence aléatoire (set Primaire)",
+      "skill": "primaires",
+      "random": true
+    },
+    {
+      "id": "fe",
+      "xp": 8,
+      "cr": 30,
+      "label": "+1 Force ou Endurance",
+      "stats": [
+        "F",
+        "E"
+      ]
+    },
+    {
+      "id": "chP",
+      "xp": 9,
+      "cr": 20,
+      "label": "Compétence au choix (set Primaire)",
+      "skill": "primaires"
+    },
+    {
+      "id": "rndS",
+      "xp": 9,
+      "cr": 35,
+      "label": "Compétence aléatoire (set Secondaire)",
+      "skill": "secondaires",
+      "random": true
+    },
+    {
+      "id": "pva",
+      "xp": 12,
+      "cr": 45,
+      "label": "+1 Points de Vie ou Attaques",
+      "stats": [
+        "PV",
+        "A"
+      ]
+    },
+    {
+      "id": "promo",
+      "xp": 12,
+      "cr": 40,
+      "label": "Spécialiste promu Champion + compétence aléatoire Primaire",
+      "promo": true,
+      "skill": "primaires",
+      "random": true
+    },
+    {
+      "id": "rndA",
+      "xp": 15,
+      "cr": 50,
+      "label": "Compétence aléatoire (n'importe quel set)",
+      "skill": "tous",
+      "random": true
+    }
+  ],
+  "surcout": "Chaque nouvelle progression de caractéristique du même type coûte 2 XP de plus que la précédente. Les Novices ne paient pas ce surcoût.",
+  "gangers": [
+    {
+      "de": 2,
+      "a": 2,
+      "label": "Devient Spécialiste",
+      "spec": true
+    },
+    {
+      "de": 3,
+      "a": 4,
+      "label": "+1 Capacité de Combat ou de Tir",
+      "stats": [
+        "CC",
+        "CT"
+      ],
+      "cr": 20
+    },
+    {
+      "de": 5,
+      "a": 6,
+      "label": "+1 Force ou Endurance",
+      "stats": [
+        "F",
+        "E"
+      ],
+      "cr": 30
+    },
+    {
+      "de": 7,
+      "a": 7,
+      "label": "+1\" Mouvement ou +1 Initiative",
+      "stats": [
+        "M",
+        "I"
+      ],
+      "cr": 10
+    },
+    {
+      "de": 8,
+      "a": 9,
+      "label": "+1 Volonté ou Intelligence",
+      "stats": [
+        "V",
+        "INT"
+      ],
+      "cr": 5
+    },
+    {
+      "de": 10,
+      "a": 11,
+      "label": "+1 Commandement ou Sang-froid",
+      "stats": [
+        "CD",
+        "SF"
+      ],
+      "cr": 10
+    },
+    {
+      "de": 12,
+      "a": 12,
+      "label": "Devient Spécialiste",
+      "spec": true
+    }
+  ],
+  "gangersRegle": "Un Ganger (non Spécialiste) qui a 6 XP pendant l'avant-bataille perd 6 XP et jette 2D6 sur ce tableau. Un Spécialiste reste un Ganger pour l'équipement, mais progresse ensuite comme un Champion, avec ses propres sets de compétences.",
+  "limites": {
+    "texte": [
+      "CC, CT et Initiative : jamais mieux que 2+.",
+      "CD, SF, Volonté et Intelligence : jamais mieux que 3+.",
+      "Mouvement, Force et Endurance : +2 maximum par rapport au profil de base du type.",
+      "Points de Vie et Attaques : +1 maximum par rapport au profil de base du type."
+    ],
+    "min": {
+      "CC": 2,
+      "CT": 2,
+      "I": 2,
+      "CD": 3,
+      "SF": 3,
+      "V": 3,
+      "INT": 3
+    },
+    "plus": {
+      "M": 2,
+      "F": 2,
+      "E": 2,
+      "PV": 1,
+      "A": 1
+    }
+  },
+  "planchers": [
+    "CC, CT et Initiative ne descendent pas sous 6+ ; CD, SF, V et INT pas sous 12+ ; M, F, E, PV et A pas sous 1.",
+    "Si une blessure devait passer sous ce seuil, le combattant va En Récupération sans autre pénalité.",
+    "Une pénalité de caractéristique ne change pas la valeur en crédits."
+  ],
+  "competences": [
+    "Huit sets : Agilité, Muscle, Combat, Ruse, Férocité, Autorité, Tir, Savoir.",
+    "Chaque Maison et type de combattant a des sets Primaires et Secondaires (voir la fiche de la Maison).",
+    "Tous les Chefs ont Autorité en Primaire, tous les Champions en Secondaire.",
+    "Compétence aléatoire : annoncer le set puis jeter un D6 (relancer si déjà acquise)."
+  ],
+  "recuperation": [
+    "En Récupération : le combattant rate la séquence d'après-bataille en cours et la bataille suivante (une seule, même avec plusieurs blessures).",
+    "Il guérit à la Conclusion de la bataille suivante du gang.",
+    "Chefs et Champions En Récupération ou Capturés ne font pas d'action d'après-bataille."
+  ],
+  "succomber": "Gravement Blessé à la fin de la bataille : D6 à la Conclusion. 1-2 : il succombe, il est Hors de Combat et fait un jet de Blessure Persistante.",
+  "capture": [
+    "Si un seul gang a encore des combattants sur la table : 2D6 + nombre d'ennemis Hors de Combat (+1 avec un Chasseur de Primes).",
+    "13 ou plus : un des ennemis Hors de Combat, tiré au sort, est Capturé (sauf Blessure Critique ou Mort Mémorable).",
+    "Le captif est indisponible jusqu'à sa libération.",
+    "À la prochaine rencontre, son gang peut imposer le scénario Sauvetage ; le ravisseur qui refuse perd le captif.",
+    "Sans tentative de sauvetage, le ravisseur peut le vendre à la Guilde (moitié de sa valeur, arrondie à 5).",
+    "Les deux joueurs peuvent aussi négocier un échange à tout moment."
+  ],
+  "fuite": "Un gang Dégonflé (volontairement ou sur un test de Cran raté) peut fuir au début d'une phase d'Action : ses combattants Debout ou Au Tapis quittent la table, les Engagés doivent réussir un test d'Initiative sinon ils sont Gravement Blessés. La bataille s'arrête quand il ne lui reste que des combattants Au Tapis ou Gravement Blessés.",
+  "avantBataille": [
+    {
+      "nom": "Défi et Territoire en jeu",
+      "resume": "Le défieur désigne un Territoire libre ou adverse. Défi refusé : il prend le Territoire sans combattre. Forfait : le Territoire est perdu."
+    },
+    {
+      "nom": "Progressions et Mercenaires",
+      "resume": "Dépense d'XP puis recrutement de Mercenaires. Le gang à la plus petite Valeur commence."
+    },
+    {
+      "nom": "Scénario",
+      "resume": "2D6 : 2-3 le gang qui a le plus de Territoires choisit ; 4-5 Querelle Frontalière ou Les Maraudeurs ; 6-7 Empoignade ou Rixe en Sous-sol ; 8-9 Sabotage ou Attaque Furtive ; 10-12 le gang qui a le moins de Territoires choisit (égalité : tir au dé). Puis Zone Mortalis ou Sector Mechanicus, au choix de celui qui a choisi le scénario."
+    },
+    {
+      "nom": "Champ de bataille",
+      "resume": "Mise en place selon le scénario."
+    },
+    {
+      "nom": "Choix des équipes",
+      "resume": "Méthode et nombre fixés par le scénario."
+    },
+    {
+      "nom": "Bénéfices territoriaux",
+      "resume": "Annoncer ceux qui servent pendant la partie ; un bénéfice non annoncé est inutilisable."
+    },
+    {
+      "nom": "Cartes Tactiques",
+      "resume": "Selon le scénario."
+    },
+    {
+      "nom": "Déploiement",
+      "resume": "Selon le scénario, sinon méthode standard."
+    }
+  ],
+  "apresBataille": [
+    {
+      "nom": "Conclusion",
+      "resume": "Jets pour succomber aux blessures, jet de capture, fin des récupérations des combattants qui avaient raté la bataille."
+    },
+    {
+      "nom": "Territoires",
+      "resume": "Le vainqueur prend le Territoire en jeu. Égalité : un Territoire libre reste libre, un Territoire tenu ne change pas de mains."
+    },
+    {
+      "nom": "Récompenses",
+      "resume": "Selon le scénario (crédits, objets dans le Magot, Réputation). Les gains de Réputation s'appliquent avant les pertes."
+    },
+    {
+      "nom": "Revenus",
+      "resume": "Chaque Territoire à revenu (Colonie comprise) rapporte ses crédits au Magot."
+    },
+    {
+      "nom": "Actions d'après-bataille",
+      "resume": "Chaque Chef et Champion disponible fait une action : Commercer, Vendre à la Guilde ou Escorte médicale."
+    },
+    {
+      "nom": "Mise à jour de la feuille",
+      "resume": "Retirer les morts, Comptoir Commercial, bénéfices des Territoires, distribution de l'équipement, nouvelle Valeur du Gang."
+    },
+    {
+      "nom": "Résultats",
+      "resume": "Transmettre le résultat à l'Arbitrator."
+    }
+  ],
+  "actions": [
+    {
+      "nom": "Commercer",
+      "resume": "Aide à trouver des objets Rares au Comptoir (bonus à l'étape Mise à jour)."
+    },
+    {
+      "nom": "Vendre à la Guilde",
+      "resume": "Vendre des captifs dont le gang a pu tenter le sauvetage : moitié de leur valeur, arrondie à 5."
+    },
+    {
+      "nom": "Escorte médicale",
+      "resume": "Pour un combattant en Blessure Critique : payer 2D6x10 crédits puis D6. 1 : il meurt. 2-5 : nouveau jet de Blessure Persistante avec 5 comme premier dé. 6 : En Récupération, sans séquelle. Sans paiement, il meurt."
+    }
+  ],
+  "toubib": [
+    {
+      "de": 1,
+      "a": 1,
+      "label": "Complications : le combattant meurt."
+    },
+    {
+      "de": 2,
+      "a": 5,
+      "label": "Stabilisé : rejouer un D6 en second dé d'un D66 commençant par 5."
+    },
+    {
+      "de": 6,
+      "a": 6,
+      "label": "Récupération totale : En Récupération, sans séquelle."
+    }
+  ],
+  "miseAJour": [
+    "Retirer les morts : leur équipement (sauf armure) va au Magot si le gang avait encore quelqu'un sur la table, ou si le mort était passé chez le Toubib. Sinon il est perdu.",
+    "Retraite possible d'un combattant : il part, son équipement va au Magot.",
+    "Perte du Chef : le meilleur CD parmi les Champions devient Chef (sinon Spécialistes ou Novices, sinon Gangers). Égalité : le plus de progressions, puis au choix.",
+    "Comptoir Commercial : recruter (même prix qu'à la fondation, sans équipement), recruter un Aventurier (Réputation suffisante), revendre (valeur - D6x10, minimum 5), acheter la liste de Maison et le Commun du Comptoir.",
+    "Chercher des objets Rares (une fois) : 2D6, +2 si le Chef a Commercé, +1 par Champion qui a Commercé, +1 par tranche de 10 de Réputation. On peut acheter les Rares de valeur inférieure ou égale.",
+    "Composition : respecter la liste de Maison, Gangers au moins aussi nombreux que Chef + Champions + Novices.",
+    "Distribuer l'équipement : 3 armes max (Encombrant compte double), une arme ajoutée ne peut plus être retirée. Prix de la liste de Maison prioritaire.",
+    "Panoplies : un Chef ou un Champion peut avoir plusieurs cartes d'équipement, sa valeur est celle de la plus chère. Une seule par bataille.",
+    "Recalculer la Valeur du Gang en dernier."
+  ],
+  "triomphes": [
+    {
+      "nom": "Dominateur",
+      "critere": "Le plus de Territoires à la fin."
+    },
+    {
+      "nom": "Massacreur",
+      "critere": "Le plus d'ennemis mis Hors de Combat."
+    },
+    {
+      "nom": "Créditeur",
+      "critere": "La plus grande Richesse à la fin."
+    },
+    {
+      "nom": "Belliciste",
+      "critere": "Le plus de batailles livrées."
+    },
+    {
+      "nom": "Briseur de Pouvoir",
+      "critere": "La plus haute Réputation à la fin."
+    }
+  ],
+  "benefices": [
+    "Revenu : crédits ajoutés au Magot à chaque collecte, y compris après la bataille où le Territoire est gagné.",
+    "Recrue : combattant, Mercenaire ou Aventurier offert. Un Aventurier offert ne compte pas dans la limite et ignore la Réputation requise. Un Mercenaire reste tant que le Territoire est tenu.",
+    "Équipement : ajouté au Magot à l'après-bataille, perdu avec le Territoire.",
+    "Réputation : bonus tant que le Territoire est tenu.",
+    "Bénéfice Accru : version propre à une Maison, qui remplace le bénéfice standard du même type ; les autres bénéfices standards restent."
+  ],
+  "territoires": [
+    {
+      "id": "colonie",
+      "nom": "Colonie",
+      "carte": "7 de pique",
+      "fixe": true,
+      "std": {
+        "revenu": "D6x10",
+        "rep": 1,
+        "recrue": "Après chaque bataille, 2D6 : un 6 donne un Novice gratuit, double 6 un Ganger gratuit."
+      }
+    },
+    {
+      "id": "vieilles-ruines",
+      "nom": "Vieilles Ruines",
+      "carte": "6 de pique",
+      "std": {
+        "revenu": "D3x10 (+1 au dé par Coureur de Dômes)"
+      }
+    },
+    {
+      "id": "toubib",
+      "nom": "Cabinet de Toubib Clandestin",
+      "carte": "8 de pique",
+      "std": {
+        "recrue": "Un Aventurier Toubib Clandestin gratuit."
+      }
+    },
+    {
+      "id": "promethium",
+      "nom": "Cache de Prométhium",
+      "carte": "9 de pique",
+      "std": {
+        "equipement": "Charges incendiaires gratuites pour 3 combattants.",
+        "special": "Relance des tests de Munitions des armes Incendiaires."
+      }
+    },
+    {
+      "id": "desolations",
+      "nom": "Désolations",
+      "carte": "10 de pique",
+      "std": {
+        "special": "Défié en Occupation : ce gang choisit le Territoire en jeu. Défié en Prise de Contrôle sur un de ses Territoires : test d'INT du Chef, réussi il peut imposer Embuscade et devient l'attaquant."
+      }
+    },
+    {
+      "id": "mer-de-bourbe",
+      "nom": "Mer de Bourbe",
+      "carte": "Valet de pique",
+      "std": {
+        "equipement": "Grenades asphyxiantes gratuites pour 3 combattants."
+      }
+    },
+    {
+      "id": "atelier",
+      "nom": "Atelier",
+      "carte": "Dame de pique",
+      "std": {
+        "recrue": "Un Aventurier Cartouchier gratuit."
+      }
+    },
+    {
+      "id": "dome-effondre",
+      "nom": "Dôme Effondré",
+      "carte": "Roi de pique",
+      "std": {
+        "revenu": "Au choix entre 2D6x10 et 6D6x10 ; sur un double, aucun revenu et un combattant au hasard subit une Blessure Persistante."
+      }
+    },
+    {
+      "id": "amas-de-dechets",
+      "nom": "Amas de Déchets",
+      "carte": "As de carreau",
+      "maison": "cawdor",
+      "std": {
+        "revenu": "2D6x5 ; sur un double, un combattant au hasard rate la prochaine bataille (revenu conservé)."
+      },
+      "accru": {
+        "rep": 1,
+        "revenu": "2D6x5, sans risque."
+      }
+    },
+    {
+      "id": "ferme-de-cadavres",
+      "nom": "Ferme de Cadavres",
+      "carte": "2 de carreau",
+      "maison": "cawdor",
+      "std": {
+        "revenu": "D6x10 par combattant (des deux camps) rayé d'une feuille de gang à la mise à jour de la bataille précédente."
+      },
+      "accru": {
+        "rep": 1,
+        "revenu": "2D6x10 par combattant rayé."
+      }
+    },
+    {
+      "id": "sanctuaire-d-ossements",
+      "nom": "Sanctuaire d'Ossements",
+      "carte": "3 de carreau",
+      "maison": "cawdor",
+      "std": {
+        "revenu": "2D6x5"
+      },
+      "accru": {
+        "rep": 2,
+        "revenu": "4D6x5"
+      }
+    },
+    {
+      "id": "taverne",
+      "nom": "Taverne",
+      "carte": "4 de carreau",
+      "maison": "delaque",
+      "std": {
+        "rep": 1,
+        "special": "Relance des tests de Sang-froid ratés ; le combattant qui en profite subit -1 à ses jets de touche jusqu'à la fin."
+      },
+      "accru": {
+        "rep": 2,
+        "special": "À la place : 3 ennemis désignés au début de la bataille ont -1 à tous leurs tests."
+      }
+    },
+    {
+      "id": "tripot",
+      "nom": "Tripot",
+      "carte": "5 de carreau",
+      "maison": "delaque",
+      "std": {
+        "rep": 1,
+        "revenu": "Choisir une enseigne et tirer une carte (avec 2 Jokers) : même enseigne, valeur x10 ; même couleur, valeur x5 (V 11, D 12, R 13, As 14). Joker : tous les revenus de la séquence vont à un gang au hasard."
+      },
+      "accru": {
+        "rep": 2,
+        "special": "Un ennemi désigné ne participe pas à la bataille."
+      }
+    },
+    {
+      "id": "voies-exigues",
+      "nom": "Voies Exiguës",
+      "carte": "6 de carreau",
+      "maison": "delaque",
+      "std": {
+        "special": "Jusqu'à 3 combattants de l'équipe s'infiltrent : placés à la fin du round 1 à 2\" d'un point au sol."
+      },
+      "accru": {
+        "special": "Deux groupes d'infiltration de 3 combattants maximum."
+      }
+    },
+    {
+      "id": "synth-alambic",
+      "nom": "Synth-alambic",
+      "carte": "7 de carreau",
+      "maison": "escher",
+      "std": {
+        "special": "Chimiosynths, médikits, planques de stim' et armes Gaz ou Toxine sont Communs."
+      },
+      "accru": {
+        "rep": 1,
+        "special": "Même effet, et ces objets coûtent moitié prix (arrondi au-dessus)."
+      }
+    },
+    {
+      "id": "humus",
+      "nom": "Prolifération d'Humus Stimulant",
+      "carte": "8 de carreau",
+      "maison": "escher",
+      "std": {
+        "special": "À l'après-bataille, relancer un jet de Blessure Persistante (pas une Mort Mémorable)."
+      },
+      "accru": {
+        "rep": 1,
+        "special": "Retirer une Blessure Persistante, ou relancer un jet de Blessure Persistante (Mort Mémorable comprise)."
+      }
+    },
+    {
+      "id": "antre-narcotique",
+      "nom": "Antre Narcotique",
+      "carte": "9 de carreau",
+      "maison": "escher",
+      "std": {
+        "revenu": "D6x5"
+      },
+      "accru": {
+        "rep": 1,
+        "revenu": "D6x5, ou D6x10 avec un Synth-alambic."
+      }
+    },
+    {
+      "id": "fourneau-a-scories",
+      "nom": "Fourneau à Scories",
+      "carte": "10 de carreau",
+      "maison": "goliath",
+      "std": {
+        "revenu": "D6x5"
+      },
+      "accru": {
+        "rep": 2,
+        "recrue": "Après chaque bataille, 2D6 : un 6 donne un Novice gratuit, double 6 un Ganger gratuit."
+      }
+    },
+    {
+      "id": "arene",
+      "nom": "Arène",
+      "carte": "Valet de carreau",
+      "maison": "goliath",
+      "std": {
+        "recrue": "Deux Rebuts de la Ruche gratuits, équipés, avant chaque bataille."
+      },
+      "accru": {
+        "rep": 2
+      }
+    },
+    {
+      "id": "fonderie",
+      "nom": "Fonderie",
+      "carte": "Dame de carreau",
+      "maison": "goliath",
+      "std": {
+        "revenu": "D6x5"
+      },
+      "accru": {
+        "revenu": "D6x5, ou D6x10 avec un Fourneau à Scories."
+      }
+    },
+    {
+      "id": "mine",
+      "nom": "Mine",
+      "carte": "Roi de carreau",
+      "maison": "orlock",
+      "std": {
+        "revenu": "D6x10, +1 D6 par captif mis au travail (il ne peut plus être vendu, son gang peut tenter un Sauvetage à tout moment)."
+      },
+      "accru": {
+        "rep": 2
+      }
+    },
+    {
+      "id": "tunnels",
+      "nom": "Tunnels",
+      "carte": "As de pique",
+      "maison": "orlock",
+      "std": {
+        "special": "Jusqu'à 3 combattants arrivent par 2 entrées de tunnel posées en bord de table : 4+ sur un D6 à chaque phase de Priorité."
+      },
+      "accru": {
+        "rep": 1,
+        "special": "Jusqu'à 6 combattants, en groupes désignés avant la bataille."
+      }
+    },
+    {
+      "id": "peage",
+      "nom": "Péage",
+      "carte": "2 de pique",
+      "maison": "orlock",
+      "std": {
+        "revenu": "D6x5"
+      },
+      "accru": {
+        "special": "Priorité automatique au premier round. Les autres gangs peuvent payer 20 crédits au gang Orlock pour en profiter une bataille."
+      }
+    },
+    {
+      "id": "techno-bazar",
+      "nom": "Techno-bazar",
+      "carte": "3 de pique",
+      "maison": "van-saar",
+      "std": {
+        "revenu": "D6x10",
+        "equipement": "Un Chef ou Champion marchande : 2D6, objet Rare de cette Rareté à moitié prix ; sous 7, objet Commun à moitié prix ; 3 ou moins, rien. +1 avec des Fourrures exotiques."
+      },
+      "accru": {
+        "rep": 1,
+        "revenu": "D6x10, ou 2D6x10 avec un Appareil Archéotechnologique."
+      }
+    },
+    {
+      "id": "generatorium",
+      "nom": "Génératorium",
+      "carte": "4 de pique",
+      "maison": "van-saar",
+      "std": {
+        "special": "Avant un jet de Priorité, couper le courant : Noir Total jusqu'à la fin ; à chaque phase de Fin, 5+ sur un D6 rallume."
+      },
+      "accru": {
+        "rep": 1
+      }
+    },
+    {
+      "id": "archeotech",
+      "nom": "Appareil Archéotechnologique",
+      "carte": "5 de pique",
+      "maison": "van-saar",
+      "std": {
+        "special": "Les armes du gang peuvent recevoir un même Trait parmi Incendiaire, Radiations, Sismique ou Choc, plus Instable."
+      },
+      "accru": {
+        "rep": 2,
+        "special": "Deux Traits au lieu d'un, plus Instable."
+      }
+    }
+  ]
+}

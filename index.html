@@ -329,6 +329,18 @@
     .gb-warn { margin: 0 0 12px; padding: 10px 12px 10px 4px; border-radius: 10px; border: 1px solid #c45a48; background: rgba(196,90,72,.10); }
     .gb-warn ul.rules { color: #7e2414; }
     .gb-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 8px; }
+    .cp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    .cp-grid > div { padding: 10px 12px; border-radius: 10px; background: var(--panel-2); border: 1px solid var(--line); }
+    .cp-grid small { display: block; color: var(--muted); font-size: 12px; }
+    .cp-grid b { font: 600 20px var(--display); color: var(--amber); }
+    .cp-grid span { display: block; color: var(--muted); font-size: 12px; }
+    .cp-h { margin: 16px 0 8px; font: 600 14px var(--display); text-transform: uppercase; letter-spacing: .04em; }
+    .cp-fighter { margin-top: 10px; padding: 10px 12px; border-radius: 10px; background: var(--panel-2); border: 1px dashed var(--line); }
+    .cp-line { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 6px; }
+    .cp-result { margin: 12px 0 0; padding: 10px 12px; border-radius: 10px; background: var(--band-2); min-height: 1em; font-weight: 600; }
+    .cp-result:empty { display: none; }
+    .gb-chip.inj { border-color: #c45a48; }
+    .badge.warn { background: #f3d9cf; color: #7e2414; margin-left: 6px; }
     .gb-chip { display: inline-flex; align-items: center; gap: 4px; padding: 4px 4px 4px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); font-size: 13px; }
     .gb-chip button { border: 0; background: transparent; color: var(--muted); font-size: 16px; line-height: 1; padding: 2px 6px; cursor: pointer; }
     select.gb-add { width: 100%; margin: 4px 0; padding: 9px 10px; border-radius: 8px; border: 1px dashed var(--amber-dim); background: var(--bg); color: var(--amber); font: 400 14px var(--body); }
@@ -483,7 +495,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.0.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.1.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -887,7 +899,51 @@
     }
 
 
-    function armouryHtml([armes, comptoir, refs]) {
+    // ---- Campagne Dominion N23 (onglet Règles) ----
+    const HOUSE_LABEL = { cawdor: "Cawdor", delaque: "Delaque", escher: "Escher", goliath: "Goliath", orlock: "Orlock", "van-saar": "Van Saar" };
+    function terrBenefits(b) {
+      if (!b) return "";
+      const L = [];
+      if (b.revenu) L.push(`<b>Revenu :</b> ${esc(b.revenu)} crédits`);
+      if (b.rep) L.push(`<b>Réputation :</b> +${b.rep}`);
+      if (b.recrue) L.push(`<b>Recrue :</b> ${esc(b.recrue)}`);
+      if (b.equipement) L.push(`<b>Équipement :</b> ${esc(b.equipement)}`);
+      if (b.special) L.push(`<b>Spécial :</b> ${esc(b.special)}`);
+      return L.map(x => `<li>${x}</li>`).join("");
+    }
+    function campagneFolds(c) {
+      if (!c) return "";
+      const q = s => esc(String(s || "").toLowerCase());
+      const item = (nom, txt, extra) => `<details class="eq" data-q="${q(nom + " " + txt)}"><summary><span class="nm">${esc(nom)}</span>${extra ? `<span class="pr">${esc(extra)}</span>` : ""}</summary>
+        <p class="shop" style="padding:8px 12px 12px">${esc(txt)}</p></details>`;
+      const list = (arr) => `<div class="eq"><div class="abody" style="padding:12px"><ul class="rules">${arr.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div></div>`;
+      const fold = (t, body, n) => `<details class="fold" data-fold="${q(t)}"><summary><span>${esc(t)}</span>${n != null ? `<small>${n}</small>` : ""}</summary><div class="fold-body">${body}</div></details>`;
+      const row = (a, b) => `<div class="eq" data-q="${q(a + " " + b)}"><div class="row"><span class="nm plain">${esc(a)}</span><span class="pr" style="max-width:62%;text-align:right;font-size:12px">${esc(b)}</span></div></div>`;
+      const terr = c.territoires.map(t => `<details class="eq" data-q="${q(t.nom + " " + (t.maison || "") + " " + JSON.stringify(t.std) + JSON.stringify(t.accru || {}))}"><summary><span class="nm">${esc(t.nom)}</span><span class="pr">${t.maison ? esc(HOUSE_LABEL[t.maison]) : (t.fixe ? "chaque gang" : "")}</span></summary>
+        <div class="abody" style="padding:8px 12px 12px"><p class="shop" style="padding:0">Carte : ${esc(t.carte)}</p><ul class="rules">${terrBenefits(t.std)}</ul>
+        ${t.accru ? `<p class="shop" style="padding:6px 0 0"><b>Bénéfice Accru (${esc(HOUSE_LABEL[t.maison])})</b></p><ul class="rules">${terrBenefits(t.accru)}</ul>` : ""}</div></details>`).join("");
+      return `<h3 class="h3">Campagne Dominion</h3>
+        <p class="note">Résumés pour la table. Le suivi XP, Réputation, Magot et Territoires se fait sur la fiche de ton gang (onglet Gangs). Vérifie le livre en cas de doute.</p>
+        <div class="folds" style="margin-top:12px">
+          ${fold("Déroulement de la campagne", c.phases.map(p => item(p.nom, p.resume, p.duree)).join("") + c.variantes.map(v => item("Variante : " + v.nom, v.resume)).join(""), c.phases.length)}
+          ${fold("Mise en place et territoires", list(c.generation.concat(["Territoires selon le nombre de joueurs : " + c.territoiresParJoueurs.map(([j, t]) => j + " joueurs = " + t).join(", ") + "."])))}
+          ${fold("Fondation et attributs du gang", list(c.fondation))}
+          ${fold("Gagner de l'expérience", list(c.gainXP))}
+          ${fold("Progressions", c.progressions.map(p => row(p.xp + " XP · " + p.label, "+" + p.cr + " cr")).join("") + list([c.surcout]), c.progressions.length)}
+          ${fold("Progressions des Gangers (2D6)", c.gangers.map(g => row(g.de === g.a ? String(g.de) : g.de + "-" + g.a, g.label + (g.cr ? " (+" + g.cr + " cr)" : ""))).join("") + list([c.gangersRegle]))}
+          ${fold("Limites des caractéristiques", list(c.limites.texte.concat(c.planchers)))}
+          ${fold("Gagner une compétence", list(c.competences))}
+          ${fold("Récupération, blessures, capture", list(c.recuperation.concat([c.succomber]).concat(c.capture).concat([c.fuite])))}
+          ${fold("Séquence d'avant-bataille", c.avantBataille.map((s, i) => item((i + 1) + ". " + s.nom, s.resume)).join(""), c.avantBataille.length)}
+          ${fold("Séquence d'après-bataille", c.apresBataille.map((s, i) => item((i + 1) + ". " + s.nom, s.resume)).join("") + c.actions.map(a => item("Action : " + a.nom, a.resume)).join(""), c.apresBataille.length)}
+          ${fold("Mise à jour de la feuille de gang", list(c.miseAJour))}
+          ${fold("Bénéfices territoriaux", list(c.benefices))}
+          ${fold("Territoires", terr, c.territoires.length)}
+          ${fold("Triomphes", c.triomphes.map(t => row(t.nom, t.critere)).join(""), c.triomphes.length)}
+        </div>`;
+    }
+
+    function armouryHtml([armes, comptoir, refs, camp]) {
       const weapons = armes.armes;
       const ids = weapons.map(w => w.id).sort((a, b) => b.length - a.length);
       const shop = {}, loose = {};
@@ -930,62 +986,7 @@
       return `<div class="page">
         <h2>Règles</h2>
         ${editionSwitch("regles", "n23")}
-        <h3 class="h3">Aide de campagne N23</h3>
-        <p class="note">Rappels pour avant / après la bataille. Vérifie toujours dans ton livre en cas de doute.</p>
-        <div class="folds" style="margin-top:12px">
-          <details class="fold"><summary><span>Séquence pré-bataille</span></summary><div class="fold-body">
-            <div class="eq"><div class="abody" style="padding:12px">
-              <ol>
-                <li><b>Crew</b> — choisis les combattants qui participent (selon le scénario).</li>
-                <li><b>Tactics / aides</b> — tire ou choisis les cartes de tactiques de gang si utilisées.</li>
-                <li><b>Terrain &amp; déploiement</b> — selon le scénario.</li>
-                <li><b>Priorité du 1er round</b> — puis c'est parti.</li>
-              </ol>
-            </div></div>
-          </div></details>
-          <details class="fold"><summary><span>Séquence post-bataille</span></summary><div class="fold-body">
-            <div class="eq"><div class="abody" style="padding:12px">
-              <ol>
-                <li><b>Résultat</b> — victoire, défaite ou nul (objectifs du scénario).</li>
-                <li><b>XP</b> — attribue l'expérience gagnée aux combattants concernés.</li>
-                <li><b>Combattants OOA</b> — jets de blessure durable / récupération selon les tables.</li>
-                <li><b>Récompenses</b> — crédits, réputation, territoire selon campagne / scénario.</li>
-                <li><b>Actions de gang</b> — trading post, recrutement, soins, etc. (phase de cycle).</li>
-              </ol>
-              <p class="hint">Le tracker Partie t'aide pour le résultat, les OOA et les notes XP.</p>
-            </div></div>
-          </div></details>
-          <details class="fold"><summary><span>Blessures durables (rappel)</span></summary><div class="fold-body">
-            <div class="eq"><div class="abody" style="padding:12px">
-              <p>Un combattant <b>Out of Action</b> risque une blessure durable après la bataille.</p>
-              <ul>
-                <li>Enchaîne les jets prévus par ton livre (récupération / table de blessures).</li>
-                <li>Résultats typiques : rien de grave, malus permanent, convalescence, ou mort.</li>
-                <li>Note le résultat sur la fiche du combattant (ou dans les notes post-battle).</li>
-              </ul>
-              <p class="hint">Les tables exactes sont dans le livre de règles N23 — cet écran est un pense-bête, pas une copie.</p>
-            </div></div>
-          </div></details>
-          <details class="fold"><summary><span>XP &amp; progression</span></summary><div class="fold-body">
-            <div class="eq"><div class="abody" style="padding:12px">
-              <ul>
-                <li>Les combattants gagnent de l'<b>XP</b> en jouant (éliminations, objectifs, survie… selon règles).</li>
-                <li>Assez d'XP → <b>avancement</b> : +caractéristique, compétence, etc.</li>
-                <li>Chaque rôle (Chef, Champion, Ganger, Novice…) a ses <b>compétences primaires / secondaires</b> de Maison.</li>
-                <li>Voir l'onglet <b>Gangs</b> → Maison pour les sets de compétences.</li>
-              </ul>
-            </div></div>
-          </div></details>
-          <details class="fold"><summary><span>Bottle &amp; fin anticipée</span></summary><div class="fold-body">
-            <div class="eq"><div class="abody" style="padding:12px">
-              <ul>
-                <li>Quand les pertes montent, la gang peut devoir tester le <b>Bottle</b>.</li>
-                <li>Échec → la gang se retire ; la bataille se résout selon le scénario.</li>
-                <li>Utilise le champ « Note bottle » dans Partie live pour t'en souvenir en post-battle.</li>
-              </ul>
-            </div></div>
-          </div></details>
-        </div>
+        ${campagneFolds(camp)}
         ${refsFolds(refs)}
         <h3 class="h3">Armurerie</h3>
         <p class="note">Profils de toutes les armes, avec le prix et la rareté au Comptoir Commercial. Touche une catégorie pour l'ouvrir, puis une arme pour voir son profil.</p>
@@ -1453,8 +1454,8 @@
       saveGangs(list);
     }
     function gangData(houseId) {
-      return Promise.all([load("maisons/" + houseId + ".json"), load("armes.json"), load("mercenaires.json"), load("refs.json")])
-        .then(([house, armes, mercs, refs]) => ({ house, armes, mercs, refs }));
+      return Promise.all([load("maisons/" + houseId + ".json"), load("armes.json"), load("mercenaires.json"), load("refs.json"), load("campagne.json")])
+        .then(([house, armes, mercs, refs, camp]) => ({ house, armes, mercs, refs, camp }));
     }
     function fighterDef(f, d) {
       return f.kind === "brute"
@@ -1467,17 +1468,17 @@
       const def = fighterDef(f, d);
       if (!def) return 0;
       if (f.kind === "brute") return def.cout + (f.options || []).reduce((s, i) => s + ((def.options || [])[i] ? def.options[i].cout : 0), 0);
-      return def.cout + (f.gear || []).reduce((s, id) => s + ((itemDef(id, d) || {}).prix || 0), 0)
+      return (f.baseCout != null ? f.baseCout : def.cout) + (f.adv || []).reduce((s, a) => s + (a.cr || 0), 0) + (f.gear || []).reduce((s, id) => s + ((itemDef(id, d) || {}).prix || 0), 0)
         + (f.betes || []).reduce((s, id) => s + ((beteDef(id, d) || {}).cout || 0), 0);
     }
     function gangCost(g, d) { return g.fighters.reduce((s, f) => s + fighterCost(f, d), 0); }
     function gangWarnings(g, d) {
       const w = [];
-      const total = gangCost(g, d);
-      if (total > g.budget) w.push(`Budget dépassé de ${total - g.budget} crédits.`);
+      const total = gangCost(g, d), camp = inCamp(g);
+      if (!camp && total > g.budget) w.push(`Budget dépassé de ${total - g.budget} crédits.`);
       const chefs = g.fighters.filter(f => f.kind !== "brute" && f.type === "chef").length;
       if (chefs !== 1) w.push(chefs ? "Un gang ne peut avoir qu'un seul Chef." : "Il faut un Chef.");
-      g.fighters.filter(f => f.kind !== "brute" && f.type === "novice").forEach(f => {
+      if (!camp) g.fighters.filter(f => f.kind !== "brute" && f.type === "novice").forEach(f => {
         const big = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && i.prix > 20);
         if (big.length) w.push(`${f.name || "Novice"} : objet de plus de 20 crédits (${big.map(i => i.nom).join(", ")}).`);
       });
@@ -1485,7 +1486,7 @@
         (f.gear || []).some(id => (itemDef(id, d) || {}).categorie === SPECIAL_CAT)).length;
       g.fighters.filter(f => f.kind !== "brute" && (f.type === "chef" || f.type === "champion") && !(f.skills || []).length)
         .forEach(f => w.push(`${f.name || (f.type === "chef" ? "Chef" : "Champion")} : choisis sa compétence de départ (gratuite).`));
-      if (special > 1) w.push(`À la création, un seul Ganger peut avoir une Arme Spéciale (${special} actuellement).`);
+      if (!camp && special > 1) w.push(`À la création, un seul Ganger peut avoir une Arme Spéciale (${special} actuellement).`);
       const counts = {};
       g.fighters.forEach(f => {
         if (f.kind === "brute") counts["b:" + f.type] = (counts["b:" + f.type] || 0) + 1;
@@ -1496,6 +1497,224 @@
         if (def && def.max && n > def.max) w.push(`${def.nom} : ${n} au lieu de ${def.max} maximum.`);
       });
       return w;
+    }
+
+    // ---- Campagne Dominion : suivi sur la fiche du gang ----
+    const TARGET_STATS = ["CC", "CT", "I", "CD", "SF", "V", "INT"];
+    const INJ_MODS = { "46": { CD: -1, SF: -1 }, "51": { INT: -1, V: -1 }, "52": { CT: -1 }, "53": { CC: -1 }, "54": { M: -1 }, "55": { F: -1 }, "56": { E: -1 } };
+    function inCamp(g) { return !!(g.campagne && g.campagne.active); }
+    function statNum(v) { return parseInt(String(v), 10) || 0; }
+    function fighterMods(f) {
+      const m = {};
+      (f.adv || []).forEach(a => { if (a.stat) m[a.stat] = (m[a.stat] || 0) + 1; });
+      (f.injuries || []).forEach(i => Object.entries(i.mods || {}).forEach(([k, v]) => { m[k] = (m[k] || 0) + v; }));
+      return m;
+    }
+    function applyStat(k, base, mod) {
+      const n = statNum(base);
+      if (!mod) return base;
+      if (TARGET_STATS.includes(k)) {
+        const lo = ["CC", "CT", "I"].includes(k) ? 2 : 3, hi = ["CC", "CT", "I"].includes(k) ? 6 : 12;
+        return Math.min(hi, Math.max(lo, n - mod)) + "+";
+      }
+      const r = Math.max(1, n + mod);
+      return k === "M" ? r + '"' : String(r);
+    }
+    function effProfil(f, d) {
+      const def = fighterDef(f, d); if (!def) return null;
+      const base = f.baseProfil || def.profil, m = fighterMods(f), out = {};
+      Object.keys(base).forEach(k => { out[k] = applyStat(k, base[k], m[k] || 0); });
+      return out;
+    }
+    function canImprove(f, d, k) {
+      const def = fighterDef(f, d), cur = effProfil(f, d);
+      if (TARGET_STATS.includes(k)) return statNum(cur[k]) > (["CC", "CT", "I"].includes(k) ? 2 : 3);
+      const lim = { M: 2, F: 2, E: 2, PV: 1, A: 1 }[k];
+      const ups = (f.adv || []).filter(a => a.stat === k).length;
+      return ups < lim && statNum(cur[k]) < statNum(def.profil[k]) + lim;
+    }
+    function isSpecialist(f) { return f.kind !== "brute" && f.type === "ganger" && f.spec; }
+    function canAdvance(f) { return f.kind !== "brute" && (f.type !== "ganger" || f.spec); }
+    function progCount(f) { return (f.adv || []).length + ((f.type === "chef" || f.type === "champion") && !f.baseProfil && (f.skills || []).length ? 1 : 0); }
+    function advCost(f, p, stat) {
+      if (!stat || f.type === "novice") return p.xp;
+      return p.xp + 2 * (f.adv || []).filter(a => a.stat === stat).length;
+    }
+    function skillSets(f, d, which) {
+      const key = isSpecialist(f) ? "specialiste" : f.type;
+      const c = (d.house.competences || {})[key] || {};
+      let sets = which === "tous" ? Object.keys(d.refs.competences || {}) : (c[which] || []).slice();
+      if (which === "primaires" && f.type === "chef" && !sets.includes("Autorité")) sets.push("Autorité");
+      if (which === "secondaires" && f.type === "champion" && !sets.includes("Autorité") && !(c.primaires || []).includes("Autorité")) sets.push("Autorité");
+      return sets.filter(s => (d.refs.competences || {})[s]);
+    }
+    function territoryDef(id, c) { return c.territoires.find(t => t.id === id); }
+    function territoryRep(g, c) {
+      return (g.campagne.territoires || []).reduce((s, id) => {
+        const t = territoryDef(id, c); if (!t) return s;
+        const b = t.accru && t.maison === g.house && t.accru.rep != null ? t.accru.rep : (t.std.rep || 0);
+        return s + b;
+      }, 0);
+    }
+    function cpSpend(g, v) { if (inCamp(g) && v) g.campagne.magot = (g.campagne.magot || 0) - v; }
+    function roll(n, sides) { let s = 0; for (let i = 0; i < n; i++) s += 1 + Math.floor(Math.random() * sides); return s; }
+    function d66() { return (1 + Math.floor(Math.random() * 6)) * 10 + 1 + Math.floor(Math.random() * 6); }
+    function injuryFor(v, refs) {
+      return (refs.blessuresPersistantes || []).find(b => { const [a, z] = b.plage.split("-").map(Number); return v >= a && v <= (z || a); });
+    }
+
+    function campaignPanelHtml(g, d) {
+      const c = d.camp, cp = g.campagne;
+      const valeur = gangCost(g, d), repT = territoryRep(g, c);
+      const owned = cp.territoires || [];
+      const free = c.territoires.filter(t => !owned.includes(t.id));
+      const terrRow = id => {
+        const t = territoryDef(id, c); if (!t) return "";
+        const acc = t.accru && t.maison === g.house;
+        return `<details class="eq"><summary><span class="nm">${esc(t.nom)}${acc ? " (Accru)" : ""}</span>
+          ${t.fixe ? `<span class="pr">fixe</span>` : `<span class="pr"><button type="button" class="btn ghost small" data-cp-unterr="${esc(id)}">Retirer</button></span>`}</summary>
+          <div class="abody" style="padding:8px 12px 12px"><ul class="rules">${terrBenefits(t.std)}</ul>
+          ${acc ? `<p class="shop" style="padding:6px 0 0"><b>Bénéfice Accru</b> (remplace le bénéfice standard du même type)</p><ul class="rules">${terrBenefits(t.accru)}</ul>` : ""}</div></details>`;
+      };
+      return `<div class="panel"><h3 class="sec">Campagne Dominion</h3><div class="body">
+        <div class="cp-grid">
+          <div><small>Valeur du gang</small><b>${valeur}</b></div>
+          <div><small>Richesse</small><b>${valeur + (cp.magot || 0)}</b></div>
+          <div><small>Réputation</small><b>${(cp.rep || 1) + repT}</b>${repT ? `<span>dont +${repT} Territoires</span>` : ""}</div>
+          <div><small>Magot</small><b>${cp.magot || 0}</b><span>crédits</span></div>
+        </div>
+        <div class="btn-row" style="margin-top:10px">
+          <button type="button" class="btn ghost small" data-cp-rep="-1">Réputation -1</button>
+          <button type="button" class="btn ghost small" data-cp-rep="1">Réputation +1</button>
+        </div>
+        <label class="fld" style="margin-top:12px"><span>Mouvement du Magot (crédits)</span><input id="cp-amount" inputmode="numeric" placeholder="ex. 40"></label>
+        <div class="btn-row">
+          <button type="button" class="btn ghost small" data-cp-magot="1">Ajouter au Magot</button>
+          <button type="button" class="btn ghost small" data-cp-magot="-1">Retirer du Magot</button>
+        </div>
+        <p class="note">Les recrues et l'équipement ajoutés en mode campagne sont déduits du Magot (et remboursés si tu annules l'ajout).</p>
+        <h4 class="cp-h">Territoires (${owned.length})</h4>
+        <div class="folds">${owned.map(terrRow).join("")}</div>
+        <select class="gb-add" id="cp-addterr"><option value="">+ Ajouter un Territoire…</option>${free.map(t => `<option value="${esc(t.id)}">${esc(t.nom)}${t.maison ? " (" + esc(HOUSE_LABEL[t.maison]) + ")" : ""}</option>`).join("")}</select>
+        <label class="fld" style="margin-top:12px"><span>Captifs détenus, objets du Magot, notes</span><textarea id="cp-notes" rows="3">${esc(cp.notes || "")}</textarea></label>
+      </div></div>
+      <div class="panel"><h3 class="sec">Dés d'après-bataille</h3><div class="body">
+        <div class="btn-row">
+          <button type="button" class="btn ghost small" data-cp-dice="inj">Blessure persistante (D66)</button>
+          <button type="button" class="btn ghost small" data-cp-dice="toubib">Escorte médicale</button>
+          <button type="button" class="btn ghost small" data-cp-dice="succ">Succomber (D6)</button>
+          <button type="button" class="btn ghost small" data-cp-dice="sell">Revente (D6x10)</button>
+        </div>
+        <label class="fld" style="margin-top:12px"><span>Capture : ennemis Hors de Combat</span><input id="cp-ooa" inputmode="numeric" value="0"></label>
+        <label class="gb-opt"><input type="checkbox" id="cp-bh"><span>Chasseur de Primes dans le gang (+1)</span></label>
+        <button type="button" class="btn ghost small" data-cp-dice="cap">Jet de capture (2D6)</button>
+        <label class="fld" style="margin-top:12px"><span>Objets Rares : Champions qui ont Commercé</span><input id="cp-champs" inputmode="numeric" value="0"></label>
+        <label class="gb-opt"><input type="checkbox" id="cp-chef"><span>Le Chef a Commercé (+2)</span></label>
+        <button type="button" class="btn ghost small" data-cp-dice="rare">Disponibilité des Rares (2D6)</button>
+        <p class="cp-result" id="cp-result">${esc(gbState && gbState.diceMsg || "")}</p>
+      </div></div>`;
+    }
+
+    function fighterCampaignHtml(f, fi, d) {
+      const c = d.camp;
+      const pc = progCount(f);
+      const parts = [];
+      parts.push(`<div class="cp-line"><span><b>${f.xp || 0}</b> XP · ${pc} progression${pc > 1 ? "s" : ""}</span>
+        <span class="btn-row" style="margin:0"><button type="button" class="btn ghost small" data-cp-xp="${fi}:-1">XP -1</button><button type="button" class="btn ghost small" data-cp-xp="${fi}:1">XP +1</button></span></div>`);
+      parts.push(`<label class="gb-opt"><input type="checkbox" data-cp-recup="${fi}"${f.recup ? " checked" : ""}><span>En Récupération (rate la prochaine bataille)</span></label>`);
+      parts.push(`<label class="fld" style="margin:6px 0"><span>Capturé par</span><input data-cp-captif="${fi}" value="${esc(f.captif || "")}" placeholder="Nom du gang ravisseur"></label>`);
+      if (f.kind !== "brute" && f.type === "ganger")
+        parts.push(`<label class="gb-opt"><input type="checkbox" data-cp-spec="${fi}"${f.spec ? " checked" : ""}><span>Spécialiste</span></label>`);
+      if ((f.adv || []).length)
+        parts.push(`<div class="gb-chips">${f.adv.map((a, ai) => `<span class="gb-chip">${esc(a.label)} · ${a.xp} XP<button type="button" data-cp-unadv="${fi}:${ai}" aria-label="Annuler">×</button></span>`).join("")}</div>`);
+      if ((f.injuries || []).length)
+        parts.push(`<div class="gb-chips">${f.injuries.map((i, ii) => `<span class="gb-chip inj">${esc(i.nom)}<button type="button" data-cp-uninj="${fi}:${ii}" aria-label="Retirer">×</button></span>`).join("")}</div>`);
+      if (canAdvance(f)) {
+        const xp = f.xp || 0;
+        const opt = (val, label, cost, ok) => `<option value="${esc(val)}"${ok && cost <= xp ? "" : " disabled"}>${cost} XP · ${esc(label)}</option>`;
+        const statOpts = [], rndOpts = [], chOpts = [], promo = [];
+        c.progressions.forEach(p => {
+          if (p.stats) p.stats.forEach(k => { const cost = advCost(f, p, k); statOpts.push(opt(`s:${p.id}:${k}`, `+1 ${k} (+${p.cr} cr)`, cost, canImprove(f, d, k))); });
+          else if (p.promo) { if (isSpecialist(f)) skillSets(f, d, "primaires").forEach(set => promo.push(opt(`p:${p.id}:${set}`, `Promu Champion + ${set} au hasard (+${p.cr} cr)`, p.xp, true))); }
+          else if (p.random) skillSets(f, d, p.skill).forEach(set => {
+            const left = d.refs.competences[set].some(k => !(f.skills || []).includes(k.nom));
+            rndOpts.push(opt(`r:${p.id}:${set}`, `${set} au hasard (${p.skill === "tous" ? "tout set" : p.skill === "primaires" ? "Primaire" : "Secondaire"}, +${p.cr} cr)`, p.xp, left));
+          });
+          else skillSets(f, d, p.skill).forEach(set => chOpts.push(`<optgroup label="${esc(p.xp + " XP · " + set + " au choix (+" + p.cr + " cr)")}">${d.refs.competences[set]
+            .map(k => opt(`c:${p.id}:${set}:${k.nom}`, k.nom, p.xp, !(f.skills || []).includes(k.nom))).join("")}</optgroup>`));
+        });
+        parts.push(`<select class="gb-add" data-cp-adv="${fi}"><option value="">+ Acheter une progression…</option>
+          <optgroup label="Caractéristiques">${statOpts.join("")}</optgroup><optgroup label="Compétence aléatoire">${rndOpts.join("")}</optgroup>${chOpts.join("")}
+          ${promo.length ? `<optgroup label="Promotion">${promo.join("")}</optgroup>` : ""}</select>`);
+        if (f.type === "novice" && (f.adv || []).length >= 5)
+          parts.push(`<button type="button" class="btn ghost small" data-cp-promo="${fi}">Promouvoir Champion (Temps Mort)</button>`);
+      } else if (f.kind !== "brute") {
+        if (f.gangerRoll != null) {
+          const r = c.gangers.find(x => f.gangerRoll >= x.de && f.gangerRoll <= x.a);
+          parts.push(`<p class="note">2D6 = ${f.gangerRoll} : ${esc(r.label)}</p><div class="btn-row">${r.spec
+            ? `<button type="button" class="btn primary small" data-cp-gpick="${fi}:spec">Devient Spécialiste</button>`
+            : r.stats.map(k => `<button type="button" class="btn primary small" data-cp-gpick="${fi}:${k}"${canImprove(f, d, k) ? "" : " disabled"}>+1 ${k}</button>`).join("")}</div>`);
+        } else parts.push(`<button type="button" class="btn ghost small" data-cp-groll="${fi}"${(f.xp || 0) >= 6 ? "" : " disabled"}>Progression Ganger (6 XP, 2D6)</button>`);
+      }
+      const inj = (d.refs.blessuresPersistantes || []).filter(b => !/aucun effet/i.test(b.effet));
+      parts.push(`<select class="gb-add" data-cp-inj="${fi}"><option value="">+ Noter une Blessure persistante…</option>${inj.map(b => `<option value="${esc(b.plage)}">${esc(b.plage)} · ${esc(b.effet)}</option>`).join("")}</select>`);
+      return `<div class="cp-fighter">${parts.join("")}</div>`;
+    }
+
+    function cpAddAdvance(f, d, val) {
+      const [kind, pid, a, b] = val.split(":");
+      const p = d.camp.progressions.find(x => x.id === pid); if (!p) return;
+      const xp = f.xp || 0;
+      if (kind === "s") {
+        const cost = advCost(f, p, a); if (cost > xp || !canImprove(f, d, a)) return;
+        f.xp = xp - cost; (f.adv = f.adv || []).push({ id: p.id, stat: a, cr: p.cr, xp: cost, label: "+1 " + a });
+      } else if (kind === "c") {
+        if (p.xp > xp || (f.skills || []).includes(b)) return;
+        f.xp = xp - p.xp; (f.skills = f.skills || []).push(b); (f.adv = f.adv || []).push({ id: p.id, skill: b, cr: p.cr, xp: p.xp, label: b });
+      } else if (kind === "r" || kind === "p") {
+        const set = a;
+        if (p.xp > xp) return;
+        const sets = set ? [set] : skillSets(f, d, "primaires");
+        const pickSet = sets[Math.floor(Math.random() * sets.length)];
+        const list = d.refs.competences[pickSet] || [];
+        const left = list.filter(k => !(f.skills || []).includes(k.nom));
+        if (!left.length) return;
+        let k, n;
+        do { n = 1 + Math.floor(Math.random() * 6); k = list[n - 1]; } while (!k || (f.skills || []).includes(k.nom));
+        f.xp = xp - p.xp; (f.skills = f.skills || []).push(k.nom);
+        (f.adv = f.adv || []).push({ id: p.id, skill: k.nom, cr: p.cr, xp: p.xp, label: k.nom + (kind === "p" ? " (promu Champion)" : "") });
+        gbState.diceMsg = `${f.name || "Combattant"} : D6 = ${n} sur ${pickSet}, gagne ${k.nom}.`;
+        if (kind === "p") cpPromote(f, d);
+      }
+    }
+    function cpPromote(f, d) {
+      const def = fighterDef(f, d);
+      f.baseProfil = Object.assign({}, f.baseProfil || def.profil);
+      f.baseCout = f.baseCout != null ? f.baseCout : def.cout;
+      f.promuDe = f.type; f.type = "champion"; delete f.spec;
+    }
+    function cpDice(kind) {
+      const g = gbState.gang, d = gbState.data;
+      let m = "";
+      if (kind === "inj") { const v = d66(), r = injuryFor(v, d.refs); m = `D66 = ${v} : ${r ? r.effet : "?"}`; }
+      else if (kind === "toubib") {
+        const cost = roll(2, 6) * 10, r = roll(1, 6);
+        const t = d.camp.toubib.find(x => r >= x.de && r <= x.a);
+        m = `Coût : ${cost} crédits. D6 = ${r} : ${t.label}`;
+        if (r >= 2 && r <= 5) { const v = 50 + roll(1, 6), inj = injuryFor(v, d.refs); m += ` Résultat ${v} : ${inj ? inj.effet : "?"}`; }
+      }
+      else if (kind === "succ") { const r = roll(1, 6); m = `D6 = ${r} : ${r <= 2 ? "il succombe (Hors de Combat, jet de Blessure persistante)." : "il survit."}`; }
+      else if (kind === "sell") { const r = roll(1, 6); m = `D6 = ${r} : retire ${r * 10} crédits à la valeur de l'objet (minimum 5).`; }
+      else if (kind === "cap") {
+        const n = Math.max(0, parseInt(($("cp-ooa") || {}).value, 10) || 0), bh = $("cp-bh") && $("cp-bh").checked ? 1 : 0, r = roll(2, 6);
+        const tot = r + n + bh; m = `2D6 = ${r}, total ${tot} : ${tot >= 13 ? "un ennemi Hors de Combat (au hasard) est Capturé." : "pas de capture."}`;
+      }
+      else if (kind === "rare") {
+        const ch = Math.max(0, parseInt(($("cp-champs") || {}).value, 10) || 0), chef = $("cp-chef") && $("cp-chef").checked ? 2 : 0;
+        const rep = (g.campagne.rep || 1) + territoryRep(g, d.camp), r = roll(2, 6), bon = chef + ch + Math.floor(rep / 10);
+        m = `2D6 = ${r} + ${bon} de bonus : Disponibilité ${r + bon} (objets Rares de Rareté ${r + bon} ou moins).`;
+      }
+      gbState.diceMsg = m;
     }
 
     function myGangsHtml() {
@@ -1546,22 +1765,24 @@
       const find = n => { for (const L of Object.values(d.refs.competences || {})) { const x = L.find(k => k.nom === n); if (x) return x; } return null; };
       const info = cur && find(cur);
       return `<label class="fld" style="margin:10px 0 4px"><span>Compétence de départ (gratuite, set Primaire)</span>
-        <select data-gb-skill="${fi}"><option value="">Choisir…</option>${sets.map(set => `<optgroup label="${esc(set)}">${((d.refs.competences || {})[set] || [])
+        <select data-gb-skill="${fi}"${inCamp(gbState.gang) && cur ? " disabled" : ""}><option value="">Choisir…</option>${sets.map(set => `<optgroup label="${esc(set)}">${((d.refs.competences || {})[set] || [])
           .map(k => `<option value="${esc(k.nom)}"${k.nom === cur ? " selected" : ""}>${esc(k.nom)}</option>`).join("")}</optgroup>`).join("")}</select></label>
         ${info ? `<p class="note" style="margin-top:0">${esc(info.resume)}</p>` : ""}`;
     }
 
-    function fighterEditorHtml(f, fi, d) {
+    function fighterEditorHtml(f, fi, d, g) {
       const def = fighterDef(f, d);
       if (!def) return "";
-      const isBrute = f.kind === "brute";
-      const roleLabel = isBrute ? "Brute" : def.role;
+      const isBrute = f.kind === "brute", camp = inCamp(g);
+      const roleLabel = isBrute ? "Brute" : isSpecialist(f) ? "Spécialiste" : def.role + (f.promuDe ? " (promu)" : "");
+      const flags = [f.recup ? "En Récupération" : "", f.captif ? "Capturé" : ""].filter(Boolean);
       const betes = d.mercs.betes.liste.filter(b => b.maison === d.house.id);
       return `<div class="fighter">
-        <div class="fhead"><b>${esc(roleLabel)}</b><span class="cost">${fighterCost(f, d)} cr</span></div>
+        <div class="fhead"><b>${esc(roleLabel)}</b>${flags.length ? `<span class="badge warn">${esc(flags.join(" · "))}</span>` : ""}<span class="cost">${fighterCost(f, d)} cr</span></div>
         <label class="fld" style="margin:8px 0"><span>Nom</span><input data-gb-name="${fi}" value="${esc(f.name)}" placeholder="${esc(isBrute ? def.nom : def.role)}"></label>
         ${isBrute ? `<p class="note">${esc(def.nom)} · ${def.cout} cr</p>` : ""}
-        ${statsHtml(def.profil)}
+        ${statsHtml(effProfil(f, d))}
+        ${!isBrute && (f.skills || []).length > 1 ? `<p class="note"><b>Compétences :</b> ${esc(f.skills.join(", "))}</p>` : ""}
         ${isBrute ? `<p class="note"><b>Équipement :</b> ${esc(def.equipement || "")}</p>
           ${(def.options || []).length ? `<p class="note"><b>Options</b></p>${def.options.map((o, oi) => `<label class="gb-opt"><input type="checkbox" data-gb-opt="${fi}:${oi}"${(f.options || []).includes(oi) ? " checked" : ""}>
             <span>${esc(o.nom)} (${o.cout > 0 ? "+" : ""}${o.cout} cr)</span></label>`).join("")}` : ""}`
@@ -1572,10 +1793,11 @@
           ${(f.type === "chef" || f.type === "champion") && betes.length ? `
             <div class="gb-chips">${(f.betes || []).map((id, bi) => { const b = beteDef(id, d); return b ? `<span class="gb-chip">${esc(b.nom)} · ${b.cout} cr<button type="button" data-gb-unbete="${fi}:${bi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
             <select class="gb-add" data-gb-bete="${fi}"><option value="">+ Ajouter une Bête exotique…</option>${betes.map(b => `<option value="${esc(b.id)}">${esc(b.nom)} (${b.cout} cr, ${esc(b.rarete)})</option>`).join("")}</select>` : ""}`}
+        ${camp ? fighterCampaignHtml(f, fi, d) : ""}
         <div class="btn-row" style="margin-top:10px">
           <button type="button" class="btn ghost small" data-gb-up="${fi}"${fi === 0 ? " disabled" : ""}>Monter</button>
           <button type="button" class="btn ghost small" data-gb-dup="${fi}">Dupliquer</button>
-          <button type="button" class="btn ghost small" data-gb-del="${fi}">Retirer</button>
+          <button type="button" class="btn ghost small" data-gb-del="${fi}">${camp ? "Retirer (mort, retraite)" : "Retirer"}</button>
         </div>
       </div>`;
     }
@@ -1587,14 +1809,19 @@
       return `<div class="page">
         <h2>${esc(g.name)}</h2>
         <p><span class="badge">Necromunda N23</span> <span class="badge">Maison ${esc(d.house.nom)}</span></p>
-        <div class="gb-total${total > g.budget ? " over" : ""}"><b>${total}</b> / ${g.budget} crédits<span>Reste ${g.budget - total} cr · ${g.fighters.length} combattant${g.fighters.length > 1 ? "s" : ""}</span></div>
+        ${inCamp(g) ? `<div class="gb-total"><b>${total}</b> Valeur du gang<span>Magot ${g.campagne.magot || 0} cr · ${g.fighters.length} combattant${g.fighters.length > 1 ? "s" : ""}</span></div>`
+          : `<div class="gb-total${total > g.budget ? " over" : ""}"><b>${total}</b> / ${g.budget} crédits<span>Reste ${g.budget - total} cr · ${g.fighters.length} combattant${g.fighters.length > 1 ? "s" : ""}</span></div>`}
         ${warn.length ? `<div class="gb-warn"><ul class="rules">${warn.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : (g.fighters.length ? `<p class="note">Aucune erreur détectée sur les règles de création connues.</p>` : "")}
         <div class="panel"><h3 class="sec">Réglages</h3><div class="body">
           <label class="fld"><span>Nom du gang</span><input id="gb-name" value="${esc(g.name)}"></label>
-          <label class="fld"><span>Budget (crédits)</span><input id="gb-budget" inputmode="numeric" value="${g.budget}"></label>
+          ${inCamp(g) ? "" : `<label class="fld"><span>Budget (crédits)</span><input id="gb-budget" inputmode="numeric" value="${g.budget}"></label>`}
+          ${inCamp(g) ? `<button type="button" class="btn ghost small" id="cp-off">Quitter le mode campagne</button>`
+            : `<button type="button" class="btn primary small" id="cp-on">Passer en mode campagne</button>
+               <p class="note">Ajoute le suivi Campagne Dominion : XP, progressions, blessures, Réputation, Magot et Territoires. Les crédits non dépensés vont au Magot.</p>`}
         </div></div>
+        ${inCamp(g) ? campaignPanelHtml(g, d) : ""}
         <div class="panel"><h3 class="sec">Combattants</h3><div class="body">
-          ${g.fighters.length ? `<p class="legend2d6"><i></i>Caractéristiques testées sur 2D6 (CD, SF, V, INT)</p>${g.fighters.map((f, fi) => fighterEditorHtml(f, fi, d)).join("")}` : `<p class="note" style="margin-top:0">Commence par recruter ton Chef.</p>`}
+          ${g.fighters.length ? `<p class="legend2d6"><i></i>Caractéristiques testées sur 2D6 (CD, SF, V, INT)</p>${g.fighters.map((f, fi) => fighterEditorHtml(f, fi, d, g)).join("")}` : `<p class="note" style="margin-top:0">Commence par recruter ton Chef.</p>`}
           <label class="fld" style="margin-top:14px"><span>Recruter</span><select id="gb-recruit">
             <option value="">+ Ajouter un combattant…</option>
             <optgroup label="Combattants">${d.house.combattants.map(c => `<option value="c:${esc(c.id)}">${esc(c.role)} (${c.cout} cr)</option>`).join("")}</optgroup>
@@ -1624,7 +1851,7 @@
     }
 
     function exportPayload(g) {
-      return { format: GANG_FORMAT, version: 1, edition: "N23", gang: { name: g.name, house: g.house, budget: g.budget, fighters: g.fighters } };
+      return { format: GANG_FORMAT, version: 1, edition: "N23", gang: { name: g.name, house: g.house, budget: g.budget, fighters: g.fighters, campagne: g.campagne || null } };
     }
     function encodeCode(obj) {
       return "NC1:" + btoa(unescape(encodeURIComponent(JSON.stringify(obj))));
@@ -1645,8 +1872,17 @@
           id: uid(), kind: f.kind, type: String(f.type), name: String(f.name || "").slice(0, 60),
           gear: Array.isArray(f.gear) ? f.gear.map(String) : [], betes: Array.isArray(f.betes) ? f.betes.map(String) : [],
           options: Array.isArray(f.options) ? f.options.map(Number).filter(n => n >= 0) : [],
-          skills: Array.isArray(f.skills) ? f.skills.map(String).slice(0, 4) : []
+          skills: Array.isArray(f.skills) ? f.skills.map(String).slice(0, 30) : [],
+          xp: Math.max(0, parseInt(f.xp, 10) || 0), recup: !!f.recup, captif: String(f.captif || "").slice(0, 60), spec: !!f.spec,
+          adv: Array.isArray(f.adv) ? f.adv.slice(0, 60).map(a => ({ id: String(a.id || ""), stat: a.stat ? String(a.stat) : undefined, skill: a.skill ? String(a.skill) : undefined,
+            cr: parseInt(a.cr, 10) || 0, xp: parseInt(a.xp, 10) || 0, label: String(a.label || "").slice(0, 60) })) : [],
+          injuries: Array.isArray(f.injuries) ? f.injuries.slice(0, 30).map(i => ({ plage: String(i.plage || ""), nom: String(i.nom || "").slice(0, 60),
+            mods: Object.fromEntries(Object.entries(i.mods || {}).filter(([k]) => STAT_KEYS.includes(k)).map(([k, v]) => [k, parseInt(v, 10) || 0])) })) : [],
+          ...(f.baseProfil && typeof f.baseProfil === "object" ? { baseProfil: Object.fromEntries(STAT_KEYS.map(k => [k, String(f.baseProfil[k] || "")])), baseCout: parseInt(f.baseCout, 10) || 0, promuDe: String(f.promuDe || "") } : {})
         })),
+        campagne: src.campagne && typeof src.campagne === "object" ? { active: !!src.campagne.active, rep: Math.max(1, parseInt(src.campagne.rep, 10) || 1),
+          magot: parseInt(src.campagne.magot, 10) || 0, territoires: Array.isArray(src.campagne.territoires) ? src.campagne.territoires.map(String).slice(0, 40) : ["colonie"],
+          notes: String(src.campagne.notes || "").slice(0, 2000) } : undefined,
         createdAt: new Date().toISOString()
       };
       return gangData(g.house).then(d => {
@@ -1674,19 +1910,37 @@
       else if (t.id === "gb-budget") mutateGang(g => { g.budget = Math.max(0, parseInt(t.value, 10) || 0); });
       else if (t.id === "gb-recruit" && t.value) {
         const [k, id] = t.value.split(":");
-        mutateGang(g => g.fighters.push({ id: uid(), kind: k === "b" ? "brute" : "combattant", type: id, name: "", gear: [], betes: [], options: [] }));
+        mutateGang(g => { const f = { id: uid(), kind: k === "b" ? "brute" : "combattant", type: id, name: "", gear: [], betes: [], options: [] };
+          g.fighters.push(f); cpSpend(g, fighterCost(f, gbState.data)); });
       } else if (t.dataset.gbName != null) {
         gbState.gang.fighters[+t.dataset.gbName].name = t.value.trim(); putGang(gbState.gang);
       } else if (t.dataset.gbSkill != null) {
-        mutateGang(g => { g.fighters[+t.dataset.gbSkill].skills = t.value ? [t.value] : []; });
+        mutateGang(g => { const f = g.fighters[+t.dataset.gbSkill], rest = (f.skills || []).slice(1); f.skills = t.value ? [t.value].concat(rest.filter(x => x !== t.value)) : rest; });
       } else if (t.dataset.gbGear != null && t.value) {
-        mutateGang(g => g.fighters[+t.dataset.gbGear].gear.push(t.value));
+        mutateGang(g => { g.fighters[+t.dataset.gbGear].gear.push(t.value); cpSpend(g, (itemDef(t.value, gbState.data) || {}).prix || 0); });
       } else if (t.dataset.gbBete != null && t.value) {
-        mutateGang(g => { const f = g.fighters[+t.dataset.gbBete]; (f.betes = f.betes || []).push(t.value); });
+        mutateGang(g => { const f = g.fighters[+t.dataset.gbBete]; (f.betes = f.betes || []).push(t.value); cpSpend(g, (beteDef(t.value, gbState.data) || {}).cout || 0); });
       } else if (t.dataset.gbOpt != null) {
         const [fi, oi] = t.dataset.gbOpt.split(":").map(Number);
-        mutateGang(g => { const f = g.fighters[fi]; f.options = f.options || []; f.options = t.checked ? [...f.options, oi] : f.options.filter(x => x !== oi); });
+        mutateGang(g => { const f = g.fighters[fi]; f.options = f.options || []; f.options = t.checked ? [...f.options, oi] : f.options.filter(x => x !== oi);
+          const o = ((fighterDef(f, gbState.data) || {}).options || [])[oi]; if (o) cpSpend(g, t.checked ? o.cout : -o.cout); });
       }
+      else if (t.id === "cp-addterr" && t.value) mutateGang(g => { g.campagne.territoires = (g.campagne.territoires || []).concat(t.value); });
+      else if (t.id === "cp-notes") { gbState.gang.campagne.notes = t.value; putGang(gbState.gang); }
+      else if (t.dataset.cpRecup != null) mutateGang(g => { g.fighters[+t.dataset.cpRecup].recup = t.checked; });
+      else if (t.dataset.cpSpec != null) mutateGang(g => { g.fighters[+t.dataset.cpSpec].spec = t.checked; });
+      else if (t.dataset.cpCaptif != null) mutateGang(g => { g.fighters[+t.dataset.cpCaptif].captif = t.value.trim().slice(0, 60); });
+      else if (t.dataset.cpAdv != null && t.value) mutateGang(g => cpAddAdvance(g.fighters[+t.dataset.cpAdv], gbState.data, t.value));
+      else if (t.dataset.cpInj != null && t.value) mutateGang(g => {
+        const f = g.fighters[+t.dataset.cpInj], b = (gbState.data.refs.blessuresPersistantes || []).find(x => x.plage === t.value); if (!b) return;
+        const nom = b.effet.split(" — ")[0];
+        if (/Récupération/.test(b.effet)) f.recup = true;
+        if (INJ_MODS[b.plage]) (f.injuries = f.injuries || []).push({ plage: b.plage, nom, mods: INJ_MODS[b.plage] });
+        let m = `${f.name || "Combattant"} : ${b.effet}.`;
+        if (b.plage === "11") { const x = roll(1, 3); f.xp = (f.xp || 0) + x; m += ` +${x} XP ajoutés.`; }
+        if (/Mort/.test(b.effet)) m += " Retire-le du gang si personne ne le sauve.";
+        gbState.diceMsg = m;
+      });
     });
 
     document.addEventListener("click", e => {
@@ -1708,11 +1962,38 @@
       if (!gbState) return;
       const g = gbState.gang;
       const n = (attr) => t.getAttribute(attr);
+      const cpn = n("data-cp-xp") || n("data-cp-unadv") || n("data-cp-uninj") || n("data-cp-gpick");
+      if (t.id === "cp-on") return mutateGang(x => { x.campagne = Object.assign({ rep: 1, territoires: ["colonie"], notes: "" }, x.campagne || {}, { active: true });
+        if (x.campagne.magot == null) x.campagne.magot = Math.max(0, x.budget - gangCost(x, gbState.data)); });
+      if (t.id === "cp-off") { if (confirm("Quitter le mode campagne ? Les données de campagne sont conservées et reviendront si tu le réactives.")) mutateGang(x => { x.campagne.active = false; }); return; }
+      if (n("data-cp-rep") != null) return mutateGang(x => { x.campagne.rep = Math.max(1, (x.campagne.rep || 1) + +n("data-cp-rep")); });
+      if (n("data-cp-magot") != null) { const v = Math.abs(parseInt(($("cp-amount") || {}).value, 10) || 0); if (v) mutateGang(x => { x.campagne.magot = (x.campagne.magot || 0) + v * +n("data-cp-magot"); }); return; }
+      if (n("data-cp-unterr") != null) { e.preventDefault(); return mutateGang(x => { x.campagne.territoires = x.campagne.territoires.filter(i => i !== n("data-cp-unterr")); }); }
+      if (n("data-cp-dice") != null) { cpDice(n("data-cp-dice")); const r = $("cp-result"); if (r) r.textContent = gbState.diceMsg; return; }
+      if (n("data-cp-promo") != null) return mutateGang(x => cpPromote(x.fighters[+n("data-cp-promo")], gbState.data));
+      if (n("data-cp-groll") != null) return mutateGang(x => { const f = x.fighters[+n("data-cp-groll")]; if ((f.xp || 0) < 6) return; f.xp -= 6; f.gangerRoll = roll(2, 6); });
+      if (cpn) {
+        const [fi, v] = cpn.split(":"); const f = g.fighters[+fi];
+        if (n("data-cp-xp") != null) return mutateGang(() => { f.xp = Math.max(0, (f.xp || 0) + +v); });
+        if (n("data-cp-uninj") != null) return mutateGang(() => { f.injuries.splice(+v, 1); });
+        if (n("data-cp-unadv") != null) return mutateGang(() => {
+          const a = f.adv.splice(+v, 1)[0]; if (!a) return;
+          f.xp = (f.xp || 0) + (a.xp || 0);
+          if (a.skill) f.skills = (f.skills || []).filter(k => k !== a.skill);
+          if (a.id === "promo" && f.promuDe) { f.type = f.promuDe; f.spec = true; delete f.promuDe; delete f.baseProfil; delete f.baseCout; }
+        });
+        if (n("data-cp-gpick") != null) return mutateGang(() => {
+          const r = gbState.data.camp.gangers.find(x => f.gangerRoll >= x.de && f.gangerRoll <= x.a); if (!r) return;
+          if (v === "spec") f.spec = true;
+          else (f.adv = f.adv || []).push({ id: "ganger", stat: v, cr: r.cr, xp: 6, label: "+1 " + v });
+          delete f.gangerRoll;
+        });
+      }
       if (n("data-gb-del") != null) mutateGang(x => x.fighters.splice(+n("data-gb-del"), 1));
       else if (n("data-gb-dup") != null) mutateGang(x => { const f = x.fighters[+n("data-gb-dup")]; x.fighters.splice(+n("data-gb-dup") + 1, 0, { ...JSON.parse(JSON.stringify(f)), id: uid(), name: f.name ? f.name + " bis" : "" }); });
       else if (n("data-gb-up") != null) mutateGang(x => { const i = +n("data-gb-up"); if (i > 0) [x.fighters[i - 1], x.fighters[i]] = [x.fighters[i], x.fighters[i - 1]]; });
-      else if (n("data-gb-ungear") != null) { const [fi, gi] = n("data-gb-ungear").split(":").map(Number); mutateGang(x => x.fighters[fi].gear.splice(gi, 1)); }
-      else if (n("data-gb-unbete") != null) { const [fi, bi] = n("data-gb-unbete").split(":").map(Number); mutateGang(x => x.fighters[fi].betes.splice(bi, 1)); }
+      else if (n("data-gb-ungear") != null) { const [fi, gi] = n("data-gb-ungear").split(":").map(Number); mutateGang(x => { const id = x.fighters[fi].gear.splice(gi, 1)[0]; cpSpend(x, -((itemDef(id, gbState.data) || {}).prix || 0)); }); }
+      else if (n("data-gb-unbete") != null) { const [fi, bi] = n("data-gb-unbete").split(":").map(Number); mutateGang(x => { const id = x.fighters[fi].betes.splice(bi, 1)[0]; cpSpend(x, -((beteDef(id, gbState.data) || {}).cout || 0)); }); }
       else if (t.id === "gb-export-file") downloadFile(fileSlug(g.name) + ".necrocounter.json", JSON.stringify(exportPayload(g), null, 2));
       else if (t.id === "gb-export-code") {
         const code = encodeCode(exportPayload(g)), msg = $("gb-share-msg");
@@ -1748,7 +2029,7 @@
           regles: def.regles || [] };
       }
       const items = (f.gear || []).map(id => itemDef(id, d)).filter(Boolean);
-      return { role: def.role, profil: def.profil,
+      return { role: isSpecialist(f) ? "Spécialiste" : def.role, profil: effProfil(f, d),
         weapons: items.filter(i => i.arme && byId[i.arme]).map(i => weaponSheet(byId[i.arme], i.modes)),
         gear: def.equipementDeDepart.concat(items.filter(i => !(i.arme && byId[i.arme])).map(i => i.nom)),
         skills: (f.skills || []).map(n => skillInfo(n, d)), regles: [] };
@@ -1767,9 +2048,10 @@
       return gangData(g.house).then(d => {
         const crew = [];
         g.fighters.forEach(f => {
+          if (inCamp(g) && (f.recup || f.captif)) return;
           const def = fighterDef(f, d);
-          const label = def ? (f.kind === "brute" ? def.nom : def.role) : "Combattant";
-          const pv = def ? parseInt(def.profil.PV, 10) || 1 : 1;
+          const label = def ? (f.kind === "brute" ? def.nom : isSpecialist(f) ? "Spécialiste" : def.role) : "Combattant";
+          const pv = def ? parseInt((effProfil(f, d) || def.profil).PV, 10) || 1 : 1;
           const name = f.name ? `${f.name} (${label})` : label;
           crew.push({ id: uid(), name, cost: fighterCost(f, d), wounds: pv, maxWounds: pv, ready: true, status: [], sheet: buildSheet(f, d) });
           (f.betes || []).forEach(bid => {
@@ -1843,7 +2125,7 @@
       } else if (section === "regles") {
         title.textContent = "Règles";
         sessionStorage.setItem("nc_aide_from", "regles");
-        showAsync(view, Promise.all([load("armes.json"), load("comptoir.json"), load("refs.json")]), armouryHtml);
+        showAsync(view, Promise.all([load("armes.json"), load("comptoir.json"), load("refs.json"), load("campagne.json")]), armouryHtml);
       } else if (h === "compte" || h === "carte" || h === "confidentialite") {
         title.textContent = { compte: "Mon compte", carte: "Carte des joueurs", confidentialite: "Confidentialité" }[h];
         if (window.NC_COMPTE) window.NC_COMPTE.open(h);
