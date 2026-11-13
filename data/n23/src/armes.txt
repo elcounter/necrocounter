@@ -162,7 +162,7 @@ Griffes rasoirs (Khimerix Escher) | - | E | - | - | F+1 | -2 | 3 | - | Mêlée, 
 Hache | - | E | - | - | F+1 | - | 1 | - | Désarmement, Mêlée
 Hache tronçonneuse | - | E | - | +1 | F+1 | -1 | 1 | - | Désarmement, Mêlée, Parade, Perforant
 Hachoir de brute | - | E | - | - | F | -1 | 1 | - | Désarmement, Mêlée
-Mâchoires féroces (Sumpkroc Goliath) | - | E | - | - | F | - | 1 | - | Mêlée, Perforant
+Mâchoires féroces (Sumpkroc Goliath) | - | E | - | - | F | -1 | 1 | - | Mêlée, Perforant
 Mains nues (Zerker Goliath) | - | E | - | - | F | -1 | 1 | - | Contrecoup, Mêlée
 Masse (matraque) | - | E | - | - | F | +1 | 2 | - | Mêlée
 Matraque lourde (Stig-shambler Cawdor) | - | E | - | - | F | - | 2 | - | Mêlée

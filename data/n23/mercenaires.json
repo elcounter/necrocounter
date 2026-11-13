@@ -1,0 +1,1042 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre de règles N23 (version française), Aventuriers et Brutes, Bêtes Exotiques",
+  "recrutement": {
+    "texte": "Recrutés à l'après-bataille avec les crédits du Magot. Ils ne comptent pas dans le nombre de combattants du gang. Le nombre total d'Aventuriers et de Brutes dépend de la Réputation.",
+    "limites": [
+      [
+        "Moins de 5",
+        1
+      ],
+      [
+        "5-9",
+        2
+      ],
+      [
+        "10-14",
+        3
+      ],
+      [
+        "15-19",
+        4
+      ],
+      [
+        "20-24",
+        5
+      ],
+      [
+        "Par tranche de 5 au-delà",
+        "+1"
+      ]
+    ]
+  },
+  "aventuriers": {
+    "texte": "Ne combattent normalement pas. Sur le territoire du gang, D6 par Aventurier : sur 1-3 il est inclus dans l'équipe. Pas d'Expérience ; une Blessure Persistante le fait partir. Aucun équipement en plus.",
+    "liste": [
+      {
+        "id": "toubib-clandestin",
+        "nom": "Toubib Clandestin",
+        "max": 2,
+        "cout": 50,
+        "profil": {
+          "M": "5\"",
+          "CC": "5+",
+          "CT": "5+",
+          "F": "2",
+          "E": "3",
+          "PV": "1",
+          "I": "4+",
+          "A": "1",
+          "CD": "9+",
+          "SF": "8+",
+          "V": "7+",
+          "INT": "5+"
+        },
+        "equipement": "Pistolet laser ou flingue ; médikit",
+        "competences": [
+          "Guérisseur"
+        ],
+        "effet": "Une action d'Escorte Médicale gratuite en plus par Toubib à l'après-bataille. Un 6 sur le tableau donne Stabilisé au lieu de Récupération Totale."
+      },
+      {
+        "id": "cartouchier",
+        "nom": "Cartouchier",
+        "max": 3,
+        "cout": 50,
+        "profil": {
+          "M": "5\"",
+          "CC": "4+",
+          "CT": "3+",
+          "F": "3",
+          "E": "3",
+          "PV": "1",
+          "I": "5+",
+          "A": "1",
+          "CD": "9+",
+          "SF": "7+",
+          "V": "6+",
+          "INT": "7+"
+        },
+        "equipement": "Bolter ou fusil de combat (salve & nuage de grenaille) ; marteau énergétique ou épée énergétique ; armure composite",
+        "competences": [
+          "Armurier"
+        ],
+        "effet": "Le gang relance les tests de Munitions ratés sur 1 naturel (1-2 avec deux Cartouchiers, 1-3 avec trois). Bonus perdu s'il est En Récupération ou Capturé."
+      },
+      {
+        "id": "coureur-de-domes",
+        "nom": "Coureur de Dômes",
+        "max": 1,
+        "cout": 20,
+        "profil": {
+          "M": "5\"",
+          "CC": "5+",
+          "CT": "5+",
+          "F": "3",
+          "E": "3",
+          "PV": "1",
+          "I": "3+",
+          "A": "1",
+          "CD": "10+",
+          "SF": "9+",
+          "V": "7+",
+          "INT": "8+"
+        },
+        "equipement": "Pistolet laser ou flingue ; couteau de combat ou hache",
+        "competences": [
+          "Profil Bas"
+        ],
+        "effet": "Le gang peut relancer le D6 du contenu d'une caisse de butin ; le second résultat est conservé."
+      },
+      {
+        "id": "tambouilleur",
+        "nom": "Tambouilleur",
+        "max": 1,
+        "cout": 20,
+        "profil": {
+          "M": "4\"",
+          "CC": "4+",
+          "CT": "4+",
+          "F": "2",
+          "E": "3",
+          "PV": "1",
+          "I": "3+",
+          "A": "1",
+          "CD": "9+",
+          "SF": "9+",
+          "V": "5+",
+          "INT": "7+"
+        },
+        "equipement": "Couteau de combat",
+        "competences": [],
+        "effet": "Avant-bataille : D6 par combattant En Récupération ; sur 6, il est disponible pour la bataille."
+      },
+      {
+        "id": "guetteur-du-gang",
+        "nom": "Guetteur du Gang",
+        "max": 1,
+        "cout": 20,
+        "profil": {
+          "M": "5\"",
+          "CC": "5+",
+          "CT": "4+",
+          "F": "2",
+          "E": "3",
+          "PV": "1",
+          "I": "3+",
+          "A": "1",
+          "CD": "9+",
+          "SF": "7+",
+          "V": "5+",
+          "INT": "7+"
+        },
+        "equipement": "Pistolet laser ou flingue ; couteau de combat ou hache",
+        "competences": [
+          "Zigzag"
+        ],
+        "effet": "Escarmouche : +1 au jet attaquant/défenseur. En défense avec Attaque Furtive : +1 aux jets des sentinelles."
+      }
+    ]
+  },
+  "brutes": {
+    "texte": "Combattent comme n'importe quel combattant. Gagnent Expérience et Progressions comme un Ganger Spécialiste et restent malgré les Blessures Persistantes. Aucun équipement en plus de leurs options.",
+    "liste": [
+      {
+        "id": "ambot",
+        "nom": "Luther Pattern Excavation Automata (\"Ambot\")",
+        "maison": null,
+        "max": 2,
+        "cout": 215,
+        "profil": {
+          "M": "4\"",
+          "CC": "3+",
+          "CT": "5+",
+          "F": "5",
+          "E": "5",
+          "PV": "3",
+          "I": "5+",
+          "A": "2",
+          "CD": "8+",
+          "SF": "6+",
+          "V": "8+",
+          "INT": "9+"
+        },
+        "competences": {
+          "primaires": [
+            "Férocité"
+          ],
+          "secondaires": [
+            "Muscle",
+            "Combat"
+          ]
+        },
+        "armes": [
+          "griffes-excavatrices-ambot",
+          "gantelet-a-gravitons-ambot"
+        ],
+        "equipement": "Deux griffes excavatrices ; armure carapace légère (Construction Mécanique)",
+        "options": [
+          {
+            "nom": "Remplacer 1 griffe excavatrice par un gantelet à gravitons",
+            "cout": 70
+          }
+        ],
+        "regles": [
+          {
+            "nom": "Infiltration",
+            "texte": "Mis de côté au déploiement, puis placé avant le 1er round hors de vue et à plus de 6\" de tout ennemi."
+          },
+          {
+            "nom": "Régulateurs Crâniens",
+            "texte": "Mode Sécurisé désactivable au début d'un round : gagne Berserk et A = D3+1, mais doit répartir ses attaques entre toutes les figurines au contact, amies comprises. Irréversible."
+          },
+          {
+            "nom": "Construction Mécanique",
+            "texte": "Équipé d'une armure carapace légère."
+          },
+          {
+            "nom": "Automate d'Excavation",
+            "texte": "Avec un territoire Mine, un D6 de revenu en plus."
+          },
+          {
+            "nom": "Précieux",
+            "texte": "S'il est Capturé, le ravisseur peut le vendre ou le garder gratuitement s'il a la Réputation pour un Aventurier de plus."
+          }
+        ]
+      },
+      {
+        "id": "jotunn",
+        "nom": "\"Jotunn\" H-Grade Servitor-Ogryn",
+        "maison": null,
+        "max": 2,
+        "cout": 210,
+        "profil": {
+          "M": "5\"",
+          "CC": "4+",
+          "CT": "5+",
+          "F": "5",
+          "E": "5",
+          "PV": "3",
+          "I": "4+",
+          "A": "2",
+          "CD": "7+",
+          "SF": "6+",
+          "V": "8+",
+          "INT": "9+"
+        },
+        "competences": {
+          "primaires": [
+            "Muscle"
+          ],
+          "secondaires": [
+            "Combat",
+            "Férocité"
+          ]
+        },
+        "armes": [
+          "poing-augmentique-jotunn-servitor",
+          "soudeuse-a-l-arc-jotunn-servitor"
+        ],
+        "equipement": "Deux poings augmétiques",
+        "options": [
+          {
+            "nom": "Remplacer 1 poing augmétique par une soudeuse à l'arc",
+            "cout": 70
+          },
+          {
+            "nom": "Plates de fourneau",
+            "cout": 15
+          }
+        ],
+        "regles": [
+          {
+            "nom": "Coup d'Boule",
+            "texte": "Action Coup de Tête (Élémentaire) si Engagé : 2D6 contre l'Endurance de la cible. Un dé ≥ E : touche F+2, D2. Sinon il subit sa propre Force."
+          },
+          {
+            "nom": "Loyal",
+            "texte": "Ajoute 2 au lieu de 1 quand il assiste un ami en mêlée."
+          },
+          {
+            "nom": "Lourdaud",
+            "texte": "Jamais activé dans une Activation de Groupe."
+          }
+        ]
+      },
+      {
+        "id": "stig-shambler",
+        "nom": "Stig-shambler Cawdor",
+        "maison": "cawdor",
+        "max": 1,
+        "cout": 240,
+        "profil": {
+          "M": "4\"",
+          "CC": "4+",
+          "CT": "4+",
+          "F": "5",
+          "E": "4",
+          "PV": "4",
+          "I": "4+",
+          "A": "2",
+          "CD": "9+",
+          "SF": "8+",
+          "V": "9+",
+          "INT": "8+"
+        },
+        "competences": {
+          "primaires": [
+            "Muscle",
+            "Savoir"
+          ],
+          "secondaires": [
+            "Combat",
+            "Ruse"
+          ]
+        },
+        "armes": [
+          "matraque-lourde-stig-shambler-cawdor",
+          "haste-cawdor-stig-shambler-cawdor",
+          "mitrailleuse",
+          "mitrailleuse-jumelee-stig-shambler-cawdor",
+          "lance-flammes-lourd"
+        ],
+        "equipement": "Matraque lourde ; mitrailleuse",
+        "options": [
+          {
+            "nom": "Remplacer la matraque lourde par une haste",
+            "cout": 0
+          },
+          {
+            "nom": "Améliorer la mitrailleuse en mitrailleuse jumelée",
+            "cout": 40
+          },
+          {
+            "nom": "Remplacer la mitrailleuse par un lance-flammes lourd",
+            "cout": 70
+          },
+          {
+            "nom": "Armure Flak",
+            "cout": 10
+          }
+        ],
+        "regles": [
+          {
+            "nom": "Contrôle Intelligent",
+            "texte": "Relance immédiate des tests de Commandement, Sang-froid, Volonté et Intelligence ratés."
+          },
+          {
+            "nom": "Mouvement et Tir",
+            "texte": "Tire avec une arme Encombrante en action Élémentaire, avec -1 supplémentaire à la touche."
+          },
+          {
+            "nom": "Mitrailleuse Jumelée",
+            "texte": "Peut relancer n'importe quel nombre de dés de Munitions ; le second résultat est conservé."
+          }
+        ]
+      },
+      {
+        "id": "spyker",
+        "nom": "Spyker Delaque",
+        "maison": "delaque",
+        "max": null,
+        "cout": 190,
+        "profil": {
+          "M": "6\"",
+          "CC": "6+",
+          "CT": "6+",
+          "F": "3",
+          "E": "4",
+          "PV": "4",
+          "I": "3+",
+          "A": "1",
+          "CD": "5+",
+          "SF": "5+",
+          "V": "4+",
+          "INT": "6+"
+        },
+        "competences": {
+          "primaires": [
+            "Savoir"
+          ],
+          "secondaires": [
+            "Agilité",
+            "Ruse"
+          ]
+        },
+        "armes": [],
+        "equipement": "Désarmé (attaques désarmées)",
+        "competencesDepart": [
+          "Psyker Clandestin"
+        ],
+        "options": [
+          {
+            "nom": "Champ téléporteur",
+            "cout": 50
+          }
+        ],
+        "regles": [
+          {
+            "nom": "Vol",
+            "texte": "Ignore les terrains, change de niveau librement et ne chute jamais. Bloqué par les murs et le terrain infranchissable."
+          },
+          {
+            "nom": "Hurlement Psychique (Élémentaire)",
+            "texte": "Ennemis à 3\" : test de Nervosité à -1, Démoralisés en cas d'échec."
+          },
+          {
+            "nom": "Assaut Psychique (Élémentaire)",
+            "texte": "Un ennemi à 18\" fait un test de Volonté : Bloqué s'il réussit, perd 1 PV et Bloqué s'il échoue."
+          },
+          {
+            "nom": "Décharge de Force (Élémentaire)",
+            "texte": "Ennemis à 3\" repoussés de D3+1\". Contre un mur : Bloqué et touche de Force égale à la distance."
+          }
+        ]
+      },
+      {
+        "id": "khimerix",
+        "nom": "Khimerix Escher",
+        "maison": "escher",
+        "max": 1,
+        "cout": 220,
+        "profil": {
+          "M": "6\"",
+          "CC": "4+",
+          "CT": "4+",
+          "F": "4",
+          "E": "5",
+          "PV": "3",
+          "I": "3+",
+          "A": "3",
+          "CD": "8+",
+          "SF": "7+",
+          "V": "7+",
+          "INT": "8+"
+        },
+        "competences": {
+          "primaires": [
+            "Férocité"
+          ],
+          "secondaires": [
+            "Agilité",
+            "Combat"
+          ]
+        },
+        "armes": [
+          "souffle-a-nuage-chimique-khimerix-escher",
+          "souffle-a-eruption-gazeuse-khimerix-escher",
+          "griffes-khimerix-escher-et-phyrr-cat-escher",
+          "griffes-rasoirs-khimerix-escher"
+        ],
+        "equipement": "Souffle à nuage chimique ; griffes",
+        "options": [
+          {
+            "nom": "Remplacer le souffle à nuage chimique par un souffle à éruption gazeuse",
+            "cout": 80
+          },
+          {
+            "nom": "Améliorer les griffes en griffes-rasoirs",
+            "cout": 30
+          },
+          {
+            "nom": "Peau endurcie (compte comme armure Flak)",
+            "cout": 10
+          }
+        ],
+        "regles": [
+          {
+            "nom": "Régénération (Simple)",
+            "texte": "Sans pion Incendie : D6, sur 4+ récupère 1 PV."
+          },
+          {
+            "nom": "Coup Destructeur",
+            "texte": "Avant les jets de touche en mêlée, un dé désigné gagne +1 en Force et en Dégâts."
+          }
+        ]
+      },
+      {
+        "id": "zerker",
+        "nom": "'Zerker Goliath",
+        "maison": "goliath",
+        "max": 1,
+        "cout": 210,
+        "profil": {
+          "M": "4\"",
+          "CC": "3+",
+          "CT": "6+",
+          "F": "6",
+          "E": "5",
+          "PV": "3",
+          "I": "5+",
+          "A": "3",
+          "CD": "7+",
+          "SF": "6+",
+          "V": "8+",
+          "INT": "10+"
+        },
+        "competences": {
+          "primaires": [
+            "Muscle"
+          ],
+          "secondaires": [
+            "Combat",
+            "Férocité"
+          ]
+        },
+        "armes": [
+          "mains-nues-zerker-goliath",
+          "poings-mutants-excroissances-osseuses-zerker-goliath"
+        ],
+        "equipement": "Deux mains nues",
+        "options": [
+          {
+            "nom": "Poings mutants & excroissances osseuses",
+            "cout": 70
+          },
+          {
+            "nom": "Plates de fourneau",
+            "cout": 10
+          },
+          {
+            "nom": "Planque de stim'",
+            "cout": 20
+          }
+        ],
+        "regles": [
+          {
+            "nom": "Planque de Drogues de Combat",
+            "texte": "À chaque activation : +D3 Attaques jusqu'à la fin du tour. Sur 1 naturel, A tombe à 1 jusqu'à la fin du round."
+          },
+          {
+            "nom": "Impétuosité",
+            "texte": "Consolide de 4\" au lieu de 2\" après un corps à corps."
+          }
+        ]
+      },
+      {
+        "id": "lugger",
+        "nom": "\"Lugger\" Cargo Servitor Orlock",
+        "maison": "orlock",
+        "max": 1,
+        "cout": 230,
+        "profil": {
+          "M": "4\"",
+          "CC": "5+",
+          "CT": "4+",
+          "F": "5",
+          "E": "5",
+          "PV": "3",
+          "I": "5+",
+          "A": "2",
+          "CD": "7+",
+          "SF": "5+",
+          "V": "9+",
+          "INT": "8+"
+        },
+        "competences": {
+          "primaires": [
+            "Tir"
+          ],
+          "secondaires": [
+            "Muscle",
+            "Combat"
+          ]
+        },
+        "armes": [
+          "lance-harpon",
+          "bolter-lourd",
+          "lance-flammes-lourd",
+          "mitrailleuse",
+          "arme-de-melee-de-servitor-orlock-lugger"
+        ],
+        "equipement": "Lance-harpon ; armure carapace légère (Construction Mécanique)",
+        "options": [
+          {
+            "nom": "Remplacer le lance-harpon par un bolter lourd",
+            "cout": 50
+          },
+          {
+            "nom": "Remplacer le lance-harpon par un lance-flammes lourd",
+            "cout": 85
+          },
+          {
+            "nom": "Remplacer le lance-harpon par une mitrailleuse",
+            "cout": 20
+          },
+          {
+            "nom": "Armure carapace lourde au lieu de légère",
+            "cout": 20
+          },
+          {
+            "nom": "Lunette",
+            "cout": 25
+          }
+        ],
+        "regles": [
+          {
+            "nom": "Construction Mécanique",
+            "texte": "Équipé d'une armure carapace légère."
+          },
+          {
+            "nom": "Plate-forme d'Armes",
+            "texte": "Tirer avec une arme Encombrante est une action Élémentaire au lieu de Double."
+          },
+          {
+            "nom": "Trémies à Munitions",
+            "texte": "Relance les tests de Munitions ratés sur 1 naturel."
+          }
+        ]
+      },
+      {
+        "id": "arachni-rig",
+        "nom": "\"Arachni-rig\" Servo-suit Van Saar",
+        "maison": "van-saar",
+        "max": 1,
+        "cout": 240,
+        "profil": {
+          "M": "5\"",
+          "CC": "4+",
+          "CT": "4+",
+          "F": "5",
+          "E": "4",
+          "PV": "3",
+          "I": "4+",
+          "A": "4",
+          "CD": "5+",
+          "SF": "5+",
+          "V": "8+",
+          "INT": "6+"
+        },
+        "competences": {
+          "primaires": [
+            "Tir"
+          ],
+          "secondaires": [
+            "Muscle",
+            "Férocité"
+          ]
+        },
+        "armes": [
+          "carabine-laser-lourde-jumelee-arachnirig-van-saar",
+          "fusil-a-radiations",
+          "fusil-a-plasma",
+          "servobras-servo-suit-van-saar"
+        ],
+        "equipement": "Carabine laser lourde jumelée ; quatre servobras ; armure carapace légère (Construction Mécanique)",
+        "options": [
+          {
+            "nom": "Remplacer 1 servobras par un fusil à radiations (-1 A)",
+            "cout": 60
+          },
+          {
+            "nom": "Remplacer 1 servobras par un fusil à plasma (-1 A)",
+            "cout": 60
+          },
+          {
+            "nom": "Armure carapace lourde au lieu de légère",
+            "cout": 20
+          }
+        ],
+        "regles": [
+          {
+            "nom": "Carabine Laser Jumelée",
+            "texte": "Peut relancer n'importe quel nombre de dés de Munitions ; le second résultat est conservé."
+          },
+          {
+            "nom": "Construction Mécanique",
+            "texte": "Équipée d'une armure carapace légère."
+          },
+          {
+            "nom": "Tenue Protectrice Van Saar",
+            "texte": "Immunisée aux effets du trait Radiations."
+          },
+          {
+            "nom": "Panoplie d'Armes Supérieure",
+            "texte": "Deux actions Tirer (Simple) par tour au lieu d'une Tirer (Élémentaire), avec des armes et des cibles différentes possibles."
+          }
+        ]
+      }
+    ]
+  },
+  "betes": {
+    "texte": "Achetées comme de l'Équipement, par le Chef ou un Champion seulement. Activées avec leur propriétaire et doivent finir à 3\" de lui. Démoralisées, elles courent vers lui. Retirées s'il est retiré. Expérience comme un Ganger, pas d'équipement.",
+    "tableauCompetences": {
+      "Agilité": [
+        "Réception Féline",
+        "Esquive",
+        "Sprint"
+      ],
+      "Muscle": [
+        "Charge Buffle",
+        "Coup Destructeur",
+        "Gueule de Fer"
+      ],
+      "Combat": [
+        "Contre-attaque",
+        "Désarmement",
+        "Saut de Côté"
+      ],
+      "Ruse": [
+        "Coup en Traître",
+        "Zigzag",
+        "Profil Bas"
+      ],
+      "Férocité": [
+        "Berserk",
+        "Effrayant",
+        "Nerfs d'Acier"
+      ]
+    },
+    "liste": [
+      {
+        "id": "sheen-bird",
+        "nom": "Sheen Bird",
+        "maison": "cawdor",
+        "max": 2,
+        "cout": 90,
+        "rarete": "Rare (12)",
+        "profil": {
+          "M": "6\"",
+          "CC": "4+",
+          "CT": "6+",
+          "F": "3",
+          "E": "2",
+          "PV": "1",
+          "I": "3+",
+          "A": "2",
+          "CD": "8+",
+          "SF": "7+",
+          "V": "8+",
+          "INT": "9+"
+        },
+        "competences": {
+          "primaires": [
+            "Férocité"
+          ],
+          "secondaires": [
+            "Agilité"
+          ]
+        },
+        "armes": [
+          "bec-serres-sheen-bird-cawdor"
+        ],
+        "regles": [
+          {
+            "nom": "Vol",
+            "texte": "Ignore les terrains, change de niveau librement et ne chute jamais."
+          },
+          {
+            "nom": "Agressif",
+            "texte": "Quand son propriétaire est activé, test de Volonté du propriétaire ; en cas d'échec, l'oiseau charge l'ennemi le plus proche."
+          },
+          {
+            "nom": "Rappel",
+            "texte": "En fin d'activation, test de Volonté du propriétaire : réussite, l'oiseau revient vers lui (Se Déplacer ou Se Replier gratuit)."
+          }
+        ]
+      },
+      {
+        "id": "cephalopod-spekter",
+        "nom": "Cephalopod Spekter",
+        "maison": "delaque",
+        "max": 1,
+        "cout": 100,
+        "rarete": "Rare (11)",
+        "profil": {
+          "M": "5\"",
+          "CC": "4+",
+          "CT": "5+",
+          "F": "3",
+          "E": "3",
+          "PV": "1",
+          "I": "3+",
+          "A": "1",
+          "CD": "7+",
+          "SF": "5+",
+          "V": "6+",
+          "INT": "4+"
+        },
+        "competences": {
+          "primaires": [
+            "Ruse"
+          ],
+          "secondaires": [
+            "Agilité"
+          ]
+        },
+        "armes": [
+          "electrovrilles-cephalopod-spekter-delaque"
+        ],
+        "regles": [
+          {
+            "nom": "Vol",
+            "texte": "Ignore les terrains, change de niveau librement et ne chute jamais."
+          },
+          {
+            "nom": "Panoplie de Senseurs",
+            "texte": "À 3\" du propriétaire, celui-ci jette un D6 de plus aux tests d'Intelligence et défausse un dé."
+          },
+          {
+            "nom": "Réponse à la Menace",
+            "texte": "Si le propriétaire est Hors de Combat à 3\", touche automatique F1 Sismique sur les ennemis à D6\"."
+          },
+          {
+            "nom": "Chien de Garde",
+            "texte": "Propriétaire sentinelle : détecte hors champ de vision, +1 au jet de détection."
+          }
+        ]
+      },
+      {
+        "id": "phyrr-cat",
+        "nom": "Phyrr Cat",
+        "maison": "escher",
+        "max": 2,
+        "cout": 120,
+        "rarete": "Rare (12)",
+        "profil": {
+          "M": "7\"",
+          "CC": "3+",
+          "CT": "-",
+          "F": "3",
+          "E": "3",
+          "PV": "1",
+          "I": "2+",
+          "A": "2",
+          "CD": "7+",
+          "SF": "8+",
+          "V": "7+",
+          "INT": "8+"
+        },
+        "competences": {
+          "primaires": [
+            "Agilité"
+          ],
+          "secondaires": [
+            "Ruse"
+          ]
+        },
+        "armes": [
+          "griffes-khimerix-escher-et-phyrr-cat-escher"
+        ],
+        "regles": [
+          {
+            "nom": "Indépendant",
+            "texte": "Doit rester à 9\" du propriétaire au lieu de 3\"."
+          },
+          {
+            "nom": "Retombe sur ses Pattes",
+            "texte": "Force des chutes réduite de 2."
+          }
+        ]
+      },
+      {
+        "id": "sumpkroc",
+        "nom": "Sumpkroc",
+        "maison": "goliath",
+        "max": 1,
+        "cout": 130,
+        "rarete": "Rare (11)",
+        "profil": {
+          "M": "4\"",
+          "CC": "3+",
+          "CT": "-",
+          "F": "4",
+          "E": "4",
+          "PV": "2",
+          "I": "6+",
+          "A": "2",
+          "CD": "8+",
+          "SF": "6+",
+          "V": "7+",
+          "INT": "11+"
+        },
+        "competences": {
+          "primaires": [
+            "Muscle"
+          ],
+          "secondaires": [
+            "Férocité"
+          ]
+        },
+        "armes": [
+          "machoires-feroces-sumpkroc-goliath"
+        ],
+        "regles": [
+          {
+            "nom": "Contre-charge",
+            "texte": "Si son propriétaire est chargé, il peut charger aussitôt l'assaillant et l'attaquer avant ses attaques. Une fois par round."
+          },
+          {
+            "nom": "Peau Écailleuse",
+            "texte": "Sauvegarde de 5+."
+          }
+        ]
+      },
+      {
+        "id": "cyber-mastiff",
+        "nom": "Cyber-mastiff",
+        "maison": "orlock",
+        "max": 3,
+        "cout": 100,
+        "rarete": "Rare (10)",
+        "profil": {
+          "M": "5\"",
+          "CC": "3+",
+          "CT": "-",
+          "F": "3",
+          "E": "3",
+          "PV": "1",
+          "I": "4+",
+          "A": "1",
+          "CD": "7+",
+          "SF": "6+",
+          "V": "8+",
+          "INT": "8+"
+        },
+        "competences": {
+          "primaires": [
+            "Combat"
+          ],
+          "secondaires": [
+            "Férocité"
+          ]
+        },
+        "armes": [
+          "morsure-sauvage-cyber-mastiff"
+        ],
+        "regles": [
+          {
+            "nom": "Chien de Garde",
+            "texte": "Propriétaire sentinelle : détecte hors champ de vision, +1 au jet de détection."
+          },
+          {
+            "nom": "Fidèle Protecteur",
+            "texte": "Debout à 3\" du propriétaire : les ennemis ne peuvent pas lui porter le Coup de Grâce."
+          }
+        ]
+      },
+      {
+        "id": "cyberachnid",
+        "nom": "Cyberachnid",
+        "maison": "van-saar",
+        "max": 3,
+        "cout": 75,
+        "rarete": "Rare (10)",
+        "profil": {
+          "M": "6\"",
+          "CC": "4+",
+          "CT": "5+",
+          "F": "2",
+          "E": "2",
+          "PV": "1",
+          "I": "2+",
+          "A": "1",
+          "CD": "7+",
+          "SF": "8+",
+          "V": "8+",
+          "INT": "8+"
+        },
+        "competences": {
+          "primaires": [
+            "Ruse"
+          ],
+          "secondaires": [
+            "Agilité"
+          ]
+        },
+        "armes": [
+          "morsure-venimeuse-cyberachnid-van-saar",
+          "projecteur-de-toile-cyberachnid-van-saar"
+        ],
+        "regles": [
+          {
+            "nom": "Escalade",
+            "texte": "Ne divise pas la distance verticale : compte toujours comme une échelle."
+          },
+          {
+            "nom": "Suscite la Phobie",
+            "texte": "A la compétence Effrayant et la confère à son propriétaire tant qu'il est Actif à 3\"."
+          },
+          {
+            "nom": "Horrible",
+            "texte": "Ne peut jamais être Capturé."
+          }
+        ]
+      },
+      {
+        "id": "caryatid",
+        "nom": "Caryatid",
+        "maison": null,
+        "max": 1,
+        "cout": 0,
+        "rarete": "Rare (15)",
+        "profil": {
+          "M": "6\"",
+          "CC": "5+",
+          "CT": "-",
+          "F": "2",
+          "E": "2",
+          "PV": "1",
+          "I": "2+",
+          "A": "1",
+          "CD": "7+",
+          "SF": "7+",
+          "V": "8+",
+          "INT": "8+"
+        },
+        "competences": {
+          "primaires": [
+            "Agilité"
+          ],
+          "secondaires": [
+            "Ruse"
+          ]
+        },
+        "armes": [],
+        "note": "Ne s'achète pas : après une recherche d'Équipement Rare à 15+, 2D6 + Réputation ≥ 20 et elle se lie au Chef. Attaques désarmées uniquement.",
+        "regles": [
+          {
+            "nom": "De Bon Augure",
+            "texte": "À 3\" du propriétaire : une fois par tour, test de Volonté pour annuler une touche subie."
+          },
+          {
+            "nom": "Précognition",
+            "texte": "Sauvegarde de 3+ non modifiable. Sous un gabarit d'Explosion ou de Souffle, touchée seulement sur 4+ au D6."
+          },
+          {
+            "nom": "Symbole de Renom",
+            "texte": "+1 Réputation tant qu'elle accompagne le Chef ; -2 si elle meurt ou part."
+          },
+          {
+            "nom": "Abandon",
+            "texte": "Si le gang perd de la Réputation : D6 moins la perte, sur 1 ou moins elle part (6 naturel : reste)."
+          },
+          {
+            "nom": "Vol",
+            "texte": "Ignore les terrains, change de niveau librement et ne chute jamais."
+          }
+        ]
+      }
+    ]
+  }
+}
