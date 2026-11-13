@@ -197,10 +197,15 @@
         "equipement": "Deux griffes excavatrices ; armure carapace légère (Construction Mécanique)",
         "options": [
           {
-            "nom": "Remplacer 1 griffe excavatrice par un gantelet à gravitons",
+            "nom": "Remplacer 1 griffe excavatrice par un gantelet à gravitons (livre des Gangs)",
             "cout": 70
+          },
+          {
+            "nom": "Même option selon le livre Squats Ironhead",
+            "cout": 90
           }
         ],
+        "note": "Les deux livres donnent un prix différent pour le gantelet à gravitons : à convenir entre joueurs.",
         "regles": [
           {
             "nom": "Infiltration",
@@ -264,7 +269,7 @@
             "cout": 70
           },
           {
-            "nom": "Remplacer 1 poing augmétique par une soudeuse d'assaut (livre Squats Ironhead)",
+            "nom": "Remplacer 1 poing augmétique par une soudeuse d'assaut (livre Squats Ironhead, profil non fourni)",
             "cout": 75
           },
           {
@@ -730,6 +735,7 @@
             "cout": 50
           }
         ],
+        "note": "Sagesse des Anciens : Primaire selon Outreterres, Secondaire selon Squats Ironhead. À convenir entre joueurs.",
         "regles": [
           {
             "nom": "Exo-Armure Sentinelle",
