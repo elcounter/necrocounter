@@ -1394,6 +1394,73 @@
       ]
     },
     {
+      "id": "bolter-lourd-vartijan-exo-foreuse-squat",
+      "nom": "Bolter lourd Vartijan (Exo-Foreuse Squat)",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "18\"",
+          "porL": "36\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "5",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Tir Rapide (3)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "broyeur-sismique-exo-foreuse-squat",
+      "nom": "Broyeur sismique (Exo-Foreuse Squat)",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Commotion",
+            "Sismique",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-flammes-lourd-vartijan-exo-foreuse-squat",
+      "nom": "Lance-flammes lourd Vartijan (Exo-Foreuse Squat)",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Déluge de Feu (1)",
+            "Incendiaire",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
       "id": "arbalete-lourde-cawdor",
       "nom": "Arbalète lourde Cawdor",
       "categorie": "Armes lourdes",
@@ -2149,6 +2216,115 @@
             "Explosion (5\")",
             "Gaz",
             "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crocs-rat-geant-des-desolations",
+      "nom": "Crocs (Rat Géant des Désolations)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dents-lamia",
+      "nom": "Dents (Lamia)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gueule-crochue-centipatte",
+      "nom": "Gueule crochue (Centipatte)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "*",
+          "PA": "-",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mandibules-fouisseur-de-dunes-arthromite",
+      "nom": "Mandibules (Fouisseur de Dunes Arthromite)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poing-vartijan-exo-foreuse-squat",
+      "nom": "Poing Vartijan (Exo-Foreuse Squat)",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Énergétique",
+            "Pulvériser"
           ]
         }
       ]

@@ -93,6 +93,9 @@ Souffle à éruption gazeuse (Khimerix Escher) | - | S | - | - | - | - | - | - |
 Souffle à nuage chimique (Khimerix Escher) | 6" | 12" | +1 | - | 3 | -1 | 1 | - | Explosion (3")
 
 ## Armes lourdes
+Bolter lourd Vartijan (Exo-Foreuse Squat) | 18" | 36" | +1 | - | 5 | -2 | 2 | 5+ | Tir Rapide (3)
+Broyeur sismique (Exo-Foreuse Squat) | - | S | - | - | 2 | - | 1 | 6+ | Commotion, Sismique, Souffle
+Lance-flammes lourd Vartijan (Exo-Foreuse Squat) | - | S | - | - | 5 | -2 | 2 | 5+ | Déluge de Feu (1), Incendiaire, Souffle
 Arbalète lourde Cawdor
 - Frag | 15" | 30" | - | -1 | 4 | - | 1 | 4+ | Contrecoup, Encombrant, Explosion (5")
 - Krak | 15" | 30" | - | -1 | 6 | -2 | 2 | 6+ | Encombrant
@@ -139,6 +142,11 @@ Piège à fusion | - | - | - | - | 8 | -4 | 3 | - | Explosion (5"), Fusion, Usag
 Piège à gaz | - | - | - | - | - | - | - | - | Explosion (5"), Gaz, Usage Unique
 
 ## Armes de corps à corps
+Crocs (Rat Géant des Désolations) | - | E | - | - | F | - | 1 | - | Mêlée
+Dents (Lamia) | - | E | - | - | F | - | 2 | - | Mêlée
+Gueule crochue (Centipatte) | - | E | - | - | * | - | - | - | Mêlée, Toxine
+Mandibules (Fouisseur de Dunes Arthromite) | - | E | - | - | F | -1 | 2 | - | Mêlée, Perforant
+Poing Vartijan (Exo-Foreuse Squat) | - | E | - | - | F | -1 | 2 | - | Mêlée, Énergétique, Pulvériser
 Couteau de combat | - | E | - | - | F | -1 | 1 | - | Coup en Traître, Mêlée
 Couteau énergétique | - | E | - | - | F+1 | -2 | 1 | - | Coup en Traître, Mêlée, Énergétique
 Stylet | - | E | - | - | - | - | - | - | Mêlée, Toxine

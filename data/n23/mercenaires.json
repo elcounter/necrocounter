@@ -714,11 +714,16 @@
             "Tir"
           ]
         },
-        "armes": [],
+        "armes": [
+          "poing-vartijan-exo-foreuse-squat",
+          "lance-flammes-lourd-vartijan-exo-foreuse-squat",
+          "broyeur-sismique-exo-foreuse-squat",
+          "bolter-lourd-vartijan-exo-foreuse-squat"
+        ],
         "competencesDepart": [
           "Personne Ne Bouscule Le Frère"
         ],
-        "equipement": "Poing Vartijan ; lance-flammes lourd Vartijan ; broyeur sismique ; armure carapace légère (profils d'armes à venir)",
+        "equipement": "Poing Vartijan ; lance-flammes lourd Vartijan ; broyeur sismique ; armure carapace légère",
         "options": [
           {
             "nom": "Remplacer le lance-flammes lourd Vartijan par un bolter lourd Vartijan",
@@ -765,12 +770,14 @@
             "Férocité"
           ]
         },
-        "armes": [],
+        "armes": [
+          "mandibules-fouisseur-de-dunes-arthromite"
+        ],
         "competencesDepart": [
           "Effrayant",
           "Nerfs d'Acier"
         ],
-        "equipement": "Mandibules ; armure carapace lourde (profil des mandibules à venir)",
+        "equipement": "Mandibules ; armure carapace lourde",
         "regles": [
           {
             "nom": "Sabordeur de Mur",
@@ -814,7 +821,10 @@
         },
         "armes": [
           "electrosceptre",
-          "fusil-a-canon-scie"
+          "fusil-a-canon-scie",
+          "crocs-rat-geant-des-desolations",
+          "gueule-crochue-centipatte",
+          "dents-lamia"
         ],
         "competencesDepart": [
           "Effrayant",
@@ -835,7 +845,7 @@
             "cout": 70
           }
         ],
-        "note": "Moins de trois Bêtes : peut en acheter d'autres à son recrutement ou au début des Actions d'Après-bataille. Profils des rats, centipattes et lamias à venir.",
+        "note": "Moins de trois Bêtes : peut en acheter d'autres à son recrutement ou au début des Actions d'Après-bataille. Profils complets des rats, centipattes et lamias à venir (armes ci-dessous).",
         "regles": [
           {
             "nom": "Dresseur de Bêtes",
