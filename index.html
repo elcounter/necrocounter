@@ -302,6 +302,20 @@
     .stat span { font: 600 15px var(--display); }
     .stat.d2 { background: rgba(80,150,200,.16); box-shadow: inset 0 0 0 1px rgba(110,170,220,.45); }
     .stat.d2 small, .stat.d2 span { color: #8cc4ec; }
+    .gb-total { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin: 6px 0 12px; padding: 12px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); font: 600 15px var(--display); }
+    .gb-total b { color: var(--amber); font-size: 22px; }
+    .gb-total span { width: 100%; color: var(--muted); font: 400 13px var(--body); }
+    .gb-total.over { border-color: #c45a48; }
+    .gb-total.over b { color: #e07a66; }
+    .gb-warn { margin: 0 0 12px; padding: 10px 12px 10px 4px; border-radius: 10px; border: 1px solid #c45a48; background: rgba(196,90,72,.12); }
+    .gb-warn ul.rules { color: #f0b0a4; }
+    .gb-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 8px; }
+    .gb-chip { display: inline-flex; align-items: center; gap: 4px; padding: 4px 4px 4px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); font-size: 13px; }
+    .gb-chip button { border: 0; background: transparent; color: var(--muted); font-size: 16px; line-height: 1; padding: 2px 6px; cursor: pointer; }
+    select.gb-add { width: 100%; margin: 4px 0; padding: 9px 10px; border-radius: 8px; border: 1px dashed var(--amber-dim); background: var(--bg); color: var(--amber); font: 400 14px var(--body); }
+    .gb-opt { display: flex; gap: 10px; align-items: flex-start; margin: 6px 0; font-size: 14px; }
+    .gb-opt input { margin-top: 3px; accent-color: var(--amber); }
+    textarea.gb-code { display: block; width: 100%; margin-top: 8px; min-height: 80px; padding: 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--text); font: 12px monospace; }
     .legend2d6 { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; color: var(--muted); font-size: 13px; }
     .legend2d6 i { display: inline-block; width: 14px; height: 14px; border-radius: 4px; background: rgba(80,150,200,.16); box-shadow: inset 0 0 0 1px rgba(110,170,220,.45); }
     .note { margin: 8px 0 0; color: var(--muted); font-size: 14px; }
@@ -400,7 +414,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.3.16 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.4.0 Necromunda N23 &amp; N26<br>
       MAJ 13-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -433,7 +447,7 @@
 
     const FEATURES = [
       ["regles", "Règles", "Règles de Necromunda N23 et N26.", '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/>'],
-      ["gangs", "Gangs", "Maisons, combattants, profils et équipement.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
+      ["gangs", "Gangs", "Crée ton gang, consulte les Maisons et les Brutes.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
       ["partie", "Partie", "Suis une partie en cours dans l'underhive.", '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/>']
     ];
 
@@ -573,6 +587,8 @@
       return `<div class="page">
         <h2>Gangs</h2>
         ${editionSwitch("gangs", "n23")}
+        ${myGangsHtml()}
+        <h3 class="h3">Listes des Maisons</h3>
         <p>Choisis une Maison pour voir ses combattants, ses compétences et sa liste d'équipement.</p>
         <div class="houses">${index.maisons.map(m => {
           const on = ACTIVE_HOUSES.includes(m.id);
@@ -1003,6 +1019,7 @@
     }
     function crewEditor(gi, g) {
       return `<div class="panel"><h3 class="sec">${esc(g.name || ("Gang " + (gi + 1)))}</h3><div class="body">
+        ${loadGangs().length ? `<label class="fld"><span>Charger un gang créé</span><select data-load-gang="${gi}"><option value="">Saisie libre</option>${loadGangs().map(x => `<option value="${esc(x.id)}">${esc(x.name)} (${esc(HOUSE_NAMES[x.house] || x.house)})</option>`).join("")}</select></label>` : ""}
         <label class="fld"><span>Nom du gang</span><input data-g="${gi}" data-k="name" value="${esc(g.name)}"></label>
         <label class="fld"><span>Rating (optionnel)</span><input data-g="${gi}" data-k="rating" inputmode="numeric" value="${esc(g.rating)}"></label>
         <p class="hint">Crew (saisie libre)</p>
@@ -1062,6 +1079,12 @@
           const k = inp.getAttribute("data-k");
           if (fi == null) d.gangs[gi][k] = inp.value;
           else d.gangs[gi].crew[+fi][k] = k === "cost" ? (parseInt(inp.value, 10) || 0) : inp.value;
+        });
+      });
+      $("view").querySelectorAll("[data-load-gang]").forEach(sel => {
+        sel.addEventListener("change", () => {
+          if (!sel.value) return;
+          gangForMatch(sel.value).then(g => { if (g) { d.gangs[+sel.getAttribute("data-load-gang")] = g; renderPartie(); } });
         });
       });
       $("view").querySelectorAll("[data-add-f]").forEach(btn => {
@@ -1326,7 +1349,294 @@
     }
 
 
+    // ---- Création de gang N23 (stockage local, import / export) ----
+    const GANG_STORE = "nc_gangs_v1";
+    const GANG_FORMAT = "NecroCounter-gang";
+    const SPECIAL_CAT = "Armes spéciales";
+    function loadGangs() {
+      try { const g = JSON.parse(localStorage.getItem(GANG_STORE) || "[]"); return Array.isArray(g) ? g : []; } catch (e) { return []; }
+    }
+    function saveGangs(list) {
+      try { localStorage.setItem(GANG_STORE, JSON.stringify(list)); } catch (e) {}
+    }
+    function getGang(id) { return loadGangs().find(g => g.id === id) || null; }
+    function putGang(g) {
+      g.updatedAt = new Date().toISOString();
+      const list = loadGangs(); const i = list.findIndex(x => x.id === g.id);
+      if (i >= 0) list[i] = g; else list.unshift(g);
+      saveGangs(list);
+    }
+    function gangData(houseId) {
+      return Promise.all([load("maisons/" + houseId + ".json"), load("armes.json"), load("mercenaires.json")])
+        .then(([house, armes, mercs]) => ({ house, armes, mercs }));
+    }
+    function fighterDef(f, d) {
+      return f.kind === "brute"
+        ? d.mercs.brutes.liste.find(b => b.id === f.type)
+        : d.house.combattants.find(c => c.id === f.type);
+    }
+    function itemDef(id, d) { return d.house.equipement.find(i => i.id === id); }
+    function beteDef(id, d) { return d.mercs.betes.liste.find(b => b.id === id); }
+    function fighterCost(f, d) {
+      const def = fighterDef(f, d);
+      if (!def) return 0;
+      if (f.kind === "brute") return def.cout + (f.options || []).reduce((s, i) => s + ((def.options || [])[i] ? def.options[i].cout : 0), 0);
+      return def.cout + (f.gear || []).reduce((s, id) => s + ((itemDef(id, d) || {}).prix || 0), 0)
+        + (f.betes || []).reduce((s, id) => s + ((beteDef(id, d) || {}).cout || 0), 0);
+    }
+    function gangCost(g, d) { return g.fighters.reduce((s, f) => s + fighterCost(f, d), 0); }
+    function gangWarnings(g, d) {
+      const w = [];
+      const total = gangCost(g, d);
+      if (total > g.budget) w.push(`Budget dépassé de ${total - g.budget} crédits.`);
+      const chefs = g.fighters.filter(f => f.kind !== "brute" && f.type === "chef").length;
+      if (chefs !== 1) w.push(chefs ? "Un gang ne peut avoir qu'un seul Chef." : "Il faut un Chef.");
+      g.fighters.filter(f => f.kind !== "brute" && f.type === "novice").forEach(f => {
+        const big = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && i.prix > 20);
+        if (big.length) w.push(`${f.name || "Novice"} : objet de plus de 20 crédits (${big.map(i => i.nom).join(", ")}).`);
+      });
+      const special = g.fighters.filter(f => f.kind !== "brute" && f.type === "ganger" &&
+        (f.gear || []).some(id => (itemDef(id, d) || {}).categorie === SPECIAL_CAT)).length;
+      if (special > 1) w.push(`À la création, un seul Ganger peut avoir une Arme Spéciale (${special} actuellement).`);
+      const counts = {};
+      g.fighters.forEach(f => {
+        if (f.kind === "brute") counts["b:" + f.type] = (counts["b:" + f.type] || 0) + 1;
+        (f.betes || []).forEach(id => { counts["x:" + id] = (counts["x:" + id] || 0) + 1; });
+      });
+      Object.entries(counts).forEach(([k, n]) => {
+        const def = k[0] === "b" ? d.mercs.brutes.liste.find(b => "b:" + b.id === k) : beteDef(k.slice(2), d);
+        if (def && def.max && n > def.max) w.push(`${def.nom} : ${n} au lieu de ${def.max} maximum.`);
+      });
+      return w;
+    }
+
+    function myGangsHtml() {
+      const list = loadGangs();
+      return `<div class="panel"><h3 class="sec">Mes gangs</h3><div class="body">
+        ${list.length ? `<div class="folds">${list.map(g => `<a class="fcard" href="#gangs/n23/gang/${esc(g.id)}"><span><b>${esc(g.name)}</b><br>
+          <span>${esc(HOUSE_NAMES[g.house] || g.house)} · ${g.fighters.length} combattant${g.fighters.length > 1 ? "s" : ""}</span></span></a>`).join("")}</div>`
+          : `<p class="note" style="margin-top:0">Aucun gang pour l'instant.</p>`}
+        <div class="btn-row" style="margin-top:12px">
+          <a class="btn primary" href="#gangs/n23/creer">Créer un gang</a>
+          <a class="btn ghost" href="#gangs/n23/importer">Importer</a>
+        </div>
+      </div></div>`;
+    }
+
+    function createGangHtml(index) {
+      return `<div class="page">
+        <h2>Créer un gang</h2>
+        <p><span class="badge">Necromunda N23</span></p>
+        <label class="fld"><span>Nom du gang</span><input id="gb-new-name" placeholder="ex. David & Goliath"></label>
+        <label class="fld"><span>Maison</span><select id="gb-new-house">${index.maisons.map(m => `<option value="${esc(m.id)}">Maison ${esc(m.nom)}</option>`).join("")}</select></label>
+        <label class="fld"><span>Budget (crédits)</span><input id="gb-new-budget" inputmode="numeric" value="1000"></label>
+        <button type="button" class="btn primary" id="gb-create">Créer et ajouter les combattants</button>
+      </div>`;
+    }
+
+    function importGangHtml(msg) {
+      return `<div class="page">
+        <h2>Importer un gang</h2>
+        <p class="note" style="margin-top:0">Choisis un fichier exporté depuis NecroCounter, ou colle le code du gang.</p>
+        <label class="fld"><span>Fichier</span><input type="file" id="gb-imp-file" accept=".json,application/json"></label>
+        <label class="fld"><span>Code du gang</span><textarea id="gb-imp-text" rows="6" placeholder="Colle ici le code copié depuis NecroCounter"></textarea></label>
+        <button type="button" class="btn primary" id="gb-imp-btn">Importer</button>
+        ${msg ? `<p class="note">${esc(msg)}</p>` : ""}
+      </div>`;
+    }
+
+    function gearOptions(d, f) {
+      const cats = [];
+      d.house.equipement.forEach(i => { let c = cats.find(x => x.cat === i.categorie); if (!c) cats.push(c = { cat: i.categorie, items: [] }); c.items.push(i); });
+      return `<option value="">+ Ajouter de l'équipement…</option>` + cats.map(c => `<optgroup label="${esc(c.cat)}">${c.items.map(i =>
+        `<option value="${esc(i.id)}"${f.type === "novice" && i.prix > 20 ? " disabled" : ""}>${esc(i.nom)} (${i.prix} cr)</option>`).join("")}</optgroup>`).join("");
+    }
+
+    function fighterEditorHtml(f, fi, d) {
+      const def = fighterDef(f, d);
+      if (!def) return "";
+      const isBrute = f.kind === "brute";
+      const roleLabel = isBrute ? "Brute" : def.role;
+      const betes = d.mercs.betes.liste.filter(b => b.maison === d.house.id);
+      return `<div class="fighter">
+        <div class="fhead"><b>${esc(roleLabel)}</b><span class="cost">${fighterCost(f, d)} cr</span></div>
+        <label class="fld" style="margin:8px 0"><span>Nom</span><input data-gb-name="${fi}" value="${esc(f.name)}" placeholder="${esc(isBrute ? def.nom : def.role)}"></label>
+        ${isBrute ? `<p class="note">${esc(def.nom)} · ${def.cout} cr</p>` : ""}
+        ${statsHtml(def.profil)}
+        ${isBrute ? `<p class="note"><b>Équipement :</b> ${esc(def.equipement || "")}</p>
+          ${(def.options || []).length ? `<p class="note"><b>Options</b></p>${def.options.map((o, oi) => `<label class="gb-opt"><input type="checkbox" data-gb-opt="${fi}:${oi}"${(f.options || []).includes(oi) ? " checked" : ""}>
+            <span>${esc(o.nom)} (${o.cout > 0 ? "+" : ""}${o.cout} cr)</span></label>`).join("")}` : ""}`
+        : `${def.equipementDeDepart.length ? `<p class="note">Inclus : ${esc(def.equipementDeDepart.join(", "))}</p>` : ""}
+          <div class="gb-chips">${(f.gear || []).map((id, gi) => { const it = itemDef(id, d); return it ? `<span class="gb-chip">${esc(it.nom)} · ${it.prix} cr<button type="button" data-gb-ungear="${fi}:${gi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
+          <select class="gb-add" data-gb-gear="${fi}">${gearOptions(d, f)}</select>
+          ${(f.type === "chef" || f.type === "champion") && betes.length ? `
+            <div class="gb-chips">${(f.betes || []).map((id, bi) => { const b = beteDef(id, d); return b ? `<span class="gb-chip">${esc(b.nom)} · ${b.cout} cr<button type="button" data-gb-unbete="${fi}:${bi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
+            <select class="gb-add" data-gb-bete="${fi}"><option value="">+ Ajouter une Bête exotique…</option>${betes.map(b => `<option value="${esc(b.id)}">${esc(b.nom)} (${b.cout} cr, ${esc(b.rarete)})</option>`).join("")}</select>` : ""}`}
+        <div class="btn-row" style="margin-top:10px">
+          <button type="button" class="btn ghost small" data-gb-up="${fi}"${fi === 0 ? " disabled" : ""}>Monter</button>
+          <button type="button" class="btn ghost small" data-gb-dup="${fi}">Dupliquer</button>
+          <button type="button" class="btn ghost small" data-gb-del="${fi}">Retirer</button>
+        </div>
+      </div>`;
+    }
+
+    function gangEditorHtml(g, d) {
+      const total = gangCost(g, d);
+      const warn = gangWarnings(g, d);
+      const brutes = d.mercs.brutes.liste.filter(b => !b.maison || b.maison === d.house.id);
+      return `<div class="page">
+        <h2>${esc(g.name)}</h2>
+        <p><span class="badge">Necromunda N23</span> <span class="badge">Maison ${esc(d.house.nom)}</span></p>
+        <div class="gb-total${total > g.budget ? " over" : ""}"><b>${total}</b> / ${g.budget} crédits<span>Reste ${g.budget - total} cr · ${g.fighters.length} combattant${g.fighters.length > 1 ? "s" : ""}</span></div>
+        ${warn.length ? `<div class="gb-warn"><ul class="rules">${warn.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : (g.fighters.length ? `<p class="note">Aucune erreur détectée sur les règles de création connues.</p>` : "")}
+        <div class="panel"><h3 class="sec">Réglages</h3><div class="body">
+          <label class="fld"><span>Nom du gang</span><input id="gb-name" value="${esc(g.name)}"></label>
+          <label class="fld"><span>Budget (crédits)</span><input id="gb-budget" inputmode="numeric" value="${g.budget}"></label>
+        </div></div>
+        <div class="panel"><h3 class="sec">Combattants</h3><div class="body">
+          ${g.fighters.length ? `<p class="legend2d6"><i></i>Caractéristiques testées sur 2D6 (CD, SF, V, INT)</p>${g.fighters.map((f, fi) => fighterEditorHtml(f, fi, d)).join("")}` : `<p class="note" style="margin-top:0">Commence par recruter ton Chef.</p>`}
+          <label class="fld" style="margin-top:14px"><span>Recruter</span><select id="gb-recruit">
+            <option value="">+ Ajouter un combattant…</option>
+            <optgroup label="Combattants">${d.house.combattants.map(c => `<option value="c:${esc(c.id)}">${esc(c.role)} (${c.cout} cr)</option>`).join("")}</optgroup>
+            <optgroup label="Brutes">${brutes.map(b => `<option value="b:${esc(b.id)}">${esc(b.nom)} (${b.cout} cr)</option>`).join("")}</optgroup>
+          </select></label>
+        </div></div>
+        <div class="panel"><h3 class="sec">Partager</h3><div class="body">
+          <div class="btn-row">
+            <button type="button" class="btn ghost small" id="gb-export-file">Exporter (fichier)</button>
+            <button type="button" class="btn ghost small" id="gb-export-code">Copier le code</button>
+          </div>
+          <p class="note" id="gb-share-msg"></p>
+          <button type="button" class="btn danger" id="gb-delete" style="margin-top:12px">Supprimer ce gang</button>
+        </div></div>
+      </div>`;
+    }
+
+    // Rendu sans passer par « Chargement… » pour garder la position de lecture
+    let gbState = null; // { gang, data }
+    function renderGangEditor() {
+      const y = window.scrollY;
+      $("view").innerHTML = gangEditorHtml(gbState.gang, gbState.data);
+      window.scrollTo(0, y);
+    }
+    function mutateGang(fn) {
+      fn(gbState.gang); putGang(gbState.gang); renderGangEditor();
+    }
+
+    function exportPayload(g) {
+      return { format: GANG_FORMAT, version: 1, edition: "N23", gang: { name: g.name, house: g.house, budget: g.budget, fighters: g.fighters } };
+    }
+    function encodeCode(obj) {
+      return "NC1:" + btoa(unescape(encodeURIComponent(JSON.stringify(obj))));
+    }
+    function decodeCode(txt) {
+      const t = txt.trim();
+      if (t.startsWith("NC1:")) return JSON.parse(decodeURIComponent(escape(atob(t.slice(4).replace(/\s+/g, "")))));
+      return JSON.parse(t);
+    }
+    function importGang(obj) {
+      const src = obj && obj.format === GANG_FORMAT ? obj.gang : null;
+      if (!src || !src.house || !Array.isArray(src.fighters)) throw new Error("Ce n'est pas un gang NecroCounter.");
+      if (!HOUSE_NAMES[src.house]) throw new Error("Maison inconnue : " + src.house);
+      const g = {
+        id: uid(), edition: "N23", name: String(src.name || "Gang importé").slice(0, 80), house: src.house,
+        budget: parseInt(src.budget, 10) || 1000,
+        fighters: src.fighters.filter(f => f && (f.kind === "brute" || f.kind === "combattant")).map(f => ({
+          id: uid(), kind: f.kind, type: String(f.type), name: String(f.name || "").slice(0, 60),
+          gear: Array.isArray(f.gear) ? f.gear.map(String) : [], betes: Array.isArray(f.betes) ? f.betes.map(String) : [],
+          options: Array.isArray(f.options) ? f.options.map(Number).filter(n => n >= 0) : []
+        })),
+        createdAt: new Date().toISOString()
+      };
+      return gangData(g.house).then(d => {
+        const before = g.fighters.length;
+        g.fighters = g.fighters.filter(f => fighterDef(f, d));
+        g.fighters.forEach(f => { f.gear = f.gear.filter(id => itemDef(id, d)); f.betes = f.betes.filter(id => beteDef(id, d)); });
+        putGang(g);
+        return { gang: g, dropped: before - g.fighters.length };
+      });
+    }
+    function downloadFile(name, text) {
+      const blob = new Blob([text], { type: "application/json" });
+      const u = URL.createObjectURL(blob), a = document.createElement("a");
+      a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(u), 1000);
+    }
+    function fileSlug(s) {
+      return (s || "gang").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase() || "gang";
+    }
+
+    document.addEventListener("change", e => {
+      const t = e.target;
+      if (!gbState || !t.closest || !$("view").contains(t)) return;
+      if (t.id === "gb-name") mutateGang(g => { g.name = t.value.trim() || g.name; });
+      else if (t.id === "gb-budget") mutateGang(g => { g.budget = Math.max(0, parseInt(t.value, 10) || 0); });
+      else if (t.id === "gb-recruit" && t.value) {
+        const [k, id] = t.value.split(":");
+        mutateGang(g => g.fighters.push({ id: uid(), kind: k === "b" ? "brute" : "combattant", type: id, name: "", gear: [], betes: [], options: [] }));
+      } else if (t.dataset.gbName != null) {
+        gbState.gang.fighters[+t.dataset.gbName].name = t.value.trim(); putGang(gbState.gang);
+      } else if (t.dataset.gbGear != null && t.value) {
+        mutateGang(g => g.fighters[+t.dataset.gbGear].gear.push(t.value));
+      } else if (t.dataset.gbBete != null && t.value) {
+        mutateGang(g => { const f = g.fighters[+t.dataset.gbBete]; (f.betes = f.betes || []).push(t.value); });
+      } else if (t.dataset.gbOpt != null) {
+        const [fi, oi] = t.dataset.gbOpt.split(":").map(Number);
+        mutateGang(g => { const f = g.fighters[fi]; f.options = f.options || []; f.options = t.checked ? [...f.options, oi] : f.options.filter(x => x !== oi); });
+      }
+    });
+
+    document.addEventListener("click", e => {
+      const t = e.target.closest("button");
+      if (!t) return;
+      if (t.id === "gb-create") {
+        const name = ($("gb-new-name").value || "").trim() || "Mon gang";
+        const g = { id: uid(), edition: "N23", name, house: $("gb-new-house").value, budget: parseInt($("gb-new-budget").value, 10) || 1000, fighters: [], createdAt: new Date().toISOString() };
+        putGang(g); location.hash = "gangs/n23/gang/" + g.id; return;
+      }
+      if (t.id === "gb-imp-btn") {
+        const file = $("gb-imp-file").files[0], txt = $("gb-imp-text").value;
+        const read = file ? file.text() : Promise.resolve(txt);
+        read.then(s => importGang(decodeCode(s)))
+          .then(r => { location.hash = "gangs/n23/gang/" + r.gang.id; })
+          .catch(err => { $("view").innerHTML = importGangHtml("Import impossible : " + (err.message || "format invalide.")); });
+        return;
+      }
+      if (!gbState) return;
+      const g = gbState.gang;
+      const n = (attr) => t.getAttribute(attr);
+      if (n("data-gb-del") != null) mutateGang(x => x.fighters.splice(+n("data-gb-del"), 1));
+      else if (n("data-gb-dup") != null) mutateGang(x => { const f = x.fighters[+n("data-gb-dup")]; x.fighters.splice(+n("data-gb-dup") + 1, 0, { ...JSON.parse(JSON.stringify(f)), id: uid(), name: f.name ? f.name + " bis" : "" }); });
+      else if (n("data-gb-up") != null) mutateGang(x => { const i = +n("data-gb-up"); if (i > 0) [x.fighters[i - 1], x.fighters[i]] = [x.fighters[i], x.fighters[i - 1]]; });
+      else if (n("data-gb-ungear") != null) { const [fi, gi] = n("data-gb-ungear").split(":").map(Number); mutateGang(x => x.fighters[fi].gear.splice(gi, 1)); }
+      else if (n("data-gb-unbete") != null) { const [fi, bi] = n("data-gb-unbete").split(":").map(Number); mutateGang(x => x.fighters[fi].betes.splice(bi, 1)); }
+      else if (t.id === "gb-export-file") downloadFile(fileSlug(g.name) + ".necrocounter.json", JSON.stringify(exportPayload(g), null, 2));
+      else if (t.id === "gb-export-code") {
+        const code = encodeCode(exportPayload(g)), msg = $("gb-share-msg");
+        const done = ok => { msg.textContent = ok ? "Code copié : envoie-le à ton adversaire, il pourra l'importer." : "Copie impossible : sélectionne le code ci-dessous."; if (!ok) msg.innerHTML += `<textarea class="gb-code" readonly>${esc(code)}</textarea>`; };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(() => done(true), () => done(false)); else done(false);
+      } else if (t.id === "gb-delete" && confirm(`Supprimer le gang « ${g.name} » ?`)) {
+        saveGangs(loadGangs().filter(x => x.id !== g.id)); gbState = null; location.hash = "gangs/n23";
+      }
+    });
+
+    // Pour l'onglet Partie : transforme un gang créé en équipe de partie
+    function gangForMatch(id) {
+      const g = getGang(id);
+      if (!g) return Promise.resolve(null);
+      return gangData(g.house).then(d => ({
+        name: g.name, rating: String(gangCost(g, d)),
+        crew: g.fighters.map(f => {
+          const def = fighterDef(f, d);
+          const label = def ? (f.kind === "brute" ? def.nom : def.role) : "Combattant";
+          const pv = def ? parseInt(def.profil.PV, 10) || 1 : 1;
+          return { id: uid(), name: f.name ? `${f.name} (${label})` : label, cost: fighterCost(f, d), wounds: pv, maxWounds: pv, ready: true, status: [] };
+        })
+      }));
+    }
+
     function route() {
+      gbState = null;
       const h = location.hash.slice(1) || "accueil";
       const parts = h.split("/");
       const section = parts[0];
@@ -1345,7 +1655,18 @@
       back.hidden = !(h === "soutenir" || h === "installer" || (section === "gangs" && house));
       const homeBtn = $("home-btn");
       if (homeBtn) homeBtn.hidden = (h === "accueil" || h === "");
-      if (section === "gangs" && edition === "n23" && house && ACTIVE_HOUSES.includes(house)) {
+      if (section === "gangs" && edition === "n23" && house === "creer") {
+        title.textContent = "Gangs";
+        showAsync(view, load("index.json"), createGangHtml);
+      } else if (section === "gangs" && edition === "n23" && house === "importer") {
+        title.textContent = "Gangs";
+        view.innerHTML = importGangHtml();
+      } else if (section === "gangs" && edition === "n23" && house === "gang") {
+        title.textContent = "Gangs";
+        const g = getGang(parts[3]);
+        if (!g) view.innerHTML = `<div class="page"><div class="placeholder">Gang introuvable sur cet appareil.</div></div>`;
+        else showAsync(view, gangData(g.house), d => { gbState = { gang: g, data: d }; return gangEditorHtml(g, d); });
+      } else if (section === "gangs" && edition === "n23" && house && ACTIVE_HOUSES.includes(house)) {
         title.textContent = "Gangs";
         showAsync(view, Promise.all([load("maisons/" + house + ".json"), load("armes.json"), load("mercenaires.json")]), ([data, armes, mercs]) => houseHtml(data, armes, mercs));
       } else if (section === "gangs" && edition === "n23" && house === "mercenaires") {

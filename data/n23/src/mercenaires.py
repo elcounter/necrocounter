@@ -54,7 +54,7 @@ brutes = [
          equipement="Deux griffes excavatrices ; armure carapace légère (Construction Mécanique)",
          options=[("Remplacer 1 griffe excavatrice par un gantelet à gravitons (livre des Gangs)", 70),
                   ("Même option selon le livre Squats Ironhead", 90)],
-         note="Les deux livres donnent un prix différent pour le gantelet à gravitons : à convenir entre joueurs.",
+         note="Les livres divergent : gantelet à gravitons +70 cr (Gangs du Sous-monde p. 88) ou +90 cr (Squats Ironhead p. 70) ; griffe excavatrice (tir) 2\"/4\" Polyvalent (Gangs) ou 4\"/8\" Arme de Poing (Squats p. 114). À convenir entre joueurs.",
          regles=R(("Infiltration", "Mis de côté au déploiement, puis placé avant le 1er round hors de vue et à plus de 6\" de tout ennemi."),
                   ("Régulateurs Crâniens", "Mode Sécurisé désactivable au début d'un round : gagne Berserk et A = D3+1, mais doit répartir ses attaques entre toutes les figurines au contact, amies comprises. Irréversible."),
                   ("Construction Mécanique", "Équipé d'une armure carapace légère."),
