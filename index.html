@@ -401,6 +401,48 @@
     .shop { margin: 0 0 6px; color: var(--muted); font-size: 13px; }
     .shop b { color: var(--amber); font-weight: 600; }
     ul.rules li + li { margin-top: 6px; }
+    /* ---- Compte, profil, carte (compte.js) ---- */
+    .btn-account { margin-top: 10px; background: var(--panel-2); color: var(--rust); border: 2px solid var(--rust); box-shadow: none; }
+    .sup-hero { text-align: center; padding: 6px 4px 14px; }
+    .sup-hero h2 { font: 700 24px/1.1 var(--display); text-transform: uppercase; letter-spacing: .05em; color: var(--amber); margin: 8px 0 10px; }
+    .sup-hero p { margin: 0 0 10px; line-height: 1.5; text-align: left; }
+    .acc { display: grid; gap: 10px; }
+    .acc p { margin: 0; }
+    .acc .hint { padding: 0; font-size: 13px; }
+    .acc input { width: 100%; box-sizing: border-box; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); color: var(--text); font: 16px var(--body); }
+    .acc input[type=checkbox] { width: auto; padding: 0; accent-color: var(--rust); }
+    .acc .lbl { display: block; margin: 4px 0 -4px; font: 600 12px var(--display); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    .acc .btn { width: 100%; }
+    .acc .btn:not(.primary):not(.danger) { background: var(--panel-2); color: var(--rust); border: 2px solid var(--line); }
+    .acc .btn:disabled { opacity: .5; }
+    .acc-msg { margin: 0 0 12px; padding: 10px 12px; border-radius: 8px; background: #e2eadf; color: #2d5c35; font-size: 14px; }
+    .acc-msg.err { background: #f3dcd6; color: #7e2414; }
+    .acc-warn { color: var(--danger); font-weight: 700; }
+    .sup-thanks { text-align: center; margin: 16px 0 0; line-height: 1.5; }
+    .sup-thanks a { color: var(--amber); }
+    .pf-cityw { position: relative; }
+    .pf-sug { display: grid; margin-top: 4px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); overflow: hidden; }
+    .pf-sug[hidden] { display: none; }
+    .pf-sug button { text-align: left; padding: 10px 12px; border: 0; border-top: 1px solid var(--band-2); background: var(--panel-2); color: var(--text); font: 15px var(--body); cursor: pointer; }
+    .pf-sug button:first-child { border-top: 0; }
+    .pf-sug small { color: var(--muted); }
+    .pf-new { margin: 0; padding: 8px 12px; }
+    .pf-facs { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 6px 10px; font-size: 14px; }
+    .pf-facs label { display: flex; align-items: center; gap: 6px; }
+    .pf-vis { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; background: var(--band-2); border-radius: 8px; font-size: 14px; }
+    .pf-vis input { margin-top: 3px; width: 20px; height: 20px; flex: none; }
+    .pf-fold summary { cursor: pointer; list-style: none; display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel-2); }
+    .pf-fold summary::-webkit-details-marker { display: none; }
+    .pf-fold[open] summary { margin-bottom: 10px; }
+    .pf-count { font-size: 14px; }
+    .blk { margin: 0; display: grid; gap: 10px; }
+    .blk dd { margin: 2px 0 0; line-height: 1.45; }
+    .mapw { display: grid; gap: 10px; }
+    .map-total { margin: 0; padding: 12px 16px; border-radius: 10px; background: var(--panel-2); border: 1px solid var(--line); font: 600 16px var(--body); text-align: center; }
+    .map-total b { font: 700 30px var(--display); color: var(--amber); margin-right: 6px; vertical-align: -3px; }
+    .map-total small { display: block; margin-top: 2px; font-weight: 400; font-size: 13px; color: var(--muted); }
+    .map { height: 62vh; min-height: 320px; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); z-index: 0; }
+    .mp { margin-top: 6px; }
       #splash {
       position: fixed; inset: 0; z-index: 9999; display: grid; place-items: center;
       background: var(--rust); transition: opacity .35s ease, visibility .35s ease;
@@ -429,7 +471,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.5.1 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.6.0 Necromunda N23 &amp; N26<br>
       MAJ 13-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -453,6 +495,7 @@
     </div>
   </nav>
 
+  <script src="compte.js"></script>
   <script>
   (function () {
     "use strict";
@@ -517,12 +560,14 @@
         <p>Ton compagnon pour Necromunda.</p>
       </div>
       ${STANDALONE ? "" : `<a class="btn-install" href="#installer">${I(INSTALL_ICON)}<span>Installer l'app</span></a>`}
+      <a class="btn-install btn-account" href="#compte">${I('<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>')}<span>${window.NC_COMPTE && window.NC_COMPTE.connected ? "Mon compte" : "Créer un compte / Se connecter"}</span></a>
       <div class="feat">${FEATURES.map(([id, n, d, svg]) =>
         `<a class="fcard" href="#${id}"><span class="ficon">${I(svg)}</span><span><b>${n}</b><br><span>${d}</span></span></a>`
       ).join("")}</div>
       <div class="feat" style="margin-top:10px">
         <a class="fcard" href="#aide"><span class="ficon">${I('<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M9 7h6"/>')}</span><span><b>Aperçu rapide des règles</b><br><span>Round, actions, blessures, bottle, Side Job</span></span></a>
         <a class="fcard" href="mailto:warcounter@proton.me?subject=%5BNecroCounter%5D%20Retour"><span class="ficon">${I('<path d="M4 4h16v16H4z"/><path d="M4 8l8 5 8-5"/>')}</span><span><b>Signaler un bug / Suggestion</b><br><span>Si tu rencontres un problème, envoie un e-mail</span></span></a>
+        <a class="fcard" href="#carte"><span class="ficon">${I('<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>')}</span><span><b>Carte des joueurs</b><br><span>Trouve des joueurs et des clubs près de chez toi</span></span></a>
         <a class="fcard" href="#soutenir"><span class="ficon">${I('<path d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9z"/>')}</span><span><b>Soutenir le projet</b><br><span>Un don pour l'hébergement et le développement</span></span></a>
       </div>
       <div class="home-extra">
@@ -1663,7 +1708,7 @@
       Object.values(tabs).forEach(id => { const el = $(id); if (el) el.removeAttribute("aria-current"); });
       if (tabs[section]) $(tabs[section]).setAttribute("aria-current", "page");
 
-      back.hidden = !(h === "soutenir" || h === "installer" || (section === "gangs" && house));
+      back.hidden = !(h === "soutenir" || h === "installer" || h === "compte" || h === "carte" || h === "confidentialite" || (section === "gangs" && house));
       const homeBtn = $("home-btn");
       if (homeBtn) homeBtn.hidden = (h === "accueil" || h === "");
       if (section === "gangs" && edition === "n23" && house === "creer") {
@@ -1708,6 +1753,10 @@
         title.textContent = "Règles";
         sessionStorage.setItem("nc_aide_from", "regles");
         showAsync(view, Promise.all([load("armes.json"), load("comptoir.json"), load("refs.json")]), armouryHtml);
+      } else if (h === "compte" || h === "carte" || h === "confidentialite") {
+        title.textContent = { compte: "Mon compte", carte: "Carte des joueurs", confidentialite: "Confidentialité" }[h];
+        if (window.NC_COMPTE) window.NC_COMPTE.open(h);
+        else view.innerHTML = `<div class="page"><div class="placeholder">Compte indisponible : recharge la page.</div></div>`;
       } else if (h === "installer") {
         title.textContent = "Installer";
         view.innerHTML = installHtml();
