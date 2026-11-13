@@ -400,7 +400,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.3.14 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.3.15 Necromunda N23 &amp; N26<br>
       MAJ 13-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -672,6 +672,7 @@
       const price = kind === "bete" && !m.cout ? "Spécial" : m.cout + " cr";
       const weapons = (m.armes || []).map(id => byId[id]).filter(Boolean);
       return `<details class="fold"><summary><span>${head}</span><small>${price}</small></summary><div class="fold-body">
+        ${m.acces ? `<p class="shop">${esc(m.acces)}</p>` : ""}
         ${m.rarete ? `<p class="shop">Disponibilité : <b>${esc(m.rarete)}</b>${m.maison ? " · " + esc(HOUSE_NAMES[m.maison] || m.maison) + " seulement" : " · tout Chef de gang"}</p>` : ""}
         ${kind === "brute" ? `<p class="shop">${m.maison ? esc(HOUSE_NAMES[m.maison] || m.maison) + " seulement" : "Tous les gangs"}</p>` : ""}
         ${statsHtml(m.profil)}
