@@ -483,7 +483,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.6.4 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.6.5 Necromunda N23 &amp; N26<br>
       MAJ 13-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -516,7 +516,7 @@
     const I = d => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${d}</svg>`;
 
     const FEATURES = [
-      ["regles", "Règles", "Règles de Necromunda N23 et N26.", '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/>'],
+      ["regles", "Règles", "Règles de Necromunda N23 (N26 à venir).", '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/><path d="M9 7h6"/>'],
       ["gangs", "Gangs", "Crée ton gang, consulte les Maisons et les Brutes.", '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 0v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>'],
       ["partie", "Partie", "Suis une partie en cours dans l'underhive.", '<rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="15" r="1.2" fill="currentColor"/>']
     ];
@@ -611,7 +611,7 @@
     }
 
     // ---- Éditions : N23 / N26 ----
-    const EDITIONS = { n23: "Necromunda N23", n26: "Necromunda N26" };
+    const EDITIONS = { n23: "Necromunda N23", n26: "N26 · à venir" };
     function storedEdition() {
       try { const e = localStorage.getItem("nc-edition"); return EDITIONS[e] ? e : "n23"; } catch (_) { return "n23"; }
     }
@@ -1117,7 +1117,7 @@
       return `<div class="page">
         <h2>Nouvelle partie</h2>
         <a class="fcard" href="#aide" style="margin-bottom:12px"><span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M9 7h6"/></svg></span><span><b>Aperçu rapide des règles</b><br><span>Round, actions, blessures, bottle, Side Job</span></span></a>
-        <p class="hint">Setup libre — N23 / N26 · escarmouche ou campagne.</p>
+        <p class="hint">Setup libre : N23 (N26 à venir), escarmouche ou campagne.</p>
         <div class="panel"><h3 class="sec">Format</h3><div class="body">
           <label class="fld"><span>Type</span>${seg("format", [["skirmish","Escarmouche"],["campaign","Campagne"]], d.format)}</label>
           <label class="fld"><span>Édition</span>${seg("edition", [["N23","N23"],["N26","N26"]], d.edition)}</label>
