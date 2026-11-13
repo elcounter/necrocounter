@@ -62,7 +62,10 @@ brutes = [
          profil=P('5" 4+ 5+ 5 5 3 4+ 2 7+ 6+ 8+ 9+'), competences=C("Muscle P, Combat S, Férocité S"),
          armes=["poing-augmentique-jotunn-servitor", "soudeuse-a-l-arc-jotunn-servitor"],
          equipement="Deux poings augmétiques",
-         options=[("Remplacer 1 poing augmétique par une soudeuse à l'arc", 70), ("Plates de fourneau", 15)],
+         options=[("Remplacer 1 poing augmétique par une soudeuse à l'arc", 70),
+                  ("Remplacer 1 poing augmétique par une soudeuse d'assaut (livre Squats Ironhead)", 75),
+                  ("Remplacer 1 poing augmétique par une dérouilleuse (livre Squats Ironhead)", -20),
+                  ("Plates de fourneau", 15)],
          regles=R(("Coup d'Boule", "Action Coup de Tête (Élémentaire) si Engagé : 2D6 contre l'Endurance de la cible. Un dé ≥ E : touche F+2, D2. Sinon il subit sa propre Force."),
                   ("Loyal", "Ajoute 2 au lieu de 1 quand il assiste un ami en mêlée."),
                   ("Lourdaud", "Jamais activé dans une Activation de Groupe."))),
@@ -119,6 +122,30 @@ brutes = [
                   ("Construction Mécanique", "Équipée d'une armure carapace légère."),
                   ("Tenue Protectrice Van Saar", "Immunisée aux effets du trait Radiations."),
                   ("Panoplie d'Armes Supérieure", "Deux actions Tirer (Simple) par tour au lieu d'une Tirer (Élémentaire), avec des armes et des cibles différentes possibles."))),
+]
+
+brutes += [
+    dict(id="exo-foreuse-vartijan", nom="Exo-Foreuse Vartijan Squat Ironhead", maison="squats", max=2, cout=250,
+         profil=P('4" 4+ 3+ 4 5 3 5+ 2 7+ 6+ 6+ 7+'), competences=C("Muscle S, Férocité P, Tir S, Sagesse des Anciens P"),
+         armes=[], competencesDepart=["Personne Ne Bouscule Le Frère"],
+         equipement="Poing Vartijan ; lance-flammes lourd Vartijan ; broyeur sismique ; armure carapace légère (profils d'armes à venir)",
+         options=[("Remplacer le lance-flammes lourd Vartijan par un bolter lourd Vartijan", 50)],
+         regles=R(("Exo-Armure Sentinelle", "Peut toujours être déployée comme sentinelle en plus, même au-delà de la taille d'équipe."),
+                  ("Combinaison de Senseurs", "Traite la règle Visibilité (X) comme 3\" plus haute."))),
+    dict(id="fouisseur-de-dunes", nom="Fouisseur de Dunes Arthromite", maison="nomades", max=2, cout=210,
+         profil=P('6" 3+ 5+ 5 5 3 3+ 4 7+ 8+ 8+ 8+'), competences=C("Agilité S, Combat P, Férocité S"),
+         armes=[], competencesDepart=["Effrayant", "Nerfs d'Acier"],
+         equipement="Mandibules ; armure carapace lourde (profil des mandibules à venir)",
+         regles=R(("Sabordeur de Mur", "Ne divise pas la distance verticale en escalade : compte toujours comme une échelle."),
+                  ("Difficile à Tuer", "Sur le tableau des Blessures Persistantes, deux jets ; le joueur choisit le résultat."))),
+    dict(id="belluaire", nom="Belluaire de l'Outreterre", maison=None, max=2, cout=100,
+         profil=P('6" 4+ 4+ 3 3 2 3+ 1 7+ 6+ 7+ 8+'), competences=C("Agilité P, Muscle S, Ruse S, Férocité P"),
+         armes=["electrosceptre", "fusil-a-canon-scie"], competencesDepart=["Effrayant", "+ Esquive (rats), Infiltration (centipattes) ou Réception Féline (lamias)"],
+         equipement="Électrosceptre ; fusil à canon scié (balles & grenaille) ; armure composite",
+         options=[("Rat Géant des Désolations (bête)", 30), ("Centipatte (bête)", 60), ("Lamia (bête)", 70)],
+         note="Moins de trois Bêtes : peut en acheter d'autres à son recrutement ou au début des Actions d'Après-bataille. Profils des rats, centipattes et lamias à venir.",
+         regles=R(("Dresseur de Bêtes", "Ses bêtes restent à 6\" de lui au lieu de 3\"."),
+                  ("Un avec la Bête", "Choisit une spécialité au recrutement (rats, centipattes ou lamias) et n'a que des bêtes de ce type."))),
 ]
 
 betes = [

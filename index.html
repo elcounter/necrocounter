@@ -400,7 +400,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 0.3.12 Necromunda N23 &amp; N26<br>
+      NecroCounter version 0.3.13 Necromunda N23 &amp; N26<br>
       MAJ 13-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -673,19 +673,19 @@
       const weapons = (m.armes || []).map(id => byId[id]).filter(Boolean);
       return `<details class="fold"><summary><span>${head}</span><small>${price}</small></summary><div class="fold-body">
         ${m.rarete ? `<p class="shop">Disponibilité : <b>${esc(m.rarete)}</b>${m.maison ? " · " + esc(HOUSE_NAMES[m.maison] || m.maison) + " seulement" : " · tout Chef de gang"}</p>` : ""}
-        ${kind === "brute" ? `<p class="shop">${m.maison ? "Maison " + esc(HOUSE_NAMES[m.maison] || m.maison) + " seulement" : "Toutes les Maisons"}</p>` : ""}
+        ${kind === "brute" ? `<p class="shop">${m.maison ? esc(HOUSE_NAMES[m.maison] || m.maison) + " seulement" : "Tous les gangs"}</p>` : ""}
         ${statsHtml(m.profil)}
         ${m.equipement ? `<p class="note"><b>Équipement :</b> ${esc(m.equipement)}</p>` : ""}
         ${m.competencesDepart ? `<p class="note"><b>Compétence :</b> ${esc(m.competencesDepart.join(", "))}</p>` : ""}
         ${kind === "aventurier" ? `<p class="note"><b>Compétence :</b> ${m.competences.length ? esc(m.competences.join(", ")) : "Aucune"}</p><p class="note"><b>Effet :</b> ${esc(m.effet)}</p>` : ""}
         ${m.competences && kind !== "aventurier" ? `<p class="note"><b>Compétences accessibles :</b> ${esc(skillLine(m.competences))}</p>` : ""}
-        ${m.options && m.options.length ? `<p class="note"><b>Options</b></p><ul class="rules">${m.options.map(o => `<li>${esc(o.nom)} : ${o.cout ? "+" + o.cout + " cr" : "gratuit"}</li>`).join("")}</ul>` : ""}
+        ${m.options && m.options.length ? `<p class="note"><b>Options</b></p><ul class="rules">${m.options.map(o => `<li>${esc(o.nom)} : ${o.cout ? (o.cout > 0 ? "+" : "") + o.cout + " cr" : "gratuit"}</li>`).join("")}</ul>` : ""}
         ${m.note ? `<p class="note">${esc(m.note)}</p>` : ""}
         ${m.regles ? `<p class="note"><b>Règles spéciales</b></p><ul class="rules">${m.regles.map(r => `<li><b>${esc(r.nom)} :</b> ${esc(r.texte)}</li>`).join("")}</ul>` : ""}
         ${weapons.map(w => `<p class="note"><b>${esc(w.nom)}</b></p>${profileHtml(w)}`).join("")}
       </div></details>`;
     }
-    const HOUSE_NAMES = { cawdor: "Cawdor", delaque: "Delaque", escher: "Escher", goliath: "Goliath", orlock: "Orlock", "van-saar": "Van Saar" };
+    const HOUSE_NAMES = { cawdor: "Maison Cawdor", delaque: "Maison Delaque", escher: "Maison Escher", goliath: "Maison Goliath", orlock: "Maison Orlock", "van-saar": "Maison Van Saar", squats: "Prospecteurs Squats Ironhead", nomades: "Nomades des Désolations de Cendres" };
 
     function mercenariesHtml([d, armes]) {
       const byId = Object.fromEntries(armes.armes.map(a => [a.id, a]));

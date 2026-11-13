@@ -264,6 +264,14 @@
             "cout": 70
           },
           {
+            "nom": "Remplacer 1 poing augmétique par une soudeuse d'assaut (livre Squats Ironhead)",
+            "cout": 75
+          },
+          {
+            "nom": "Remplacer 1 poing augmétique par une dérouilleuse (livre Squats Ironhead)",
+            "cout": -20
+          },
+          {
             "nom": "Plates de fourneau",
             "cout": 15
           }
@@ -673,6 +681,169 @@
           {
             "nom": "Panoplie d'Armes Supérieure",
             "texte": "Deux actions Tirer (Simple) par tour au lieu d'une Tirer (Élémentaire), avec des armes et des cibles différentes possibles."
+          }
+        ]
+      },
+      {
+        "id": "exo-foreuse-vartijan",
+        "nom": "Exo-Foreuse Vartijan Squat Ironhead",
+        "maison": "squats",
+        "max": 2,
+        "cout": 250,
+        "profil": {
+          "M": "4\"",
+          "CC": "4+",
+          "CT": "3+",
+          "F": "4",
+          "E": "5",
+          "PV": "3",
+          "I": "5+",
+          "A": "2",
+          "CD": "7+",
+          "SF": "6+",
+          "V": "6+",
+          "INT": "7+"
+        },
+        "competences": {
+          "primaires": [
+            "Férocité",
+            "Sagesse des Anciens"
+          ],
+          "secondaires": [
+            "Muscle",
+            "Tir"
+          ]
+        },
+        "armes": [],
+        "competencesDepart": [
+          "Personne Ne Bouscule Le Frère"
+        ],
+        "equipement": "Poing Vartijan ; lance-flammes lourd Vartijan ; broyeur sismique ; armure carapace légère (profils d'armes à venir)",
+        "options": [
+          {
+            "nom": "Remplacer le lance-flammes lourd Vartijan par un bolter lourd Vartijan",
+            "cout": 50
+          }
+        ],
+        "regles": [
+          {
+            "nom": "Exo-Armure Sentinelle",
+            "texte": "Peut toujours être déployée comme sentinelle en plus, même au-delà de la taille d'équipe."
+          },
+          {
+            "nom": "Combinaison de Senseurs",
+            "texte": "Traite la règle Visibilité (X) comme 3\" plus haute."
+          }
+        ]
+      },
+      {
+        "id": "fouisseur-de-dunes",
+        "nom": "Fouisseur de Dunes Arthromite",
+        "maison": "nomades",
+        "max": 2,
+        "cout": 210,
+        "profil": {
+          "M": "6\"",
+          "CC": "3+",
+          "CT": "5+",
+          "F": "5",
+          "E": "5",
+          "PV": "3",
+          "I": "3+",
+          "A": "4",
+          "CD": "7+",
+          "SF": "8+",
+          "V": "8+",
+          "INT": "8+"
+        },
+        "competences": {
+          "primaires": [
+            "Combat"
+          ],
+          "secondaires": [
+            "Agilité",
+            "Férocité"
+          ]
+        },
+        "armes": [],
+        "competencesDepart": [
+          "Effrayant",
+          "Nerfs d'Acier"
+        ],
+        "equipement": "Mandibules ; armure carapace lourde (profil des mandibules à venir)",
+        "regles": [
+          {
+            "nom": "Sabordeur de Mur",
+            "texte": "Ne divise pas la distance verticale en escalade : compte toujours comme une échelle."
+          },
+          {
+            "nom": "Difficile à Tuer",
+            "texte": "Sur le tableau des Blessures Persistantes, deux jets ; le joueur choisit le résultat."
+          }
+        ]
+      },
+      {
+        "id": "belluaire",
+        "nom": "Belluaire de l'Outreterre",
+        "maison": null,
+        "max": 2,
+        "cout": 100,
+        "profil": {
+          "M": "6\"",
+          "CC": "4+",
+          "CT": "4+",
+          "F": "3",
+          "E": "3",
+          "PV": "2",
+          "I": "3+",
+          "A": "1",
+          "CD": "7+",
+          "SF": "6+",
+          "V": "7+",
+          "INT": "8+"
+        },
+        "competences": {
+          "primaires": [
+            "Agilité",
+            "Férocité"
+          ],
+          "secondaires": [
+            "Muscle",
+            "Ruse"
+          ]
+        },
+        "armes": [
+          "electrosceptre",
+          "fusil-a-canon-scie"
+        ],
+        "competencesDepart": [
+          "Effrayant",
+          "+ Esquive (rats), Infiltration (centipattes) ou Réception Féline (lamias)"
+        ],
+        "equipement": "Électrosceptre ; fusil à canon scié (balles & grenaille) ; armure composite",
+        "options": [
+          {
+            "nom": "Rat Géant des Désolations (bête)",
+            "cout": 30
+          },
+          {
+            "nom": "Centipatte (bête)",
+            "cout": 60
+          },
+          {
+            "nom": "Lamia (bête)",
+            "cout": 70
+          }
+        ],
+        "note": "Moins de trois Bêtes : peut en acheter d'autres à son recrutement ou au début des Actions d'Après-bataille. Profils des rats, centipattes et lamias à venir.",
+        "regles": [
+          {
+            "nom": "Dresseur de Bêtes",
+            "texte": "Ses bêtes restent à 6\" de lui au lieu de 3\"."
+          },
+          {
+            "nom": "Un avec la Bête",
+            "texte": "Choisit une spécialité au recrutement (rats, centipattes ou lamias) et n'a que des bêtes de ce type."
           }
         ]
       }
