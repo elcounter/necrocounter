@@ -176,7 +176,7 @@
     try { rows = await api("/rest/v1/profiles?select=pseudo,city,lat,lng,club,factions&visible=eq.true&lat=not.is.null&limit=2000", {}, !!sess); }
     catch(e) { failed = true; }
     if (!$("map")) return;
-    const R = rows, by = {};
+    const R = Array.isArray(rows) ? rows : [], by = {};
     R.forEach(r => { const k = r.lat.toFixed(4) + "," + r.lng.toFixed(4); (by[k] = by[k] || {lat:r.lat, lng:r.lng, city:r.city, P:[]}).P.push(r); });
     const clubs = new Set(R.map(r => r.club).filter(Boolean)), nv = Object.keys(by).length;
     $("map-info").innerHTML = failed ? "Joueurs indisponibles : vérifie ta connexion à Internet."
