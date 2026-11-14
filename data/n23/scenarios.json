@@ -255,7 +255,7 @@
       "special": [
         "Horreurs dans l'ombre : un combattant activé à plus de 8\" de tout autre combattant jette un D6. 1 : touche F6 PA-1 D2, s'il est Gravement Blessé il est emporté (Hors de Combat). 2-3 : occupé par une créature, aucune action. 4-5 : une seule action. 6 : rien."
       ],
-      "objectifs": "1 point par ennemi Hors de Combat, 2 points par caisse sécurisée (définition exacte : voir le livre).",
+      "objectifs": "1 point par ennemi Hors de Combat, 2 points par caisse de butin (hors caches de munitions) sur sa dalle de départ et à 3\" ou moins du bord à la fin de la bataille.",
       "fin": "Un gang sans combattant sur la table à la fin d'un round ; l'autre marque D3 points bonus.",
       "victoire": "Le plus de caisses sécurisées. Égalité ou aucune : égalité.",
       "credits": "D6x10 par caisse sécurisée.",
@@ -309,7 +309,7 @@
       "domicile": true,
       "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
       "deploiement": "Standard.",
-      "objectifs": "1 point par ennemi Hors de Combat. L'attaquant tire un objectif (D3) : 1 Traquenard, +1 par Champion et +2 pour le Chef ennemi Hors de Combat. 2 Collet, un ennemi désigné rapporte des points en plus (voir le livre). 3 Pagaille, un attaquant qui a Gravement Blessé un ennemi peut sortir par un petit côté de table et marque 1 point.",
+      "objectifs": "1 point par ennemi Hors de Combat. L'attaquant tire un objectif (D3) : 1 Traquenard, +1 par Champion et +2 pour le Chef ennemi Hors de Combat. 2 Collet, après le déploiement il désigne un ennemi de l'équipe adverse : +1 s'il est mis Hors de Combat, +2 si c'est par un coup de grâce. 3 Pagaille, un attaquant qui a Gravement Blessé un ennemi peut sortir en finissant son activation à 1\" d'un petit côté de table : +1 point, et il compte comme Hors de Combat pour le Cran. Attaquant Dégonflé : plus de points d'objectif.",
       "special": [
         "Le défenseur réussit tous ses tests de Cran (il peut se dégonfler volontairement).",
         "Renforts du défenseur : D3 au début de chaque phase de Fin, à 1\" d'un bord et à plus de 12\" des ennemis."
@@ -336,7 +336,7 @@
       "furtif": true,
       "pitch": "Un gang s'infiltre chez un rival pour mettre un de ses territoires hors d'usage.",
       "terrain": "Le défenseur pose la cible (élément d'au moins 2\", plutôt au centre), puis disposition normale.",
-      "equipes": "Attaquant : Sélection Personnalisée. Défenseur : des sentinelles (voir le livre pour le nombre), le reste en Renforts.",
+      "equipes": "Attaquant : Sélection Personnalisée. Défenseur : sentinelles en Sélection Aléatoire (5) (il peut écarter des combattants avant le tirage), le reste en Renforts.",
       "domicile": true,
       "tactiques": "Attaquant : jusqu'à trois au choix. Défenseur : deux au hasard, utilisables seulement après l'alarme.",
       "deploiement": "Sentinelles n'importe où, puis attaquants à 2\" ou moins de n'importe quel bord.",
@@ -615,17 +615,22 @@
       "deploiement": "Standard. Porte de la crypte au milieu d'un bord hors zones de déploiement, automate minier au centre.",
       "special": [
         "Automate (fuseur, cisaille lourde, carapace légère, jamais Bloqué) : à l'arrêt au départ. Mise en Marche (Simple) à 1\" avec un test d'INT : il rejoint ce gang jusqu'à la phase de Fin.",
-        "Seul l'automate peut ouvrir la crypte : Détruire la Porte (Double) à 1\". Ensuite les combattants peuvent y entrer en sortant de la table."
+        "Seul l'automate peut ouvrir la crypte : Détruire la Porte (Double) à 1\". Ensuite les combattants peuvent y entrer en sortant de la table.",
+        "Arbitré : l'Arbitrator peut contrôler un ou plusieurs automates, déjà en marche ; un combattant au contact qui réussit un test d'INT en prend le contrôle pour un round."
       ],
       "objectifs": "Ouvrir la crypte et y entrer avant l'adversaire.",
-      "victoire": "Voir le livre (page partiellement lisible).",
-      "credits": "Voir le livre.",
+      "victoire": "Le plus de combattants dans la crypte. Égalité ou aucun : égalité.",
+      "credits": "D6x10 par combattant du gang dans la crypte à la fin.",
       "xp": [
-        "Voir le livre."
+        "+1 par combattant ayant joué.",
+        "+1 à chaque combattant entré dans la crypte.",
+        "Scénario Arbitré : +D3 à qui met un automate Hors de Combat."
       ],
       "rep": [
-        "Voir le livre."
-      ]
+        "+1 à chaque gang.",
+        "+D3 au gang qui a le plus de combattants dans la crypte."
+      ],
+      "fin": "Un gang sans combattant sur la table à la fin d'un round (ceux entrés dans la crypte comptent). Gang en fuite : l'adversaire gagne, avec D6x10 crédits en plus par combattant encore sur la table et pas Gravement Blessé."
     },
     {
       "id": "escorte",

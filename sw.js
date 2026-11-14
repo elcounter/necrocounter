@@ -1,5 +1,5 @@
 // NecroCounter service worker
-const VERSION = "necrocounter-1.2.1";
+const VERSION = "necrocounter-1.2.2";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png", "./favicon-32.png", "./compte.js",
   "./data/n23/armes.json", "./data/n23/comptoir.json", "./data/n23/index.json", "./data/n23/maisons/cawdor.json", "./data/n23/maisons/delaque.json", "./data/n23/maisons/escher.json", "./data/n23/maisons/goliath.json", "./data/n23/maisons/orlock.json", "./data/n23/maisons/van-saar.json", "./data/n23/mercenaires.json", "./data/n23/refs.json", "./data/n23/campagne.json", "./data/n23/scenarios.json"];
 
