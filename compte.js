@@ -85,7 +85,7 @@
   window.addEventListener("online", () => { if (sess) sync(false); });
 
   // ---------- Profil joueur (carte communautaire, partagé avec WarCounter et SpearCounter) ----------
-  const FACS = () => ["Maison Cawdor", "Maison Delaque", "Maison Escher", "Maison Goliath", "Maison Orlock", "Maison Van Saar", "Prospecteurs Squats Ironhead", "Nomades des Désolations"];
+  const FACS = () => ["Maison Cawdor", "Maison Delaque", "Maison Escher", "Maison Goliath", "Maison Orlock", "Maison Van Saar", "Prospecteurs Squats Ironhead", "Nomades des Désolations", "Palanite Enforcers", "Culte de Corpse Grinder", "Culte Hilote du Chaos", "Culte Genestealer", "Groupe de Chasse Spyrien", "Venators", "Proscrits du Sous-Monde"];
   let prof = null, profLoaded = false, profCity = null, cityT = null, profClub = null, clubT = null;
   const likeQ = q => q.replace(/[%_*,()\\]/g, " ").trim();
   async function clubSuggest(q){
@@ -188,10 +188,11 @@
     const me = prof && prof.lat ? [prof.lat, prof.lng] : null;
     mapObj = L.map("map", {scrollWheelZoom:true}).setView(me || [46.6, 2.4], me ? 9 : 5);
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {maxZoom:18, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(mapObj);
+    const NG = new Set(FACS());   // gangs Necromunda seulement, pas les factions AoS / Spearhead
     Object.values(by).forEach(g => {
       const n = g.P.length;
       L.circleMarker([g.lat, g.lng], {radius:7 + Math.min(n, 10) * 1.5, color:"#d3bfad", weight:2, fillColor:"#7a3b22", fillOpacity:.85}).addTo(mapObj)
-        .bindPopup(`<b>${esc(g.city || "")}</b> · ${n} joueur${n > 1 ? "s" : ""}<br>` + g.P.map(p => `<div class="mp"><b>${esc(p.pseudo)}</b>${p.club ? ` · ${esc(p.club)}` : ""}${(p.factions || []).length ? `<br><small>${esc(p.factions.join(", "))}</small>` : ""}</div>`).join(""));
+        .bindPopup(`<b>${esc(g.city || "")}</b> · ${n} joueur${n > 1 ? "s" : ""}<br>` + g.P.map(p => { const gg = (p.factions || []).filter(f => NG.has(f)); return `<div class="mp"><b>${esc(p.pseudo)}</b>${p.club ? ` · ${esc(p.club)}` : ""}${gg.length ? `<br><small>${esc(gg.join(", "))}</small>` : ""}</div>`; }).join(""));
     });
     if (!me && R.length) mapObj.fitBounds(L.latLngBounds(R.map(r => [r.lat, r.lng])).pad(.2), {maxZoom:9});
   }
