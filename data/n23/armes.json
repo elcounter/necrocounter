@@ -3107,6 +3107,29 @@
       ]
     },
     {
+      "id": "marteau-a-arc",
+      "nom": "Marteau à arc",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "1\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+3",
+          "PA": "-1",
+          "D": "3",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Polyvalent",
+            "Pulvériser"
+          ]
+        }
+      ]
+    },
+    {
       "id": "paire-de-griffes-dechiqueteuses-malcadon",
       "nom": "Paire de griffes déchiqueteuses Malcadon",
       "categorie": "Armes de corps à corps",
@@ -4476,6 +4499,28 @@
           "Mu": "-",
           "traits": [
             "Incendiaire",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "matraque-energetique",
+      "nom": "Matraque énergétique",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Énergétique",
             "Mêlée"
           ]
         }

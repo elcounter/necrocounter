@@ -20,7 +20,7 @@ SRC = ROOT / "src"
 STATS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"]
 PROFILE = ["porC", "porL", "preC", "preL", "F", "PA", "D", "Mu"]
 SKILL_CATEGORIES = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir",
-                    "Sagesse des Anciens", "Désolations", "Formation Palanite", "Sauvagerie", "Pouvoirs Wyrd du Chaos", "Pouvoirs Wyrd Genestealer"]
+                    "Sagesse des Anciens", "Désolations", "Formation Palanite", "Sauvagerie", "Pouvoirs Wyrd du Chaos", "Pouvoirs Wyrd Genestealer", "Bravade"]
 WARNINGS = []
 
 
@@ -415,9 +415,9 @@ def main():
     write(ROOT / "comptoir.json", {**meta, "objets": comptoir})
     for h in houses:
         hrules = {**rules, **h.pop("creation", {})}
-        hmeta = {**meta, "source": h.pop("source")} if "source" in h else meta
-        write(ROOT / "maisons" / f"{h['id']}.json", {**hmeta, "reglesDeCreation": hrules, **h})
-    write(ROOT / "index.json", {**meta, "maisons": [{"id": h["id"], "nom": h["nom"], **({"titre": h["titre"]} if "titre" in h else {}),
+        hmeta = {**meta, "source": h["source"]} if "source" in h else meta
+        write(ROOT / "maisons" / f"{h['id']}.json", {**hmeta, "reglesDeCreation": hrules, **{k: x for k, x in h.items() if k != "source"}})
+    write(ROOT / "index.json", {**meta, "maisons": [{"id": h["id"], "nom": h["nom"], **({"titre": h["titre"]} if "titre" in h else {}), **({"livre": h["source"].replace(" (version française)", "")} if "source" in h else {}),
                                                     "fichier": f"maisons/{h['id']}.json"}
                                                    for h in houses]})
 

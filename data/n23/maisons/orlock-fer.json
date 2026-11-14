@@ -1,0 +1,1046 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Maison de Fer (version française)",
+  "reglesDeCreation": {
+    "novice": "Recrue et Casseur ne prennent que dans leur propre liste (le Casseur a un propulseur de saut inclus).",
+    "armeSpeciale": "Un Porte-Flingue ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, un seul Porte-Flingue peut être promu Spécialiste : il accède alors à toute sa liste.",
+    "chefEtChampion": "Capitaine de Route, Sergents de Route et Maîtres d'Armes commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "orlock-fer",
+  "nom": "Orlock (Maison de Fer)",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Capitaine de Route",
+      "cout": 105,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "3",
+        "I": "4+",
+        "A": "2",
+        "CD": "4+",
+        "SF": "5+",
+        "V": "5+",
+        "INT": "5+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "champion",
+      "role": "Sergent de Route",
+      "cout": 80,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [],
+      "promotionDepuis": "casseur"
+    },
+    {
+      "id": "maitre",
+      "role": "Maître d'Armes",
+      "cout": 95,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [],
+      "base": "champion",
+      "promotionDepuis": "casseur"
+    },
+    {
+      "id": "casseur",
+      "role": "Casseur",
+      "cout": 55,
+      "profil": {
+        "M": "6\"",
+        "CC": "5+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "8+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": [
+        "Propulseur de saut"
+      ],
+      "base": "novice"
+    },
+    {
+      "id": "ganger",
+      "role": "Porte-Flingue",
+      "cout": 45,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "6+",
+        "SF": "7+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "novice",
+      "role": "Recrue",
+      "cout": 35,
+      "profil": {
+        "M": "6\"",
+        "CC": "5+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "8+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": []
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Férocité",
+        "Autorité",
+        "Savoir"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Tir",
+        "Bravade"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Férocité",
+        "Bravade"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Autorité",
+        "Savoir"
+      ]
+    },
+    "maitre": {
+      "primaires": [
+        "Férocité",
+        "Bravade"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Autorité",
+        "Savoir"
+      ]
+    },
+    "casseur": {
+      "primaires": [
+        "Tir"
+      ],
+      "secondaires": [
+        "Combat",
+        "Savoir"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Muscle",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Tir"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Férocité"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Muscle"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "categorie": "Armes de base",
+      "id": "bolter",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "bolter"
+    },
+    {
+      "nom": "Fusil de combat (salve et nuage de grenaille)",
+      "prix": 55,
+      "categorie": "Armes de base",
+      "id": "fusil-de-combat-salve-et-nuage-de-grenaille",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-de-combat"
+    },
+    {
+      "nom": "Fusil à pompe (balles et grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-et-grenaille",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Bolter de maître",
+      "prix": 70,
+      "categorie": "Armes de base",
+      "id": "bolter-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "bolter"
+    },
+    {
+      "nom": "Fusil à canon scié (grenaille)",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-a-canon-scie-grenaille",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "fusil-a-canon-scie"
+    },
+    {
+      "nom": "Fusil à canon scié (grenaille et balles)",
+      "prix": 25,
+      "categorie": "Armes de base",
+      "id": "fusil-a-canon-scie-grenaille-et-balles",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "fusil-a-canon-scie"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Executioner)",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-executioner",
+      "roles": [
+        "champion",
+        "chef",
+        "maitre"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Inferno)",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-inferno",
+      "roles": [
+        "champion",
+        "chef",
+        "maitre"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil de combat (salve et nuage de grenaille, Maître d'Armes)",
+      "prix": 60,
+      "categorie": "Armes de base",
+      "id": "fusil-de-combat-salve-et-nuage-de-grenaille-maitre-d-armes",
+      "roles": [
+        "maitre"
+      ],
+      "arme": "fusil-de-combat"
+    },
+    {
+      "nom": "Fusil à pompe (balles et grenaille, Maître d'Armes)",
+      "prix": 25,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-et-grenaille-maitre-d-armes",
+      "roles": [
+        "maitre"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet bolter",
+      "prix": 45,
+      "categorie": "Pistolets",
+      "id": "pistolet-bolter",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "pistolet-bolter"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Pistolet bolter de maître",
+      "prix": 55,
+      "categorie": "Pistolets",
+      "id": "pistolet-bolter-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "pistolet-bolter"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-plasma",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef"
+      ],
+      "arme": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "arme": "flingue"
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 165,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-fuseur",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fuseur"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-grenades (Frag))",
+      "prix": 80,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-lance-grenades-frag",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag et Krak)",
+      "prix": 65,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-frag-et-krak",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "fuseur",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-plasma",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-plasma"
+    },
+    {
+      "nom": "Lance-harpon",
+      "prix": 110,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-harpon",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-harpon"
+    },
+    {
+      "nom": "Bolter lourd",
+      "prix": 160,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "bolter-lourd",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "bolter-lourd"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Laser minier",
+      "prix": 125,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "laser-minier",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "laser-minier"
+    },
+    {
+      "nom": "Canon sismique",
+      "prix": 140,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "canon-sismique",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "canon-sismique"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-tronconneuse",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "fleau",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "fleau"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "masse-matraque",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "masse-matraque"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "maitre"
+      ],
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-energetique",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "maitre"
+      ],
+      "arme": "couteau-energetique"
+    },
+    {
+      "nom": "Couteau de combat de maître",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat-de-maitre",
+      "roles": [
+        "champion",
+        "chef",
+        "maitre"
+      ],
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Découpeur laser",
+      "prix": 85,
+      "categorie": "Armes de corps à corps",
+      "id": "decoupeur-laser",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "decoupeur-laser"
+    },
+    {
+      "nom": "Matraque énergétique",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "matraque-energetique",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "matraque-energetique"
+    },
+    {
+      "nom": "Pioche énergétique",
+      "prix": 40,
+      "categorie": "Armes de corps à corps",
+      "id": "pioche-energetique",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "pioche-energetique"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "servopince",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "servopince"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Marteau à arc",
+      "prix": 70,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-arc",
+      "roles": [
+        "maitre"
+      ],
+      "arme": "marteau-a-arc"
+    },
+    {
+      "nom": "Marteau à arc de maître",
+      "prix": 85,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-arc-de-maitre",
+      "roles": [
+        "maitre"
+      ],
+      "arme": "marteau-a-arc"
+    },
+    {
+      "nom": "Marteau à deux mains de maître",
+      "prix": 45,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-deux-mains-de-maitre",
+      "roles": [
+        "maitre"
+      ],
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Couteau de combat (10 cr)",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat-10-cr",
+      "roles": [
+        "casseur",
+        "novice"
+      ],
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "charges-explosives",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "maitre",
+        "novice"
+      ],
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Charges de démolition",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "charges-de-demolition",
+      "arme": "charges-de-demolition"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Bombes à fusion",
+      "prix": 60,
+      "categorie": "Grenades",
+      "id": "bombes-a-fusion",
+      "roles": [
+        "casseur",
+        "champion",
+        "chef",
+        "maitre"
+      ],
+      "arme": "bombes-a-fusion"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-aveuglantes",
+      "roles": [
+        "champion",
+        "chef",
+        "maitre"
+      ],
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-cauchemar",
+      "roles": [
+        "champion",
+        "chef",
+        "maitre"
+      ],
+      "arme": "grenades-cauchemar"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "roles": [
+        "champion",
+        "chef",
+        "maitre"
+      ],
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Armure carapace légère",
+      "prix": 80,
+      "categorie": "Armures",
+      "id": "armure-carapace-legere",
+      "roles": [
+        "champion",
+        "chef",
+        "maitre"
+      ]
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "maitre",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Armure carapace lourde",
+      "prix": 100,
+      "categorie": "Armures",
+      "id": "armure-carapace-lourde",
+      "roles": [
+        "maitre"
+      ]
+    },
+    {
+      "nom": "Combinaison NBC",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "combinaison-nbc",
+      "roles": [
+        "casseur",
+        "ganger",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "maitre"
+      ]
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Servo-harnais partiel",
+      "prix": 130,
+      "categorie": "Équipement personnel",
+      "id": "servo-harnais-partiel",
+      "roles": [
+        "chef",
+        "maitre"
+      ]
+    },
+    {
+      "nom": "Sous-combinaison renforcée",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "sous-combinaison-renforcee",
+      "roles": [
+        "maitre"
+      ]
+    },
+    {
+      "nom": "Servo-harnais intégral",
+      "prix": 160,
+      "categorie": "Équipement personnel",
+      "id": "servo-harnais-integral",
+      "roles": [
+        "maitre"
+      ]
+    },
+    {
+      "nom": "Suspenseur",
+      "prix": 60,
+      "categorie": "Accessoires d'armes",
+      "id": "suspenseur",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-telescopique",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "maitre"
+      ]
+    },
+    {
+      "nom": "Cyber-mastiff (0-3)",
+      "prix": 100,
+      "categorie": "Bêtes exotiques",
+      "id": "cyber-mastiff-0-3",
+      "roles": [
+        "chef"
+      ]
+    },
+    {
+      "nom": "Cyber-mastiff (0-2)",
+      "prix": 100,
+      "categorie": "Bêtes exotiques",
+      "id": "cyber-mastiff-0-2",
+      "roles": [
+        "champion",
+        "maitre"
+      ]
+    },
+    {
+      "nom": "Champ de conversion",
+      "prix": 60,
+      "categorie": "Champs protecteurs",
+      "id": "champ-de-conversion",
+      "roles": [
+        "maitre"
+      ]
+    },
+    {
+      "nom": "Balles dum-dum (flingue) (5 cr)",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "balles-dum-dum-flingue-5-cr",
+      "roles": [
+        "champion",
+        "chef",
+        "casseur",
+        "ganger",
+        "maitre",
+        "novice"
+      ]
+    }
+  ],
+  "titre": "Orlock (Maison de Fer)",
+  "gangerArmes": [
+    "Armes de base",
+    "Pistolets",
+    "Armes de corps à corps"
+  ],
+  "regles": [
+    {
+      "nom": "Liste Maison de Fer",
+      "texte": "Version de la liste Orlock parue dans Maison de Fer, avec ses propres types de combattants. L'ancienne liste Orlock du Livre de règles reste disponible à côté."
+    },
+    {
+      "nom": "Chef de gang",
+      "texte": "Un seul Capitaine de Route, qui ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu."
+    },
+    {
+      "nom": "Hiérarchie du gang",
+      "texte": "Une fois le gang Dégonflé, si le Capitaine réussit son test de Sang-froid en phase de Fin, les Orlock à 12\" ou moins réussissent automatiquement le leur (6\" pour un Sergent ou un Maître d'Armes). Ces trois rangs font des actions d'après-bataille."
+    },
+    {
+      "nom": "Activation de groupe",
+      "texte": "Le Capitaine peut activer à sa suite 2 Orlock Parés à 3\" ou moins, un Sergent ou un Maître d'Armes 1."
+    },
+    {
+      "nom": "Les Ficelles du Métier",
+      "texte": "Capitaine, Sergents, Maîtres d'Armes, Casseurs et Spécialistes peuvent avoir plusieurs panoplies."
+    },
+    {
+      "nom": "La Règle de fer (Maître d'Armes)",
+      "texte": "À son activation, un Orlock allié visible à 6\" ou moins gagne Nerfs d'acier jusqu'à la fin du tour. Tant qu'un Maître d'Armes est sur la table, -2 aux tests de Cran du gang."
+    },
+    {
+      "nom": "Combattants du gang",
+      "texte": "Porte-Flingues, Recrues et Casseurs doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires)."
+    },
+    {
+      "nom": "Casseur",
+      "texte": "Propulseur de saut inclus (+3\" en mode sûr, ou +D3+3\" avec risque sur un 1 naturel ; bonus en Charge). Tête brûlée et Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Sergent de Route ou Maître d'Armes."
+    },
+    {
+      "nom": "Recrue",
+      "texte": "Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, elle peut devenir Spécialiste."
+    },
+    {
+      "nom": "Armes de maître",
+      "texte": "Les versions « de maître » coûtent plus cher et ont le trait Facture de maître."
+    }
+  ]
+}

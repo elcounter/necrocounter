@@ -520,7 +520,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.10.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.11.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -667,7 +667,7 @@
 
     // ---- Données Necromunda N23 ----
     const DATA = "data/n23/";
-    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats", "nomades", "venators", "enforcers", "corpse-grinder", "culte-chaos", "culte-genestealer", "proscrits", "spyriens"];
+    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats", "nomades", "venators", "enforcers", "corpse-grinder", "culte-chaos", "culte-genestealer", "proscrits", "spyriens", "orlock-fer"];
     const houseTitle = h => h.titre || "Maison " + h.nom;
     function rb(f, h) {
       if (f.kind === "brute") return "brute";
@@ -706,7 +706,7 @@
         <div class="houses">${index.maisons.map(m => {
           const on = ACTIVE_HOUSES.includes(m.id);
           return `<a class="fcard${on ? "" : " off"}" href="#gangs/n23/${esc(m.id)}"${on ? "" : ' aria-disabled="true" tabindex="-1"'}>
-            <span><b>${esc(houseTitle(m))}</b><br><span>${on ? (m.titre ? "Outreterres" : "Listes de gang N23") : "Bientôt disponible"}</span></span></a>`;
+            <span><b>${esc(houseTitle(m))}</b><br><span>${on ? (m.livre || "Listes de gang N23") : "Bientôt disponible"}</span></span></a>`;
         }).join("")}
           <a class="fcard" href="#gangs/n23/mercenaires"><span><b>Aventuriers, Brutes et Bêtes exotiques</b><br><span>Recrues spéciales de toutes les Maisons</span></span></a>
         </div>
@@ -779,7 +779,7 @@
       const r = h.reglesDeCreation;
       return `<div class="page">
         <h2>${esc(houseTitle(h))}</h2>
-        <p><span class="badge">Necromunda N23</span>${h.titre ? ` <span class="badge">Outreterres</span>` : ""}</p>
+        <p><span class="badge">Necromunda N23</span>${h.source && h.titre ? ` <span class="badge">${esc(h.source.replace(" (version française)", ""))}</span>` : ""}</p>
         <div class="panel"><h3 class="sec">Combattants</h3><div class="body"><p class="legend2d6"><i></i>Caractéristiques testées sur 2D6 (CD, SF, V, INT)</p>${fightersHtml(h)}</div></div>
         <div class="panel"><h3 class="sec">Compétences accessibles</h3><div class="body">${skillsHtml(h)}</div></div>
         <div class="panel"><h3 class="sec">Règles de création</h3><div class="body"><ul class="rules">
@@ -818,7 +818,7 @@
         ${weapons.map(w => `<p class="note"><b>${esc(w.nom)}</b></p>${profileHtml(w)}`).join("")}
       </div></details>`;
     }
-    const HOUSE_NAMES = { cawdor: "Maison Cawdor", delaque: "Maison Delaque", escher: "Maison Escher", goliath: "Maison Goliath", orlock: "Maison Orlock", "van-saar": "Maison Van Saar", squats: "Prospecteurs Squats Ironhead", nomades: "Nomades des Désolations de Cendres", venators: "Venators", enforcers: "Palanite Enforcers", "corpse-grinder": "Culte de Corpse Grinder", "culte-chaos": "Culte Hilote du Chaos", "culte-genestealer": "Culte Genestealer", proscrits: "Proscrits du Sous-Monde", spyriens: "Groupe de Chasse Spyrien" };
+    const HOUSE_NAMES = { cawdor: "Maison Cawdor", delaque: "Maison Delaque", escher: "Maison Escher", goliath: "Maison Goliath", orlock: "Maison Orlock", "van-saar": "Maison Van Saar", squats: "Prospecteurs Squats Ironhead", nomades: "Nomades des Désolations de Cendres", venators: "Venators", enforcers: "Palanite Enforcers", "corpse-grinder": "Culte de Corpse Grinder", "culte-chaos": "Culte Hilote du Chaos", "culte-genestealer": "Culte Genestealer", proscrits: "Proscrits du Sous-Monde", spyriens: "Groupe de Chasse Spyrien", "orlock-fer": "Orlock (Maison de Fer)" };
 
     function mercenariesHtml([d, armes]) {
       const byId = Object.fromEntries(armes.armes.map(a => [a.id, a]));

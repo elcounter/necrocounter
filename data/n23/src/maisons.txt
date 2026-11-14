@@ -870,3 +870,144 @@ Solvant à toile | 25
 Chimiosynth | 15
 ## Bêtes exotiques
 Caryatide Prime (0-1) | 90
+
+= Orlock (Maison de Fer) => orlock-fer
+source: Maison de Fer (version française)
+creation: novice | Recrue et Casseur ne prennent que dans leur propre liste (le Casseur a un propulseur de saut inclus).
+creation: armeSpeciale | Un Porte-Flingue ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, un seul Porte-Flingue peut être promu Spécialiste : il accède alors à toute sa liste.
+creation: chefEtChampion | Capitaine de Route, Sergents de Route et Maîtres d'Armes commencent avec une compétence gratuite de leurs sets Primaires.
+gangerArmes: Armes de base, Pistolets, Armes de corps à corps
+regle: Liste Maison de Fer | Version de la liste Orlock parue dans Maison de Fer, avec ses propres types de combattants. L'ancienne liste Orlock du Livre de règles reste disponible à côté.
+regle: Chef de gang | Un seul Capitaine de Route, qui ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu.
+regle: Hiérarchie du gang | Une fois le gang Dégonflé, si le Capitaine réussit son test de Sang-froid en phase de Fin, les Orlock à 12" ou moins réussissent automatiquement le leur (6" pour un Sergent ou un Maître d'Armes). Ces trois rangs font des actions d'après-bataille.
+regle: Activation de groupe | Le Capitaine peut activer à sa suite 2 Orlock Parés à 3" ou moins, un Sergent ou un Maître d'Armes 1.
+regle: Les Ficelles du Métier | Capitaine, Sergents, Maîtres d'Armes, Casseurs et Spécialistes peuvent avoir plusieurs panoplies.
+regle: La Règle de fer (Maître d'Armes) | À son activation, un Orlock allié visible à 6" ou moins gagne Nerfs d'acier jusqu'à la fin du tour. Tant qu'un Maître d'Armes est sur la table, -2 aux tests de Cran du gang.
+regle: Combattants du gang | Porte-Flingues, Recrues et Casseurs doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires).
+regle: Casseur | Propulseur de saut inclus (+3" en mode sûr, ou +D3+3" avec risque sur un 1 naturel ; bonus en Charge). Tête brûlée et Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Sergent de Route ou Maître d'Armes.
+regle: Recrue | Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, elle peut devenir Spécialiste.
+regle: Armes de maître | Les versions « de maître » coûtent plus cher et ont le trait Facture de maître.
+combattant: Capitaine de Route => Chef | 105 | 5" 3+ 3+ 3 3 3 4+ 2 4+ 5+ 5+ 5+ |
+combattant: Sergent de Route => champion::casseur | 80 | 5" 4+ 3+ 3 3 2 4+ 2 5+ 6+ 6+ 6+ |
+combattant: Maître d'Armes => maitre:champion:casseur | 95 | 5" 3+ 3+ 3 3 2 4+ 2 5+ 6+ 6+ 6+ |
+combattant: Casseur => casseur:novice | 55 | 6" 5+ 4+ 3 3 1 3+ 1 9+ 8+ 8+ 8+ | Propulseur de saut
+combattant: Porte-Flingue => Ganger | 45 | 5" 4+ 4+ 3 3 1 4+ 1 6+ 7+ 7+ 7+ |
+combattant: Recrue => Novice | 35 | 6" 5+ 5+ 3 3 1 3+ 1 7+ 8+ 8+ 8+ |
+competences: Chef | Muscle S, Férocité P, Autorité P, Savoir P, Tir S, Bravade S
+competences: Champion | Muscle S, Férocité P, Autorité S, Savoir S, Bravade P
+competences: Maitre | Muscle S, Férocité P, Autorité S, Savoir S, Bravade P
+competences: Casseur | Combat S, Savoir S, Tir P
+competences: Spécialiste | Muscle P, Combat S, Férocité P, Tir S
+competences: Novice | Agilité S, Muscle S, Férocité P
+## Armes de base [champion, chef, ganger]
+Fusil d'assaut | 15
+Bolter | 55
+Fusil de combat (salve et nuage de grenaille) | 55
+Fusil à pompe (balles et grenaille) | 30
+## Armes de base [champion, chef]
+Bolter de maître | 70
+## Armes de base [casseur, champion, chef, ganger, novice]
+Fusil à canon scié (grenaille) | 15
+Fusil à canon scié (grenaille et balles) | 25
+## Armes de base [champion, chef, maitre]
+Fusil à pompe (munitions Executioner) | 20
+Fusil à pompe (munitions Inferno) | 15
+## Armes de base [maitre]
+Fusil de combat (salve et nuage de grenaille, Maître d'Armes) | 60
+Fusil à pompe (balles et grenaille, Maître d'Armes) | 25
+## Pistolets [casseur, champion, chef, ganger, novice]
+Pistolet-mitrailleur | 10
+## Pistolets [casseur, champion, chef, ganger]
+Pistolet bolter | 45
+Lance-flammes léger | 75
+## Pistolets [champion, chef]
+Pistolet bolter de maître | 55
+## Pistolets [casseur, champion, chef]
+Pistolet à plasma | 50
+## Pistolets
+Flingue | 5
+## Armes spéciales [champion, chef]
+Arme combinée (bolter/fuseur) | 165
+Arme combinée (bolter/lance-grenades (Frag)) | 80
+## Armes spéciales [champion, chef, ganger]
+Lance-flammes | 140
+Lance-grenades (grenades Frag et Krak) | 65
+Fuseur | 135
+Fusil à plasma | 100
+## Armes lourdes [champion, chef, ganger]
+Lance-harpon* | 110
+Bolter lourd* | 160
+Lance-flammes lourd* | 195
+Mitrailleuse* | 130
+## Armes lourdes [champion, chef]
+Laser minier* | 125
+Canon sismique* | 140
+## Armes de corps à corps [casseur, champion, chef, ganger, novice]
+Épée tronçonneuse | 25
+Fléau | 20
+Masse (matraque) | 10
+## Armes de corps à corps [champion, chef, ganger, maitre]
+Couteau de combat | 15
+Couteau énergétique | 25
+## Armes de corps à corps [champion, chef, maitre]
+Couteau de combat de maître | 20
+## Armes de corps à corps [champion, chef]
+Découpeur laser | 85
+Matraque énergétique | 30
+Pioche énergétique | 40
+## Armes de corps à corps [casseur, champion, chef, ganger]
+Servopince | 30
+## Armes de corps à corps
+Marteau à deux mains* | 35
+## Armes de corps à corps [maitre]
+Marteau à arc* | 70
+Marteau à arc de maître* | 85
+Marteau à deux mains de maître* | 45
+## Armes de corps à corps [casseur, novice]
+Couteau de combat (10 cr) | 10
+## Grenades [champion, chef, ganger, maitre, novice]
+Charges explosives | 30
+## Grenades
+Charges de démolition | 45
+Grenades Frag | 30
+Grenades Krak | 45
+## Grenades [casseur, champion, chef, maitre]
+Bombes à fusion | 60
+## Grenades [champion, chef, maitre]
+Grenades aveuglantes | 15
+Grenades cauchemar | 45
+Grenades fumigènes | 15
+## Armures [champion, chef, maitre]
+Armure carapace légère | 80
+## Armures
+Armure Flak | 10
+## Armures [champion, chef, ganger, maitre, novice]
+Armure composite | 15
+## Armures [maitre]
+Armure carapace lourde | 100
+## Armures [casseur, ganger, novice]
+Combinaison NBC | 10
+## Équipement personnel [champion, chef, ganger, maitre]
+Bio-booster | 35
+## Équipement personnel
+Filin | 10
+Filtre nasal | 10
+Photolunettes | 35
+Respirateur | 15
+## Équipement personnel [chef, maitre]
+Servo-harnais partiel | 130
+## Équipement personnel [maitre]
+Sous-combinaison renforcée | 25
+Servo-harnais intégral | 160
+## Accessoires d'armes [champion, chef, ganger]
+Suspenseur | 60
+## Accessoires d'armes [champion, chef, ganger, maitre]
+Lunette télescopique' | 25
+## Bêtes exotiques [chef]
+Cyber-mastiff (0-3) | 100
+## Bêtes exotiques [champion, maitre]
+Cyber-mastiff (0-2) | 100
+## Champs protecteurs [maitre]
+Champ de conversion | 60
+## Équipement personnel [champion, chef, casseur, ganger, maitre, novice]
+Balles dum-dum (flingue) (5 cr) | 5

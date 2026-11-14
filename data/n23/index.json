@@ -36,54 +36,70 @@
       "id": "squats",
       "nom": "Prospecteurs Squats Ironhead",
       "titre": "Prospecteurs Squats Ironhead",
+      "livre": "Livre des Outreterres",
       "fichier": "maisons/squats.json"
     },
     {
       "id": "nomades",
       "nom": "Nomades des Désolations de Cendres",
       "titre": "Nomades des Désolations de Cendres",
+      "livre": "Livre des Outreterres",
       "fichier": "maisons/nomades.json"
     },
     {
       "id": "enforcers",
       "nom": "Palanite Enforcers",
       "titre": "Palanite Enforcers",
+      "livre": "Livre du Jugement",
       "fichier": "maisons/enforcers.json"
     },
     {
       "id": "corpse-grinder",
       "nom": "Culte de Corpse Grinder",
       "titre": "Culte de Corpse Grinder",
+      "livre": "Livre des Ruines",
       "fichier": "maisons/corpse-grinder.json"
     },
     {
       "id": "culte-chaos",
       "nom": "Culte Hilote du Chaos",
       "titre": "Culte Hilote du Chaos",
+      "livre": "Livre des Ruines",
       "fichier": "maisons/culte-chaos.json"
     },
     {
       "id": "culte-genestealer",
       "nom": "Culte Genestealer",
       "titre": "Culte Genestealer",
+      "livre": "Livre des Ruines",
       "fichier": "maisons/culte-genestealer.json"
     },
     {
       "id": "spyriens",
       "nom": "Groupe de Chasse Spyrien",
       "titre": "Groupe de Chasse Spyrien",
+      "livre": "Livre de la Désolation",
       "fichier": "maisons/spyriens.json"
+    },
+    {
+      "id": "orlock-fer",
+      "nom": "Orlock (Maison de Fer)",
+      "titre": "Orlock (Maison de Fer)",
+      "livre": "Maison de Fer",
+      "fichier": "maisons/orlock-fer.json"
     },
     {
       "id": "venators",
       "nom": "Venators",
       "titre": "Venators (chasseurs de primes)",
+      "livre": "Livre des Périls",
       "fichier": "maisons/venators.json"
     },
     {
       "id": "proscrits",
       "nom": "Proscrits",
       "titre": "Proscrits du Sous-Monde",
+      "livre": "Livre des Proscrits",
       "fichier": "maisons/proscrits.json"
     }
   ]

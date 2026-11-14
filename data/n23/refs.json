@@ -615,6 +615,32 @@
         "nom": "Télékinésie : Décharge de force",
         "resume": "(Culte Genestealer, Élémentaire) Les ennemis à 3\" sont repoussés de D3+1\". Bord de plateforme : test d'Initiative ou chute. Contre un mur : Bloqué et touche de Force égale à la distance."
       }
+    ],
+    "Bravade": [
+      {
+        "nom": "Grand frère",
+        "resume": "(Orlock) Debout et Actif : les combattants du gang (règle Combattant du gang) à 9\" et en vue utilisent son Sang-froid pour leurs tests de Nervosité."
+      },
+      {
+        "nom": "Amène-toi !",
+        "resume": "(Orlock) Action Lancer un défi (Élémentaire) : un ennemi à 12\" doit réussir un test de Volonté pour attaquer quelqu'un d'autre que lui, jusqu'à la fin du tour ou jusqu'à ce qu'un allié l'attaque."
+      },
+      {
+        "nom": "Contacts de la Guilde",
+        "resume": "(Orlock) Chaque Chasseur de primes et Rebut de la Ruche engagé coûte D6x10 crédits de moins (minimum 20)."
+      },
+      {
+        "nom": "Coup dévastateur",
+        "resume": "(Orlock) En attaque désarmée, il peut ne jeter qu'un dé d'Attaque : l'attaque gagne Contrecoup, Choc, Pulvériser et Commotion."
+      },
+      {
+        "nom": "Spécialiste du pompe",
+        "resume": "(Orlock) Avec tout fusil à pompe, il peut utiliser le bonus de Précision Courte portée à Longue portée, et jette deux D6 en gardant le meilleur pour le nombre de touches d'une arme à Mitraille."
+      },
+      {
+        "nom": "Mains sûres",
+        "resume": "(Orlock) À son activation, une action Recharger (Simple) gratuite avant sa première action."
+      }
     ]
   },
   "statuts": [

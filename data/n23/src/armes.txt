@@ -190,6 +190,7 @@ Piège à fusion | - | - | - | - | 8 | -4 | 3 | - | Explosion (5"), Fusion, Usag
 Piège à gaz | - | - | - | - | - | - | - | - | Explosion (5"), Gaz, Usage Unique
 
 ## Armes de corps à corps
+Marteau à arc | E | 1" | - | - | F+3 | -1 | 3 | - | Mêlée, Polyvalent, Pulvériser
 Paire de griffes déchiqueteuses Malcadon | E | E | - | - | F | -2 | 1 | - | Couplé, Mêlée
 Paire de fouets à toxine Malcadon | - | 2" | - | -1 | - | -2 | - | - | Couplé, Empêtrement, Mêlée, Polyvalent, Toxine
 Épée monomoléculaire | - | E | - | - | F+1 | -2 | 1 | - | Énergétique, Mêlée, Parade
@@ -256,6 +257,7 @@ Servopince | - | E | - | - | F+2 | - | 2 | - | Mêlée
 Soudeuse à l'arc ("Jotunn" Servitor) | - | E | - | - | F+2 | -3 | 3 | - | Incendiaire, Mêlée
 
 ## Armes à énergie/choc
+Matraque énergétique | - | E | - | - | F+2 | -1 | 1 | - | Énergétique, Mêlée
 Gantelet énergétique | - | E | - | - | F+2 | -2 | 2 | - | Mêlée, Énergétique, Pulvériser
 Bouclier d'énergie modèle "Hystrar" | - | E | - | - | F | - | 1 | - | Bouclier à énergie, Contrecoup, Mêlée
 Découpeur laser | E | 2" | +1 | - | 9 | -3 | 2 | 6+ | Mêlée, Rareté, Polyvalent
