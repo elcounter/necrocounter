@@ -1,784 +1,950 @@
 {
-  "edition": "N23",
-  "source": "Livre de règles Necromunda, Champ de bataille et scénarios (p.116-145) et scénarios d'Arbitrator (p.160-183). Résumé, vérifie le livre en cas de doute.",
-  "tirage": [
-    {
-      "de": 2,
-      "a": 3,
-      "texte": "Le gang qui a le plus de Territoires choisit le scénario."
-    },
-    {
-      "de": 4,
-      "a": 5,
-      "texte": "Querelle Frontalière (Sector Mechanicus) ou Les Maraudeurs (Zone Mortalis).",
-      "ids": [
-        "querelle-frontaliere",
-        "les-maraudeurs"
-      ]
-    },
-    {
-      "de": 6,
-      "a": 7,
-      "texte": "Empoignade (Sector Mechanicus) ou Rixe en Sous-sol (Zone Mortalis).",
-      "ids": [
-        "empoignade",
-        "rixe-en-sous-sol"
-      ]
-    },
-    {
-      "de": 8,
-      "a": 9,
-      "texte": "Sabotage (Sector Mechanicus) ou Attaque Furtive (Zone Mortalis).",
-      "ids": [
-        "sabotage",
-        "attaque-furtive"
-      ]
-    },
-    {
-      "de": 10,
-      "a": 12,
-      "texte": "Le gang qui a le moins de Territoires choisit le scénario."
-    }
-  ],
-  "regles": [
-    {
-      "nom": "Champ de bataille Sector Mechanicus",
-      "resume": "Environ 48\" x 48\". Le défenseur (sinon le gagnant d'un tir au dé) commence : chacun pose à tour de rôle un grand élément de décor, puis les petits éléments (obstacles). Quand un joueur dit stop, l'autre peut en poser un dernier. Enfin chaque joueur pose une caisse de butin à plus de 6\" des bords."
-    },
-    {
-      "nom": "Champ de bataille Zone Mortalis",
-      "resume": "Dalles de 12\" posées à tour de rôle, chacune touchant une dalle déjà posée sur au moins la moitié d'un bord, jusqu'au nombre prévu. Puis portes et terminaux (au moins 3 portes), D6 obstacles au total (3 max chacun), une conduite chacun, et une caisse de butin chacun à plus de 6\" des bords."
-    },
-    {
-      "nom": "Sélection Aléatoire (X)",
-      "resume": "Mélanger les cartes des combattants disponibles (une seule panoplie tirée au hasard par Chef ou Champion) et en tirer X : c'est l'équipe de départ."
-    },
-    {
-      "nom": "Sélection Personnalisée (X)",
-      "resume": "Choisir X combattants disponibles, et la panoplie des Chefs et Champions. Sans nombre, tout le gang peut venir."
-    },
-    {
-      "nom": "Cartes Tactiques",
-      "resume": "Paquet : un exemplaire de chaque carte de Gang et de chaque carte de sa Maison, sans les cartes réservées à l'autre type de terrain. Le scénario dit combien et comment. Le camp le moins cher peut tirer une carte en plus par tranche complète de 100 crédits d'écart."
-    },
-    {
-      "nom": "Déploiement standard Zone Mortalis",
-      "resume": "Le défenseur (ou gagnant du tir au dé) se place sur une dalle entière ou une bande de 3\" le long d'un bord. L'autre se place sur une dalle séparée de la sienne par au moins une dalle, ou une bande de 2\" le long du bord opposé. Jamais dans une zone fermée par des murs sans conduite."
-    },
-    {
-      "nom": "Déploiement standard Sector Mechanicus",
-      "resume": "Couper la table en deux moitiés. Le défenseur (ou gagnant du tir au dé) choisit sa moitié et s'y déploie en premier, puis l'autre dans la moitié opposée. Tout le monde à au moins 12\" de la ligne centrale."
-    },
-    {
-      "nom": "Renforts",
-      "resume": "Paquet de Renforts : toutes les cartes hors équipe de départ. Ils arrivent toujours à la phase de Fin, le scénario dit quand et combien. Tirés au hasard, puis D6 : 3+ le joueur les place, 1-2 l'adversaire les place. Sauf mention contraire, sur n'importe quel bord de table à plus de 6\" de tout ennemi."
-    },
-    {
-      "nom": "Attaque furtive : sentinelles",
-      "resume": "Les sentinelles n'ont jamais de pion Paré avant l'alarme. À chaque activation du défenseur, il tire au hasard une carte de sentinelle et la remet ensuite (une même sentinelle peut agir plusieurs fois par tour). Quand l'attaquant a fini ses activations, le défenseur active encore une sentinelle et la phase s'arrête. Sentinelle activée : chaque joueur jette un D6. Égalité : orientation au dé de Déviation puis le défenseur fait une action Se Déplacer (Simple). Sinon le meilleur jet fait faire à la sentinelle une action Se Déplacer (Simple), puis choisit son orientation. Elle peut ouvrir ou fermer une porte à 1\" avant de bouger."
-    },
-    {
-      "nom": "Attaque furtive : détection",
-      "resume": "Après le déplacement d'une sentinelle, 2D6 = distance de détection en pouces. Pour chaque attaquant dans cette distance et dans son champ de vision, D6 (-1 si l'attaquant est Au Tapis) : à 3\" ou moins 2+ ; à découvert 2+ ; couvert partiel au-delà de 3\" 4+ ; couvert total au-delà de 3\" 6+. Un attaquant qui vient Engager une sentinelle est repéré d'office."
-    },
-    {
-      "nom": "Attaque furtive : sentinelle alertée",
-      "resume": "Elle prend un pion Paré et sa carte sort du paquet de sentinelles. Engagée : attaques de Réaction. Sinon test d'Initiative, réussi elle peut tirer aussitôt sur l'attaquant repéré."
-    },
-    {
-      "nom": "Attaque furtive : alarme",
-      "resume": "L'alarme sonne si une sentinelle a un pion Paré quand le défenseur doit activer un combattant ; si un attaquant tire et que 2D6 + Force de l'arme (+2 avec Explosion) font 10 ou plus ; ou à partir du round 5 si l'attaquant fait 1 ou 2 à son jet de Priorité. Ensuite, les règles de sentinelles s'arrêtent et le défenseur joue normalement."
-    },
-    {
-      "nom": "Avantage du Territoire Domiciliaire",
-      "resume": "Tests de Cran : 2D6, garder le plus bas. +1 aux tests de Ralliement."
-    },
-    {
-      "nom": "Noir Total (optionnel)",
-      "resume": "Tout le monde est Caché, sauf Champ réfracteur, En Feu ou Révélé. Tir impossible au-delà de 3\" (12\" avec photolunettes ou lunette infrarouge), pas de Charge sur un ennemi invisible. Tirer (sauf arme Silencieuse) ou frapper avec une arme Énergétique rend Révélé jusqu'à la phase de Fin."
-    },
-    {
-      "nom": "Tanière de monstre (optionnel)",
-      "resume": "Posée par le défenseur à plus de 6\" de tout combattant. Un combattant qui finit son activation à 6\" ou moins jette un D6 : 6, ou résultat supérieur à sa distance en pouces, le monstre attaque. La Tanière peut être attaquée et détruite."
-    },
-    {
-      "nom": "Caisses de butin",
-      "resume": "Au moins deux par partie. Ouverte (D6) : 1 piège à Frag ; 2-3 D6 crédits au Magot ; 4-6 cache de munitions. Cache de munitions : +2 à un test de Munitions à 1\" ou moins, ou ignorer le trait Rareté, puis elle est vidée."
-    }
-  ],
-  "scenarios": [
-    {
-      "id": "empoignade",
-      "num": 1,
-      "type": "Sector Mechanicus",
-      "nom": "Empoignade",
-      "pitch": "Deux gangs se croisent en terrain neutre et la fusillade éclate.",
-      "equipes": "Sélection Personnalisée (10) chacun.",
-      "tactiques": "Deux cartes de Gang au choix chacun.",
-      "deploiement": "Standard.",
-      "objectifs": "Points pour chaque ennemi Hors de Combat ou en fuite : Chef 3, Champion 2, autre 1.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round.",
-      "victoire": "Le plus de points. Égalité sinon.",
-      "credits": "Vainqueur D6x10, perdant D3x5, égalité D6x5 chacun.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
-      ],
-      "rep": [
-        "+2 au gang qui a le plus de points.",
-        "+1 chacun si première bataille contre cet adversaire.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "rixe-en-sous-sol",
-      "num": 1,
-      "type": "Zone Mortalis",
-      "nom": "Rixe en Sous-sol",
-      "pitch": "Deux gangs se battent pour un Territoire que personne ne tient encore.",
-      "terrain": "4 ou 6 dalles.",
-      "equipes": "Sélection Personnalisée (6) avec 4 dalles, (10) avec 6 dalles.",
-      "tactiques": "Deux cartes de Gang au choix chacun.",
-      "deploiement": "Standard.",
-      "objectifs": "Points pour chaque ennemi Hors de Combat ou en fuite : Chef 3, Champion 2, autre 1.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round.",
-      "victoire": "Le plus de points. Égalité sinon.",
-      "credits": "Vainqueur 2D6x10, perdant D3x5, égalité D6x10 chacun.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
-      ],
-      "rep": [
-        "+2 au gang qui a le plus de points.",
-        "+1 chacun si première bataille contre cet adversaire.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "les-pillards",
-      "num": 2,
-      "type": "Sector Mechanicus",
-      "nom": "Les Pillards",
-      "attaque": true,
-      "pitch": "Un gang lance un raid sur le territoire d'un rival pour piller son magot.",
-      "equipes": "Attaquant : Sélection Personnalisée. Défenseur : Sélection Aléatoire (D3+4), le reste forme ses Renforts.",
-      "domicile": true,
-      "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard. Bonus selon l'écart de Valeur du Gang.",
-      "deploiement": "Le défenseur pose 4 caisses de butin puis ses combattants, chacun à 3\" ou moins d'une caisse. L'attaquant choisit un bord (sa route de sortie) et se déploie à 6\" ou moins de ce bord.",
-      "objectifs": "L'attaquant veut emporter les 4 caisses (même ouvertes ou devenues caches de munitions, sauf cache vidée) par sa route de sortie.",
-      "special": [
-        "Une caisse à 1\" ou moins de la route de sortie au début de la phase de Fin est volée.",
-        "Un attaquant à 1\" ou moins de la route de sortie au début de la phase de Fin peut s'échapper (compte comme Hors de Combat pour le Cran). Un attaquant Dégonflé ne vole plus de caisse.",
-        "Renforts du défenseur au début de chaque phase de Fin : 1 au premier tour, 2 au deuxième, etc."
-      ],
-      "fin": "Un gang sans combattant sur la table à la fin d'un round. Défenseur en fuite : l'attaquant gagne et vole toutes les caisses.",
-      "victoire": "L'attaquant gagne s'il a volé plus de caisses qu'il n'en reste sur la table. Sinon le défenseur.",
-      "credits": "D3x10 par caisse volée, pris du Magot du défenseur (jamais plus que ce qu'il possède).",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef attaquant si au moins 2 caisses volées."
-      ],
-      "rep": [
-        "+1 chacun si première bataille contre cet adversaire.",
-        "Attaquant +1 par caisse volée, défenseur +1 par caisse restée sur la table.",
-        "4 caisses volées : défenseur -2. Aucune volée : attaquant -2."
-      ]
-    },
-    {
-      "id": "le-piege",
-      "num": 2,
-      "type": "Zone Mortalis",
-      "nom": "Le Piège",
-      "attaque": true,
-      "pitch": "Un gang tend un guet-apens pour éliminer un rival.",
-      "terrain": "5 dalles en croix, la première posée par le défenseur au centre. Le défenseur pose toutes les barricades.",
-      "equipes": "Sélection Personnalisée (10) chacun.",
-      "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
-      "deploiement": "Le défenseur répartit son équipe en groupes d'au moins 2 et place un groupe au centre de la dalle centrale. L'attaquant se déploie ensuite sur les dalles du bord, à 6\" ou moins d'un bord. Puis chaque autre groupe défenseur : D6, 1-5 à 2\" des défenseurs déjà posés, 6 n'importe où à plus de 2\" d'un ennemi.",
-      "special": [
-        "Attaque surprise : le défenseur jette un D6 +1 par combattant placé hors de sa zone. 7+ : il a la Priorité au round 1, sinon c'est l'attaquant.",
-        "Round 1 : test de Sang-froid à l'activation, raté = une seule action."
-      ],
-      "objectifs": "Points par ennemi Hors de Combat : Chef 3, Champion 2, autre 1.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round ; l'autre marque D3 points bonus.",
-      "victoire": "Le plus de points. Égalité sinon.",
-      "credits": "Vainqueur D6x10, perdant D3x5, égalité D3x10 chacun.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
-      ],
-      "rep": [
-        "+2 au gang qui a le plus de points.",
-        "+1 chacun si première bataille contre cet adversaire.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "embuscade",
-      "num": 3,
-      "type": "Sector Mechanicus",
-      "nom": "Embuscade",
-      "attaque": true,
-      "pitch": "Un gang prend un rival au dépourvu.",
-      "terrain": "Aucun grand décor à 12\" ou moins du centre ; le défenseur pose tous les petits éléments. Zone du défenseur : 6\" autour du centre.",
-      "equipes": "Attaquant : Sélection Personnalisée. Défenseur : Sélection Aléatoire (D3+5).",
-      "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
-      "deploiement": "Pour chaque défenseur, D6 : 1-5 dans sa zone, 6 mis de côté. L'attaquant se place partout à 12\" au moins des défenseurs (6\" s'il est hors de leur vue). Puis les défenseurs mis de côté vont n'importe où, sans être Engagés.",
-      "special": [
-        "Attaque surprise : l'attaquant a la Priorité au round 1 et active D3 combattants avant le premier défenseur.",
-        "Round 1 : test de Sang-froid à l'activation, raté = une seule action.",
-        "Un défenseur à 1\" ou moins d'un bord au début de la phase de Fin peut s'échapper (compte Hors de Combat pour le Cran) et gagne 1 XP en campagne."
-      ],
-      "objectifs": "L'attaquant veut abattre un maximum de défenseurs, qui ripostent ou s'enfuient.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round.",
-      "victoire": "L'attaquant gagne s'il a mis Hors de Combat plus de défenseurs qu'il ne s'en est échappé (les fuyards ne comptent pas). Sinon le défenseur gagne.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef attaquant si aucun défenseur ne s'est échappé."
-      ],
-      "rep": [
-        "Plus de défenseurs Hors de Combat qu'échappés : attaquant +1.",
-        "Plus d'échappés que de Hors de Combat : défenseur +2.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "richesses-perdues",
-      "num": 3,
-      "type": "Zone Mortalis",
-      "nom": "Richesses Perdues",
-      "pitch": "Des galeries pleines de marchandises attirent les pillards.",
-      "terrain": "7 dalles : une centrale puis 3 chacun autour.",
-      "equipes": "Sélection Personnalisée (X), X selon 2D6 : 2-3 = 5, 4-5 = 6, 6-8 = 7, 9-10 = 8, 11-12 = 9.",
-      "tactiques": "Trois cartes de Gang au choix chacun.",
-      "deploiement": "5 caisses de butin posées à tour de rôle (une sur la dalle centrale, puis une par dalle, à 6\" les unes des autres). Chaque gang se place à 3\" ou moins du bord sur une dalle sans caisse (pas à 6\" d'un ennemi si les dalles se touchent).",
-      "special": [
-        "Horreurs dans l'ombre : un combattant activé à plus de 8\" de tout autre combattant jette un D6. 1 : touche F6 PA-1 D2, s'il est Gravement Blessé il est emporté (Hors de Combat). 2-3 : occupé par une créature, aucune action. 4-5 : une seule action. 6 : rien."
-      ],
-      "objectifs": "1 point par ennemi Hors de Combat, 2 points par caisse de butin (hors caches de munitions) sur sa dalle de départ et à 3\" ou moins du bord à la fin de la bataille.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round ; l'autre marque D3 points bonus.",
-      "victoire": "Le plus de caisses sécurisées. Égalité ou aucune : égalité.",
-      "credits": "D6x10 par caisse sécurisée.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
-      ],
-      "rep": [
-        "+2 au gang qui a sécurisé le plus de caisses.",
-        "+1 chacun si première bataille contre cet adversaire.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "querelle-frontaliere",
-      "num": 4,
-      "type": "Sector Mechanicus",
-      "nom": "Querelle Frontalière",
-      "pitch": "Un différend sur une frontière tourne à la bataille rangée.",
-      "equipes": "Sélection Aléatoire (D3+3) chacun, le reste forme les Renforts.",
-      "tactiques": "Aucune carte au départ. Au début de chaque round après le premier, chacun tire une carte au hasard. Bonus selon l'écart de Valeur.",
-      "deploiement": "Le gagnant d'un tir au dé choisit sa moitié de table, y place un combattant tiré au hasard à plus de 1\" du centre ; l'autre fait de même, puis on alterne normalement. Chacun pose ensuite une relique de gang dans sa moitié, à 5\" au moins des bords.",
-      "special": [
-        "Relique : +2 aux tests de Sang-froid et de Commandement des amis à 6\" ou moins.",
-        "Profaner une Relique (Double) à 1\" ou moins de la relique ennemie : elle perd son effet. D3 XP en campagne.",
-        "Renforts : D3 par joueur au début de chaque phase de Fin, posés en alternance."
-      ],
-      "objectifs": "Profaner la relique adverse et protéger la sienne.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round. Gang en fuite : l'adversaire gagne et son Chef compte comme ayant profané la relique.",
-      "victoire": "Le gang qui a encore des combattants (hors Gravement Blessés) et dont la relique est intacte. Deux reliques profanées : égalité.",
-      "credits": "Relique intacte D6x10, sinon D3x10.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef d'un gang qui a encore des combattants sur la table à la fin."
-      ],
-      "rep": [
-        "+1 chacun si première bataille contre cet adversaire.",
-        "Une seule relique profanée : son gang -2, l'autre +2.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "les-maraudeurs",
-      "num": 4,
-      "type": "Zone Mortalis",
-      "nom": "Les Maraudeurs",
-      "attaque": true,
-      "pitch": "Porter la guerre chez l'ennemi forge une réputation.",
-      "terrain": "6 dalles.",
-      "equipes": "Attaquant : Sélection Personnalisée (6). Défenseur : Sélection Aléatoire (D3+2), le reste forme les Renforts.",
-      "domicile": true,
-      "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
-      "deploiement": "Standard.",
-      "objectifs": "1 point par ennemi Hors de Combat. L'attaquant tire un objectif (D3) : 1 Traquenard, +1 par Champion et +2 pour le Chef ennemi Hors de Combat. 2 Collet, après le déploiement il désigne un ennemi de l'équipe adverse : +1 s'il est mis Hors de Combat, +2 si c'est par un coup de grâce. 3 Pagaille, un attaquant qui a Gravement Blessé un ennemi peut sortir en finissant son activation à 1\" d'un petit côté de table : +1 point, et il compte comme Hors de Combat pour le Cran. Attaquant Dégonflé : plus de points d'objectif.",
-      "special": [
-        "Le défenseur réussit tous ses tests de Cran (il peut se dégonfler volontairement).",
-        "Renforts du défenseur : D3 au début de chaque phase de Fin, à 1\" d'un bord et à plus de 12\" des ennemis."
-      ],
-      "fin": "Un gang sans combattant sur la table à la fin d'un round ; l'autre marque D3 points bonus.",
-      "victoire": "Le plus de points. Égalité sinon.",
-      "credits": "Vainqueur D6x10, perdant D3x5, égalité D3x10 chacun.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
-      ],
-      "rep": [
-        "+2 au gang qui a le plus de points.",
-        "+1 chacun si première bataille contre cet adversaire.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "sabotage",
-      "num": 5,
-      "type": "Sector Mechanicus",
-      "nom": "Sabotage",
-      "attaque": true,
-      "furtif": true,
-      "pitch": "Un gang s'infiltre chez un rival pour mettre un de ses territoires hors d'usage.",
-      "terrain": "Le défenseur pose la cible (élément d'au moins 2\", plutôt au centre), puis disposition normale.",
-      "equipes": "Attaquant : Sélection Personnalisée. Défenseur : sentinelles en Sélection Aléatoire (5) (il peut écarter des combattants avant le tirage), le reste en Renforts.",
-      "domicile": true,
-      "tactiques": "Attaquant : jusqu'à trois au choix. Défenseur : deux au hasard, utilisables seulement après l'alarme.",
-      "deploiement": "Sentinelles n'importe où, puis attaquants à 2\" ou moins de n'importe quel bord.",
-      "special": [
-        "Cible : E6, sauvegarde 5+, 4 PV. +2 pour la toucher au tir, touche automatique au corps à corps. En campagne, +1 XP par PV retiré et +1 pour la détruire.",
-        "Après destruction, un attaquant à 1\" d'un bord au début de la phase de Fin peut s'échapper.",
-        "Renforts : D6 par round dès que l'alarme est donnée."
-      ],
-      "objectifs": "Détruire la cible, en campagne un Territoire précis du défenseur ou son territoire en général.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round. Défenseur en fuite : la cible est détruite, sans XP.",
-      "victoire": "Attaquant si la cible est détruite et moins de la moitié de son équipe Hors de Combat. Défenseur si la cible tient. Égalité sinon.",
-      "credits": "Cible détruite : attaquant D6x10. Sinon : défenseur D6x10.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef attaquant si la cible est détruite."
-      ],
-      "rep": [
-        "+1 chacun si première bataille contre cet adversaire.",
-        "Cible détruite : attaquant +3, défenseur -1.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "attaque-furtive",
-      "num": 5,
-      "type": "Zone Mortalis",
-      "nom": "Attaque Furtive",
-      "attaque": true,
-      "furtif": true,
-      "pitch": "Un petit groupe de raid vient profaner ou voler un objet sacré du rival.",
-      "terrain": "7 dalles : la centrale posée par le défenseur, puis 3 chacun autour.",
-      "equipes": "Attaquant : Sélection Personnalisée. Défenseur : sentinelles en Sélection Aléatoire (5) (il peut écarter des combattants avant le tirage), le reste en Renforts.",
-      "domicile": true,
-      "tactiques": "Attaquant : jusqu'à trois au choix. Défenseur : deux au hasard, utilisables seulement après l'alarme.",
-      "deploiement": "Sentinelles n'importe où, relique à 6\" ou moins d'un bord. Attaquants entièrement à 4\" ou moins d'un bord et à 4\" ou moins d'un autre attaquant.",
-      "special": [
-        "Relique : +2 aux tests de Sang-froid et de Commandement des défenseurs à 6\" ou moins.",
-        "Profaner une Relique (Double) à 1\" : elle perd son effet. D3 XP en campagne.",
-        "Renforts du défenseur : D3 au début de chaque phase de Fin, à 1\" d'un bord et à plus de 12\" des attaquants."
-      ],
-      "objectifs": "Profaner la relique du défenseur.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round. Défenseur en fuite : l'attaquant gagne et son Chef compte comme ayant profané la relique.",
-      "victoire": "Défenseur : encore des combattants (hors Gravement Blessés) et relique intacte. Attaquant : encore des combattants et relique profanée. Égalité sinon.",
-      "credits": "Attaquant : D6x10 s'il a profané, sinon D3x10. Défenseur : D6x10 si la relique est intacte, sinon D3x10.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef d'un gang qui a encore des combattants sur la table à la fin."
-      ],
-      "rep": [
-        "+1 chacun si première bataille contre cet adversaire.",
-        "Relique profanée : défenseur -2, attaquant +2.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "sauvetage",
-      "num": 6,
-      "type": "Sector Mechanicus",
-      "nom": "Sauvetage",
-      "attaque": true,
-      "furtif": true,
-      "pitch": "Un gang tente de libérer un des siens retenu par un rival.",
-      "condition": "En campagne, seulement si le défenseur détient au moins un captif de l'attaquant. En escarmouche, l'attaquant tire au hasard le combattant captif.",
-      "equipes": "Attaquant : Sélection Personnalisée. Défenseur : sentinelles en Sélection Aléatoire (5) (il peut écarter des combattants avant le tirage), le reste en Renforts.",
-      "domicile": true,
-      "tactiques": "Attaquant : jusqu'à trois au choix. Défenseur : deux au hasard, utilisables seulement après l'alarme.",
-      "deploiement": "Sentinelles et captifs n'importe où. Attaquants à 2\" ou moins de n'importe quel bord.",
-      "special": [
-        "Les captifs n'ont jamais de pion Paré et ne peuvent être ni activés ni attaqués.",
-        "Libérer un Captif (Simple) à 1\" : D6, 3+ libéré. D3 XP en campagne.",
-        "À chaque phase de Fin, un captif peut tenter de se libérer seul (2D6 + Force, 13+), avec risque de Blessure Légère.",
-        "Attaquant ou captif libéré à 1\" d'un bord au début de la phase de Fin : peut s'échapper.",
-        "Renforts : D6 par round dès que l'alarme est donnée."
-      ],
-      "objectifs": "Libérer les captifs et les faire sortir, si possible sans alerter.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round. Défenseur en fuite : l'attaquant gagne et tous les captifs sont libres.",
-      "victoire": "Attaquant si tous ses captifs sont libérés et sortis. Défenseur si aucun n'est sorti. Égalité sinon.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 à chaque captif libéré et sorti.",
-        "+1 au Chef attaquant si tous les captifs sont sortis."
-      ],
-      "rep": [
-        "Par captif libéré : attaquant +2, défenseur -1.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "braquage",
-      "num": 6,
-      "type": "Zone Mortalis",
-      "nom": "Braquage",
-      "attaque": true,
-      "pitch": "Un gang transporte des marchandises pour la Guilde, un autre veut les voler.",
-      "terrain": "6 dalles.",
-      "equipes": "Attaquant : Sélection Personnalisée (10). Défenseur : Sélection Aléatoire (D6+3).",
-      "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
-      "deploiement": "Standard. Le défenseur pose en secret 5 caisses dans sa zone, à 4\" au moins des bords : 3 avec munitions, 1 vide, 1 vide piégée (piège à Frag).",
-      "special": [
-        "Le défenseur ne peut ouvrir aucune caisse.",
-        "Caisse ouverte par l'attaquant : pas de jet, on regarde le contenu. Munitions = réussite, vide = rien, piège = il explose et la caisse est retirée."
-      ],
-      "objectifs": "L'attaquant veut ouvrir les caisses de munitions, le défenseur l'en empêcher.",
-      "fin": "Un gang sans combattant sur la table à la fin d'un round. Fuite : l'adversaire gagne (l'attaquant touche les caisses restantes sans risque de piège, le défenseur les caisses non ouvertes).",
-      "victoire": "Attaquant s'il a ouvert plus de caisses de munitions qu'il ne reste de caisses fermées. Sinon défenseur.",
-      "credits": "Attaquant : D6x10 par caisse de munitions ouverte. Défenseur : 2D6x10 par caisse de munitions restée fermée.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 au Chef attaquant si au moins 2 caisses de munitions ouvertes."
-      ],
-      "rep": [
-        "+1 chacun si première bataille contre cet adversaire.",
-        "Par caisse de munitions ouverte : attaquant +1, défenseur -1.",
-        "Attaquant qui a ouvert la caisse piégée : -1.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "dernier-carre",
-      "type": "Arbitrator",
-      "nom": "Dernier Carré",
-      "attaque": true,
-      "pitch": "La Guilde a acculé un gang et veut l'abattre.",
-      "equipes": "Attaquant : Sélection Personnalisée (D3+6), le reste en Renforts. Défenseur : Sélection Aléatoire (D3+5).",
-      "domicile": true,
-      "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
-      "deploiement": "Défenseur entièrement à 6\" ou moins du centre. Attaquant à 2\" ou moins de n'importe quel bord, il peut encercler.",
-      "special": [
-        "Submergés : à la fin de chaque round, l'attaquant appelle D6 Renforts. Un attaquant Hors de Combat ne fait pas de jet de Blessure Persistante et retourne dans la pile de Renforts, soigné.",
-        "Joué à plusieurs attaquants valant au moins le double du défenseur : pas de règle Submergés."
-      ],
-      "objectifs": "Le défenseur tient le plus longtemps possible.",
-      "victoire": "Défenseur s'il a encore un combattant valide (ni Gravement Blessé ni Démoralisé) au début du round 7. Sinon attaquant.",
-      "credits": "Selon le round où le défenseur tombe : 1-2 défenseur -3 Rép. et 0, attaquant +3 Rép. et 2D6x10 ; 3-4 défenseur +1 Rép. et D3x10, attaquant +2 Rép. et D6x10 ; 5-6 défenseur +2 Rép. et D6x10, attaquant +1 Rép. et D3x10 ; 7+ défenseur +3 Rép. et 2D6x10, attaquant -3 Rép. et 0.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+D3 aux défenseurs encore valides au round 7."
-      ],
-      "rep": [
-        "Voir la ligne crédits (selon le round)."
-      ]
-    },
-    {
-      "id": "sortez-de-la-fosse",
-      "type": "Arbitrator",
-      "nom": "Sortez de la Fosse !",
-      "pitch": "Une antique machinerie se réveille et compresse la zone pendant que les gangs pillent.",
-      "equipes": "Sélection Aléatoire (D3+4) chacun.",
-      "tactiques": "Deux cartes de Gang au choix chacun.",
-      "deploiement": "Un point d'évacuation (échelle, plate-forme surélevée de préférence). Caisses de butin posées à tour de rôle (voir le livre), puis déploiement.",
-      "special": [
-        "Les murs bougent : dès le début du round 3, D6 3+ par round : une dalle périphérique (ou une bande de 6\" sur deux bords opposés en Sector Mechanicus) disparaît. Les combattants dessus font un test d'Initiative : réussi ils se replient, raté Hors de Combat. La dalle du point d'évacuation part en dernier.",
-        "Un combattant à 1\" du point d'évacuation au début de la phase de Fin peut sortir (compte Hors de Combat pour le Cran)."
-      ],
-      "objectifs": "Sortir un maximum de caisses par le point d'évacuation.",
-      "fin": "Un gang sans combattant sur la table, ou plus aucune zone jouable.",
-      "victoire": "Le plus de caisses sorties, puis le plus de combattants sortis. Égalité sinon.",
-      "credits": "D3x10 par caisse sortie.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 par combattant sorti, +1 de plus s'il portait une caisse."
-      ],
-      "rep": [
-        "+1 si au moins un combattant est sorti.",
-        "+1 par caisse sortie."
-      ]
-    },
-    {
-      "id": "grabuge-en-centre-ville",
-      "type": "Arbitrator",
-      "nom": "Grabuge en Centre-ville",
-      "pitch": "Deux gangs se disputent un quartier habité et ses occupants.",
-      "equipes": "Sélection Aléatoire (D3+4) chacun.",
-      "tactiques": "Deux cartes de Gang au choix chacun.",
-      "deploiement": "Tir au dé pour l'ordre, puis combattants posés à tour de rôle à plus de 6\" de tout combattant. Ensuite D6+6 Habitants des Ruches.",
-      "special": [
-        "Les Habitants des Ruches ne s'activent pas. Ils réagissent (D6, voir le livre) à un tir à 12\", un combat ou une explosion à 6\". 1-2 : ils tirent au flingue sur le plus proche. Mis à 0 PV : directement Hors de Combat."
-      ],
-      "objectifs": "Rester seul maître du quartier sans massacrer la population.",
-      "victoire": "Le gang seul avec des combattants actifs, si pas plus de la moitié des habitants est Hors de Combat. Égalité sinon.",
-      "credits": "Chaque habitant mis Hors de Combat coûte D3x10 crédits (ou D3 de Réputation si on ne paie pas).",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "Vainqueur : +1 à ses combattants si au moins la moitié des habitants est intacte, +2 si aucun n'est tombé."
-      ],
-      "rep": [
-        "+1 à chaque gang.",
-        "Vainqueur avec au moins la moitié des habitants intacts : +D3+1."
-      ]
-    },
-    {
-      "id": "fusillade",
-      "type": "Arbitrator",
-      "nom": "Fusillade",
-      "pitch": "Duel au ralenti : le premier qui craque dégaine.",
-      "terrain": "Couloir de 3 dalles en ligne (Zone Mortalis) ou table de 36\" x 12\" sans décor bloquant la vue.",
-      "equipes": "Sélection Aléatoire (D3+1) chacun.",
-      "tactiques": "Aucune carte.",
-      "deploiement": "Chaque gang à 10\" d'un petit côté, au sol, chaque combattant à 1\" d'un ami, en vue de l'adversaire.",
-      "special": [
-        "Plus rapide que son ombre : test de Sang-froid à chaque activation, un échec ajoute un pion. Avant que quelqu'un dégaine, seule action possible : avancer de 3\" maximum droit vers l'ennemi, sans couvert, et rien si on arrive à 4\" d'un ennemi.",
-        "À 6 échecs, l'équipe dégaine : tout le monde devient Paré, test d'Initiative (+1 avec une arme de Poing, -2 avec une arme Encombrante). Ceux qui réussissent agissent d'abord par ordre d'Initiative, ex-aequo en même temps."
-      ],
-      "fin": "Un gang sans combattant sur la table à la fin d'un round.",
-      "victoire": "Le gang qui reste seul sur la table.",
-      "credits": "Vainqueur : D6x5 par ennemi Hors de Combat.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 à ceux qui n'ont raté aucun test de Sang-froid avant les tirs."
-      ],
-      "rep": [
-        "+1 à chaque gang.",
-        "Le gang qui a dégainé en second gagne 6 moins son nombre de tests ratés."
-      ]
-    },
-    {
-      "id": "attaque-de-caravane",
-      "type": "Arbitrator",
-      "nom": "Attaque de Caravane",
-      "attaque": true,
-      "pitch": "Un gang attaque un convoi de la Guilde escorté par un rival.",
-      "terrain": "Prévoir un passage pour la caravane d'un bord à l'autre.",
-      "equipes": "Sélection Personnalisée (10) chacun.",
-      "tactiques": "Deux cartes de Gang au choix chacun.",
-      "deploiement": "Le défenseur pose la caravane contre un bord et se déploie autour (voir le livre). L'attaquant se déploie ensuite.",
-      "special": [
-        "La caravane avance de 6\" vers le bord opposé au début de chaque round. Elle ne peut pas être attaquée, bloque la vue et donne un couvert partiel. Embarquer/Débarquer (Simple).",
-        "Piller la Caravane (Simple) à 1\" : un pion Butin. Un attaquant Hors de Combat perd ses pions.",
-        "Le défenseur ne fait jamais de test de Cran et peut recruter gratuitement des Rebuts de la Ruche pour remplacer ses absents."
-      ],
-      "fin": "La caravane sort de l'autre côté, ou un gang n'a plus personne sur la table.",
-      "victoire": "Attaquant s'il réunit 10 pions Butin. Sinon défenseur.",
-      "credits": "Attaquant : D6x10 par pion Butin conservé. Défenseur : D6x10, plus 3D6x10 si l'attaquant a moins de 5 pions.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 à chaque attaquant qui a pillé sans tomber Hors de Combat.",
-        "+1 à chaque défenseur qui met Hors de Combat un porteur de Butin."
-      ],
-      "rep": [
-        "+1 à chaque gang.",
-        "Attaquant à 10 pions : +D3+1. Caravane sortie avant : défenseur +D3+1."
-      ]
-    },
-    {
-      "id": "recolte-de-ghast",
-      "type": "Arbitrator",
-      "nom": "Récolte de Ghast",
-      "pitch": "Des gangs récoltent du ghast brut, une drogue psychoactive.",
-      "equipes": "Sélection Aléatoire (D3+4) chacun.",
-      "tactiques": "Deux cartes de Gang au hasard. En jouant une carte : D6, 4+ elle marche, sinon elle est défaussée et remplacée.",
-      "deploiement": "Standard. 4 dépôts de ghast posés à tour de rôle.",
-      "special": [
-        "Récolter du Ghast (Double) au contact : test d'INT réussi = pion Butin, puis D6 6 le dépôt est épuisé.",
-        "Chaque tentative : test d'Endurance (+2 avec respirateur). Raté, ou ingestion volontaire : D6 sur le tableau d'effets (de la perte de contrôle au statut de psyker avec un Pouvoir Wyrd au hasard).",
-        "Un combattant Hors de Combat perd ses pions Butin."
-      ],
-      "victoire": "Le plus de pions Butin.",
-      "credits": "D6x10 par pion Butin d'un combattant resté debout, ou garder des sacs de ghast dans le Magot.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 à qui a récolté sans tomber Hors de Combat.",
-        "+1 au premier Pouvoir Wyrd réussi."
-      ],
-      "rep": [
-        "+1 à chaque gang.",
-        "+3 au gang qui a récolté au moins 5 sacs."
-      ]
-    },
-    {
-      "id": "archeo-chasseurs",
-      "type": "Arbitrator",
-      "nom": "Archéo-chasseurs",
-      "pitch": "Course à une crypte d'archéotechnologie.",
-      "equipes": "Sélection Aléatoire (D3+7) chacun.",
-      "tactiques": "Deux cartes au choix chacun.",
-      "deploiement": "Standard. Porte de la crypte au milieu d'un bord hors zones de déploiement, automate minier au centre.",
-      "special": [
-        "Automate (fuseur, cisaille lourde, carapace légère, jamais Bloqué) : à l'arrêt au départ. Mise en Marche (Simple) à 1\" avec un test d'INT : il rejoint ce gang jusqu'à la phase de Fin.",
-        "Seul l'automate peut ouvrir la crypte : Détruire la Porte (Double) à 1\". Ensuite les combattants peuvent y entrer en sortant de la table.",
-        "Arbitré : l'Arbitrator peut contrôler un ou plusieurs automates, déjà en marche ; un combattant au contact qui réussit un test d'INT en prend le contrôle pour un round."
-      ],
-      "objectifs": "Ouvrir la crypte et y entrer avant l'adversaire.",
-      "victoire": "Le plus de combattants dans la crypte. Égalité ou aucun : égalité.",
-      "credits": "D6x10 par combattant du gang dans la crypte à la fin.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 à chaque combattant entré dans la crypte.",
-        "Scénario Arbitré : +D3 à qui met un automate Hors de Combat."
-      ],
-      "rep": [
-        "+1 à chaque gang.",
-        "+D3 au gang qui a le plus de combattants dans la crypte."
-      ],
-      "fin": "Un gang sans combattant sur la table à la fin d'un round (ceux entrés dans la crypte comptent). Gang en fuite : l'adversaire gagne, avec D6x10 crédits en plus par combattant encore sur la table et pas Gravement Blessé."
-    },
-    {
-      "id": "escorte",
-      "type": "Arbitrator",
-      "nom": "Escorte",
-      "attaque": true,
-      "pitch": "Un agent de la haute-ruche doit être exfiltré.",
-      "equipes": "Attaquant : Sélection Personnalisée (D3+5), le reste en Renforts. Défenseur : Sélection Aléatoire (D3+7) plus l'agent.",
-      "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
-      "deploiement": "Standard.",
-      "special": [
-        "Agent : M4 CC5+ CT4+ F3 E3 PV2 I4+ A1, armure composite, champ téléporteur, pistolet laser.",
-        "Extraction : agent au bord le plus proche de la zone de l'attaquant, D6 5+ à la phase de Fin (4+, puis 3+... aux tours suivants).",
-        "Renforts de l'attaquant : 1 par round à partir de la phase de Fin du round 2."
-      ],
-      "fin": "Agent extrait ou Hors de Combat, ou un gang sans combattant.",
-      "victoire": "Défenseur si l'agent est extrait, sinon attaquant.",
-      "credits": "Agent extrait : défenseur D6x10. Agent abattu : attaquant D6x10.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+D3 à qui met l'agent Hors de Combat."
-      ],
-      "rep": [
-        "Agent extrait : défenseur +D3. Agent abattu : attaquant +D3.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "combattant-a-terre",
-      "type": "Arbitrator",
-      "nom": "Combattant à Terre",
-      "attaque": true,
-      "pitch": "Un gang cherche à récupérer un camarade tombé avant le sous-monde.",
-      "equipes": "Sélection Aléatoire (D3+2) chacun, le reste en Renforts. L'attaquant tire d'abord un Ganger ou Novice blessé.",
-      "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
-      "deploiement": "Standard, blessé face contre terre à 8\" ou moins du centre.",
-      "special": [
-        "Le blessé reste Gravement Blessé (pas de récupération), peut Ramper, peut être achevé. Porter (Double) à 1\" : un ami l'emporte de sa valeur de Mouvement. Il sort par le bord le plus proche de la zone de l'attaquant.",
-        "Charognards (profil dans le livre) posés à 12\" des combattants ; déplacés à tour de rôle à chaque phase de Fin, ils attaquent au contact.",
-        "Renforts : D3 par gang à partir de la phase de Fin du round 2, à 1\" d'un bord et à plus de 12\" des ennemis."
-      ],
-      "fin": "Blessé Hors de Combat ou sorti, ou un gang sans combattant.",
-      "victoire": "Défenseur si le blessé est Hors de Combat, sinon attaquant.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 à qui met le blessé Hors de Combat."
-      ],
-      "rep": [
-        "Blessé sorti : attaquant +D3.",
-        "Blessé achevé : défenseur +1.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "cyborg-meurtrier",
-      "type": "Arbitrator",
-      "nom": "Cyborg Meurtrier",
-      "pitch": "Un Assassin Cyborg se cache parmi les gangers.",
-      "equipes": "Sélection Personnalisée chacun.",
-      "tactiques": "Deux cartes de Gang au choix chacun.",
-      "deploiement": "Standard.",
-      "special": [
-        "Chaque blessure d'une arme à Dégâts chiffrés : D6, 5+ le blessé était l'Assassin et il est remplacé par lui (profil dans le livre : deux pistolets bolter, fusil à pompe Executioner, carapace légère, champ téléporteur, grenades).",
-        "L'Assassin traite Hors de Combat comme Gravement Blessé, ignore le coup de grâce tant qu'il a de l'Endurance, ignore Toxine, Gaz et Aveuglant.",
-        "Mission (D6) contrôlée par le joueur qui a la Priorité : 1-2 tuer le plus proche, 3-4 viser les Chefs, 5-6 fuir par le bord le plus éloigné."
-      ],
-      "fin": "Un gang sans combattant, ou l'Assassin a quitté la table.",
-      "victoire": "Le gang qui détruit l'Assassin. Égalité sinon.",
-      "credits": "3D6x10 au gang qui l'achève.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+1 à chaque combattant qui l'a blessé."
-      ],
-      "rep": [
-        "+D3 au gang qui l'achève.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "le-carton",
-      "type": "Arbitrator",
-      "nom": "Le Carton",
-      "attaque": true,
-      "pitch": "Un commando vient éliminer le Chef d'un gang rival.",
-      "equipes": "Attaquant : Sélection Personnalisée (D3+5). Défenseur : son Chef plus Sélection Aléatoire (D3+5), le reste en Renforts.",
-      "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
-      "deploiement": "Chef et 2 combattants du défenseur à 12\" du centre, les autres D6 5+ n'importe où sinon à 8\" du Chef. Attaquants à 2\" d'un bord et à 6\" des ennemis.",
-      "special": [
-        "L'attaquant a la Priorité au round 1, les défenseurs n'ont qu'une action au round 1.",
-        "Renforts de l'attaquant : 1 par round à partir de la phase de Fin du round 2."
-      ],
-      "victoire": "Attaquant si le Chef défenseur est Gravement Blessé ou Hors de Combat. Sinon défenseur.",
-      "xp": [
-        "+1 par combattant ayant joué.",
-        "+D3 à chaque attaquant qui blesse le Chef.",
-        "+D3 au Chef défenseur s'il finit indemne."
-      ],
-      "rep": [
-        "Attaquant : +D3 si le Chef est Gravement Blessé, +D6 s'il est Hors de Combat.",
-        "Chef défenseur encore sur la table : +D3.",
-        "-1 au gang qui s'est dégonflé."
-      ]
-    },
-    {
-      "id": "altercation",
-      "type": "Multijoueur",
-      "nom": "Altercation",
-      "pitch": "Des pourparlers entre gangs dégénèrent.",
-      "equipes": "Le Chef plus Sélection Aléatoire (D3+5).",
-      "tactiques": "Deux au hasard chacun.",
-      "deploiement": "Chefs à 6\" du centre, puis combattants à 12\" au moins des Chefs et à 6\" au moins des autres.",
-      "special": [
-        "Pourparlers : seuls les Chefs sont Parés au départ. Un tir (sauf Silencieux) permet aux non-Parés à 12\" de faire un test d'INT pour le devenir ; ceux qui sont attaqués deviennent Parés."
-      ],
-      "fin": "Un seul gang a encore des combattants à la fin d'un round.",
-      "victoire": "Le gang dont le Chef est encore debout et pas Gravement Blessé. Égalité sinon.",
-      "xp": [
-        "+1 par combattant ayant joué, +1 par ennemi mis Hors de Combat.",
-        "+D6 au dernier Chef debout."
-      ],
-      "rep": [
-        "+1 par gang présent, +2 si un des siens met un Chef ennemi Hors de Combat.",
-        "+3 au gang du dernier Chef debout."
-      ]
-    },
-    {
-      "id": "combat-d-arene",
-      "type": "Multijoueur",
-      "nom": "Combat d'Arène",
-      "pitch": "Un Champion par gang se bat pour l'honneur.",
-      "terrain": "24\" x 24\" maximum conseillé.",
-      "equipes": "Un Champion par joueur.",
-      "tactiques": "Une carte au choix chacun.",
-      "deploiement": "Chaque Champion au contact d'un bord, à 12\" au moins des autres.",
-      "special": [
-        "C'est qu'une égratignure : Blessure Légère ignorée, Gravement Blessé traité comme Blessure Légère, pas de coup de grâce.",
-        "Règles particulières aux premiers rounds : voir le livre."
-      ],
-      "victoire": "Le dernier Champion debout. Égalité si aucun.",
-      "credits": "Le vainqueur gagne D6x5 par autre Champion.",
-      "xp": [
-        "+1 par Champion, +1 par ennemi mis Hors de Combat.",
-        "+D3 au vainqueur."
-      ],
-      "rep": [
-        "+1 par gang présent, +2 si son Champion tient jusqu'au round 6.",
-        "+4 au gang vainqueur."
-      ]
-    }
-  ]
+ "edition": "N23",
+ "source": "Livre de règles Necromunda, Champ de bataille et scénarios (p.116-145) et scénarios d'Arbitrator (p.160-183). Résumé, vérifie le livre en cas de doute.",
+ "tirage": [
+  {
+   "de": 2,
+   "a": 3,
+   "texte": "Le gang qui a le plus de Territoires choisit le scénario."
+  },
+  {
+   "de": 4,
+   "a": 5,
+   "texte": "Querelle Frontalière (Sector Mechanicus) ou Les Maraudeurs (Zone Mortalis).",
+   "ids": [
+    "querelle-frontaliere",
+    "les-maraudeurs"
+   ]
+  },
+  {
+   "de": 6,
+   "a": 7,
+   "texte": "Empoignade (Sector Mechanicus) ou Rixe en Sous-sol (Zone Mortalis).",
+   "ids": [
+    "empoignade",
+    "rixe-en-sous-sol"
+   ]
+  },
+  {
+   "de": 8,
+   "a": 9,
+   "texte": "Sabotage (Sector Mechanicus) ou Attaque Furtive (Zone Mortalis).",
+   "ids": [
+    "sabotage",
+    "attaque-furtive"
+   ]
+  },
+  {
+   "de": 10,
+   "a": 12,
+   "texte": "Le gang qui a le moins de Territoires choisit le scénario."
+  }
+ ],
+ "regles": [
+  {
+   "nom": "Champ de bataille Sector Mechanicus",
+   "resume": "Environ 48\" x 48\". Le défenseur (sinon le gagnant d'un tir au dé) commence : chacun pose à tour de rôle un grand élément de décor, puis les petits éléments (obstacles). Quand un joueur dit stop, l'autre peut en poser un dernier. Enfin chaque joueur pose une caisse de butin à plus de 6\" des bords."
+  },
+  {
+   "nom": "Champ de bataille Zone Mortalis",
+   "resume": "Dalles de 12\" posées à tour de rôle, chacune touchant une dalle déjà posée sur au moins la moitié d'un bord, jusqu'au nombre prévu. Puis portes et terminaux (au moins 3 portes), D6 obstacles au total (3 max chacun), une conduite chacun, et une caisse de butin chacun à plus de 6\" des bords."
+  },
+  {
+   "nom": "Sélection Aléatoire (X)",
+   "resume": "Mélanger les cartes des combattants disponibles (une seule panoplie tirée au hasard par Chef ou Champion) et en tirer X : c'est l'équipe de départ."
+  },
+  {
+   "nom": "Sélection Personnalisée (X)",
+   "resume": "Choisir X combattants disponibles, et la panoplie des Chefs et Champions. Sans nombre, tout le gang peut venir."
+  },
+  {
+   "nom": "Cartes Tactiques",
+   "resume": "Paquet : un exemplaire de chaque carte de Gang et de chaque carte de sa Maison, sans les cartes réservées à l'autre type de terrain. Le scénario dit combien et comment. Le camp le moins cher peut tirer une carte en plus par tranche complète de 100 crédits d'écart."
+  },
+  {
+   "nom": "Déploiement standard Zone Mortalis",
+   "resume": "Le défenseur (ou gagnant du tir au dé) se place sur une dalle entière ou une bande de 3\" le long d'un bord. L'autre se place sur une dalle séparée de la sienne par au moins une dalle, ou une bande de 2\" le long du bord opposé. Jamais dans une zone fermée par des murs sans conduite."
+  },
+  {
+   "nom": "Déploiement standard Sector Mechanicus",
+   "resume": "Couper la table en deux moitiés. Le défenseur (ou gagnant du tir au dé) choisit sa moitié et s'y déploie en premier, puis l'autre dans la moitié opposée. Tout le monde à au moins 12\" de la ligne centrale."
+  },
+  {
+   "nom": "Renforts",
+   "resume": "Paquet de Renforts : toutes les cartes hors équipe de départ. Ils arrivent toujours à la phase de Fin, le scénario dit quand et combien. Tirés au hasard, puis D6 : 3+ le joueur les place, 1-2 l'adversaire les place. Sauf mention contraire, sur n'importe quel bord de table à plus de 6\" de tout ennemi."
+  },
+  {
+   "nom": "Attaque furtive : sentinelles",
+   "resume": "Les sentinelles n'ont jamais de pion Paré avant l'alarme. À chaque activation du défenseur, il tire au hasard une carte de sentinelle et la remet ensuite (une même sentinelle peut agir plusieurs fois par tour). Quand l'attaquant a fini ses activations, le défenseur active encore une sentinelle et la phase s'arrête. Sentinelle activée : chaque joueur jette un D6. Égalité : orientation au dé de Déviation puis le défenseur fait une action Se Déplacer (Simple). Sinon le meilleur jet fait faire à la sentinelle une action Se Déplacer (Simple), puis choisit son orientation. Elle peut ouvrir ou fermer une porte à 1\" avant de bouger."
+  },
+  {
+   "nom": "Attaque furtive : détection",
+   "resume": "Après le déplacement d'une sentinelle, 2D6 = distance de détection en pouces. Pour chaque attaquant dans cette distance et dans son champ de vision, D6 (-1 si l'attaquant est Au Tapis) : à 3\" ou moins 2+ ; à découvert 2+ ; couvert partiel au-delà de 3\" 4+ ; couvert total au-delà de 3\" 6+. Un attaquant qui vient Engager une sentinelle est repéré d'office."
+  },
+  {
+   "nom": "Attaque furtive : sentinelle alertée",
+   "resume": "Elle prend un pion Paré et sa carte sort du paquet de sentinelles. Engagée : attaques de Réaction. Sinon test d'Initiative, réussi elle peut tirer aussitôt sur l'attaquant repéré."
+  },
+  {
+   "nom": "Attaque furtive : alarme",
+   "resume": "L'alarme sonne si une sentinelle a un pion Paré quand le défenseur doit activer un combattant ; si un attaquant tire et que 2D6 + Force de l'arme (+2 avec Explosion) font 10 ou plus ; ou à partir du round 5 si l'attaquant fait 1 ou 2 à son jet de Priorité. Ensuite, les règles de sentinelles s'arrêtent et le défenseur joue normalement."
+  },
+  {
+   "nom": "Avantage du Territoire Domiciliaire",
+   "resume": "Tests de Cran : 2D6, garder le plus bas. +1 aux tests de Ralliement."
+  },
+  {
+   "nom": "Noir Total (optionnel)",
+   "resume": "Tout le monde est Caché, sauf Champ réfracteur, En Feu ou Révélé. Tir impossible au-delà de 3\" (12\" avec photolunettes ou lunette infrarouge), pas de Charge sur un ennemi invisible. Tirer (sauf arme Silencieuse) ou frapper avec une arme Énergétique rend Révélé jusqu'à la phase de Fin."
+  },
+  {
+   "nom": "Tanière de monstre (optionnel)",
+   "resume": "Posée par le défenseur à plus de 6\" de tout combattant. Un combattant qui finit son activation à 6\" ou moins jette un D6 : 6, ou résultat supérieur à sa distance en pouces, le monstre attaque. La Tanière peut être attaquée et détruite."
+  },
+  {
+   "nom": "Caisses de butin",
+   "resume": "Au moins deux par partie. Ouverte (D6) : 1 piège à Frag ; 2-3 D6 crédits au Magot ; 4-6 cache de munitions. Cache de munitions : +2 à un test de Munitions à 1\" ou moins, ou ignorer le trait Rareté, puis elle est vidée."
+  },
+  {
+   "nom": "Soulèvement : Ordre ou Chaos",
+   "resume": "Campagne Soulèvement Sombre. Chaque gang joue son Allégeance ; un Non Aligné prend l'Allégeance opposée. Même Allégeance : D6, le plus haut joue la sienne. Tirage 2D6 : 2-3 au choix, 4-5 Récolte de Viande, 6-7 Hit and Run ou Démonstration de Puissance, 8-9 Rechercher et Détruire, 10-12 au choix (choix au camp Ascendant)."
+  },
+  {
+   "nom": "Soulèvement : Territoire capturé",
+   "resume": "Si le vainqueur a infligé trois fois plus de Hors de Combat qu'il n'en a subi (hors fuites), il prend un Territoire au hasard du perdant, jamais sa base ou sa cachette. Récompenses selon la phase : crédits en Insurrection, Viande et Pillage en Damnation."
+  }
+ ],
+ "scenarios": [
+  {
+   "id": "empoignade",
+   "num": 1,
+   "type": "Sector Mechanicus",
+   "nom": "Empoignade",
+   "pitch": "Deux gangs se croisent en terrain neutre et la fusillade éclate.",
+   "equipes": "Sélection Personnalisée (10) chacun.",
+   "tactiques": "Deux cartes de Gang au choix chacun.",
+   "deploiement": "Standard.",
+   "objectifs": "Points pour chaque ennemi Hors de Combat ou en fuite : Chef 3, Champion 2, autre 1.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round.",
+   "victoire": "Le plus de points. Égalité sinon.",
+   "credits": "Vainqueur D6x10, perdant D3x5, égalité D6x5 chacun.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
+   ],
+   "rep": [
+    "+2 au gang qui a le plus de points.",
+    "+1 chacun si première bataille contre cet adversaire.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "rixe-en-sous-sol",
+   "num": 1,
+   "type": "Zone Mortalis",
+   "nom": "Rixe en Sous-sol",
+   "pitch": "Deux gangs se battent pour un Territoire que personne ne tient encore.",
+   "terrain": "4 ou 6 dalles.",
+   "equipes": "Sélection Personnalisée (6) avec 4 dalles, (10) avec 6 dalles.",
+   "tactiques": "Deux cartes de Gang au choix chacun.",
+   "deploiement": "Standard.",
+   "objectifs": "Points pour chaque ennemi Hors de Combat ou en fuite : Chef 3, Champion 2, autre 1.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round.",
+   "victoire": "Le plus de points. Égalité sinon.",
+   "credits": "Vainqueur 2D6x10, perdant D3x5, égalité D6x10 chacun.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
+   ],
+   "rep": [
+    "+2 au gang qui a le plus de points.",
+    "+1 chacun si première bataille contre cet adversaire.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "les-pillards",
+   "num": 2,
+   "type": "Sector Mechanicus",
+   "nom": "Les Pillards",
+   "attaque": true,
+   "pitch": "Un gang lance un raid sur le territoire d'un rival pour piller son magot.",
+   "equipes": "Attaquant : Sélection Personnalisée. Défenseur : Sélection Aléatoire (D3+4), le reste forme ses Renforts.",
+   "domicile": true,
+   "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard. Bonus selon l'écart de Valeur du Gang.",
+   "deploiement": "Le défenseur pose 4 caisses de butin puis ses combattants, chacun à 3\" ou moins d'une caisse. L'attaquant choisit un bord (sa route de sortie) et se déploie à 6\" ou moins de ce bord.",
+   "objectifs": "L'attaquant veut emporter les 4 caisses (même ouvertes ou devenues caches de munitions, sauf cache vidée) par sa route de sortie.",
+   "special": [
+    "Une caisse à 1\" ou moins de la route de sortie au début de la phase de Fin est volée.",
+    "Un attaquant à 1\" ou moins de la route de sortie au début de la phase de Fin peut s'échapper (compte comme Hors de Combat pour le Cran). Un attaquant Dégonflé ne vole plus de caisse.",
+    "Renforts du défenseur au début de chaque phase de Fin : 1 au premier tour, 2 au deuxième, etc."
+   ],
+   "fin": "Un gang sans combattant sur la table à la fin d'un round. Défenseur en fuite : l'attaquant gagne et vole toutes les caisses.",
+   "victoire": "L'attaquant gagne s'il a volé plus de caisses qu'il n'en reste sur la table. Sinon le défenseur.",
+   "credits": "D3x10 par caisse volée, pris du Magot du défenseur (jamais plus que ce qu'il possède).",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef attaquant si au moins 2 caisses volées."
+   ],
+   "rep": [
+    "+1 chacun si première bataille contre cet adversaire.",
+    "Attaquant +1 par caisse volée, défenseur +1 par caisse restée sur la table.",
+    "4 caisses volées : défenseur -2. Aucune volée : attaquant -2."
+   ]
+  },
+  {
+   "id": "le-piege",
+   "num": 2,
+   "type": "Zone Mortalis",
+   "nom": "Le Piège",
+   "attaque": true,
+   "pitch": "Un gang tend un guet-apens pour éliminer un rival.",
+   "terrain": "5 dalles en croix, la première posée par le défenseur au centre. Le défenseur pose toutes les barricades.",
+   "equipes": "Sélection Personnalisée (10) chacun.",
+   "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
+   "deploiement": "Le défenseur répartit son équipe en groupes d'au moins 2 et place un groupe au centre de la dalle centrale. L'attaquant se déploie ensuite sur les dalles du bord, à 6\" ou moins d'un bord. Puis chaque autre groupe défenseur : D6, 1-5 à 2\" des défenseurs déjà posés, 6 n'importe où à plus de 2\" d'un ennemi.",
+   "special": [
+    "Attaque surprise : le défenseur jette un D6 +1 par combattant placé hors de sa zone. 7+ : il a la Priorité au round 1, sinon c'est l'attaquant.",
+    "Round 1 : test de Sang-froid à l'activation, raté = une seule action."
+   ],
+   "objectifs": "Points par ennemi Hors de Combat : Chef 3, Champion 2, autre 1.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round ; l'autre marque D3 points bonus.",
+   "victoire": "Le plus de points. Égalité sinon.",
+   "credits": "Vainqueur D6x10, perdant D3x5, égalité D3x10 chacun.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
+   ],
+   "rep": [
+    "+2 au gang qui a le plus de points.",
+    "+1 chacun si première bataille contre cet adversaire.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "embuscade",
+   "num": 3,
+   "type": "Sector Mechanicus",
+   "nom": "Embuscade",
+   "attaque": true,
+   "pitch": "Un gang prend un rival au dépourvu.",
+   "terrain": "Aucun grand décor à 12\" ou moins du centre ; le défenseur pose tous les petits éléments. Zone du défenseur : 6\" autour du centre.",
+   "equipes": "Attaquant : Sélection Personnalisée. Défenseur : Sélection Aléatoire (D3+5).",
+   "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
+   "deploiement": "Pour chaque défenseur, D6 : 1-5 dans sa zone, 6 mis de côté. L'attaquant se place partout à 12\" au moins des défenseurs (6\" s'il est hors de leur vue). Puis les défenseurs mis de côté vont n'importe où, sans être Engagés.",
+   "special": [
+    "Attaque surprise : l'attaquant a la Priorité au round 1 et active D3 combattants avant le premier défenseur.",
+    "Round 1 : test de Sang-froid à l'activation, raté = une seule action.",
+    "Un défenseur à 1\" ou moins d'un bord au début de la phase de Fin peut s'échapper (compte Hors de Combat pour le Cran) et gagne 1 XP en campagne."
+   ],
+   "objectifs": "L'attaquant veut abattre un maximum de défenseurs, qui ripostent ou s'enfuient.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round.",
+   "victoire": "L'attaquant gagne s'il a mis Hors de Combat plus de défenseurs qu'il ne s'en est échappé (les fuyards ne comptent pas). Sinon le défenseur gagne.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef attaquant si aucun défenseur ne s'est échappé."
+   ],
+   "rep": [
+    "Plus de défenseurs Hors de Combat qu'échappés : attaquant +1.",
+    "Plus d'échappés que de Hors de Combat : défenseur +2.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "richesses-perdues",
+   "num": 3,
+   "type": "Zone Mortalis",
+   "nom": "Richesses Perdues",
+   "pitch": "Des galeries pleines de marchandises attirent les pillards.",
+   "terrain": "7 dalles : une centrale puis 3 chacun autour.",
+   "equipes": "Sélection Personnalisée (X), X selon 2D6 : 2-3 = 5, 4-5 = 6, 6-8 = 7, 9-10 = 8, 11-12 = 9.",
+   "tactiques": "Trois cartes de Gang au choix chacun.",
+   "deploiement": "5 caisses de butin posées à tour de rôle (une sur la dalle centrale, puis une par dalle, à 6\" les unes des autres). Chaque gang se place à 3\" ou moins du bord sur une dalle sans caisse (pas à 6\" d'un ennemi si les dalles se touchent).",
+   "special": [
+    "Horreurs dans l'ombre : un combattant activé à plus de 8\" de tout autre combattant jette un D6. 1 : touche F6 PA-1 D2, s'il est Gravement Blessé il est emporté (Hors de Combat). 2-3 : occupé par une créature, aucune action. 4-5 : une seule action. 6 : rien."
+   ],
+   "objectifs": "1 point par ennemi Hors de Combat, 2 points par caisse de butin (hors caches de munitions) sur sa dalle de départ et à 3\" ou moins du bord à la fin de la bataille.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round ; l'autre marque D3 points bonus.",
+   "victoire": "Le plus de caisses sécurisées. Égalité ou aucune : égalité.",
+   "credits": "D6x10 par caisse sécurisée.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
+   ],
+   "rep": [
+    "+2 au gang qui a sécurisé le plus de caisses.",
+    "+1 chacun si première bataille contre cet adversaire.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "querelle-frontaliere",
+   "num": 4,
+   "type": "Sector Mechanicus",
+   "nom": "Querelle Frontalière",
+   "pitch": "Un différend sur une frontière tourne à la bataille rangée.",
+   "equipes": "Sélection Aléatoire (D3+3) chacun, le reste forme les Renforts.",
+   "tactiques": "Aucune carte au départ. Au début de chaque round après le premier, chacun tire une carte au hasard. Bonus selon l'écart de Valeur.",
+   "deploiement": "Le gagnant d'un tir au dé choisit sa moitié de table, y place un combattant tiré au hasard à plus de 1\" du centre ; l'autre fait de même, puis on alterne normalement. Chacun pose ensuite une relique de gang dans sa moitié, à 5\" au moins des bords.",
+   "special": [
+    "Relique : +2 aux tests de Sang-froid et de Commandement des amis à 6\" ou moins.",
+    "Profaner une Relique (Double) à 1\" ou moins de la relique ennemie : elle perd son effet. D3 XP en campagne.",
+    "Renforts : D3 par joueur au début de chaque phase de Fin, posés en alternance."
+   ],
+   "objectifs": "Profaner la relique adverse et protéger la sienne.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round. Gang en fuite : l'adversaire gagne et son Chef compte comme ayant profané la relique.",
+   "victoire": "Le gang qui a encore des combattants (hors Gravement Blessés) et dont la relique est intacte. Deux reliques profanées : égalité.",
+   "credits": "Relique intacte D6x10, sinon D3x10.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef d'un gang qui a encore des combattants sur la table à la fin."
+   ],
+   "rep": [
+    "+1 chacun si première bataille contre cet adversaire.",
+    "Une seule relique profanée : son gang -2, l'autre +2.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "les-maraudeurs",
+   "num": 4,
+   "type": "Zone Mortalis",
+   "nom": "Les Maraudeurs",
+   "attaque": true,
+   "pitch": "Porter la guerre chez l'ennemi forge une réputation.",
+   "terrain": "6 dalles.",
+   "equipes": "Attaquant : Sélection Personnalisée (6). Défenseur : Sélection Aléatoire (D3+2), le reste forme les Renforts.",
+   "domicile": true,
+   "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
+   "deploiement": "Standard.",
+   "objectifs": "1 point par ennemi Hors de Combat. L'attaquant tire un objectif (D3) : 1 Traquenard, +1 par Champion et +2 pour le Chef ennemi Hors de Combat. 2 Collet, après le déploiement il désigne un ennemi de l'équipe adverse : +1 s'il est mis Hors de Combat, +2 si c'est par un coup de grâce. 3 Pagaille, un attaquant qui a Gravement Blessé un ennemi peut sortir en finissant son activation à 1\" d'un petit côté de table : +1 point, et il compte comme Hors de Combat pour le Cran. Attaquant Dégonflé : plus de points d'objectif.",
+   "special": [
+    "Le défenseur réussit tous ses tests de Cran (il peut se dégonfler volontairement).",
+    "Renforts du défenseur : D3 au début de chaque phase de Fin, à 1\" d'un bord et à plus de 12\" des ennemis."
+   ],
+   "fin": "Un gang sans combattant sur la table à la fin d'un round ; l'autre marque D3 points bonus.",
+   "victoire": "Le plus de points. Égalité sinon.",
+   "credits": "Vainqueur D6x10, perdant D3x5, égalité D3x10 chacun.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef du gang qui a le plus de points (pas en cas d'égalité)."
+   ],
+   "rep": [
+    "+2 au gang qui a le plus de points.",
+    "+1 chacun si première bataille contre cet adversaire.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "sabotage",
+   "num": 5,
+   "type": "Sector Mechanicus",
+   "nom": "Sabotage",
+   "attaque": true,
+   "furtif": true,
+   "pitch": "Un gang s'infiltre chez un rival pour mettre un de ses territoires hors d'usage.",
+   "terrain": "Le défenseur pose la cible (élément d'au moins 2\", plutôt au centre), puis disposition normale.",
+   "equipes": "Attaquant : Sélection Personnalisée. Défenseur : sentinelles en Sélection Aléatoire (5) (il peut écarter des combattants avant le tirage), le reste en Renforts.",
+   "domicile": true,
+   "tactiques": "Attaquant : jusqu'à trois au choix. Défenseur : deux au hasard, utilisables seulement après l'alarme.",
+   "deploiement": "Sentinelles n'importe où, puis attaquants à 2\" ou moins de n'importe quel bord.",
+   "special": [
+    "Cible : E6, sauvegarde 5+, 4 PV. +2 pour la toucher au tir, touche automatique au corps à corps. En campagne, +1 XP par PV retiré et +1 pour la détruire.",
+    "Après destruction, un attaquant à 1\" d'un bord au début de la phase de Fin peut s'échapper.",
+    "Renforts : D6 par round dès que l'alarme est donnée."
+   ],
+   "objectifs": "Détruire la cible, en campagne un Territoire précis du défenseur ou son territoire en général.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round. Défenseur en fuite : la cible est détruite, sans XP.",
+   "victoire": "Attaquant si la cible est détruite et moins de la moitié de son équipe Hors de Combat. Défenseur si la cible tient. Égalité sinon.",
+   "credits": "Cible détruite : attaquant D6x10. Sinon : défenseur D6x10.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef attaquant si la cible est détruite."
+   ],
+   "rep": [
+    "+1 chacun si première bataille contre cet adversaire.",
+    "Cible détruite : attaquant +3, défenseur -1.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "attaque-furtive",
+   "num": 5,
+   "type": "Zone Mortalis",
+   "nom": "Attaque Furtive",
+   "attaque": true,
+   "furtif": true,
+   "pitch": "Un petit groupe de raid vient profaner ou voler un objet sacré du rival.",
+   "terrain": "7 dalles : la centrale posée par le défenseur, puis 3 chacun autour.",
+   "equipes": "Attaquant : Sélection Personnalisée. Défenseur : sentinelles en Sélection Aléatoire (5) (il peut écarter des combattants avant le tirage), le reste en Renforts.",
+   "domicile": true,
+   "tactiques": "Attaquant : jusqu'à trois au choix. Défenseur : deux au hasard, utilisables seulement après l'alarme.",
+   "deploiement": "Sentinelles n'importe où, relique à 6\" ou moins d'un bord. Attaquants entièrement à 4\" ou moins d'un bord et à 4\" ou moins d'un autre attaquant.",
+   "special": [
+    "Relique : +2 aux tests de Sang-froid et de Commandement des défenseurs à 6\" ou moins.",
+    "Profaner une Relique (Double) à 1\" : elle perd son effet. D3 XP en campagne.",
+    "Renforts du défenseur : D3 au début de chaque phase de Fin, à 1\" d'un bord et à plus de 12\" des attaquants."
+   ],
+   "objectifs": "Profaner la relique du défenseur.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round. Défenseur en fuite : l'attaquant gagne et son Chef compte comme ayant profané la relique.",
+   "victoire": "Défenseur : encore des combattants (hors Gravement Blessés) et relique intacte. Attaquant : encore des combattants et relique profanée. Égalité sinon.",
+   "credits": "Attaquant : D6x10 s'il a profané, sinon D3x10. Défenseur : D6x10 si la relique est intacte, sinon D3x10.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef d'un gang qui a encore des combattants sur la table à la fin."
+   ],
+   "rep": [
+    "+1 chacun si première bataille contre cet adversaire.",
+    "Relique profanée : défenseur -2, attaquant +2.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "sauvetage",
+   "num": 6,
+   "type": "Sector Mechanicus",
+   "nom": "Sauvetage",
+   "attaque": true,
+   "furtif": true,
+   "pitch": "Un gang tente de libérer un des siens retenu par un rival.",
+   "condition": "En campagne, seulement si le défenseur détient au moins un captif de l'attaquant. En escarmouche, l'attaquant tire au hasard le combattant captif.",
+   "equipes": "Attaquant : Sélection Personnalisée. Défenseur : sentinelles en Sélection Aléatoire (5) (il peut écarter des combattants avant le tirage), le reste en Renforts.",
+   "domicile": true,
+   "tactiques": "Attaquant : jusqu'à trois au choix. Défenseur : deux au hasard, utilisables seulement après l'alarme.",
+   "deploiement": "Sentinelles et captifs n'importe où. Attaquants à 2\" ou moins de n'importe quel bord.",
+   "special": [
+    "Les captifs n'ont jamais de pion Paré et ne peuvent être ni activés ni attaqués.",
+    "Libérer un Captif (Simple) à 1\" : D6, 3+ libéré. D3 XP en campagne.",
+    "À chaque phase de Fin, un captif peut tenter de se libérer seul (2D6 + Force, 13+), avec risque de Blessure Légère.",
+    "Attaquant ou captif libéré à 1\" d'un bord au début de la phase de Fin : peut s'échapper.",
+    "Renforts : D6 par round dès que l'alarme est donnée."
+   ],
+   "objectifs": "Libérer les captifs et les faire sortir, si possible sans alerter.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round. Défenseur en fuite : l'attaquant gagne et tous les captifs sont libres.",
+   "victoire": "Attaquant si tous ses captifs sont libérés et sortis. Défenseur si aucun n'est sorti. Égalité sinon.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à chaque captif libéré et sorti.",
+    "+1 au Chef attaquant si tous les captifs sont sortis."
+   ],
+   "rep": [
+    "Par captif libéré : attaquant +2, défenseur -1.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "braquage",
+   "num": 6,
+   "type": "Zone Mortalis",
+   "nom": "Braquage",
+   "attaque": true,
+   "pitch": "Un gang transporte des marchandises pour la Guilde, un autre veut les voler.",
+   "terrain": "6 dalles.",
+   "equipes": "Attaquant : Sélection Personnalisée (10). Défenseur : Sélection Aléatoire (D6+3).",
+   "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
+   "deploiement": "Standard. Le défenseur pose en secret 5 caisses dans sa zone, à 4\" au moins des bords : 3 avec munitions, 1 vide, 1 vide piégée (piège à Frag).",
+   "special": [
+    "Le défenseur ne peut ouvrir aucune caisse.",
+    "Caisse ouverte par l'attaquant : pas de jet, on regarde le contenu. Munitions = réussite, vide = rien, piège = il explose et la caisse est retirée."
+   ],
+   "objectifs": "L'attaquant veut ouvrir les caisses de munitions, le défenseur l'en empêcher.",
+   "fin": "Un gang sans combattant sur la table à la fin d'un round. Fuite : l'adversaire gagne (l'attaquant touche les caisses restantes sans risque de piège, le défenseur les caisses non ouvertes).",
+   "victoire": "Attaquant s'il a ouvert plus de caisses de munitions qu'il ne reste de caisses fermées. Sinon défenseur.",
+   "credits": "Attaquant : D6x10 par caisse de munitions ouverte. Défenseur : 2D6x10 par caisse de munitions restée fermée.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 au Chef attaquant si au moins 2 caisses de munitions ouvertes."
+   ],
+   "rep": [
+    "+1 chacun si première bataille contre cet adversaire.",
+    "Par caisse de munitions ouverte : attaquant +1, défenseur -1.",
+    "Attaquant qui a ouvert la caisse piégée : -1.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "dernier-carre",
+   "type": "Arbitrator",
+   "nom": "Dernier Carré",
+   "attaque": true,
+   "pitch": "La Guilde a acculé un gang et veut l'abattre.",
+   "equipes": "Attaquant : Sélection Personnalisée (D3+6), le reste en Renforts. Défenseur : Sélection Aléatoire (D3+5).",
+   "domicile": true,
+   "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
+   "deploiement": "Défenseur entièrement à 6\" ou moins du centre. Attaquant à 2\" ou moins de n'importe quel bord, il peut encercler.",
+   "special": [
+    "Submergés : à la fin de chaque round, l'attaquant appelle D6 Renforts. Un attaquant Hors de Combat ne fait pas de jet de Blessure Persistante et retourne dans la pile de Renforts, soigné.",
+    "Joué à plusieurs attaquants valant au moins le double du défenseur : pas de règle Submergés."
+   ],
+   "objectifs": "Le défenseur tient le plus longtemps possible.",
+   "victoire": "Défenseur s'il a encore un combattant valide (ni Gravement Blessé ni Démoralisé) au début du round 7. Sinon attaquant.",
+   "credits": "Selon le round où le défenseur tombe : 1-2 défenseur -3 Rép. et 0, attaquant +3 Rép. et 2D6x10 ; 3-4 défenseur +1 Rép. et D3x10, attaquant +2 Rép. et D6x10 ; 5-6 défenseur +2 Rép. et D6x10, attaquant +1 Rép. et D3x10 ; 7+ défenseur +3 Rép. et 2D6x10, attaquant -3 Rép. et 0.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+D3 aux défenseurs encore valides au round 7."
+   ],
+   "rep": [
+    "Voir la ligne crédits (selon le round)."
+   ]
+  },
+  {
+   "id": "sortez-de-la-fosse",
+   "type": "Arbitrator",
+   "nom": "Sortez de la Fosse !",
+   "pitch": "Une antique machinerie se réveille et compresse la zone pendant que les gangs pillent.",
+   "equipes": "Sélection Aléatoire (D3+4) chacun.",
+   "tactiques": "Deux cartes de Gang au choix chacun.",
+   "deploiement": "Un point d'évacuation (échelle, plate-forme surélevée de préférence). Caisses de butin posées à tour de rôle (voir le livre), puis déploiement.",
+   "special": [
+    "Les murs bougent : dès le début du round 3, D6 3+ par round : une dalle périphérique (ou une bande de 6\" sur deux bords opposés en Sector Mechanicus) disparaît. Les combattants dessus font un test d'Initiative : réussi ils se replient, raté Hors de Combat. La dalle du point d'évacuation part en dernier.",
+    "Un combattant à 1\" du point d'évacuation au début de la phase de Fin peut sortir (compte Hors de Combat pour le Cran)."
+   ],
+   "objectifs": "Sortir un maximum de caisses par le point d'évacuation.",
+   "fin": "Un gang sans combattant sur la table, ou plus aucune zone jouable.",
+   "victoire": "Le plus de caisses sorties, puis le plus de combattants sortis. Égalité sinon.",
+   "credits": "D3x10 par caisse sortie.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 par combattant sorti, +1 de plus s'il portait une caisse."
+   ],
+   "rep": [
+    "+1 si au moins un combattant est sorti.",
+    "+1 par caisse sortie."
+   ]
+  },
+  {
+   "id": "grabuge-en-centre-ville",
+   "type": "Arbitrator",
+   "nom": "Grabuge en Centre-ville",
+   "pitch": "Deux gangs se disputent un quartier habité et ses occupants.",
+   "equipes": "Sélection Aléatoire (D3+4) chacun.",
+   "tactiques": "Deux cartes de Gang au choix chacun.",
+   "deploiement": "Tir au dé pour l'ordre, puis combattants posés à tour de rôle à plus de 6\" de tout combattant. Ensuite D6+6 Habitants des Ruches.",
+   "special": [
+    "Les Habitants des Ruches ne s'activent pas. Ils réagissent (D6, voir le livre) à un tir à 12\", un combat ou une explosion à 6\". 1-2 : ils tirent au flingue sur le plus proche. Mis à 0 PV : directement Hors de Combat."
+   ],
+   "objectifs": "Rester seul maître du quartier sans massacrer la population.",
+   "victoire": "Le gang seul avec des combattants actifs, si pas plus de la moitié des habitants est Hors de Combat. Égalité sinon.",
+   "credits": "Chaque habitant mis Hors de Combat coûte D3x10 crédits (ou D3 de Réputation si on ne paie pas).",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "Vainqueur : +1 à ses combattants si au moins la moitié des habitants est intacte, +2 si aucun n'est tombé."
+   ],
+   "rep": [
+    "+1 à chaque gang.",
+    "Vainqueur avec au moins la moitié des habitants intacts : +D3+1."
+   ]
+  },
+  {
+   "id": "fusillade",
+   "type": "Arbitrator",
+   "nom": "Fusillade",
+   "pitch": "Duel au ralenti : le premier qui craque dégaine.",
+   "terrain": "Couloir de 3 dalles en ligne (Zone Mortalis) ou table de 36\" x 12\" sans décor bloquant la vue.",
+   "equipes": "Sélection Aléatoire (D3+1) chacun.",
+   "tactiques": "Aucune carte.",
+   "deploiement": "Chaque gang à 10\" d'un petit côté, au sol, chaque combattant à 1\" d'un ami, en vue de l'adversaire.",
+   "special": [
+    "Plus rapide que son ombre : test de Sang-froid à chaque activation, un échec ajoute un pion. Avant que quelqu'un dégaine, seule action possible : avancer de 3\" maximum droit vers l'ennemi, sans couvert, et rien si on arrive à 4\" d'un ennemi.",
+    "À 6 échecs, l'équipe dégaine : tout le monde devient Paré, test d'Initiative (+1 avec une arme de Poing, -2 avec une arme Encombrante). Ceux qui réussissent agissent d'abord par ordre d'Initiative, ex-aequo en même temps."
+   ],
+   "fin": "Un gang sans combattant sur la table à la fin d'un round.",
+   "victoire": "Le gang qui reste seul sur la table.",
+   "credits": "Vainqueur : D6x5 par ennemi Hors de Combat.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à ceux qui n'ont raté aucun test de Sang-froid avant les tirs."
+   ],
+   "rep": [
+    "+1 à chaque gang.",
+    "Le gang qui a dégainé en second gagne 6 moins son nombre de tests ratés."
+   ]
+  },
+  {
+   "id": "attaque-de-caravane",
+   "type": "Arbitrator",
+   "nom": "Attaque de Caravane",
+   "attaque": true,
+   "pitch": "Un gang attaque un convoi de la Guilde escorté par un rival.",
+   "terrain": "Prévoir un passage pour la caravane d'un bord à l'autre.",
+   "equipes": "Sélection Personnalisée (10) chacun.",
+   "tactiques": "Deux cartes de Gang au choix chacun.",
+   "deploiement": "Le défenseur pose la caravane contre un bord et se déploie autour (voir le livre). L'attaquant se déploie ensuite.",
+   "special": [
+    "La caravane avance de 6\" vers le bord opposé au début de chaque round. Elle ne peut pas être attaquée, bloque la vue et donne un couvert partiel. Embarquer/Débarquer (Simple).",
+    "Piller la Caravane (Simple) à 1\" : un pion Butin. Un attaquant Hors de Combat perd ses pions.",
+    "Le défenseur ne fait jamais de test de Cran et peut recruter gratuitement des Rebuts de la Ruche pour remplacer ses absents."
+   ],
+   "fin": "La caravane sort de l'autre côté, ou un gang n'a plus personne sur la table.",
+   "victoire": "Attaquant s'il réunit 10 pions Butin. Sinon défenseur.",
+   "credits": "Attaquant : D6x10 par pion Butin conservé. Défenseur : D6x10, plus 3D6x10 si l'attaquant a moins de 5 pions.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à chaque attaquant qui a pillé sans tomber Hors de Combat.",
+    "+1 à chaque défenseur qui met Hors de Combat un porteur de Butin."
+   ],
+   "rep": [
+    "+1 à chaque gang.",
+    "Attaquant à 10 pions : +D3+1. Caravane sortie avant : défenseur +D3+1."
+   ]
+  },
+  {
+   "id": "recolte-de-ghast",
+   "type": "Arbitrator",
+   "nom": "Récolte de Ghast",
+   "pitch": "Des gangs récoltent du ghast brut, une drogue psychoactive.",
+   "equipes": "Sélection Aléatoire (D3+4) chacun.",
+   "tactiques": "Deux cartes de Gang au hasard. En jouant une carte : D6, 4+ elle marche, sinon elle est défaussée et remplacée.",
+   "deploiement": "Standard. 4 dépôts de ghast posés à tour de rôle.",
+   "special": [
+    "Récolter du Ghast (Double) au contact : test d'INT réussi = pion Butin, puis D6 6 le dépôt est épuisé.",
+    "Chaque tentative : test d'Endurance (+2 avec respirateur). Raté, ou ingestion volontaire : D6 sur le tableau d'effets (de la perte de contrôle au statut de psyker avec un Pouvoir Wyrd au hasard).",
+    "Un combattant Hors de Combat perd ses pions Butin."
+   ],
+   "victoire": "Le plus de pions Butin.",
+   "credits": "D6x10 par pion Butin d'un combattant resté debout, ou garder des sacs de ghast dans le Magot.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à qui a récolté sans tomber Hors de Combat.",
+    "+1 au premier Pouvoir Wyrd réussi."
+   ],
+   "rep": [
+    "+1 à chaque gang.",
+    "+3 au gang qui a récolté au moins 5 sacs."
+   ]
+  },
+  {
+   "id": "archeo-chasseurs",
+   "type": "Arbitrator",
+   "nom": "Archéo-chasseurs",
+   "pitch": "Course à une crypte d'archéotechnologie.",
+   "equipes": "Sélection Aléatoire (D3+7) chacun.",
+   "tactiques": "Deux cartes au choix chacun.",
+   "deploiement": "Standard. Porte de la crypte au milieu d'un bord hors zones de déploiement, automate minier au centre.",
+   "special": [
+    "Automate (fuseur, cisaille lourde, carapace légère, jamais Bloqué) : à l'arrêt au départ. Mise en Marche (Simple) à 1\" avec un test d'INT : il rejoint ce gang jusqu'à la phase de Fin.",
+    "Seul l'automate peut ouvrir la crypte : Détruire la Porte (Double) à 1\". Ensuite les combattants peuvent y entrer en sortant de la table.",
+    "Arbitré : l'Arbitrator peut contrôler un ou plusieurs automates, déjà en marche ; un combattant au contact qui réussit un test d'INT en prend le contrôle pour un round."
+   ],
+   "objectifs": "Ouvrir la crypte et y entrer avant l'adversaire.",
+   "victoire": "Le plus de combattants dans la crypte. Égalité ou aucun : égalité.",
+   "credits": "D6x10 par combattant du gang dans la crypte à la fin.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à chaque combattant entré dans la crypte.",
+    "Scénario Arbitré : +D3 à qui met un automate Hors de Combat."
+   ],
+   "rep": [
+    "+1 à chaque gang.",
+    "+D3 au gang qui a le plus de combattants dans la crypte."
+   ],
+   "fin": "Un gang sans combattant sur la table à la fin d'un round (ceux entrés dans la crypte comptent). Gang en fuite : l'adversaire gagne, avec D6x10 crédits en plus par combattant encore sur la table et pas Gravement Blessé."
+  },
+  {
+   "id": "escorte",
+   "type": "Arbitrator",
+   "nom": "Escorte",
+   "attaque": true,
+   "pitch": "Un agent de la haute-ruche doit être exfiltré.",
+   "equipes": "Attaquant : Sélection Personnalisée (D3+5), le reste en Renforts. Défenseur : Sélection Aléatoire (D3+7) plus l'agent.",
+   "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
+   "deploiement": "Standard.",
+   "special": [
+    "Agent : M4 CC5+ CT4+ F3 E3 PV2 I4+ A1, armure composite, champ téléporteur, pistolet laser.",
+    "Extraction : agent au bord le plus proche de la zone de l'attaquant, D6 5+ à la phase de Fin (4+, puis 3+... aux tours suivants).",
+    "Renforts de l'attaquant : 1 par round à partir de la phase de Fin du round 2."
+   ],
+   "fin": "Agent extrait ou Hors de Combat, ou un gang sans combattant.",
+   "victoire": "Défenseur si l'agent est extrait, sinon attaquant.",
+   "credits": "Agent extrait : défenseur D6x10. Agent abattu : attaquant D6x10.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+D3 à qui met l'agent Hors de Combat."
+   ],
+   "rep": [
+    "Agent extrait : défenseur +D3. Agent abattu : attaquant +D3.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "combattant-a-terre",
+   "type": "Arbitrator",
+   "nom": "Combattant à Terre",
+   "attaque": true,
+   "pitch": "Un gang cherche à récupérer un camarade tombé avant le sous-monde.",
+   "equipes": "Sélection Aléatoire (D3+2) chacun, le reste en Renforts. L'attaquant tire d'abord un Ganger ou Novice blessé.",
+   "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
+   "deploiement": "Standard, blessé face contre terre à 8\" ou moins du centre.",
+   "special": [
+    "Le blessé reste Gravement Blessé (pas de récupération), peut Ramper, peut être achevé. Porter (Double) à 1\" : un ami l'emporte de sa valeur de Mouvement. Il sort par le bord le plus proche de la zone de l'attaquant.",
+    "Charognards (profil dans le livre) posés à 12\" des combattants ; déplacés à tour de rôle à chaque phase de Fin, ils attaquent au contact.",
+    "Renforts : D3 par gang à partir de la phase de Fin du round 2, à 1\" d'un bord et à plus de 12\" des ennemis."
+   ],
+   "fin": "Blessé Hors de Combat ou sorti, ou un gang sans combattant.",
+   "victoire": "Défenseur si le blessé est Hors de Combat, sinon attaquant.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à qui met le blessé Hors de Combat."
+   ],
+   "rep": [
+    "Blessé sorti : attaquant +D3.",
+    "Blessé achevé : défenseur +1.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "cyborg-meurtrier",
+   "type": "Arbitrator",
+   "nom": "Cyborg Meurtrier",
+   "pitch": "Un Assassin Cyborg se cache parmi les gangers.",
+   "equipes": "Sélection Personnalisée chacun.",
+   "tactiques": "Deux cartes de Gang au choix chacun.",
+   "deploiement": "Standard.",
+   "special": [
+    "Chaque blessure d'une arme à Dégâts chiffrés : D6, 5+ le blessé était l'Assassin et il est remplacé par lui (profil dans le livre : deux pistolets bolter, fusil à pompe Executioner, carapace légère, champ téléporteur, grenades).",
+    "L'Assassin traite Hors de Combat comme Gravement Blessé, ignore le coup de grâce tant qu'il a de l'Endurance, ignore Toxine, Gaz et Aveuglant.",
+    "Mission (D6) contrôlée par le joueur qui a la Priorité : 1-2 tuer le plus proche, 3-4 viser les Chefs, 5-6 fuir par le bord le plus éloigné."
+   ],
+   "fin": "Un gang sans combattant, ou l'Assassin a quitté la table.",
+   "victoire": "Le gang qui détruit l'Assassin. Égalité sinon.",
+   "credits": "3D6x10 au gang qui l'achève.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à chaque combattant qui l'a blessé."
+   ],
+   "rep": [
+    "+D3 au gang qui l'achève.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "le-carton",
+   "type": "Arbitrator",
+   "nom": "Le Carton",
+   "attaque": true,
+   "pitch": "Un commando vient éliminer le Chef d'un gang rival.",
+   "equipes": "Attaquant : Sélection Personnalisée (D3+5). Défenseur : son Chef plus Sélection Aléatoire (D3+5), le reste en Renforts.",
+   "tactiques": "Attaquant : deux au choix. Défenseur : deux au hasard.",
+   "deploiement": "Chef et 2 combattants du défenseur à 12\" du centre, les autres D6 5+ n'importe où sinon à 8\" du Chef. Attaquants à 2\" d'un bord et à 6\" des ennemis.",
+   "special": [
+    "L'attaquant a la Priorité au round 1, les défenseurs n'ont qu'une action au round 1.",
+    "Renforts de l'attaquant : 1 par round à partir de la phase de Fin du round 2."
+   ],
+   "victoire": "Attaquant si le Chef défenseur est Gravement Blessé ou Hors de Combat. Sinon défenseur.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+D3 à chaque attaquant qui blesse le Chef.",
+    "+D3 au Chef défenseur s'il finit indemne."
+   ],
+   "rep": [
+    "Attaquant : +D3 si le Chef est Gravement Blessé, +D6 s'il est Hors de Combat.",
+    "Chef défenseur encore sur la table : +D3.",
+    "-1 au gang qui s'est dégonflé."
+   ]
+  },
+  {
+   "id": "altercation",
+   "type": "Multijoueur",
+   "nom": "Altercation",
+   "pitch": "Des pourparlers entre gangs dégénèrent.",
+   "equipes": "Le Chef plus Sélection Aléatoire (D3+5).",
+   "tactiques": "Deux au hasard chacun.",
+   "deploiement": "Chefs à 6\" du centre, puis combattants à 12\" au moins des Chefs et à 6\" au moins des autres.",
+   "special": [
+    "Pourparlers : seuls les Chefs sont Parés au départ. Un tir (sauf Silencieux) permet aux non-Parés à 12\" de faire un test d'INT pour le devenir ; ceux qui sont attaqués deviennent Parés."
+   ],
+   "fin": "Un seul gang a encore des combattants à la fin d'un round.",
+   "victoire": "Le gang dont le Chef est encore debout et pas Gravement Blessé. Égalité sinon.",
+   "xp": [
+    "+1 par combattant ayant joué, +1 par ennemi mis Hors de Combat.",
+    "+D6 au dernier Chef debout."
+   ],
+   "rep": [
+    "+1 par gang présent, +2 si un des siens met un Chef ennemi Hors de Combat.",
+    "+3 au gang du dernier Chef debout."
+   ]
+  },
+  {
+   "id": "combat-d-arene",
+   "type": "Multijoueur",
+   "nom": "Combat d'Arène",
+   "pitch": "Un Champion par gang se bat pour l'honneur.",
+   "terrain": "24\" x 24\" maximum conseillé.",
+   "equipes": "Un Champion par joueur.",
+   "tactiques": "Une carte au choix chacun.",
+   "deploiement": "Chaque Champion au contact d'un bord, à 12\" au moins des autres.",
+   "special": [
+    "C'est qu'une égratignure : Blessure Légère ignorée, Gravement Blessé traité comme Blessure Légère, pas de coup de grâce.",
+    "Règles particulières aux premiers rounds : voir le livre."
+   ],
+   "victoire": "Le dernier Champion debout. Égalité si aucun.",
+   "credits": "Le vainqueur gagne D6x5 par autre Champion.",
+   "xp": [
+    "+1 par Champion, +1 par ennemi mis Hors de Combat.",
+    "+D3 au vainqueur."
+   ],
+   "rep": [
+    "+1 par gang présent, +2 si son Champion tient jusqu'au round 6.",
+    "+4 au gang vainqueur."
+   ]
+  },
+  {
+   "id": "demonstration-de-puissance",
+   "nom": "Démonstration de Puissance",
+   "pitch": "L'attaquant veut écraser l'ennemi pour l'exemple, le défenseur tente de fuir.",
+   "attaque": "Attaquant : celui qui choisit le scénario en campagne, sinon jet au dé.",
+   "equipes": "Attaquant : Personnalisée (D3+7), le reste en Renforts. Défenseur : Aléatoire (D3+5).",
+   "tactiques": "Deux cartes chacun, +1 au hasard par tranche de 100 crédits d'écart en faveur du plus faible.",
+   "deploiement": "Standard.",
+   "special": [
+    "Choc et stupeur : chaque défenseur Hors de Combat vaut 1 point à l'attaquant, 2 s'il tombe à 6\" ou moins d'un allié.",
+    "Dans l'ombre : en phase de Fin, un défenseur non Engagé à 2\" ou moins du bord opposé à son déploiement peut sortir (ni Hors de Combat, ni compté pour le Cran) : 1 point au défenseur. Chaque attaquant Hors de Combat vaut aussi 1 point au défenseur.",
+    "Renforts de l'attaquant : un combattant au hasard en phase de Fin, dès la fin du round 2."
+   ],
+   "fin": "Un seul gang reste sur la table.",
+   "victoire": "Le plus de points. À égalité, le gang dont l'Allégeance est Ascendante gagne.",
+   "credits": "Insurrection : l'attaquant gagne D6x10 par défenseur Hors de Combat. Famine (Damnation) : 1 portion de Viande par ennemi Hors de Combat. Pillage (Damnation) : 1 jet au vainqueur.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à chaque défenseur sorti du champ de bataille."
+   ],
+   "rep": [
+    "+D3 au vainqueur.",
+    "-1 au gang qui s'est dégonflé."
+   ],
+   "type": "Soulèvement"
+  },
+  {
+   "id": "pillage",
+   "nom": "Pillage",
+   "pitch": "Les deux gangs fouillent le champ de bataille en quête de ressources.",
+   "equipes": "Personnalisée (D3+7) chacun.",
+   "tactiques": "Deux cartes chacun, +1 au hasard par tranche de 100 crédits d'écart en faveur du plus faible.",
+   "deploiement": "Standard.",
+   "special": [
+    "2D6 éléments de butin posés à tour de rôle (premier : le joueur qui a la Priorité), à plus de 6\" des bords et 3\" les uns des autres.",
+    "Action Pillage (Double) à 1\" : D6. 4+ : 1 point de pillage. 1 : explose comme un piège Frag. L'élément est retiré dans tous les cas."
+   ],
+   "fin": "Plus de butin sur la table, ou un seul gang reste.",
+   "victoire": "Le plus de points de pillage. À égalité, le gang dont l'Allégeance est Ascendante gagne.",
+   "credits": "Insurrection : D3x10 par point de pillage. Famine (Damnation) : 1 portion de Viande par ennemi Hors de Combat. Pillage (Damnation) : 1 jet par point de pillage.",
+   "xp": [
+    "+1 par combattant ayant joué."
+   ],
+   "rep": [
+    "+D3 au vainqueur.",
+    "-1 au gang qui s'est dégonflé."
+   ],
+   "type": "Soulèvement"
+  },
+  {
+   "id": "hit-and-run",
+   "nom": "Hit and Run",
+   "pitch": "Un gang frappe depuis l'ombre pour abattre l'ennemi.",
+   "attaque": "Attaquant : celui qui choisit le scénario en campagne, sinon jet au dé.",
+   "equipes": "Attaquant : Personnalisée (D3+7). Défenseur : Aléatoire (D3+7).",
+   "tactiques": "Deux cartes chacun, +1 au hasard par tranche de 100 crédits d'écart en faveur du plus faible.",
+   "deploiement": "Le défenseur se déploie entièrement à 6\" du centre ; l'attaquant n'importe où à plus de 8\" de tout ennemi.",
+   "special": [
+    "Faites-les payer : 1 point par ennemi Hors de Combat, +2 pour le Chef.",
+    "Mauvais pressentiment : après déploiement, chaque défenseur qui voit un attaquant fait un test de Repérage (D6 + modificateurs égal ou supérieur à son Intelligence ; -1 couvert partiel, -2 couvert complet, -2 à plus de 12\"). Réussi : une action de Tir ou de Mouvement gratuite.",
+    "Disparition (Double, attaquant) : hors de vue et à plus de 6\" de tout ennemi Actif, test d'Intelligence pour quitter la table (pas Hors de Combat, mais compté pour le Cran)."
+   ],
+   "fin": "Un seul gang reste.",
+   "victoire": "Le plus de points. À égalité, le gang dont l'Allégeance est Ascendante gagne.",
+   "credits": "Insurrection : l'attaquant gagne D6x10 par ennemi Hors de Combat. Famine (Damnation) : 1 portion de Viande par ennemi Hors de Combat. Pillage (Damnation) : 1 jet au vainqueur.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à qui met le Chef ennemi Hors de Combat."
+   ],
+   "rep": [
+    "+D3 au vainqueur.",
+    "-1 au gang qui s'est dégonflé."
+   ],
+   "type": "Soulèvement"
+  },
+  {
+   "id": "rechercher-et-detruire",
+   "nom": "Rechercher et Détruire",
+   "pitch": "L'attaquant traque les caches d'armes du défenseur.",
+   "attaque": "Attaquant : celui qui choisit le scénario en campagne, sinon jet au dé.",
+   "equipes": "Attaquant : Personnalisée (10). Défenseur : Aléatoire (D3+3), le reste en Renforts.",
+   "tactiques": "Deux cartes chacun, +1 au hasard par tranche de 100 crédits d'écart en faveur du plus faible.",
+   "deploiement": "Standard.",
+   "special": [
+    "Table divisée en 4 zones, une cache par zone. Au début du tour, on désigne des fouilleurs (dans la zone, Debout, Actifs, à plus de 6\" des bords) : ils perdent leur jeton Paré.",
+    "Phase de Fin : D6 par fouilleur, 5+ trouve la cache (posée comme caisse de butin). Si les deux gangs fouillent la même zone, la Priorité fouille d'abord.",
+    "Défenseur : une cache emportée dans sa zone de déploiement et retirée en phase de Fin vaut 2 points. Attaquant : action Double au contact, test d'Intelligence (+1 par allié à 2\") pour la détruire, 1 point.",
+    "Renforts du défenseur dès la fin du tour 2."
+   ],
+   "fin": "Toutes les caches retirées ou détruites, ou un seul gang reste.",
+   "victoire": "Le plus de points. À égalité, le gang dont l'Allégeance est Ascendante gagne.",
+   "credits": "Insurrection : attaquant D3x10 par cache détruite, défenseur D6x10 par cache sauvée. Famine (Damnation) : 1 portion de Viande par ennemi Hors de Combat. Pillage (Damnation) : attaquant 1 jet par cache détruite, défenseur 2 par cache sauvée.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 par cache détruite, +D3 au défenseur qui sauve une cache."
+   ],
+   "rep": [
+    "+D3 au vainqueur.",
+    "-1 au gang qui s'est dégonflé."
+   ],
+   "type": "Soulèvement"
+  },
+  {
+   "id": "recolte-de-viande",
+   "nom": "Récolte de Viande",
+   "pitch": "L'attaquant moissonne des ruchiers, le défenseur les met à l'abri.",
+   "attaque": "Attaquant : celui qui choisit le scénario en campagne, sinon jet au dé. Un seul gang du Chaos (Cultistes, Corpse Grinder ou Corrompu) est toujours l'attaquant.",
+   "equipes": "Aléatoire (D3+2) chacun, le reste en Renforts.",
+   "tactiques": "Deux cartes chacun, +1 au hasard par tranche de 100 crédits d'écart en faveur du plus faible.",
+   "deploiement": "Standard.",
+   "special": [
+    "12 ruchiers posés à tour de rôle (attaquant d'abord) à plus de 8\" des bords. Ils n'ont pas de profil.",
+    "Touché par une Explosion ou un gabarit : retiré sur 5+. Touché à distance : retiré sur 5+. Touché en mêlée : récolté sur 3+, sinon repoussé de D6\".",
+    "Chaque ruchier récolté : 1 point à l'attaquant.",
+    "Phase de Fin : chaque ruchier à plus de 2\" d'un défenseur dérive de 2D6\".",
+    "Regrouper (Élémentaire, défenseur) : test de Commandement, les ruchiers à 8\" ou moins avancent de 2D6\" vers lui. En phase de Fin, un ruchier dans la zone du défenseur à 2\" d'un défenseur est mis à l'abri : 2 points.",
+    "Renforts pour les deux gangs dès la fin du tour 2."
+   ],
+   "fin": "Tous les ruchiers retirés, ou un seul gang reste.",
+   "victoire": "Le plus de points. À égalité, le gang dont l'Allégeance est Ascendante gagne.",
+   "credits": "Insurrection : attaquant D3x10 par ruchier récolté, défenseur D6x10 par ruchier sauvé. Famine (Damnation) : 1 portion de Viande par ennemi Hors de Combat. L'attaquant ajoute 1 Viande par ruchier récolté. Pillage (Damnation) : 1 jet au vainqueur, +1 au défenseur par ruchier sauvé.",
+   "xp": [
+    "+1 par combattant ayant joué."
+   ],
+   "rep": [
+    "+D3 au vainqueur.",
+    "-1 au gang qui s'est dégonflé."
+   ],
+   "type": "Soulèvement"
+  },
+  {
+   "id": "execution-publique",
+   "nom": "Exécution Publique",
+   "pitch": "L'attaquant doit libérer un prisonnier avant son exécution.",
+   "attaque": "Attaquant : celui qui choisit le scénario en campagne, sinon jet au dé. Un seul gang du Chaos (Cultistes, Corpse Grinder ou Corrompu) est toujours l'attaquant.",
+   "equipes": "Attaquant : Personnalisée (D3+7). Défenseur : Aléatoire (D3+5), le reste en Renforts.",
+   "tactiques": "Deux cartes chacun, +1 au hasard par tranche de 100 crédits d'écart en faveur du plus faible.",
+   "deploiement": "Défenseur d'abord, prisonnier au centre et défenseurs à 6\" de lui ; attaquant à 2\" ou moins d'un bord.",
+   "special": [
+    "Compte à rebours : D6 sur 6. En phase de Fin, il baisse de 1 par condition : un défenseur Actif à 3\" du prisonnier, des défenseurs mis Hors de Combat ce round, le Chef défenseur Hors de Combat. Il est gelé ce tour si un attaquant Actif Debout est à 3\" du prisonnier, si aucun défenseur ne voit d'attaquant, ou si l'attaquant utilise un chrono-cristal.",
+    "À 0 : dé de Trauma pour le prisonnier ; autre chose qu'une Blessure légère, il est exécuté. Sinon on relance en phase de Fin suivante avec un dé de plus par tour.",
+    "Libération : action Double à 1\". Le prisonnier fuit ensuite de 3D6\" en phase de Fin vers le bord le plus proche (ciblable, profil Ganger) et sort au bord.",
+    "Variante : l'attaquant peut jouer ce scénario au lieu de Sauvetage pour récupérer un Capturé (libéré, il devient Paré et combat avec son équipement ; raté, il est perdu comme vendu à la Guilde).",
+    "Renforts du défenseur dès la fin du round 2."
+   ],
+   "fin": "Prisonnier retiré, ou un seul gang reste.",
+   "victoire": "Exécuté : le défenseur gagne. Évadé : l'attaquant gagne. Toujours sur la table : le gang dont l'Allégeance est Ascendante gagne.",
+   "credits": "Insurrection : l'attaquant gagne 2D6x10 s'il sauve le prisonnier, le défenseur D6x10 s'il est exécuté. Famine (Damnation) : 1 portion de Viande par ennemi Hors de Combat. Pillage (Damnation) : 1 jet au vainqueur.",
+   "xp": [
+    "+1 par combattant ayant joué.",
+    "+1 à qui libère le prisonnier."
+   ],
+   "rep": [
+    "+D3 au vainqueur.",
+    "-1 au gang qui s'est dégonflé."
+   ],
+   "type": "Soulèvement"
+  }
+ ]
 }

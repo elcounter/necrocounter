@@ -520,7 +520,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.14.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.15.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span><br><br>
@@ -981,7 +981,7 @@
     }
 
     // ---- Scénarios N23 ----
-    const SCEN_TYPES = ["Sector Mechanicus", "Zone Mortalis", "Arbitrator", "Multijoueur"];
+    const SCEN_TYPES = ["Sector Mechanicus", "Zone Mortalis", "Arbitrator", "Multijoueur", "Soulèvement"];
     let SCEN = null;
     function scenarioBody(sc) {
       const L = [];
@@ -1010,7 +1010,7 @@
             `<details class="eq" data-q="${q(r.nom + " " + r.resume)}"><summary><span class="nm">${esc(r.nom)}</span></summary><p class="shop" style="padding:8px 12px 12px">${esc(r.resume)}</p></details>`).join("")}</div></details>
           <details class="fold" data-fold="tirage"><summary><span>Choisir le scénario (2D6, Dominion)</span></summary><div class="fold-body">${sd.tirage.map(t =>
             `<div class="eq"><div class="row"><span class="nm plain">${t.de === t.a ? t.de : t.de + "-" + t.a}</span><span class="pr" style="max-width:75%;text-align:right;font-size:12px">${esc(t.texte)}</span></div></div>`).join("")}</div></details>
-          ${SCEN_TYPES.map(ty => { const L = sd.scenarios.filter(x => x.type === ty); return L.length ? `<details class="fold" data-fold="${q(ty)}"><summary><span>${esc(ty === "Arbitrator" ? "Scénarios d'Arbitrator" : ty === "Multijoueur" ? "Multijoueur" : ty)}</span><small>${L.length}</small></summary><div class="fold-body">${L.map(one).join("")}</div></details>` : ""; }).join("")}
+          ${SCEN_TYPES.map(ty => { const L = sd.scenarios.filter(x => x.type === ty); return L.length ? `<details class="fold" data-fold="${q(ty)}"><summary><span>${esc(ty === "Arbitrator" ? "Scénarios d'Arbitrator" : ty === "Multijoueur" ? "Multijoueur" : ty === "Soulèvement" ? "Soulèvement Sombre (Dark Uprising)" : ty)}</span><small>${L.length}</small></summary><div class="fold-body">${L.map(one).join("")}</div></details>` : ""; }).join("")}
         </div>`;
     }
     function scenarioSelect(cur) {
