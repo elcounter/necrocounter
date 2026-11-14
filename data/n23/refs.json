@@ -63,6 +63,10 @@
       "resume": "+2 sauvegarde mêlée (max 2+) dans l'arc frontal ; +1 vs tir frontal. Certaines explosions peuvent l'ignorer."
     },
     {
+      "nom": "Bouclier à énergie",
+      "resume": "(Désolation) Le bouclier protège le porteur contre les attaques venant de face (détail : voir le livre)."
+    },
+    {
       "nom": "Choc",
       "resume": "Touche sur 6 naturel : blessure automatique (pas de jet de blessure)."
     },
@@ -93,6 +97,10 @@
     {
       "nom": "Déchiqueter",
       "resume": "(Ruines) Sur un 6 naturel pour blesser, la PA de l'arme est doublée."
+    },
+    {
+      "nom": "Déflagration",
+      "resume": "(Désolation) Arme Volkite : effet en chaîne sur les touches (détail : voir le livre)."
     },
     {
       "nom": "Déluge de feu (X)",

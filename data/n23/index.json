@@ -69,6 +69,12 @@
       "fichier": "maisons/culte-genestealer.json"
     },
     {
+      "id": "spyriens",
+      "nom": "Groupe de Chasse Spyrien",
+      "titre": "Groupe de Chasse Spyrien",
+      "fichier": "maisons/spyriens.json"
+    },
+    {
       "id": "venators",
       "nom": "Venators",
       "titre": "Venators (chasseurs de primes)",

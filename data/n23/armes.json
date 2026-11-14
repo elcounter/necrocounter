@@ -720,6 +720,74 @@
       ]
     },
     {
+      "id": "lance-bolts",
+      "nom": "Lance-bolts",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "8\"",
+          "porL": "20\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Arme de Poing",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "matrice-de-desintegration",
+      "nom": "Matrice de désintégration",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "3\"",
+          "porL": "12\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "5",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Arme de Poing",
+            "Instable",
+            "Rareté",
+            "Sectionner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dechargeur-volkite",
+      "nom": "Déchargeur Volkite",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "5\"",
+          "porL": "10\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Arme de Poing",
+            "Déflagration"
+          ]
+        }
+      ]
+    },
+    {
       "id": "pistolet-eclateur",
       "nom": "Pistolet éclateur",
       "categorie": "Pistolets",
@@ -1308,6 +1376,95 @@
             "Rareté",
             "Souffle",
             "Toile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bouclier-miroir",
+      "nom": "Bouclier miroir",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "4\"",
+          "porL": "8\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "3+",
+          "traits": [
+            "Aveuglant",
+            "Bouclier à Énergie"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paire-d-inciseurs-a-toile",
+      "nom": "Paire d'inciseurs à toile",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "4\"",
+          "porL": "8\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "-",
+          "Mu": "4+",
+          "traits": [
+            "Silencieux",
+            "Tir Rapide (1)",
+            "Toile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paire-de-gantelets-laser-yeld",
+      "nom": "Paire de gantelets laser Yeld",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "10\"",
+          "porL": "20\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "3+",
+          "traits": [
+            "Abondance",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paire-de-gantelets-a-missiles-yeld",
+      "nom": "Paire de gantelets à missiles Yeld",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "15\"",
+          "porL": "30\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup",
+            "Tir Rapide (1)"
           ]
         }
       ]
@@ -2945,6 +3102,166 @@
             "Explosion (5\")",
             "Gaz",
             "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paire-de-griffes-dechiqueteuses-malcadon",
+      "nom": "Paire de griffes déchiqueteuses Malcadon",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Couplé",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "paire-de-fouets-a-toxine-malcadon",
+      "nom": "Paire de fouets à toxine Malcadon",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "2\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "-",
+          "PA": "-2",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Couplé",
+            "Empêtrement",
+            "Mêlée",
+            "Polyvalent",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epee-monomoleculaire",
+      "nom": "Épée monomoléculaire",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Énergétique",
+            "Mêlée",
+            "Parade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lame-naga",
+      "nom": "Lame Naga",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Désarmement",
+            "Mêlée",
+            "Parade",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gantelets-energetiques-orrus",
+      "nom": "Gantelets énergétiques Orrus",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Couplé",
+            "Énergétique",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "serres-energetiques-orrus",
+      "nom": "Serres énergétiques Orrus",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-3",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Couplé",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ailes-yeld",
+      "nom": "Ailes Yeld",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée"
           ]
         }
       ]

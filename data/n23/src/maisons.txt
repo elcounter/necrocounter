@@ -805,3 +805,68 @@ Respirateur | 15
 Première génération (Bras supplémentaire) | 45
 ## Bêtes exotiques [chef, alpha, champion, ganger]
 Familier psychique (0-3) | 25
+
+= Groupe de Chasse Spyrien => spyriens
+source: Livre de la Désolation (version française)
+creation: novice | Pas de Novice ni de Ganger : le groupe ignore la règle des Combattants du gang. Les crédits non dépensés à la fondation sont perdus.
+creation: armeSpeciale | Chaque Chasseur a son équipement de chasse inclus (ajoute-le à 0 crédit) et ses options propres ; en campagne, il ne reçoit d'armes ou d'équipement qu'au Temps Mort.
+creation: chefEtChampion | Le Maître de Chasse et les Chasseurs commencent avec une compétence gratuite de leurs sets Primaires. Le Maître de Chasse améliore d'un niveau une arme ou un équipement (Chasseur expérimenté).
+regle: Amplificateurs de réflexes | À la préparation de la Priorité, chaque Spyrien gagne un pion Paré de plus ; il n'en retire qu'un par activation et peut donc s'activer deux fois par tour.
+regle: Maître de la chasse | Touché au tir, il n'est Au Tapis et Bloqué que s'il subit des dégâts. Jamais Capturé (Dommages superficiels à la place). Pas de test de Démoralisation à la perte d'un ami. Tests de Cran sur D3. Pas d'effets secondaires ni de dépendance aux drogues.
+regle: Compteur de meurtres et Évolution | Chaque ennemi mis Hors de Combat ajoute 1 au compteur. À 4 ou plus, action d'après-bataille Évolution de l'Exo-harnais : retirer 4 pour effacer les Dysfonctions, ou jeter un D6 sur le tableau d'Augmentation de Puissance (CC ou CT, Initiative, Mouvement, armure, ou niveau d'Augmentation d'une arme ou d'un équipement), avec un surcoût en crédits.
+regle: Dysfonctions de l'exo-harnais | Mis Hors de Combat, un Spyrien jette sur le tableau des Dysfonctions (D66) au lieu des Blessures Persistantes. Si le compteur de Dysfonctions dépasse son Endurance, l'exo-harnais est inutilisable et le Spyrien est retiré.
+regle: Exo-harnais | Souverain (Maître de Chasse) : sauvegarde 5+ et champ 6+. Orrus : 4+ et champ 6+. Les niveaux d'Augmentation améliorent harnais et armes (voir le livre).
+regle: Caryatide Prime | 0-1 par Spyrien, 90 crédits : Bête exotique (M 6", CC 5+, F 2, E 2, PV 1, I 2+, A 1), vol, sauvegarde 3+ non modifiable ; à 3" de son compagnon, il relance une sauvegarde et un test de Munitions ratés par tour.
+regle: Recrues | Ni Alliance, ni Mercenaires, ni Aventuriers sauf mention contraire.
+regle: En campagne | Crédits et équipement gagnés seulement au Temps Mort, et dépensés tout de suite (échanger des armes, acheter des options, effacer les Dysfonctions pour 100 crédits, engager une Caryatide). Recrues seulement via le Niveau de Terreur. Pas de vente de Captif. Seul Territoire utile : le Camp de Base Spyrien (un Spyrien en Convalescence peut faire une action d'après-bataille). Victoire en campagne : Purge par la Terreur, +2 XP à chaque combattant.
+regle: Niveau de terreur | Commence à 1, augmente à la mise à jour de la feuille : +1 pour 4 ennemis ou plus mis Hors de Combat par des Spyriens, +1 par Chef ou Champion mis Hors de Combat, +1 pour un ennemi mis Hors de Combat au premier tour. Bénéfices (une fois chacun) : 5-9 une Caryatide gratuite, 10-14 un Spyrien gratuit jusqu'à 300 crédits, 15-19 un Spyrien en Convalescence de plus peut agir, 20+ un Spyrien gratuit jusqu'à 400 crédits.
+combattant: Maître de Chasse Spyrien => Chef | 180 | 6" 2+ 3+ 3 3 3 3+ 3 7+ 5+ 6+ 6+ | Exo-harnais de chasse Souverain
+combattant: Chasseur Spyrien Orrus => orrus:champion | 350 | 5" 3+ 3+ 3 4 3 3+ 2 7+ 5+ 6+ 6+ | Exo-harnais Orrus, Serres énergétiques Orrus, Lance-bolts (x2)
+combattant: Chasseur Spyrien Yeld => yeld:champion | 220 | 7" 4+ 2+ 3 3 2 3+ 2 7+ 5+ 6+ 6+ | Exo-harnais Yeld, Paire de gantelets laser Yeld, Ailes Yeld
+combattant: Chasseur Spyrien Jakara => jakara:champion | 250 | 6" 2+ 4+ 3 3 2 3+ 3 7+ 5+ 6+ 6+ | Exo-harnais Jakara, Bouclier miroir, Épée monomoléculaire
+combattant: Chasseur Spyrien Malcadon => malcadon:champion | 240 | 7" 3+ 3+ 3 3 2 3+ 2 7+ 5+ 6+ 6+ | Exo-harnais Malcadon, Filin, Lance-grappin, Paire d'inciseurs à toile, Paire de griffes déchiqueteuses Malcadon
+competences: Chef | Agilité S, Combat P, Ruse S, Autorité P, Tir P
+competences: Orrus | Agilité S, Muscle P, Combat P, Férocité S, Tir P
+competences: Yeld | Agilité P, Combat S, Ruse P, Férocité S, Tir P
+competences: Jakara | Agilité S, Muscle P, Combat P, Ruse P, Férocité S
+competences: Malcadon | Agilité S, Combat P, Ruse P, Férocité S, Tir P
+## Armement inclus [orrus]
+Serres énergétiques Orrus (inclus) | 0
+Lance-bolts (inclus, paire) | 0
+## Armement inclus [yeld]
+Paire de gantelets laser Yeld (inclus) | 0
+Ailes Yeld (inclus) | 0
+## Armement inclus [jakara]
+Bouclier miroir (inclus) | 0
+Épée monomoléculaire (inclus) | 0
+## Armement inclus [malcadon]
+Paire d'inciseurs à toile (inclus) | 0
+Paire de griffes déchiqueteuses Malcadon (inclus) | 0
+## Options d'armes [orrus]
+Gantelets énergétiques Orrus (à la place des serres) | 50
+Déchargeur Volkite (paire, à la place des lance-bolts) | 0
+Matrice de désintégration (paire, à la place des lance-bolts) | 60
+## Options d'armes [yeld]
+Paire de gantelets à missiles Yeld (à la place des gantelets laser) | 0
+## Options d'armes [jakara]
+Lame Naga (à la place de l'épée) | 0
+## Options d'armes [malcadon]
+Paire de fouets à toxine Malcadon (à la place des griffes) | 0
+## Options d'armes [chef]
+Paire de griffes déchiqueteuses Malcadon (avec inciseurs à toile, lance-grappin, filin) | 60
+Paire de fouets à toxine Malcadon (avec inciseurs à toile, lance-grappin, filin) | 60
+Bouclier miroir | 60
+Épée monomoléculaire | 50
+Lame Naga | 50
+Paire de gantelets laser Yeld | 30
+Paire de gantelets à missiles Yeld | 30
+## Équipement personnel
+Bio-booster | 35
+Photolunettes | 35
+Lampe torche | 20
+Respirateur | 15
+Solvant à toile | 25
+## Équipement personnel [chef, malcadon]
+Chimiosynth | 15
+## Bêtes exotiques
+Caryatide Prime (0-1) | 90

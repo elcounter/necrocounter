@@ -1,7 +1,7 @@
 // NecroCounter service worker
-const VERSION = "necrocounter-1.9.0";
+const VERSION = "necrocounter-1.10.0";
 const CORE = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-maskable-512.png", "./apple-touch-icon.png", "./favicon-32.png", "./compte.js",
-  "./data/n23/armes.json", "./data/n23/comptoir.json", "./data/n23/index.json", "./data/n23/maisons/cawdor.json", "./data/n23/maisons/delaque.json", "./data/n23/maisons/escher.json", "./data/n23/maisons/goliath.json", "./data/n23/maisons/orlock.json", "./data/n23/maisons/van-saar.json", "./data/n23/maisons/squats.json", "./data/n23/maisons/nomades.json", "./data/n23/maisons/venators.json", "./data/n23/maisons/enforcers.json", "./data/n23/maisons/corpse-grinder.json", "./data/n23/maisons/culte-chaos.json", "./data/n23/maisons/culte-genestealer.json", "./data/n23/maisons/proscrits.json", "./data/n23/mercenaires.json", "./data/n23/refs.json", "./data/n23/campagne.json", "./data/n23/scenarios.json"];
+  "./data/n23/armes.json", "./data/n23/comptoir.json", "./data/n23/index.json", "./data/n23/maisons/cawdor.json", "./data/n23/maisons/delaque.json", "./data/n23/maisons/escher.json", "./data/n23/maisons/goliath.json", "./data/n23/maisons/orlock.json", "./data/n23/maisons/van-saar.json", "./data/n23/maisons/squats.json", "./data/n23/maisons/nomades.json", "./data/n23/maisons/venators.json", "./data/n23/maisons/enforcers.json", "./data/n23/maisons/corpse-grinder.json", "./data/n23/maisons/culte-chaos.json", "./data/n23/maisons/culte-genestealer.json", "./data/n23/maisons/proscrits.json", "./data/n23/maisons/spyriens.json", "./data/n23/mercenaires.json", "./data/n23/refs.json", "./data/n23/campagne.json", "./data/n23/scenarios.json"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(CORE.map(u => new Request(u, { cache: "reload" })))).then(() => self.skipWaiting()));

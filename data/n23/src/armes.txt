@@ -53,6 +53,9 @@ Laser de suppression
 - faisceau court | 8" | 16" | +1 | - | 4 | - | 2 | 4+ | Contrecoup, Abondance
 
 ## Pistolets
+Lance-bolts | 8" | 20" | +1 | - | 4 | -1 | 1 | 4+ | Arme de Poing, Tir Rapide (1)
+Matrice de désintégration | 3" | 12" | - | -1 | 5 | -2 | 2 | 6+ | Arme de Poing, Instable, Rareté, Sectionner
+Déchargeur Volkite | 5" | 10" | - | - | 5 | - | 1 | 6+ | Arme de Poing, Déflagration
 Pistolet éclateur | 8" | 12" | +1 | - | 3 | - | 1 | 4+ | Arme de Poing, Choc
 Flingue Ironhead | 6" | 12" | +2 | - | 3 | - | 1 | 4+ | Abondance, Arme de Poing, Tir Rapide (1)
 Flingue Ironhead avec balles dum-dum | 5" | 10" | +1 | - | 4 | - | 1 | 4+ | Arme de Poing, Limité, Tir Rapide (1)
@@ -86,6 +89,10 @@ Pistolet-mitrailleur de récup' | 4" | 12" | +1 | - | 3 | - | 1 | 5+ | Arme de P
 Projecteur de toile (Cyberachnid Van Saar) | - | S | - | - | 2 | - | - | 6+ | Rareté, Souffle, Toile
 
 ## Armes spéciales
+Bouclier miroir | 4" | 8" | - | -1 | - | - | - | 3+ | Aveuglant, Bouclier à Énergie
+Paire d'inciseurs à toile | 4" | 8" | - | - | 3 | - | - | 4+ | Silencieux, Tir Rapide (1), Toile
+Paire de gantelets laser Yeld | 10" | 20" | +1 | - | 3 | -1 | 1 | 3+ | Abondance, Tir Rapide (1)
+Paire de gantelets à missiles Yeld | 15" | 30" | - | - | 5 | - | 1 | 4+ | Contrecoup, Tir Rapide (1)
 Carabine à commotion | 9" | 18" | +1 | - | 3 | -1 | 1 | 4+ | Commotion, Contrecoup, Explosion (3"), Sismique
 Fusil de sniper | 24" | 48" | - | +1 | 4 | -1 | 1 | 4+ | Contrecoup, Perforant
 Lance-venin | - | S | - | - | - | -1 | - | 6+ | Rareté, Silencieux, Souffle, Toxine
@@ -183,6 +190,13 @@ Piège à fusion | - | - | - | - | 8 | -4 | 3 | - | Explosion (5"), Fusion, Usag
 Piège à gaz | - | - | - | - | - | - | - | - | Explosion (5"), Gaz, Usage Unique
 
 ## Armes de corps à corps
+Paire de griffes déchiqueteuses Malcadon | E | E | - | - | F | -2 | 1 | - | Couplé, Mêlée
+Paire de fouets à toxine Malcadon | - | 2" | - | -1 | - | -2 | - | - | Couplé, Empêtrement, Mêlée, Polyvalent, Toxine
+Épée monomoléculaire | - | E | - | - | F+1 | -2 | 1 | - | Énergétique, Mêlée, Parade
+Lame Naga | E | 2" | - | - | F+2 | -1 | 2 | - | Désarmement, Mêlée, Parade, Polyvalent
+Gantelets énergétiques Orrus | - | E | - | - | F+2 | -1 | 2 | - | Couplé, Énergétique, Mêlée
+Serres énergétiques Orrus | - | E | - | - | F+1 | -3 | 1 | - | Couplé, Mêlée
+Ailes Yeld | - | E | - | - | F+1 | -1 | 1 | - | Mêlée
 Épée à os | - | E | - | - | F | -2 | 2 | - | Mêlée, Parade, Perforant
 Hachoir tronçonneur | - | E | - | - | F+1 | -2 | 2 | - | Mêlée, Déchiqueter
 Hachoir de boucher | - | E | - | - | F+1 | -1 | 1 | - | Désarmement, Mêlée

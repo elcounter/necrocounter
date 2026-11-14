@@ -203,7 +203,7 @@ def link_weapons(houses, weapons):
             if "arme" in item:
                 continue
             cat = item.get("categorieArme", item["categorie"]).split(" : ")[-1]
-            if not cat.startswith("Armes") and cat not in ("Pistolets", "Grenades", "Couteaux"):
+            if not cat.startswith("Armes") and cat not in ("Pistolets", "Grenades", "Couteaux", "Armement inclus", "Options d'armes"):
                 continue
             key = item["id"][3:] if item["id"].startswith("cc-") else item["id"]
             target = next((w for w in by_slug if key.startswith(w["id"])), None)
