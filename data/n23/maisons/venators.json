@@ -1,0 +1,3597 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre des Périls (version française)",
+  "reglesDeCreation": {
+    "novice": "Pas de Novice : les Chasseurs forment la base du gang et doivent être au moins aussi nombreux que Chef et Champions réunis.",
+    "armeSpeciale": "Équipement pris au Comptoir Commercial : Commun ou Rare jusqu'à 11 pour le Chef, 10 pour un Champion, 8 pour un Chasseur. Un Chasseur ne prend que des armes de base, pistolets, armes de corps à corps et grenades (le Spécialiste n'a plus cette limite).",
+    "chefEtChampion": "Chef Chasseur et Champions Chasseurs n'ont pas de restriction de type d'arme et commencent avec une compétence gratuite de leurs sets Primaires. Au maximum deux Champions Chasseurs à la fondation."
+  },
+  "id": "venators",
+  "nom": "Venators",
+  "titre": "Venators (chasseurs de primes)",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Chef Chasseur (profil 1)",
+      "cout": 110,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "chef-2",
+      "role": "Chef Chasseur (profil 2)",
+      "cout": 110,
+      "profil": {
+        "M": "3\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "4",
+        "PV": "2",
+        "I": "5+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "5+",
+        "INT": "5+"
+      },
+      "equipementDeDepart": [],
+      "base": "chef"
+    },
+    {
+      "id": "chef-3",
+      "role": "Chef Chasseur (profil 3)",
+      "cout": 110,
+      "profil": {
+        "M": "4\"",
+        "CC": "3+",
+        "CT": "5+",
+        "F": "4",
+        "E": "4",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "7+",
+        "SF": "5+",
+        "V": "8+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": [],
+      "base": "chef"
+    },
+    {
+      "id": "chef-4",
+      "role": "Chef Chasseur (profil 4)",
+      "cout": 110,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "2+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "1",
+        "CD": "5+",
+        "SF": "5+",
+        "V": "6+",
+        "INT": "5+"
+      },
+      "equipementDeDepart": [],
+      "base": "chef"
+    },
+    {
+      "id": "champion",
+      "role": "Champion Chasseur (profil 1)",
+      "cout": 85,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "champion-2",
+      "role": "Champion Chasseur (profil 2)",
+      "cout": 85,
+      "profil": {
+        "M": "3\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "4",
+        "PV": "2",
+        "I": "5+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "5+"
+      },
+      "equipementDeDepart": [],
+      "base": "champion"
+    },
+    {
+      "id": "champion-3",
+      "role": "Champion Chasseur (profil 3)",
+      "cout": 85,
+      "profil": {
+        "M": "4\"",
+        "CC": "3+",
+        "CT": "5+",
+        "F": "4",
+        "E": "4",
+        "PV": "2",
+        "I": "5+",
+        "A": "2",
+        "CD": "7+",
+        "SF": "5+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": [],
+      "base": "champion"
+    },
+    {
+      "id": "champion-4",
+      "role": "Champion Chasseur (profil 4)",
+      "cout": 85,
+      "profil": {
+        "M": "4\"",
+        "CC": "5+",
+        "CT": "2+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "1",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [],
+      "base": "champion"
+    },
+    {
+      "id": "ganger",
+      "role": "Chasseur (profil 1)",
+      "cout": 50,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "ganger-2",
+      "role": "Chasseur (profil 2)",
+      "cout": 50,
+      "profil": {
+        "M": "3\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "5+",
+        "A": "1",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [],
+      "base": "ganger"
+    },
+    {
+      "id": "ganger-3",
+      "role": "Chasseur (profil 3)",
+      "cout": 50,
+      "profil": {
+        "M": "4\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "5+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "8+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": [],
+      "base": "ganger"
+    },
+    {
+      "id": "ganger-4",
+      "role": "Chasseur (profil 4)",
+      "cout": 50,
+      "profil": {
+        "M": "4\"",
+        "CC": "5+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [],
+      "base": "ganger"
+    }
+  ],
+  "competences": {},
+  "competencesDynamiques": true,
+  "equipement": [
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "categorie": "Armes de base",
+      "id": "bolter",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "bolter"
+    },
+    {
+      "nom": "Couteaux de lancer",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "couteaux-de-lancer",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "couteaux-de-lancer"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-a-canon-scie",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "fusil-a-canon-scie"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-grenaille",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Executioner)",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-executioner",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Inferno)",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-inferno",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-de-recup",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "fusil-d-assaut-de-recup"
+    },
+    {
+      "nom": "Fusil de combat (salve & nuage de grenaille)",
+      "prix": 70,
+      "categorie": "Armes de base",
+      "id": "fusil-de-combat-salve-nuage-de-grenaille",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "arme": "fusil-de-combat"
+    },
+    {
+      "nom": "Fusil de combat (munitions Firestorm)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-de-combat-munitions-firestorm",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "fusil-de-combat"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Combi-pistolet (pistolet-mitrailleur/lance-flammes léger)",
+      "prix": 65,
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-pistolet-mitrailleur-lance-flammes-leger",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "combi-pistolet",
+      "modes": [
+        "pistolet-mitrailleur",
+        "lance-flammes léger"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet (pistolet-mitrailleur/pistolet à plasma)",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-pistolet-mitrailleur-pistolet-a-plasma",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "combi-pistolet",
+      "modes": [
+        "pistolet-mitrailleur",
+        "pistolet à plasma"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet (pistolet bolter/lance-flammes léger)",
+      "prix": 110,
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-pistolet-bolter-lance-flammes-leger",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "arme": "combi-pistolet",
+      "modes": [
+        "pistolet bolter",
+        "lance-flammes léger"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet (pistolet bolter/pistolet à plasma)",
+      "prix": 80,
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-pistolet-bolter-pistolet-a-plasma",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "arme": "combi-pistolet",
+      "modes": [
+        "pistolet bolter",
+        "pistolet à plasma"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet (flingue/pistolet à plasma)",
+      "prix": 40,
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-flingue-pistolet-a-plasma",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "combi-pistolet",
+      "modes": [
+        "flingue",
+        "pistolet à plasma"
+      ]
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "flingue"
+    },
+    {
+      "nom": "Balles dum-dum",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "balles-dum-dum",
+      "rarete": "Rare (7)",
+      "niveau": 7
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Lance-toile léger",
+      "prix": 90,
+      "categorie": "Pistolets",
+      "id": "lance-toile-leger",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "lance-toile-leger"
+    },
+    {
+      "nom": "Pistolet à aiguilles",
+      "prix": 30,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-aiguilles",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "pistolet-a-aiguilles"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-plasma",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Pistolet bolter",
+      "prix": 45,
+      "categorie": "Pistolets",
+      "id": "pistolet-bolter",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "pistolet-bolter"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-de-recup",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "pistolet-mitrailleur-de-recup"
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-flammes)",
+      "prix": 110,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-fusil-d-assaut-lance-flammes",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil d'assaut",
+        "lance-flammes"
+      ]
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-grenades (Frag))",
+      "prix": 30,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-fusil-d-assaut-lance-grenades-frag",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-flammes)",
+      "prix": 180,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-lance-flammes",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "lance-flammes"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-grenades (Frag))",
+      "prix": 60,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-lance-grenades-frag",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 170,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-fuseur",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fuseur"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter à aiguille)",
+      "prix": 90,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-a-aiguille",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Arme combinée (bolter/plasma)",
+      "prix": 115,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-plasma",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "fuseur",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Fusil à aiguilles",
+      "prix": 40,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-aiguilles",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "fusil-a-aiguilles"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-gravitons",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "arme": "fusil-a-gravitons"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-plasma",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "fusil-a-plasma"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 65,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-frag-krak",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-grenades (grenades asphyxiantes)",
+      "prix": 35,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-asphyxiantes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-grenades (grenades aveuglantes)",
+      "prix": 15,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-aveuglantes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-grenades (grenades cauchemar)",
+      "prix": 45,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-cauchemar",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-grenades (grenades fumigènes)",
+      "prix": 15,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-fumigenes",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Lance-toile",
+      "prix": 125,
+      "categorie": "Armes spéciales",
+      "id": "lance-toile",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "lance-toile"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Long fusil laser",
+      "prix": 20,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil-laser",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "long-fusil-laser"
+    },
+    {
+      "nom": "Bolter lourd",
+      "prix": 160,
+      "categorie": "Armes lourdes",
+      "id": "bolter-lourd",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "bolter-lourd"
+    },
+    {
+      "nom": "Canon à plasma",
+      "prix": 130,
+      "categorie": "Armes lourdes",
+      "id": "canon-a-plasma",
+      "compteDouble": true,
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "arme": "canon-a-plasma"
+    },
+    {
+      "nom": "Canon laser",
+      "prix": 155,
+      "categorie": "Armes lourdes",
+      "id": "canon-laser",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "canon-laser"
+    },
+    {
+      "nom": "Canon sismique",
+      "prix": 140,
+      "categorie": "Armes lourdes",
+      "id": "canon-sismique",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "canon-sismique"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Lance-harpon",
+      "prix": 110,
+      "categorie": "Armes lourdes",
+      "id": "lance-harpon",
+      "compteDouble": true,
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "lance-harpon"
+    },
+    {
+      "nom": "Lance-missiles (avec missiles Frag & Krak)",
+      "prix": 165,
+      "categorie": "Armes lourdes",
+      "id": "lance-missiles-avec-missiles-frag-krak",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "lance-missiles"
+    },
+    {
+      "nom": "Laser minier",
+      "prix": 125,
+      "categorie": "Armes lourdes",
+      "id": "laser-minier",
+      "compteDouble": true,
+      "rarete": "Rare (9); Rare (8 Orlock)",
+      "niveau": 9,
+      "arme": "laser-minier"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse",
+      "compteDouble": true,
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Multi-fuseur",
+      "prix": 180,
+      "categorie": "Armes lourdes",
+      "id": "multi-fuseur",
+      "compteDouble": true,
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "arme": "multi-fuseur"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Couteaux",
+      "id": "couteau-de-combat",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Couteaux",
+      "id": "couteau-energetique",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "couteau-energetique"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Couteaux",
+      "id": "stylet",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "stylet"
+    },
+    {
+      "nom": "Digilaser",
+      "prix": 25,
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "digilaser",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "digilaser"
+    },
+    {
+      "nom": "Épée",
+      "prix": 20,
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "epee",
+      "rarete": "Rare (6)",
+      "niveau": 6,
+      "arme": "epee"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "epee-tronconneuse",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "fleau",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "fleau"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "hache",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "hache"
+    },
+    {
+      "nom": "Hache tronçonneuse",
+      "prix": 30,
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "hache-tronconneuse",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "hache-tronconneuse"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "masse-matraque",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "masse-matraque"
+    },
+    {
+      "nom": "Rapière",
+      "prix": 35,
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "rapiere",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "rapiere"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 35,
+      "categorie": "Armes de corps à corps ordinaires",
+      "id": "servopince",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "servopince"
+    },
+    {
+      "nom": "Découpeur laser",
+      "prix": 85,
+      "categorie": "Armes à énergie/choc",
+      "id": "decoupeur-laser",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "decoupeur-laser"
+    },
+    {
+      "nom": "Électrobâton",
+      "prix": 30,
+      "categorie": "Armes à énergie/choc",
+      "id": "electrobaton",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "electrobaton"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Armes à énergie/choc",
+      "id": "electrosceptre",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "electrosceptre"
+    },
+    {
+      "nom": "Épée énergétique",
+      "prix": 50,
+      "categorie": "Armes à énergie/choc",
+      "id": "epee-energetique",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "epee-energetique"
+    },
+    {
+      "nom": "Hache énergétique",
+      "prix": 35,
+      "categorie": "Armes à énergie/choc",
+      "id": "hache-energetique",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "hache-energetique"
+    },
+    {
+      "nom": "Marteau énergétique",
+      "prix": 45,
+      "categorie": "Armes à énergie/choc",
+      "id": "marteau-energetique",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "marteau-energetique"
+    },
+    {
+      "nom": "Marteau Thunder",
+      "prix": 70,
+      "categorie": "Armes à énergie/choc",
+      "id": "marteau-thunder",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "arme": "marteau-thunder"
+    },
+    {
+      "nom": "Masse énergétique",
+      "prix": 30,
+      "categorie": "Armes à énergie/choc",
+      "id": "masse-energetique",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "masse-energetique"
+    },
+    {
+      "nom": "Pioche énergétique",
+      "prix": 40,
+      "categorie": "Armes à énergie/choc",
+      "id": "pioche-energetique",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "pioche-energetique"
+    },
+    {
+      "nom": "Cisaille lourde",
+      "prix": 135,
+      "categorie": "Armes à deux mains",
+      "id": "cisaille-lourde",
+      "compteDouble": true,
+      "rarete": "Rare (9); Rare (8 Goliath & Orlock)",
+      "niveau": 9,
+      "arme": "cisaille-lourde"
+    },
+    {
+      "nom": "Disqueuse lourde",
+      "prix": 120,
+      "categorie": "Armes à deux mains",
+      "id": "disqueuse-lourde",
+      "compteDouble": true,
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "disqueuse-lourde"
+    },
+    {
+      "nom": "Foreuse lourde",
+      "prix": 90,
+      "categorie": "Armes à deux mains",
+      "id": "foreuse-lourde",
+      "compteDouble": true,
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "foreuse-lourde"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "categorie": "Armes à deux mains",
+      "id": "hache-a-deux-mains",
+      "compteDouble": true,
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "categorie": "Armes à deux mains",
+      "id": "marteau-a-deux-mains",
+      "compteDouble": true,
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Vouge tronçonneur",
+      "prix": 60,
+      "categorie": "Armes à deux mains",
+      "id": "vouge-tronconneur",
+      "compteDouble": true,
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "arme": "vouge-tronconneur"
+    },
+    {
+      "nom": "Bombes à fusion",
+      "prix": 60,
+      "categorie": "Grenades",
+      "id": "bombes-a-fusion",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "arme": "bombes-a-fusion"
+    },
+    {
+      "nom": "Charges de démolition",
+      "prix": 50,
+      "categorie": "Grenades",
+      "id": "charges-de-demolition",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "arme": "charges-de-demolition"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Grenades",
+      "id": "charges-explosives",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "charges-incendiaires",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "arme": "charges-incendiaires"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Grenades",
+      "id": "grenades-asphyxiantes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-aveuglantes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-cauchemar",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "arme": "grenades-cauchemar"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "rarete": "Commune",
+      "niveau": 0,
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-incapacitantes",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "grenades-incapacitantes"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Armure carapace (légère)",
+      "prix": 80,
+      "categorie": "Armures",
+      "id": "armure-carapace-legere",
+      "rarete": "Rare (10)",
+      "niveau": 10
+    },
+    {
+      "nom": "Armure carapace (lourde)",
+      "prix": 100,
+      "categorie": "Armures",
+      "id": "armure-carapace-lourde",
+      "rarete": "Rare (11)",
+      "niveau": 11
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Combinaison NBC",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "combinaison-nbc",
+      "rarete": "Rare (10)",
+      "niveau": 10
+    },
+    {
+      "nom": "Champ convecteur",
+      "prix": 60,
+      "categorie": "Champs protecteurs",
+      "id": "champ-convecteur",
+      "rarete": "Rare (11)",
+      "niveau": 11
+    },
+    {
+      "nom": "Champ réfracteur",
+      "prix": 50,
+      "categorie": "Champs protecteurs",
+      "id": "champ-refracteur",
+      "rarete": "Rare (10)",
+      "niveau": 10
+    },
+    {
+      "nom": "Champ téléporteur",
+      "prix": 70,
+      "categorie": "Champs protecteurs",
+      "id": "champ-teleporteur",
+      "rarete": "Rare (12)",
+      "niveau": 12
+    },
+    {
+      "nom": "Bras bionique, ordinaire",
+      "prix": 45,
+      "categorie": "Bioniques",
+      "id": "bras-bionique-ordinaire",
+      "rarete": "Rare (13)",
+      "niveau": 13
+    },
+    {
+      "nom": "Cogitateur cortical, amélioré",
+      "prix": 30,
+      "categorie": "Bioniques",
+      "id": "cogitateur-cortical-ameliore",
+      "rarete": "Rare (12)",
+      "niveau": 12
+    },
+    {
+      "nom": "Cogitateur cortical, ordinaire",
+      "prix": 15,
+      "categorie": "Bioniques",
+      "id": "cogitateur-cortical-ordinaire",
+      "rarete": "Rare (11)",
+      "niveau": 11
+    },
+    {
+      "nom": "Jambe bionique, ordinaire",
+      "prix": 25,
+      "categorie": "Bioniques",
+      "id": "jambe-bionique-ordinaire",
+      "rarete": "Rare (12)",
+      "niveau": 12
+    },
+    {
+      "nom": "Lobo-puce, améliorée",
+      "prix": 45,
+      "categorie": "Bioniques",
+      "id": "lobo-puce-amelioree",
+      "rarete": "Rare (12)",
+      "niveau": 12
+    },
+    {
+      "nom": "Lobo-puce, ordinaire",
+      "prix": 20,
+      "categorie": "Bioniques",
+      "id": "lobo-puce-ordinaire",
+      "rarete": "Rare (11)",
+      "niveau": 11
+    },
+    {
+      "nom": "Œil bionique, ordinaire",
+      "prix": 45,
+      "categorie": "Bioniques",
+      "id": "il-bionique-ordinaire",
+      "rarete": "Rare (13)",
+      "niveau": 13
+    },
+    {
+      "nom": "Renforts squelettiques, ordinaires",
+      "prix": 70,
+      "categorie": "Bioniques",
+      "id": "renforts-squelettiques-ordinaires",
+      "rarete": "Rare (13)",
+      "niveau": 13
+    },
+    {
+      "nom": "Surpresseur aortique, ordinaire",
+      "prix": 65,
+      "categorie": "Bioniques",
+      "id": "surpresseur-aortique-ordinaire",
+      "rarete": "Rare (13)",
+      "niveau": 13
+    },
+    {
+      "nom": "Cache de munitions",
+      "prix": 60,
+      "categorie": "Équipement de gang",
+      "id": "cache-de-munitions",
+      "rarete": "Rare (8)",
+      "niveau": 8
+    },
+    {
+      "nom": "Pièges (piège à Frag)",
+      "prix": 20,
+      "categorie": "Équipement de gang",
+      "id": "pieges-piege-a-frag",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Pièges (piège à fusion)",
+      "prix": 50,
+      "categorie": "Équipement de gang",
+      "id": "pieges-piege-a-fusion",
+      "rarete": "Rare (10)",
+      "niveau": 10
+    },
+    {
+      "nom": "Pièges (piège à gaz)",
+      "prix": 40,
+      "categorie": "Équipement de gang",
+      "id": "pieges-piege-a-gaz",
+      "rarete": "Rare (8)",
+      "niveau": 8
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster",
+      "rarete": "Rare (8)",
+      "niveau": 8
+    },
+    {
+      "nom": "Bio-scanner",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "bio-scanner",
+      "rarete": "Rare (8)",
+      "niveau": 8
+    },
+    {
+      "nom": "Chimiosynth",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "chimiosynth",
+      "rarete": "Rare (12)",
+      "niveau": 12
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Grav-chute",
+      "prix": 50,
+      "categorie": "Équipement personnel",
+      "id": "grav-chute",
+      "rarete": "Rare (10)",
+      "niveau": 10
+    },
+    {
+      "nom": "Kit de démontage",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "kit-de-demontage",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "lame-sous-cutanee",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Lance-grappin",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "lance-grappin",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Médikit",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "medikit",
+      "rarete": "Rare (9)",
+      "niveau": 9
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes",
+      "rarete": "Rare (9)",
+      "niveau": 9
+    },
+    {
+      "nom": "Planque de stim",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "planque-de-stim",
+      "accessoireUnique": true,
+      "rarete": "Rare (7)",
+      "niveau": 7
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Servo-harnais, intégral",
+      "prix": 160,
+      "categorie": "Équipement personnel",
+      "id": "servo-harnais-integral",
+      "rarete": "Rare (12); Rare (11 Goliath & Orlock); Rare (10 Van Saar)",
+      "niveau": 12
+    },
+    {
+      "nom": "Servo-harnais, partiel",
+      "prix": 130,
+      "categorie": "Équipement personnel",
+      "id": "servo-harnais-partiel",
+      "rarete": "Rare (12); Rare (11 Goliath & Orlock); Rare (10 Van Saar)",
+      "niveau": 12
+    },
+    {
+      "nom": "Solvant à toile",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "solvant-a-toile",
+      "rarete": "Rare (8)",
+      "niveau": 8
+    },
+    {
+      "nom": "Sous-combinaison renforcée",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "sous-combinaison-renforcee",
+      "rarete": "Rare (7)",
+      "niveau": 7
+    },
+    {
+      "nom": "Lunette (armes de base, spéciales et lourdes)",
+      "prix": 35,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-armes-de-base-speciales-et-lourdes",
+      "rarete": "Rare (9)",
+      "niveau": 9
+    },
+    {
+      "nom": "Lunette infrarouge (toute arme de tir)",
+      "prix": 40,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-infrarouge-toute-arme-de-tir",
+      "rarete": "Rare (8)",
+      "niveau": 8
+    },
+    {
+      "nom": "Lunette télescopique (pistolets, armes de base et spéciales)",
+      "prix": 25,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-telescopique-pistolets-armes-de-base-et-speciales",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Pointeur laser (pistolets, armes de base et spéciales)",
+      "prix": 35,
+      "categorie": "Accessoires d'armes",
+      "id": "pointeur-laser-pistolets-armes-de-base-et-speciales",
+      "rarete": "Rare (9)",
+      "niveau": 9
+    },
+    {
+      "nom": "Suppresseur (armes de base et pistolets)",
+      "prix": 20,
+      "categorie": "Accessoires d'armes",
+      "id": "suppresseur-armes-de-base-et-pistolets",
+      "rarete": "Rare (8)",
+      "niveau": 8
+    },
+    {
+      "nom": "Surgénérateur d'arme laser (fusil laser et pistolet laser)",
+      "prix": 20,
+      "categorie": "Accessoires d'armes",
+      "id": "surgenerateur-d-arme-laser-fusil-laser-et-pistolet-laser",
+      "rarete": "Commune",
+      "niveau": 0
+    },
+    {
+      "nom": "Suspenseur (armes lourdes)",
+      "prix": 60,
+      "categorie": "Accessoires d'armes",
+      "id": "suspenseur-armes-lourdes",
+      "rarete": "Rare (10)",
+      "niveau": 10
+    },
+    {
+      "nom": "Arme plaquée or",
+      "prix": 40,
+      "categorie": "Objets de prestige",
+      "id": "arme-plaquee-or",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Atours de la Spire",
+      "prix": 50,
+      "categorie": "Objets de prestige",
+      "id": "atours-de-la-spire",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Bijoux opulents",
+      "prix": 80,
+      "categorie": "Objets de prestige",
+      "id": "bijoux-opulents",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Fourrures exotiques",
+      "prix": 50,
+      "categorie": "Objets de prestige",
+      "id": "fourrures-exotiques",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Médicrâne",
+      "prix": 80,
+      "categorie": "Objets de prestige",
+      "id": "medicrane",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Pistocrâne",
+      "prix": 65,
+      "categorie": "Objets de prestige",
+      "id": "pistocrane",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Sensocrâne",
+      "prix": 60,
+      "categorie": "Objets de prestige",
+      "id": "sensocrane",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Legs de Maison Cawdor",
+      "prix": 30,
+      "categorie": "Legs de Maison",
+      "id": "legs-cawdor",
+      "legsMaison": "cawdor"
+    },
+    {
+      "nom": "Haste avec fusil d'assaut Cawdor",
+      "prix": 20,
+      "compteDouble": true,
+      "categorie": "Legs Cawdor : Armes de base",
+      "id": "legs-cawdor-haste-avec-fusil-d-assaut-cawdor",
+      "arme": "haste-avec-fusil-d-assaut-cawdor",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Haste avec tromblon Cawdor (munitions à grappe & Purgation)",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Legs Cawdor : Armes de base",
+      "id": "legs-cawdor-haste-avec-tromblon-cawdor-munitions-a-grappe-purgation",
+      "modes": [
+        "haste",
+        "tromblon, grappe",
+        "tromblon, Purgation"
+      ],
+      "arme": "haste-avec-tromblon-cawdor",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Legs Cawdor : Armes de base",
+      "id": "legs-cawdor-fusil-a-canon-scie",
+      "arme": "fusil-a-canon-scie",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "categorie": "Legs Cawdor : Armes de base",
+      "id": "legs-cawdor-fusil-d-assaut-de-recup",
+      "arme": "fusil-d-assaut-de-recup",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Legs Cawdor : Armes de corps à corps",
+      "id": "legs-cawdor-couteau-de-combat",
+      "arme": "couteau-de-combat",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Legs Cawdor : Armes de corps à corps",
+      "id": "legs-cawdor-fleau",
+      "arme": "fleau",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Legs Cawdor : Armes de corps à corps",
+      "id": "legs-cawdor-hache",
+      "arme": "hache",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Legs Cawdor : Armes de corps à corps",
+      "id": "legs-cawdor-hache-a-deux-mains",
+      "arme": "hache-a-deux-mains",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Legs Cawdor : Armes de corps à corps",
+      "id": "legs-cawdor-marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Legs Cawdor : Armes de corps à corps",
+      "id": "legs-cawdor-masse-matraque",
+      "arme": "masse-matraque",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Vouge tronçonneur",
+      "prix": 60,
+      "compteDouble": true,
+      "categorie": "Legs Cawdor : Armes de corps à corps",
+      "id": "legs-cawdor-vouge-tronconneur",
+      "arme": "vouge-tronconneur",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Legs Cawdor : Pistolets",
+      "id": "legs-cawdor-flingue",
+      "arme": "flingue",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Legs Cawdor : Pistolets",
+      "id": "legs-cawdor-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "categorie": "Legs Cawdor : Pistolets",
+      "id": "legs-cawdor-pistolet-mitrailleur-de-recup",
+      "arme": "pistolet-mitrailleur-de-recup",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-flammes)",
+      "prix": 110,
+      "categorie": "Legs Cawdor : Armes spéciales",
+      "id": "legs-cawdor-arme-combinee-fusil-d-assaut-lance-flammes",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil d'assaut",
+        "lance-flammes"
+      ],
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 130,
+      "categorie": "Legs Cawdor : Armes spéciales",
+      "id": "legs-cawdor-lance-flammes",
+      "arme": "lance-flammes",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Legs Cawdor : Armes spéciales",
+      "id": "legs-cawdor-long-fusil",
+      "arme": "long-fusil",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Arbalète lourde Cawdor (carreaux Frag & Krak)",
+      "prix": 125,
+      "compteDouble": true,
+      "categorie": "Legs Cawdor : Armes lourdes",
+      "id": "legs-cawdor-arbalete-lourde-cawdor-carreaux-frag-krak",
+      "arme": "arbalete-lourde-cawdor",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Legs Cawdor : Armes lourdes",
+      "id": "legs-cawdor-lance-flammes-lourd",
+      "arme": "lance-flammes-lourd",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Legs Cawdor : Armes lourdes",
+      "id": "legs-cawdor-mitrailleuse",
+      "arme": "mitrailleuse",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Legs Cawdor : Grenades",
+      "id": "legs-cawdor-charges-explosives",
+      "arme": "charges-explosives",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "categorie": "Legs Cawdor : Grenades",
+      "id": "legs-cawdor-charges-incendiaires",
+      "arme": "charges-incendiaires",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Legs Cawdor : Grenades",
+      "id": "legs-cawdor-grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Legs Cawdor : Grenades",
+      "id": "legs-cawdor-grenades-frag",
+      "arme": "grenades-frag",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Legs Cawdor : Grenades",
+      "id": "legs-cawdor-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Legs Cawdor : Grenades",
+      "id": "legs-cawdor-grenades-krak",
+      "arme": "grenades-krak",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Legs Cawdor : Armures",
+      "id": "legs-cawdor-armure-composite",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Legs Cawdor : Armures",
+      "id": "legs-cawdor-armure-flak",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-balles-dum-dum-pour-flingue",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Balles Emperor's Wrath (pour tromblon)",
+      "prix": 35,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-balles-emperor-s-wrath-pour-tromblon",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-filin",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-filtre-nasal",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Icône du Culte",
+      "prix": 40,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-icone-du-culte",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Kit de démontage",
+      "prix": 15,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-kit-de-demontage",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-lame-sous-cutanee",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-lunette",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-photolunettes",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Rats lyreurs de bombes",
+      "prix": 30,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-rats-lyreurs-de-bombes",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Legs Cawdor : Équipement personnel",
+      "id": "legs-cawdor-respirateur",
+      "legs": "cawdor"
+    },
+    {
+      "nom": "Legs de Maison Delaque",
+      "prix": 30,
+      "categorie": "Legs de Maison",
+      "id": "legs-delaque",
+      "legsMaison": "delaque"
+    },
+    {
+      "nom": "Couteaux de lancer",
+      "prix": 10,
+      "categorie": "Legs Delaque : Armes de base",
+      "id": "legs-delaque-couteaux-de-lancer",
+      "arme": "couteaux-de-lancer",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Legs Delaque : Armes de base",
+      "id": "legs-delaque-fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Legs Delaque : Armes de base",
+      "id": "legs-delaque-fusil-d-assaut",
+      "arme": "fusil-d-assaut",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "categorie": "Legs Delaque : Armes de base",
+      "id": "legs-delaque-fusil-laser",
+      "arme": "fusil-laser",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Digilaser",
+      "prix": 25,
+      "categorie": "Legs Delaque : Armes de corps à corps",
+      "id": "legs-delaque-digilaser",
+      "arme": "digilaser",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Legs Delaque : Armes de corps à corps",
+      "id": "legs-delaque-electrosceptre",
+      "arme": "electrosceptre",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Gantelet lance-toile",
+      "prix": 35,
+      "categorie": "Legs Delaque : Armes de corps à corps",
+      "id": "legs-delaque-gantelet-lance-toile",
+      "arme": "gantelet-lance-toile",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Legs Delaque : Armes de corps à corps",
+      "id": "legs-delaque-stylet",
+      "arme": "stylet",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Legs Delaque : Pistolets",
+      "id": "legs-delaque-flingue",
+      "arme": "flingue",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Legs Delaque : Pistolets",
+      "id": "legs-delaque-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Lance-toile léger",
+      "prix": 80,
+      "categorie": "Legs Delaque : Pistolets",
+      "id": "legs-delaque-lance-toile-leger",
+      "arme": "lance-toile-leger",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Pistolet à fléchettes (projectiles solides & Flashbane)",
+      "prix": 30,
+      "categorie": "Legs Delaque : Pistolets",
+      "id": "legs-delaque-pistolet-a-flechettes-projectiles-solides-flashbane",
+      "arme": "pistolet-a-flechettes",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Legs Delaque : Pistolets",
+      "id": "legs-delaque-pistolet-a-plasma",
+      "arme": "pistolet-a-plasma",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Legs Delaque : Pistolets",
+      "id": "legs-delaque-pistolet-laser",
+      "arme": "pistolet-laser",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 5,
+      "categorie": "Legs Delaque : Pistolets",
+      "id": "legs-delaque-pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Legs Delaque : Armes spéciales",
+      "id": "legs-delaque-fuseur",
+      "arme": "fuseur",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Legs Delaque : Armes spéciales",
+      "id": "legs-delaque-fusil-a-gravitons",
+      "arme": "fusil-a-gravitons",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Legs Delaque : Armes spéciales",
+      "id": "legs-delaque-fusil-a-plasma",
+      "arme": "fusil-a-plasma",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Legs Delaque : Armes spéciales",
+      "id": "legs-delaque-lance-flammes",
+      "arme": "lance-flammes",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Lance-toile",
+      "prix": 115,
+      "categorie": "Legs Delaque : Armes spéciales",
+      "id": "legs-delaque-lance-toile",
+      "arme": "lance-toile",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Legs Delaque : Armes spéciales",
+      "id": "legs-delaque-long-fusil",
+      "arme": "long-fusil",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Legs Delaque : Armes lourdes",
+      "id": "legs-delaque-lance-flammes-lourd",
+      "arme": "lance-flammes-lourd",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Legs Delaque : Grenades",
+      "id": "legs-delaque-grenades-aveuglantes",
+      "arme": "grenades-aveuglantes",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Legs Delaque : Grenades",
+      "id": "legs-delaque-grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 40,
+      "categorie": "Legs Delaque : Grenades",
+      "id": "legs-delaque-grenades-cauchemar",
+      "arme": "grenades-cauchemar",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Legs Delaque : Grenades",
+      "id": "legs-delaque-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 10,
+      "categorie": "Legs Delaque : Grenades",
+      "id": "legs-delaque-grenades-incapacitantes",
+      "arme": "grenades-incapacitantes",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Legs Delaque : Armures",
+      "id": "legs-delaque-armure-composite",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Legs Delaque : Armures",
+      "id": "legs-delaque-armure-flak",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Bio-scanner",
+      "prix": 30,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-bio-scanner",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-filtre-nasal",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-lame-sous-cutanee",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Lance-grappin",
+      "prix": 25,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-lance-grappin",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-lunette",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-lunette-infrarouge",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 20,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-photolunettes",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-respirateur",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Solvant à toile",
+      "prix": 15,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-solvant-a-toile",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Suppresseur",
+      "prix": 10,
+      "categorie": "Legs Delaque : Équipement personnel",
+      "id": "legs-delaque-suppresseur",
+      "legs": "delaque"
+    },
+    {
+      "nom": "Legs de Maison Escher",
+      "prix": 30,
+      "categorie": "Legs de Maison",
+      "id": "legs-escher",
+      "legsMaison": "escher"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Legs Escher : Armes de base",
+      "id": "legs-escher-fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe",
+      "legs": "escher"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Legs Escher : Armes de base",
+      "id": "legs-escher-fusil-d-assaut",
+      "arme": "fusil-d-assaut",
+      "legs": "escher"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 5,
+      "categorie": "Legs Escher : Armes de base",
+      "id": "legs-escher-fusil-laser",
+      "arme": "fusil-laser",
+      "legs": "escher"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Legs Escher : Armes de corps à corps",
+      "id": "legs-escher-couteau-de-combat",
+      "arme": "couteau-de-combat",
+      "legs": "escher"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Legs Escher : Armes de corps à corps",
+      "id": "legs-escher-couteau-energetique",
+      "arme": "couteau-energetique",
+      "legs": "escher"
+    },
+    {
+      "nom": "Électrofouet",
+      "prix": 25,
+      "categorie": "Legs Escher : Armes de corps à corps",
+      "id": "legs-escher-electrofouet",
+      "arme": "electrofouet",
+      "legs": "escher"
+    },
+    {
+      "nom": "Épée énergétique",
+      "prix": 45,
+      "categorie": "Legs Escher : Armes de corps à corps",
+      "id": "legs-escher-epee-energetique",
+      "arme": "epee-energetique",
+      "legs": "escher"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Legs Escher : Armes de corps à corps",
+      "id": "legs-escher-epee-tronconneuse",
+      "arme": "epee-tronconneuse",
+      "legs": "escher"
+    },
+    {
+      "nom": "Rapière",
+      "prix": 30,
+      "categorie": "Legs Escher : Armes de corps à corps",
+      "id": "legs-escher-rapiere",
+      "arme": "rapiere",
+      "legs": "escher"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Legs Escher : Armes de corps à corps",
+      "id": "legs-escher-stylet",
+      "arme": "stylet",
+      "legs": "escher"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Legs Escher : Pistolets",
+      "id": "legs-escher-flingue",
+      "arme": "flingue",
+      "legs": "escher"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Legs Escher : Pistolets",
+      "id": "legs-escher-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "legs": "escher"
+    },
+    {
+      "nom": "Pistolet à aiguilles",
+      "prix": 25,
+      "categorie": "Legs Escher : Pistolets",
+      "id": "legs-escher-pistolet-a-aiguilles",
+      "arme": "pistolet-a-aiguilles",
+      "legs": "escher"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Legs Escher : Pistolets",
+      "id": "legs-escher-pistolet-a-plasma",
+      "arme": "pistolet-a-plasma",
+      "legs": "escher"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Legs Escher : Pistolets",
+      "id": "legs-escher-pistolet-laser",
+      "arme": "pistolet-laser",
+      "legs": "escher"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Legs Escher : Pistolets",
+      "id": "legs-escher-pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur",
+      "legs": "escher"
+    },
+    {
+      "nom": "Arme combinée (bolter à aiguille)",
+      "prix": 80,
+      "categorie": "Legs Escher : Armes spéciales",
+      "id": "legs-escher-arme-combinee-bolter-a-aiguille",
+      "modes": [
+        "bolter",
+        "arme à aiguilles"
+      ],
+      "arme": "arme-combinee",
+      "legs": "escher"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Legs Escher : Armes spéciales",
+      "id": "legs-escher-fuseur",
+      "arme": "fuseur",
+      "legs": "escher"
+    },
+    {
+      "nom": "Fusil à aiguilles",
+      "prix": 35,
+      "categorie": "Legs Escher : Armes spéciales",
+      "id": "legs-escher-fusil-a-aiguilles",
+      "arme": "fusil-a-aiguilles",
+      "legs": "escher"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Legs Escher : Armes spéciales",
+      "id": "legs-escher-fusil-a-plasma",
+      "arme": "fusil-a-plasma",
+      "legs": "escher"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Legs Escher : Armes spéciales",
+      "id": "legs-escher-lance-flammes",
+      "arme": "lance-flammes",
+      "legs": "escher"
+    },
+    {
+      "nom": "Projecteur chimique \"Belladone\"",
+      "prix": 135,
+      "categorie": "Legs Escher : Armes spéciales",
+      "id": "legs-escher-projecteur-chimique-belladone",
+      "arme": "projecteur-chimique-belladone",
+      "legs": "escher"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Legs Escher : Armes lourdes",
+      "id": "legs-escher-mitrailleuse",
+      "arme": "mitrailleuse",
+      "legs": "escher"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 45,
+      "categorie": "Legs Escher : Grenades",
+      "id": "legs-escher-grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes",
+      "legs": "escher"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Legs Escher : Grenades",
+      "id": "legs-escher-grenades-aveuglantes",
+      "arme": "grenades-aveuglantes",
+      "legs": "escher"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 40,
+      "categorie": "Legs Escher : Grenades",
+      "id": "legs-escher-grenades-cauchemar",
+      "arme": "grenades-cauchemar",
+      "legs": "escher"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Legs Escher : Grenades",
+      "id": "legs-escher-grenades-frag",
+      "arme": "grenades-frag",
+      "legs": "escher"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Legs Escher : Grenades",
+      "id": "legs-escher-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "legs": "escher"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Legs Escher : Grenades",
+      "id": "legs-escher-grenades-krak",
+      "arme": "grenades-krak",
+      "legs": "escher"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Legs Escher : Armures",
+      "id": "legs-escher-armure-composite",
+      "legs": "escher"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Legs Escher : Armures",
+      "id": "legs-escher-armure-flak",
+      "legs": "escher"
+    },
+    {
+      "nom": "Balles acides (pour fusil à pompe)",
+      "prix": 15,
+      "categorie": "Legs Escher : Équipement personnel",
+      "id": "legs-escher-balles-acides-pour-fusil-a-pompe",
+      "legs": "escher"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Legs Escher : Équipement personnel",
+      "id": "legs-escher-balles-dum-dum-pour-flingue",
+      "legs": "escher"
+    },
+    {
+      "nom": "Chimiosynth",
+      "prix": 15,
+      "categorie": "Legs Escher : Équipement personnel",
+      "id": "legs-escher-chimiosynth",
+      "legs": "escher"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Legs Escher : Équipement personnel",
+      "id": "legs-escher-filin",
+      "legs": "escher"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Legs Escher : Équipement personnel",
+      "id": "legs-escher-filtre-nasal",
+      "legs": "escher"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Legs Escher : Équipement personnel",
+      "id": "legs-escher-photolunettes",
+      "legs": "escher"
+    },
+    {
+      "nom": "Pointeur laser",
+      "prix": 35,
+      "categorie": "Legs Escher : Équipement personnel",
+      "id": "legs-escher-pointeur-laser",
+      "legs": "escher"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Legs Escher : Équipement personnel",
+      "id": "legs-escher-respirateur",
+      "legs": "escher"
+    },
+    {
+      "nom": "Legs de Maison Goliath",
+      "prix": 30,
+      "categorie": "Legs de Maison",
+      "id": "legs-goliath",
+      "legsMaison": "goliath"
+    },
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "categorie": "Legs Goliath : Armes de base",
+      "id": "legs-goliath-bolter",
+      "arme": "bolter",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Canon de poing",
+      "prix": 20,
+      "categorie": "Legs Goliath : Armes de base",
+      "id": "legs-goliath-canon-de-poing",
+      "arme": "canon-de-poing",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Legs Goliath : Armes de base",
+      "id": "legs-goliath-fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Fusil de combat (salve & nuage de grenaille)",
+      "prix": 60,
+      "categorie": "Legs Goliath : Armes de base",
+      "id": "legs-goliath-fusil-de-combat-salve-nuage-de-grenaille",
+      "modes": [
+        "salve",
+        "nuage de grenaille"
+      ],
+      "arme": "fusil-de-combat",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 10,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-couteau-de-combat",
+      "arme": "couteau-de-combat",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Dérouilleuse",
+      "prix": 15,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-derouilleuse",
+      "arme": "derouilleuse",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-epee-tronconneuse",
+      "arme": "epee-tronconneuse",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-hache",
+      "arme": "hache",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-hache-a-deux-mains",
+      "arme": "hache-a-deux-mains",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Hache dentelée \"déchiqueteuse\"",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-hache-dentelee-dechiqueteuse",
+      "arme": "hache-dentelee-dechiqueteuse",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Hache énergétique",
+      "prix": 35,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-hache-energetique",
+      "arme": "hache-energetique",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Hachoir de brute",
+      "prix": 20,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-hachoir-de-brute",
+      "arme": "hachoir-de-brute",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Marteau énergétique",
+      "prix": 45,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-marteau-energetique",
+      "arme": "marteau-energetique",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Legs Goliath : Armes de corps à corps",
+      "id": "legs-goliath-masse-matraque",
+      "arme": "masse-matraque",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Combi-pistolet (flingue/pistolet à plasma)",
+      "prix": 40,
+      "categorie": "Legs Goliath : Pistolets",
+      "id": "legs-goliath-combi-pistolet-flingue-pistolet-a-plasma",
+      "arme": "combi-pistolet",
+      "modes": [
+        "flingue",
+        "pistolet à plasma"
+      ],
+      "legs": "goliath"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Legs Goliath : Pistolets",
+      "id": "legs-goliath-flingue",
+      "arme": "flingue",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Legs Goliath : Pistolets",
+      "id": "legs-goliath-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Pistolet bolter",
+      "prix": 45,
+      "categorie": "Legs Goliath : Pistolets",
+      "id": "legs-goliath-pistolet-bolter",
+      "arme": "pistolet-bolter",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 165,
+      "categorie": "Legs Goliath : Armes spéciales",
+      "id": "legs-goliath-arme-combinee-bolter-fuseur",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fuseur"
+      ],
+      "legs": "goliath"
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-flammes)",
+      "prix": 175,
+      "categorie": "Legs Goliath : Armes spéciales",
+      "id": "legs-goliath-arme-combinee-bolter-lance-flammes",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "lance-flammes"
+      ],
+      "legs": "goliath"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Legs Goliath : Armes spéciales",
+      "id": "legs-goliath-fuseur",
+      "arme": "fuseur",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Legs Goliath : Armes spéciales",
+      "id": "legs-goliath-lance-flammes",
+      "arme": "lance-flammes",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 55,
+      "categorie": "Legs Goliath : Armes spéciales",
+      "id": "legs-goliath-lance-grenades-grenades-frag-krak",
+      "modes": [
+        "grenades Frag",
+        "grenades Krak"
+      ],
+      "arme": "lance-grenades",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Bolter lourd",
+      "prix": 160,
+      "compteDouble": true,
+      "categorie": "Legs Goliath : Armes lourdes",
+      "id": "legs-goliath-bolter-lourd",
+      "arme": "bolter-lourd",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Canon à rivets \"Cribleur\"",
+      "prix": 70,
+      "compteDouble": true,
+      "categorie": "Legs Goliath : Armes lourdes",
+      "id": "legs-goliath-canon-a-rivets-cribleur",
+      "arme": "canon-a-rivets-cribleur",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Legs Goliath : Armes lourdes",
+      "id": "legs-goliath-lance-flammes-lourd",
+      "arme": "lance-flammes-lourd",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Legs Goliath : Armes lourdes",
+      "id": "legs-goliath-mitrailleuse",
+      "arme": "mitrailleuse",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Legs Goliath : Grenades",
+      "id": "legs-goliath-charges-explosives",
+      "arme": "charges-explosives",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Legs Goliath : Grenades",
+      "id": "legs-goliath-grenades-frag",
+      "arme": "grenades-frag",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Legs Goliath : Grenades",
+      "id": "legs-goliath-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Legs Goliath : Grenades",
+      "id": "legs-goliath-grenades-krak",
+      "arme": "grenades-krak",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Plates de fourneau",
+      "prix": 10,
+      "categorie": "Legs Goliath : Armures",
+      "id": "legs-goliath-plates-de-fourneau",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Legs Goliath : Équipement personnel",
+      "id": "legs-goliath-balles-dum-dum-pour-flingue",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Legs Goliath : Équipement personnel",
+      "id": "legs-goliath-bio-booster",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Legs Goliath : Équipement personnel",
+      "id": "legs-goliath-filin",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Legs Goliath : Équipement personnel",
+      "id": "legs-goliath-photolunettes",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Planque de stim",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Legs Goliath : Équipement personnel",
+      "id": "legs-goliath-planque-de-stim",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Legs Goliath : Équipement personnel",
+      "id": "legs-goliath-respirateur",
+      "legs": "goliath"
+    },
+    {
+      "nom": "Legs de Maison Orlock",
+      "prix": 30,
+      "categorie": "Legs de Maison",
+      "id": "legs-orlock",
+      "legsMaison": "orlock"
+    },
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "categorie": "Legs Orlock : Armes de base",
+      "id": "legs-orlock-bolter",
+      "arme": "bolter",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Legs Orlock : Armes de base",
+      "id": "legs-orlock-fusil-a-canon-scie",
+      "arme": "fusil-a-canon-scie",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 25,
+      "categorie": "Legs Orlock : Armes de base",
+      "id": "legs-orlock-fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Legs Orlock : Armes de base",
+      "id": "legs-orlock-fusil-d-assaut",
+      "arme": "fusil-d-assaut",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Fusil de combat (salve & nuage de grenaille)",
+      "prix": 55,
+      "categorie": "Legs Orlock : Armes de base",
+      "id": "legs-orlock-fusil-de-combat-salve-nuage-de-grenaille",
+      "modes": [
+        "salve",
+        "nuage de grenaille"
+      ],
+      "arme": "fusil-de-combat",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Legs Orlock : Armes de corps à corps",
+      "id": "legs-orlock-couteau-de-combat",
+      "arme": "couteau-de-combat",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Legs Orlock : Armes de corps à corps",
+      "id": "legs-orlock-couteau-energetique",
+      "arme": "couteau-energetique",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Legs Orlock : Armes de corps à corps",
+      "id": "legs-orlock-epee-tronconneuse",
+      "arme": "epee-tronconneuse",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Legs Orlock : Armes de corps à corps",
+      "id": "legs-orlock-fleau",
+      "arme": "fleau",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Legs Orlock : Armes de corps à corps",
+      "id": "legs-orlock-marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Legs Orlock : Armes de corps à corps",
+      "id": "legs-orlock-masse-matraque",
+      "arme": "masse-matraque",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 30,
+      "categorie": "Legs Orlock : Armes de corps à corps",
+      "id": "legs-orlock-servopince",
+      "arme": "servopince",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Legs Orlock : Pistolets",
+      "id": "legs-orlock-flingue",
+      "arme": "flingue",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Legs Orlock : Pistolets",
+      "id": "legs-orlock-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Legs Orlock : Pistolets",
+      "id": "legs-orlock-pistolet-a-plasma",
+      "arme": "pistolet-a-plasma",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Pistolet bolter",
+      "prix": 45,
+      "categorie": "Legs Orlock : Pistolets",
+      "id": "legs-orlock-pistolet-bolter",
+      "arme": "pistolet-bolter",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Legs Orlock : Pistolets",
+      "id": "legs-orlock-pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 165,
+      "categorie": "Legs Orlock : Armes spéciales",
+      "id": "legs-orlock-arme-combinee-bolter-fuseur",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fuseur"
+      ],
+      "legs": "orlock"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Legs Orlock : Armes spéciales",
+      "id": "legs-orlock-lance-flammes",
+      "arme": "lance-flammes",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 65,
+      "categorie": "Legs Orlock : Armes spéciales",
+      "id": "legs-orlock-lance-grenades-grenades-frag-krak",
+      "modes": [
+        "grenades Frag",
+        "grenades Krak"
+      ],
+      "arme": "lance-grenades",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Legs Orlock : Armes spéciales",
+      "id": "legs-orlock-fusil-a-plasma",
+      "arme": "fusil-a-plasma",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Legs Orlock : Armes spéciales",
+      "id": "legs-orlock-fuseur",
+      "arme": "fuseur",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Bolter lourd",
+      "prix": 160,
+      "compteDouble": true,
+      "categorie": "Legs Orlock : Armes lourdes",
+      "id": "legs-orlock-bolter-lourd",
+      "arme": "bolter-lourd",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Legs Orlock : Armes lourdes",
+      "id": "legs-orlock-lance-flammes-lourd",
+      "arme": "lance-flammes-lourd",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Lance-harpon",
+      "prix": 110,
+      "compteDouble": true,
+      "categorie": "Legs Orlock : Armes lourdes",
+      "id": "legs-orlock-lance-harpon",
+      "arme": "lance-harpon",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Legs Orlock : Armes lourdes",
+      "id": "legs-orlock-mitrailleuse",
+      "arme": "mitrailleuse",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Charges de démolition",
+      "prix": 45,
+      "categorie": "Legs Orlock : Grenades",
+      "id": "legs-orlock-charges-de-demolition",
+      "arme": "charges-de-demolition",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Legs Orlock : Grenades",
+      "id": "legs-orlock-charges-explosives",
+      "arme": "charges-explosives",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Legs Orlock : Grenades",
+      "id": "legs-orlock-grenades-frag",
+      "arme": "grenades-frag",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Legs Orlock : Grenades",
+      "id": "legs-orlock-grenades-krak",
+      "arme": "grenades-krak",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Legs Orlock : Armures",
+      "id": "legs-orlock-armure-composite",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Legs Orlock : Armures",
+      "id": "legs-orlock-armure-flak",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Legs Orlock : Équipement personnel",
+      "id": "legs-orlock-balles-dum-dum-pour-flingue",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Legs Orlock : Équipement personnel",
+      "id": "legs-orlock-bio-booster",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Legs Orlock : Équipement personnel",
+      "id": "legs-orlock-filin",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Legs Orlock : Équipement personnel",
+      "id": "legs-orlock-filtre-nasal",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Legs Orlock : Équipement personnel",
+      "id": "legs-orlock-lunette-telescopique",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Legs Orlock : Équipement personnel",
+      "id": "legs-orlock-photolunettes",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Legs Orlock : Équipement personnel",
+      "id": "legs-orlock-respirateur",
+      "legs": "orlock"
+    },
+    {
+      "nom": "Legs de Maison Van Saar",
+      "prix": 30,
+      "categorie": "Legs de Maison",
+      "id": "legs-van-saar",
+      "legsMaison": "van-saar"
+    },
+    {
+      "nom": "Carabine laser",
+      "prix": 20,
+      "categorie": "Legs Van Saar : Armes de base",
+      "id": "legs-van-saar-carabine-laser",
+      "arme": "carabine-laser",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 10,
+      "categorie": "Legs Van Saar : Armes de base",
+      "id": "legs-van-saar-fusil-laser",
+      "arme": "fusil-laser",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Laser de suppression",
+      "prix": 40,
+      "categorie": "Legs Van Saar : Armes de base",
+      "id": "legs-van-saar-laser-de-suppression",
+      "arme": "laser-de-suppression",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Bouclier d'énergie modèle \"Hystrar\"",
+      "prix": 50,
+      "categorie": "Legs Van Saar : Armes de corps à corps",
+      "id": "legs-van-saar-bouclier-d-energie-modele-hystrar",
+      "arme": "bouclier-d-energie-modele-hystrar",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Legs Van Saar : Armes de corps à corps",
+      "id": "legs-van-saar-couteau-energetique",
+      "arme": "couteau-energetique",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Électrobâton",
+      "prix": 30,
+      "categorie": "Legs Van Saar : Armes de corps à corps",
+      "id": "legs-van-saar-electrobaton",
+      "arme": "electrobaton",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Legs Van Saar : Armes de corps à corps",
+      "id": "legs-van-saar-electrosceptre",
+      "arme": "electrosceptre",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 30,
+      "categorie": "Legs Van Saar : Armes de corps à corps",
+      "id": "legs-van-saar-servopince",
+      "arme": "servopince",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Legs Van Saar : Pistolets",
+      "id": "legs-van-saar-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Mitraillette laser",
+      "prix": 15,
+      "categorie": "Legs Van Saar : Pistolets",
+      "id": "legs-van-saar-mitraillette-laser",
+      "arme": "mitraillette-laser",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Legs Van Saar : Pistolets",
+      "id": "legs-van-saar-pistolet-a-plasma",
+      "arme": "pistolet-a-plasma",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 5,
+      "categorie": "Legs Van Saar : Pistolets",
+      "id": "legs-van-saar-pistolet-laser",
+      "arme": "pistolet-laser",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Arme combinée (fusil laser/fuseur)",
+      "prix": 120,
+      "categorie": "Legs Van Saar : Armes spéciales",
+      "id": "legs-van-saar-arme-combinee-fusil-laser-fuseur",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil laser",
+        "fuseur"
+      ],
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Arme combinée (fusil laser/fusil à plasma)",
+      "prix": 75,
+      "categorie": "Legs Van Saar : Armes spéciales",
+      "id": "legs-van-saar-arme-combinee-fusil-laser-fusil-a-plasma",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil laser",
+        "fusil à plasma"
+      ],
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Legs Van Saar : Armes spéciales",
+      "id": "legs-van-saar-fuseur",
+      "arme": "fuseur",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Legs Van Saar : Armes spéciales",
+      "id": "legs-van-saar-fusil-a-gravitons",
+      "arme": "fusil-a-gravitons",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Legs Van Saar : Armes spéciales",
+      "id": "legs-van-saar-fusil-a-plasma",
+      "arme": "fusil-a-plasma",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Fusil à radiations",
+      "prix": 100,
+      "categorie": "Legs Van Saar : Armes spéciales",
+      "id": "legs-van-saar-fusil-a-radiations",
+      "arme": "fusil-a-radiations",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Legs Van Saar : Armes spéciales",
+      "id": "legs-van-saar-lance-flammes",
+      "arme": "lance-flammes",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Canon à plasma",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Legs Van Saar : Armes lourdes",
+      "id": "legs-van-saar-canon-a-plasma",
+      "arme": "canon-a-plasma",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Canon à radiations",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Legs Van Saar : Armes lourdes",
+      "id": "legs-van-saar-canon-a-radiations",
+      "arme": "canon-a-radiations",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Multi-fuseur",
+      "prix": 180,
+      "compteDouble": true,
+      "categorie": "Legs Van Saar : Armes lourdes",
+      "id": "legs-van-saar-multi-fuseur",
+      "arme": "multi-fuseur",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Grenades à radiations",
+      "prix": 25,
+      "categorie": "Legs Van Saar : Grenades",
+      "id": "legs-van-saar-grenades-a-radiations",
+      "arme": "grenades-a-radiations",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Legs Van Saar : Grenades",
+      "id": "legs-van-saar-grenades-frag",
+      "arme": "grenades-frag",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 12,
+      "categorie": "Legs Van Saar : Grenades",
+      "id": "legs-van-saar-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Legs Van Saar : Grenades",
+      "id": "legs-van-saar-grenades-krak",
+      "arme": "grenades-krak",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Legs Van Saar : Armures",
+      "id": "legs-van-saar-armure-composite",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Legs Van Saar : Armures",
+      "id": "legs-van-saar-armure-flak",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-bio-booster",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-filin",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-filtre-nasal",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Grav-chute",
+      "prix": 40,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-grav-chute",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-lunette",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 40,
+      "accessoireUnique": true,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-lunette-infrarouge",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-lunette-telescopique",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-photolunettes",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Pointeur laser",
+      "prix": 35,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-pointeur-laser",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-respirateur",
+      "legs": "van-saar"
+    },
+    {
+      "nom": "Suspenseur",
+      "prix": 60,
+      "categorie": "Legs Van Saar : Équipement personnel",
+      "id": "legs-van-saar-suspenseur",
+      "legs": "van-saar"
+    }
+  ],
+  "rareteMax": {
+    "chef": 11,
+    "champion": 10,
+    "ganger": 8
+  },
+  "gangerArmes": [
+    "Armes de base",
+    "Pistolets",
+    "Couteaux",
+    "Armes de corps à corps ordinaires",
+    "Armes à énergie/choc",
+    "Armes à deux mains",
+    "Grenades"
+  ],
+  "regles": [
+    {
+      "nom": "Profils",
+      "texte": "Pour chaque recrue, choisis un des quatre profils proposés pour son type, selon la figurine."
+    },
+    {
+      "nom": "Sets de compétences",
+      "texte": "À la fondation, classe quatre sets (hors Autorité) de 1 à 4. Chef : Primaires 1, 2 et Autorité, Secondaires 3 et 4. Champion : Primaires 1 et 2, Secondaires 3, 4 et Autorité. Spécialiste : Primaires 1 et 2, Secondaires 3 et 4."
+    },
+    {
+      "nom": "Hiérarchie de la chasse",
+      "texte": "Le Chef Chasseur suit les règles d'un Chef et les Champions Chasseurs celles des Champions (activation de groupe, actions d'après-bataille, panoplies)."
+    },
+    {
+      "nom": "Legs de Maison (30 crédits)",
+      "texte": "Un combattant peut prendre un seul Legs (Goliath, Escher, Cawdor, Orlock, Van Saar ou Delaque) : il accède alors à toute la liste d'équipement de cette Maison. Chef et Champions peuvent aussi acheter les Objets de prestige et Bêtes exotiques de cette Maison."
+    },
+    {
+      "nom": "Recrues",
+      "texte": "Brutes et Aventuriers non liés à une Maison seulement. Pas d'autres Chasseurs de primes que les Dramatis Personae. Maximum d'Aventuriers : 1 sous 9 de Réputation, 2 de 10 à 14, 3 de 15 à 19, 4 de 20 à 24, puis +1 par tranche de 5."
+    },
+    {
+      "nom": "En campagne Dominion",
+      "texte": "Traités comme un gang normal, avec une Colonie. Bénéfices Accrus seulement selon la Maison d'origine du Chef (son Legs), sinon aucun. Captif vendu à la Guilde : valeur entière au lieu de la moitié. Ennemi tué rayé de sa feuille : prime égale à la moitié de sa valeur, arrondie à 5. Les Chasseurs progressent comme des Gangers (Spécialiste sur 2 ou 12)."
+    }
+  ]
+}

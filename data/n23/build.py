@@ -198,8 +198,9 @@ def link_weapons(houses, weapons):
     by_slug = sorted(weapons, key=lambda w: -len(w["id"]))
     for house in houses:
         for item in house["equipement"]:
-            if not item["categorie"].startswith("Armes") and item["categorie"] != "Pistolets" \
-                    and item["categorie"] != "Grenades":
+            if "arme" in item:
+                continue
+            if not item["categorie"].startswith("Armes") and item["categorie"] not in ("Pistolets", "Grenades", "Couteaux"):
                 continue
             target = next((w for w in by_slug if item["id"].startswith(w["id"])), None)
             if target is None:
@@ -223,11 +224,83 @@ def link_weapons(houses, weapons):
                     WARNINGS.append(f"{house['nom']} : composants introuvables pour {item['nom']}")
 
 
+VEN_PROFILES = {
+    "chef": ("Chef Chasseur", 110, [
+        '5" 3+ 3+ 3 3 2 3+ 2 7+ 6+ 6+ 6+', '3" 3+ 4+ 3 4 2 5+ 2 6+ 6+ 5+ 5+',
+        '4" 3+ 5+ 4 4 2 4+ 2 7+ 5+ 8+ 9+', '4" 4+ 2+ 3 3 2 3+ 1 5+ 5+ 6+ 5+']),
+    "champion": ("Champion Chasseur", 85, [
+        '5" 4+ 4+ 3 3 2 4+ 2 7+ 6+ 7+ 7+', '3" 4+ 4+ 3 4 2 5+ 2 6+ 6+ 6+ 5+',
+        '4" 3+ 5+ 4 4 2 5+ 2 7+ 5+ 8+ 8+', '4" 5+ 2+ 3 3 2 4+ 1 6+ 6+ 6+ 6+']),
+    "ganger": ("Chasseur", 50, [
+        '5" 4+ 4+ 3 3 1 4+ 1 7+ 6+ 7+ 7+', '3" 4+ 4+ 3 4 1 5+ 1 6+ 6+ 7+ 6+',
+        '4" 3+ 4+ 3 4 1 5+ 1 7+ 6+ 8+ 9+', '4" 5+ 3+ 3 3 1 4+ 1 6+ 6+ 6+ 7+']),
+}
+
+
+def rarity_level(text):
+    """Seuil de rareté principal d'un objet du Comptoir (0 pour Commune, None si réservé à une Maison)."""
+    if "seulement" in text:
+        return None
+    m = re.match(r"Rare \((\d+)\)", text)
+    return int(m.group(1)) if m else 0
+
+
+def build_venators(comptoir, houses):
+    """Gang de Venators (Livre des Périls) : profils au choix, Comptoir comme liste, Legs de Maison."""
+    v = {"id": "venators", "nom": "Venators", "titre": "Venators (chasseurs de primes)",
+         "source": "Livre des Périls (version française)", "combattants": [], "competences": {},
+         "competencesDynamiques": True, "equipement": [],
+         "rareteMax": {"chef": 11, "champion": 10, "ganger": 8},
+         "gangerArmes": ["Armes de base", "Pistolets", "Couteaux", "Armes de corps à corps ordinaires",
+                         "Armes à énergie/choc", "Armes à deux mains", "Grenades"],
+         "creation": {
+             "chefEtChampion": "Chef Chasseur et Champions Chasseurs n'ont pas de restriction de type d'arme et commencent avec une compétence gratuite de leurs sets Primaires. Au maximum deux Champions Chasseurs à la fondation.",
+             "novice": "Pas de Novice : les Chasseurs forment la base du gang et doivent être au moins aussi nombreux que Chef et Champions réunis.",
+             "armeSpeciale": "Équipement pris au Comptoir Commercial : Commun ou Rare jusqu'à 11 pour le Chef, 10 pour un Champion, 8 pour un Chasseur. Un Chasseur ne prend que des armes de base, pistolets, armes de corps à corps et grenades (le Spécialiste n'a plus cette limite)."},
+         "regles": [
+             {"nom": "Profils", "texte": "Pour chaque recrue, choisis un des quatre profils proposés pour son type, selon la figurine."},
+             {"nom": "Sets de compétences", "texte": "À la fondation, classe quatre sets (hors Autorité) de 1 à 4. Chef : Primaires 1, 2 et Autorité, Secondaires 3 et 4. Champion : Primaires 1 et 2, Secondaires 3, 4 et Autorité. Spécialiste : Primaires 1 et 2, Secondaires 3 et 4."},
+             {"nom": "Hiérarchie de la chasse", "texte": "Le Chef Chasseur suit les règles d'un Chef et les Champions Chasseurs celles des Champions (activation de groupe, actions d'après-bataille, panoplies)."},
+             {"nom": "Legs de Maison (30 crédits)", "texte": "Un combattant peut prendre un seul Legs (Goliath, Escher, Cawdor, Orlock, Van Saar ou Delaque) : il accède alors à toute la liste d'équipement de cette Maison. Chef et Champions peuvent aussi acheter les Objets de prestige et Bêtes exotiques de cette Maison."},
+             {"nom": "Recrues", "texte": "Brutes et Aventuriers non liés à une Maison seulement. Pas d'autres Chasseurs de primes que les Dramatis Personae. Maximum d'Aventuriers : 1 sous 9 de Réputation, 2 de 10 à 14, 3 de 15 à 19, 4 de 20 à 24, puis +1 par tranche de 5."},
+             {"nom": "En campagne Dominion", "texte": "Traités comme un gang normal, avec une Colonie. Bénéfices Accrus seulement selon la Maison d'origine du Chef (son Legs), sinon aucun. Captif vendu à la Guilde : valeur entière au lieu de la moitié. Ennemi tué rayé de sa feuille : prime égale à la moitié de sa valeur, arrondie à 5. Les Chasseurs progressent comme des Gangers (Spécialiste sur 2 ou 12)."}]}
+    for rid, (role, cost, profils) in VEN_PROFILES.items():
+        for n, stats in enumerate(profils, 1):
+            v["combattants"].append({"id": rid if n == 1 else f"{rid}-{n}", "role": f"{role} (profil {n})", "cout": cost,
+                                     "profil": dict(zip(STATS, stats.split())), "equipementDeDepart": [],
+                                     **({"base": rid} if n > 1 else {})})
+    for item in comptoir:
+        lvl = rarity_level(item["rarete"])
+        if lvl is None or item["categorie"] == "Bêtes exotiques" or item["prix"] <= 0:
+            continue
+        it = {k: item[k] for k in ("nom", "prix", "categorie", "id") if k in item}
+        it.update({k: item[k] for k in ("compteDouble", "accessoireUnique") if k in item})
+        it["rarete"] = item["rarete"]
+        it["niveau"] = lvl
+        if item["categorie"] == "Objets de prestige":
+            it["roles"] = ["chef", "champion"]
+        v["equipement"].append(it)
+    for h in [x for x in houses if "titre" not in x]:
+        name = h["nom"]
+        v["equipement"].append({"nom": f"Legs de Maison {name}", "prix": 30, "categorie": "Legs de Maison",
+                                "id": f"legs-{h['id']}", "legsMaison": h["id"]})
+        for item in h["equipement"]:
+            it = dict(item)
+            it["id"] = f"legs-{h['id']}-{item['id']}"
+            it["categorie"] = f"Legs {name} : {item['categorie']}"
+            it["legs"] = h["id"]
+            it.pop("roles", None)
+            v["equipement"].append(it)
+    return v
+
+
 def main():
     weapons = parse_armes()
     comptoir = parse_comptoir()
     houses = parse_maisons()
     link_weapons(houses, weapons)
+    houses.append(build_venators(comptoir, houses))
+    link_weapons(houses[-1:], weapons)
 
     meta = {"edition": "Necromunda N23", "source": "Livre de règles N23 (version française)"}
     rules = {

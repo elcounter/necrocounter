@@ -43,6 +43,12 @@
       "nom": "Nomades des Désolations de Cendres",
       "titre": "Nomades des Désolations de Cendres",
       "fichier": "maisons/nomades.json"
+    },
+    {
+      "id": "venators",
+      "nom": "Venators",
+      "titre": "Venators (chasseurs de primes)",
+      "fichier": "maisons/venators.json"
     }
   ]
 }

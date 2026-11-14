@@ -520,7 +520,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.5.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.6.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -667,7 +667,7 @@
 
     // ---- Données Necromunda N23 ----
     const DATA = "data/n23/";
-    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats", "nomades"];
+    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats", "nomades", "venators"];
     const houseTitle = h => h.titre || "Maison " + h.nom;
     function rb(f, h) {
       if (f.kind === "brute") return "brute";
@@ -729,6 +729,7 @@
     }
 
     function skillsHtml(h) {
+      if (h.competencesDynamiques) return `<p class="note" style="margin:0">Le gang choisit et classe quatre sets de compétences à sa fondation (voir Règles spéciales). Tu les règles sur la fiche du gang.</p>`;
       const roles = Object.keys(h.competences);
       const cell = (role, cat) => {
         const c = h.competences[role];
@@ -757,12 +758,12 @@
     function equipmentHtml(h, armes) {
       const byId = Object.fromEntries(armes.armes.map(a => [a.id, a]));
       const groups = [];
-      h.equipement.forEach(item => {
+      h.equipement.filter(item => !item.legs).forEach(item => {
         let g = groups.find(x => x.cat === item.categorie);
         if (!g) groups.push(g = { cat: item.categorie, items: [] });
         g.items.push(item);
       });
-      const tags = item => [item.compteDouble ? "compte pour deux armes" : "", item.accessoireUnique ? "non cumulable" : "",
+      const tags = item => [item.compteDouble ? "compte pour deux armes" : "", item.accessoireUnique ? "non cumulable" : "", item.rarete ? item.rarete : "",
         item.roles ? item.roles.map(r => roleName(h, r)).join(", ") + " seulement" : ""]
         .filter(Boolean).map(t => `<span class="tag">${t.charAt(0).toUpperCase() + t.slice(1)}</span>`).join("");
       return groups.map(g => `<div class="eqcat">${esc(g.cat)}</div>${g.items.map(item => {
@@ -817,7 +818,7 @@
         ${weapons.map(w => `<p class="note"><b>${esc(w.nom)}</b></p>${profileHtml(w)}`).join("")}
       </div></details>`;
     }
-    const HOUSE_NAMES = { cawdor: "Maison Cawdor", delaque: "Maison Delaque", escher: "Maison Escher", goliath: "Maison Goliath", orlock: "Maison Orlock", "van-saar": "Maison Van Saar", squats: "Prospecteurs Squats Ironhead", nomades: "Nomades des Désolations de Cendres" };
+    const HOUSE_NAMES = { cawdor: "Maison Cawdor", delaque: "Maison Delaque", escher: "Maison Escher", goliath: "Maison Goliath", orlock: "Maison Orlock", "van-saar": "Maison Van Saar", squats: "Prospecteurs Squats Ironhead", nomades: "Nomades des Désolations de Cendres", venators: "Venators" };
 
     function mercenariesHtml([d, armes]) {
       const byId = Object.fromEntries(armes.armes.map(a => [a.id, a]));
@@ -1625,9 +1626,21 @@
       if (i >= 0) list[i] = g; else list.unshift(g);
       saveGangs(list);
     }
-    function gangData(houseId) {
+    function venComps(sets) {
+      const [a, b, c, e] = (sets || []).concat(["", "", "", ""]).slice(0, 4);
+      const P = [a, b].filter(Boolean), S = [c, e].filter(Boolean);
+      return { chef: { primaires: P.concat("Autorité"), secondaires: S }, champion: { primaires: P, secondaires: S.concat("Autorité") },
+        specialiste: { primaires: P, secondaires: S } };
+    }
+    function withGang(d, g) {
+      if (!d.house.competencesDynamiques) return d;
+      const comps = venComps(g && g.venSets);
+      d.house.combattants.forEach(c => { const k = c.base || c.id; if (comps[k] && !comps[c.id]) comps[c.id] = comps[k]; });
+      return Object.assign({}, d, { house: Object.assign({}, d.house, { competences: comps }) });
+    }
+    function gangData(houseId, g) {
       return Promise.all([load("maisons/" + houseId + ".json"), load("armes.json"), load("mercenaires.json"), load("refs.json"), load("campagne.json")])
-        .then(([house, armes, mercs, refs, camp]) => ({ house, armes, mercs, refs, camp }));
+        .then(([house, armes, mercs, refs, camp]) => withGang({ house, armes, mercs, refs, camp }, g));
     }
     function fighterDef(f, d) {
       return f.kind === "brute"
@@ -1650,6 +1663,13 @@
       if (!camp && total > g.budget) w.push(`Budget dépassé de ${total - g.budget} crédits.`);
       const chefs = g.fighters.filter(f => f.kind !== "brute" && rb(f, d.house) === "chef").length;
       if (chefs !== 1) w.push(chefs ? "Un gang ne peut avoir qu'un seul Chef." : "Il faut un Chef.");
+      if (d.house.competencesDynamiques && (g.venSets || []).filter(Boolean).length < 4) w.push("Choisis les 4 sets de compétences du gang (Réglages).");
+      if (d.house.rareteMax && !camp && g.fighters.filter(f => f.kind !== "brute" && rb(f, d.house) === "champion").length > 2) w.push("À la fondation, deux Champions Chasseurs au maximum.");
+      if (d.house.competencesDynamiques) g.fighters.filter(f => f.kind !== "brute").forEach(f => {
+        const legs = (f.gear || []).filter(x => /^legs-[a-z-]+$/.test(x)).map(x => x.slice(5));
+        const orphan = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && i.legs && !legs.includes(i.legs));
+        if (orphan.length) w.push(`${f.name || roleName(d.house, f.type)} : objets de Legs sans le Legs de Maison correspondant.`);
+      });
       g.fighters.filter(f => f.kind !== "brute").forEach(f => {
         const bad = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && (i.roles && !i.roles.includes(f.type) || d.house.gangerArmes && f.type === "ganger" && !f.spec && i.arme && !d.house.gangerArmes.includes(i.categorie)));
         if (bad.length) w.push(`${f.name || roleName(d.house, f.type)} : équipement non autorisé (${bad.map(i => i.nom).join(", ")}).`);
@@ -1719,7 +1739,7 @@
       return p.xp + 2 * (f.adv || []).filter(a => a.stat === stat).length;
     }
     function skillSets(f, d, which) {
-      const key = isSpecialist(f) ? "specialiste" : f.type;
+      const key = isSpecialist(f) ? "specialiste" : (d.house.competences || {})[f.type] ? f.type : rb(f, d.house);
       const c = (d.house.competences || {})[key] || {};
       let sets = which === "tous" ? SKILL_CATS.concat(Object.values(d.house.competences || {}).flatMap(x => x.primaires.concat(x.secondaires)).filter(x => !SKILL_CATS.includes(x)))
         .filter((x, i, a) => a.indexOf(x) === i) : (c[which] || []).slice();
@@ -1950,6 +1970,9 @@
     }
 
     function gearBlocked(i, f, h, camp) {
+      if (i.legsMaison && (f.gear || []).some(x => /^legs-[a-z-]+$/.test(x) && x !== i.id)) return "un seul Legs de Maison";
+      if (i.legs && !(f.gear || []).includes("legs-" + i.legs)) return "nécessite le Legs de Maison";
+      if (h.rareteMax && !camp && i.niveau > (h.rareteMax[rb(f, h)] || 0)) return "Rareté trop élevée";
       if (i.roles && !i.roles.includes(f.type)) return "réservé à : " + i.roles.map(r => roleName(h, r)).join(", ");
       if (h.gangerArmes && f.type === "ganger" && !f.spec && i.arme && !h.gangerArmes.includes(i.categorie)) return "arme réservée aux Spécialistes";
       if (!camp && noviceLimit(h) && rb(f, h) === "novice" && i.prix > 20) return "plus de 20 crédits";
@@ -1964,7 +1987,7 @@
     }
 
     function skillPickHtml(f, fi, d) {
-      const sets = ((d.house.competences || {})[f.type] || {}).primaires || [];
+      const sets = ((d.house.competences || {})[f.type] || (d.house.competences || {})[rb(f, d.house)] || {}).primaires || [];
       const cur = (f.skills || [])[0] || "";
       const find = n => { for (const L of Object.values(d.refs.competences || {})) { const x = L.find(k => k.nom === n); if (x) return x; } return null; };
       const info = cur && find(cur);
@@ -2020,6 +2043,8 @@
         <div class="panel"><h3 class="sec">Réglages</h3><div class="body">
           <label class="fld"><span>Nom du gang</span><input id="gb-name" value="${esc(g.name)}"></label>
           ${inCamp(g) ? "" : `<label class="fld"><span>Budget (crédits)</span><input id="gb-budget" inputmode="numeric" value="${g.budget}"></label>`}
+          ${d.house.competencesDynamiques ? `<p class="note"><b>Sets de compétences du gang</b> (classés de 1 à 4, hors Autorité) : 1 et 2 sont Primaires, 3 et 4 Secondaires.</p>
+            ${[0, 1, 2, 3].map(i => `<label class="fld"><span>Set ${i + 1}</span><select data-ven-set="${i}"><option value="">Choisir…</option>${SKILL_CATS.filter(c => c !== "Autorité").map(c => `<option${(g.venSets || [])[i] === c ? " selected" : ""}${(g.venSets || []).includes(c) && (g.venSets || [])[i] !== c ? " disabled" : ""}>${c}</option>`).join("")}</select></label>`).join("")}` : ""}
           ${inCamp(g) ? `<button type="button" class="btn ghost small" id="cp-off">Quitter le mode campagne</button>`
             : `<button type="button" class="btn primary small" id="cp-on">Passer en mode campagne</button>
                <p class="note">Ajoute le suivi Campagne Dominion : XP, progressions, blessures, Réputation, Magot et Territoires. Les crédits non dépensés vont au Magot.</p>`}
@@ -2029,7 +2054,7 @@
           ${g.fighters.length ? `<p class="legend2d6"><i></i>Caractéristiques testées sur 2D6 (CD, SF, V, INT)</p>${g.fighters.map((f, fi) => fighterEditorHtml(f, fi, d, g)).join("")}` : `<p class="note" style="margin-top:0">Commence par recruter ton Chef.</p>`}
           <label class="fld" style="margin-top:14px"><span>Recruter</span><select id="gb-recruit">
             <option value="">+ Ajouter un combattant…</option>
-            <optgroup label="Combattants">${d.house.combattants.map(c => `<option value="c:${esc(c.id)}">${esc(c.role)}${c.role !== ROLE_LABEL[c.base || c.id] ? " (" + ROLE_LABEL[c.base || c.id] + ")" : ""} · ${c.cout} cr</option>`).join("")}</optgroup>
+            <optgroup label="Combattants">${d.house.combattants.map(c => `<option value="c:${esc(c.id)}">${esc(c.role)}${!c.role.toLowerCase().includes(String(ROLE_LABEL[c.base || c.id]).toLowerCase()) ? " (" + ROLE_LABEL[c.base || c.id] + ")" : ""} · ${c.cout} cr</option>`).join("")}</optgroup>
             <optgroup label="Brutes">${brutes.map(b => `<option value="b:${esc(b.id)}">${esc(b.nom)} (${b.cout} cr)</option>`).join("")}</optgroup>
           </select></label>
         </div></div>
@@ -2053,11 +2078,13 @@
       window.scrollTo(0, y);
     }
     function mutateGang(fn) {
-      fn(gbState.gang); putGang(gbState.gang); renderGangEditor();
+      fn(gbState.gang); putGang(gbState.gang);
+      if (gbState.data.house.competencesDynamiques) gbState.data = withGang(gbState.data, gbState.gang);
+      renderGangEditor();
     }
 
     function exportPayload(g) {
-      return { format: GANG_FORMAT, version: 1, edition: "N23", gang: { name: g.name, house: g.house, budget: g.budget, fighters: g.fighters, campagne: g.campagne || null } };
+      return { format: GANG_FORMAT, version: 1, edition: "N23", gang: { name: g.name, house: g.house, budget: g.budget, fighters: g.fighters, campagne: g.campagne || null, venSets: g.venSets || null } };
     }
     function encodeCode(obj) {
       return "NC1:" + btoa(unescape(encodeURIComponent(JSON.stringify(obj))));
@@ -2086,12 +2113,13 @@
             mods: Object.fromEntries(Object.entries(i.mods || {}).filter(([k]) => STAT_KEYS.includes(k)).map(([k, v]) => [k, parseInt(v, 10) || 0])) })) : [],
           ...(f.baseProfil && typeof f.baseProfil === "object" ? { baseProfil: Object.fromEntries(STAT_KEYS.map(k => [k, String(f.baseProfil[k] || "")])), baseCout: parseInt(f.baseCout, 10) || 0, promuDe: String(f.promuDe || "") } : {})
         })),
+        venSets: Array.isArray(src.venSets) ? src.venSets.map(String).filter(x => SKILL_CATS.includes(x)).slice(0, 4) : undefined,
         campagne: src.campagne && typeof src.campagne === "object" ? { active: !!src.campagne.active, rep: Math.max(1, parseInt(src.campagne.rep, 10) || 1),
           magot: parseInt(src.campagne.magot, 10) || 0, territoires: Array.isArray(src.campagne.territoires) ? src.campagne.territoires.map(String).slice(0, 40) : ["colonie"],
           notes: String(src.campagne.notes || "").slice(0, 2000) } : undefined,
         createdAt: new Date().toISOString()
       };
-      return gangData(g.house).then(d => {
+      return gangData(g.house, g).then(d => {
         const before = g.fighters.length;
         g.fighters = g.fighters.filter(f => fighterDef(f, d));
         g.fighters.forEach(f => { f.gear = f.gear.filter(id => itemDef(id, d)); f.betes = f.betes.filter(id => beteDef(id, d)); });
@@ -2113,6 +2141,7 @@
       const t = e.target;
       if (!gbState || !t.closest || !$("view").contains(t)) return;
       if (t.id === "gb-name") mutateGang(g => { g.name = t.value.trim() || g.name; });
+      else if (t.dataset.venSet != null) mutateGang(g => { g.venSets = (g.venSets || ["", "", "", ""]).slice(); g.venSets[+t.dataset.venSet] = t.value; })
       else if (t.id === "gb-budget") mutateGang(g => { g.budget = Math.max(0, parseInt(t.value, 10) || 0); });
       else if (t.id === "gb-recruit" && t.value) {
         const [k, id] = t.value.split(":");
@@ -2289,7 +2318,7 @@
     function gangForMatch(id) {
       const g = getGang(id);
       if (!g) return Promise.resolve(null);
-      return gangData(g.house).then(d => {
+      return gangData(g.house, g).then(d => {
         const crew = [];
         g.fighters.forEach(f => {
           if (inCamp(g) && (f.recup || f.captif)) return;
@@ -2338,8 +2367,8 @@
         title.textContent = "Gangs";
         const g = getGang(parts[3]);
         if (!g) view.innerHTML = `<div class="page"><div class="placeholder">Gang introuvable sur cet appareil.</div></div>`;
-        else if (parts[4] === "imprimer") showAsync(view, gangData(g.house), d => printGangHtml(g, d));
-        else showAsync(view, gangData(g.house), d => { gbState = { gang: g, data: d }; return gangEditorHtml(g, d); });
+        else if (parts[4] === "imprimer") showAsync(view, gangData(g.house, g), d => printGangHtml(g, d));
+        else showAsync(view, gangData(g.house, g), d => { gbState = { gang: g, data: d }; return gangEditorHtml(g, d); });
       } else if (section === "gangs" && edition === "n23" && house && ACTIVE_HOUSES.includes(house)) {
         title.textContent = "Gangs";
         showAsync(view, Promise.all([load("maisons/" + house + ".json"), load("armes.json"), load("mercenaires.json")]), ([data, armes, mercs]) => houseHtml(data, armes, mercs));
