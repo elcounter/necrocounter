@@ -20,7 +20,7 @@ SRC = ROOT / "src"
 STATS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"]
 PROFILE = ["porC", "porL", "preC", "preL", "F", "PA", "D", "Mu"]
 SKILL_CATEGORIES = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir",
-                    "Sagesse des Anciens", "Désolations", "Formation Palanite"]
+                    "Sagesse des Anciens", "Désolations", "Formation Palanite", "Sauvagerie", "Pouvoirs Wyrd du Chaos", "Pouvoirs Wyrd Genestealer"]
 WARNINGS = []
 
 
@@ -154,6 +154,8 @@ def parse_maisons():
         elif line.startswith("creation:"):
             key, text = [c.strip() for c in line.split(":", 1)[1].split("|", 1)]
             house.setdefault("creation", {})[key] = text
+        elif line.startswith("option:"):
+            house[line.split(":", 1)[1].strip()] = True
         elif line.startswith("gangerArmes:"):
             house["gangerArmes"] = [c.strip() for c in line.split(":", 1)[1].split(",")]
         elif line.startswith("regle:"):

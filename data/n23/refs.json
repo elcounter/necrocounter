@@ -83,8 +83,16 @@
       "resume": "Attaque hors du champ de vision de la cible : +1 Force."
     },
     {
+      "nom": "Couplé",
+      "resume": "(Ruines) Compte comme deux armes de Mêlée pour le nombre de dés d'Attaque, et les Attaques sont doublées lors d'une Charge (détail : voir le livre)."
+    },
+    {
       "nom": "Digi",
       "resume": "Montée sur anneau/gant ; attaque de mêlée supplémentaire ; ne compte pas dans la limite d'armes portées."
+    },
+    {
+      "nom": "Déchiqueter",
+      "resume": "(Ruines) Sur un 6 naturel pour blesser, la PA de l'arme est doublée."
     },
     {
       "nom": "Déluge de feu (X)",
@@ -191,6 +199,10 @@
       "resume": "Munitions difficiles : Court de Munitions = plus utilisable pour le reste de la bataille."
     },
     {
+      "nom": "Sectionner",
+      "resume": "(Ruines) Si l'attaque réduit la cible à 0 PV, pas de jet de Trauma : chaque dé de Trauma donne automatiquement Hors de Combat."
+    },
+    {
       "nom": "Silencieux",
       "resume": "Ne révèle pas le tireur / n'alarme pas selon règles d'Attaque Furtive / scénarios."
     },
@@ -217,6 +229,10 @@
     {
       "nom": "Traction",
       "resume": "Cible touchée non OOA : peut être tractée vers l'attaquant (D6 vs Force)."
+    },
+    {
+      "nom": "Téméraire",
+      "resume": "(Ruines) L'arme ignore la règle de cible prioritaire : la cible est tirée au hasard parmi toutes celles éligibles dans l'arc de vision."
     },
     {
       "nom": "Usage unique",
@@ -512,6 +528,84 @@
       {
         "nom": "Réponse à la menace",
         "resume": "(Enforcers) Si un ennemi finit une Charge à 6\" ou moins et que ce combattant est Debout, Actif et Paré, il Charge aussitôt cet ennemi avant ses attaques et peut Combattre s'il l'Engage. Il perd alors son pion Paré."
+      }
+    ],
+    "Sauvagerie": [
+      {
+        "nom": "Avatar de sang",
+        "resume": "(Corpse Grinder) Chaque blessure non sauvegardée qu'il inflige en Mêlée lui retire une Blessure Légère."
+      },
+      {
+        "nom": "Soif de sang",
+        "resume": "(Corpse Grinder) Après un coup de grâce, il peut Consolider de 2\" dans n'importe quelle direction."
+      },
+      {
+        "nom": "Brume pourpre",
+        "resume": "(Corpse Grinder) Engagé avec un ou plusieurs ennemis, il réussit tous ses tests de Nervosité."
+      },
+      {
+        "nom": "Frénésie",
+        "resume": "(Corpse Grinder) En Charge, +D3 Attaques mais -1 à ses jets de touche."
+      },
+      {
+        "nom": "Coup mortel",
+        "resume": "(Corpse Grinder) À la place de ses attaques de mêlée, une seule attaque (pas avec une arme de Poing) : si elle touche, Force et Dégâts doublés et aucune sauvegarde d'armure."
+      },
+      {
+        "nom": "Massacreur",
+        "resume": "(Corpse Grinder) Chaque blessure non sauvegardée qu'il inflige en Mêlée lui donne +1\" de Mouvement jusqu'à la fin de la bataille."
+      }
+    ],
+    "Pouvoirs Wyrd du Chaos": [
+      {
+        "nom": "Pyromancie : Purge",
+        "resume": "(Culte du Chaos, Élémentaire) Tant que le pouvoir est actif, le Sorcier dispose d'une arme de flammes Incendiaire à gabarit de Souffle (profil : voir le livre)."
+      },
+      {
+        "nom": "Télékinésie : Lévitation",
+        "resume": "(Culte du Chaos, Élémentaire, continu) +3\" de Mouvement, ignore le terrain et les niveaux, ne tombe jamais et ne peut pas être Bloqué (pas à travers les murs ni le terrain infranchissable)."
+      },
+      {
+        "nom": "Biomancie : Force du Warp",
+        "resume": "(Culte du Chaos, Simple, continu) +2 en Force et +1 aux Dégâts de ses attaques de corps à corps."
+      },
+      {
+        "nom": "Télékinésie : Bouclier noir",
+        "resume": "(Culte du Chaos, Simple) Jusqu'à la phase de Fin, +1 aux sauvegardes du Sorcier et des alliés à 3\" (6+ pour ceux qui n'en ont pas)."
+      },
+      {
+        "nom": "Télépathie : Visions démentes",
+        "resume": "(Culte du Chaos, Élémentaire) Jusqu'à la phase de Fin, chaque ennemi à 3\" fait un test de Volonté ; raté, il subit la condition Folie."
+      },
+      {
+        "nom": "Télékinésie : Assaut",
+        "resume": "(Culte du Chaos, Élémentaire) Attaque à distance sur un ennemi à 12\" en vue : touché, il est déplacé de D3\", passe Au Tapis et Bloqué ; heurter un obstacle ou un combattant inflige une touche F3 D1."
+      }
+    ],
+    "Pouvoirs Wyrd Genestealer": [
+      {
+        "nom": "Télépathie : Hypnose",
+        "resume": "(Culte Genestealer, Élémentaire) Un ennemi pas encore activé, à 9\" et en vue : sur un test de Volonté réussi, il ne pourra faire qu'une action de Mouvement (Simple) ce round."
+      },
+      {
+        "nom": "Télépathie : Volonté inébranlable",
+        "resume": "(Culte Genestealer, Élémentaire, continu) Les alliés à 9\" utilisent son Sang-froid et sa Volonté pour leurs tests de Nervosité et de Volonté."
+      },
+      {
+        "nom": "Télépathie : Zélote",
+        "resume": "(Culte Genestealer, Double, continu) Une fois par round, un allié à 9\" qui Combat ou Charge relance ses 1 pour toucher."
+      },
+      {
+        "nom": "Télépathie : Contrôle mental",
+        "resume": "(Culte Genestealer, Élémentaire) Un ennemi à 9\" fait aussitôt une action Tirer sur un combattant de son propre gang choisi par le joueur du Culte, même s'il a déjà été activé."
+      },
+      {
+        "nom": "Télékinésie : Assaut",
+        "resume": "(Culte Genestealer, Élémentaire) Attaque à distance sur un ennemi à 12\" en vue : touché, il est déplacé de D3\", passe Au Tapis et Bloqué ; heurter un obstacle ou un combattant inflige une touche F3 D1."
+      },
+      {
+        "nom": "Télékinésie : Décharge de force",
+        "resume": "(Culte Genestealer, Élémentaire) Les ennemis à 3\" sont repoussés de D3+1\". Bord de plateforme : test d'Initiative ou chute. Contre un mur : Bloqué et touche de Force égale à la distance."
       }
     ]
   },

@@ -51,6 +51,24 @@
       "fichier": "maisons/enforcers.json"
     },
     {
+      "id": "corpse-grinder",
+      "nom": "Culte de Corpse Grinder",
+      "titre": "Culte de Corpse Grinder",
+      "fichier": "maisons/corpse-grinder.json"
+    },
+    {
+      "id": "culte-chaos",
+      "nom": "Culte Hilote du Chaos",
+      "titre": "Culte Hilote du Chaos",
+      "fichier": "maisons/culte-chaos.json"
+    },
+    {
+      "id": "culte-genestealer",
+      "nom": "Culte Genestealer",
+      "titre": "Culte Genestealer",
+      "fichier": "maisons/culte-genestealer.json"
+    },
+    {
       "id": "venators",
       "nom": "Venators",
       "titre": "Venators (chasseurs de primes)",

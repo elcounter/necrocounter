@@ -1,0 +1,632 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre des Ruines (version française)",
+  "reglesDeCreation": {
+    "novice": "Pas de Novice : les Hybrides Néophytes forment la base du gang et doivent être au moins aussi nombreux que Chef, Hybrides Acolytes et Aberrants réunis (hors Aventuriers).",
+    "armeSpeciale": "Un Néophyte prend des armes de base, pistolets et armes de corps à corps ; un seul peut avoir une arme spéciale à la création. Un Aberrant ne prend que des armes de corps à corps et une armure.",
+    "chefEtChampion": "Le Chef (Adepte ou Alpha du Culte) et les Hybrides Acolytes commencent avec une compétence gratuite de leurs sets Primaires (l'Adepte peut prendre un Pouvoir Wyrd). Deux Hybrides Acolytes maximum à la fondation. Les Aberrants commencent avec Impétuosité."
+  },
+  "id": "culte-genestealer",
+  "nom": "Culte Genestealer",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Adepte du Culte",
+      "cout": 120,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "3+",
+        "SF": "5+",
+        "V": "5+",
+        "INT": "4+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "alpha",
+      "role": "Alpha du Culte",
+      "cout": 145,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "4",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "3+",
+        "SF": "5+",
+        "V": "5+",
+        "INT": "4+"
+      },
+      "equipementDeDepart": [
+        "Combinaison NBC",
+        "Bras supplémentaire"
+      ],
+      "base": "chef"
+    },
+    {
+      "id": "champion",
+      "role": "Hybride Acolyte",
+      "cout": 85,
+      "profil": {
+        "M": "4\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "4+",
+        "SF": "5+",
+        "V": "7+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Combinaison NBC"
+      ]
+    },
+    {
+      "id": "ganger",
+      "role": "Hybride Néophyte",
+      "cout": 45,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "5+",
+        "V": "6+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": [
+        "Combinaison NBC"
+      ]
+    },
+    {
+      "id": "aberrant",
+      "role": "Aberrant",
+      "cout": 95,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "6+",
+        "F": "5",
+        "E": "4",
+        "PV": "2",
+        "I": "5+",
+        "A": "2",
+        "CD": "9+",
+        "SF": "4+",
+        "V": "6+",
+        "INT": "10+"
+      },
+      "equipementDeDepart": [],
+      "base": "ganger"
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Ruse",
+        "Autorité",
+        "Pouvoirs Wyrd Genestealer"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Savoir"
+      ]
+    },
+    "alpha": {
+      "primaires": [
+        "Combat",
+        "Autorité",
+        "Tir"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Férocité"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Ruse",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Combat",
+        "Autorité"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Ruse",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Combat"
+      ]
+    },
+    "aberrant": {
+      "primaires": [
+        "Muscle",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Fusil à pompe (balles et grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-et-grenaille",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-tronconneuse",
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Foreuse lourde",
+      "prix": 90,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "foreuse-lourde",
+      "arme": "foreuse-lourde"
+    },
+    {
+      "nom": "Disqueuse lourde",
+      "prix": 120,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "disqueuse-lourde",
+      "arme": "disqueuse-lourde"
+    },
+    {
+      "nom": "Cisaille lourde",
+      "prix": 135,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "cisaille-lourde",
+      "arme": "cisaille-lourde"
+    },
+    {
+      "nom": "Marteau énergétique",
+      "prix": 45,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-energetique",
+      "arme": "marteau-energetique"
+    },
+    {
+      "nom": "Masse énergétique",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "masse-energetique",
+      "arme": "masse-energetique"
+    },
+    {
+      "nom": "Pioche énergétique",
+      "prix": 40,
+      "categorie": "Armes de corps à corps",
+      "id": "pioche-energetique",
+      "arme": "pioche-energetique"
+    },
+    {
+      "nom": "Épée énergétique",
+      "prix": 45,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-energetique",
+      "arme": "epee-energetique"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "electrosceptre",
+      "arme": "electrosceptre"
+    },
+    {
+      "nom": "Électrofouet",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "electrofouet",
+      "arme": "electrofouet"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Pistolet à aiguilles",
+      "prix": 40,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-aiguilles",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "pistolet-a-aiguilles"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag et Krak)",
+      "prix": 55,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-frag-et-krak",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Long fusil laser",
+      "prix": 20,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil-laser",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "long-fusil-laser"
+    },
+    {
+      "nom": "Lance-toile",
+      "prix": 125,
+      "categorie": "Armes spéciales",
+      "id": "lance-toile",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "lance-toile"
+    },
+    {
+      "nom": "Laser minier",
+      "prix": 125,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "laser-minier",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion"
+      ],
+      "arme": "laser-minier"
+    },
+    {
+      "nom": "Canon sismique",
+      "prix": 140,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "canon-sismique",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion"
+      ],
+      "arme": "canon-sismique"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 145,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion"
+      ],
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Grenades",
+      "id": "charges-explosives",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Charges de démolition",
+      "prix": 65,
+      "categorie": "Grenades",
+      "id": "charges-de-demolition",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "charges-de-demolition"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "charges-incendiaires",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ],
+      "arme": "charges-incendiaires"
+    },
+    {
+      "nom": "Combinaison NBC",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "combinaison-nbc"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Icône du Culte (une par gang)",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "icone-du-culte-une-par-gang",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Première génération (Bras supplémentaire)",
+      "prix": 45,
+      "categorie": "Améliorations",
+      "id": "premiere-generation-bras-supplementaire",
+      "roles": [
+        "champion",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Familier psychique (0-3)",
+      "prix": 25,
+      "categorie": "Bêtes exotiques",
+      "id": "familier-psychique-0-3",
+      "roles": [
+        "chef",
+        "alpha",
+        "champion",
+        "ganger"
+      ]
+    }
+  ],
+  "titre": "Culte Genestealer",
+  "regles": [
+    {
+      "nom": "Commandement du culte",
+      "texte": "Le Chef suit les règles d'un Chef et les Hybrides Acolytes celles des Champions (activation de groupe, actions d'après-bataille). Si le Chef meurt, un Acolyte le remplace (sinon un Néophyte ou un Spécialiste) : il devient Alpha s'il est de première génération, Adepte sinon."
+    },
+    {
+      "nom": "Générations d'hybrides",
+      "texte": "Les recrues sont de dernière génération. Un Acolyte ou un Néophyte peut être de première génération pour +45 crédits : il gagne un Bras supplémentaire. L'Alpha est toujours de première génération, l'Adepte de dernière."
+    },
+    {
+      "nom": "Bras supplémentaire",
+      "texte": "Tirer avec une arme Encombrante devient une action Simple. Sinon, +1 Attaque (désarmée, Perforant). Peut porter une quatrième arme et attaquer avec trois armes de Poing ou de Mêlée."
+    },
+    {
+      "nom": "Adepte du Culte",
+      "texte": "Psyker : les Pouvoirs Wyrd du Culte Genestealer comptent comme un set Primaire."
+    },
+    {
+      "nom": "Familier psychique",
+      "texte": "0 à 3, 25 crédits : Bête exotique (M 5\", CC 4+, F 2, E 2, PV 1, I 2+, A 1). Annule une touche sur un test de Volonté réussi une fois par tour, sauvegarde 3+ non modifiable, peut esquiver les gabarits."
+    },
+    {
+      "nom": "Recrues",
+      "texte": "Dramatis Personae et Rebuts de la Ruche comme les autres gangs. Maximum d'Aventuriers : 1 sous 10 de Réputation, 2 de 10 à 14, 3 de 15 à 19, 4 de 20 à 24, puis +1 par tranche de 5."
+    },
+    {
+      "nom": "En campagne Dominion",
+      "texte": "Traité comme un gang normal avec une Colonie. Les Colonies ne donnent pas de Novice : un 6 donne un Néophyte de dernière génération, un double 6 un Néophyte de première génération. Bénéfices Accrus comme un gang Orlock. Néophytes et Aberrants progressent comme des Gangers (Spécialiste sur 2 ou 12). Un captif du culte vendu à la Guilde rapporte sa pleine valeur, mais le gang ne peut pas faire l'action Vendre à la Guilde. Escorte médicale : 3D6x10 crédits."
+    }
+  ]
+}

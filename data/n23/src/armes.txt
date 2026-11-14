@@ -183,6 +183,14 @@ Piège à fusion | - | - | - | - | 8 | -4 | 3 | - | Explosion (5"), Fusion, Usag
 Piège à gaz | - | - | - | - | - | - | - | - | Explosion (5"), Gaz, Usage Unique
 
 ## Armes de corps à corps
+Épée à os | - | E | - | - | F | -2 | 2 | - | Mêlée, Parade, Perforant
+Hachoir tronçonneur | - | E | - | - | F+1 | -2 | 2 | - | Mêlée, Déchiqueter
+Hachoir de boucher | - | E | - | - | F+1 | -1 | 1 | - | Désarmement, Mêlée
+Scarificateur | - | E | - | - | F | -1 | 1 | - | Mêlée, Perforant
+Fendoir tronçonneur | - | E | - | +1 | F+2 | -2 | 2 | - | Mêlée, Sectionner
+Hachoirs tronçonneurs couplés | - | E | - | - | F+1 | -2 | 2 | - | Mêlée, Couplé, Déchiqueter
+Fendoirs tronçonneurs couplés | - | E | - | +1 | F+2 | -2 | 2 | - | Mêlée, Couplé, Sectionner
+Dépeceuse rotative | E | 4" | - | -1 | F+1 | -2 | 2 | - | Contrecoup, Mêlée, Déchiqueter, Polyvalent
 Bouclier d'assaut modèle Vigilance | - | E | - | - | F | - | 1 | - | Bouclier d'Assaut, Contrecoup, Mêlée
 Bâton du hèle-tempête | E | 2" | - | - | F+1 | -2 | 1 | - | Encombrant, Lance, Mêlée, Polyvalent
 Couteau de rôdeur | - | E | - | +1 | F | -1 | 1 | - | Coup en Traître, Mêlée

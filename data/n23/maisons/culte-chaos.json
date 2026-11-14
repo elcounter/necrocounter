@@ -1,0 +1,490 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre des Ruines (version française)",
+  "reglesDeCreation": {
+    "novice": "Pas de Novice : les Cultistes Hilotes forment la base du gang et doivent être au moins aussi nombreux que Démagogue, Disciples et Sorcier réunis (hors Aventuriers).",
+    "armeSpeciale": "Un Cultiste Hilote prend des armes de base, pistolets et armes de corps à corps ; un seul peut avoir une arme spéciale à la création. Le Sorcier ne prend que pistolets et armes de corps à corps. Le Démagogue n'a pas accès aux armes lourdes.",
+    "chefEtChampion": "Démagogue, Disciples et Sorcier commencent avec une compétence gratuite de leurs sets Primaires (le Sorcier peut prendre un Pouvoir Wyrd). Deux Disciples maximum à la fondation, un seul Sorcier."
+  },
+  "id": "culte-chaos",
+  "nom": "Culte Hilote du Chaos",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Démagogue du Culte",
+      "cout": 100,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "5+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "champion",
+      "role": "Disciple du Culte",
+      "cout": 60,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "sorcier",
+      "role": "Sorcier du Culte",
+      "cout": 70,
+      "profil": {
+        "M": "5\"",
+        "CC": "5+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "7+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [],
+      "base": "champion"
+    },
+    {
+      "id": "ganger",
+      "role": "Cultiste Hilote",
+      "cout": 35,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "7+",
+        "V": "7+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": []
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Ruse",
+        "Férocité",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Savoir"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Ruse",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Autorité",
+        "Savoir"
+      ]
+    },
+    "sorcier": {
+      "primaires": [
+        "Savoir",
+        "Pouvoirs Wyrd du Chaos"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse",
+        "Férocité"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Ruse",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Savoir"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-de-recup",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "fusil-d-assaut-de-recup"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Fusil à pompe (balles et grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-et-grenaille",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "hache",
+      "arme": "hache"
+    },
+    {
+      "nom": "Vouge tronçonneur",
+      "prix": 60,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "vouge-tronconneur",
+      "arme": "vouge-tronconneur"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-tronconneuse",
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "fleau",
+      "arme": "fleau"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "masse-matraque",
+      "arme": "masse-matraque"
+    },
+    {
+      "nom": "Épée",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "epee",
+      "arme": "epee"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-a-deux-mains",
+      "arme": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-de-recup",
+      "arme": "pistolet-mitrailleur-de-recup"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 70,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "arme": "flingue"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 130,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag et Krak)",
+      "prix": 55,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-frag-et-krak",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd",
+      "roles": [
+        "champion"
+      ],
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse",
+      "roles": [
+        "champion"
+      ],
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Grenades",
+      "id": "charges-explosives",
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Charges de démolition",
+      "prix": 65,
+      "categorie": "Grenades",
+      "id": "charges-de-demolition",
+      "arme": "charges-de-demolition"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "charges-incendiaires",
+      "arme": "charges-incendiaires"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Combinaison NBC",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "combinaison-nbc"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Balles dum-dum (flingue)",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "balles-dum-dum-flingue"
+    },
+    {
+      "nom": "Icône du Culte (une par gang)",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "icone-du-culte-une-par-gang"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 40,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "lunette-infrarouge"
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "lunette-telescopique"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Familier du Chaos (0-2)",
+      "prix": 25,
+      "categorie": "Bêtes exotiques",
+      "id": "familier-du-chaos-0-2"
+    }
+  ],
+  "titre": "Culte Hilote du Chaos",
+  "regles": [
+    {
+      "nom": "Hiérarchie des damnés",
+      "texte": "Le Démagogue suit les règles d'un Chef, Disciples et Sorcier celles des Champions (activation de groupe, actions d'après-bataille). Le Sorcier ne peut jamais devenir Chef."
+    },
+    {
+      "nom": "Dévotion (Démagogue)",
+      "texte": "Tant qu'il est Debout, les combattants du gang à 9\" ou moins utilisent son Sang-froid et sa Volonté pour leurs tests."
+    },
+    {
+      "nom": "Immunisé à la folie",
+      "texte": "Démagogue, Disciples et Sorcier ne peuvent jamais subir la condition Folie."
+    },
+    {
+      "nom": "Sorcier",
+      "texte": "Psyker : les Pouvoirs Wyrd du Culte du Chaos comptent comme un set Primaire."
+    },
+    {
+      "nom": "Rituels sombres",
+      "texte": "Une fois par après-bataille, le Démagogue peut Conduire un Rituel pour un dieu (Khorne, Nurgle, Slaanesh ou Tzeentch), éventuellement avec un réceptacle tiré au hasard et un Captif sacrifié. 2D6 avec bonus et malus : 9+ le gang gagne la faveur du dieu (et le réceptacle D6 XP) ; double 1 ou 2 et moins, le réceptacle devient un Enfant du Chaos. Faveurs pour la bataille suivante : Khorne, une relance de blessure par round ; Nurgle, une relance de Récupération par phase de Fin ; Slaanesh, deux combattants Parés activés à la suite une fois par round ; Tzeentch, un tireur ignore les malus une fois par round."
+    },
+    {
+      "nom": "Enfant du Chaos",
+      "texte": "Profil tiré au D6 par caractéristique (voir le livre), 130 crédits de valeur, ne gagne pas d'XP, sans arme ni équipement ; peut s'enfuir à chaque après-bataille. En escarmouche, jusqu'à deux pour 130 crédits chacun."
+    },
+    {
+      "nom": "Familier du Chaos",
+      "texte": "0 à 2, 25 crédits : Bête exotique (M 5\", CC 4+, F 2, E 2, PV 1, I 2+, A 1). Annule une touche sur un test de Volonté réussi une fois par tour, sauvegarde 3+ non modifiable, peut esquiver les gabarits, relance d'un test de Pouvoir Wyrd raté par round pour un Psyker."
+    },
+    {
+      "nom": "Recrues",
+      "texte": "Dramatis Personae et Rebuts de la Ruche comme les autres gangs. Maximum d'Aventuriers : 1 sous 5 de Réputation, 2 de 5 à 9, 3 de 10 à 14, 4 de 15 à 19, 5 de 20 à 24, puis +1 par tranche de 5."
+    },
+    {
+      "nom": "En campagne Dominion",
+      "texte": "Traité comme un gang normal avec une Colonie. Les Colonies ne donnent pas de Novice : un 6 donne un Cultiste, un double 6 deux Cultistes. Bénéfices Accrus comme un gang Cawdor. Les Cultistes progressent comme des Gangers (Spécialiste sur 2 ou 12). Pas de vente de Captif à la Guilde : il peut être sacrifié pour un Rituel. Gang automatiquement Hors-la-Loi."
+    }
+  ]
+}

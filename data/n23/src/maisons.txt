@@ -590,3 +590,218 @@ Lunette infrarouge' | 40
 Planque de stim' | 30
 Respirateur | 15
 Cyber-mastiff renforcé | 70
+
+= Culte de Corpse Grinder => corpse-grinder
+source: Livre des Ruines (version française)
+option: gangersSpecialistes
+creation: novice | Les Initiés n'ont aucune restriction d'armes et prennent toute arme de la liste.
+creation: armeSpeciale | Boucher, Dépeceurs et Écorcheurs ne peuvent prendre que des armes de corps à corps (plus grenades et équipement).
+creation: chefEtChampion | Le Boucher et les Dépeceurs (0 à 3) commencent avec une compétence gratuite de leurs sets Primaires.
+regle: Composition | Un Boucher, 0 à 3 Dépeceurs. Les Initiés doivent être au moins aussi nombreux que les Écorcheurs. Trois armes maximum par combattant.
+regle: Premier au contact (Boucher) | En Charge, il ajoute D6" à son mouvement au lieu de D3".
+regle: Derviche (Dépeceur) | En combattant avec une arme Polyvalente, son champ de vision passe à 360°.
+regle: Charge berserk (Écorcheur) | Les Écorcheurs ont la compétence Berserker : un dé d'Attaque en plus quand ils combattent dans le cadre d'une Charge. En campagne, ils sont traités comme des Spécialistes.
+regle: Infiltration (Initié) | Les Initiés ont la compétence Infiltration : mis de côté au déploiement, ils sont placés juste avant le premier round hors de vue de tout ennemi et à plus de 6" d'eux.
+regle: Masques | Masques d'Initié, d'Écorcheur et de Dépeceur : +1 aux sauvegardes ; sur une Blessure Persistante 51 ou 52, un 6 sur D6 évite la perte de caractéristique (En Récupération quand même). Écorcheur : Effrayant (test de Volonté pour le charger). Dépeceur et Boucher : Terrifiant (test de Volonté pour l'attaquer ou lui tirer dessus). Le masque du Boucher donne une sauvegarde de 6+ qui ignore la PA, sans cumul avec l'armure.
+regle: Icône du culte | Une seule par gang, portée par le Chef ou un Champion (effet : voir le livre).
+regle: Hors-la-loi | Le gang est automatiquement Hors-la-Loi (aligné au Désordre en campagne Loi et Désordre).
+regle: En campagne Dominion | Traité comme un gang normal avec une Colonie. Les Colonies ne donnent pas de Novice : un 6 donne un Initié, un double 6 un Écorcheur. Bénéfices Accrus de la Ferme de Cadavres comme un gang Cawdor et de l'Arène comme un gang Goliath.
+combattant: Boucher => Chef | 130 | 5" 2+ 4+ 4 4 2 4+ 2 5+ 5+ 5+ 7+ | Masque du Boucher, Plastron de mailles
+combattant: Dépeceur => Champion | 90 | 5" 3+ 5+ 4 3 2 4+ 2 6+ 6+ 7+ 8+ | Masque de Dépeceur, Plastron de mailles
+combattant: Écorcheur => Ganger | 40 | 5" 3+ 5+ 3 3 1 4+ 1 7+ 7+ 8+ 9+ | Masque d'Écorcheur, Plastron de mailles
+combattant: Initié => Novice | 25 | 5" 4+ 4+ 3 3 1 4+ 1 8+ 7+ 9+ 9+ | Masque d'Initié, Armure Flak
+competences: Chef | Muscle P, Combat P, Férocité S, Autorité P, Savoir S, Sauvagerie S
+competences: Champion | Muscle P, Combat P, Ruse S, Férocité S, Autorité S, Sauvagerie P
+competences: Spécialiste | Muscle S, Combat P, Férocité S, Sauvagerie P
+competences: Novice | Muscle S, Combat P, Férocité S, Sauvagerie S
+## Armes de corps à corps
+Épée à os | 20
+Hachoir tronçonneur | 45
+Hachoir de boucher | 25
+Vouge tronçonneur | 60
+Couteau de combat | 15
+Scarificateur | 15
+Fendoir tronçonneur | 70
+Cisaille lourde* | 135
+Hachoirs tronçonneurs couplés* | 80
+Fendoirs tronçonneurs couplés* | 130
+Dépeceuse rotative* | 55
+Hache à deux mains* | 25
+## Pistolets [novice]
+Pistolet-mitrailleur | 10
+Lance-flammes léger | 75
+Flingue | 5
+## Armes spéciales [novice]
+Lance-flammes | 140
+## Armes lourdes [novice]
+Lance-flammes lourd* | 195
+Lance-harpon* | 110
+## Grenades
+Grenades Frag | 30
+Charges incendiaires | 40
+Grenades Krak | 45
+Grenades fumigènes | 15
+## Armures
+Combinaison NBC | 10
+Armure composite | 15
+Plastron de mailles | 15
+## Équipement de gang
+Piège à Frag | 20
+Piège à gaz | 40
+Piège à fusion | 50
+## Équipement personnel
+Balles Manstopper (pistolet-mitrailleur) | 10
+Balles à fragmentation (pistolet-mitrailleur) | 10
+Balles dum-dum (flingue) | 5
+Sous-combinaison renforcée | 25
+Bio-booster | 35
+Icône du Culte de Corpse Grinder | 40
+Icône du Culte | 40
+Photolunettes | 35
+Respirateur | 15
+Lame sous-cutanée | 10
+Planque de stim' | 30
+
+= Culte Hilote du Chaos => culte-chaos
+source: Livre des Ruines (version française)
+creation: novice | Pas de Novice : les Cultistes Hilotes forment la base du gang et doivent être au moins aussi nombreux que Démagogue, Disciples et Sorcier réunis (hors Aventuriers).
+creation: armeSpeciale | Un Cultiste Hilote prend des armes de base, pistolets et armes de corps à corps ; un seul peut avoir une arme spéciale à la création. Le Sorcier ne prend que pistolets et armes de corps à corps. Le Démagogue n'a pas accès aux armes lourdes.
+creation: chefEtChampion | Démagogue, Disciples et Sorcier commencent avec une compétence gratuite de leurs sets Primaires (le Sorcier peut prendre un Pouvoir Wyrd). Deux Disciples maximum à la fondation, un seul Sorcier.
+regle: Hiérarchie des damnés | Le Démagogue suit les règles d'un Chef, Disciples et Sorcier celles des Champions (activation de groupe, actions d'après-bataille). Le Sorcier ne peut jamais devenir Chef.
+regle: Dévotion (Démagogue) | Tant qu'il est Debout, les combattants du gang à 9" ou moins utilisent son Sang-froid et sa Volonté pour leurs tests.
+regle: Immunisé à la folie | Démagogue, Disciples et Sorcier ne peuvent jamais subir la condition Folie.
+regle: Sorcier | Psyker : les Pouvoirs Wyrd du Culte du Chaos comptent comme un set Primaire.
+regle: Rituels sombres | Une fois par après-bataille, le Démagogue peut Conduire un Rituel pour un dieu (Khorne, Nurgle, Slaanesh ou Tzeentch), éventuellement avec un réceptacle tiré au hasard et un Captif sacrifié. 2D6 avec bonus et malus : 9+ le gang gagne la faveur du dieu (et le réceptacle D6 XP) ; double 1 ou 2 et moins, le réceptacle devient un Enfant du Chaos. Faveurs pour la bataille suivante : Khorne, une relance de blessure par round ; Nurgle, une relance de Récupération par phase de Fin ; Slaanesh, deux combattants Parés activés à la suite une fois par round ; Tzeentch, un tireur ignore les malus une fois par round.
+regle: Enfant du Chaos | Profil tiré au D6 par caractéristique (voir le livre), 130 crédits de valeur, ne gagne pas d'XP, sans arme ni équipement ; peut s'enfuir à chaque après-bataille. En escarmouche, jusqu'à deux pour 130 crédits chacun.
+regle: Familier du Chaos | 0 à 2, 25 crédits : Bête exotique (M 5", CC 4+, F 2, E 2, PV 1, I 2+, A 1). Annule une touche sur un test de Volonté réussi une fois par tour, sauvegarde 3+ non modifiable, peut esquiver les gabarits, relance d'un test de Pouvoir Wyrd raté par round pour un Psyker.
+regle: Recrues | Dramatis Personae et Rebuts de la Ruche comme les autres gangs. Maximum d'Aventuriers : 1 sous 5 de Réputation, 2 de 5 à 9, 3 de 10 à 14, 4 de 15 à 19, 5 de 20 à 24, puis +1 par tranche de 5.
+regle: En campagne Dominion | Traité comme un gang normal avec une Colonie. Les Colonies ne donnent pas de Novice : un 6 donne un Cultiste, un double 6 deux Cultistes. Bénéfices Accrus comme un gang Cawdor. Les Cultistes progressent comme des Gangers (Spécialiste sur 2 ou 12). Pas de vente de Captif à la Guilde : il peut être sacrifié pour un Rituel. Gang automatiquement Hors-la-Loi.
+combattant: Démagogue du Culte => Chef | 100 | 5" 3+ 3+ 3 3 2 3+ 2 6+ 5+ 6+ 7+ |
+combattant: Disciple du Culte => Champion | 60 | 5" 4+ 3+ 3 3 2 4+ 1 7+ 6+ 8+ 8+ |
+combattant: Sorcier du Culte => sorcier:champion | 70 | 5" 5+ 5+ 3 3 2 4+ 1 8+ 7+ 6+ 6+ |
+combattant: Cultiste Hilote => Ganger | 35 | 5" 4+ 4+ 3 3 1 3+ 1 9+ 7+ 7+ 8+ |
+competences: Chef | Combat S, Ruse P, Férocité P, Autorité P, Savoir S
+competences: Champion | Combat S, Ruse P, Férocité P, Autorité S, Savoir S
+competences: Sorcier | Combat S, Ruse S, Férocité S, Savoir P, Pouvoirs Wyrd du Chaos P
+competences: Spécialiste | Combat S, Ruse P, Férocité P, Savoir S
+## Armes de base [chef, champion, ganger]
+Fusil d'assaut | 15
+Fusil d'assaut de récup' | 10
+Fusil laser | 15
+Fusil à pompe (balles et grenaille) | 30
+## Armes de corps à corps
+Hache | 10
+Vouge tronçonneur* | 60
+Épée tronçonneuse | 25
+Couteau de combat | 15
+Fléau | 20
+Masse (matraque) | 10
+Épée | 20
+Hache à deux mains* | 25
+Marteau à deux mains* | 35
+## Pistolets
+Pistolet-mitrailleur | 10
+Pistolet-mitrailleur de récup' | 5
+Lance-flammes léger | 70
+Pistolet laser | 10
+Flingue | 5
+## Armes spéciales [chef, champion, ganger]
+Lance-flammes | 130
+Lance-grenades (grenades Frag et Krak) | 55
+Long fusil | 30
+## Armes lourdes [champion]
+Lance-flammes lourd* | 195
+Mitrailleuse* | 130
+## Grenades
+Charges explosives | 35
+Charges de démolition | 65
+Grenades Frag | 30
+Charges incendiaires | 40
+Grenades Krak | 45
+## Armures
+Combinaison NBC | 10
+Armure Flak | 10
+Armure composite | 15
+## Équipement personnel
+Balles dum-dum (flingue) | 5
+Icône du Culte (une par gang) | 40
+Filtre nasal | 10
+Lunette infrarouge' | 40
+Lunette télescopique' | 35
+Photolunettes | 35
+Respirateur | 15
+## Bêtes exotiques
+Familier du Chaos (0-2) | 25
+
+= Culte Genestealer => culte-genestealer
+source: Livre des Ruines (version française)
+creation: novice | Pas de Novice : les Hybrides Néophytes forment la base du gang et doivent être au moins aussi nombreux que Chef, Hybrides Acolytes et Aberrants réunis (hors Aventuriers).
+creation: armeSpeciale | Un Néophyte prend des armes de base, pistolets et armes de corps à corps ; un seul peut avoir une arme spéciale à la création. Un Aberrant ne prend que des armes de corps à corps et une armure.
+creation: chefEtChampion | Le Chef (Adepte ou Alpha du Culte) et les Hybrides Acolytes commencent avec une compétence gratuite de leurs sets Primaires (l'Adepte peut prendre un Pouvoir Wyrd). Deux Hybrides Acolytes maximum à la fondation. Les Aberrants commencent avec Impétuosité.
+regle: Commandement du culte | Le Chef suit les règles d'un Chef et les Hybrides Acolytes celles des Champions (activation de groupe, actions d'après-bataille). Si le Chef meurt, un Acolyte le remplace (sinon un Néophyte ou un Spécialiste) : il devient Alpha s'il est de première génération, Adepte sinon.
+regle: Générations d'hybrides | Les recrues sont de dernière génération. Un Acolyte ou un Néophyte peut être de première génération pour +45 crédits : il gagne un Bras supplémentaire. L'Alpha est toujours de première génération, l'Adepte de dernière.
+regle: Bras supplémentaire | Tirer avec une arme Encombrante devient une action Simple. Sinon, +1 Attaque (désarmée, Perforant). Peut porter une quatrième arme et attaquer avec trois armes de Poing ou de Mêlée.
+regle: Adepte du Culte | Psyker : les Pouvoirs Wyrd du Culte Genestealer comptent comme un set Primaire.
+regle: Familier psychique | 0 à 3, 25 crédits : Bête exotique (M 5", CC 4+, F 2, E 2, PV 1, I 2+, A 1). Annule une touche sur un test de Volonté réussi une fois par tour, sauvegarde 3+ non modifiable, peut esquiver les gabarits.
+regle: Recrues | Dramatis Personae et Rebuts de la Ruche comme les autres gangs. Maximum d'Aventuriers : 1 sous 10 de Réputation, 2 de 10 à 14, 3 de 15 à 19, 4 de 20 à 24, puis +1 par tranche de 5.
+regle: En campagne Dominion | Traité comme un gang normal avec une Colonie. Les Colonies ne donnent pas de Novice : un 6 donne un Néophyte de dernière génération, un double 6 un Néophyte de première génération. Bénéfices Accrus comme un gang Orlock. Néophytes et Aberrants progressent comme des Gangers (Spécialiste sur 2 ou 12). Un captif du culte vendu à la Guilde rapporte sa pleine valeur, mais le gang ne peut pas faire l'action Vendre à la Guilde. Escorte médicale : 3D6x10 crédits.
+combattant: Adepte du Culte => Chef | 120 | 4" 4+ 4+ 3 3 2 3+ 2 3+ 5+ 5+ 4+ |
+combattant: Alpha du Culte => alpha:chef | 145 | 5" 3+ 3+ 4 3 2 3+ 2 3+ 5+ 5+ 4+ | Combinaison NBC, Bras supplémentaire
+combattant: Hybride Acolyte => Champion | 85 | 4" 3+ 3+ 3 3 1 3+ 1 4+ 5+ 7+ 6+ | Combinaison NBC
+combattant: Hybride Néophyte => Ganger | 45 | 4" 4+ 4+ 3 3 1 4+ 1 7+ 5+ 6+ 8+ | Combinaison NBC
+combattant: Aberrant => aberrant:ganger | 95 | 5" 3+ 6+ 5 4 2 5+ 2 9+ 4+ 6+ 10+ |
+competences: Chef | Agilité S, Ruse P, Autorité P, Savoir S, Pouvoirs Wyrd Genestealer P
+competences: Alpha | Combat P, Ruse S, Férocité S, Autorité P, Tir P
+competences: Champion | Agilité S, Combat S, Ruse P, Férocité P, Autorité S
+competences: Spécialiste | Agilité S, Combat S, Ruse P, Férocité P
+competences: Aberrant | Muscle P, Combat S, Ruse S, Férocité P
+## Armes de base [chef, alpha, champion, ganger]
+Fusil d'assaut | 15
+Fusil laser | 15
+Fusil à pompe (balles et grenaille) | 30
+## Armes de corps à corps
+Épée tronçonneuse | 25
+Couteau de combat | 15
+Foreuse lourde* | 90
+Disqueuse lourde* | 120
+Cisaille lourde* | 135
+Marteau énergétique | 45
+Masse énergétique | 30
+Pioche énergétique | 40
+Épée énergétique | 45
+Électrosceptre | 25
+Électrofouet | 25
+Marteau à deux mains* | 35
+## Pistolets [chef, alpha, champion, ganger]
+Pistolet-mitrailleur | 10
+Pistolet laser | 10
+Lance-flammes léger | 50
+Pistolet à aiguilles | 40
+## Armes spéciales [chef, alpha, champion, ganger]
+Lance-grenades (grenades Frag et Krak) | 55
+Lance-flammes | 140
+Long fusil laser | 20
+Lance-toile | 125
+## Armes lourdes [chef, alpha, champion]
+Laser minier* | 125
+Canon sismique* | 140
+Mitrailleuse* | 145
+## Grenades [chef, alpha, champion, ganger]
+Charges explosives | 35
+Charges de démolition | 65
+Grenades Frag | 30
+Charges incendiaires | 40
+## Armures
+Combinaison NBC | 10
+Armure Flak | 10
+Armure composite | 15
+## Équipement personnel [chef, alpha, champion, ganger]
+Bio-booster | 35
+Icône du Culte (une par gang) | 40
+Filtre nasal | 10
+Photolunettes | 35
+Respirateur | 15
+## Améliorations [champion, ganger]
+Première génération (Bras supplémentaire) | 45
+## Bêtes exotiques [chef, alpha, champion, ganger]
+Familier psychique (0-3) | 25

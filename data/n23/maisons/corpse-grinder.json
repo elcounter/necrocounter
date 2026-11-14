@@ -1,0 +1,475 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre des Ruines (version française)",
+  "reglesDeCreation": {
+    "novice": "Les Initiés n'ont aucune restriction d'armes et prennent toute arme de la liste.",
+    "armeSpeciale": "Boucher, Dépeceurs et Écorcheurs ne peuvent prendre que des armes de corps à corps (plus grenades et équipement).",
+    "chefEtChampion": "Le Boucher et les Dépeceurs (0 à 3) commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "corpse-grinder",
+  "nom": "Culte de Corpse Grinder",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Boucher",
+      "cout": 130,
+      "profil": {
+        "M": "5\"",
+        "CC": "2+",
+        "CT": "4+",
+        "F": "4",
+        "E": "4",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "5+",
+        "SF": "5+",
+        "V": "5+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Masque du Boucher",
+        "Plastron de mailles"
+      ]
+    },
+    {
+      "id": "champion",
+      "role": "Dépeceur",
+      "cout": 90,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "5+",
+        "F": "4",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": [
+        "Masque de Dépeceur",
+        "Plastron de mailles"
+      ]
+    },
+    {
+      "id": "ganger",
+      "role": "Écorcheur",
+      "cout": 40,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "7+",
+        "V": "8+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": [
+        "Masque d'Écorcheur",
+        "Plastron de mailles"
+      ]
+    },
+    {
+      "id": "novice",
+      "role": "Initié",
+      "cout": 25,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "7+",
+        "V": "9+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": [
+        "Masque d'Initié",
+        "Armure Flak"
+      ]
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Muscle",
+        "Combat",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Férocité",
+        "Savoir",
+        "Sauvagerie"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Muscle",
+        "Combat",
+        "Sauvagerie"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Férocité",
+        "Autorité"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Combat",
+        "Sauvagerie"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Férocité"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Combat"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Férocité",
+        "Sauvagerie"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Épée à os",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-a-os",
+      "arme": "epee-a-os"
+    },
+    {
+      "nom": "Hachoir tronçonneur",
+      "prix": 45,
+      "categorie": "Armes de corps à corps",
+      "id": "hachoir-tronconneur",
+      "arme": "hachoir-tronconneur"
+    },
+    {
+      "nom": "Hachoir de boucher",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "hachoir-de-boucher",
+      "arme": "hachoir-de-boucher"
+    },
+    {
+      "nom": "Vouge tronçonneur",
+      "prix": 60,
+      "categorie": "Armes de corps à corps",
+      "id": "vouge-tronconneur",
+      "arme": "vouge-tronconneur"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Scarificateur",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "scarificateur",
+      "arme": "scarificateur"
+    },
+    {
+      "nom": "Fendoir tronçonneur",
+      "prix": 70,
+      "categorie": "Armes de corps à corps",
+      "id": "fendoir-tronconneur",
+      "arme": "fendoir-tronconneur"
+    },
+    {
+      "nom": "Cisaille lourde",
+      "prix": 135,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "cisaille-lourde",
+      "arme": "cisaille-lourde"
+    },
+    {
+      "nom": "Hachoirs tronçonneurs couplés",
+      "prix": 80,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hachoirs-tronconneurs-couples",
+      "arme": "hachoirs-tronconneurs-couples"
+    },
+    {
+      "nom": "Fendoirs tronçonneurs couplés",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "fendoirs-tronconneurs-couples",
+      "arme": "fendoirs-tronconneurs-couples"
+    },
+    {
+      "nom": "Dépeceuse rotative",
+      "prix": 55,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "depeceuse-rotative",
+      "arme": "depeceuse-rotative"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-a-deux-mains",
+      "arme": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "roles": [
+        "novice"
+      ],
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "roles": [
+        "novice"
+      ],
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "roles": [
+        "novice"
+      ],
+      "arme": "flingue"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "roles": [
+        "novice"
+      ],
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd",
+      "roles": [
+        "novice"
+      ],
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Lance-harpon",
+      "prix": 110,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-harpon",
+      "roles": [
+        "novice"
+      ],
+      "arme": "lance-harpon"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "charges-incendiaires",
+      "arme": "charges-incendiaires"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Combinaison NBC",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "combinaison-nbc"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Plastron de mailles",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "plastron-de-mailles"
+    },
+    {
+      "nom": "Piège à Frag",
+      "prix": 20,
+      "categorie": "Équipement de gang",
+      "id": "piege-a-frag"
+    },
+    {
+      "nom": "Piège à gaz",
+      "prix": 40,
+      "categorie": "Équipement de gang",
+      "id": "piege-a-gaz"
+    },
+    {
+      "nom": "Piège à fusion",
+      "prix": 50,
+      "categorie": "Équipement de gang",
+      "id": "piege-a-fusion"
+    },
+    {
+      "nom": "Balles Manstopper (pistolet-mitrailleur)",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "balles-manstopper-pistolet-mitrailleur"
+    },
+    {
+      "nom": "Balles à fragmentation (pistolet-mitrailleur)",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "balles-a-fragmentation-pistolet-mitrailleur"
+    },
+    {
+      "nom": "Balles dum-dum (flingue)",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "balles-dum-dum-flingue"
+    },
+    {
+      "nom": "Sous-combinaison renforcée",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "sous-combinaison-renforcee"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster"
+    },
+    {
+      "nom": "Icône du Culte de Corpse Grinder",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "icone-du-culte-de-corpse-grinder"
+    },
+    {
+      "nom": "Icône du Culte",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "icone-du-culte"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "lame-sous-cutanee"
+    },
+    {
+      "nom": "Planque de stim",
+      "prix": 30,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "planque-de-stim"
+    }
+  ],
+  "titre": "Culte de Corpse Grinder",
+  "gangersSpecialistes": true,
+  "regles": [
+    {
+      "nom": "Composition",
+      "texte": "Un Boucher, 0 à 3 Dépeceurs. Les Initiés doivent être au moins aussi nombreux que les Écorcheurs. Trois armes maximum par combattant."
+    },
+    {
+      "nom": "Premier au contact (Boucher)",
+      "texte": "En Charge, il ajoute D6\" à son mouvement au lieu de D3\"."
+    },
+    {
+      "nom": "Derviche (Dépeceur)",
+      "texte": "En combattant avec une arme Polyvalente, son champ de vision passe à 360°."
+    },
+    {
+      "nom": "Charge berserk (Écorcheur)",
+      "texte": "Les Écorcheurs ont la compétence Berserker : un dé d'Attaque en plus quand ils combattent dans le cadre d'une Charge. En campagne, ils sont traités comme des Spécialistes."
+    },
+    {
+      "nom": "Infiltration (Initié)",
+      "texte": "Les Initiés ont la compétence Infiltration : mis de côté au déploiement, ils sont placés juste avant le premier round hors de vue de tout ennemi et à plus de 6\" d'eux."
+    },
+    {
+      "nom": "Masques",
+      "texte": "Masques d'Initié, d'Écorcheur et de Dépeceur : +1 aux sauvegardes ; sur une Blessure Persistante 51 ou 52, un 6 sur D6 évite la perte de caractéristique (En Récupération quand même). Écorcheur : Effrayant (test de Volonté pour le charger). Dépeceur et Boucher : Terrifiant (test de Volonté pour l'attaquer ou lui tirer dessus). Le masque du Boucher donne une sauvegarde de 6+ qui ignore la PA, sans cumul avec l'armure."
+    },
+    {
+      "nom": "Icône du culte",
+      "texte": "Une seule par gang, portée par le Chef ou un Champion (effet : voir le livre)."
+    },
+    {
+      "nom": "Hors-la-loi",
+      "texte": "Le gang est automatiquement Hors-la-Loi (aligné au Désordre en campagne Loi et Désordre)."
+    },
+    {
+      "nom": "En campagne Dominion",
+      "texte": "Traité comme un gang normal avec une Colonie. Les Colonies ne donnent pas de Novice : un 6 donne un Initié, un double 6 un Écorcheur. Bénéfices Accrus de la Ferme de Cadavres comme un gang Cawdor et de l'Arène comme un gang Goliath."
+    }
+  ]
+}

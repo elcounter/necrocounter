@@ -2950,6 +2950,187 @@
       ]
     },
     {
+      "id": "epee-a-os",
+      "nom": "Épée à os",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Parade",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hachoir-tronconneur",
+      "nom": "Hachoir tronçonneur",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Déchiqueter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hachoir-de-boucher",
+      "nom": "Hachoir de boucher",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Désarmement",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scarificateur",
+      "nom": "Scarificateur",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fendoir-tronconneur",
+      "nom": "Fendoir tronçonneur",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F+2",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Sectionner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hachoirs-tronconneurs-couples",
+      "nom": "Hachoirs tronçonneurs couplés",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Couplé",
+            "Déchiqueter"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fendoirs-tronconneurs-couples",
+      "nom": "Fendoirs tronçonneurs couplés",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F+2",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Couplé",
+            "Sectionner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "depeceuse-rotative",
+      "nom": "Dépeceuse rotative",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "4\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "F+1",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Mêlée",
+            "Déchiqueter",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
       "id": "bouclier-d-assaut-modele-vigilance",
       "nom": "Bouclier d'assaut modèle Vigilance",
       "categorie": "Armes de corps à corps",
