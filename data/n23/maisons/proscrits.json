@@ -1,0 +1,4563 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre des Proscrits (version française)",
+  "reglesDeCreation": {
+    "novice": "Pas de Novice : un résultat qui donnerait un Novice donne un Rebut de la Ruche.",
+    "armeSpeciale": "Chef : Comptoir Commercial jusqu'à Rareté 9, Champion jusqu'à 8, sans restriction de type. Rebut : sa propre liste (armes de base, pistolets et corps à corps) ; le Spécialiste ajoute les armes spéciales en campagne.",
+    "chefEtChampion": "Le Chef et les Champions choisissent un Archétype (Bagarreur, Flingueur, Survivant, Génie ou Wyrd) qui fixe leurs sets de compétences, et commencent avec une compétence gratuite de leurs sets Primaires (un Wyrd peut prendre un Pouvoir Wyrd). Deux Champions maximum à la fondation, puis un par tranche complète de 3 Rebuts."
+  },
+  "id": "proscrits",
+  "nom": "Proscrits",
+  "titre": "Proscrits du Sous-Monde",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Chef Proscrit (profil 1)",
+      "cout": 125,
+      "profil": {
+        "M": "7\"",
+        "CC": "4+",
+        "CT": "2+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "5+",
+        "SF": "4+",
+        "V": "7+",
+        "INT": "5+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "chef-2",
+      "role": "Chef Proscrit (profil 2)",
+      "cout": 125,
+      "profil": {
+        "M": "6\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "3",
+        "CD": "6+",
+        "SF": "7+",
+        "V": "6+",
+        "INT": "4+"
+      },
+      "equipementDeDepart": [],
+      "base": "chef"
+    },
+    {
+      "id": "chef-3",
+      "role": "Chef Proscrit (profil 3)",
+      "cout": 125,
+      "profil": {
+        "M": "5\"",
+        "CC": "2+",
+        "CT": "4+",
+        "F": "4",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "3",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "4+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [],
+      "base": "chef"
+    },
+    {
+      "id": "chef-4",
+      "role": "Chef Proscrit (profil 4)",
+      "cout": 125,
+      "profil": {
+        "M": "4\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "4",
+        "PV": "3",
+        "I": "5+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "4+",
+        "V": "6+",
+        "INT": "5+"
+      },
+      "equipementDeDepart": [],
+      "base": "chef"
+    },
+    {
+      "id": "champion",
+      "role": "Champion Proscrit",
+      "cout": 60,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "1",
+        "CD": "6+",
+        "SF": "7+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "ganger",
+      "role": "Rebut Proscrit",
+      "cout": 30,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "8+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": []
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Muscle",
+        "Férocité",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Combat"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Muscle"
+      ],
+      "secondaires": [
+        "Férocité",
+        "Autorité"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Ruse"
+      ],
+      "secondaires": [
+        "Férocité"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-bolter",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "bolter"
+    },
+    {
+      "nom": "Couteaux de lancer",
+      "prix": 10,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-couteaux-de-lancer",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "couteaux-de-lancer"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-fusil-a-canon-scie",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "fusil-a-canon-scie"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-fusil-a-pompe-balles-grenaille",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Executioner)",
+      "prix": 20,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-fusil-a-pompe-munitions-executioner",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Inferno)",
+      "prix": 15,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-fusil-a-pompe-munitions-inferno",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-fusil-d-assaut",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-fusil-d-assaut-de-recup",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "fusil-d-assaut-de-recup"
+    },
+    {
+      "nom": "Fusil de combat (salve & nuage de grenaille)",
+      "prix": 70,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-fusil-de-combat-salve-nuage-de-grenaille",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "fusil-de-combat"
+    },
+    {
+      "nom": "Fusil de combat (munitions Firestorm)",
+      "prix": 30,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-fusil-de-combat-munitions-firestorm",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "fusil-de-combat"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "categorie": "Comptoir : Armes de base",
+      "id": "cc-fusil-laser",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de base",
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Combi-pistolet (pistolet-mitrailleur/lance-flammes léger)",
+      "prix": 65,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-combi-pistolet-pistolet-mitrailleur-lance-flammes-leger",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "combi-pistolet",
+      "modes": [
+        "pistolet-mitrailleur",
+        "lance-flammes léger"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet (pistolet-mitrailleur/pistolet à plasma)",
+      "prix": 50,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-combi-pistolet-pistolet-mitrailleur-pistolet-a-plasma",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "combi-pistolet",
+      "modes": [
+        "pistolet-mitrailleur",
+        "pistolet à plasma"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet (pistolet bolter/lance-flammes léger)",
+      "prix": 110,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-combi-pistolet-pistolet-bolter-lance-flammes-leger",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "combi-pistolet",
+      "modes": [
+        "pistolet bolter",
+        "lance-flammes léger"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet (pistolet bolter/pistolet à plasma)",
+      "prix": 80,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-combi-pistolet-pistolet-bolter-pistolet-a-plasma",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "combi-pistolet",
+      "modes": [
+        "pistolet bolter",
+        "pistolet à plasma"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet (flingue/pistolet à plasma)",
+      "prix": 40,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-combi-pistolet-flingue-pistolet-a-plasma",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "combi-pistolet",
+      "modes": [
+        "flingue",
+        "pistolet à plasma"
+      ]
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-flingue",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "flingue"
+    },
+    {
+      "nom": "Balles dum-dum",
+      "prix": 5,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-balles-dum-dum",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-lance-flammes-leger",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Lance-toile léger",
+      "prix": 90,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-lance-toile-leger",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "lance-toile-leger"
+    },
+    {
+      "nom": "Pistolet à aiguilles",
+      "prix": 30,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-pistolet-a-aiguilles",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "pistolet-a-aiguilles"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-pistolet-a-plasma",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Pistolet bolter",
+      "prix": 45,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-pistolet-bolter",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "pistolet-bolter"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-pistolet-laser",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-pistolet-mitrailleur",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "categorie": "Comptoir : Pistolets",
+      "id": "cc-pistolet-mitrailleur-de-recup",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Pistolets",
+      "arme": "pistolet-mitrailleur-de-recup"
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-flammes)",
+      "prix": 110,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-arme-combinee-fusil-d-assaut-lance-flammes",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil d'assaut",
+        "lance-flammes"
+      ]
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-grenades (Frag))",
+      "prix": 30,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-arme-combinee-fusil-d-assaut-lance-grenades-frag",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-flammes)",
+      "prix": 180,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-arme-combinee-bolter-lance-flammes",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "lance-flammes"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-grenades (Frag))",
+      "prix": 60,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-arme-combinee-bolter-lance-grenades-frag",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 170,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-arme-combinee-bolter-fuseur",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fuseur"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter à aiguille)",
+      "prix": 90,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-arme-combinee-bolter-a-aiguille",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Arme combinée (bolter/plasma)",
+      "prix": 115,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-arme-combinee-bolter-plasma",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "arme-combinee"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-fuseur",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Fusil à aiguilles",
+      "prix": 40,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-fusil-a-aiguilles",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "fusil-a-aiguilles"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-fusil-a-gravitons",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "fusil-a-gravitons"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-fusil-a-plasma",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "fusil-a-plasma"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 65,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-lance-grenades-grenades-frag-krak",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-grenades (grenades asphyxiantes)",
+      "prix": 35,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-lance-grenades-grenades-asphyxiantes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-grenades (grenades aveuglantes)",
+      "prix": 15,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-lance-grenades-grenades-aveuglantes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-grenades (grenades cauchemar)",
+      "prix": 45,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-lance-grenades-grenades-cauchemar",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-grenades (grenades fumigènes)",
+      "prix": 15,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-lance-grenades-grenades-fumigenes",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-lance-flammes",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Lance-toile",
+      "prix": 125,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-lance-toile",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "lance-toile"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-long-fusil",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Long fusil laser",
+      "prix": 20,
+      "categorie": "Comptoir : Armes spéciales",
+      "id": "cc-long-fusil-laser",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes spéciales",
+      "arme": "long-fusil-laser"
+    },
+    {
+      "nom": "Bolter lourd",
+      "prix": 160,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-bolter-lourd",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "bolter-lourd"
+    },
+    {
+      "nom": "Canon à plasma",
+      "prix": 130,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-canon-a-plasma",
+      "compteDouble": true,
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "canon-a-plasma"
+    },
+    {
+      "nom": "Canon laser",
+      "prix": 155,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-canon-laser",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "canon-laser"
+    },
+    {
+      "nom": "Canon sismique",
+      "prix": 140,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-canon-sismique",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "canon-sismique"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-lance-flammes-lourd",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Lance-harpon",
+      "prix": 110,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-lance-harpon",
+      "compteDouble": true,
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "lance-harpon"
+    },
+    {
+      "nom": "Lance-missiles (avec missiles Frag & Krak)",
+      "prix": 165,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-lance-missiles-avec-missiles-frag-krak",
+      "compteDouble": true,
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "lance-missiles"
+    },
+    {
+      "nom": "Laser minier",
+      "prix": 125,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-laser-minier",
+      "compteDouble": true,
+      "rarete": "Rare (9); Rare (8 Orlock)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "laser-minier"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-mitrailleuse",
+      "compteDouble": true,
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Multi-fuseur",
+      "prix": 180,
+      "categorie": "Comptoir : Armes lourdes",
+      "id": "cc-multi-fuseur",
+      "compteDouble": true,
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes lourdes",
+      "arme": "multi-fuseur"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Comptoir : Couteaux",
+      "id": "cc-couteau-de-combat",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Couteaux",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Comptoir : Couteaux",
+      "id": "cc-couteau-energetique",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Couteaux",
+      "arme": "couteau-energetique"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Comptoir : Couteaux",
+      "id": "cc-stylet",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Couteaux",
+      "arme": "stylet"
+    },
+    {
+      "nom": "Digilaser",
+      "prix": 25,
+      "categorie": "Comptoir : Armes de corps à corps ordinaires",
+      "id": "cc-digilaser",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de corps à corps ordinaires",
+      "arme": "digilaser"
+    },
+    {
+      "nom": "Épée",
+      "prix": 20,
+      "categorie": "Comptoir : Armes de corps à corps ordinaires",
+      "id": "cc-epee",
+      "rarete": "Rare (6)",
+      "niveau": 6,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de corps à corps ordinaires",
+      "arme": "epee"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Comptoir : Armes de corps à corps ordinaires",
+      "id": "cc-epee-tronconneuse",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de corps à corps ordinaires",
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Comptoir : Armes de corps à corps ordinaires",
+      "id": "cc-fleau",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de corps à corps ordinaires",
+      "arme": "fleau"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Comptoir : Armes de corps à corps ordinaires",
+      "id": "cc-hache",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de corps à corps ordinaires",
+      "arme": "hache"
+    },
+    {
+      "nom": "Hache tronçonneuse",
+      "prix": 30,
+      "categorie": "Comptoir : Armes de corps à corps ordinaires",
+      "id": "cc-hache-tronconneuse",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de corps à corps ordinaires",
+      "arme": "hache-tronconneuse"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Comptoir : Armes de corps à corps ordinaires",
+      "id": "cc-masse-matraque",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de corps à corps ordinaires",
+      "arme": "masse-matraque"
+    },
+    {
+      "nom": "Rapière",
+      "prix": 35,
+      "categorie": "Comptoir : Armes de corps à corps ordinaires",
+      "id": "cc-rapiere",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de corps à corps ordinaires",
+      "arme": "rapiere"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 35,
+      "categorie": "Comptoir : Armes de corps à corps ordinaires",
+      "id": "cc-servopince",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes de corps à corps ordinaires",
+      "arme": "servopince"
+    },
+    {
+      "nom": "Découpeur laser",
+      "prix": 85,
+      "categorie": "Comptoir : Armes à énergie/choc",
+      "id": "cc-decoupeur-laser",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à énergie/choc",
+      "arme": "decoupeur-laser"
+    },
+    {
+      "nom": "Électrobâton",
+      "prix": 30,
+      "categorie": "Comptoir : Armes à énergie/choc",
+      "id": "cc-electrobaton",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à énergie/choc",
+      "arme": "electrobaton"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Comptoir : Armes à énergie/choc",
+      "id": "cc-electrosceptre",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à énergie/choc",
+      "arme": "electrosceptre"
+    },
+    {
+      "nom": "Épée énergétique",
+      "prix": 50,
+      "categorie": "Comptoir : Armes à énergie/choc",
+      "id": "cc-epee-energetique",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à énergie/choc",
+      "arme": "epee-energetique"
+    },
+    {
+      "nom": "Hache énergétique",
+      "prix": 35,
+      "categorie": "Comptoir : Armes à énergie/choc",
+      "id": "cc-hache-energetique",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à énergie/choc",
+      "arme": "hache-energetique"
+    },
+    {
+      "nom": "Marteau énergétique",
+      "prix": 45,
+      "categorie": "Comptoir : Armes à énergie/choc",
+      "id": "cc-marteau-energetique",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à énergie/choc",
+      "arme": "marteau-energetique"
+    },
+    {
+      "nom": "Marteau Thunder",
+      "prix": 70,
+      "categorie": "Comptoir : Armes à énergie/choc",
+      "id": "cc-marteau-thunder",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à énergie/choc",
+      "arme": "marteau-thunder"
+    },
+    {
+      "nom": "Masse énergétique",
+      "prix": 30,
+      "categorie": "Comptoir : Armes à énergie/choc",
+      "id": "cc-masse-energetique",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à énergie/choc",
+      "arme": "masse-energetique"
+    },
+    {
+      "nom": "Pioche énergétique",
+      "prix": 40,
+      "categorie": "Comptoir : Armes à énergie/choc",
+      "id": "cc-pioche-energetique",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à énergie/choc",
+      "arme": "pioche-energetique"
+    },
+    {
+      "nom": "Cisaille lourde",
+      "prix": 135,
+      "categorie": "Comptoir : Armes à deux mains",
+      "id": "cc-cisaille-lourde",
+      "compteDouble": true,
+      "rarete": "Rare (9); Rare (8 Goliath & Orlock)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à deux mains",
+      "arme": "cisaille-lourde"
+    },
+    {
+      "nom": "Disqueuse lourde",
+      "prix": 120,
+      "categorie": "Comptoir : Armes à deux mains",
+      "id": "cc-disqueuse-lourde",
+      "compteDouble": true,
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à deux mains",
+      "arme": "disqueuse-lourde"
+    },
+    {
+      "nom": "Foreuse lourde",
+      "prix": 90,
+      "categorie": "Comptoir : Armes à deux mains",
+      "id": "cc-foreuse-lourde",
+      "compteDouble": true,
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à deux mains",
+      "arme": "foreuse-lourde"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "categorie": "Comptoir : Armes à deux mains",
+      "id": "cc-hache-a-deux-mains",
+      "compteDouble": true,
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à deux mains",
+      "arme": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "categorie": "Comptoir : Armes à deux mains",
+      "id": "cc-marteau-a-deux-mains",
+      "compteDouble": true,
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à deux mains",
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Vouge tronçonneur",
+      "prix": 60,
+      "categorie": "Comptoir : Armes à deux mains",
+      "id": "cc-vouge-tronconneur",
+      "compteDouble": true,
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armes à deux mains",
+      "arme": "vouge-tronconneur"
+    },
+    {
+      "nom": "Bombes à fusion",
+      "prix": 60,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-bombes-a-fusion",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "bombes-a-fusion"
+    },
+    {
+      "nom": "Charges de démolition",
+      "prix": 50,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-charges-de-demolition",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "charges-de-demolition"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-charges-explosives",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-charges-incendiaires",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "charges-incendiaires"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-grenades-asphyxiantes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-grenades-aveuglantes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 45,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-grenades-cauchemar",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "grenades-cauchemar"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-grenades-frag",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-grenades-fumigenes",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 15,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-grenades-incapacitantes",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "grenades-incapacitantes"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Comptoir : Grenades",
+      "id": "cc-grenades-krak",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Grenades",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Armure carapace (légère)",
+      "prix": 80,
+      "categorie": "Comptoir : Armures",
+      "id": "cc-armure-carapace-legere",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armures"
+    },
+    {
+      "nom": "Armure carapace (lourde)",
+      "prix": 100,
+      "categorie": "Comptoir : Armures",
+      "id": "cc-armure-carapace-lourde",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armures"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Comptoir : Armures",
+      "id": "cc-armure-composite",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armures"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Comptoir : Armures",
+      "id": "cc-armure-flak",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armures"
+    },
+    {
+      "nom": "Combinaison NBC",
+      "prix": 10,
+      "categorie": "Comptoir : Armures",
+      "id": "cc-combinaison-nbc",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Armures"
+    },
+    {
+      "nom": "Champ convecteur",
+      "prix": 60,
+      "categorie": "Comptoir : Champs protecteurs",
+      "id": "cc-champ-convecteur",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Champs protecteurs"
+    },
+    {
+      "nom": "Champ réfracteur",
+      "prix": 50,
+      "categorie": "Comptoir : Champs protecteurs",
+      "id": "cc-champ-refracteur",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Champs protecteurs"
+    },
+    {
+      "nom": "Champ téléporteur",
+      "prix": 70,
+      "categorie": "Comptoir : Champs protecteurs",
+      "id": "cc-champ-teleporteur",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Champs protecteurs"
+    },
+    {
+      "nom": "Bras bionique, ordinaire",
+      "prix": 45,
+      "categorie": "Comptoir : Bioniques",
+      "id": "cc-bras-bionique-ordinaire",
+      "rarete": "Rare (13)",
+      "niveau": 13,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Bioniques"
+    },
+    {
+      "nom": "Cogitateur cortical, amélioré",
+      "prix": 30,
+      "categorie": "Comptoir : Bioniques",
+      "id": "cc-cogitateur-cortical-ameliore",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Bioniques"
+    },
+    {
+      "nom": "Cogitateur cortical, ordinaire",
+      "prix": 15,
+      "categorie": "Comptoir : Bioniques",
+      "id": "cc-cogitateur-cortical-ordinaire",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Bioniques"
+    },
+    {
+      "nom": "Jambe bionique, ordinaire",
+      "prix": 25,
+      "categorie": "Comptoir : Bioniques",
+      "id": "cc-jambe-bionique-ordinaire",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Bioniques"
+    },
+    {
+      "nom": "Lobo-puce, améliorée",
+      "prix": 45,
+      "categorie": "Comptoir : Bioniques",
+      "id": "cc-lobo-puce-amelioree",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Bioniques"
+    },
+    {
+      "nom": "Lobo-puce, ordinaire",
+      "prix": 20,
+      "categorie": "Comptoir : Bioniques",
+      "id": "cc-lobo-puce-ordinaire",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Bioniques"
+    },
+    {
+      "nom": "Œil bionique, ordinaire",
+      "prix": 45,
+      "categorie": "Comptoir : Bioniques",
+      "id": "cc-il-bionique-ordinaire",
+      "rarete": "Rare (13)",
+      "niveau": 13,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Bioniques"
+    },
+    {
+      "nom": "Renforts squelettiques, ordinaires",
+      "prix": 70,
+      "categorie": "Comptoir : Bioniques",
+      "id": "cc-renforts-squelettiques-ordinaires",
+      "rarete": "Rare (13)",
+      "niveau": 13,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Bioniques"
+    },
+    {
+      "nom": "Surpresseur aortique, ordinaire",
+      "prix": 65,
+      "categorie": "Comptoir : Bioniques",
+      "id": "cc-surpresseur-aortique-ordinaire",
+      "rarete": "Rare (13)",
+      "niveau": 13,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Bioniques"
+    },
+    {
+      "nom": "Cache de munitions",
+      "prix": 60,
+      "categorie": "Comptoir : Équipement de gang",
+      "id": "cc-cache-de-munitions",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement de gang"
+    },
+    {
+      "nom": "Pièges (piège à Frag)",
+      "prix": 20,
+      "categorie": "Comptoir : Équipement de gang",
+      "id": "cc-pieges-piege-a-frag",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement de gang"
+    },
+    {
+      "nom": "Pièges (piège à fusion)",
+      "prix": 50,
+      "categorie": "Comptoir : Équipement de gang",
+      "id": "cc-pieges-piege-a-fusion",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement de gang"
+    },
+    {
+      "nom": "Pièges (piège à gaz)",
+      "prix": 40,
+      "categorie": "Comptoir : Équipement de gang",
+      "id": "cc-pieges-piege-a-gaz",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement de gang"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-bio-booster",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Bio-scanner",
+      "prix": 30,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-bio-scanner",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Chimiosynth",
+      "prix": 15,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-chimiosynth",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-filin",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-filtre-nasal",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Grav-chute",
+      "prix": 50,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-grav-chute",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Kit de démontage",
+      "prix": 15,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-kit-de-demontage",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-lame-sous-cutanee",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Lance-grappin",
+      "prix": 25,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-lance-grappin",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Médikit",
+      "prix": 30,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-medikit",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-photolunettes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Planque de stim",
+      "prix": 30,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-planque-de-stim",
+      "accessoireUnique": true,
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-respirateur",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Servo-harnais, intégral",
+      "prix": 160,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-servo-harnais-integral",
+      "rarete": "Rare (12); Rare (11 Goliath & Orlock); Rare (10 Van Saar)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Servo-harnais, partiel",
+      "prix": 130,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-servo-harnais-partiel",
+      "rarete": "Rare (12); Rare (11 Goliath & Orlock); Rare (10 Van Saar)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Solvant à toile",
+      "prix": 25,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-solvant-a-toile",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Sous-combinaison renforcée",
+      "prix": 25,
+      "categorie": "Comptoir : Équipement personnel",
+      "id": "cc-sous-combinaison-renforcee",
+      "rarete": "Rare (7)",
+      "niveau": 7,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Équipement personnel"
+    },
+    {
+      "nom": "Lunette (armes de base, spéciales et lourdes)",
+      "prix": 35,
+      "categorie": "Comptoir : Accessoires d'armes",
+      "id": "cc-lunette-armes-de-base-speciales-et-lourdes",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Accessoires d'armes"
+    },
+    {
+      "nom": "Lunette infrarouge (toute arme de tir)",
+      "prix": 40,
+      "categorie": "Comptoir : Accessoires d'armes",
+      "id": "cc-lunette-infrarouge-toute-arme-de-tir",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Accessoires d'armes"
+    },
+    {
+      "nom": "Lunette télescopique (pistolets, armes de base et spéciales)",
+      "prix": 25,
+      "categorie": "Comptoir : Accessoires d'armes",
+      "id": "cc-lunette-telescopique-pistolets-armes-de-base-et-speciales",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Accessoires d'armes"
+    },
+    {
+      "nom": "Pointeur laser (pistolets, armes de base et spéciales)",
+      "prix": 35,
+      "categorie": "Comptoir : Accessoires d'armes",
+      "id": "cc-pointeur-laser-pistolets-armes-de-base-et-speciales",
+      "rarete": "Rare (9)",
+      "niveau": 9,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Accessoires d'armes"
+    },
+    {
+      "nom": "Suppresseur (armes de base et pistolets)",
+      "prix": 20,
+      "categorie": "Comptoir : Accessoires d'armes",
+      "id": "cc-suppresseur-armes-de-base-et-pistolets",
+      "rarete": "Rare (8)",
+      "niveau": 8,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Accessoires d'armes"
+    },
+    {
+      "nom": "Surgénérateur d'arme laser (fusil laser et pistolet laser)",
+      "prix": 20,
+      "categorie": "Comptoir : Accessoires d'armes",
+      "id": "cc-surgenerateur-d-arme-laser-fusil-laser-et-pistolet-laser",
+      "rarete": "Commune",
+      "niveau": 0,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Accessoires d'armes"
+    },
+    {
+      "nom": "Suspenseur (armes lourdes)",
+      "prix": 60,
+      "categorie": "Comptoir : Accessoires d'armes",
+      "id": "cc-suspenseur-armes-lourdes",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Accessoires d'armes"
+    },
+    {
+      "nom": "Arme plaquée or",
+      "prix": 40,
+      "categorie": "Comptoir : Objets de prestige",
+      "id": "cc-arme-plaquee-or",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Objets de prestige"
+    },
+    {
+      "nom": "Atours de la Spire",
+      "prix": 50,
+      "categorie": "Comptoir : Objets de prestige",
+      "id": "cc-atours-de-la-spire",
+      "rarete": "Rare (10)",
+      "niveau": 10,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Objets de prestige"
+    },
+    {
+      "nom": "Bijoux opulents",
+      "prix": 80,
+      "categorie": "Comptoir : Objets de prestige",
+      "id": "cc-bijoux-opulents",
+      "rarete": "Rare (11)",
+      "niveau": 11,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Objets de prestige"
+    },
+    {
+      "nom": "Fourrures exotiques",
+      "prix": 50,
+      "categorie": "Comptoir : Objets de prestige",
+      "id": "cc-fourrures-exotiques",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Objets de prestige"
+    },
+    {
+      "nom": "Médicrâne",
+      "prix": 80,
+      "categorie": "Comptoir : Objets de prestige",
+      "id": "cc-medicrane",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Objets de prestige"
+    },
+    {
+      "nom": "Pistocrâne",
+      "prix": 65,
+      "categorie": "Comptoir : Objets de prestige",
+      "id": "cc-pistocrane",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Objets de prestige"
+    },
+    {
+      "nom": "Sensocrâne",
+      "prix": 60,
+      "categorie": "Comptoir : Objets de prestige",
+      "id": "cc-sensocrane",
+      "rarete": "Rare (12)",
+      "niveau": 12,
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "categorieArme": "Objets de prestige"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-de-recup",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "fusil-d-assaut-de-recup"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-a-canon-scie",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "fusil-a-canon-scie"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-grenaille",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Couteaux de lancer",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "couteaux-de-lancer",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "couteaux-de-lancer"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-de-recup",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "pistolet-mitrailleur-de-recup"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "flingue"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "hache",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "hache"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-tronconneuse",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "fleau",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "fleau"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "masse-matraque",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "masse-matraque"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-a-deux-mains",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-deux-mains",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Grenades",
+      "id": "charges-explosives",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak",
+      "roles": [
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Combinaison NBC",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "combinaison-nbc",
+      "roles": [
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite",
+      "roles": [
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Balles dum-dum (flingue)",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "balles-dum-dum-flingue",
+      "roles": [
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Sous-combinaison renforcée",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "sous-combinaison-renforcee",
+      "roles": [
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin",
+      "roles": [
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal",
+      "roles": [
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes",
+      "roles": [
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-telescopique",
+      "roles": [
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Haste avec fusil d'assaut Cawdor",
+      "prix": 20,
+      "compteDouble": true,
+      "categorie": "Allégeance Cawdor : Armes de base",
+      "id": "alg-cawdor-haste-avec-fusil-d-assaut-cawdor",
+      "arme": "haste-avec-fusil-d-assaut-cawdor",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Haste avec tromblon Cawdor (munitions à grappe & Purgation)",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Allégeance Cawdor : Armes de base",
+      "id": "alg-cawdor-haste-avec-tromblon-cawdor-munitions-a-grappe-purgation",
+      "modes": [
+        "haste",
+        "tromblon, grappe",
+        "tromblon, Purgation"
+      ],
+      "arme": "haste-avec-tromblon-cawdor",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Allégeance Cawdor : Armes de base",
+      "id": "alg-cawdor-fusil-a-canon-scie",
+      "arme": "fusil-a-canon-scie",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "categorie": "Allégeance Cawdor : Armes de base",
+      "id": "alg-cawdor-fusil-d-assaut-de-recup",
+      "arme": "fusil-d-assaut-de-recup",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Allégeance Cawdor : Armes de corps à corps",
+      "id": "alg-cawdor-couteau-de-combat",
+      "arme": "couteau-de-combat",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Allégeance Cawdor : Armes de corps à corps",
+      "id": "alg-cawdor-fleau",
+      "arme": "fleau",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Allégeance Cawdor : Armes de corps à corps",
+      "id": "alg-cawdor-hache",
+      "arme": "hache",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Allégeance Cawdor : Armes de corps à corps",
+      "id": "alg-cawdor-hache-a-deux-mains",
+      "arme": "hache-a-deux-mains",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Allégeance Cawdor : Armes de corps à corps",
+      "id": "alg-cawdor-marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Allégeance Cawdor : Armes de corps à corps",
+      "id": "alg-cawdor-masse-matraque",
+      "arme": "masse-matraque",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Vouge tronçonneur",
+      "prix": 60,
+      "compteDouble": true,
+      "categorie": "Allégeance Cawdor : Armes de corps à corps",
+      "id": "alg-cawdor-vouge-tronconneur",
+      "arme": "vouge-tronconneur",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Allégeance Cawdor : Pistolets",
+      "id": "alg-cawdor-flingue",
+      "arme": "flingue",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Allégeance Cawdor : Pistolets",
+      "id": "alg-cawdor-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "categorie": "Allégeance Cawdor : Pistolets",
+      "id": "alg-cawdor-pistolet-mitrailleur-de-recup",
+      "arme": "pistolet-mitrailleur-de-recup",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-flammes)",
+      "prix": 110,
+      "categorie": "Allégeance Cawdor : Armes spéciales",
+      "id": "alg-cawdor-arme-combinee-fusil-d-assaut-lance-flammes",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil d'assaut",
+        "lance-flammes"
+      ],
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 130,
+      "categorie": "Allégeance Cawdor : Armes spéciales",
+      "id": "alg-cawdor-lance-flammes",
+      "arme": "lance-flammes",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Allégeance Cawdor : Armes spéciales",
+      "id": "alg-cawdor-long-fusil",
+      "arme": "long-fusil",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Arbalète lourde Cawdor (carreaux Frag & Krak)",
+      "prix": 125,
+      "compteDouble": true,
+      "categorie": "Allégeance Cawdor : Armes lourdes",
+      "id": "alg-cawdor-arbalete-lourde-cawdor-carreaux-frag-krak",
+      "arme": "arbalete-lourde-cawdor",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Allégeance Cawdor : Armes lourdes",
+      "id": "alg-cawdor-lance-flammes-lourd",
+      "arme": "lance-flammes-lourd",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Allégeance Cawdor : Armes lourdes",
+      "id": "alg-cawdor-mitrailleuse",
+      "arme": "mitrailleuse",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Allégeance Cawdor : Grenades",
+      "id": "alg-cawdor-charges-explosives",
+      "arme": "charges-explosives",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "categorie": "Allégeance Cawdor : Grenades",
+      "id": "alg-cawdor-charges-incendiaires",
+      "arme": "charges-incendiaires",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Allégeance Cawdor : Grenades",
+      "id": "alg-cawdor-grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Allégeance Cawdor : Grenades",
+      "id": "alg-cawdor-grenades-frag",
+      "arme": "grenades-frag",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Allégeance Cawdor : Grenades",
+      "id": "alg-cawdor-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Allégeance Cawdor : Grenades",
+      "id": "alg-cawdor-grenades-krak",
+      "arme": "grenades-krak",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Allégeance Cawdor : Armures",
+      "id": "alg-cawdor-armure-composite",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Allégeance Cawdor : Armures",
+      "id": "alg-cawdor-armure-flak",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-balles-dum-dum-pour-flingue",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Balles Emperor's Wrath (pour tromblon)",
+      "prix": 35,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-balles-emperor-s-wrath-pour-tromblon",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-filin",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-filtre-nasal",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Icône du Culte",
+      "prix": 40,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-icone-du-culte",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Kit de démontage",
+      "prix": 15,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-kit-de-demontage",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-lame-sous-cutanee",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-lunette",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-photolunettes",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Rats lyreurs de bombes",
+      "prix": 30,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-rats-lyreurs-de-bombes",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Allégeance Cawdor : Équipement personnel",
+      "id": "alg-cawdor-respirateur",
+      "allegeance": "cawdor"
+    },
+    {
+      "nom": "Couteaux de lancer",
+      "prix": 10,
+      "categorie": "Allégeance Delaque : Armes de base",
+      "id": "alg-delaque-couteaux-de-lancer",
+      "arme": "couteaux-de-lancer",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Allégeance Delaque : Armes de base",
+      "id": "alg-delaque-fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Allégeance Delaque : Armes de base",
+      "id": "alg-delaque-fusil-d-assaut",
+      "arme": "fusil-d-assaut",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "categorie": "Allégeance Delaque : Armes de base",
+      "id": "alg-delaque-fusil-laser",
+      "arme": "fusil-laser",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Digilaser",
+      "prix": 25,
+      "categorie": "Allégeance Delaque : Armes de corps à corps",
+      "id": "alg-delaque-digilaser",
+      "arme": "digilaser",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Allégeance Delaque : Armes de corps à corps",
+      "id": "alg-delaque-electrosceptre",
+      "arme": "electrosceptre",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Gantelet lance-toile",
+      "prix": 35,
+      "categorie": "Allégeance Delaque : Armes de corps à corps",
+      "id": "alg-delaque-gantelet-lance-toile",
+      "arme": "gantelet-lance-toile",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Allégeance Delaque : Armes de corps à corps",
+      "id": "alg-delaque-stylet",
+      "arme": "stylet",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Allégeance Delaque : Pistolets",
+      "id": "alg-delaque-flingue",
+      "arme": "flingue",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Allégeance Delaque : Pistolets",
+      "id": "alg-delaque-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Lance-toile léger",
+      "prix": 80,
+      "categorie": "Allégeance Delaque : Pistolets",
+      "id": "alg-delaque-lance-toile-leger",
+      "arme": "lance-toile-leger",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Pistolet à fléchettes (projectiles solides & Flashbane)",
+      "prix": 30,
+      "categorie": "Allégeance Delaque : Pistolets",
+      "id": "alg-delaque-pistolet-a-flechettes-projectiles-solides-flashbane",
+      "arme": "pistolet-a-flechettes",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Allégeance Delaque : Pistolets",
+      "id": "alg-delaque-pistolet-a-plasma",
+      "arme": "pistolet-a-plasma",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Allégeance Delaque : Pistolets",
+      "id": "alg-delaque-pistolet-laser",
+      "arme": "pistolet-laser",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 5,
+      "categorie": "Allégeance Delaque : Pistolets",
+      "id": "alg-delaque-pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Allégeance Delaque : Armes spéciales",
+      "id": "alg-delaque-fuseur",
+      "arme": "fuseur",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Allégeance Delaque : Armes spéciales",
+      "id": "alg-delaque-fusil-a-gravitons",
+      "arme": "fusil-a-gravitons",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Allégeance Delaque : Armes spéciales",
+      "id": "alg-delaque-fusil-a-plasma",
+      "arme": "fusil-a-plasma",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Allégeance Delaque : Armes spéciales",
+      "id": "alg-delaque-lance-flammes",
+      "arme": "lance-flammes",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Lance-toile",
+      "prix": 115,
+      "categorie": "Allégeance Delaque : Armes spéciales",
+      "id": "alg-delaque-lance-toile",
+      "arme": "lance-toile",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Allégeance Delaque : Armes spéciales",
+      "id": "alg-delaque-long-fusil",
+      "arme": "long-fusil",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Allégeance Delaque : Armes lourdes",
+      "id": "alg-delaque-lance-flammes-lourd",
+      "arme": "lance-flammes-lourd",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Allégeance Delaque : Grenades",
+      "id": "alg-delaque-grenades-aveuglantes",
+      "arme": "grenades-aveuglantes",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Allégeance Delaque : Grenades",
+      "id": "alg-delaque-grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 40,
+      "categorie": "Allégeance Delaque : Grenades",
+      "id": "alg-delaque-grenades-cauchemar",
+      "arme": "grenades-cauchemar",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Allégeance Delaque : Grenades",
+      "id": "alg-delaque-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 10,
+      "categorie": "Allégeance Delaque : Grenades",
+      "id": "alg-delaque-grenades-incapacitantes",
+      "arme": "grenades-incapacitantes",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Allégeance Delaque : Armures",
+      "id": "alg-delaque-armure-composite",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Allégeance Delaque : Armures",
+      "id": "alg-delaque-armure-flak",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Bio-scanner",
+      "prix": 30,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-bio-scanner",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-filtre-nasal",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-lame-sous-cutanee",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Lance-grappin",
+      "prix": 25,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-lance-grappin",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-lunette",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-lunette-infrarouge",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 20,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-photolunettes",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-respirateur",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Solvant à toile",
+      "prix": 15,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-solvant-a-toile",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Suppresseur",
+      "prix": 10,
+      "categorie": "Allégeance Delaque : Équipement personnel",
+      "id": "alg-delaque-suppresseur",
+      "allegeance": "delaque"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Allégeance Escher : Armes de base",
+      "id": "alg-escher-fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Allégeance Escher : Armes de base",
+      "id": "alg-escher-fusil-d-assaut",
+      "arme": "fusil-d-assaut",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 5,
+      "categorie": "Allégeance Escher : Armes de base",
+      "id": "alg-escher-fusil-laser",
+      "arme": "fusil-laser",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Allégeance Escher : Armes de corps à corps",
+      "id": "alg-escher-couteau-de-combat",
+      "arme": "couteau-de-combat",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Allégeance Escher : Armes de corps à corps",
+      "id": "alg-escher-couteau-energetique",
+      "arme": "couteau-energetique",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Électrofouet",
+      "prix": 25,
+      "categorie": "Allégeance Escher : Armes de corps à corps",
+      "id": "alg-escher-electrofouet",
+      "arme": "electrofouet",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Épée énergétique",
+      "prix": 45,
+      "categorie": "Allégeance Escher : Armes de corps à corps",
+      "id": "alg-escher-epee-energetique",
+      "arme": "epee-energetique",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Allégeance Escher : Armes de corps à corps",
+      "id": "alg-escher-epee-tronconneuse",
+      "arme": "epee-tronconneuse",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Rapière",
+      "prix": 30,
+      "categorie": "Allégeance Escher : Armes de corps à corps",
+      "id": "alg-escher-rapiere",
+      "arme": "rapiere",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Allégeance Escher : Armes de corps à corps",
+      "id": "alg-escher-stylet",
+      "arme": "stylet",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Allégeance Escher : Pistolets",
+      "id": "alg-escher-flingue",
+      "arme": "flingue",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Allégeance Escher : Pistolets",
+      "id": "alg-escher-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Pistolet à aiguilles",
+      "prix": 25,
+      "categorie": "Allégeance Escher : Pistolets",
+      "id": "alg-escher-pistolet-a-aiguilles",
+      "arme": "pistolet-a-aiguilles",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Allégeance Escher : Pistolets",
+      "id": "alg-escher-pistolet-a-plasma",
+      "arme": "pistolet-a-plasma",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Allégeance Escher : Pistolets",
+      "id": "alg-escher-pistolet-laser",
+      "arme": "pistolet-laser",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Allégeance Escher : Pistolets",
+      "id": "alg-escher-pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Arme combinée (bolter à aiguille)",
+      "prix": 80,
+      "categorie": "Allégeance Escher : Armes spéciales",
+      "id": "alg-escher-arme-combinee-bolter-a-aiguille",
+      "modes": [
+        "bolter",
+        "arme à aiguilles"
+      ],
+      "arme": "arme-combinee",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Allégeance Escher : Armes spéciales",
+      "id": "alg-escher-fuseur",
+      "arme": "fuseur",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Fusil à aiguilles",
+      "prix": 35,
+      "categorie": "Allégeance Escher : Armes spéciales",
+      "id": "alg-escher-fusil-a-aiguilles",
+      "arme": "fusil-a-aiguilles",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Allégeance Escher : Armes spéciales",
+      "id": "alg-escher-fusil-a-plasma",
+      "arme": "fusil-a-plasma",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Allégeance Escher : Armes spéciales",
+      "id": "alg-escher-lance-flammes",
+      "arme": "lance-flammes",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Projecteur chimique \"Belladone\"",
+      "prix": 135,
+      "categorie": "Allégeance Escher : Armes spéciales",
+      "id": "alg-escher-projecteur-chimique-belladone",
+      "arme": "projecteur-chimique-belladone",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Allégeance Escher : Armes lourdes",
+      "id": "alg-escher-mitrailleuse",
+      "arme": "mitrailleuse",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 45,
+      "categorie": "Allégeance Escher : Grenades",
+      "id": "alg-escher-grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Allégeance Escher : Grenades",
+      "id": "alg-escher-grenades-aveuglantes",
+      "arme": "grenades-aveuglantes",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 40,
+      "categorie": "Allégeance Escher : Grenades",
+      "id": "alg-escher-grenades-cauchemar",
+      "arme": "grenades-cauchemar",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Allégeance Escher : Grenades",
+      "id": "alg-escher-grenades-frag",
+      "arme": "grenades-frag",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Allégeance Escher : Grenades",
+      "id": "alg-escher-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Allégeance Escher : Grenades",
+      "id": "alg-escher-grenades-krak",
+      "arme": "grenades-krak",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Allégeance Escher : Armures",
+      "id": "alg-escher-armure-composite",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Allégeance Escher : Armures",
+      "id": "alg-escher-armure-flak",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Balles acides (pour fusil à pompe)",
+      "prix": 15,
+      "categorie": "Allégeance Escher : Équipement personnel",
+      "id": "alg-escher-balles-acides-pour-fusil-a-pompe",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Allégeance Escher : Équipement personnel",
+      "id": "alg-escher-balles-dum-dum-pour-flingue",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Chimiosynth",
+      "prix": 15,
+      "categorie": "Allégeance Escher : Équipement personnel",
+      "id": "alg-escher-chimiosynth",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Allégeance Escher : Équipement personnel",
+      "id": "alg-escher-filin",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Allégeance Escher : Équipement personnel",
+      "id": "alg-escher-filtre-nasal",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Allégeance Escher : Équipement personnel",
+      "id": "alg-escher-photolunettes",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Pointeur laser",
+      "prix": 35,
+      "categorie": "Allégeance Escher : Équipement personnel",
+      "id": "alg-escher-pointeur-laser",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Allégeance Escher : Équipement personnel",
+      "id": "alg-escher-respirateur",
+      "allegeance": "escher"
+    },
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "categorie": "Allégeance Goliath : Armes de base",
+      "id": "alg-goliath-bolter",
+      "arme": "bolter",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Canon de poing",
+      "prix": 20,
+      "categorie": "Allégeance Goliath : Armes de base",
+      "id": "alg-goliath-canon-de-poing",
+      "arme": "canon-de-poing",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Allégeance Goliath : Armes de base",
+      "id": "alg-goliath-fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Fusil de combat (salve & nuage de grenaille)",
+      "prix": 60,
+      "categorie": "Allégeance Goliath : Armes de base",
+      "id": "alg-goliath-fusil-de-combat-salve-nuage-de-grenaille",
+      "modes": [
+        "salve",
+        "nuage de grenaille"
+      ],
+      "arme": "fusil-de-combat",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 10,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-couteau-de-combat",
+      "arme": "couteau-de-combat",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Dérouilleuse",
+      "prix": 15,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-derouilleuse",
+      "arme": "derouilleuse",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-epee-tronconneuse",
+      "arme": "epee-tronconneuse",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-hache",
+      "arme": "hache",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-hache-a-deux-mains",
+      "arme": "hache-a-deux-mains",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Hache dentelée \"déchiqueteuse\"",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-hache-dentelee-dechiqueteuse",
+      "arme": "hache-dentelee-dechiqueteuse",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Hache énergétique",
+      "prix": 35,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-hache-energetique",
+      "arme": "hache-energetique",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Hachoir de brute",
+      "prix": 20,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-hachoir-de-brute",
+      "arme": "hachoir-de-brute",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Marteau énergétique",
+      "prix": 45,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-marteau-energetique",
+      "arme": "marteau-energetique",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Allégeance Goliath : Armes de corps à corps",
+      "id": "alg-goliath-masse-matraque",
+      "arme": "masse-matraque",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Combi-pistolet (flingue/pistolet à plasma)",
+      "prix": 40,
+      "categorie": "Allégeance Goliath : Pistolets",
+      "id": "alg-goliath-combi-pistolet-flingue-pistolet-a-plasma",
+      "arme": "combi-pistolet",
+      "modes": [
+        "flingue",
+        "pistolet à plasma"
+      ],
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Allégeance Goliath : Pistolets",
+      "id": "alg-goliath-flingue",
+      "arme": "flingue",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Allégeance Goliath : Pistolets",
+      "id": "alg-goliath-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Pistolet bolter",
+      "prix": 45,
+      "categorie": "Allégeance Goliath : Pistolets",
+      "id": "alg-goliath-pistolet-bolter",
+      "arme": "pistolet-bolter",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 165,
+      "categorie": "Allégeance Goliath : Armes spéciales",
+      "id": "alg-goliath-arme-combinee-bolter-fuseur",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fuseur"
+      ],
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-flammes)",
+      "prix": 175,
+      "categorie": "Allégeance Goliath : Armes spéciales",
+      "id": "alg-goliath-arme-combinee-bolter-lance-flammes",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "lance-flammes"
+      ],
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Allégeance Goliath : Armes spéciales",
+      "id": "alg-goliath-fuseur",
+      "arme": "fuseur",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Allégeance Goliath : Armes spéciales",
+      "id": "alg-goliath-lance-flammes",
+      "arme": "lance-flammes",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 55,
+      "categorie": "Allégeance Goliath : Armes spéciales",
+      "id": "alg-goliath-lance-grenades-grenades-frag-krak",
+      "modes": [
+        "grenades Frag",
+        "grenades Krak"
+      ],
+      "arme": "lance-grenades",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Bolter lourd",
+      "prix": 160,
+      "compteDouble": true,
+      "categorie": "Allégeance Goliath : Armes lourdes",
+      "id": "alg-goliath-bolter-lourd",
+      "arme": "bolter-lourd",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Canon à rivets \"Cribleur\"",
+      "prix": 70,
+      "compteDouble": true,
+      "categorie": "Allégeance Goliath : Armes lourdes",
+      "id": "alg-goliath-canon-a-rivets-cribleur",
+      "arme": "canon-a-rivets-cribleur",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Allégeance Goliath : Armes lourdes",
+      "id": "alg-goliath-lance-flammes-lourd",
+      "arme": "lance-flammes-lourd",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Allégeance Goliath : Armes lourdes",
+      "id": "alg-goliath-mitrailleuse",
+      "arme": "mitrailleuse",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Allégeance Goliath : Grenades",
+      "id": "alg-goliath-charges-explosives",
+      "arme": "charges-explosives",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Allégeance Goliath : Grenades",
+      "id": "alg-goliath-grenades-frag",
+      "arme": "grenades-frag",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Allégeance Goliath : Grenades",
+      "id": "alg-goliath-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Allégeance Goliath : Grenades",
+      "id": "alg-goliath-grenades-krak",
+      "arme": "grenades-krak",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Plates de fourneau",
+      "prix": 10,
+      "categorie": "Allégeance Goliath : Armures",
+      "id": "alg-goliath-plates-de-fourneau",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Allégeance Goliath : Équipement personnel",
+      "id": "alg-goliath-balles-dum-dum-pour-flingue",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Allégeance Goliath : Équipement personnel",
+      "id": "alg-goliath-bio-booster",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Allégeance Goliath : Équipement personnel",
+      "id": "alg-goliath-filin",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Allégeance Goliath : Équipement personnel",
+      "id": "alg-goliath-photolunettes",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Planque de stim",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Allégeance Goliath : Équipement personnel",
+      "id": "alg-goliath-planque-de-stim",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Allégeance Goliath : Équipement personnel",
+      "id": "alg-goliath-respirateur",
+      "allegeance": "goliath"
+    },
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "categorie": "Allégeance Orlock : Armes de base",
+      "id": "alg-orlock-bolter",
+      "arme": "bolter",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Allégeance Orlock : Armes de base",
+      "id": "alg-orlock-fusil-a-canon-scie",
+      "arme": "fusil-a-canon-scie",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 25,
+      "categorie": "Allégeance Orlock : Armes de base",
+      "id": "alg-orlock-fusil-a-pompe-balles-grenaille",
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Allégeance Orlock : Armes de base",
+      "id": "alg-orlock-fusil-d-assaut",
+      "arme": "fusil-d-assaut",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Fusil de combat (salve & nuage de grenaille)",
+      "prix": 55,
+      "categorie": "Allégeance Orlock : Armes de base",
+      "id": "alg-orlock-fusil-de-combat-salve-nuage-de-grenaille",
+      "modes": [
+        "salve",
+        "nuage de grenaille"
+      ],
+      "arme": "fusil-de-combat",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Allégeance Orlock : Armes de corps à corps",
+      "id": "alg-orlock-couteau-de-combat",
+      "arme": "couteau-de-combat",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Allégeance Orlock : Armes de corps à corps",
+      "id": "alg-orlock-couteau-energetique",
+      "arme": "couteau-energetique",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Allégeance Orlock : Armes de corps à corps",
+      "id": "alg-orlock-epee-tronconneuse",
+      "arme": "epee-tronconneuse",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Allégeance Orlock : Armes de corps à corps",
+      "id": "alg-orlock-fleau",
+      "arme": "fleau",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Allégeance Orlock : Armes de corps à corps",
+      "id": "alg-orlock-marteau-a-deux-mains",
+      "arme": "marteau-a-deux-mains",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Allégeance Orlock : Armes de corps à corps",
+      "id": "alg-orlock-masse-matraque",
+      "arme": "masse-matraque",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 30,
+      "categorie": "Allégeance Orlock : Armes de corps à corps",
+      "id": "alg-orlock-servopince",
+      "arme": "servopince",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Allégeance Orlock : Pistolets",
+      "id": "alg-orlock-flingue",
+      "arme": "flingue",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Allégeance Orlock : Pistolets",
+      "id": "alg-orlock-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Allégeance Orlock : Pistolets",
+      "id": "alg-orlock-pistolet-a-plasma",
+      "arme": "pistolet-a-plasma",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Pistolet bolter",
+      "prix": 45,
+      "categorie": "Allégeance Orlock : Pistolets",
+      "id": "alg-orlock-pistolet-bolter",
+      "arme": "pistolet-bolter",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Allégeance Orlock : Pistolets",
+      "id": "alg-orlock-pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 165,
+      "categorie": "Allégeance Orlock : Armes spéciales",
+      "id": "alg-orlock-arme-combinee-bolter-fuseur",
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fuseur"
+      ],
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Allégeance Orlock : Armes spéciales",
+      "id": "alg-orlock-lance-flammes",
+      "arme": "lance-flammes",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 65,
+      "categorie": "Allégeance Orlock : Armes spéciales",
+      "id": "alg-orlock-lance-grenades-grenades-frag-krak",
+      "modes": [
+        "grenades Frag",
+        "grenades Krak"
+      ],
+      "arme": "lance-grenades",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Allégeance Orlock : Armes spéciales",
+      "id": "alg-orlock-fusil-a-plasma",
+      "arme": "fusil-a-plasma",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Allégeance Orlock : Armes spéciales",
+      "id": "alg-orlock-fuseur",
+      "arme": "fuseur",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Bolter lourd",
+      "prix": 160,
+      "compteDouble": true,
+      "categorie": "Allégeance Orlock : Armes lourdes",
+      "id": "alg-orlock-bolter-lourd",
+      "arme": "bolter-lourd",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Allégeance Orlock : Armes lourdes",
+      "id": "alg-orlock-lance-flammes-lourd",
+      "arme": "lance-flammes-lourd",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Lance-harpon",
+      "prix": 110,
+      "compteDouble": true,
+      "categorie": "Allégeance Orlock : Armes lourdes",
+      "id": "alg-orlock-lance-harpon",
+      "arme": "lance-harpon",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Allégeance Orlock : Armes lourdes",
+      "id": "alg-orlock-mitrailleuse",
+      "arme": "mitrailleuse",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Charges de démolition",
+      "prix": 45,
+      "categorie": "Allégeance Orlock : Grenades",
+      "id": "alg-orlock-charges-de-demolition",
+      "arme": "charges-de-demolition",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Allégeance Orlock : Grenades",
+      "id": "alg-orlock-charges-explosives",
+      "arme": "charges-explosives",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Allégeance Orlock : Grenades",
+      "id": "alg-orlock-grenades-frag",
+      "arme": "grenades-frag",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Allégeance Orlock : Grenades",
+      "id": "alg-orlock-grenades-krak",
+      "arme": "grenades-krak",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Allégeance Orlock : Armures",
+      "id": "alg-orlock-armure-composite",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Allégeance Orlock : Armures",
+      "id": "alg-orlock-armure-flak",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Allégeance Orlock : Équipement personnel",
+      "id": "alg-orlock-balles-dum-dum-pour-flingue",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Allégeance Orlock : Équipement personnel",
+      "id": "alg-orlock-bio-booster",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Allégeance Orlock : Équipement personnel",
+      "id": "alg-orlock-filin",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Allégeance Orlock : Équipement personnel",
+      "id": "alg-orlock-filtre-nasal",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Allégeance Orlock : Équipement personnel",
+      "id": "alg-orlock-lunette-telescopique",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Allégeance Orlock : Équipement personnel",
+      "id": "alg-orlock-photolunettes",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Allégeance Orlock : Équipement personnel",
+      "id": "alg-orlock-respirateur",
+      "allegeance": "orlock"
+    },
+    {
+      "nom": "Carabine laser",
+      "prix": 20,
+      "categorie": "Allégeance Van Saar : Armes de base",
+      "id": "alg-van-saar-carabine-laser",
+      "arme": "carabine-laser",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 10,
+      "categorie": "Allégeance Van Saar : Armes de base",
+      "id": "alg-van-saar-fusil-laser",
+      "arme": "fusil-laser",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Laser de suppression",
+      "prix": 40,
+      "categorie": "Allégeance Van Saar : Armes de base",
+      "id": "alg-van-saar-laser-de-suppression",
+      "arme": "laser-de-suppression",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Bouclier d'énergie modèle \"Hystrar\"",
+      "prix": 50,
+      "categorie": "Allégeance Van Saar : Armes de corps à corps",
+      "id": "alg-van-saar-bouclier-d-energie-modele-hystrar",
+      "arme": "bouclier-d-energie-modele-hystrar",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Allégeance Van Saar : Armes de corps à corps",
+      "id": "alg-van-saar-couteau-energetique",
+      "arme": "couteau-energetique",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Électrobâton",
+      "prix": 30,
+      "categorie": "Allégeance Van Saar : Armes de corps à corps",
+      "id": "alg-van-saar-electrobaton",
+      "arme": "electrobaton",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Allégeance Van Saar : Armes de corps à corps",
+      "id": "alg-van-saar-electrosceptre",
+      "arme": "electrosceptre",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 30,
+      "categorie": "Allégeance Van Saar : Armes de corps à corps",
+      "id": "alg-van-saar-servopince",
+      "arme": "servopince",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Allégeance Van Saar : Pistolets",
+      "id": "alg-van-saar-lance-flammes-leger",
+      "arme": "lance-flammes-leger",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Mitraillette laser",
+      "prix": 15,
+      "categorie": "Allégeance Van Saar : Pistolets",
+      "id": "alg-van-saar-mitraillette-laser",
+      "arme": "mitraillette-laser",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Allégeance Van Saar : Pistolets",
+      "id": "alg-van-saar-pistolet-a-plasma",
+      "arme": "pistolet-a-plasma",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 5,
+      "categorie": "Allégeance Van Saar : Pistolets",
+      "id": "alg-van-saar-pistolet-laser",
+      "arme": "pistolet-laser",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Arme combinée (fusil laser/fuseur)",
+      "prix": 120,
+      "categorie": "Allégeance Van Saar : Armes spéciales",
+      "id": "alg-van-saar-arme-combinee-fusil-laser-fuseur",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil laser",
+        "fuseur"
+      ],
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Arme combinée (fusil laser/fusil à plasma)",
+      "prix": 75,
+      "categorie": "Allégeance Van Saar : Armes spéciales",
+      "id": "alg-van-saar-arme-combinee-fusil-laser-fusil-a-plasma",
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil laser",
+        "fusil à plasma"
+      ],
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Allégeance Van Saar : Armes spéciales",
+      "id": "alg-van-saar-fuseur",
+      "arme": "fuseur",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Allégeance Van Saar : Armes spéciales",
+      "id": "alg-van-saar-fusil-a-gravitons",
+      "arme": "fusil-a-gravitons",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Allégeance Van Saar : Armes spéciales",
+      "id": "alg-van-saar-fusil-a-plasma",
+      "arme": "fusil-a-plasma",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Fusil à radiations",
+      "prix": 100,
+      "categorie": "Allégeance Van Saar : Armes spéciales",
+      "id": "alg-van-saar-fusil-a-radiations",
+      "arme": "fusil-a-radiations",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Allégeance Van Saar : Armes spéciales",
+      "id": "alg-van-saar-lance-flammes",
+      "arme": "lance-flammes",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Canon à plasma",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Allégeance Van Saar : Armes lourdes",
+      "id": "alg-van-saar-canon-a-plasma",
+      "arme": "canon-a-plasma",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Canon à radiations",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Allégeance Van Saar : Armes lourdes",
+      "id": "alg-van-saar-canon-a-radiations",
+      "arme": "canon-a-radiations",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Multi-fuseur",
+      "prix": 180,
+      "compteDouble": true,
+      "categorie": "Allégeance Van Saar : Armes lourdes",
+      "id": "alg-van-saar-multi-fuseur",
+      "arme": "multi-fuseur",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Grenades à radiations",
+      "prix": 25,
+      "categorie": "Allégeance Van Saar : Grenades",
+      "id": "alg-van-saar-grenades-a-radiations",
+      "arme": "grenades-a-radiations",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Allégeance Van Saar : Grenades",
+      "id": "alg-van-saar-grenades-frag",
+      "arme": "grenades-frag",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 12,
+      "categorie": "Allégeance Van Saar : Grenades",
+      "id": "alg-van-saar-grenades-fumigenes",
+      "arme": "grenades-fumigenes",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Allégeance Van Saar : Grenades",
+      "id": "alg-van-saar-grenades-krak",
+      "arme": "grenades-krak",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Allégeance Van Saar : Armures",
+      "id": "alg-van-saar-armure-composite",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Allégeance Van Saar : Armures",
+      "id": "alg-van-saar-armure-flak",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-bio-booster",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-filin",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-filtre-nasal",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Grav-chute",
+      "prix": 40,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-grav-chute",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-lunette",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 40,
+      "accessoireUnique": true,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-lunette-infrarouge",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-lunette-telescopique",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-photolunettes",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Pointeur laser",
+      "prix": 35,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-pointeur-laser",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-respirateur",
+      "allegeance": "van-saar"
+    },
+    {
+      "nom": "Suspenseur",
+      "prix": 60,
+      "categorie": "Allégeance Van Saar : Équipement personnel",
+      "id": "alg-van-saar-suspenseur",
+      "allegeance": "van-saar"
+    }
+  ],
+  "rareteMax": {
+    "chef": 9,
+    "champion": 8,
+    "ganger": 0
+  },
+  "gangerArmes": [
+    "Armes de base",
+    "Pistolets",
+    "Armes de corps à corps"
+  ],
+  "archetypes": {
+    "labels": {
+      "bagarreur": "Bagarreur",
+      "flingueur": "Flingueur",
+      "survivant": "Survivant",
+      "genie": "Génie",
+      "wyrd": "Wyrd"
+    },
+    "roles": {
+      "chef": {
+        "bagarreur": {
+          "primaires": [
+            "Muscle",
+            "Férocité",
+            "Autorité"
+          ],
+          "secondaires": [
+            "Agilité",
+            "Combat"
+          ]
+        },
+        "flingueur": {
+          "primaires": [
+            "Agilité",
+            "Autorité",
+            "Tir"
+          ],
+          "secondaires": [
+            "Ruse",
+            "Savoir"
+          ]
+        },
+        "survivant": {
+          "primaires": [
+            "Combat",
+            "Férocité",
+            "Autorité"
+          ],
+          "secondaires": [
+            "Agilité",
+            "Muscle"
+          ]
+        },
+        "genie": {
+          "primaires": [
+            "Ruse",
+            "Autorité",
+            "Savoir"
+          ],
+          "secondaires": [
+            "Agilité",
+            "Tir"
+          ]
+        },
+        "wyrd": {
+          "primaires": [
+            "Autorité"
+          ],
+          "secondaires": [
+            "Ruse"
+          ]
+        }
+      },
+      "champion": {
+        "bagarreur": {
+          "primaires": [
+            "Muscle"
+          ],
+          "secondaires": [
+            "Férocité",
+            "Autorité"
+          ]
+        },
+        "flingueur": {
+          "primaires": [
+            "Tir"
+          ],
+          "secondaires": [
+            "Agilité",
+            "Autorité"
+          ]
+        },
+        "survivant": {
+          "primaires": [
+            "Férocité"
+          ],
+          "secondaires": [
+            "Combat",
+            "Autorité"
+          ]
+        },
+        "genie": {
+          "primaires": [
+            "Ruse"
+          ],
+          "secondaires": [
+            "Autorité",
+            "Savoir"
+          ]
+        },
+        "wyrd": {
+          "primaires": [],
+          "secondaires": [
+            "Ruse",
+            "Autorité"
+          ]
+        }
+      }
+    }
+  },
+  "regles": [
+    {
+      "nom": "Profils",
+      "texte": "Le Chef Proscrit choisit un des quatre profils proposés, selon la figurine."
+    },
+    {
+      "nom": "Chef de gang",
+      "texte": "Un seul Chef, qui ne prend jamais sa retraite. S'il meurt en campagne, le gang se disperse et un nouveau gang doit être fondé."
+    },
+    {
+      "nom": "Hiérarchie du gang",
+      "texte": "Une fois le gang Dégonflé, si le Chef réussit son test de Sang-froid en phase de Fin, les Proscrits à 12\" ou moins réussissent automatiquement le leur (6\" pour un Champion). Chef et Champions font des actions d'après-bataille et peuvent avoir plusieurs panoplies."
+    },
+    {
+      "nom": "Activation de groupe",
+      "texte": "Le Chef peut activer à sa suite 2 Proscrits Parés à 3\" ou moins, un Champion 1."
+    },
+    {
+      "nom": "Composition",
+      "texte": "Les Rebuts doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires). Trois armes maximum, un Rebut non Spécialiste ne dépasse jamais trois armes et ne peut pas défausser une arme."
+    },
+    {
+      "nom": "Allégeance du Chef",
+      "texte": "Sans-clan : ni Intègre ni Hors-la-Loi pour les effets, aucune Alliance possible. Maison Clanique (une des six) : le gang compte comme cette Maison et accède à sa liste d'équipement et ses Bêtes exotiques ; pas d'alliance avec les ennemis de cette Maison. Guilde des Marchands, Organisation Criminelle ou Maison Noble : accès à l'équipement de la Délégation correspondante (livres des Maisons, non intégrés ici) et alliances limitées à cette organisation."
+    },
+    {
+      "nom": "Wyrd",
+      "texte": "Un Chef ou Champion Wyrd peut choisir des Pouvoirs Wyrd à la place des compétences et gagne la règle Psyker Clandestin."
+    }
+  ]
+}

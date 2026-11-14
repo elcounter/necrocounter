@@ -520,7 +520,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.8.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.9.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -667,7 +667,7 @@
 
     // ---- Données Necromunda N23 ----
     const DATA = "data/n23/";
-    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats", "nomades", "venators", "enforcers", "corpse-grinder", "culte-chaos", "culte-genestealer"];
+    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats", "nomades", "venators", "enforcers", "corpse-grinder", "culte-chaos", "culte-genestealer", "proscrits"];
     const houseTitle = h => h.titre || "Maison " + h.nom;
     function rb(f, h) {
       if (f.kind === "brute") return "brute";
@@ -818,7 +818,7 @@
         ${weapons.map(w => `<p class="note"><b>${esc(w.nom)}</b></p>${profileHtml(w)}`).join("")}
       </div></details>`;
     }
-    const HOUSE_NAMES = { cawdor: "Maison Cawdor", delaque: "Maison Delaque", escher: "Maison Escher", goliath: "Maison Goliath", orlock: "Maison Orlock", "van-saar": "Maison Van Saar", squats: "Prospecteurs Squats Ironhead", nomades: "Nomades des Désolations de Cendres", venators: "Venators", enforcers: "Palanite Enforcers", "corpse-grinder": "Culte de Corpse Grinder", "culte-chaos": "Culte Hilote du Chaos", "culte-genestealer": "Culte Genestealer" };
+    const HOUSE_NAMES = { cawdor: "Maison Cawdor", delaque: "Maison Delaque", escher: "Maison Escher", goliath: "Maison Goliath", orlock: "Maison Orlock", "van-saar": "Maison Van Saar", squats: "Prospecteurs Squats Ironhead", nomades: "Nomades des Désolations de Cendres", venators: "Venators", enforcers: "Palanite Enforcers", "corpse-grinder": "Culte de Corpse Grinder", "culte-chaos": "Culte Hilote du Chaos", "culte-genestealer": "Culte Genestealer", proscrits: "Proscrits du Sous-Monde" };
 
     function mercenariesHtml([d, armes]) {
       const byId = Object.fromEntries(armes.armes.map(a => [a.id, a]));
@@ -1671,7 +1671,7 @@
         if (orphan.length) w.push(`${f.name || roleName(d.house, f.type)} : objets de Legs sans le Legs de Maison correspondant.`);
       });
       g.fighters.filter(f => f.kind !== "brute").forEach(f => {
-        const bad = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && (i.roles && !i.roles.includes(f.type) || d.house.gangerArmes && f.type === "ganger" && !f.spec && i.arme && !d.house.gangerArmes.includes(i.categorie)));
+        const bad = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && (i.roles && !i.roles.includes(f.type) && !i.roles.includes(rb(f, d.house)) || d.house.gangerArmes && f.type === "ganger" && !f.spec && i.arme && !d.house.gangerArmes.includes(i.categorie)));
         if (bad.length) w.push(`${f.name || roleName(d.house, f.type)} : équipement non autorisé (${bad.map(i => i.nom).join(", ")}).`);
       });
       if (d.house.gangerArmes && !camp && g.fighters.filter(f => f.kind !== "brute" && f.type === "ganger" && f.spec).length > 1) w.push("À la création, un seul " + roleName(d.house, "ganger") + " peut être Spécialiste.");
@@ -1740,7 +1740,7 @@
     }
     function skillSets(f, d, which) {
       const key = isSpecialist(f) ? "specialiste" : (d.house.competences || {})[f.type] ? f.type : rb(f, d.house);
-      const c = (d.house.competences || {})[key] || {};
+      const c = archComps(f, d) || (d.house.competences || {})[key] || {};
       let sets = which === "tous" ? SKILL_CATS.concat(Object.values(d.house.competences || {}).flatMap(x => x.primaires.concat(x.secondaires)).filter(x => !SKILL_CATS.includes(x)))
         .filter((x, i, a) => a.indexOf(x) === i) : (c[which] || []).slice();
       if (which === "primaires" && rb(f, d.house) === "chef" && !sets.includes("Autorité")) sets.push("Autorité");
@@ -1972,9 +1972,10 @@
     function gearBlocked(i, f, h, camp) {
       if (i.legsMaison && (f.gear || []).some(x => /^legs-[a-z-]+$/.test(x) && x !== i.id)) return "un seul Legs de Maison";
       if (i.legs && !(f.gear || []).includes("legs-" + i.legs)) return "nécessite le Legs de Maison";
+      if (i.allegeance && !(gbState && gbState.gang.allegeance === i.allegeance)) return "nécessite l'Allégeance";
       if (h.rareteMax && !camp && i.niveau > (h.rareteMax[rb(f, h)] || 0)) return "Rareté trop élevée";
-      if (i.roles && !i.roles.includes(f.type)) return "réservé à : " + i.roles.map(r => roleName(h, r)).join(", ");
-      if (h.gangerArmes && f.type === "ganger" && !f.spec && i.arme && !h.gangerArmes.includes(i.categorie)) return "arme réservée aux Spécialistes";
+      if (i.roles && !i.roles.includes(f.type) && !i.roles.includes(rb(f, h))) return "réservé à : " + i.roles.map(r => roleName(h, r)).join(", ");
+      if (h.gangerArmes && rb(f, h) === "ganger" && !f.spec && i.arme && !h.gangerArmes.includes(String(i.categorieArme || i.categorie).split(" : ").pop())) return "arme réservée aux Spécialistes";
       if (!camp && noviceLimit(h) && rb(f, h) === "novice" && i.prix > 20) return "plus de 20 crédits";
       return "";
     }
@@ -1986,8 +1987,13 @@
         `<option value="${esc(i.id)}"${gearBlocked(i, f, d.house, camp) ? " disabled" : ""}>${esc(i.nom)} (${i.prix} cr)</option>`).join("")}</optgroup>`).join("");
     }
 
+    function archComps(f, d) {
+      const A = d.house.archetypes; if (!A || isSpecialist(f)) return null;
+      const R = A.roles[rb(f, d.house)]; return R ? R[f.arch || "bagarreur"] : null;
+    }
     function skillPickHtml(f, fi, d) {
-      const sets = ((d.house.competences || {})[f.type] || (d.house.competences || {})[rb(f, d.house)] || {}).primaires || [];
+      const ac = archComps(f, d);
+      const sets = ((ac || (d.house.competences || {})[f.type] || (d.house.competences || {})[rb(f, d.house)] || {}).primaires || []).slice();
       const cur = (f.skills || [])[0] || "";
       const find = n => { for (const L of Object.values(d.refs.competences || {})) { const x = L.find(k => k.nom === n); if (x) return x; } return null; };
       const info = cur && find(cur);
@@ -2016,6 +2022,7 @@
         : `${def.equipementDeDepart.length ? `<p class="note">Inclus : ${esc(def.equipementDeDepart.join(", "))}</p>` : ""}
           <div class="gb-chips">${(f.gear || []).map((id, gi) => { const it = itemDef(id, d); return it ? `<span class="gb-chip">${esc(it.nom)} · ${it.prix} cr<button type="button" data-gb-ungear="${fi}:${gi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
           <select class="gb-add" data-gb-gear="${fi}">${gearOptions(d, f)}</select>
+          ${d.house.archetypes && d.house.archetypes.roles[rb(f, d.house)] ? `<label class="fld" style="margin:8px 0"><span>Archétype</span><select data-gb-arch="${fi}">${Object.entries(d.house.archetypes.labels).map(([k, l]) => `<option value="${k}"${(f.arch || "bagarreur") === k ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></label>` : ""}
           ${["chef", "champion"].includes(rb(f, d.house)) ? skillPickHtml(f, fi, d) : ""}
           ${!camp && d.house.gangerArmes && f.type === "ganger" ? `<label class="gb-opt"><input type="checkbox" data-cp-spec="${fi}"${f.spec ? " checked" : ""}><span>Promu Spécialiste (un seul à la création)</span></label>` : ""}
           ${["chef", "champion"].includes(rb(f, d.house)) && betes.length ? `
@@ -2043,6 +2050,10 @@
         <div class="panel"><h3 class="sec">Réglages</h3><div class="body">
           <label class="fld"><span>Nom du gang</span><input id="gb-name" value="${esc(g.name)}"></label>
           ${inCamp(g) ? "" : `<label class="fld"><span>Budget (crédits)</span><input id="gb-budget" inputmode="numeric" value="${g.budget}"></label>`}
+          ${d.house.archetypes ? `<label class="fld"><span>Allégeance du Chef</span><select id="gb-alg"><option value="">Sans-clan</option>
+            <optgroup label="Maison Clanique">${["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar"].map(h => `<option value="${h}"${g.allegeance === h ? " selected" : ""}>${esc(HOUSE_NAMES[h])}</option>`).join("")}</optgroup>
+            <optgroup label="Autres">${["guilde", "criminelle", "noble"].map(h => `<option value="${h}"${g.allegeance === h ? " selected" : ""}>${{ guilde: "Guilde des Marchands", criminelle: "Organisation Criminelle", noble: "Maison Noble" }[h]}</option>`).join("")}</optgroup></select></label>
+            <p class="note">Une Allégeance à une Maison Clanique débloque sa liste d'équipement pour tout le gang.</p>` : ""}
           ${d.house.competencesDynamiques ? `<p class="note"><b>Sets de compétences du gang</b> (classés de 1 à 4, hors Autorité) : 1 et 2 sont Primaires, 3 et 4 Secondaires.</p>
             ${[0, 1, 2, 3].map(i => `<label class="fld"><span>Set ${i + 1}</span><select data-ven-set="${i}"><option value="">Choisir…</option>${SKILL_CATS.filter(c => c !== "Autorité").map(c => `<option${(g.venSets || [])[i] === c ? " selected" : ""}${(g.venSets || []).includes(c) && (g.venSets || [])[i] !== c ? " disabled" : ""}>${c}</option>`).join("")}</select></label>`).join("")}` : ""}
           ${inCamp(g) ? `<button type="button" class="btn ghost small" id="cp-off">Quitter le mode campagne</button>`
@@ -2084,7 +2095,7 @@
     }
 
     function exportPayload(g) {
-      return { format: GANG_FORMAT, version: 1, edition: "N23", gang: { name: g.name, house: g.house, budget: g.budget, fighters: g.fighters, campagne: g.campagne || null, venSets: g.venSets || null } };
+      return { format: GANG_FORMAT, version: 1, edition: "N23", gang: { name: g.name, house: g.house, budget: g.budget, fighters: g.fighters, campagne: g.campagne || null, venSets: g.venSets || null, allegeance: g.allegeance || null } };
     }
     function encodeCode(obj) {
       return "NC1:" + btoa(unescape(encodeURIComponent(JSON.stringify(obj))));
@@ -2106,6 +2117,7 @@
           gear: Array.isArray(f.gear) ? f.gear.map(String) : [], betes: Array.isArray(f.betes) ? f.betes.map(String) : [],
           options: Array.isArray(f.options) ? f.options.map(Number).filter(n => n >= 0) : [],
           skills: Array.isArray(f.skills) ? f.skills.map(String).slice(0, 30) : [],
+          arch: typeof f.arch === "string" ? f.arch.slice(0, 20) : undefined,
           xp: Math.max(0, parseInt(f.xp, 10) || 0), recup: !!f.recup, captif: String(f.captif || "").slice(0, 60), spec: !!f.spec,
           adv: Array.isArray(f.adv) ? f.adv.slice(0, 60).map(a => ({ id: String(a.id || ""), stat: a.stat ? String(a.stat) : undefined, skill: a.skill ? String(a.skill) : undefined,
             cr: parseInt(a.cr, 10) || 0, xp: parseInt(a.xp, 10) || 0, label: String(a.label || "").slice(0, 60) })) : [],
@@ -2113,6 +2125,7 @@
             mods: Object.fromEntries(Object.entries(i.mods || {}).filter(([k]) => STAT_KEYS.includes(k)).map(([k, v]) => [k, parseInt(v, 10) || 0])) })) : [],
           ...(f.baseProfil && typeof f.baseProfil === "object" ? { baseProfil: Object.fromEntries(STAT_KEYS.map(k => [k, String(f.baseProfil[k] || "")])), baseCout: parseInt(f.baseCout, 10) || 0, promuDe: String(f.promuDe || "") } : {})
         })),
+        allegeance: typeof src.allegeance === "string" ? src.allegeance.slice(0, 20) : undefined,
         venSets: Array.isArray(src.venSets) ? src.venSets.map(String).filter(x => SKILL_CATS.includes(x)).slice(0, 4) : undefined,
         campagne: src.campagne && typeof src.campagne === "object" ? { active: !!src.campagne.active, rep: Math.max(1, parseInt(src.campagne.rep, 10) || 1),
           magot: parseInt(src.campagne.magot, 10) || 0, territoires: Array.isArray(src.campagne.territoires) ? src.campagne.territoires.map(String).slice(0, 40) : ["colonie"],
@@ -2141,6 +2154,8 @@
       const t = e.target;
       if (!gbState || !t.closest || !$("view").contains(t)) return;
       if (t.id === "gb-name") mutateGang(g => { g.name = t.value.trim() || g.name; });
+      else if (t.dataset.gbArch != null) mutateGang(g => { const f = g.fighters[+t.dataset.gbArch]; f.arch = t.value; if (!inCamp(g)) f.skills = []; })
+      else if (t.id === "gb-alg") mutateGang(g => { g.allegeance = t.value; })
       else if (t.dataset.venSet != null) mutateGang(g => { g.venSets = (g.venSets || ["", "", "", ""]).slice(); g.venSets[+t.dataset.venSet] = t.value; })
       else if (t.id === "gb-budget") mutateGang(g => { g.budget = Math.max(0, parseInt(t.value, 10) || 0); });
       else if (t.id === "gb-recruit" && t.value) {

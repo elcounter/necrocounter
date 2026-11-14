@@ -73,6 +73,12 @@
       "nom": "Venators",
       "titre": "Venators (chasseurs de primes)",
       "fichier": "maisons/venators.json"
+    },
+    {
+      "id": "proscrits",
+      "nom": "Proscrits",
+      "titre": "Proscrits du Sous-Monde",
+      "fichier": "maisons/proscrits.json"
     }
   ]
 }

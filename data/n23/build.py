@@ -202,9 +202,11 @@ def link_weapons(houses, weapons):
         for item in house["equipement"]:
             if "arme" in item:
                 continue
-            if not item["categorie"].startswith("Armes") and item["categorie"] not in ("Pistolets", "Grenades", "Couteaux"):
+            cat = item.get("categorieArme", item["categorie"]).split(" : ")[-1]
+            if not cat.startswith("Armes") and cat not in ("Pistolets", "Grenades", "Couteaux"):
                 continue
-            target = next((w for w in by_slug if item["id"].startswith(w["id"])), None)
+            key = item["id"][3:] if item["id"].startswith("cc-") else item["id"]
+            target = next((w for w in by_slug if key.startswith(w["id"])), None)
             if target is None:
                 WARNINGS.append(f"{house['nom']} : pas de profil pour {item['nom']}")
                 continue
@@ -296,13 +298,104 @@ def build_venators(comptoir, houses):
     return v
 
 
+PROSCRIT_SKILLS = {
+    "chef": {
+        "bagarreur": ({"Muscle", "Férocité", "Autorité"}, {"Agilité", "Combat"}),
+        "flingueur": ({"Agilité", "Autorité", "Tir"}, {"Ruse", "Savoir"}),
+        "survivant": ({"Combat", "Férocité", "Autorité"}, {"Agilité", "Muscle"}),
+        "genie": ({"Ruse", "Autorité", "Savoir"}, {"Agilité", "Tir"}),
+        "wyrd": ({"Autorité"}, {"Ruse"}),
+    },
+    "champion": {
+        "bagarreur": ({"Muscle"}, {"Férocité", "Autorité"}),
+        "flingueur": ({"Tir"}, {"Agilité", "Autorité"}),
+        "survivant": ({"Férocité"}, {"Combat", "Autorité"}),
+        "genie": ({"Ruse"}, {"Autorité", "Savoir"}),
+        "wyrd": (set(), {"Ruse", "Autorité"}),
+    },
+}
+ARCHETYPES = {"bagarreur": "Bagarreur", "flingueur": "Flingueur", "survivant": "Survivant", "genie": "Génie", "wyrd": "Wyrd"}
+
+
+def build_proscrits(comptoir, houses):
+    """Proscrits du Sous-Monde (Livre des Proscrits) : profils, archétypes, Comptoir limité, Allégeance."""
+    order = SKILL_CATEGORIES[:8]
+    v = {"id": "proscrits", "nom": "Proscrits", "titre": "Proscrits du Sous-Monde",
+         "source": "Livre des Proscrits (version française)", "combattants": [], "competences": {},
+         "equipement": [], "rareteMax": {"chef": 9, "champion": 8, "ganger": 0},
+         "gangerArmes": ["Armes de base", "Pistolets", "Armes de corps à corps"],
+         "archetypes": {"labels": ARCHETYPES, "roles": {}},
+         "creation": {
+             "chefEtChampion": "Le Chef et les Champions choisissent un Archétype (Bagarreur, Flingueur, Survivant, Génie ou Wyrd) qui fixe leurs sets de compétences, et commencent avec une compétence gratuite de leurs sets Primaires (un Wyrd peut prendre un Pouvoir Wyrd). Deux Champions maximum à la fondation, puis un par tranche complète de 3 Rebuts.",
+             "novice": "Pas de Novice : un résultat qui donnerait un Novice donne un Rebut de la Ruche.",
+             "armeSpeciale": "Chef : Comptoir Commercial jusqu'à Rareté 9, Champion jusqu'à 8, sans restriction de type. Rebut : sa propre liste (armes de base, pistolets et corps à corps) ; le Spécialiste ajoute les armes spéciales en campagne."},
+         "regles": [
+             {"nom": "Profils", "texte": "Le Chef Proscrit choisit un des quatre profils proposés, selon la figurine."},
+             {"nom": "Chef de gang", "texte": "Un seul Chef, qui ne prend jamais sa retraite. S'il meurt en campagne, le gang se disperse et un nouveau gang doit être fondé."},
+             {"nom": "Hiérarchie du gang", "texte": "Une fois le gang Dégonflé, si le Chef réussit son test de Sang-froid en phase de Fin, les Proscrits à 12\" ou moins réussissent automatiquement le leur (6\" pour un Champion). Chef et Champions font des actions d'après-bataille et peuvent avoir plusieurs panoplies."},
+             {"nom": "Activation de groupe", "texte": "Le Chef peut activer à sa suite 2 Proscrits Parés à 3\" ou moins, un Champion 1."},
+             {"nom": "Composition", "texte": "Les Rebuts doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires). Trois armes maximum, un Rebut non Spécialiste ne dépasse jamais trois armes et ne peut pas défausser une arme."},
+             {"nom": "Allégeance du Chef", "texte": "Sans-clan : ni Intègre ni Hors-la-Loi pour les effets, aucune Alliance possible. Maison Clanique (une des six) : le gang compte comme cette Maison et accède à sa liste d'équipement et ses Bêtes exotiques ; pas d'alliance avec les ennemis de cette Maison. Guilde des Marchands, Organisation Criminelle ou Maison Noble : accès à l'équipement de la Délégation correspondante (livres des Maisons, non intégrés ici) et alliances limitées à cette organisation."},
+             {"nom": "Wyrd", "texte": "Un Chef ou Champion Wyrd peut choisir des Pouvoirs Wyrd à la place des compétences et gagne la règle Psyker Clandestin."}]}
+    prof = ['7" 4+ 2+ 3 3 2 3+ 2 5+ 4+ 7+ 5+', '6" 3+ 3+ 3 3 2 3+ 3 6+ 7+ 6+ 4+',
+            '5" 2+ 4+ 4 3 2 4+ 3 6+ 6+ 4+ 7+', '4" 3+ 4+ 3 4 3 5+ 2 6+ 4+ 6+ 5+']
+    for n, stats in enumerate(prof, 1):
+        v["combattants"].append({"id": "chef" if n == 1 else f"chef-{n}", "role": f"Chef Proscrit (profil {n})", "cout": 125,
+                                 "profil": dict(zip(STATS, stats.split())), "equipementDeDepart": [], **({"base": "chef"} if n > 1 else {})})
+    v["combattants"].append({"id": "champion", "role": "Champion Proscrit", "cout": 60,
+                             "profil": dict(zip(STATS, '5" 3+ 4+ 3 3 2 4+ 1 6+ 7+ 8+ 8+'.split())), "equipementDeDepart": []})
+    v["combattants"].append({"id": "ganger", "role": "Rebut Proscrit", "cout": 30,
+                             "profil": dict(zip(STATS, '5" 4+ 4+ 3 3 1 4+ 1 8+ 8+ 8+ 8+'.split())), "equipementDeDepart": []})
+    for role, arch in PROSCRIT_SKILLS.items():
+        v["archetypes"]["roles"][role] = {a: {"primaires": [c for c in order if c in p], "secondaires": [c for c in order if c in s]}
+                                         for a, (p, s) in arch.items()}
+        v["competences"][role] = v["archetypes"]["roles"][role]["bagarreur"]
+    v["competences"]["specialiste"] = {"primaires": ["Ruse"], "secondaires": ["Férocité"]}
+    for item in comptoir:
+        lvl = rarity_level(item["rarete"])
+        if lvl is None or item["categorie"] == "Bêtes exotiques" or item["prix"] <= 0:
+            continue
+        it = {k: item[k] for k in ("nom", "prix", "categorie", "id", "compteDouble", "accessoireUnique") if k in item}
+        it.update({"rarete": item["rarete"], "niveau": lvl, "roles": ["chef", "champion"],
+                   "categorie": "Comptoir : " + item["categorie"]})
+        it["id"] = "cc-" + it["id"]
+        it["categorieArme"] = item["categorie"]
+        v["equipement"].append(it)
+    rebut = [("Armes de base", ["Fusil d'assaut|15", "Fusil d'assaut de récup'|10", "Fusil laser|15", "Fusil à canon scié|15",
+                                "Fusil à pompe (balles & grenaille)|30", "Couteaux de lancer|10"]),
+             ("Pistolets", ["Pistolet-mitrailleur|10", "Pistolet-mitrailleur de récup'|5", "Pistolet laser|10", "Flingue|5"]),
+             ("Armes de corps à corps", ["Hache|10", "Épée tronçonneuse|25", "Couteau de combat|10", "Fléau|20", "Masse (matraque)|10",
+                                         "Hache à deux mains*|25", "Marteau à deux mains*|35"]),
+             ("Grenades", ["Charges explosives|35", "Grenades Frag|30", "Grenades Krak|45", "Grenades fumigènes|15"]),
+             ("Armures", ["Armure Flak|10", "Combinaison NBC|10", "Armure composite|15"]),
+             ("Équipement personnel", ["Balles dum-dum (flingue)|5", "Sous-combinaison renforcée|25", "Filin|10", "Filtre nasal|10", "Photolunettes|35"]),
+             ("Accessoires d'armes", ["Lunette télescopique'|25"])]
+    for cat, rows in rebut:
+        for r in rows:
+            name, price = r.split("|")
+            it = parse_price(name, price, section=cat)
+            it["id"] = slug(it["nom"])
+            it["roles"] = ["ganger"]
+            v["equipement"].append(it)
+    for h in [x for x in houses if "titre" not in x]:
+        for item in h["equipement"]:
+            it = dict(item)
+            it["id"] = f"alg-{h['id']}-{item['id']}"
+            it["categorie"] = f"Allégeance {h['nom']} : {item['categorie']}"
+            it["allegeance"] = h["id"]
+            it.pop("roles", None)
+            v["equipement"].append(it)
+    return v
+
+
 def main():
     weapons = parse_armes()
     comptoir = parse_comptoir()
     houses = parse_maisons()
     link_weapons(houses, weapons)
     houses.append(build_venators(comptoir, houses))
-    link_weapons(houses[-1:], weapons)
+    houses.append(build_proscrits(comptoir, houses))
+    link_weapons(houses[-2:], weapons)
 
     meta = {"edition": "Necromunda N23", "source": "Livre de règles N23 (version française)"}
     rules = {
