@@ -520,7 +520,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.11.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.11.1 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -706,7 +706,7 @@
         <div class="houses">${index.maisons.map(m => {
           const on = ACTIVE_HOUSES.includes(m.id);
           return `<a class="fcard${on ? "" : " off"}" href="#gangs/n23/${esc(m.id)}"${on ? "" : ' aria-disabled="true" tabindex="-1"'}>
-            <span><b>${esc(houseTitle(m))}</b><br><span>${on ? (m.livre || "Listes de gang N23") : "Bientôt disponible"}</span></span></a>`;
+            <span><b>${esc(houseTitle(m))}</b><br><span>${on ? (m.livre || "Gangs du Sous-Monde") : "Bientôt disponible"}</span></span></a>`;
         }).join("")}
           <a class="fcard" href="#gangs/n23/mercenaires"><span><b>Aventuriers, Brutes et Bêtes exotiques</b><br><span>Recrues spéciales de toutes les Maisons</span></span></a>
         </div>
