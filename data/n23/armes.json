@@ -3,6 +3,48 @@
   "source": "Livre de règles N23 (version française)",
   "armes": [
     {
+      "id": "bolter-ironhead",
+      "nom": "Bolter Ironhead",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Tir Rapide (2)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-d-assaut-ironhead",
+      "nom": "Fusil d'assaut Ironhead",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "8\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Tir Rapide (2)"
+          ]
+        }
+      ]
+    },
+    {
       "id": "haste-avec-fusil-d-assaut-cawdor",
       "nom": "Haste avec fusil d'assaut Cawdor",
       "categorie": "Armes de base",
@@ -450,6 +492,143 @@
       ]
     },
     {
+      "id": "flingue-ironhead",
+      "nom": "Flingue Ironhead",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Abondance",
+            "Arme de Poing",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flingue-ironhead-avec-balles-dum-dum",
+      "nom": "Flingue Ironhead avec balles dum-dum",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "5\"",
+          "porL": "10\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Arme de Poing",
+            "Limité",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-flammes-leger-ironhead",
+      "nom": "Lance-flammes léger Ironhead",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Déluge de Feu (1)",
+            "Incendiaire",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lithobruleur",
+      "nom": "Lithobrûleur",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "2\"",
+          "porL": "4\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Arme de Poing",
+            "Fusion",
+            "Module de Puissance",
+            "Rareté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-bolter-ironhead",
+      "nom": "Pistolet bolter Ironhead",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "6+",
+          "traits": [
+            "Arme de Poing",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-mitrailleur-ironhead",
+      "nom": "Pistolet-mitrailleur Ironhead",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Arme de Poing",
+            "Tir Rapide (2)"
+          ]
+        }
+      ]
+    },
+    {
       "id": "combi-pistolet",
       "nom": "Combi-pistolet",
       "categorie": "Pistolets",
@@ -879,6 +1058,52 @@
             "Rareté",
             "Souffle",
             "Toile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fuseur-ironhead",
+      "nom": "Fuseur Ironhead",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "8",
+          "PA": "-4",
+          "D": "3",
+          "Mu": "5+",
+          "traits": [
+            "Fusion",
+            "Rareté",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-flammes-ironhead",
+      "nom": "Lance-flammes Ironhead",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Déluge de Feu (1)",
+            "Incendiaire",
+            "Souffle"
           ]
         }
       ]
@@ -1389,6 +1614,52 @@
           "Mu": "-",
           "traits": [
             "Explosion (3\")"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-flammes-lourd-ironhead",
+      "nom": "Lance-flammes lourd Ironhead",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Déluge de Feu (1)",
+            "Encombrant",
+            "Incendiaire",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mitrailleuse-ironhead",
+      "nom": "Mitrailleuse Ironhead",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "20\"",
+          "porL": "40\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Encombrant",
+            "Tir Rapide (3)"
           ]
         }
       ]
@@ -2221,6 +2492,74 @@
       ]
     },
     {
+      "id": "extracteur-de-gemmes",
+      "nom": "Extracteur de gemmes",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Module de Puissance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scie-circulaire-a-pierre",
+      "nom": "Scie circulaire à pierre",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Module de Puissance",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soudeuse-a-arc-ironhead",
+      "nom": "Soudeuse à arc Ironhead",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-2",
+          "D": "3",
+          "Mu": "-",
+          "traits": [
+            "Incendiaire",
+            "Mêlée",
+            "Module de Puissance"
+          ]
+        }
+      ]
+    },
+    {
       "id": "crocs-rat-geant-des-desolations",
       "nom": "Crocs (Rat Géant des Désolations)",
       "categorie": "Armes de corps à corps",
@@ -3045,6 +3384,29 @@
           "traits": [
             "Incendiaire",
             "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gantelet-energetique",
+      "nom": "Gantelet énergétique",
+      "categorie": "Armes à énergie/choc",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Énergétique",
+            "Pulvériser"
           ]
         }
       ]

@@ -4,6 +4,8 @@
 # Une ligne terminée par "?" signale une valeur douteuse à vérifier dans le livre.
 
 ## Armes de base
+Bolter Ironhead | 12" | 24" | +1 | - | 4 | -1 | 2 | 6+ | Tir Rapide (2)
+Fusil d'assaut Ironhead | 8" | 24" | +1 | - | 3 | - | 1 | 4+ | Tir Rapide (2)
 Haste avec fusil d'assaut Cawdor
 - haste | E | 2" | -1 | - | F+1 | - | 1 | - | Mêlée, Encombrant, Polyvalent
 - fusil d'assaut | 8" | 24" | +1 | - | 3 | - | 1 | 5+ | Tir Rapide (1)
@@ -35,6 +37,12 @@ Laser de suppression
 - faisceau court | 8" | 16" | +1 | - | 4 | - | 2 | 4+ | Contrecoup, Abondance
 
 ## Pistolets
+Flingue Ironhead | 6" | 12" | +2 | - | 3 | - | 1 | 4+ | Abondance, Arme de Poing, Tir Rapide (1)
+Flingue Ironhead avec balles dum-dum | 5" | 10" | +1 | - | 4 | - | 1 | 4+ | Arme de Poing, Limité, Tir Rapide (1)
+Lance-flammes léger Ironhead | - | S | - | - | 3 | - | 1 | 5+ | Déluge de Feu (1), Incendiaire, Souffle
+Lithobrûleur | 2" | 4" | - | - | 5 | -2 | 2 | 5+ | Arme de Poing, Fusion, Module de Puissance, Rareté
+Pistolet bolter Ironhead | 6" | 12" | +1 | - | 4 | -1 | 2 | 6+ | Arme de Poing, Tir Rapide (1)
+Pistolet-mitrailleur Ironhead | 4" | 12" | +1 | - | 3 | - | 1 | 4+ | Arme de Poing, Tir Rapide (2)
 Combi-pistolet
 - flingue | 6" | 12" | +2 | - | 3 | - | 1 | 4+ | Abondance, Arme de Poing, Combi
 - pistolet-mitrailleur | 4" | 12" | +1 | - | 3 | - | 1 | 4+ | Arme de Poing, Combi, Tir Rapide (1)
@@ -61,6 +69,8 @@ Pistolet-mitrailleur de récup' | 4" | 12" | +1 | - | 3 | - | 1 | 5+ | Arme de P
 Projecteur de toile (Cyberachnid Van Saar) | - | S | - | - | 2 | - | - | 6+ | Rareté, Souffle, Toile
 
 ## Armes spéciales
+Fuseur Ironhead | 6" | 12" | +1 | - | 8 | -4 | 3 | 5+ | Fusion, Rareté, Tir Rapide (1)
+Lance-flammes Ironhead | - | S | - | - | 4 | -1 | 1 | 5+ | Déluge de Feu (1), Incendiaire, Souffle
 Arme combinée
 - bolter | 12" | 24" | +1 | - | 4 | -1 | 2 | 6+ | Combi, Tir Rapide (1)
 - fusil laser | 18" | 24" | +1 | - | 3 | - | 1 | 2+ | Abondance, Combi
@@ -93,6 +103,8 @@ Souffle à éruption gazeuse (Khimerix Escher) | - | S | - | - | - | - | - | - |
 Souffle à nuage chimique (Khimerix Escher) | 6" | 12" | +1 | - | 3 | -1 | 1 | - | Explosion (3")
 
 ## Armes lourdes
+Lance-flammes lourd Ironhead | - | S | - | - | 5 | -2 | 1 | 6+ | Déluge de Feu (1), Encombrant, Incendiaire, Souffle
+Mitrailleuse Ironhead | 20" | 40" | - | -1 | 4 | -1 | 1 | 4+ | Encombrant, Tir Rapide (3)
 Bolter lourd Vartijan (Exo-Foreuse Squat) | 18" | 36" | +1 | - | 5 | -2 | 2 | 5+ | Tir Rapide (3)
 Broyeur sismique (Exo-Foreuse Squat) | - | S | - | - | 2 | - | 1 | 6+ | Commotion, Sismique, Souffle
 Lance-flammes lourd Vartijan (Exo-Foreuse Squat) | - | S | - | - | 5 | -2 | 2 | 5+ | Déluge de Feu (1), Incendiaire, Souffle
@@ -142,6 +154,9 @@ Piège à fusion | - | - | - | - | 8 | -4 | 3 | - | Explosion (5"), Fusion, Usag
 Piège à gaz | - | - | - | - | - | - | - | - | Explosion (5"), Gaz, Usage Unique
 
 ## Armes de corps à corps
+Extracteur de gemmes | - | E | - | - | F+1 | -1 | 2 | - | Mêlée, Module de Puissance
+Scie circulaire à pierre | - | E | - | - | F+1 | -1 | 1 | - | Mêlée, Module de Puissance, Perforant
+Soudeuse à arc Ironhead | - | E | - | - | F+2 | -2 | 3 | - | Incendiaire, Mêlée, Module de Puissance
 Crocs (Rat Géant des Désolations) | - | E | - | - | F | - | 1 | - | Mêlée
 Dents (Lamia) | - | E | - | - | F | - | 2 | - | Mêlée
 Gueule crochue (Centipatte) | - | E | - | - | * | - | - | - | Mêlée, Toxine
@@ -184,6 +199,7 @@ Servopince | - | E | - | - | F+2 | - | 2 | - | Mêlée
 Soudeuse à l'arc ("Jotunn" Servitor) | - | E | - | - | F+2 | -3 | 3 | - | Incendiaire, Mêlée
 
 ## Armes à énergie/choc
+Gantelet énergétique | - | E | - | - | F+2 | -2 | 2 | - | Mêlée, Énergétique, Pulvériser
 Bouclier d'énergie modèle "Hystrar" | - | E | - | - | F | - | 1 | - | Bouclier à énergie, Contrecoup, Mêlée
 Découpeur laser | E | 2" | +1 | - | 9 | -3 | 2 | 6+ | Mêlée, Rareté, Polyvalent
 Électrobâton | - | E | - | - | F | - | 1 | - | Mêlée, Parade, Choc

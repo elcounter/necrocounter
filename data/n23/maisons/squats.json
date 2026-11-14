@@ -1,0 +1,534 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre des Outreterres (version française)",
+  "reglesDeCreation": {
+    "novice": "Un Creuseur peut prendre toute arme de sa propre liste ; pas de limite de 20 crédits.",
+    "armeSpeciale": "Un Frère Foreur n'a accès qu'aux armes de base, pistolets et armes de corps à corps de sa liste. À la création, un seul Frère Foreur peut être promu Spécialiste : il accède alors à toute sa liste, dont les armes spéciales.",
+    "chefEtChampion": "Le Maître Chartiste et les Maîtres Foreurs n'ont aucune restriction d'armes dans leur liste et commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "squats",
+  "nom": "Prospecteurs Squats Ironhead",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Maître Chartiste",
+      "cout": 115,
+      "profil": {
+        "M": "4\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "4",
+        "PV": "3",
+        "I": "5+",
+        "A": "2",
+        "CD": "5+",
+        "SF": "5+",
+        "V": "5+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "champion",
+      "role": "Maître Foreur",
+      "cout": 85,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "3+",
+        "F": "3",
+        "E": "4",
+        "PV": "2",
+        "I": "5+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "novice",
+      "role": "Creuseur",
+      "cout": 35,
+      "profil": {
+        "M": "5\"",
+        "CC": "5+",
+        "CT": "5+",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "7+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "ganger",
+      "role": "Frère Foreur",
+      "cout": 50,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "4",
+        "PV": "1",
+        "I": "5+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Muscle",
+        "Autorité",
+        "Tir"
+      ],
+      "secondaires": [
+        "Combat",
+        "Savoir",
+        "Sagesse des Anciens"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Muscle",
+        "Sagesse des Anciens"
+      ],
+      "secondaires": [
+        "Férocité",
+        "Autorité",
+        "Tir"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Tir"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Combat"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Muscle",
+        "Tir"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Fusil d'assaut Ironhead",
+      "prix": 25,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-ironhead",
+      "arme": "fusil-d-assaut-ironhead"
+    },
+    {
+      "nom": "Bolter Ironhead",
+      "prix": 95,
+      "categorie": "Armes de base",
+      "id": "bolter-ironhead",
+      "arme": "bolter-ironhead"
+    },
+    {
+      "nom": "Pistolet-mitrailleur Ironhead",
+      "prix": 20,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-ironhead",
+      "arme": "pistolet-mitrailleur-ironhead"
+    },
+    {
+      "nom": "Pistolet bolter Ironhead",
+      "prix": 45,
+      "categorie": "Pistolets",
+      "id": "pistolet-bolter-ironhead",
+      "arme": "pistolet-bolter-ironhead"
+    },
+    {
+      "nom": "Flingue Ironhead",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "flingue-ironhead",
+      "arme": "flingue-ironhead"
+    },
+    {
+      "nom": "Lance-flammes léger Ironhead",
+      "prix": 85,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger-ironhead",
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "arme": "lance-flammes-leger-ironhead"
+    },
+    {
+      "nom": "Lithobrûleur",
+      "prix": 70,
+      "categorie": "Pistolets",
+      "id": "lithobruleur",
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "arme": "lithobruleur"
+    },
+    {
+      "nom": "Lance-flammes Ironhead",
+      "prix": 150,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes-ironhead",
+      "arme": "lance-flammes-ironhead"
+    },
+    {
+      "nom": "Fuseur Ironhead",
+      "prix": 155,
+      "categorie": "Armes spéciales",
+      "id": "fuseur-ironhead",
+      "arme": "fuseur-ironhead"
+    },
+    {
+      "nom": "Lance-flammes lourd Ironhead",
+      "prix": 210,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd-ironhead",
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "arme": "lance-flammes-lourd-ironhead"
+    },
+    {
+      "nom": "Mitrailleuse Ironhead",
+      "prix": 140,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse-ironhead",
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "arme": "mitrailleuse-ironhead"
+    },
+    {
+      "nom": "Laser minier",
+      "prix": 125,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "laser-minier",
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "arme": "laser-minier"
+    },
+    {
+      "nom": "Scie circulaire à pierre",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "scie-circulaire-a-pierre",
+      "arme": "scie-circulaire-a-pierre"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Marteau énergétique",
+      "prix": 45,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-energetique",
+      "arme": "marteau-energetique"
+    },
+    {
+      "nom": "Pioche énergétique",
+      "prix": 40,
+      "categorie": "Armes de corps à corps",
+      "id": "pioche-energetique",
+      "arme": "pioche-energetique"
+    },
+    {
+      "nom": "Hache énergétique",
+      "prix": 35,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-energetique",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "hache-energetique"
+    },
+    {
+      "nom": "Extracteur de gemmes",
+      "prix": 50,
+      "categorie": "Armes de corps à corps",
+      "id": "extracteur-de-gemmes",
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "arme": "extracteur-de-gemmes"
+    },
+    {
+      "nom": "Soudeuse à arc Ironhead",
+      "prix": 100,
+      "categorie": "Armes de corps à corps",
+      "id": "soudeuse-a-arc-ironhead",
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "arme": "soudeuse-a-arc-ironhead"
+    },
+    {
+      "nom": "Gantelet énergétique",
+      "prix": 60,
+      "categorie": "Armes de corps à corps",
+      "id": "gantelet-energetique",
+      "roles": [
+        "chef",
+        "champion"
+      ],
+      "arme": "gantelet-energetique"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Grenades",
+      "id": "charges-explosives",
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Armure carapace légère",
+      "prix": 80,
+      "categorie": "Armures",
+      "id": "armure-carapace-legere"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Armure carapace lourde",
+      "prix": 100,
+      "categorie": "Armures",
+      "id": "armure-carapace-lourde",
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Champ de conversion",
+      "prix": 60,
+      "categorie": "Champs protecteurs",
+      "id": "champ-de-conversion",
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Champ téléporteur",
+      "prix": 70,
+      "categorie": "Champs protecteurs",
+      "id": "champ-teleporteur",
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Champ réfracteur",
+      "prix": 50,
+      "categorie": "Champs protecteurs",
+      "id": "champ-refracteur",
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue Ironhead)",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "balles-dum-dum-pour-flingue-ironhead"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Grav-chute",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "grav-chute"
+    },
+    {
+      "nom": "Médikit",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "medikit"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Lampe torche",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "lampe-torche"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 40,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-infrarouge"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette"
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-telescopique"
+    },
+    {
+      "nom": "Suspenseur",
+      "prix": 60,
+      "categorie": "Accessoires d'armes",
+      "id": "suspenseur",
+      "roles": [
+        "chef",
+        "champion"
+      ]
+    }
+  ],
+  "titre": "Prospecteurs Squats Ironhead",
+  "gangerArmes": [
+    "Armes de base",
+    "Pistolets",
+    "Armes de corps à corps"
+  ],
+  "regles": [
+    {
+      "nom": "Chef de gang",
+      "texte": "Le gang a toujours un seul Maître Chartiste. Il ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu à sa place."
+    },
+    {
+      "nom": "Hiérarchie du gang",
+      "texte": "Une fois le gang Dégonflé, si le Maître Chartiste réussit son test de Sang-froid en phase de Fin, les Squats alliés à 12\" ou moins réussissent automatiquement le leur et ne fuient pas (6\" pour un Maître Foreur). Ces deux rangs font des actions d'après-bataille."
+    },
+    {
+      "nom": "Les Ficelles du Métier",
+      "texte": "Maître Chartiste, Maîtres Foreurs et Spécialistes peuvent avoir plusieurs panoplies d'équipement."
+    },
+    {
+      "nom": "Activation de groupe",
+      "texte": "En s'activant, le Maître Chartiste peut activer à sa suite 2 Squats Parés à 3\" ou moins (1 pour un Maître Foreur), un par un. Ceux-ci ne relancent pas d'activation de groupe."
+    },
+    {
+      "nom": "Combattants du gang",
+      "texte": "Frères Foreurs et Creuseurs doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires)."
+    },
+    {
+      "nom": "Promotion",
+      "texte": "Un Creuseur qui a 5 progressions ou plus au Temps Mort peut devenir Spécialiste. Des Frères Foreurs peuvent aussi devenir Spécialistes en campagne en dépensant de l'XP."
+    },
+    {
+      "nom": "Apprentissage rapide",
+      "texte": "Le Creuseur ne paie pas le surcoût de 2 XP quand il améliore plusieurs fois la même caractéristique."
+    },
+    {
+      "nom": "Module de puissance",
+      "texte": "Les armes avec ce trait ne comptent pas dans la limite d'armes (deux au maximum par combattant). Une arme de Mêlée de ce type donne une attaque supplémentaire au corps à corps."
+    },
+    {
+      "nom": "En campagne Dominion",
+      "texte": "Le gang est traité comme les autres : il démarre avec une Colonie et prend des Territoires normalement."
+    }
+  ]
+}

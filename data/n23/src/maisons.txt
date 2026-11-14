@@ -347,3 +347,86 @@ Photolunettes | 35
 Pointeur laser | 35
 Respirateur | 15
 Suspenseur | 60
+
+= Prospecteurs Squats Ironhead => squats
+source: Livre des Outreterres (version française)
+creation: novice | Un Creuseur peut prendre toute arme de sa propre liste ; pas de limite de 20 crédits.
+creation: armeSpeciale | Un Frère Foreur n'a accès qu'aux armes de base, pistolets et armes de corps à corps de sa liste. À la création, un seul Frère Foreur peut être promu Spécialiste : il accède alors à toute sa liste, dont les armes spéciales.
+creation: chefEtChampion | Le Maître Chartiste et les Maîtres Foreurs n'ont aucune restriction d'armes dans leur liste et commencent avec une compétence gratuite de leurs sets Primaires.
+gangerArmes: Armes de base, Pistolets, Armes de corps à corps
+regle: Chef de gang | Le gang a toujours un seul Maître Chartiste. Il ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu à sa place.
+regle: Hiérarchie du gang | Une fois le gang Dégonflé, si le Maître Chartiste réussit son test de Sang-froid en phase de Fin, les Squats alliés à 12" ou moins réussissent automatiquement le leur et ne fuient pas (6" pour un Maître Foreur). Ces deux rangs font des actions d'après-bataille.
+regle: Les Ficelles du Métier | Maître Chartiste, Maîtres Foreurs et Spécialistes peuvent avoir plusieurs panoplies d'équipement.
+regle: Activation de groupe | En s'activant, le Maître Chartiste peut activer à sa suite 2 Squats Parés à 3" ou moins (1 pour un Maître Foreur), un par un. Ceux-ci ne relancent pas d'activation de groupe.
+regle: Combattants du gang | Frères Foreurs et Creuseurs doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires).
+regle: Promotion | Un Creuseur qui a 5 progressions ou plus au Temps Mort peut devenir Spécialiste. Des Frères Foreurs peuvent aussi devenir Spécialistes en campagne en dépensant de l'XP.
+regle: Apprentissage rapide | Le Creuseur ne paie pas le surcoût de 2 XP quand il améliore plusieurs fois la même caractéristique.
+regle: Module de puissance | Les armes avec ce trait ne comptent pas dans la limite d'armes (deux au maximum par combattant). Une arme de Mêlée de ce type donne une attaque supplémentaire au corps à corps.
+regle: En campagne Dominion | Le gang est traité comme les autres : il démarre avec une Colonie et prend des Territoires normalement.
+combattant: Maître Chartiste => Chef | 115 | 4" 3+ 3+ 3 4 3 5+ 2 5+ 5+ 5+ 6+ |
+combattant: Maître Foreur => Champion | 85 | 4" 4+ 3+ 3 4 2 5+ 2 6+ 6+ 6+ 7+ |
+combattant: Creuseur => Novice | 35 | 5" 5+ 5+ 3 4 1 4+ 1 8+ 7+ 6+ 7+ |
+combattant: Frère Foreur => Ganger | 50 | 4" 4+ 4+ 3 4 1 5+ 1 7+ 6+ 6+ 7+ |
+competences: Chef | Muscle P, Combat S, Autorité P, Savoir S, Tir P, Sagesse des Anciens S
+competences: Champion | Muscle P, Férocité S, Autorité S, Tir S, Sagesse des Anciens P
+competences: Novice | Muscle S, Combat S, Tir P
+competences: Spécialiste | Muscle P, Combat S, Ruse S, Tir P
+## Armes de base
+Fusil d'assaut Ironhead | 25
+Bolter Ironhead | 95
+## Pistolets
+Pistolet-mitrailleur Ironhead | 20
+Pistolet bolter Ironhead | 45
+Flingue Ironhead | 10
+## Pistolets [chef, champion]
+Lance-flammes léger Ironhead | 85
+Lithobrûleur | 70
+## Armes spéciales
+Lance-flammes Ironhead | 150
+Fuseur Ironhead | 155
+## Armes lourdes [chef, champion]
+Lance-flammes lourd Ironhead* | 210
+Mitrailleuse Ironhead* | 140
+Laser minier* | 125
+## Armes de corps à corps
+Scie circulaire à pierre | 25
+Couteau de combat | 15
+Marteau énergétique | 45
+Pioche énergétique | 40
+## Armes de corps à corps [chef, champion, ganger]
+Hache énergétique | 35
+## Armes de corps à corps [chef, champion]
+Extracteur de gemmes | 50
+Soudeuse à arc Ironhead | 100
+Gantelet énergétique | 60
+## Grenades
+Charges explosives | 35
+Grenades Frag | 30
+Grenades Krak | 45
+Grenades fumigènes | 15
+## Armures
+Armure carapace légère | 80
+Armure Flak | 10
+Armure composite | 15
+## Armures [chef, champion]
+Armure carapace lourde | 100
+## Champs protecteurs [chef, champion]
+Champ de conversion | 60
+Champ téléporteur | 70
+Champ réfracteur | 50
+## Équipement personnel
+Balles dum-dum (pour flingue Ironhead) | 5
+Bio-booster | 35
+Filin | 10
+Filtre nasal | 10
+Grav-chute | 40
+Médikit | 30
+Photolunettes | 35
+Lampe torche | 15
+Respirateur | 15
+## Accessoires d'armes
+Lunette infrarouge' | 40
+Lunette' | 35
+Lunette télescopique' | 25
+## Accessoires d'armes [chef, champion]
+Suspenseur | 60

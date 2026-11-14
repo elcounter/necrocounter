@@ -495,7 +495,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.2.2 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.3.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -642,7 +642,10 @@
 
     // ---- Données Necromunda N23 ----
     const DATA = "data/n23/";
-    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar"];
+    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats"];
+    const houseTitle = h => h.titre || "Maison " + h.nom;
+    const noviceLimit = h => !h.titre;
+    const roleName = (h, id) => ((h.combattants || []).find(c => c.id === id) || {}).role || ROLE_LABEL[id] || id;
     const STAT_KEYS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"];
     const STAT_2D6 = ["CD", "SF", "V", "INT"]; // caractéristiques testées sur 2D6
     const SKILL_CATS = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir"];
@@ -668,12 +671,12 @@
         <h2>Gangs</h2>
         ${editionSwitch("gangs", "n23")}
         ${myGangsHtml()}
-        <h3 class="h3">Listes des Maisons</h3>
-        <p>Choisis une Maison pour voir ses combattants, ses compétences et sa liste d'équipement.</p>
+        <h3 class="h3">Listes de gangs</h3>
+        <p>Choisis un gang pour voir ses combattants, ses compétences et sa liste d'équipement.</p>
         <div class="houses">${index.maisons.map(m => {
           const on = ACTIVE_HOUSES.includes(m.id);
           return `<a class="fcard${on ? "" : " off"}" href="#gangs/n23/${esc(m.id)}"${on ? "" : ' aria-disabled="true" tabindex="-1"'}>
-            <span><b>Maison ${esc(m.nom)}</b><br><span>${on ? "Listes de gang N23" : "Bientôt disponible"}</span></span></a>`;
+            <span><b>${esc(houseTitle(m))}</b><br><span>${on ? (m.titre ? "Outreterres" : "Listes de gang N23") : "Bientôt disponible"}</span></span></a>`;
         }).join("")}
           <a class="fcard" href="#gangs/n23/mercenaires"><span><b>Aventuriers, Brutes et Bêtes exotiques</b><br><span>Recrues spéciales de toutes les Maisons</span></span></a>
         </div>
@@ -704,8 +707,8 @@
         return "<td>-</td>";
       };
       return `<div class="scroll"><table class="grid">
-        <thead><tr><th></th>${roles.map(r => `<th>${esc(ROLE_LABEL[r] || r)}</th>`).join("")}</tr></thead>
-        <tbody>${SKILL_CATS.map(c => `<tr><td>${c}</td>${roles.map(r => cell(r, c)).join("")}</tr>`).join("")}</tbody>
+        <thead><tr><th></th>${roles.map(r => `<th>${esc(roleName(h, r))}</th>`).join("")}</tr></thead>
+        <tbody>${SKILL_CATS.concat([...new Set(roles.flatMap(r => h.competences[r].primaires.concat(h.competences[r].secondaires)))].filter(c => !SKILL_CATS.includes(c))).map(c => `<tr><td>${c}</td>${roles.map(r => cell(r, c)).join("")}</tr>`).join("")}</tbody>
       </table></div>
       <p class="note">Prim. : set Primaire · Sec. : set Secondaire</p>`;
     }
@@ -729,7 +732,8 @@
         if (!g) groups.push(g = { cat: item.categorie, items: [] });
         g.items.push(item);
       });
-      const tags = item => [item.compteDouble ? "compte pour deux armes" : "", item.accessoireUnique ? "non cumulable" : ""]
+      const tags = item => [item.compteDouble ? "compte pour deux armes" : "", item.accessoireUnique ? "non cumulable" : "",
+        item.roles ? item.roles.map(r => roleName(h, r)).join(", ") + " seulement" : ""]
         .filter(Boolean).map(t => `<span class="tag">${t.charAt(0).toUpperCase() + t.slice(1)}</span>`).join("");
       return groups.map(g => `<div class="eqcat">${esc(g.cat)}</div>${g.items.map(item => {
         const weapon = item.arme && byId[item.arme];
@@ -743,13 +747,14 @@
     function houseHtml(h, armes, mercs) {
       const r = h.reglesDeCreation;
       return `<div class="page">
-        <h2>Maison ${esc(h.nom)}</h2>
-        <p><span class="badge">Necromunda N23</span></p>
+        <h2>${esc(houseTitle(h))}</h2>
+        <p><span class="badge">Necromunda N23</span>${h.titre ? ` <span class="badge">Outreterres</span>` : ""}</p>
         <div class="panel"><h3 class="sec">Combattants</h3><div class="body"><p class="legend2d6"><i></i>Caractéristiques testées sur 2D6 (CD, SF, V, INT)</p>${fightersHtml(h)}</div></div>
         <div class="panel"><h3 class="sec">Compétences accessibles</h3><div class="body">${skillsHtml(h)}</div></div>
         <div class="panel"><h3 class="sec">Règles de création</h3><div class="body"><ul class="rules">
           <li>${esc(r.chefEtChampion)}</li><li>${esc(r.novice)}</li><li>${esc(r.armeSpeciale)}</li>
         </ul></div></div>
+        ${h.regles ? `<div class="panel"><h3 class="sec">Règles spéciales</h3><div class="body"><ul class="rules">${h.regles.map(x => `<li><b>${esc(x.nom)} :</b> ${esc(x.texte)}</li>`).join("")}</ul></div></div>` : ""}
         <div class="panel"><h3 class="sec">Liste d'équipement</h3><div class="body">
           <p class="note" style="margin-top:0">Touche une arme pour afficher son profil.</p>
           ${equipmentHtml(h, armes)}
@@ -1536,15 +1541,20 @@
       if (!camp && total > g.budget) w.push(`Budget dépassé de ${total - g.budget} crédits.`);
       const chefs = g.fighters.filter(f => f.kind !== "brute" && f.type === "chef").length;
       if (chefs !== 1) w.push(chefs ? "Un gang ne peut avoir qu'un seul Chef." : "Il faut un Chef.");
-      if (!camp) g.fighters.filter(f => f.kind !== "brute" && f.type === "novice").forEach(f => {
+      g.fighters.filter(f => f.kind !== "brute").forEach(f => {
+        const bad = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && (i.roles && !i.roles.includes(f.type) || d.house.gangerArmes && f.type === "ganger" && !f.spec && i.arme && !d.house.gangerArmes.includes(i.categorie)));
+        if (bad.length) w.push(`${f.name || roleName(d.house, f.type)} : équipement non autorisé (${bad.map(i => i.nom).join(", ")}).`);
+      });
+      if (d.house.gangerArmes && !camp && g.fighters.filter(f => f.kind !== "brute" && f.type === "ganger" && f.spec).length > 1) w.push("À la création, un seul " + roleName(d.house, "ganger") + " peut être Spécialiste.");
+      if (!camp && noviceLimit(d.house)) g.fighters.filter(f => f.kind !== "brute" && f.type === "novice").forEach(f => {
         const big = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && i.prix > 20);
         if (big.length) w.push(`${f.name || "Novice"} : objet de plus de 20 crédits (${big.map(i => i.nom).join(", ")}).`);
       });
       const special = g.fighters.filter(f => f.kind !== "brute" && f.type === "ganger" &&
         (f.gear || []).some(id => (itemDef(id, d) || {}).categorie === SPECIAL_CAT)).length;
       g.fighters.filter(f => f.kind !== "brute" && (f.type === "chef" || f.type === "champion") && !(f.skills || []).length)
-        .forEach(f => w.push(`${f.name || (f.type === "chef" ? "Chef" : "Champion")} : choisis sa compétence de départ (gratuite).`));
-      if (!camp && special > 1) w.push(`À la création, un seul Ganger peut avoir une Arme Spéciale (${special} actuellement).`);
+        .forEach(f => w.push(`${f.name || roleName(d.house, f.type)} : choisis sa compétence de départ (gratuite).`));
+      if (!camp && !d.house.gangerArmes && special > 1) w.push(`À la création, un seul Ganger peut avoir une Arme Spéciale (${special} actuellement).`);
       const counts = {};
       g.fighters.forEach(f => {
         if (f.kind === "brute") counts["b:" + f.type] = (counts["b:" + f.type] || 0) + 1;
@@ -1601,7 +1611,8 @@
     function skillSets(f, d, which) {
       const key = isSpecialist(f) ? "specialiste" : f.type;
       const c = (d.house.competences || {})[key] || {};
-      let sets = which === "tous" ? Object.keys(d.refs.competences || {}) : (c[which] || []).slice();
+      let sets = which === "tous" ? SKILL_CATS.concat(Object.values(d.house.competences || {}).flatMap(x => x.primaires.concat(x.secondaires)).filter(x => !SKILL_CATS.includes(x)))
+        .filter((x, i, a) => a.indexOf(x) === i) : (c[which] || []).slice();
       if (which === "primaires" && f.type === "chef" && !sets.includes("Autorité")) sets.push("Autorité");
       if (which === "secondaires" && f.type === "champion" && !sets.includes("Autorité") && !(c.primaires || []).includes("Autorité")) sets.push("Autorité");
       return sets.filter(s => (d.refs.competences || {})[s]);
@@ -1793,7 +1804,7 @@
         <h2>Créer un gang</h2>
         <p><span class="badge">Necromunda N23</span></p>
         <label class="fld"><span>Nom du gang</span><input id="gb-new-name" placeholder="ex. David & Goliath"></label>
-        <label class="fld"><span>Maison</span><select id="gb-new-house">${index.maisons.map(m => `<option value="${esc(m.id)}">Maison ${esc(m.nom)}</option>`).join("")}</select></label>
+        <label class="fld"><span>Gang</span><select id="gb-new-house">${index.maisons.filter(m => ACTIVE_HOUSES.includes(m.id)).map(m => `<option value="${esc(m.id)}">${esc(houseTitle(m))}</option>`).join("")}</select></label>
         <label class="fld"><span>Budget (crédits)</span><input id="gb-new-budget" inputmode="numeric" value="1000"></label>
         <button type="button" class="btn primary" id="gb-create">Créer et ajouter les combattants</button>
       </div>`;
@@ -1810,11 +1821,18 @@
       </div>`;
     }
 
+    function gearBlocked(i, f, h, camp) {
+      if (i.roles && !i.roles.includes(f.type)) return "réservé à : " + i.roles.map(r => roleName(h, r)).join(", ");
+      if (h.gangerArmes && f.type === "ganger" && !f.spec && i.arme && !h.gangerArmes.includes(i.categorie)) return "arme réservée aux Spécialistes";
+      if (!camp && noviceLimit(h) && f.type === "novice" && i.prix > 20) return "plus de 20 crédits";
+      return "";
+    }
     function gearOptions(d, f) {
       const cats = [];
       d.house.equipement.forEach(i => { let c = cats.find(x => x.cat === i.categorie); if (!c) cats.push(c = { cat: i.categorie, items: [] }); c.items.push(i); });
+      const camp = gbState && inCamp(gbState.gang);
       return `<option value="">+ Ajouter de l'équipement…</option>` + cats.map(c => `<optgroup label="${esc(c.cat)}">${c.items.map(i =>
-        `<option value="${esc(i.id)}"${f.type === "novice" && i.prix > 20 ? " disabled" : ""}>${esc(i.nom)} (${i.prix} cr)</option>`).join("")}</optgroup>`).join("");
+        `<option value="${esc(i.id)}"${gearBlocked(i, f, d.house, camp) ? " disabled" : ""}>${esc(i.nom)} (${i.prix} cr)</option>`).join("")}</optgroup>`).join("");
     }
 
     function skillPickHtml(f, fi, d) {
@@ -1832,7 +1850,7 @@
       const def = fighterDef(f, d);
       if (!def) return "";
       const isBrute = f.kind === "brute", camp = inCamp(g);
-      const roleLabel = isBrute ? "Brute" : isSpecialist(f) ? "Spécialiste" : def.role + (f.promuDe ? " (promu)" : "");
+      const roleLabel = isBrute ? "Brute" : isSpecialist(f) ? "Spécialiste (" + def.role + ")" : def.role + (f.promuDe ? " (promu)" : "");
       const flags = [f.recup ? "En Récupération" : "", f.captif ? "Capturé" : ""].filter(Boolean);
       const betes = d.mercs.betes.liste.filter(b => b.maison === d.house.id);
       return `<div class="fighter">
@@ -1848,6 +1866,7 @@
           <div class="gb-chips">${(f.gear || []).map((id, gi) => { const it = itemDef(id, d); return it ? `<span class="gb-chip">${esc(it.nom)} · ${it.prix} cr<button type="button" data-gb-ungear="${fi}:${gi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
           <select class="gb-add" data-gb-gear="${fi}">${gearOptions(d, f)}</select>
           ${(f.type === "chef" || f.type === "champion") ? skillPickHtml(f, fi, d) : ""}
+          ${!camp && d.house.gangerArmes && f.type === "ganger" ? `<label class="gb-opt"><input type="checkbox" data-cp-spec="${fi}"${f.spec ? " checked" : ""}><span>Promu Spécialiste (un seul à la création)</span></label>` : ""}
           ${(f.type === "chef" || f.type === "champion") && betes.length ? `
             <div class="gb-chips">${(f.betes || []).map((id, bi) => { const b = beteDef(id, d); return b ? `<span class="gb-chip">${esc(b.nom)} · ${b.cout} cr<button type="button" data-gb-unbete="${fi}:${bi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
             <select class="gb-add" data-gb-bete="${fi}"><option value="">+ Ajouter une Bête exotique…</option>${betes.map(b => `<option value="${esc(b.id)}">${esc(b.nom)} (${b.cout} cr, ${esc(b.rarete)})</option>`).join("")}</select>` : ""}`}
@@ -1866,7 +1885,7 @@
       const brutes = d.mercs.brutes.liste.filter(b => !b.maison || b.maison === d.house.id);
       return `<div class="page">
         <h2>${esc(g.name)}</h2>
-        <p><span class="badge">Necromunda N23</span> <span class="badge">Maison ${esc(d.house.nom)}</span></p>
+        <p><span class="badge">Necromunda N23</span> <span class="badge">${esc(houseTitle(d.house))}</span></p>
         ${inCamp(g) ? `<div class="gb-total"><b>${total}</b> Valeur du gang<span>Magot ${g.campagne.magot || 0} cr · ${g.fighters.length} combattant${g.fighters.length > 1 ? "s" : ""}</span></div>`
           : `<div class="gb-total${total > g.budget ? " over" : ""}"><b>${total}</b> / ${g.budget} crédits<span>Reste ${g.budget - total} cr · ${g.fighters.length} combattant${g.fighters.length > 1 ? "s" : ""}</span></div>`}
         ${warn.length ? `<div class="gb-warn"><ul class="rules">${warn.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : (g.fighters.length ? `<p class="note">Aucune erreur détectée sur les règles de création connues.</p>` : "")}
@@ -1882,7 +1901,7 @@
           ${g.fighters.length ? `<p class="legend2d6"><i></i>Caractéristiques testées sur 2D6 (CD, SF, V, INT)</p>${g.fighters.map((f, fi) => fighterEditorHtml(f, fi, d, g)).join("")}` : `<p class="note" style="margin-top:0">Commence par recruter ton Chef.</p>`}
           <label class="fld" style="margin-top:14px"><span>Recruter</span><select id="gb-recruit">
             <option value="">+ Ajouter un combattant…</option>
-            <optgroup label="Combattants">${d.house.combattants.map(c => `<option value="c:${esc(c.id)}">${esc(c.role)} (${c.cout} cr)</option>`).join("")}</optgroup>
+            <optgroup label="Combattants">${d.house.combattants.map(c => `<option value="c:${esc(c.id)}">${esc(c.role)}${c.role !== ROLE_LABEL[c.id] ? " (" + ROLE_LABEL[c.id] + ")" : ""} · ${c.cout} cr</option>`).join("")}</optgroup>
             <optgroup label="Brutes">${brutes.map(b => `<option value="b:${esc(b.id)}">${esc(b.nom)} (${b.cout} cr)</option>`).join("")}</optgroup>
           </select></label>
         </div></div>
@@ -2108,7 +2127,7 @@
         g.fighters.forEach(f => {
           if (inCamp(g) && (f.recup || f.captif)) return;
           const def = fighterDef(f, d);
-          const label = def ? (f.kind === "brute" ? def.nom : isSpecialist(f) ? "Spécialiste" : def.role) : "Combattant";
+          const label = def ? (f.kind === "brute" ? def.nom : isSpecialist(f) ? "Spécialiste (" + def.role + ")" : def.role) : "Combattant";
           const pv = def ? parseInt((effProfil(f, d) || def.profil).PV, 10) || 1 : 1;
           const name = f.name ? `${f.name} (${label})` : label;
           crew.push({ id: uid(), name, cost: fighterCost(f, d), wounds: pv, maxWounds: pv, ready: true, status: [], sheet: buildSheet(f, d) });

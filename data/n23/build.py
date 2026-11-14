@@ -19,7 +19,8 @@ ROOT = Path(__file__).resolve().parent
 SRC = ROOT / "src"
 STATS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"]
 PROFILE = ["porC", "porL", "preC", "preL", "F", "PA", "D", "Mu"]
-SKILL_CATEGORIES = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir"]
+SKILL_CATEGORIES = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir",
+                    "Sagesse des Anciens"]
 WARNINGS = []
 
 
@@ -138,19 +139,35 @@ def parse_skills(spec):
 
 
 def parse_maisons():
-    houses, house, section = [], None, None
+    houses, house, section, roles = [], None, None, None
     for line in lines(SRC / "maisons.txt"):
         if line.startswith("= "):
-            house = {"id": slug(line[2:]), "nom": line[2:], "combattants": [],
+            name, _, hid = line[2:].partition("=>")
+            name = name.strip()
+            house = {"id": hid.strip() or slug(name), "nom": name, "combattants": [],
                      "competences": {}, "equipement": []}
+            if hid.strip():
+                house["titre"] = name
             houses.append(house)
+        elif line.startswith("source:"):
+            house["source"] = line.split(":", 1)[1].strip()
+        elif line.startswith("creation:"):
+            key, text = [c.strip() for c in line.split(":", 1)[1].split("|", 1)]
+            house.setdefault("creation", {})[key] = text
+        elif line.startswith("gangerArmes:"):
+            house["gangerArmes"] = [c.strip() for c in line.split(":", 1)[1].split(",")]
+        elif line.startswith("regle:"):
+            nom, texte = [c.strip() for c in line.split(":", 1)[1].split("|", 1)]
+            house.setdefault("regles", []).append({"nom": nom, "texte": texte})
         elif line.startswith("combattant:"):
             role, cost, stats, gear = [c.strip() for c in line.split(":", 1)[1].split("|")]
+            role, _, rid = role.partition("=>")
+            role, rid = role.strip(), slug(rid.strip()) if rid.strip() else None
             values = stats.split()
             if len(values) != len(STATS):
                 raise ValueError(f"{house['nom']} {role} : {len(values)} caractéristiques")
             house["combattants"].append({
-                "id": slug(role), "role": role, "cout": int(cost),
+                "id": rid or slug(role), "role": role, "cout": int(cost),
                 "profil": dict(zip(STATS, values)),
                 "equipementDeDepart": [g.strip() for g in gear.split(",") if g.strip()],
             })
@@ -158,11 +175,14 @@ def parse_maisons():
             role, spec = [c.strip() for c in line.split(":", 1)[1].split("|")]
             house["competences"][slug(role)] = parse_skills(spec)
         elif line.startswith("## "):
-            section = line[3:]
+            m = re.match(r"(.*?)\s*\[(.*)\]$", line[3:])
+            section, roles = (m.group(1), [slug(r) for r in m.group(2).split(",")]) if m else (line[3:], None)
         else:
             cols = [c.strip() for c in line.split("|")]
             item = parse_price(cols[0], cols[1], section=section)
             item["id"] = slug(item["nom"])
+            if roles:
+                item["roles"] = roles
             if len(cols) == 3:
                 item["modes"] = [m.strip() for m in cols[2].split(";")]
             house["equipement"].append(item)
@@ -222,8 +242,10 @@ def main():
     write(ROOT / "armes.json", {**meta, "armes": weapons})
     write(ROOT / "comptoir.json", {**meta, "objets": comptoir})
     for h in houses:
-        write(ROOT / "maisons" / f"{h['id']}.json", {**meta, "reglesDeCreation": rules, **h})
-    write(ROOT / "index.json", {**meta, "maisons": [{"id": h["id"], "nom": h["nom"],
+        hrules = {**rules, **h.pop("creation", {})}
+        hmeta = {**meta, "source": h.pop("source")} if "source" in h else meta
+        write(ROOT / "maisons" / f"{h['id']}.json", {**hmeta, "reglesDeCreation": hrules, **h})
+    write(ROOT / "index.json", {**meta, "maisons": [{"id": h["id"], "nom": h["nom"], **({"titre": h["titre"]} if "titre" in h else {}),
                                                     "fichier": f"maisons/{h['id']}.json"}
                                                    for h in houses]})
 

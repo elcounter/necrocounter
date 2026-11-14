@@ -31,6 +31,12 @@
       "id": "van-saar",
       "nom": "Van Saar",
       "fichier": "maisons/van-saar.json"
+    },
+    {
+      "id": "squats",
+      "nom": "Prospecteurs Squats Ironhead",
+      "titre": "Prospecteurs Squats Ironhead",
+      "fichier": "maisons/squats.json"
     }
   ]
 }

@@ -83,16 +83,20 @@
       "resume": "Attaque hors du champ de vision de la cible : +1 Force."
     },
     {
+      "nom": "Digi",
+      "resume": "Montée sur anneau/gant ; attaque de mêlée supplémentaire ; ne compte pas dans la limite d'armes portées."
+    },
+    {
+      "nom": "Déluge de feu (X)",
+      "resume": "(Outreterres) Sur une touche réussie, la figurine la plus proche subit autant de touches que d'impacts sur le dé de Puissance de Feu. On peut jeter jusqu'à X dés de Puissance de Feu ; un test de Munitions par symbole Munitions obtenu."
+    },
+    {
       "nom": "Démolition",
       "resume": "Grenades : peuvent cibler le décor / objectifs ; une seule attaque quel que soit le nombre de dés."
     },
     {
       "nom": "Désarmement",
       "resume": "Touche sur 6 : la cible ne peut plus utiliser d'armes jusqu'aux attaques de Réaction à la fin du round."
-    },
-    {
-      "nom": "Digi",
-      "resume": "Montée sur anneau/gant ; attaque de mêlée supplémentaire ; ne compte pas dans la limite d'armes portées."
     },
     {
       "nom": "Empalement",
@@ -105,10 +109,6 @@
     {
       "nom": "Encombrant",
       "resume": "Tirer = action Double. En mêlée, ne peut pas utiliser d'autre arme en même temps."
-    },
-    {
-      "nom": "Énergétique",
-      "resume": "Ignore les champs protecteurs. Touche sur 6 : pas de sauvegarde d'armure (sauf champ) ; dégâts +1."
     },
     {
       "nom": "Explosion",
@@ -147,12 +147,16 @@
       "resume": "Munition spéciale : échec de Munitions = type épuisé pour le combattant."
     },
     {
-      "nom": "Mêlée",
-      "resume": "Peut servir aux attaques au corps à corps."
-    },
-    {
       "nom": "Mitraille",
       "resume": "Cible touchée : D6 jets de blessure au lieu d'1."
+    },
+    {
+      "nom": "Module de puissance",
+      "resume": "(Outreterres, Squats Ironhead) L'arme est montée sur le module de puissance et ne compte pas dans la limite d'armes, avec deux armes de ce type au maximum. Si elle a aussi Mêlée, elle donne une attaque supplémentaire au corps à corps."
+    },
+    {
+      "nom": "Mêlée",
+      "resume": "Peut servir aux attaques au corps à corps."
     },
     {
       "nom": "Parade",
@@ -213,6 +217,10 @@
     {
       "nom": "Usage unique",
       "resume": "Une seule utilisation par bataille ; compte ensuite comme test de Munitions raté (sauf si aussi Tir rapide)."
+    },
+    {
+      "nom": "Énergétique",
+      "resume": "Ignore les champs protecteurs. Touche sur 6 : pas de sauvegarde d'armure (sauf champ) ; dégâts +1."
     }
   ],
   "competences": {
@@ -422,6 +430,32 @@
       {
         "nom": "Négociateur",
         "resume": "Commercer : +1 au dé de disponibilité des objets Rares, et un seul objet coûte 20 crédits de moins pendant cette visite."
+      }
+    ],
+    "Sagesse des Anciens": [
+      {
+        "nom": "Là où il y a de la ferraille, il y a des créd's !",
+        "resume": "(Squats) À la récolte des récompenses, s'il n'est ni Capturé ni En Récupération, le gang gagne D6x10 crédits par véhicule adverse qu'il a Accidenté, même sans avoir joué."
+      },
+      {
+        "nom": "Personne ne bouscule le Frère",
+        "resume": "(Squats) Jamais déplacé par un trait d'arme ou une compétence adverse. Réussit automatiquement le test d'Initiative pour ne pas tomber quand il passe Au Tapis près d'un bord."
+      },
+      {
+        "nom": "Jamais en rupture de drogues",
+        "resume": "(Squats) Peut utiliser chaque Drogue deux fois avant de la retirer de sa carte."
+      },
+      {
+        "nom": "Fiable comme un Frère",
+        "resume": "(Squats) Ignore le trait Instable de ses armes et peut relancer tous ses tests de Munitions."
+      },
+      {
+        "nom": "Têtu jusqu'au bout",
+        "resume": "(Squats) Mis Hors de Combat, il peut faire tout de suite une action Tirer ou Combattre (Élémentaire) avant d'être retiré, même sans pion Paré."
+      },
+      {
+        "nom": "Il y a toujours un autre secret",
+        "resume": "(Squats) Quand il ouvre une caisse de butin, son gang gagne D6x10 crédits de plus."
       }
     ]
   },
