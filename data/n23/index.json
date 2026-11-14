@@ -110,6 +110,13 @@
       "fichier": "maisons/cawdor-foi.json"
     },
     {
+      "id": "goliath-chaines",
+      "nom": "Goliath (Maison des Chaînes)",
+      "titre": "Goliath (Maison des Chaînes)",
+      "livre": "Maison des Chaînes",
+      "fichier": "maisons/goliath-chaines.json"
+    },
+    {
       "id": "venators",
       "nom": "Venators",
       "titre": "Venators (chasseurs de primes)",

@@ -321,3 +321,13 @@ Hachoir | - | E | - | - | F+1 | -1 | 1 | - | Désarmement, Mêlée
 Matraque lourde | - | E | - | - | F | - | 2 | - | Commotion, Mêlée
 Espadon | E | 1" | - | +1 | F+1 | -1 | 1 | - | Mêlée, Encombrant, Polyvalent, Sectionner
 Arme d'haste | E | 2" | -1 | - | F+1 | - | 1 | - | Encombrant, Mêlée, Polyvalent
+
+## Armes Maison des Chaînes
+Lance-grenades d'assaut (jumelé)
+- grenades incapacitantes | 6" | 18" | - | - | 2 | -1 | 1 | 4+ | Commotion, Tir Rapide (1)
+- grenades Frag | 6" | 24" | -1 | - | 3 | - | 1 | 6+ | Contrecoup, Explosion (3"), Instable, Tir Rapide (1)
+- grenades Krak | 6" | 24" | -1 | - | 6 | -2 | 2 | 6+ | -
+- grenades fumigènes | 6" | 24" | -1 | - | - | - | - | 4+ | Explosion (*), Fumée
+Hache dentelée "pulvérisatrice" | - | E | - | - | F+1 | -1 | 1 | - | Mêlée, Pulvériser
+"Pulvérisatrices" couplées | - | E | - | - | F+1 | -1 | 1 | - | Couplé, Mêlée, Pulvériser
+Dérouilleuses couplées | - | E | - | - | F+1 | - | 1 | - | Contrecoup, Couplé, Mêlée

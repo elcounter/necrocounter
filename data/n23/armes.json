@@ -5614,6 +5614,140 @@
           ]
         }
       ]
+    },
+    {
+      "id": "lance-grenades-d-assaut-jumele",
+      "nom": "Lance-grenades d'assaut (jumelé)",
+      "categorie": "Armes Maison des Chaînes",
+      "profils": [
+        {
+          "mode": "grenades incapacitantes",
+          "porC": "6\"",
+          "porL": "18\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Commotion",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "grenades Frag",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Contrecoup",
+            "Explosion (3\")",
+            "Instable",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "grenades Krak",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "6",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "6+",
+          "traits": []
+        },
+        {
+          "mode": "grenades fumigènes",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "4+",
+          "traits": [
+            "Explosion (*)",
+            "Fumée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hache-dentelee-pulverisatrice",
+      "nom": "Hache dentelée \"pulvérisatrice\"",
+      "categorie": "Armes Maison des Chaînes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Pulvériser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pulverisatrices-couplees",
+      "nom": "\"Pulvérisatrices\" couplées",
+      "categorie": "Armes Maison des Chaînes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Couplé",
+            "Mêlée",
+            "Pulvériser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "derouilleuses-couplees",
+      "nom": "Dérouilleuses couplées",
+      "categorie": "Armes Maison des Chaînes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Couplé",
+            "Mêlée"
+          ]
+        }
+      ]
     }
   ]
 }

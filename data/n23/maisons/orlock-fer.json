@@ -426,7 +426,11 @@
         "champion",
         "chef"
       ],
-      "arme": "arme-combinee"
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "lance-grenades (Frag)"
+      ]
     },
     {
       "nom": "Lance-flammes",

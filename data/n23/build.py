@@ -20,7 +20,7 @@ SRC = ROOT / "src"
 STATS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"]
 PROFILE = ["porC", "porL", "preC", "preL", "F", "PA", "D", "Mu"]
 SKILL_CATEGORIES = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir",
-                    "Sagesse des Anciens", "Désolations", "Formation Palanite", "Sauvagerie", "Pouvoirs Wyrd du Chaos", "Pouvoirs Wyrd Genestealer", "Bravade", "Tech", "Obfuscation", "Bravoure", "Discrétion", "Piété", "Fierté"]
+                    "Sagesse des Anciens", "Désolations", "Formation Palanite", "Sauvagerie", "Pouvoirs Wyrd du Chaos", "Pouvoirs Wyrd Genestealer", "Bravade", "Tech", "Obfuscation", "Bravoure", "Discrétion", "Piété", "Fierté", "Force"]
 WARNINGS = []
 
 
@@ -221,9 +221,10 @@ def link_weapons(houses, weapons):
                     WARNINGS.append(f"{house['nom']} : modes inconnus {unknown} pour {item['nom']}")
                 continue
             # Armes combinées : ne garder que les composants nommés entre parenthèses
-            m = re.search(r"\(([^)]*/[^)]*)\)", item["nom"])
+            m = re.search(r"\((.*/.*)\)", item["nom"])
             if m and target["profils"] and target["profils"][0]["mode"]:
-                parts = [p.strip().lower() for p in m.group(1).split("/")]
+                alias = {"plasma": "fusil à plasma"}
+                parts = [alias.get(p.strip().lower(), p.strip().lower()) for p in m.group(1).split("/")]
                 modes = [p["mode"] for p in target["profils"] if p["mode"].lower() in parts]
                 if len(modes) == len(parts):
                     item["modes"] = modes

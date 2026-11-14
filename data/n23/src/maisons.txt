@@ -1445,3 +1445,144 @@ Pistocrâne | 65
 ## Servocrânes [pretre]
 Médicrâne | 80
 Sensocrâne | 60
+
+= Goliath (Maison des Chaînes) => goliath-chaines
+source: Maison des Chaînes (version française)
+creation: novice | Fondus et Butors ne prennent que dans leur propre liste.
+creation: armeSpeciale | Un Cogneur ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, un seul Cogneur peut être promu Spécialiste : il accède alors à toute sa liste.
+creation: chefEtChampion | Tyran de Forge, Maîtres de Forge et Dopés commencent avec une compétence gratuite de leurs sets Primaires.
+gangerArmes: Armes de base, Pistolets, Armes de corps à corps
+regle: Liste Maison des Chaînes | Version de la liste Goliath parue dans Maison des Chaînes, avec ses propres types de combattants. L'ancienne liste Goliath reste disponible à côté.
+regle: Chef de gang | Un seul Tyran de Forge, qui ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, le combattant au meilleur Commandement (priorité à Hiérarchie du gang, puis aux Ficelles du Métier) devient Tyran de Forge.
+regle: Hiérarchie du gang | Une fois le gang Dégonflé, si le Tyran de Forge réussit son test de Sang-froid en phase de Fin, les Goliath à 12" ou moins réussissent automatiquement le leur (6" pour un Maître de Forge ou un Dopé). Ces trois rangs font des actions d'après-bataille.
+regle: Activation de groupe | Le Tyran de Forge peut activer à sa suite 2 Goliath Parés à 3" ou moins, un Maître de Forge 1.
+regle: Les Ficelles du Métier | Tyran, Maîtres de Forge, Dopés, Fondus et Spécialistes peuvent avoir plusieurs panoplies.
+regle: Planque de Drogues de Combat (Dopé) | À son activation, il peut se doper : +D3 Attaques jusqu'à la phase de Fin ; sur un 1 naturel, ses Attaques tombent à 1 pour le tour.
+regle: Dopé | Il ne prend que des armes de sa liste, ou des pistolets, armes lourdes et armes de corps à corps du Comptoir Commercial ou du Marché Noir.
+regle: Combattants du gang | Cogneurs, Fondus et Butors doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires).
+regle: Fondu | Tête brûlée et Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Maître de Forge ou Dopé.
+regle: Butor | Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Spécialiste.
+combattant: Tyran de Forge Goliath => Chef | 135 | 4" 3+ 3+ 4 4 2 3+ 3 5+ 4+ 8+ 7+ |
+combattant: Maître de Forge Goliath => champion::fondu | 100 | 4" 3+ 4+ 4 4 2 4+ 2 6+ 5+ 8+ 8+ |
+combattant: Dopé Goliath => dope:champion:fondu | 125 | 4" 2+ 4+ 4 4 2 3+ 3 8+ 4+ 7+ 8+ |
+combattant: Fondu Goliath => fondu:novice | 35 | 5" 4+ 5+ 3 4 1 4+ 1 9+ 7+ 9+ 9+ |
+combattant: Cogneur Goliath => Ganger | 55 | 4" 4+ 4+ 4 4 1 4+ 1 8+ 5+ 9+ 8+ |
+combattant: Butor Goliath => Novice | 35 | 4" 4+ 5+ 4 4 1 4+ 1 9+ 7+ 9+ 9+ |
+competences: Chef | Muscle P, Combat S, Férocité P, Autorité P, Tir S, Force P
+competences: Champion | Muscle P, Combat S, Férocité P, Autorité S, Tir S, Force S
+competences: Dope | Muscle S, Combat S, Férocité P, Force P
+competences: Fondu | Agilité S, Combat P, Tir S
+competences: Spécialiste | Muscle P, Combat S, Férocité P, Tir S
+competences: Novice | Agilité S, Muscle S, Férocité P
+## Armes de base [champion, chef, ganger]
+Bolter | 55
+Fusil de combat (salve & nuage de grenaille) | 60 | salve; nuage de grenaille
+Fusil à pompe (balles & grenaille) | 30 | balles; grenaille
+Canon de poing | 20
+## Armes de base [chef]
+Fusil à pompe (munitions Executioner) | 20
+Fusil à pompe (munitions Inferno) | 15
+## Pistolets [champion, chef]
+Combi-pistolet (pistolet bolter/lance-flammes léger) | 110
+Combi-pistolet (pistolet bolter/pistolet à plasma) | 80
+Combi-pistolet (flingue/pistolet à plasma) | 40
+## Pistolets [champion, chef, ganger]
+Pistolet bolter | 45
+Lance-flammes léger | 75
+## Pistolets
+Flingue | 5
+Balles dum-dum (pour flingue) | 5
+## Armes spéciales [champion, chef]
+Arme combinée (bolter/lance-flammes) | 175
+Arme combinée (bolter/lance-grenades (Frag)) | 80
+Arme combinée (bolter/fuseur) | 165
+Arme combinée (bolter/fusil à plasma) | 115
+## Armes spéciales [champion, chef, ganger]
+Lance-flammes | 140
+Lance-grenades (grenades Frag & Krak) | 55 | grenades Frag; grenades Krak
+Grenades fumigènes (pour lance-grenades) | 15
+Grenades incapacitantes (pour lance-grenades) | 15
+Fuseur | 135
+## Armes spéciales [fondu]
+Soudeuse d'assaut* | 75
+## Armes lourdes [champion, chef]
+Bolter lourd* | 160
+Lance-flammes lourd* | 195
+Mitrailleuse* | 130
+Canon à rivets "Cribleur"* | 70
+Lance-missiles* (missiles Frag & Krak) | 165 | missile Frag; missile Krak
+Multi-fuseur* | 180
+## Armes lourdes [dope]
+Lance-grenades d'assaut (jumelé)* (grenades incapacitantes & Frag) | 65 | grenades incapacitantes; grenades Frag
+Grenades Krak (pour lance-grenades d'assaut) | 30
+Grenades fumigènes (pour lance-grenades d'assaut) | 20
+## Armes de corps à corps [champion, chef, ganger, novice]
+Hache | 10
+Hachoir de brute | 20
+Masse (matraque) | 10
+## Armes de corps à corps [champion, chef]
+Épée tronçonneuse | 25
+Hache tronçonneuse | 25
+Hache énergétique | 35
+Marteau énergétique | 45
+Servopince | 35
+## Armes de corps à corps
+Couteau de combat | 10
+## Armes de corps à corps [champion, chef, dope]
+Hache dentelée "déchiqueteuse"* | 40
+Hache dentelée "déchiqueteuse" de maître* | 50
+Dérouilleuse de maître | 20
+## Armes de corps à corps [champion, chef, dope, ganger, novice]
+Dérouilleuse | 15
+## Armes de corps à corps [champion, chef, ganger]
+Hache à deux mains* | 25
+Marteau à deux mains* | 35
+## Armes de corps à corps [dope]
+Hache dentelée "pulvérisatrice" | 30
+Hache dentelée "pulvérisatrice" de maître | 40
+"Pulvérisatrices" couplées* | 50
+"Pulvérisatrices" couplées de maître* | 60
+Dérouilleuses couplées* | 25
+Dérouilleuses couplées de maître* | 35
+## Armes de corps à corps [fondu]
+Disqueuse lourde* | 120
+## Grenades [champion, chef]
+Charges explosives | 35
+## Grenades
+Grenades Frag | 30
+Grenades Krak | 45
+Grenades fumigènes | 15
+## Grenades [champion, chef, dope]
+Grenades incapacitantes | 25
+## Grenades [dope]
+Bombes à fusion | 60
+## Grenades [dope, fondu, ganger, novice]
+Charges incendiaires | 40
+## Armures [champion, chef]
+Armure carapace légère | 80
+## Armures [chef]
+Armure carapace lourde | 100
+## Armures
+Plates de fourneau | 5
+## Équipement personnel
+Sous-combinaison renforcée | 25
+## Équipement personnel [champion, chef, dope, fondu]
+Bio-booster | 35
+## Équipement personnel [champion, chef, dope, ganger, novice]
+Filin | 10
+Planque de stim' | 25
+## Équipement personnel [champion, chef, fondu, ganger, novice]
+Filtre nasal | 10
+## Équipement personnel [champion, chef, ganger]
+Photolunettes | 35
+## Équipement personnel [champion, chef, dope, ganger]
+Respirateur | 15
+## Équipement personnel [champion, chef, dope]
+Lame sous-cutanée | 10
+## Accessoires d'armes [champion, chef]
+Suppresseur (armes de base et pistolets) | 20
+Suspenseur (armes lourdes) | 60
+## Accessoires d'armes [champion, chef, ganger]
+Lunette télescopique' (pistolets, armes de base et spéciales) | 25
+## Bêtes exotiques [champion, chef, dope]
+Sumpkroc (0-1) | 130

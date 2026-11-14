@@ -578,7 +578,11 @@
         "champion"
       ],
       "categorieArme": "Armes spéciales",
-      "arme": "arme-combinee"
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil d'assaut",
+        "lance-grenades (Frag)"
+      ]
     },
     {
       "nom": "Arme combinée (bolter/lance-flammes)",
@@ -610,7 +614,11 @@
         "champion"
       ],
       "categorieArme": "Armes spéciales",
-      "arme": "arme-combinee"
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "lance-grenades (Frag)"
+      ]
     },
     {
       "nom": "Arme combinée (bolter/fuseur)",
@@ -656,7 +664,11 @@
         "champion"
       ],
       "categorieArme": "Armes spéciales",
-      "arme": "arme-combinee"
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fusil à plasma"
+      ]
     },
     {
       "nom": "Fuseur",

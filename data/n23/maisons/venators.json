@@ -536,7 +536,11 @@
       "id": "arme-combinee-fusil-d-assaut-lance-grenades-frag",
       "rarete": "Rare (7)",
       "niveau": 7,
-      "arme": "arme-combinee"
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil d'assaut",
+        "lance-grenades (Frag)"
+      ]
     },
     {
       "nom": "Arme combinée (bolter/lance-flammes)",
@@ -558,7 +562,11 @@
       "id": "arme-combinee-bolter-lance-grenades-frag",
       "rarete": "Rare (8)",
       "niveau": 8,
-      "arme": "arme-combinee"
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "lance-grenades (Frag)"
+      ]
     },
     {
       "nom": "Arme combinée (bolter/fuseur)",
@@ -589,7 +597,11 @@
       "id": "arme-combinee-bolter-plasma",
       "rarete": "Rare (10)",
       "niveau": 10,
-      "arme": "arme-combinee"
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fusil à plasma"
+      ]
     },
     {
       "nom": "Fuseur",

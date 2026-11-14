@@ -520,7 +520,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.12.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.13.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span><br><br>
@@ -668,7 +668,7 @@
 
     // ---- Données Necromunda N23 ----
     const DATA = "data/n23/";
-    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats", "nomades", "venators", "enforcers", "corpse-grinder", "culte-chaos", "culte-genestealer", "proscrits", "spyriens", "orlock-fer", "van-saar-artifice", "delaque-ombre", "cawdor-foi"];
+    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats", "nomades", "venators", "enforcers", "corpse-grinder", "culte-chaos", "culte-genestealer", "proscrits", "spyriens", "orlock-fer", "van-saar-artifice", "delaque-ombre", "cawdor-foi", "goliath-chaines"];
     const houseTitle = h => h.titre || "Maison " + h.nom;
     function rb(f, h) {
       if (f.kind === "brute") return "brute";
@@ -819,7 +819,7 @@
         ${weapons.map(w => `<p class="note"><b>${esc(w.nom)}</b></p>${profileHtml(w)}`).join("")}
       </div></details>`;
     }
-    const HOUSE_NAMES = { cawdor: "Maison Cawdor", delaque: "Maison Delaque", escher: "Maison Escher", goliath: "Maison Goliath", orlock: "Maison Orlock", "van-saar": "Maison Van Saar", squats: "Prospecteurs Squats Ironhead", nomades: "Nomades des Désolations de Cendres", venators: "Venators", enforcers: "Palanite Enforcers", "corpse-grinder": "Culte de Corpse Grinder", "culte-chaos": "Culte Hilote du Chaos", "culte-genestealer": "Culte Genestealer", proscrits: "Proscrits du Sous-Monde", spyriens: "Groupe de Chasse Spyrien", "orlock-fer": "Orlock (Maison de Fer)", "van-saar-artifice": "Van Saar (Maison de l'Artifice)", "delaque-ombre": "Delaque (Maison de l'Ombre)", "cawdor-foi": "Cawdor (Maison de la Foi)" };
+    const HOUSE_NAMES = { cawdor: "Maison Cawdor", delaque: "Maison Delaque", escher: "Maison Escher", goliath: "Maison Goliath", orlock: "Maison Orlock", "van-saar": "Maison Van Saar", squats: "Prospecteurs Squats Ironhead", nomades: "Nomades des Désolations de Cendres", venators: "Venators", enforcers: "Palanite Enforcers", "corpse-grinder": "Culte de Corpse Grinder", "culte-chaos": "Culte Hilote du Chaos", "culte-genestealer": "Culte Genestealer", proscrits: "Proscrits du Sous-Monde", spyriens: "Groupe de Chasse Spyrien", "orlock-fer": "Orlock (Maison de Fer)", "van-saar-artifice": "Van Saar (Maison de l'Artifice)", "delaque-ombre": "Delaque (Maison de l'Ombre)", "cawdor-foi": "Cawdor (Maison de la Foi)", "goliath-chaines": "Goliath (Maison des Chaînes)" };
 
     function mercenariesHtml([d, armes]) {
       const byId = Object.fromEntries(armes.armes.map(a => [a.id, a]));

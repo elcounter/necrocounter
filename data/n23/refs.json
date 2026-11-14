@@ -723,6 +723,32 @@
     "nom": "Foi sans Faille",
     "resume": "(Cawdor) Avant la bataille, il peut ignorer sa case En Récupération et jouer, mais commence avec une Blessure légère."
    }
+  ],
+  "Force": [
+   {
+    "nom": "Poings d'Acier",
+    "resume": "(Goliath) Ses attaques à mains nues ont +2 en Force et infligent 2 Dégâts."
+   },
+   {
+    "nom": "Homme de Fer",
+    "resume": "(Goliath) Les Blessures légères ne réduisent pas son Endurance (il est tout de même mis Hors de Combat quand leur nombre atteint son Endurance)."
+   },
+   {
+    "nom": "Indélogeable",
+    "resume": "(Goliath) Action Tank (Double) : jusqu'à sa prochaine activation, +2 à sa sauvegarde d'armure (2+ max) et il ne peut être déplacé ni par compétence ni par trait (Contrecoup, Traction...)."
+   },
+   {
+    "nom": "Naaargah !",
+    "resume": "(Goliath) Après ses deux actions, il peut tenter une troisième : D6 inférieur ou égal à son Endurance (et pas un 6) pour la faire. Dans tous les cas, il finit son activation Bloqué."
+   },
+   {
+    "nom": "Libérer la Bête",
+    "resume": "(Goliath) Actif et Engagé, action Dégagement (Simple) : chaque combattant à son contact rate un test de Force ou est repoussé de D3\"."
+   },
+   {
+    "nom": "Récupération Active",
+    "resume": "(Goliath) S'il fait au moins deux actions Mouvement, test d'Endurance en fin d'activation : réussi, il récupère 1 PV ou retire une Blessure légère."
+   }
   ]
  },
  "statuts": [
