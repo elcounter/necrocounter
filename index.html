@@ -495,7 +495,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.1.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.2.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -943,7 +943,47 @@
         </div>`;
     }
 
-    function armouryHtml([armes, comptoir, refs, camp]) {
+    // ---- Scénarios N23 ----
+    const SCEN_TYPES = ["Sector Mechanicus", "Zone Mortalis", "Arbitrator", "Multijoueur"];
+    let SCEN = null;
+    function scenarioBody(sc) {
+      const L = [];
+      const p = (k, v) => { if (v) L.push(`<p class="shop" style="padding:4px 0"><b>${k} :</b> ${esc(v)}</p>`); };
+      const ul = (k, arr) => { if (arr && arr.length) L.push(`<p class="shop" style="padding:4px 0 0"><b>${k}</b></p><ul class="rules">${arr.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`); };
+      L.push(`<p class="note" style="margin:0 0 6px"><i>${esc(sc.pitch)}</i></p>`);
+      if (sc.attaque) p("Rôles", "Un attaquant et un défenseur. En campagne, celui qui choisit le scénario attaque ; en escarmouche, tir au dé." + (sc.furtif ? " Règles d'attaque furtive (sentinelles)." : ""));
+      p("Condition", sc.condition); p("Champ de bataille", sc.terrain || "Disposition normale."); p("Équipes", sc.equipes);
+      if (sc.domicile) p("Territoire Domiciliaire", "Le défenseur en a l'avantage.");
+      p("Cartes Tactiques", sc.tactiques); p("Déploiement", sc.deploiement); p("Objectifs", sc.objectifs);
+      ul("Règles spéciales", sc.special);
+      p("Fin de la bataille", sc.fin || "Un gang sans combattant sur la table à la fin d'un round."); p("Victoire", sc.victoire);
+      L.push(`<p class="shop" style="padding:8px 0 0"><b>Récompenses en campagne</b></p>`);
+      p("Crédits", sc.credits); ul("Expérience", sc.xp); ul("Réputation", sc.rep);
+      return `<div class="abody" style="padding:8px 12px 12px">${L.join("")}</div>`;
+    }
+    function scenarioLabel(sc) { return (sc.num ? sc.num + ". " : "") + sc.nom; }
+    function scenariosFolds(sd) {
+      if (!sd) return "";
+      const q = s => esc(String(s || "").toLowerCase());
+      const one = sc => `<details class="eq" data-q="${q(sc.nom + " " + sc.type + " " + sc.pitch)}"><summary><span class="nm">${esc(scenarioLabel(sc))}</span><span class="pr">${sc.attaque ? "att. / déf." : ""}</span></summary>${scenarioBody(sc)}</details>`;
+      return `<h3 class="h3">Scénarios</h3>
+        <p class="note">Les 12 scénarios du livre de règles, les scénarios d'Arbitrator et les multijoueurs. Tu peux en choisir un dans l'onglet Partie.</p>
+        <div class="folds" style="margin-top:12px">
+          <details class="fold" data-fold="regles communes"><summary><span>Règles communes</span><small>${sd.regles.length}</small></summary><div class="fold-body">${sd.regles.map(r =>
+            `<details class="eq" data-q="${q(r.nom + " " + r.resume)}"><summary><span class="nm">${esc(r.nom)}</span></summary><p class="shop" style="padding:8px 12px 12px">${esc(r.resume)}</p></details>`).join("")}</div></details>
+          <details class="fold" data-fold="tirage"><summary><span>Choisir le scénario (2D6, Dominion)</span></summary><div class="fold-body">${sd.tirage.map(t =>
+            `<div class="eq"><div class="row"><span class="nm plain">${t.de === t.a ? t.de : t.de + "-" + t.a}</span><span class="pr" style="max-width:75%;text-align:right;font-size:12px">${esc(t.texte)}</span></div></div>`).join("")}</div></details>
+          ${SCEN_TYPES.map(ty => { const L = sd.scenarios.filter(x => x.type === ty); return L.length ? `<details class="fold" data-fold="${q(ty)}"><summary><span>${esc(ty === "Arbitrator" ? "Scénarios d'Arbitrator" : ty === "Multijoueur" ? "Multijoueur" : ty)}</span><small>${L.length}</small></summary><div class="fold-body">${L.map(one).join("")}</div></details>` : ""; }).join("")}
+        </div>`;
+    }
+    function scenarioSelect(cur) {
+      if (!SCEN) return "";
+      return `<select id="scen-pick"><option value="">Aucun (partie libre)</option>${SCEN_TYPES.map(ty => `<optgroup label="${esc(ty)}">${SCEN.scenarios.filter(x => x.type === ty)
+        .map(x => `<option value="${esc(x.id)}"${x.id === cur ? " selected" : ""}>${esc(scenarioLabel(x))}</option>`).join("")}</optgroup>`).join("")}</select>`;
+    }
+    function scenarioById(id) { return SCEN && SCEN.scenarios.find(x => x.id === id) || null; }
+
+    function armouryHtml([armes, comptoir, refs, camp, scen]) {
       const weapons = armes.armes;
       const ids = weapons.map(w => w.id).sort((a, b) => b.length - a.length);
       const shop = {}, loose = {};
@@ -987,6 +1027,7 @@
         <h2>Règles</h2>
         ${editionSwitch("regles", "n23")}
         ${campagneFolds(camp)}
+        ${scenariosFolds(scen)}
         ${refsFolds(refs)}
         <h3 class="h3">Armurerie</h3>
         <p class="note">Profils de toutes les armes, avec le prix et la rareté au Comptoir Commercial. Touche une catégorie pour l'ouvrir, puis une arme pour voir son profil.</p>
@@ -1125,6 +1166,12 @@
           <label class="fld"><span>Budget crédits</span>${seg("budget", [["800","800"],["1000","1000"],["1250","1250"],["1500","1500"],["libre","Libre"]], d.budget)}</label>
           <label class="fld" id="budget-custom-wrap" ${d.budget === "libre" ? "" : "hidden"}><span>Budget libre</span><input id="budget-custom" inputmode="numeric" value="${esc(d.budgetCustom)}" placeholder="ex. 1100"></label>
         </div></div>
+        <div class="panel"><h3 class="sec">Scénario</h3><div class="body">
+          <label class="fld"><span>Scénario</span>${scenarioSelect(d.scenario)}</label>
+          <div class="btn-row"><button type="button" class="btn ghost small" id="scen-roll">Tirer au 2D6 (Dominion)</button></div>
+          <p class="cp-result" id="scen-msg">${esc(d.scenMsg || "")}</p>
+          ${d.scenario && scenarioById(d.scenario) ? `<details class="eq" style="margin-top:10px"><summary><span class="nm">Résumé : ${esc(scenarioById(d.scenario).nom)}</span></summary>${scenarioBody(scenarioById(d.scenario))}</details>` : ""}
+        </div></div>
         ${crewEditor(0, d.gangs[0])}
         ${crewEditor(1, d.gangs[1])}
         <button type="button" class="btn primary" id="start-match">Lancer la partie</button>
@@ -1138,6 +1185,15 @@
     }
     function bindSetup() {
       const d = setupDraft;
+      const sp = $("scen-pick");
+      if (sp) sp.addEventListener("change", () => { d.scenario = sp.value; d.scenMsg = ""; renderPartie(); });
+      const sr = $("scen-roll");
+      if (sr) sr.addEventListener("click", () => {
+        const a = 1 + Math.floor(Math.random() * 6), b = 1 + Math.floor(Math.random() * 6), r = a + b;
+        const t = SCEN.tirage.find(x => r >= x.de && r <= x.a);
+        d.scenMsg = `2D6 = ${r} : ${t ? t.texte : ""}`;
+        renderPartie();
+      });
       $("view").querySelectorAll("[data-seg]").forEach(box => {
         box.addEventListener("click", e => {
           const btn = e.target.closest("button[data-v]");
@@ -1182,7 +1238,7 @@
         const custom = ($("budget-custom") || {}).value || "";
         d.budgetCustom = custom;
         match = {
-          id: uid(), format: d.format, edition: d.edition,
+          id: uid(), format: d.format, edition: d.edition, scenario: d.scenario || "",
           budget: d.budget === "libre" ? (custom || "libre") : d.budget,
           phase: "live", round: 1, priority: 0,
           gangs: d.gangs.map(g => ({
@@ -1245,6 +1301,7 @@
           <button type="button" class="btn ghost small" id="reset-ready">Reset Ready</button>
           <a class="btn ghost small" href="#aide" style="text-align:center">Aperçu des règles</a>
         </div>
+        ${m.scenario && scenarioById(m.scenario) ? `<details class="eq" style="margin:12px 0"><summary><span class="nm">Scénario : ${esc(scenarioLabel(scenarioById(m.scenario)))} (${esc(scenarioById(m.scenario).type)})</span></summary>${scenarioBody(scenarioById(m.scenario))}</details>` : ""}
         ${m.gangs.map((g, gi) => `<div class="gang-col">
           <h3>${esc(g.name)}${g.rating ? " · " + esc(g.rating) : ""}</h3>
           ${g.crew.map((f, fi) => fighterCard(gi, fi, f)).join("")}
@@ -1421,6 +1478,7 @@
 
 
     function renderPartie() {
+      if (!SCEN) { load("scenarios.json").then(sd => { SCEN = sd; if (location.hash.startsWith("#partie")) renderPartie(); }).catch(() => { SCEN = { scenarios: [], tirage: [] }; renderPartie(); }); return; }
       match = match || loadMatch();
       const view = $("view");
       if (!match || match.phase === "done" || !match.phase) {
@@ -2125,7 +2183,7 @@
       } else if (section === "regles") {
         title.textContent = "Règles";
         sessionStorage.setItem("nc_aide_from", "regles");
-        showAsync(view, Promise.all([load("armes.json"), load("comptoir.json"), load("refs.json"), load("campagne.json")]), armouryHtml);
+        showAsync(view, Promise.all([load("armes.json"), load("comptoir.json"), load("refs.json"), load("campagne.json"), load("scenarios.json")]), armouryHtml);
       } else if (h === "compte" || h === "carte" || h === "confidentialite") {
         title.textContent = { compte: "Mon compte", carte: "Carte des joueurs", confidentialite: "Confidentialité" }[h];
         if (window.NC_COMPTE) window.NC_COMPTE.open(h);
