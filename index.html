@@ -329,6 +329,31 @@
     .gb-warn { margin: 0 0 12px; padding: 10px 12px 10px 4px; border-radius: 10px; border: 1px solid #c45a48; background: rgba(196,90,72,.10); }
     .gb-warn ul.rules { color: #7e2414; }
     .gb-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 8px; }
+    .print-page .pf { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin: 10px 0; background: var(--panel); break-inside: avoid; }
+    .print-page .pf-h { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; font-size: 15px; }
+    .print-page .pf-h b { font: 600 17px var(--display); text-transform: uppercase; }
+    .print-page .pf-h span:last-child { margin-left: auto; font-weight: 700; color: var(--amber); }
+    .print-page table { width: 100%; border-collapse: collapse; margin: 6px 0; font-size: 12px; }
+    .print-page th, .print-page td { border: 1px solid var(--line); padding: 2px 4px; text-align: center; }
+    .print-page .pw td:first-child, .print-page .pw .tr { text-align: left; }
+    .print-page .pw { display: block; overflow-x: auto; }
+    .print-page p { margin: 4px 0; font-size: 13px; }
+    .print-page .pc { color: var(--rust); }
+    .pg-head h2 { margin-bottom: 2px; }
+    .pg-foot { color: var(--muted); font-size: 11px; text-align: center; margin-top: 16px; }
+    @media print {
+      header.bar, nav.bnav, .no-print, footer, p.copy { display: none !important; }
+      body { background: #fff !important; }
+      .print-page { padding: 0 !important; max-width: none !important; }
+      .print-page .pf { background: #fff; border-color: #999; }
+      .print-page .pw { display: table; }
+      @page { margin: 10mm; }
+    }
+    .xp-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+    .xp-c { display: inline-flex; align-items: center; gap: 4px; padding: 4px 6px; border-radius: 8px; background: var(--panel-2); border: 1px solid var(--line); font-size: 12px; }
+    .xp-c small { color: var(--muted); margin-right: 2px; }
+    .xp-c button { width: 26px; height: 26px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); font-weight: 700; }
+    .post-f { padding: 10px 0; border-bottom: 1px solid var(--line); }
     .cp-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .cp-grid > div { padding: 10px 12px; border-radius: 10px; background: var(--panel-2); border: 1px solid var(--line); }
     .cp-grid small { display: block; color: var(--muted); font-size: 12px; }
@@ -495,7 +520,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.4.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.5.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -1252,9 +1277,9 @@
           budget: d.budget === "libre" ? (custom || "libre") : d.budget,
           phase: "live", round: 1, priority: 0,
           gangs: d.gangs.map(g => ({
-            name: g.name || "Gang", rating: g.rating || "",
+            name: g.name || "Gang", rating: g.rating || "", gangId: g.gangId || "",
             crew: g.crew.map(f => ({
-              id: f.id || uid(), name: f.name || "Combattant", cost: f.cost || 0,
+              id: f.id || uid(), fid: f.fid || "", xp: { k: 0, l: 0, r: 0 }, name: f.name || "Combattant", cost: f.cost || 0,
               wounds: f.maxWounds || 1, maxWounds: f.maxWounds || 1, ready: true, status: [],
               sheet: f.sheet || null
             }))
@@ -1278,8 +1303,10 @@
         ${sh.regles.length ? `<p class="note"><b>Règles spéciales</b></p><ul class="rules">${sh.regles.map(r => `<li><b>${esc(r.nom)} :</b> ${esc(r.texte)}</li>`).join("")}</ul>` : ""}
       </details>`;
     }
+    const XP_COUNTERS = [["k", "Ennemis HdC"], ["l", "dont Chef/Champion"], ["r", "Ralliements"]];
     function fighterCard(gi, fi, f) {
       const ooa = f.status.includes("ooa");
+      const xp = f.fid ? `<div class="xp-row">${XP_COUNTERS.map(([k, l]) => `<span class="xp-c"><small>${l}</small><button type="button" data-xp="${k}:-">−</button><b>${(f.xp || {})[k] || 0}</b><button type="button" data-xp="${k}:+">+</button></span>`).join("")}</div>` : "";
       return `<div class="fighter ${ooa ? "ooa" : ""}" data-gi="${gi}" data-fi="${fi}">
         <div class="fname"><span>${esc(f.name)}</span><small>${f.cost ? f.cost + " cr" : ""}</small></div>
         <div class="wounds">
@@ -1289,6 +1316,7 @@
           <span class="hint" style="margin:0">PV${f.maxWounds > 1 ? " / " + f.maxWounds : ""}</span>
         </div>
         ${f.sheet ? sheetHtml(f.sheet) : ""}
+        ${xp}
         <div class="tags">
           ${MATCH_STATUSES.map(s => `<button type="button" class="tag ${s.danger ? "danger " : ""}${f.status.includes(s.id) ? "on" : ""}" data-st="${s.id}">${s.label}</button>`).join("")}
         </div>
@@ -1298,7 +1326,7 @@
     function liveHtml() {
       const m = match;
       return `<div class="page">
-        <h2>Partie live</h2>
+        <h2>Partie en cours</h2>
         <div class="live-top">
           <span class="pill">${esc(m.edition)} · ${m.format === "campaign" ? "Campagne" : "Escarmouche"}</span>
           <span class="pill">Budget ${esc(String(m.budget))}</span>
@@ -1308,7 +1336,7 @@
         <div class="btn-row">
           <button type="button" class="btn ghost small" id="tog-priority">Changer priorité</button>
           <button type="button" class="btn ghost small" id="next-round">Round +1</button>
-          <button type="button" class="btn ghost small" id="reset-ready">Reset Ready</button>
+          <button type="button" class="btn ghost small" id="reset-ready">Tous Préparés</button>
           <a class="btn ghost small" href="#aide" style="text-align:center">Aperçu des règles</a>
         </div>
         ${m.scenario && scenarioById(m.scenario) ? `<details class="eq" style="margin:12px 0"><summary><span class="nm">Scénario : ${esc(scenarioLabel(scenarioById(m.scenario)))} (${esc(scenarioById(m.scenario).type)})</span></summary>${scenarioBody(scenarioById(m.scenario))}</details>` : ""}
@@ -1316,11 +1344,11 @@
           <h3>${esc(g.name)}${g.rating ? " · " + esc(g.rating) : ""}</h3>
           ${g.crew.map((f, fi) => fighterCard(gi, fi, f)).join("")}
         </div>`).join("")}
-        <div class="panel"><h3 class="sec">Bottle / moral</h3><div class="body">
-          <p class="hint">Rappel : teste le bottle selon le scénario / l'édition. Note le résultat si besoin.</p>
-          <label class="fld"><span>Note bottle</span><input id="bottle-note" value="${esc(m.bottleNote || "")}" placeholder="ex. Gang A bottle au round 3"></label>
+        <div class="panel"><h3 class="sec">Cran</h3><div class="body">
+          <p class="hint">Test de Cran selon le scénario. Note le résultat si besoin.</p>
+          <label class="fld"><span>Note</span><input id="bottle-note" value="${esc(m.bottleNote || "")}" placeholder="ex. Gang A dégonflé au round 3"></label>
         </div></div>
-        <button type="button" class="btn primary" id="to-post">Passer au post-battle</button>
+        <button type="button" class="btn primary" id="to-post">Passer à l'après-bataille</button>
         <button type="button" class="btn danger" id="abort-match">Abandonner la partie</button>
       </div>`;
     }
@@ -1345,6 +1373,14 @@
         card.querySelectorAll("[data-w]").forEach(btn => {
           btn.addEventListener("click", () => {
             f.wounds = Math.max(0, f.wounds + (btn.getAttribute("data-w") === "+" ? 1 : -1));
+            saveMatch(); renderPartie();
+          });
+        });
+        card.querySelectorAll("[data-xp]").forEach(btn => {
+          btn.addEventListener("click", () => {
+            const [k, sgn] = btn.getAttribute("data-xp").split(":");
+            f.xp = f.xp || { k: 0, l: 0, r: 0 };
+            f.xp[k] = Math.max(0, (f.xp[k] || 0) + (sgn === "+" ? 1 : -1));
             saveMatch(); renderPartie();
           });
         });
@@ -1374,7 +1410,7 @@
       const m = match;
       const p = m.post || {};
       return `<div class="page">
-        <h2>Post-battle</h2>
+        <h2>Après-bataille</h2>
         <p class="hint">${esc(m.gangs[0].name)} vs ${esc(m.gangs[1].name)} · ${esc(m.edition)} · Round ${m.round}</p>
         <div class="panel"><h3 class="sec">Résultat</h3><div class="body">
           <label class="fld"><span>Vainqueur</span>
@@ -1395,18 +1431,86 @@
           <label class="fld"><span>Crédits ${esc(m.gangs[0].name)}</span><input id="cr-a" value="${esc(p.creditsA || "")}" placeholder="ex. 30 ou 2D3×10"></label>
           <label class="fld"><span>Crédits ${esc(m.gangs[1].name)}</span><input id="cr-b" value="${esc(p.creditsB || "")}" placeholder="ex. 10"></label>
         </div></div>
-        <div class="panel"><h3 class="sec">Combattants OOA / notes XP</h3><div class="body">
+        ${m.gangs.map((g, gi) => g.gangId ? postGangHtml(g, gi) : "").join("")}
+        <div class="panel"><h3 class="sec">Combattants</h3><div class="body">
           ${m.gangs.map(g => `<div style="margin-bottom:12px"><b style="color:var(--amber)">${esc(g.name)}</b>
-            ${g.crew.map(f => `<div class="hint" style="margin:6px 0">${esc(f.name)} — ${f.status.includes("ooa") ? "OOA" : "OK"} · W${f.wounds}${f.status.length ? " · " + f.status.join(", ") : ""}</div>`).join("")}
+            ${g.crew.map(f => `<div class="hint" style="margin:6px 0">${esc(f.name)} : ${f.status.includes("ooa") ? "Hors de Combat" : f.status.includes("si") ? "Gravement Blessé" : "debout"} · ${f.wounds} PV</div>`).join("")}
           </div>`).join("")}
-          <label class="fld"><span>Notes (XP, injuries, etc.)</span><textarea id="post-notes" placeholder="Leader A +1 XP, Ganger B lasting injury...">${esc(p.notes || "")}</textarea></label>
+          <label class="fld"><span>Notes</span><textarea id="post-notes" placeholder="Récompenses du scénario, captures, etc.">${esc(p.notes || "")}</textarea></label>
         </div></div>
         <button type="button" class="btn primary" id="save-post">Enregistrer et terminer</button>
         <button type="button" class="btn ghost" id="back-live">Retour live</button>
       </div>`;
     }
+    function postUpd(g) {
+      g.upd = g.upd || { fighters: {}, credits: "", rep: "", applied: false, msg: "" };
+      g.crew.forEach(f => { if (f.fid && !g.upd.fighters[f.fid]) g.upd.fighters[f.fid] = { part: true, extra: "", inj: "", injMsg: "" }; });
+      return g.upd;
+    }
+    function crewXp(f, u) { const x = f.xp || {}; return (x.k || 0) + (x.l || 0) + (x.r || 0) + (u.part ? 1 : 0) + (parseInt(u.extra, 10) || 0); }
+    function postGangHtml(g, gi) {
+      const gang = getGang(g.gangId);
+      if (!gang) return "";
+      const u = postUpd(g), camp = inCamp(gang);
+      const refs = POST_REFS || { blessuresPersistantes: [] };
+      const injOpts = cur => `<option value="">Pas de blessure persistante</option>${refs.blessuresPersistantes.map(b => `<option value="${esc(b.plage)}"${cur === b.plage ? " selected" : ""}>${esc(b.plage)} · ${esc(b.effet)}</option>`).join("")}`;
+      const rows = g.crew.filter(f => f.fid && gang.fighters.some(x => x.id === f.fid)).map(f => {
+        const fu = u.fighters[f.fid], ooa = f.status.includes("ooa");
+        return `<div class="post-f">
+          <div class="cp-line"><b>${esc(f.name)}</b><span class="pill">${crewXp(f, fu)} XP</span></div>
+          <p class="hint" style="margin:2px 0 6px">HdC ${(f.xp || {}).k || 0} · Chef/Champion ${(f.xp || {}).l || 0} · Ralliements ${(f.xp || {}).r || 0}${ooa ? " · Hors de Combat" : ""}</p>
+          <label class="gb-opt"><input type="checkbox" data-pu-part="${gi}:${esc(f.fid)}"${fu.part ? " checked" : ""}><span>+1 XP de participation</span></label>
+          <label class="fld" style="margin:6px 0"><span>XP du scénario en plus</span><input inputmode="numeric" data-pu-extra="${gi}:${esc(f.fid)}" value="${esc(fu.extra)}" placeholder="0"></label>
+          ${ooa ? `<div class="btn-row" style="margin:4px 0"><button type="button" class="btn ghost small" data-pu-roll="${gi}:${esc(f.fid)}">Jet de Blessure persistante (D66)</button></div>
+            <select class="gb-add" data-pu-inj="${gi}:${esc(f.fid)}">${injOpts(fu.inj)}</select>
+            ${fu.injMsg ? `<p class="hint">${esc(fu.injMsg)}</p>` : ""}` : ""}
+        </div>`;
+      }).join("");
+      return `<div class="panel"><h3 class="sec">Fiche de gang : ${esc(g.name)}</h3><div class="body">
+        ${!camp ? `<p class="note">Ce gang n'est pas en mode campagne : active-le sur sa fiche pour enregistrer XP, blessures, Magot et Réputation.</p>` : ""}
+        ${rows}
+        <label class="fld" style="margin-top:12px"><span>Crédits gagnés (ajoutés au Magot)</span><input inputmode="numeric" data-pu-credits="${gi}" value="${esc(u.credits)}" placeholder="ex. 40"></label>
+        <label class="fld"><span>Réputation gagnée ou perdue</span><input inputmode="numeric" data-pu-rep="${gi}" value="${esc(u.rep)}" placeholder="ex. 2 ou -1"></label>
+        ${u.applied ? `<p class="cp-result">${esc(u.msg || "Appliqué à la fiche du gang.")}</p>`
+          : `<button type="button" class="btn primary" data-pu-apply="${gi}"${camp ? "" : " disabled"}>Appliquer à la fiche du gang</button>`}
+      </div></div>`;
+    }
+    let POST_REFS = null;
+    function applyPost(gi) {
+      const g = match.gangs[gi], gang = getGang(g.gangId), u = postUpd(g);
+      if (!gang || !inCamp(gang) || u.applied) return;
+      const msgs = [];
+      g.crew.forEach(f => {
+        const gf = f.fid && gang.fighters.find(x => x.id === f.fid); if (!gf) return;
+        const fu = u.fighters[f.fid], x = crewXp(f, fu);
+        if (x) gf.xp = (gf.xp || 0) + x;
+        if (fu.inj) msgs.push(applyInjury(gf, fu.inj, POST_REFS));
+      });
+      const cr = parseInt(u.credits, 10) || 0, rp = parseInt(u.rep, 10) || 0;
+      gang.campagne.magot = (gang.campagne.magot || 0) + cr;
+      gang.campagne.rep = Math.max(1, (gang.campagne.rep || 1) + rp);
+      putGang(gang);
+      u.applied = true;
+      u.msg = `Appliqué : XP ajoutée${cr ? ", +" + cr + " crédits au Magot" : ""}${rp ? ", Réputation " + (rp > 0 ? "+" : "") + rp : ""}.` + (msgs.length ? " " + msgs.join(" ") : "");
+    }
     function bindPost() {
       const m = match;
+      const pv = el => { const [gi, fid] = el.split(":"); return [m.gangs[+gi], fid]; };
+      $("view").querySelectorAll("[data-pu-part]").forEach(el => el.addEventListener("change", () => { const [g, fid] = pv(el.getAttribute("data-pu-part")); postUpd(g).fighters[fid].part = el.checked; saveMatch(); renderPartie(); }));
+      $("view").querySelectorAll("[data-pu-extra]").forEach(el => el.addEventListener("change", () => { const [g, fid] = pv(el.getAttribute("data-pu-extra")); postUpd(g).fighters[fid].extra = el.value.trim(); saveMatch(); renderPartie(); }));
+      $("view").querySelectorAll("[data-pu-inj]").forEach(el => el.addEventListener("change", () => { const [g, fid] = pv(el.getAttribute("data-pu-inj")); const fu = postUpd(g).fighters[fid]; fu.inj = el.value; fu.injMsg = ""; saveMatch(); renderPartie(); }));
+      $("view").querySelectorAll("[data-pu-roll]").forEach(el => el.addEventListener("click", () => {
+        const [g, fid] = pv(el.getAttribute("data-pu-roll")); const fu = postUpd(g).fighters[fid];
+        const v = d66(), b = injuryFor(v, POST_REFS); fu.inj = b ? b.plage : ""; fu.injMsg = `D66 = ${v} : ${b ? b.effet : "?"}`;
+        saveMatch(); renderPartie();
+      }));
+      $("view").querySelectorAll("[data-pu-credits]").forEach(el => el.addEventListener("change", () => { postUpd(m.gangs[+el.getAttribute("data-pu-credits")]).credits = el.value.trim(); saveMatch(); }));
+      $("view").querySelectorAll("[data-pu-rep]").forEach(el => el.addEventListener("change", () => { postUpd(m.gangs[+el.getAttribute("data-pu-rep")]).rep = el.value.trim(); saveMatch(); }));
+      $("view").querySelectorAll("[data-pu-apply]").forEach(el => el.addEventListener("click", () => {
+        const gi = +el.getAttribute("data-pu-apply");
+        if (!confirm("Ajouter l'XP, les blessures, les crédits et la Réputation à la fiche de " + m.gangs[gi].name + " ? Cette action ne s'annule pas automatiquement.")) return;
+        applyPost(gi); saveMatch(); renderPartie();
+      }));
       const sync = () => {
         m.post = {
           winner: ($("post-winner") || {}).value || "",
@@ -1488,7 +1592,7 @@
 
 
     function renderPartie() {
-      if (!SCEN) { load("scenarios.json").then(sd => { SCEN = sd; if (location.hash.startsWith("#partie")) renderPartie(); }).catch(() => { SCEN = { scenarios: [], tirage: [] }; renderPartie(); }); return; }
+      if (!SCEN || !POST_REFS) { Promise.all([load("scenarios.json"), load("refs.json")]).then(([sd, rf]) => { SCEN = sd; POST_REFS = rf; if (location.hash.startsWith("#partie")) renderPartie(); }).catch(() => { SCEN = SCEN || { scenarios: [], tirage: [] }; POST_REFS = POST_REFS || { blessuresPersistantes: [] }; renderPartie(); }); return; }
       match = match || loadMatch();
       const view = $("view");
       if (!match || match.phase === "done" || !match.phase) {
@@ -1630,6 +1734,16 @@
         const b = t.accru && t.maison === g.house && t.accru.rep != null ? t.accru.rep : (t.std.rep || 0);
         return s + b;
       }, 0);
+    }
+    function applyInjury(f, plage, refs) {
+      const b = (refs.blessuresPersistantes || []).find(x => x.plage === plage); if (!b) return "";
+      const nom = b.effet.split(" — ")[0];
+      if (/Récupération/.test(b.effet)) f.recup = true;
+      if (INJ_MODS[b.plage]) (f.injuries = f.injuries || []).push({ plage: b.plage, nom, mods: INJ_MODS[b.plage] });
+      let m = `${f.name || "Combattant"} : ${b.effet}.`;
+      if (b.plage === "11") { const x = roll(1, 3); f.xp = (f.xp || 0) + x; m += ` +${x} XP ajoutés.`; }
+      if (/Mort/.test(b.effet)) m += " Retire-le du gang si personne ne le sauve.";
+      return m;
     }
     function cpSpend(g, v) { if (inCamp(g) && v) g.campagne.magot = (g.campagne.magot || 0) - v; }
     function roll(n, sides) { let s = 0; for (let i = 0; i < n; i++) s += 1 + Math.floor(Math.random() * sides); return s; }
@@ -1923,6 +2037,7 @@
           <div class="btn-row">
             <button type="button" class="btn ghost small" id="gb-export-file">Exporter (fichier)</button>
             <button type="button" class="btn ghost small" id="gb-export-code">Copier le code</button>
+            <a class="btn ghost small" href="#gangs/n23/gang/${esc(g.id)}/imprimer" style="text-align:center">Feuille de gang (PDF)</a>
           </div>
           <p class="note" id="gb-share-msg"></p>
           <button type="button" class="btn danger" id="gb-delete" style="margin-top:12px">Supprimer ce gang</button>
@@ -2023,14 +2138,7 @@
       else if (t.dataset.cpCaptif != null) mutateGang(g => { g.fighters[+t.dataset.cpCaptif].captif = t.value.trim().slice(0, 60); });
       else if (t.dataset.cpAdv != null && t.value) mutateGang(g => cpAddAdvance(g.fighters[+t.dataset.cpAdv], gbState.data, t.value));
       else if (t.dataset.cpInj != null && t.value) mutateGang(g => {
-        const f = g.fighters[+t.dataset.cpInj], b = (gbState.data.refs.blessuresPersistantes || []).find(x => x.plage === t.value); if (!b) return;
-        const nom = b.effet.split(" — ")[0];
-        if (/Récupération/.test(b.effet)) f.recup = true;
-        if (INJ_MODS[b.plage]) (f.injuries = f.injuries || []).push({ plage: b.plage, nom, mods: INJ_MODS[b.plage] });
-        let m = `${f.name || "Combattant"} : ${b.effet}.`;
-        if (b.plage === "11") { const x = roll(1, 3); f.xp = (f.xp || 0) + x; m += ` +${x} XP ajoutés.`; }
-        if (/Mort/.test(b.effet)) m += " Retire-le du gang si personne ne le sauve.";
-        gbState.diceMsg = m;
+        gbState.diceMsg = applyInjury(g.fighters[+t.dataset.cpInj], t.value, gbState.data.refs);
       });
     });
 
@@ -2133,6 +2241,51 @@
     }
 
     // Pour l'onglet Partie : transforme un gang créé en équipe de partie
+    function printGangHtml(g, d) {
+      const STATS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"];
+      const camp = inCamp(g), cp = g.campagne || {};
+      const wRows = sh => sh.weapons.flatMap(w => w.profils.map(p => `<tr><td>${esc(w.nom)}${p.mode ? " (" + esc(p.mode) + ")" : ""}</td><td>${esc(p.porC)}</td><td>${esc(p.porL)}</td><td>${esc(p.preC)}</td><td>${esc(p.preL)}</td><td>${esc(p.F)}</td><td>${esc(p.PA)}</td><td>${esc(p.D)}</td><td>${esc(p.Mu)}</td><td class="tr">${esc((p.traits || []).join(", "))}</td></tr>`)).join("");
+      const card = (f, sh, extra) => `<section class="pf">
+        <div class="pf-h"><b>${esc(f.name || sh.role)}</b><span>${f.name ? esc(sh.role) : ""}</span><span>${extra.cost != null ? extra.cost + " cr" : ""}</span></div>
+        <table class="pt"><tr>${STATS.map(k => `<th>${k}</th>`).join("")}</tr><tr>${STATS.map(k => `<td>${esc(sh.profil[k] || "-")}</td>`).join("")}</tr></table>
+        ${sh.weapons.length ? `<table class="pw"><tr><th>Arme</th><th>Por C</th><th>Por L</th><th>Pré C</th><th>Pré L</th><th>F</th><th>PA</th><th>D</th><th>Mu</th><th>Traits</th></tr>${wRows(sh)}</table>` : ""}
+        ${sh.gear.length ? `<p><b>Équipement :</b> ${esc(sh.gear.join(", "))}</p>` : ""}
+        ${sh.skills.length ? `<p><b>Compétences :</b> ${sh.skills.map(k => `<b>${esc(k.nom)}</b>${k.resume ? " (" + esc(k.resume) + ")" : ""}`).join(" ; ")}</p>` : ""}
+        ${sh.regles.length ? `<p><b>Règles :</b> ${sh.regles.map(r => esc(r.nom)).join(", ")}</p>` : ""}
+        ${extra.camp ? `<p class="pc">${extra.camp}</p>` : ""}
+      </section>`;
+      const cards = [];
+      g.fighters.forEach(f => {
+        const sh = buildSheet(f, d); if (!sh) return;
+        let c = "";
+        if (camp && f.kind !== "brute") {
+          const bits = [`XP : ${f.xp || 0}`, `Progressions : ${progCount(f, d)}`];
+          if ((f.adv || []).length) bits.push("Acquis : " + f.adv.map(a => a.label).join(", "));
+          if ((f.injuries || []).length) bits.push("Blessures : " + f.injuries.map(i => i.nom).join(", "));
+          if (f.recup) bits.push("En Récupération");
+          if (f.captif) bits.push("Capturé par " + f.captif);
+          c = esc(bits.join(" · "));
+        }
+        cards.push(card(f, sh, { cost: fighterCost(f, d), camp: c }));
+        (f.betes || []).forEach(bid => { const b = beastSheet(bid, f.name || sh.role, d); if (b) cards.push(card({}, b, {})); });
+      });
+      const terr = camp ? (cp.territoires || []).map(id => { const t = d.camp.territoires.find(x => x.id === id); return t ? t.nom : id; }) : [];
+      return `<div class="page print-page">
+        <div class="no-print btn-row" style="margin-bottom:12px">
+          <a class="btn ghost small" href="#gangs/n23/gang/${esc(g.id)}">Retour</a>
+          <button type="button" class="btn primary small" onclick="window.print()">Imprimer / enregistrer en PDF</button>
+        </div>
+        <div class="pg-head">
+          <h2>${esc(g.name)}</h2>
+          <p>${esc(houseTitle(d.house))} · Necromunda N23 · Valeur du gang ${gangCost(g, d)} crédits${camp ? "" : " · Budget " + g.budget}</p>
+          ${camp ? `<p>Réputation ${(cp.rep || 1) + territoryRep(g, d.camp)} · Magot ${cp.magot || 0} crédits · Richesse ${gangCost(g, d) + (cp.magot || 0)} · Territoires : ${esc(terr.join(", ") || "aucun")}</p>` : ""}
+          ${camp && cp.notes ? `<p>Notes : ${esc(cp.notes)}</p>` : ""}
+        </div>
+        ${cards.join("")}
+        <p class="pg-foot">NecroCounter · elcounter.github.io/necrocounter · application non officielle</p>
+      </div>`;
+    }
+
     function gangForMatch(id) {
       const g = getGang(id);
       if (!g) return Promise.resolve(null);
@@ -2144,14 +2297,14 @@
           const label = def ? (f.kind === "brute" ? def.nom : isSpecialist(f) ? "Spécialiste (" + def.role + ")" : def.role) : "Combattant";
           const pv = def ? parseInt((effProfil(f, d) || def.profil).PV, 10) || 1 : 1;
           const name = f.name ? `${f.name} (${label})` : label;
-          crew.push({ id: uid(), name, cost: fighterCost(f, d), wounds: pv, maxWounds: pv, ready: true, status: [], sheet: buildSheet(f, d) });
+          crew.push({ id: uid(), fid: f.id, name, cost: fighterCost(f, d), wounds: pv, maxWounds: pv, ready: true, status: [], sheet: buildSheet(f, d) });
           (f.betes || []).forEach(bid => {
             const sh = beastSheet(bid, f.name || label, d); if (!sh) return;
             const bpv = parseInt(sh.profil.PV, 10) || 1;
             crew.push({ id: uid(), name: sh.role, cost: 0, wounds: bpv, maxWounds: bpv, ready: true, status: [], sheet: sh });
           });
         });
-        return { name: g.name, rating: String(gangCost(g, d)), crew };
+        return { gangId: g.id, name: g.name, rating: String(gangCost(g, d)), crew };
       });
     }
 
@@ -2185,6 +2338,7 @@
         title.textContent = "Gangs";
         const g = getGang(parts[3]);
         if (!g) view.innerHTML = `<div class="page"><div class="placeholder">Gang introuvable sur cet appareil.</div></div>`;
+        else if (parts[4] === "imprimer") showAsync(view, gangData(g.house), d => printGangHtml(g, d));
         else showAsync(view, gangData(g.house), d => { gbState = { gang: g, data: d }; return gangEditorHtml(g, d); });
       } else if (section === "gangs" && edition === "n23" && house && ACTIVE_HOUSES.includes(house)) {
         title.textContent = "Gangs";
