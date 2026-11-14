@@ -37,6 +37,12 @@
       "nom": "Prospecteurs Squats Ironhead",
       "titre": "Prospecteurs Squats Ironhead",
       "fichier": "maisons/squats.json"
+    },
+    {
+      "id": "nomades",
+      "nom": "Nomades des Désolations de Cendres",
+      "titre": "Nomades des Désolations de Cendres",
+      "fichier": "maisons/nomades.json"
     }
   ]
 }

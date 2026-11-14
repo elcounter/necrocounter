@@ -20,7 +20,7 @@ SRC = ROOT / "src"
 STATS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"]
 PROFILE = ["porC", "porL", "preC", "preL", "F", "PA", "D", "Mu"]
 SKILL_CATEGORIES = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir",
-                    "Sagesse des Anciens"]
+                    "Sagesse des Anciens", "Désolations"]
 WARNINGS = []
 
 
@@ -162,6 +162,8 @@ def parse_maisons():
         elif line.startswith("combattant:"):
             role, cost, stats, gear = [c.strip() for c in line.split(":", 1)[1].split("|")]
             role, _, rid = role.partition("=>")
+            rid, _, base = rid.partition(":")
+            base, _, promo = base.partition(":")
             role, rid = role.strip(), slug(rid.strip()) if rid.strip() else None
             values = stats.split()
             if len(values) != len(STATS):
@@ -170,6 +172,8 @@ def parse_maisons():
                 "id": rid or slug(role), "role": role, "cout": int(cost),
                 "profil": dict(zip(STATS, values)),
                 "equipementDeDepart": [g.strip() for g in gear.split(",") if g.strip()],
+                **({"base": slug(base)} if base.strip() else {}),
+                **({"promotionDepuis": slug(promo)} if promo.strip() else {}),
             })
         elif line.startswith("competences:"):
             role, spec = [c.strip() for c in line.split(":", 1)[1].split("|")]

@@ -1,0 +1,646 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre des Outreterres (version française)",
+  "reglesDeCreation": {
+    "novice": "Les Arpenteurs de Poussière et les Chevaucheurs de Poussière prennent leur équipement dans leur propre liste ; pas de limite de 20 crédits.",
+    "armeSpeciale": "Un Guerrier n'a accès qu'aux armes de base, pistolets et armes de corps à corps de sa liste (le long fusil compte comme arme de base pour lui). À la création, un seul Guerrier peut être promu Spécialiste : il accède alors à toute sa liste.",
+    "chefEtChampion": "Le Sachem, les Sentinelles et les Hèle-tempêtes n'ont aucune restriction d'armes dans leur liste et commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "nomades",
+  "nom": "Nomades des Désolations de Cendres",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Sachem",
+      "cout": 120,
+      "profil": {
+        "M": "6\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "5+",
+        "SF": "5+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Cape des cendres",
+        "Manteau céleste"
+      ]
+    },
+    {
+      "id": "sentinelle",
+      "role": "Sentinelle",
+      "cout": 100,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Cape des cendres",
+        "Manteau céleste"
+      ],
+      "base": "champion",
+      "promotionDepuis": "chevaucheur"
+    },
+    {
+      "id": "hele-tempete",
+      "role": "Hèle-tempête",
+      "cout": 120,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "8+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Cape des cendres",
+        "Hélamite à Dos de Poussière"
+      ],
+      "base": "champion",
+      "promotionDepuis": "chevaucheur"
+    },
+    {
+      "id": "chevaucheur",
+      "role": "Chevaucheur de Poussière",
+      "cout": 80,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "2",
+        "CD": "9+",
+        "SF": "7+",
+        "V": "8+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": [
+        "Cape des cendres",
+        "Hélamite à Dos de Poussière"
+      ],
+      "base": "novice"
+    },
+    {
+      "id": "ganger",
+      "role": "Guerrier",
+      "cout": 60,
+      "profil": {
+        "M": "6\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": [
+        "Cape des cendres",
+        "Manteau céleste"
+      ]
+    },
+    {
+      "id": "novice",
+      "role": "Arpenteur de Poussière",
+      "cout": 35,
+      "profil": {
+        "M": "6\"",
+        "CC": "5+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "7+",
+        "V": "8+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": [
+        "Cape des cendres",
+        "Manteau céleste"
+      ]
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Ruse",
+        "Autorité",
+        "Savoir"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Combat",
+        "Désolations"
+      ]
+    },
+    "sentinelle": {
+      "primaires": [
+        "Tir",
+        "Désolations"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Autorité",
+        "Savoir"
+      ]
+    },
+    "hele-tempete": {
+      "primaires": [
+        "Savoir",
+        "Désolations"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse",
+        "Autorité"
+      ]
+    },
+    "chevaucheur": {
+      "primaires": [
+        "Ruse"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Férocité"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Ruse"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Férocité"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Agilité",
+        "Ruse"
+      ],
+      "secondaires": [
+        "Férocité",
+        "Tir"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Carabine éclateur",
+      "prix": 25,
+      "categorie": "Armes de base",
+      "id": "carabine-eclateur",
+      "arme": "carabine-eclateur"
+    },
+    {
+      "nom": "Fusil éclateur",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-eclateur",
+      "arme": "fusil-eclateur"
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-de-recup",
+      "arme": "fusil-d-assaut-de-recup"
+    },
+    {
+      "nom": "Long fusil (Sniper des Désolations)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "long-fusil-sniper-des-desolations",
+      "roles": [
+        "ganger"
+      ],
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Pistolet éclateur",
+      "prix": 15,
+      "categorie": "Pistolets",
+      "id": "pistolet-eclateur",
+      "arme": "pistolet-eclateur"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-de-recup",
+      "arme": "pistolet-mitrailleur-de-recup"
+    },
+    {
+      "nom": "Lance-toile léger",
+      "prix": 90,
+      "categorie": "Pistolets",
+      "id": "lance-toile-leger",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete",
+        "chevaucheur"
+      ],
+      "arme": "lance-toile-leger"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete",
+        "chevaucheur"
+      ],
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Lance-venin",
+      "prix": 160,
+      "categorie": "Armes spéciales",
+      "id": "lance-venin",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete",
+        "chevaucheur",
+        "ganger"
+      ],
+      "arme": "lance-venin"
+    },
+    {
+      "nom": "Lance-toile",
+      "prix": 125,
+      "categorie": "Armes spéciales",
+      "id": "lance-toile",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete",
+        "chevaucheur",
+        "ganger"
+      ],
+      "arme": "lance-toile"
+    },
+    {
+      "nom": "Lanceur de charges (roquettes explosives et Krak)",
+      "prix": 155,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lanceur-de-charges-roquettes-explosives-et-krak",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "ganger"
+      ],
+      "arme": "lanceur-de-charges"
+    },
+    {
+      "nom": "Éclateur lourd",
+      "prix": 140,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "eclateur-lourd",
+      "roles": [
+        "chef",
+        "sentinelle"
+      ],
+      "arme": "eclateur-lourd"
+    },
+    {
+      "nom": "Lame longue",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "lame-longue",
+      "arme": "lame-longue"
+    },
+    {
+      "nom": "Couteau de rôdeur",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-rodeur",
+      "arme": "couteau-de-rodeur"
+    },
+    {
+      "nom": "Lance tronçonneuse",
+      "prix": 55,
+      "categorie": "Armes de corps à corps",
+      "id": "lance-tronconneuse",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete",
+        "chevaucheur"
+      ],
+      "arme": "lance-tronconneuse"
+    },
+    {
+      "nom": "Mono-crochet",
+      "prix": 35,
+      "categorie": "Armes de corps à corps",
+      "id": "mono-crochet",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete"
+      ],
+      "arme": "mono-crochet"
+    },
+    {
+      "nom": "Bâton du hèle-tempête",
+      "prix": 35,
+      "categorie": "Armes de corps à corps",
+      "id": "baton-du-hele-tempete",
+      "roles": [
+        "hele-tempete"
+      ],
+      "arme": "baton-du-hele-tempete"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Champ de conversion",
+      "prix": 60,
+      "categorie": "Champs protecteurs",
+      "id": "champ-de-conversion",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete"
+      ]
+    },
+    {
+      "nom": "Champ téléporteur",
+      "prix": 70,
+      "categorie": "Champs protecteurs",
+      "id": "champ-teleporteur",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete"
+      ]
+    },
+    {
+      "nom": "Champ réfracteur",
+      "prix": 50,
+      "categorie": "Champs protecteurs",
+      "id": "champ-refracteur",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete"
+      ]
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Bio-scanner",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "bio-scanner",
+      "roles": [
+        "chevaucheur"
+      ]
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "ganger",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Pack de roquettes",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "pack-de-roquettes",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "ganger",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Médikit",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "medikit",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete"
+      ]
+    },
+    {
+      "nom": "Grav-chute",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "grav-chute",
+      "roles": [
+        "chef",
+        "sentinelle"
+      ]
+    },
+    {
+      "nom": "Servo-harnais partiel",
+      "prix": 130,
+      "categorie": "Équipement personnel",
+      "id": "servo-harnais-partiel",
+      "roles": [
+        "chef",
+        "sentinelle"
+      ]
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-infrarouge",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-telescopique",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "hele-tempete",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Suspenseur",
+      "prix": 60,
+      "categorie": "Accessoires d'armes",
+      "id": "suspenseur",
+      "roles": [
+        "chef",
+        "sentinelle",
+        "ganger"
+      ]
+    }
+  ],
+  "titre": "Nomades des Désolations de Cendres",
+  "gangerArmes": [
+    "Armes de base",
+    "Pistolets",
+    "Armes de corps à corps"
+  ],
+  "regles": [
+    {
+      "nom": "Composition",
+      "texte": "Mêmes restrictions de composition que les autres gangs. Aucune Alliance possible ; aucun Mercenaire sauf mention contraire. Parmi les Aventuriers, seuls ceux autorisés aux Nomades, plus leurs versions de Cartouchier, Toubib clandestin et Tambouilleur."
+    },
+    {
+      "nom": "Chef de gang",
+      "texte": "Un seul Sachem. Il ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu."
+    },
+    {
+      "nom": "Hiérarchie du gang",
+      "texte": "Une fois le gang Dégonflé, si le Sachem réussit son test de Sang-froid en phase de Fin, les Nomades alliés à 12\" ou moins réussissent automatiquement le leur et ne fuient pas (6\" pour une Sentinelle ou un Hèle-tempête). Ces combattants font des actions d'après-bataille."
+    },
+    {
+      "nom": "Les Ficelles du Métier",
+      "texte": "Sachem, Sentinelles, Hèle-tempêtes, Chevaucheurs de Poussière et Spécialistes peuvent avoir plusieurs panoplies d'équipement."
+    },
+    {
+      "nom": "Activation de groupe",
+      "texte": "En s'activant, le Sachem peut activer à sa suite 2 Nomades Parés à 3\" ou moins, une Sentinelle 1, un par un. Ceux-ci ne relancent pas d'activation de groupe."
+    },
+    {
+      "nom": "Combattants du gang",
+      "texte": "Guerriers, Arpenteurs et Chevaucheurs de Poussière doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires)."
+    },
+    {
+      "nom": "Né sur une selle",
+      "texte": "Hèle-tempête et Chevaucheur de Poussière ne descendent jamais de leur Hélamite à Dos de Poussière, qui figure toujours sur leur carte."
+    },
+    {
+      "nom": "Hélamite à Dos de Poussière",
+      "texte": "Le combattant est Monté, son Mouvement passe à 8\" et il gagne la compétence Grand Bond."
+    },
+    {
+      "nom": "Appel de la tempête",
+      "texte": "Avec un bâton du hèle-tempête, le Hèle-tempête peut faire l'action Changer la Météo (Double) : active la règle de Visibilité (24\") si elle ne l'est pas, sinon augmente ou réduit sa valeur de 6\" (minimum 6\") jusqu'à la fin de la bataille."
+    },
+    {
+      "nom": "Tête brûlée",
+      "texte": "Si un Chevaucheur ou un Arpenteur de Poussière est Gravement Blessé ou mis Hors de Combat, ses alliés à 3\" ou moins ne font pas de test de Nervosité (sauf ceux qui ont aussi cette règle)."
+    },
+    {
+      "nom": "Apprentissage rapide",
+      "texte": "Chevaucheurs et Arpenteurs de Poussière ne paient pas le surcoût de 2 XP quand ils améliorent plusieurs fois la même caractéristique."
+    },
+    {
+      "nom": "Promotion",
+      "texte": "Au Temps Mort, un Chevaucheur de Poussière à 5 progressions ou plus peut devenir Sentinelle ou Hèle-tempête, un Arpenteur de Poussière Spécialiste. Des Guerriers peuvent aussi devenir Spécialistes en dépensant de l'XP."
+    },
+    {
+      "nom": "Cape des cendres",
+      "texte": "Compte comme un respirateur. Une perte de PV due aux conditions du champ de bataille est ignorée sur 5+."
+    },
+    {
+      "nom": "Manteau céleste",
+      "texte": "Action Se Cacher dans les Désolations (Double) : à 12\" ou plus de tout ennemi, le combattant devient Caché, même sans Noir Total. Bouger le rend Révélé."
+    },
+    {
+      "nom": "En campagne Dominion",
+      "texte": "Les Nomades ne tiennent pas de Territoires : ils démarrent avec un Avant-Poste des Nomades (revenu 2D6x10, impossible à perdre). Un Territoire qu'ils gagnent est pillé : il devient libre et remplacé par des Vieilles Ruines, et ils ajoutent 4D6x10 crédits au Magot. Un gang qui les défie en Prise de Contrôle attaque l'Avant-Poste (Zone Mortalis si possible, terrain posé par les Nomades, Avantage du Territoire Domiciliaire) ; s'il gagne, il prend +5 Réputation mais pas le Territoire."
+    }
+  ]
+}

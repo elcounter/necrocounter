@@ -430,3 +430,94 @@ Lunette' | 35
 Lunette télescopique' | 25
 ## Accessoires d'armes [chef, champion]
 Suspenseur | 60
+
+= Nomades des Désolations de Cendres => nomades
+source: Livre des Outreterres (version française)
+creation: novice | Les Arpenteurs de Poussière et les Chevaucheurs de Poussière prennent leur équipement dans leur propre liste ; pas de limite de 20 crédits.
+creation: armeSpeciale | Un Guerrier n'a accès qu'aux armes de base, pistolets et armes de corps à corps de sa liste (le long fusil compte comme arme de base pour lui). À la création, un seul Guerrier peut être promu Spécialiste : il accède alors à toute sa liste.
+creation: chefEtChampion | Le Sachem, les Sentinelles et les Hèle-tempêtes n'ont aucune restriction d'armes dans leur liste et commencent avec une compétence gratuite de leurs sets Primaires.
+gangerArmes: Armes de base, Pistolets, Armes de corps à corps
+regle: Composition | Mêmes restrictions de composition que les autres gangs. Aucune Alliance possible ; aucun Mercenaire sauf mention contraire. Parmi les Aventuriers, seuls ceux autorisés aux Nomades, plus leurs versions de Cartouchier, Toubib clandestin et Tambouilleur.
+regle: Chef de gang | Un seul Sachem. Il ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu.
+regle: Hiérarchie du gang | Une fois le gang Dégonflé, si le Sachem réussit son test de Sang-froid en phase de Fin, les Nomades alliés à 12" ou moins réussissent automatiquement le leur et ne fuient pas (6" pour une Sentinelle ou un Hèle-tempête). Ces combattants font des actions d'après-bataille.
+regle: Les Ficelles du Métier | Sachem, Sentinelles, Hèle-tempêtes, Chevaucheurs de Poussière et Spécialistes peuvent avoir plusieurs panoplies d'équipement.
+regle: Activation de groupe | En s'activant, le Sachem peut activer à sa suite 2 Nomades Parés à 3" ou moins, une Sentinelle 1, un par un. Ceux-ci ne relancent pas d'activation de groupe.
+regle: Combattants du gang | Guerriers, Arpenteurs et Chevaucheurs de Poussière doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires).
+regle: Né sur une selle | Hèle-tempête et Chevaucheur de Poussière ne descendent jamais de leur Hélamite à Dos de Poussière, qui figure toujours sur leur carte.
+regle: Hélamite à Dos de Poussière | Le combattant est Monté, son Mouvement passe à 8" et il gagne la compétence Grand Bond.
+regle: Appel de la tempête | Avec un bâton du hèle-tempête, le Hèle-tempête peut faire l'action Changer la Météo (Double) : active la règle de Visibilité (24") si elle ne l'est pas, sinon augmente ou réduit sa valeur de 6" (minimum 6") jusqu'à la fin de la bataille.
+regle: Tête brûlée | Si un Chevaucheur ou un Arpenteur de Poussière est Gravement Blessé ou mis Hors de Combat, ses alliés à 3" ou moins ne font pas de test de Nervosité (sauf ceux qui ont aussi cette règle).
+regle: Apprentissage rapide | Chevaucheurs et Arpenteurs de Poussière ne paient pas le surcoût de 2 XP quand ils améliorent plusieurs fois la même caractéristique.
+regle: Promotion | Au Temps Mort, un Chevaucheur de Poussière à 5 progressions ou plus peut devenir Sentinelle ou Hèle-tempête, un Arpenteur de Poussière Spécialiste. Des Guerriers peuvent aussi devenir Spécialistes en dépensant de l'XP.
+regle: Cape des cendres | Compte comme un respirateur. Une perte de PV due aux conditions du champ de bataille est ignorée sur 5+.
+regle: Manteau céleste | Action Se Cacher dans les Désolations (Double) : à 12" ou plus de tout ennemi, le combattant devient Caché, même sans Noir Total. Bouger le rend Révélé.
+regle: En campagne Dominion | Les Nomades ne tiennent pas de Territoires : ils démarrent avec un Avant-Poste des Nomades (revenu 2D6x10, impossible à perdre). Un Territoire qu'ils gagnent est pillé : il devient libre et remplacé par des Vieilles Ruines, et ils ajoutent 4D6x10 crédits au Magot. Un gang qui les défie en Prise de Contrôle attaque l'Avant-Poste (Zone Mortalis si possible, terrain posé par les Nomades, Avantage du Territoire Domiciliaire) ; s'il gagne, il prend +5 Réputation mais pas le Territoire.
+combattant: Sachem => Chef | 120 | 6" 3+ 4+ 3 3 2 3+ 2 5+ 5+ 6+ 6+ | Cape des cendres, Manteau céleste
+combattant: Sentinelle => sentinelle:champion:chevaucheur | 100 | 5" 4+ 3+ 3 3 2 3+ 2 6+ 6+ 7+ 7+ | Cape des cendres, Manteau céleste
+combattant: Hèle-tempête => hele-tempete:champion:chevaucheur | 120 | 5" 3+ 4+ 3 3 2 3+ 2 8+ 6+ 6+ 7+ | Cape des cendres, Hélamite à Dos de Poussière
+combattant: Chevaucheur de Poussière => chevaucheur:novice | 80 | 5" 4+ 4+ 3 3 1 3+ 2 9+ 7+ 8+ 9+ | Cape des cendres, Hélamite à Dos de Poussière
+combattant: Guerrier => Ganger | 60 | 6" 4+ 4+ 3 3 1 3+ 1 7+ 6+ 7+ 8+ | Cape des cendres, Manteau céleste
+combattant: Arpenteur de Poussière => Novice | 35 | 6" 5+ 5+ 3 3 1 3+ 1 9+ 7+ 8+ 9+ | Cape des cendres, Manteau céleste
+competences: Chef | Agilité S, Combat S, Ruse P, Autorité P, Savoir P, Désolations S
+competences: Sentinelle | Ruse S, Autorité S, Savoir S, Tir P, Désolations P
+competences: Hele-tempete | Combat S, Ruse S, Autorité S, Savoir P, Désolations P
+competences: Chevaucheur | Agilité S, Ruse P, Férocité S
+competences: Novice | Agilité S, Ruse P, Férocité S
+competences: Spécialiste | Agilité P, Ruse P, Férocité S, Tir S
+## Armes de base
+Carabine éclateur | 25
+Fusil éclateur | 15
+Fusil d'assaut de récup' | 10
+## Armes de base [ganger]
+Long fusil (Sniper des Désolations) | 30
+## Pistolets
+Pistolet éclateur | 15
+Pistolet-mitrailleur de récup' | 5
+## Pistolets [chef, sentinelle, hele-tempete, chevaucheur]
+Lance-toile léger | 90
+## Armes spéciales [chef, sentinelle, hele-tempete, chevaucheur]
+Long fusil | 30
+## Armes spéciales [chef, sentinelle, hele-tempete, chevaucheur, ganger]
+Lance-venin | 160
+Lance-toile | 125
+## Armes lourdes [chef, sentinelle, ganger]
+Lanceur de charges (roquettes explosives et Krak)* | 155
+## Armes lourdes [chef, sentinelle]
+Éclateur lourd* | 140
+## Armes de corps à corps
+Lame longue | 30
+Couteau de rôdeur | 20
+## Armes de corps à corps [chef, sentinelle, hele-tempete, chevaucheur]
+Lance tronçonneuse | 55
+## Armes de corps à corps [chef, sentinelle, hele-tempete]
+Mono-crochet | 35
+## Armes de corps à corps [hele-tempete]
+Bâton du hèle-tempête | 35
+## Armures
+Armure Flak | 10
+Armure composite | 15
+## Champs protecteurs [chef, sentinelle, hele-tempete]
+Champ de conversion | 60
+Champ téléporteur | 70
+Champ réfracteur | 50
+## Équipement personnel
+Bio-booster | 35
+Filtre nasal | 10
+Photolunettes | 35
+Respirateur | 15
+## Équipement personnel [chevaucheur]
+Bio-scanner | 30
+## Équipement personnel [chef, sentinelle, ganger, novice]
+Filin | 10
+Pack de roquettes | 5
+## Équipement personnel [chef, sentinelle, hele-tempete]
+Médikit | 30
+## Équipement personnel [chef, sentinelle]
+Grav-chute | 40
+Servo-harnais partiel | 130
+## Accessoires d'armes [chef, sentinelle, hele-tempete, ganger]
+Lunette infrarouge' | 25
+Lunette' | 35
+Lunette télescopique' | 25
+## Accessoires d'armes [chef, sentinelle, ganger]
+Suspenseur | 60

@@ -3,6 +3,49 @@
   "source": "Livre de règles N23 (version française)",
   "armes": [
     {
+      "id": "carabine-eclateur",
+      "nom": "Carabine éclateur",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "10\"",
+          "porL": "24\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Choc",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-eclateur",
+      "nom": "Fusil éclateur",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "10\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Choc"
+          ]
+        }
+      ]
+    },
+    {
       "id": "bolter-ironhead",
       "nom": "Bolter Ironhead",
       "categorie": "Armes de base",
@@ -487,6 +530,28 @@
           "traits": [
             "Contrecoup",
             "Abondance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-eclateur",
+      "nom": "Pistolet éclateur",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "8\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Arme de Poing",
+            "Choc"
           ]
         }
       ]
@@ -1063,6 +1128,30 @@
       ]
     },
     {
+      "id": "lance-venin",
+      "nom": "Lance-venin",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-1",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Rareté",
+            "Silencieux",
+            "Souffle",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
       "id": "fuseur-ironhead",
       "nom": "Fuseur Ironhead",
       "categorie": "Armes spéciales",
@@ -1614,6 +1703,66 @@
           "Mu": "-",
           "traits": [
             "Explosion (3\")"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eclateur-lourd",
+      "nom": "Éclateur lourd",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "12\"",
+          "porL": "36\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Choc",
+            "Encombrant",
+            "Tir Rapide (2)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lanceur-de-charges",
+      "nom": "Lanceur de charges",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": "roquette explosive",
+          "porC": "20\"",
+          "porL": "40\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Choc",
+            "Encombrant",
+            "Explosion (5\")"
+          ]
+        },
+        {
+          "mode": "roquette Krak",
+          "porC": "20\"",
+          "porL": "40\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "6",
+          "PA": "-2",
+          "D": "3",
+          "Mu": "6+",
+          "traits": [
+            "Encombrant"
           ]
         }
       ]
@@ -2487,6 +2636,120 @@
             "Explosion (5\")",
             "Gaz",
             "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baton-du-hele-tempete",
+      "nom": "Bâton du hèle-tempête",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Encombrant",
+            "Lance",
+            "Mêlée",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "couteau-de-rodeur",
+      "nom": "Couteau de rôdeur",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Coup en Traître",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lame-longue",
+      "nom": "Lame longue",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Parade"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-tronconneuse",
+      "nom": "Lance tronçonneuse",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Encombrant",
+            "Lance",
+            "Mêlée",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mono-crochet",
+      "nom": "Mono-crochet",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Pulvériser"
           ]
         }
       ]

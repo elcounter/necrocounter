@@ -143,6 +143,10 @@
       "resume": "Symbole Munitions sur Puissance de Feu : risque de surcharge montée / Hors de Combat pour le tireur."
     },
     {
+      "nom": "Lance",
+      "resume": "(Outreterres) Si le porteur est Monté, +1 en Force pour les attaques faites pendant une Attaque au Passage ou une Charge."
+    },
+    {
       "nom": "Limité",
       "resume": "Munition spéciale : échec de Munitions = type épuisé pour le combattant."
     },
@@ -456,6 +460,32 @@
       {
         "nom": "Il y a toujours un autre secret",
         "resume": "(Squats) Quand il ouvre une caisse de butin, son gang gagne D6x10 crédits de plus."
+      }
+    ],
+    "Désolations": [
+      {
+        "nom": "Né dans les Désolations",
+        "resume": "(Nomades) Ignore les effets de la Surface du Champ de Bataille. En Sector Mechanicus ou Zone Mortalis, peut faire l'action Se Cacher dans les Désolations (Double)."
+      },
+      {
+        "nom": "Marche-tempête",
+        "resume": "(Nomades) S'il commence son activation sur la Surface du Champ de Bataille, +2\" à son Mouvement."
+      },
+      {
+        "nom": "Les Yeux des Désolations",
+        "resume": "(Nomades) La Visibilité compte 6\" de plus pour lui. En Noir Total, il peut viser des figurines jusqu'à 9\"."
+      },
+      {
+        "nom": "Dresseur de bête",
+        "resume": "(Nomades) S'il est Monté, une attaque de corps à corps en plus (F3, PA -1, D1) à chaque action Combattre ou attaque de Réaction."
+      },
+      {
+        "nom": "Toujours vigilant",
+        "resume": "(Nomades) Une attaque de Réaction en plus, sans pénalité pour s'être tourné vers l'adversaire."
+      },
+      {
+        "nom": "Abattez-le",
+        "resume": "(Nomades) Action Abattez-le (Élémentaire) : désigne un ennemi en vue ; jusqu'à la fin du tour, ses alliés et lui peuvent relancer leurs jets de touche contre cette cible (détail exact : voir le livre)."
       }
     ]
   },

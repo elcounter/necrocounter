@@ -495,7 +495,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.3.0 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.4.0 Necromunda N23 &amp; N26<br>
       MAJ 14-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span>
@@ -642,14 +642,19 @@
 
     // ---- Données Necromunda N23 ----
     const DATA = "data/n23/";
-    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats"];
+    const ACTIVE_HOUSES = ["cawdor", "delaque", "escher", "goliath", "orlock", "van-saar", "squats", "nomades"];
     const houseTitle = h => h.titre || "Maison " + h.nom;
+    function rb(f, h) {
+      if (f.kind === "brute") return "brute";
+      const c = h && (h.combattants || []).find(x => x.id === f.type);
+      return (c && c.base) || f.type;
+    }
     const noviceLimit = h => !h.titre;
     const roleName = (h, id) => ((h.combattants || []).find(c => c.id === id) || {}).role || ROLE_LABEL[id] || id;
     const STAT_KEYS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"];
     const STAT_2D6 = ["CD", "SF", "V", "INT"]; // caractéristiques testées sur 2D6
     const SKILL_CATS = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir"];
-    const ROLE_LABEL = { chef: "Chef", champion: "Champion", novice: "Novice", specialiste: "Spécialiste" };
+    const ROLE_LABEL = { chef: "Chef", champion: "Champion", novice: "Novice", ganger: "Ganger", specialiste: "Spécialiste" };
     const cache = {};
 
     function load(file) {
@@ -1539,20 +1544,20 @@
       const w = [];
       const total = gangCost(g, d), camp = inCamp(g);
       if (!camp && total > g.budget) w.push(`Budget dépassé de ${total - g.budget} crédits.`);
-      const chefs = g.fighters.filter(f => f.kind !== "brute" && f.type === "chef").length;
+      const chefs = g.fighters.filter(f => f.kind !== "brute" && rb(f, d.house) === "chef").length;
       if (chefs !== 1) w.push(chefs ? "Un gang ne peut avoir qu'un seul Chef." : "Il faut un Chef.");
       g.fighters.filter(f => f.kind !== "brute").forEach(f => {
         const bad = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && (i.roles && !i.roles.includes(f.type) || d.house.gangerArmes && f.type === "ganger" && !f.spec && i.arme && !d.house.gangerArmes.includes(i.categorie)));
         if (bad.length) w.push(`${f.name || roleName(d.house, f.type)} : équipement non autorisé (${bad.map(i => i.nom).join(", ")}).`);
       });
       if (d.house.gangerArmes && !camp && g.fighters.filter(f => f.kind !== "brute" && f.type === "ganger" && f.spec).length > 1) w.push("À la création, un seul " + roleName(d.house, "ganger") + " peut être Spécialiste.");
-      if (!camp && noviceLimit(d.house)) g.fighters.filter(f => f.kind !== "brute" && f.type === "novice").forEach(f => {
+      if (!camp && noviceLimit(d.house)) g.fighters.filter(f => f.kind !== "brute" && rb(f, d.house) === "novice").forEach(f => {
         const big = (f.gear || []).map(id => itemDef(id, d)).filter(i => i && i.prix > 20);
         if (big.length) w.push(`${f.name || "Novice"} : objet de plus de 20 crédits (${big.map(i => i.nom).join(", ")}).`);
       });
       const special = g.fighters.filter(f => f.kind !== "brute" && f.type === "ganger" &&
         (f.gear || []).some(id => (itemDef(id, d) || {}).categorie === SPECIAL_CAT)).length;
-      g.fighters.filter(f => f.kind !== "brute" && (f.type === "chef" || f.type === "champion") && !(f.skills || []).length)
+      g.fighters.filter(f => f.kind !== "brute" && (rb(f, d.house) === "chef" || rb(f, d.house) === "champion") && !(f.skills || []).length)
         .forEach(f => w.push(`${f.name || roleName(d.house, f.type)} : choisis sa compétence de départ (gratuite).`));
       if (!camp && !d.house.gangerArmes && special > 1) w.push(`À la création, un seul Ganger peut avoir une Arme Spéciale (${special} actuellement).`);
       const counts = {};
@@ -1590,7 +1595,8 @@
     }
     function effProfil(f, d) {
       const def = fighterDef(f, d); if (!def) return null;
-      const base = f.baseProfil || def.profil, m = fighterMods(f), out = {};
+      const base = Object.assign({}, f.baseProfil || def.profil), m = fighterMods(f), out = {};
+      if ((def.equipementDeDepart || []).some(x => /Hélamite/.test(x))) base.M = '8"';
       Object.keys(base).forEach(k => { out[k] = applyStat(k, base[k], m[k] || 0); });
       return out;
     }
@@ -1603,9 +1609,9 @@
     }
     function isSpecialist(f) { return f.kind !== "brute" && f.type === "ganger" && f.spec; }
     function canAdvance(f) { return f.kind !== "brute" && (f.type !== "ganger" || f.spec); }
-    function progCount(f) { return (f.adv || []).length + ((f.type === "chef" || f.type === "champion") && !f.baseProfil && (f.skills || []).length ? 1 : 0); }
-    function advCost(f, p, stat) {
-      if (!stat || f.type === "novice") return p.xp;
+    function progCount(f, d) { const r = rb(f, d && d.house); return (f.adv || []).length + ((r === "chef" || r === "champion") && !f.baseProfil && (f.skills || []).length ? 1 : 0); }
+    function advCost(f, p, stat, d) {
+      if (!stat || rb(f, d && d.house) === "novice") return p.xp;
       return p.xp + 2 * (f.adv || []).filter(a => a.stat === stat).length;
     }
     function skillSets(f, d, which) {
@@ -1613,8 +1619,8 @@
       const c = (d.house.competences || {})[key] || {};
       let sets = which === "tous" ? SKILL_CATS.concat(Object.values(d.house.competences || {}).flatMap(x => x.primaires.concat(x.secondaires)).filter(x => !SKILL_CATS.includes(x)))
         .filter((x, i, a) => a.indexOf(x) === i) : (c[which] || []).slice();
-      if (which === "primaires" && f.type === "chef" && !sets.includes("Autorité")) sets.push("Autorité");
-      if (which === "secondaires" && f.type === "champion" && !sets.includes("Autorité") && !(c.primaires || []).includes("Autorité")) sets.push("Autorité");
+      if (which === "primaires" && rb(f, d.house) === "chef" && !sets.includes("Autorité")) sets.push("Autorité");
+      if (which === "secondaires" && rb(f, d.house) === "champion" && !sets.includes("Autorité") && !(c.primaires || []).includes("Autorité")) sets.push("Autorité");
       return sets.filter(s => (d.refs.competences || {})[s]);
     }
     function territoryDef(id, c) { return c.territoires.find(t => t.id === id); }
@@ -1686,7 +1692,7 @@
 
     function fighterCampaignHtml(f, fi, d) {
       const c = d.camp;
-      const pc = progCount(f);
+      const pc = progCount(f, d);
       const parts = [];
       parts.push(`<div class="cp-line"><span><b>${f.xp || 0}</b> XP · ${pc} progression${pc > 1 ? "s" : ""}</span>
         <span class="btn-row" style="margin:0"><button type="button" class="btn ghost small" data-cp-xp="${fi}:-1">XP -1</button><button type="button" class="btn ghost small" data-cp-xp="${fi}:1">XP +1</button></span></div>`);
@@ -1703,7 +1709,7 @@
         const opt = (val, label, cost, ok) => `<option value="${esc(val)}"${ok && cost <= xp ? "" : " disabled"}>${cost} XP · ${esc(label)}</option>`;
         const statOpts = [], rndOpts = [], chOpts = [], promo = [];
         c.progressions.forEach(p => {
-          if (p.stats) p.stats.forEach(k => { const cost = advCost(f, p, k); statOpts.push(opt(`s:${p.id}:${k}`, `+1 ${k} (+${p.cr} cr)`, cost, canImprove(f, d, k))); });
+          if (p.stats) p.stats.forEach(k => { const cost = advCost(f, p, k, d); statOpts.push(opt(`s:${p.id}:${k}`, `+1 ${k} (+${p.cr} cr)`, cost, canImprove(f, d, k))); });
           else if (p.promo) { if (isSpecialist(f)) skillSets(f, d, "primaires").forEach(set => promo.push(opt(`p:${p.id}:${set}`, `Promu Champion + ${set} au hasard (+${p.cr} cr)`, p.xp, true))); }
           else if (p.random) skillSets(f, d, p.skill).forEach(set => {
             const left = d.refs.competences[set].some(k => !(f.skills || []).includes(k.nom));
@@ -1715,8 +1721,8 @@
         parts.push(`<select class="gb-add" data-cp-adv="${fi}"><option value="">+ Acheter une progression…</option>
           <optgroup label="Caractéristiques">${statOpts.join("")}</optgroup><optgroup label="Compétence aléatoire">${rndOpts.join("")}</optgroup>${chOpts.join("")}
           ${promo.length ? `<optgroup label="Promotion">${promo.join("")}</optgroup>` : ""}</select>`);
-        if (f.type === "novice" && (f.adv || []).length >= 5)
-          parts.push(`<button type="button" class="btn ghost small" data-cp-promo="${fi}">Promouvoir Champion (Temps Mort)</button>`);
+        if (rb(f, d.house) === "novice" && (f.adv || []).length >= 5)
+          parts.push(promoTargets(f, d).map(t => `<button type="button" class="btn ghost small" data-cp-promo="${fi}:${esc(t)}">Promouvoir ${esc(t === "specialiste" ? "Spécialiste" : roleName(d.house, t))} (Temps Mort)</button>`).join(" "));
       } else if (f.kind !== "brute") {
         if (f.gangerRoll != null) {
           const r = c.gangers.find(x => f.gangerRoll >= x.de && f.gangerRoll <= x.a);
@@ -1735,7 +1741,7 @@
       const p = d.camp.progressions.find(x => x.id === pid); if (!p) return;
       const xp = f.xp || 0;
       if (kind === "s") {
-        const cost = advCost(f, p, a); if (cost > xp || !canImprove(f, d, a)) return;
+        const cost = advCost(f, p, a, d); if (cost > xp || !canImprove(f, d, a)) return;
         f.xp = xp - cost; (f.adv = f.adv || []).push({ id: p.id, stat: a, cr: p.cr, xp: cost, label: "+1 " + a });
       } else if (kind === "c") {
         if (p.xp > xp || (f.skills || []).includes(b)) return;
@@ -1756,11 +1762,19 @@
         if (kind === "p") cpPromote(f, d);
       }
     }
-    function cpPromote(f, d) {
+    function promoTargets(f, d) {
+      const t = d.house.combattants.filter(c => c.promotionDepuis === f.type).map(c => c.id);
+      if (t.length) return t;
+      return [d.house.gangerArmes ? "specialiste" : "champion"];
+    }
+    function cpPromote(f, d, target) {
       const def = fighterDef(f, d);
+      target = target || (d.house.combattants.some(c => c.id === "champion") ? "champion" : (d.house.combattants.find(c => c.base === "champion") || {}).id || "champion");
       f.baseProfil = Object.assign({}, f.baseProfil || def.profil);
       f.baseCout = f.baseCout != null ? f.baseCout : def.cout;
-      f.promuDe = f.type; f.type = "champion"; delete f.spec;
+      f.promuDe = f.type;
+      if (target === "specialiste") { f.type = "ganger"; f.spec = true; return; }
+      f.type = target; delete f.spec;
     }
     function cpDice(kind) {
       const g = gbState.gang, d = gbState.data;
@@ -1824,7 +1838,7 @@
     function gearBlocked(i, f, h, camp) {
       if (i.roles && !i.roles.includes(f.type)) return "réservé à : " + i.roles.map(r => roleName(h, r)).join(", ");
       if (h.gangerArmes && f.type === "ganger" && !f.spec && i.arme && !h.gangerArmes.includes(i.categorie)) return "arme réservée aux Spécialistes";
-      if (!camp && noviceLimit(h) && f.type === "novice" && i.prix > 20) return "plus de 20 crédits";
+      if (!camp && noviceLimit(h) && rb(f, h) === "novice" && i.prix > 20) return "plus de 20 crédits";
       return "";
     }
     function gearOptions(d, f) {
@@ -1865,9 +1879,9 @@
         : `${def.equipementDeDepart.length ? `<p class="note">Inclus : ${esc(def.equipementDeDepart.join(", "))}</p>` : ""}
           <div class="gb-chips">${(f.gear || []).map((id, gi) => { const it = itemDef(id, d); return it ? `<span class="gb-chip">${esc(it.nom)} · ${it.prix} cr<button type="button" data-gb-ungear="${fi}:${gi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
           <select class="gb-add" data-gb-gear="${fi}">${gearOptions(d, f)}</select>
-          ${(f.type === "chef" || f.type === "champion") ? skillPickHtml(f, fi, d) : ""}
+          ${["chef", "champion"].includes(rb(f, d.house)) ? skillPickHtml(f, fi, d) : ""}
           ${!camp && d.house.gangerArmes && f.type === "ganger" ? `<label class="gb-opt"><input type="checkbox" data-cp-spec="${fi}"${f.spec ? " checked" : ""}><span>Promu Spécialiste (un seul à la création)</span></label>` : ""}
-          ${(f.type === "chef" || f.type === "champion") && betes.length ? `
+          ${["chef", "champion"].includes(rb(f, d.house)) && betes.length ? `
             <div class="gb-chips">${(f.betes || []).map((id, bi) => { const b = beteDef(id, d); return b ? `<span class="gb-chip">${esc(b.nom)} · ${b.cout} cr<button type="button" data-gb-unbete="${fi}:${bi}" aria-label="Retirer">×</button></span>` : ""; }).join("")}</div>
             <select class="gb-add" data-gb-bete="${fi}"><option value="">+ Ajouter une Bête exotique…</option>${betes.map(b => `<option value="${esc(b.id)}">${esc(b.nom)} (${b.cout} cr, ${esc(b.rarete)})</option>`).join("")}</select>` : ""}`}
         ${camp ? fighterCampaignHtml(f, fi, d) : ""}
@@ -1901,7 +1915,7 @@
           ${g.fighters.length ? `<p class="legend2d6"><i></i>Caractéristiques testées sur 2D6 (CD, SF, V, INT)</p>${g.fighters.map((f, fi) => fighterEditorHtml(f, fi, d, g)).join("")}` : `<p class="note" style="margin-top:0">Commence par recruter ton Chef.</p>`}
           <label class="fld" style="margin-top:14px"><span>Recruter</span><select id="gb-recruit">
             <option value="">+ Ajouter un combattant…</option>
-            <optgroup label="Combattants">${d.house.combattants.map(c => `<option value="c:${esc(c.id)}">${esc(c.role)}${c.role !== ROLE_LABEL[c.id] ? " (" + ROLE_LABEL[c.id] + ")" : ""} · ${c.cout} cr</option>`).join("")}</optgroup>
+            <optgroup label="Combattants">${d.house.combattants.map(c => `<option value="c:${esc(c.id)}">${esc(c.role)}${c.role !== ROLE_LABEL[c.base || c.id] ? " (" + ROLE_LABEL[c.base || c.id] + ")" : ""} · ${c.cout} cr</option>`).join("")}</optgroup>
             <optgroup label="Brutes">${brutes.map(b => `<option value="b:${esc(b.id)}">${esc(b.nom)} (${b.cout} cr)</option>`).join("")}</optgroup>
           </select></label>
         </div></div>
@@ -2047,7 +2061,7 @@
       if (n("data-cp-magot") != null) { const v = Math.abs(parseInt(($("cp-amount") || {}).value, 10) || 0); if (v) mutateGang(x => { x.campagne.magot = (x.campagne.magot || 0) + v * +n("data-cp-magot"); }); return; }
       if (n("data-cp-unterr") != null) { e.preventDefault(); return mutateGang(x => { x.campagne.territoires = x.campagne.territoires.filter(i => i !== n("data-cp-unterr")); }); }
       if (n("data-cp-dice") != null) { cpDice(n("data-cp-dice")); const r = $("cp-result"); if (r) r.textContent = gbState.diceMsg; return; }
-      if (n("data-cp-promo") != null) return mutateGang(x => cpPromote(x.fighters[+n("data-cp-promo")], gbState.data));
+      if (n("data-cp-promo") != null) { const [pi, pt] = n("data-cp-promo").split(":"); return mutateGang(x => cpPromote(x.fighters[+pi], gbState.data, pt)); }
       if (n("data-cp-groll") != null) return mutateGang(x => { const f = x.fighters[+n("data-cp-groll")]; if ((f.xp || 0) < 6) return; f.xp -= 6; f.gangerRoll = roll(2, 6); });
       if (cpn) {
         const [fi, v] = cpn.split(":"); const f = g.fighters[+fi];
