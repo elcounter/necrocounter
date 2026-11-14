@@ -67,15 +67,27 @@
     },
     {
       "nom": "Déploiement standard Sector Mechanicus",
-      "resume": "Couper la table en deux moitiés. Le défenseur (ou gagnant du tir au dé) choisit sa moitié et s'y déploie, puis l'autre dans la moitié opposée."
+      "resume": "Couper la table en deux moitiés. Le défenseur (ou gagnant du tir au dé) choisit sa moitié et s'y déploie en premier, puis l'autre dans la moitié opposée. Tout le monde à au moins 12\" de la ligne centrale."
     },
     {
       "nom": "Renforts",
-      "resume": "Tirés au hasard parmi les cartes qui ne sont pas dans l'équipe de départ. D6 : 3+ le joueur les place, 1-2 l'adversaire les place. Sauf mention contraire, sur un bord de table à plus de 6\" de tout combattant."
+      "resume": "Paquet de Renforts : toutes les cartes hors équipe de départ. Ils arrivent toujours à la phase de Fin, le scénario dit quand et combien. Tirés au hasard, puis D6 : 3+ le joueur les place, 1-2 l'adversaire les place. Sauf mention contraire, sur n'importe quel bord de table à plus de 6\" de tout ennemi."
     },
     {
-      "nom": "Attaque furtive et sentinelles",
-      "resume": "Les sentinelles du défenseur n'ont pas de pion Paré avant l'alarme et sont activées au hasard (une même sentinelle peut l'être plusieurs fois). À l'activation, chaque joueur jette un D6 : égalité, elle bouge au hasard ; sinon le meilleur jet lui fait faire une action Simple. Elle repère les attaquants selon la distance (automatique s'ils viennent l'Engager). Alerte : pion Paré, attaques de Réaction ou tir sur test d'Initiative. L'alarme sonne si une sentinelle a un pion Paré à l'activation du défenseur, ou sur 2D6 + Force d'une arme de tir des attaquants (voir le livre pour les seuils)."
+      "nom": "Attaque furtive : sentinelles",
+      "resume": "Les sentinelles n'ont jamais de pion Paré avant l'alarme. À chaque activation du défenseur, il tire au hasard une carte de sentinelle et la remet ensuite (une même sentinelle peut agir plusieurs fois par tour). Quand l'attaquant a fini ses activations, le défenseur active encore une sentinelle et la phase s'arrête. Sentinelle activée : chaque joueur jette un D6. Égalité : orientation au dé de Déviation puis le défenseur fait une action Se Déplacer (Simple). Sinon le meilleur jet fait faire à la sentinelle une action Se Déplacer (Simple), puis choisit son orientation. Elle peut ouvrir ou fermer une porte à 1\" avant de bouger."
+    },
+    {
+      "nom": "Attaque furtive : détection",
+      "resume": "Après le déplacement d'une sentinelle, 2D6 = distance de détection en pouces. Pour chaque attaquant dans cette distance et dans son champ de vision, D6 (-1 si l'attaquant est Au Tapis) : à 3\" ou moins 2+ ; à découvert 2+ ; couvert partiel au-delà de 3\" 4+ ; couvert total au-delà de 3\" 6+. Un attaquant qui vient Engager une sentinelle est repéré d'office."
+    },
+    {
+      "nom": "Attaque furtive : sentinelle alertée",
+      "resume": "Elle prend un pion Paré et sa carte sort du paquet de sentinelles. Engagée : attaques de Réaction. Sinon test d'Initiative, réussi elle peut tirer aussitôt sur l'attaquant repéré."
+    },
+    {
+      "nom": "Attaque furtive : alarme",
+      "resume": "L'alarme sonne si une sentinelle a un pion Paré quand le défenseur doit activer un combattant ; si un attaquant tire et que 2D6 + Force de l'arme (+2 avec Explosion) font 10 ou plus ; ou à partir du round 5 si l'attaquant fait 1 ou 2 à son jet de Priorité. Ensuite, les règles de sentinelles s'arrêtent et le défenseur joue normalement."
     },
     {
       "nom": "Avantage du Territoire Domiciliaire",
