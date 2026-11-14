@@ -75,6 +75,7 @@ Combi-pistolet
 - pistolet bolter | 6" | 12" | +1 | - | 4 | -1 | 2 | 6+ | Arme de Poing, Combi
 - lance-flammes léger | - | S | - | - | 3 | - | 1 | 5+ | Combi, Incendiaire, Instable, Souffle
 - pistolet à plasma | 6" | 12" | +2 | - | 5 | -1 | 2 | 5+ | Arme de Poing, Combi, Rareté
+- pistolet à aiguilles | 4" | 9" | +2 | - | - | -1 | - | 6+ | Arme de Poing, Combi, Rareté, Silencieux, Toxine
 Flingue | 6" | 12" | +2 | - | 3 | - | 1 | 4+ | Abondance, Arme de Poing
 Flingue avec balles dum-dum | 5" | 10" | +1 | - | 4 | - | 1 | 4+ | Arme de Poing, Limité
 Lance-flammes léger | - | S | - | - | 3 | - | 1 | 5+ | Incendiaire, Souffle
@@ -331,3 +332,12 @@ Lance-grenades d'assaut (jumelé)
 Hache dentelée "pulvérisatrice" | - | E | - | - | F+1 | -1 | 1 | - | Mêlée, Pulvériser
 "Pulvérisatrices" couplées | - | E | - | - | F+1 | -1 | 1 | - | Couplé, Mêlée, Pulvériser
 Dérouilleuses couplées | - | E | - | - | F+1 | - | 1 | - | Contrecoup, Couplé, Mêlée
+
+## Armes Maison des Lames
+Arc du Wyld
+- flèches | 9" | 18" | - | -1 | 3 | - | 1 | 4+ | Silencieux
+- flèches empoisonnées | 9" | 18" | - | -1 | - | - | - | 6+ | Rareté, Silencieux, Toxine
+- flèches explosives | 9" | 18" | - | -1 | 2 | - | 1 | 6+ | Explosion (3"), Instable, Rareté
+- flèches acides | 9" | 18" | - | -1 | 3 | - | 1 | 6+ | Incendiaire, Rareté
+Griffe venimeuse | - | E | - | - | - | -2 | - | - | Mêlée, Empêtrement, Toxine
+Fouet | E | 3" | -1 | - | 2 | - | 1 | - | Empêtrement, Mêlée, Polyvalent

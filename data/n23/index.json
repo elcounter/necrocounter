@@ -117,6 +117,13 @@
       "fichier": "maisons/goliath-chaines.json"
     },
     {
+      "id": "escher-lames",
+      "nom": "Escher (Maison des Lames)",
+      "titre": "Escher (Maison des Lames)",
+      "livre": "Maison des Lames",
+      "fichier": "maisons/escher-lames.json"
+    },
+    {
       "id": "venators",
       "nom": "Venators",
       "titre": "Venators (chasseurs de primes)",

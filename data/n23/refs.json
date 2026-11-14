@@ -749,6 +749,32 @@
     "nom": "Récupération Active",
     "resume": "(Goliath) S'il fait au moins deux actions Mouvement, test d'Endurance en fin d'activation : réussi, il récupère 1 PV ou retire une Blessure légère."
    }
+  ],
+  "Finesse": [
+   {
+    "nom": "Acrobatie",
+    "resume": "(Escher) Active, elle peut passer par-dessus les combattants en Mouvement ou en Charge (règle du 1\" à l'arrivée) et franchir sans perte de mouvement barricades et décors jusqu'à 2\"."
+   },
+   {
+    "nom": "Focus de Combat",
+    "resume": "(Escher) Chaque ennemi qu'elle met Hors de Combat ou Gravement Blessé lui donne un jeton : +1 par jeton à ses tests de Volonté et de Sang-froid (un 2 reste un échec)."
+   },
+   {
+    "nom": "Virtuose du Combat",
+    "resume": "(Escher) Ses épées tronçonneuses, couteaux de combat ou énergétiques, épées énergétiques, stylets et rapières gagnent Polyvalent, portée Longue égale à sa Force."
+   },
+   {
+    "nom": "Attaque Éclair",
+    "resume": "(Escher) Après une Charge, Retraite gratuite avant les attaques de réaction ; même ratée, l'adversaire ne fait qu'une attaque de réaction."
+   },
+   {
+    "nom": "Réflexes Foudroyants",
+    "resume": "(Escher) Une fois par tour, quand un ennemi l'Engage, Retraite gratuite avant qu'il n'attaque ou n'agisse (même Parée, elle s'active ensuite normalement)."
+   },
+   {
+    "nom": "Saut Périlleux",
+    "resume": "(Escher) Debout et Active, action Saut Périlleux (Élémentaire) : replacée n'importe où à 6\" ou moins, en vue, sans compter comme un mouvement."
+   }
   ]
  },
  "statuts": [

@@ -20,7 +20,7 @@ SRC = ROOT / "src"
 STATS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"]
 PROFILE = ["porC", "porL", "preC", "preL", "F", "PA", "D", "Mu"]
 SKILL_CATEGORIES = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir",
-                    "Sagesse des Anciens", "Désolations", "Formation Palanite", "Sauvagerie", "Pouvoirs Wyrd du Chaos", "Pouvoirs Wyrd Genestealer", "Bravade", "Tech", "Obfuscation", "Bravoure", "Discrétion", "Piété", "Fierté", "Force"]
+                    "Sagesse des Anciens", "Désolations", "Formation Palanite", "Sauvagerie", "Pouvoirs Wyrd du Chaos", "Pouvoirs Wyrd Genestealer", "Bravade", "Tech", "Obfuscation", "Bravoure", "Discrétion", "Piété", "Fierté", "Force", "Finesse"]
 WARNINGS = []
 
 
@@ -203,7 +203,7 @@ def link_weapons(houses, weapons):
     by_slug = sorted(weapons, key=lambda w: -len(w["id"]))
     for house in houses:
         for item in house["equipement"]:
-            if "arme" in item or item["nom"].startswith("Balles"):
+            if "arme" in item or item["nom"].startswith(("Balles", "Flèches")):
                 continue
             cat = item.get("categorieArme", item["categorie"]).split(" : ")[-1]
             if not cat.startswith("Armes") and cat not in ("Pistolets", "Grenades", "Couteaux", "Armement inclus", "Options d'armes"):
@@ -223,7 +223,7 @@ def link_weapons(houses, weapons):
             # Armes combinées : ne garder que les composants nommés entre parenthèses
             m = re.search(r"\((.*/.*)\)", item["nom"])
             if m and target["profils"] and target["profils"][0]["mode"]:
-                alias = {"plasma": "fusil à plasma"}
+                alias = {"plasma": "fusil à plasma", "aiguilles": "arme à aiguilles"}
                 parts = [alias.get(p.strip().lower(), p.strip().lower()) for p in m.group(1).split("/")]
                 modes = [p["mode"] for p in target["profils"] if p["mode"].lower() in parts]
                 if len(modes) == len(parts):

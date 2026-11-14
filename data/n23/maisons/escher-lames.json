@@ -1,0 +1,1015 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Maison des Lames (version française)",
+  "reglesDeCreation": {
+    "novice": "Petites Sœurs et Chasseresses du Wyld ne prennent que dans leur propre liste.",
+    "armeSpeciale": "Une Sœur du Gang ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, une seule Sœur peut être promue Spécialiste : elle accède alors à toute sa liste.",
+    "chefEtChampion": "Reine, Matriarches et Vierges Funestes commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "escher-lames",
+  "nom": "Escher (Maison des Lames)",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Reine de Gang Escher",
+      "cout": 125,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "2+",
+        "A": "3",
+        "CD": "5+",
+        "SF": "5+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "champion",
+      "role": "Matriarche de Gang Escher",
+      "cout": 100,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "2+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [],
+      "promotionDepuis": "wyld"
+    },
+    {
+      "id": "vierge",
+      "role": "Vierge Funeste Escher",
+      "cout": 115,
+      "profil": {
+        "M": "6\"",
+        "CC": "2+",
+        "CT": "3+",
+        "F": "3",
+        "E": "4",
+        "PV": "2",
+        "I": "2+",
+        "A": "3",
+        "CD": "8+",
+        "SF": "4+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [],
+      "base": "champion"
+    },
+    {
+      "id": "wyld",
+      "role": "Chasseresse du Wyld Escher",
+      "cout": 45,
+      "profil": {
+        "M": "6\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "2",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "7+",
+        "V": "9+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": [],
+      "base": "novice"
+    },
+    {
+      "id": "ganger",
+      "role": "Sœur du Gang Escher",
+      "cout": 50,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "7+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "novice",
+      "role": "Petite Sœur Escher",
+      "cout": 20,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "8+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": []
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Agilité",
+        "Combat",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Férocité",
+        "Finesse"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Agilité",
+        "Combat"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Férocité",
+        "Autorité",
+        "Finesse"
+      ]
+    },
+    "vierge": {
+      "primaires": [
+        "Agilité",
+        "Finesse"
+      ],
+      "secondaires": [
+        "Combat",
+        "Férocité"
+      ]
+    },
+    "wyld": {
+      "primaires": [
+        "Agilité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Agilité",
+        "Combat"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Férocité"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Agilité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 5,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-grenaille",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Balles acides (pour fusil à pompe)",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "balles-acides-pour-fusil-a-pompe",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Bolter",
+      "prix": 55,
+      "categorie": "Armes de base",
+      "id": "bolter",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "bolter"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-a-canon-scie",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "fusil-a-canon-scie"
+    },
+    {
+      "nom": "Couteaux de lancer",
+      "prix": 5,
+      "categorie": "Armes de base",
+      "id": "couteaux-de-lancer",
+      "arme": "couteaux-de-lancer"
+    },
+    {
+      "nom": "Arc du Wyld",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "arc-du-wyld",
+      "roles": [
+        "wyld"
+      ],
+      "modes": [
+        "flèches"
+      ],
+      "arme": "arc-du-wyld"
+    },
+    {
+      "nom": "Flèches empoisonnées (pour arc du Wyld)",
+      "prix": 25,
+      "categorie": "Armes de base",
+      "id": "fleches-empoisonnees-pour-arc-du-wyld",
+      "roles": [
+        "wyld"
+      ]
+    },
+    {
+      "nom": "Flèches explosives (pour arc du Wyld)",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fleches-explosives-pour-arc-du-wyld",
+      "roles": [
+        "wyld"
+      ]
+    },
+    {
+      "nom": "Flèches acides (pour arc du Wyld)",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fleches-acides-pour-arc-du-wyld",
+      "roles": [
+        "wyld"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet (pistolet bolter/pistolet à aiguilles)",
+      "prix": 60,
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-pistolet-bolter-pistolet-a-aiguilles",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "combi-pistolet",
+      "modes": [
+        "pistolet bolter",
+        "pistolet à aiguilles"
+      ]
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-plasma",
+      "roles": [
+        "champion",
+        "chef",
+        "vierge"
+      ],
+      "arme": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Pistolet à aiguilles",
+      "prix": 25,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-aiguilles",
+      "roles": [
+        "champion",
+        "chef",
+        "novice",
+        "vierge"
+      ],
+      "arme": "pistolet-a-aiguilles"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "vierge"
+      ],
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice",
+        "wyld"
+      ],
+      "arme": "flingue"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "balles-dum-dum-pour-flingue",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice",
+        "wyld"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter/lance-flammes)",
+      "prix": 180,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-lance-flammes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "lance-flammes"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter/aiguilles)",
+      "prix": 80,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-aiguilles",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "arme à aiguilles"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter/fuseur)",
+      "prix": 170,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-fuseur",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fuseur"
+      ]
+    },
+    {
+      "nom": "Arme combinée (bolter/plasma)",
+      "prix": 115,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-bolter-plasma",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "arme-combinee",
+      "modes": [
+        "bolter",
+        "fusil à plasma"
+      ]
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 55,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-frag-krak",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "modes": [
+        "grenades Frag",
+        "grenades Krak"
+      ],
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Grenades fumigènes (pour lance-grenades)",
+      "prix": 15,
+      "categorie": "Armes spéciales",
+      "id": "grenades-fumigenes-pour-lance-grenades",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Fusil à aiguilles",
+      "prix": 35,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-aiguilles",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-aiguilles"
+    },
+    {
+      "nom": "Projecteur chimique \"Belladone\"",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "projecteur-chimique-belladone",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "projecteur-chimique-belladone"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "fuseur",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-plasma",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-plasma"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Canon à plasma",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "canon-a-plasma",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "canon-a-plasma"
+    },
+    {
+      "nom": "Hache tronçonneuse",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-tronconneuse",
+      "roles": [
+        "chef"
+      ],
+      "arme": "hache-tronconneuse"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-tronconneuse",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "vierge",
+        "wyld"
+      ],
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "stylet",
+      "arme": "stylet"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-energetique",
+      "roles": [
+        "champion",
+        "chef",
+        "vierge",
+        "wyld"
+      ],
+      "arme": "couteau-energetique"
+    },
+    {
+      "nom": "Marteau énergétique",
+      "prix": 45,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-energetique",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "marteau-energetique"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 35,
+      "categorie": "Armes de corps à corps",
+      "id": "servopince",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "servopince"
+    },
+    {
+      "nom": "Électrofouet de maître",
+      "prix": 35,
+      "categorie": "Armes de corps à corps",
+      "id": "electrofouet-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "electrofouet"
+    },
+    {
+      "nom": "Rapière de maître",
+      "prix": 40,
+      "categorie": "Armes de corps à corps",
+      "id": "rapiere-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "rapiere"
+    },
+    {
+      "nom": "Épée énergétique",
+      "prix": 45,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-energetique",
+      "roles": [
+        "champion",
+        "chef",
+        "vierge"
+      ],
+      "arme": "epee-energetique"
+    },
+    {
+      "nom": "Électrofouet",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "electrofouet",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "vierge"
+      ],
+      "arme": "electrofouet"
+    },
+    {
+      "nom": "Rapière",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "rapiere",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "vierge"
+      ],
+      "arme": "rapiere"
+    },
+    {
+      "nom": "Griffe venimeuse",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "griffe-venimeuse",
+      "roles": [
+        "vierge"
+      ],
+      "arme": "griffe-venimeuse"
+    },
+    {
+      "nom": "Fouet",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "fouet",
+      "roles": [
+        "wyld"
+      ],
+      "arme": "fouet"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-aveuglantes",
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "grenades-cauchemar",
+      "arme": "grenades-cauchemar"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice",
+        "wyld"
+      ],
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice",
+        "wyld"
+      ],
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 25,
+      "categorie": "Grenades",
+      "id": "grenades-incapacitantes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice",
+        "wyld"
+      ],
+      "arme": "grenades-incapacitantes"
+    },
+    {
+      "nom": "Armure carapace légère",
+      "prix": 80,
+      "categorie": "Armures",
+      "id": "armure-carapace-legere",
+      "roles": [
+        "chef"
+      ]
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "vierge"
+      ]
+    },
+    {
+      "nom": "Sous-combinaison renforcée",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "sous-combinaison-renforcee",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "vierge"
+      ]
+    },
+    {
+      "nom": "Chimiosynth",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "chimiosynth"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "lame-sous-cutanee"
+    },
+    {
+      "nom": "Suppresseur (armes de base et pistolets)",
+      "prix": 20,
+      "categorie": "Accessoires d'armes",
+      "id": "suppresseur-armes-de-base-et-pistolets",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Surgénérateur d'arme laser (fusil laser et pistolet laser)",
+      "prix": 20,
+      "categorie": "Accessoires d'armes",
+      "id": "surgenerateur-d-arme-laser-fusil-laser-et-pistolet-laser",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Pointeur laser (pistolets, armes de base et spéciales)",
+      "prix": 35,
+      "categorie": "Accessoires d'armes",
+      "id": "pointeur-laser-pistolets-armes-de-base-et-speciales",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Suspenseur (armes lourdes)",
+      "prix": 60,
+      "categorie": "Accessoires d'armes",
+      "id": "suspenseur-armes-lourdes",
+      "roles": [
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Phyrr Cat (0-2)",
+      "prix": 120,
+      "categorie": "Bêtes exotiques",
+      "id": "phyrr-cat-0-2",
+      "roles": [
+        "champion",
+        "chef",
+        "vierge"
+      ]
+    },
+    {
+      "nom": "Phélynx (0-3)",
+      "prix": 50,
+      "categorie": "Bêtes exotiques",
+      "id": "phelynx-0-3",
+      "roles": [
+        "wyld"
+      ]
+    }
+  ],
+  "titre": "Escher (Maison des Lames)",
+  "gangerArmes": [
+    "Armes de base",
+    "Pistolets",
+    "Armes de corps à corps"
+  ],
+  "regles": [
+    {
+      "nom": "Liste Maison des Lames",
+      "texte": "Version de la liste Escher parue dans Maison des Lames, avec ses propres types de combattantes. L'ancienne liste Escher reste disponible à côté."
+    },
+    {
+      "nom": "Chef de gang",
+      "texte": "Une seule Reine de Gang, qui ne prend jamais sa retraite en campagne ; si elle meurt ou quitte le gang, une autre combattante est promue."
+    },
+    {
+      "nom": "Hiérarchie du gang",
+      "texte": "Une fois le gang Dégonflé, si la Reine réussit son test de Sang-froid en phase de Fin, les Escher à 12\" ou moins réussissent automatiquement le leur (6\" pour une Matriarche ou une Vierge Funeste). Ces trois rangs font des actions d'après-bataille."
+    },
+    {
+      "nom": "Activation de groupe",
+      "texte": "La Reine peut activer à sa suite 2 Escher Parées à 3\" ou moins, une Matriarche 1."
+    },
+    {
+      "nom": "Les Ficelles du Métier",
+      "texte": "Reine, Matriarches, Vierges Funestes, Chasseresses du Wyld et Spécialistes peuvent avoir plusieurs panoplies."
+    },
+    {
+      "nom": "Sang Empoisonné (Vierge Funeste)",
+      "texte": "Avec une arme Toxine, elle relance un 1 naturel au test d'Endurance de la cible."
+    },
+    {
+      "nom": "Vierge Funeste",
+      "texte": "Elle ne prend que des armes de sa liste, ou des pistolets et armes de corps à corps du Comptoir Commercial ou du Marché Noir."
+    },
+    {
+      "nom": "Chasseresse du Wyld",
+      "texte": "Tête brûlée et Apprentissage rapide. Mêmes limites d'armes que la Vierge Funeste. Au Temps Mort, à 5 progressions ou plus, elle peut devenir Matriarche."
+    },
+    {
+      "nom": "Petite Sœur",
+      "texte": "Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, elle peut devenir Spécialiste."
+    },
+    {
+      "nom": "Combattantes du gang",
+      "texte": "Sœurs, Petites Sœurs et Chasseresses doivent être au moins aussi nombreuses que les autres combattantes (hors Aventuriers et Mercenaires)."
+    },
+    {
+      "nom": "Phyrr Cat",
+      "texte": "Bête exotique (0-2) : M7\" CC3+ F3 E3 PV1 I2+ A2, griffes. Doit finir à 9\" ou moins de sa propriétaire ; chute à -2 en Force. Spécialiste : Agilité P, Ruse S."
+    },
+    {
+      "nom": "Phélynx",
+      "texte": "Bête exotique (0-3, Chasseresse) : M6\" CC4+ F3 E3 PV1 I3+ A2, attaques désarmées Hasardeuses, Toxine sur un 6 naturel pour toucher. Spécialiste : Muscle P, Férocité S."
+    }
+  ]
+}

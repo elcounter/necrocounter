@@ -1586,3 +1586,136 @@ Suspenseur (armes lourdes) | 60
 Lunette télescopique' (pistolets, armes de base et spéciales) | 25
 ## Bêtes exotiques [champion, chef, dope]
 Sumpkroc (0-1) | 130
+
+= Escher (Maison des Lames) => escher-lames
+source: Maison des Lames (version française)
+creation: novice | Petites Sœurs et Chasseresses du Wyld ne prennent que dans leur propre liste.
+creation: armeSpeciale | Une Sœur du Gang ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, une seule Sœur peut être promue Spécialiste : elle accède alors à toute sa liste.
+creation: chefEtChampion | Reine, Matriarches et Vierges Funestes commencent avec une compétence gratuite de leurs sets Primaires.
+gangerArmes: Armes de base, Pistolets, Armes de corps à corps
+regle: Liste Maison des Lames | Version de la liste Escher parue dans Maison des Lames, avec ses propres types de combattantes. L'ancienne liste Escher reste disponible à côté.
+regle: Chef de gang | Une seule Reine de Gang, qui ne prend jamais sa retraite en campagne ; si elle meurt ou quitte le gang, une autre combattante est promue.
+regle: Hiérarchie du gang | Une fois le gang Dégonflé, si la Reine réussit son test de Sang-froid en phase de Fin, les Escher à 12" ou moins réussissent automatiquement le leur (6" pour une Matriarche ou une Vierge Funeste). Ces trois rangs font des actions d'après-bataille.
+regle: Activation de groupe | La Reine peut activer à sa suite 2 Escher Parées à 3" ou moins, une Matriarche 1.
+regle: Les Ficelles du Métier | Reine, Matriarches, Vierges Funestes, Chasseresses du Wyld et Spécialistes peuvent avoir plusieurs panoplies.
+regle: Sang Empoisonné (Vierge Funeste) | Avec une arme Toxine, elle relance un 1 naturel au test d'Endurance de la cible.
+regle: Vierge Funeste | Elle ne prend que des armes de sa liste, ou des pistolets et armes de corps à corps du Comptoir Commercial ou du Marché Noir.
+regle: Chasseresse du Wyld | Tête brûlée et Apprentissage rapide. Mêmes limites d'armes que la Vierge Funeste. Au Temps Mort, à 5 progressions ou plus, elle peut devenir Matriarche.
+regle: Petite Sœur | Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, elle peut devenir Spécialiste.
+regle: Combattantes du gang | Sœurs, Petites Sœurs et Chasseresses doivent être au moins aussi nombreuses que les autres combattantes (hors Aventuriers et Mercenaires).
+regle: Phyrr Cat | Bête exotique (0-2) : M7" CC3+ F3 E3 PV1 I2+ A2, griffes. Doit finir à 9" ou moins de sa propriétaire ; chute à -2 en Force. Spécialiste : Agilité P, Ruse S.
+regle: Phélynx | Bête exotique (0-3, Chasseresse) : M6" CC4+ F3 E3 PV1 I3+ A2, attaques désarmées Hasardeuses, Toxine sur un 6 naturel pour toucher. Spécialiste : Muscle P, Férocité S.
+combattant: Reine de Gang Escher => Chef | 125 | 5" 3+ 3+ 3 3 2 2+ 3 5+ 5+ 6+ 7+ |
+combattant: Matriarche de Gang Escher => champion::wyld | 100 | 5" 3+ 3+ 3 3 2 2+ 2 6+ 6+ 6+ 6+ |
+combattant: Vierge Funeste Escher => vierge:champion | 115 | 6" 2+ 3+ 3 4 2 2+ 3 8+ 4+ 7+ 7+ |
+combattant: Chasseresse du Wyld Escher => wyld:novice | 45 | 6" 4+ 4+ 2 3 1 3+ 1 9+ 7+ 9+ 9+ |
+combattant: Sœur du Gang Escher => Ganger | 50 | 5" 4+ 4+ 3 3 1 3+ 1 7+ 7+ 7+ 7+ |
+combattant: Petite Sœur Escher => Novice | 20 | 5" 4+ 5+ 3 3 1 3+ 1 8+ 8+ 8+ 8+ |
+competences: Chef | Agilité P, Combat P, Ruse S, Férocité S, Autorité P, Finesse S
+competences: Champion | Agilité P, Combat P, Ruse S, Férocité S, Autorité S, Finesse S
+competences: Vierge | Agilité P, Combat S, Férocité S, Finesse P
+competences: Wyld | Agilité P, Combat S, Ruse S
+competences: Spécialiste | Agilité P, Combat P, Ruse S, Férocité S
+competences: Novice | Agilité P, Combat S, Ruse S
+## Armes de base [champion, chef, ganger]
+Fusil d'assaut | 15
+Fusil laser | 5
+Fusil à pompe (balles & grenaille) | 30 | balles; grenaille
+Balles acides (pour fusil à pompe) | 15
+## Armes de base [champion, chef]
+Bolter | 55
+Fusil à canon scié | 15
+## Armes de base
+Couteaux de lancer | 5
+## Armes de base [wyld]
+Arc du Wyld | 10 | flèches
+Flèches empoisonnées (pour arc du Wyld) | 25
+Flèches explosives (pour arc du Wyld) | 20
+Flèches acides (pour arc du Wyld) | 20
+## Pistolets [champion, chef]
+Combi-pistolet (pistolet bolter/pistolet à aiguilles) | 60
+## Pistolets [champion, chef, ganger, novice]
+Pistolet-mitrailleur | 10
+## Pistolets
+Pistolet laser | 10
+## Pistolets [champion, chef, vierge]
+Pistolet à plasma | 50
+## Pistolets [champion, chef, novice, vierge]
+Pistolet à aiguilles | 25
+## Pistolets [champion, chef, ganger, vierge]
+Lance-flammes léger | 75
+## Pistolets [champion, chef, ganger, novice, wyld]
+Flingue | 5
+Balles dum-dum (pour flingue) | 5
+## Armes spéciales [champion, chef, ganger]
+Arme combinée (bolter/lance-flammes) | 180
+Arme combinée (bolter/aiguilles) | 80
+Arme combinée (bolter/fuseur) | 170
+Arme combinée (bolter/plasma) | 115
+Lance-flammes | 140
+Lance-grenades (grenades Frag & Krak) | 55 | grenades Frag; grenades Krak
+Grenades fumigènes (pour lance-grenades) | 15
+Fusil à aiguilles | 35
+Projecteur chimique "Belladone" | 135
+Fuseur | 135
+Fusil à plasma | 100
+## Armes lourdes [champion, chef]
+Mitrailleuse* | 130
+Canon à plasma* | 130
+## Armes de corps à corps [chef]
+Hache tronçonneuse | 30
+## Armes de corps à corps [champion, chef, ganger, vierge, wyld]
+Épée tronçonneuse | 25
+## Armes de corps à corps
+Couteau de combat | 15
+Stylet | 20
+## Armes de corps à corps [champion, chef, vierge, wyld]
+Couteau énergétique | 25
+## Armes de corps à corps [champion, chef]
+Marteau énergétique | 45
+Servopince | 35
+Électrofouet de maître | 35
+Rapière de maître | 40
+## Armes de corps à corps [champion, chef, vierge]
+Épée énergétique | 45
+## Armes de corps à corps [champion, chef, ganger, vierge]
+Électrofouet | 25
+Rapière | 30
+## Armes de corps à corps [vierge]
+Griffe venimeuse | 30
+## Armes de corps à corps [wyld]
+Fouet | 15
+## Grenades
+Grenades asphyxiantes | 45
+Grenades aveuglantes | 15
+Grenades cauchemar | 40
+Grenades fumigènes | 15
+## Grenades [champion, chef, ganger, novice, wyld]
+Grenades Frag | 30
+Grenades Krak | 45
+Grenades incapacitantes | 25
+## Armures [chef]
+Armure carapace légère | 80
+## Armures
+Armure Flak | 10
+## Armures [champion, chef, ganger, vierge]
+Armure composite | 15
+## Équipement personnel [champion, chef, ganger, vierge]
+Sous-combinaison renforcée | 25
+## Équipement personnel
+Chimiosynth | 15
+Filin | 10
+Filtre nasal | 10
+Photolunettes | 35
+Respirateur | 15
+Lame sous-cutanée | 10
+## Accessoires d'armes [champion, chef, ganger]
+Suppresseur (armes de base et pistolets) | 20
+Surgénérateur d'arme laser (fusil laser et pistolet laser) | 20
+Pointeur laser (pistolets, armes de base et spéciales) | 35
+## Accessoires d'armes [champion, chef]
+Suspenseur (armes lourdes) | 60
+## Bêtes exotiques [champion, chef, vierge]
+Phyrr Cat (0-2) | 120
+## Bêtes exotiques [wyld]
+Phélynx (0-3) | 50

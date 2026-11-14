@@ -1123,6 +1123,24 @@
             "Combi",
             "Rareté"
           ]
+        },
+        {
+          "mode": "pistolet à aiguilles",
+          "porC": "4\"",
+          "porL": "9\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "-",
+          "PA": "-1",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Arme de Poing",
+            "Combi",
+            "Rareté",
+            "Silencieux",
+            "Toxine"
+          ]
         }
       ]
     },
@@ -5745,6 +5763,120 @@
             "Contrecoup",
             "Couplé",
             "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arc-du-wyld",
+      "nom": "Arc du Wyld",
+      "categorie": "Armes Maison des Lames",
+      "profils": [
+        {
+          "mode": "flèches",
+          "porC": "9\"",
+          "porL": "18\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Silencieux"
+          ]
+        },
+        {
+          "mode": "flèches empoisonnées",
+          "porC": "9\"",
+          "porL": "18\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "6+",
+          "traits": [
+            "Rareté",
+            "Silencieux",
+            "Toxine"
+          ]
+        },
+        {
+          "mode": "flèches explosives",
+          "porC": "9\"",
+          "porL": "18\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Explosion (3\")",
+            "Instable",
+            "Rareté"
+          ]
+        },
+        {
+          "mode": "flèches acides",
+          "porC": "9\"",
+          "porL": "18\"",
+          "preC": "-",
+          "preL": "-1",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Incendiaire",
+            "Rareté"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "griffe-venimeuse",
+      "nom": "Griffe venimeuse",
+      "categorie": "Armes Maison des Lames",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-2",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Empêtrement",
+            "Toxine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fouet",
+      "nom": "Fouet",
+      "categorie": "Armes Maison des Lames",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "3\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Empêtrement",
+            "Mêlée",
+            "Polyvalent"
           ]
         }
       ]
