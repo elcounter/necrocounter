@@ -1,0 +1,1377 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Maison de la Foi (version française)",
+  "reglesDeCreation": {
+    "novice": "Glaneurs d'Os et Dévots ne prennent que dans leur propre liste.",
+    "armeSpeciale": "Un Fidèle ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, un seul Fidèle (Cawdor ou Rédemptionniste) peut être promu Spécialiste : il accède alors à toute sa liste.",
+    "chefEtChampion": "Gardien des Mots, Prêtre Rédempteur, Porte-flambeaux et Diacres commencent avec une compétence gratuite de leurs sets Primaires. Le Chef choisit la Voie de la Foi du gang."
+  },
+  "id": "cawdor-foi",
+  "nom": "Cawdor (Maison de la Foi)",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Gardien des Mots Cawdor",
+      "cout": 100,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "4+",
+        "SF": "6+",
+        "V": "5+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "pretre",
+      "role": "Prêtre Rédempteur",
+      "cout": 100,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "4+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [],
+      "base": "chef"
+    },
+    {
+      "id": "champion",
+      "role": "Porte-flambeau Cawdor",
+      "cout": 90,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "diacre",
+      "role": "Diacre Rédemptionniste",
+      "cout": 90,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "5+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [],
+      "base": "champion"
+    },
+    {
+      "id": "ganger",
+      "role": "Fidèle Cawdor",
+      "cout": 45,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "7+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "redemp",
+      "role": "Fidèle Rédemptionniste",
+      "cout": 50,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": [],
+      "base": "ganger"
+    },
+    {
+      "id": "novice",
+      "role": "Glaneur d'Os",
+      "cout": 20,
+      "profil": {
+        "M": "6\"",
+        "CC": "5+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "8+",
+        "V": "8+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "devot",
+      "role": "Dévot",
+      "cout": 40,
+      "profil": {
+        "M": "6\"",
+        "CC": "4+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "7+",
+        "V": "8+",
+        "INT": "9+"
+      },
+      "equipementDeDepart": [],
+      "base": "novice"
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Muscle",
+        "Combat",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Férocité",
+        "Tir",
+        "Piété"
+      ]
+    },
+    "pretre": {
+      "primaires": [
+        "Combat",
+        "Autorité",
+        "Piété"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Férocité",
+        "Tir"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Muscle",
+        "Combat"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Férocité",
+        "Autorité",
+        "Piété"
+      ]
+    },
+    "diacre": {
+      "primaires": [
+        "Muscle",
+        "Combat",
+        "Piété"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Férocité",
+        "Autorité"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Combat",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Muscle"
+      ]
+    },
+    "specialiste-redemp": {
+      "primaires": [
+        "Combat",
+        "Férocité"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Piété"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Férocité"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Combat"
+      ]
+    },
+    "devot": {
+      "primaires": [
+        "Férocité"
+      ],
+      "secondaires": [
+        "Combat",
+        "Piété"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Haste avec fusil d'assaut Cawdor",
+      "prix": 20,
+      "compteDouble": true,
+      "categorie": "Armes de base",
+      "id": "haste-avec-fusil-d-assaut-cawdor",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "haste-avec-fusil-d-assaut-cawdor"
+    },
+    {
+      "nom": "Haste avec tromblon Cawdor (munitions à grappe & Purgation)",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Armes de base",
+      "id": "haste-avec-tromblon-cawdor-munitions-a-grappe-purgation",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "modes": [
+        "haste",
+        "tromblon, grappe",
+        "tromblon, Purgation"
+      ],
+      "arme": "haste-avec-tromblon-cawdor"
+    },
+    {
+      "nom": "Balles Emperor's Wrath (pour tromblon)",
+      "prix": 35,
+      "categorie": "Armes de base",
+      "id": "balles-emperor-s-wrath-pour-tromblon",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Fusil d'assaut de récup'",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-de-recup",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-d-assaut-de-recup"
+    },
+    {
+      "nom": "Fusil à canon scié",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-a-canon-scie",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-canon-scie"
+    },
+    {
+      "nom": "Haste avec fusil d'assaut Cawdor de maître",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Armes de base",
+      "id": "haste-avec-fusil-d-assaut-cawdor-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "haste-avec-fusil-d-assaut-cawdor"
+    },
+    {
+      "nom": "Haste avec tromblon Cawdor de maître (munitions à grappe & Purgation)",
+      "prix": 50,
+      "compteDouble": true,
+      "categorie": "Armes de base",
+      "id": "haste-avec-tromblon-cawdor-de-maitre-munitions-a-grappe-purgation",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "modes": [
+        "haste",
+        "tromblon, grappe",
+        "tromblon, Purgation"
+      ],
+      "arme": "haste-avec-tromblon-cawdor"
+    },
+    {
+      "nom": "Balles (pour fusil à canon scié)",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "balles-pour-fusil-a-canon-scie",
+      "roles": [
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil d'assaut avec exterminator",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-avec-exterminator",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "fusil-d-assaut-avec-exterminator"
+    },
+    {
+      "nom": "Fusil à pompe (balles & grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-grenaille",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "modes": [
+        "balles",
+        "grenaille"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil à pompe avec exterminator (balles & grenaille)",
+      "prix": 45,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-avec-exterminator-balles-grenaille",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "modes": [
+        "balles",
+        "grenaille",
+        "exterminator"
+      ],
+      "arme": "fusil-a-pompe-avec-exterminator"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Inferno)",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-inferno",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Retributor)",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-retributor",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil d'assaut de maître",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-de-maitre",
+      "roles": [
+        "diacre",
+        "pretre"
+      ],
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Executioner)",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-executioner",
+      "roles": [
+        "diacre",
+        "pretre"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "ganger",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de récup'",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-de-recup",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "pistolet-mitrailleur-de-recup"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "arme": "flingue"
+    },
+    {
+      "nom": "Balles dum-dum (pour flingue)",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "balles-dum-dum-pour-flingue"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "roles": [
+        "devot",
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de maître",
+      "prix": 15,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-de-maitre",
+      "roles": [
+        "diacre",
+        "pretre"
+      ],
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Arme combinée (fusil d'assaut/lance-flammes)",
+      "prix": 110,
+      "categorie": "Armes spéciales",
+      "id": "arme-combinee-fusil-d-assaut-lance-flammes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "redemp"
+      ],
+      "arme": "arme-combinee",
+      "modes": [
+        "fusil d'assaut",
+        "lance-flammes"
+      ]
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 130,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Long fusil de maître",
+      "prix": 35,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil-de-maitre",
+      "roles": [
+        "chef"
+      ],
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Pique de feu",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "pique-de-feu",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "pique-de-feu"
+    },
+    {
+      "nom": "Lance-grenades (grenades Frag & Krak)",
+      "prix": 65,
+      "categorie": "Armes spéciales",
+      "id": "lance-grenades-grenades-frag-krak",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "modes": [
+        "grenades Frag",
+        "grenades Krak"
+      ],
+      "arme": "lance-grenades"
+    },
+    {
+      "nom": "Grenades aveuglantes (pour lance-grenades)",
+      "prix": 15,
+      "categorie": "Armes spéciales",
+      "id": "grenades-aveuglantes-pour-lance-grenades",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades fumigènes (pour lance-grenades)",
+      "prix": 15,
+      "categorie": "Armes spéciales",
+      "id": "grenades-fumigenes-pour-lance-grenades",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Arbalète lourde Cawdor (carreaux Frag & Krak)",
+      "prix": 125,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "arbalete-lourde-cawdor-carreaux-frag-krak",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "arbalete-lourde-cawdor"
+    },
+    {
+      "nom": "Mitrailleuse",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "mitrailleuse",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "mitrailleuse"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Hache",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "hache",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "hache"
+    },
+    {
+      "nom": "Hachoir",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "hachoir",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "hachoir"
+    },
+    {
+      "nom": "Fléau",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "fleau",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "fleau"
+    },
+    {
+      "nom": "Matraque lourde",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "matraque-lourde",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "matraque-lourde"
+    },
+    {
+      "nom": "Masse (matraque)",
+      "prix": 10,
+      "categorie": "Armes de corps à corps",
+      "id": "masse-matraque",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "masse-matraque"
+    },
+    {
+      "nom": "Vouge tronçonneur",
+      "prix": 60,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "vouge-tronconneur",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "vouge-tronconneur"
+    },
+    {
+      "nom": "Couteau de combat de maître",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Espadon de maître",
+      "prix": 50,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "espadon-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "espadon"
+    },
+    {
+      "nom": "Arme d'haste",
+      "prix": 30,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "arme-d-haste",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "arme-d-haste"
+    },
+    {
+      "nom": "Vouge tronçonneur de maître",
+      "prix": 75,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "vouge-tronconneur-de-maitre",
+      "roles": [
+        "chef"
+      ],
+      "arme": "vouge-tronconneur"
+    },
+    {
+      "nom": "Hache à deux mains de maître",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-a-deux-mains-de-maitre",
+      "roles": [
+        "chef"
+      ],
+      "arme": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Couteau de combat",
+      "prix": 15,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-de-combat",
+      "arme": "couteau-de-combat"
+    },
+    {
+      "nom": "Espadon",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "espadon",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "espadon"
+    },
+    {
+      "nom": "Hache à deux mains",
+      "prix": 25,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-a-deux-mains",
+      "roles": [
+        "champion",
+        "chef",
+        "devot",
+        "ganger"
+      ],
+      "arme": "hache-a-deux-mains"
+    },
+    {
+      "nom": "Marteau à deux mains",
+      "prix": 35,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-deux-mains",
+      "roles": [
+        "champion",
+        "chef",
+        "devot",
+        "ganger"
+      ],
+      "arme": "marteau-a-deux-mains"
+    },
+    {
+      "nom": "Hache tronçonneuse",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-tronconneuse",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "hache-tronconneuse"
+    },
+    {
+      "nom": "Hache tronçonneuse avec exterminator",
+      "prix": 45,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-tronconneuse-avec-exterminator",
+      "roles": [
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "hache-tronconneuse-avec-exterminator"
+    },
+    {
+      "nom": "Hache tronçonneuse de maître",
+      "prix": 35,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-tronconneuse-de-maitre",
+      "roles": [
+        "diacre",
+        "pretre"
+      ],
+      "arme": "hache-tronconneuse"
+    },
+    {
+      "nom": "Épée tronçonneuse",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-tronconneuse",
+      "roles": [
+        "diacre",
+        "pretre"
+      ],
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Épée tronçonneuse de maître",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "epee-tronconneuse-de-maitre",
+      "roles": [
+        "diacre",
+        "pretre"
+      ],
+      "arme": "epee-tronconneuse"
+    },
+    {
+      "nom": "Éviscérator de maître",
+      "prix": 110,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "eviscerator-de-maitre",
+      "roles": [
+        "diacre",
+        "pretre"
+      ],
+      "arme": "eviscerator"
+    },
+    {
+      "nom": "Éviscérator",
+      "prix": 90,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "eviscerator",
+      "roles": [
+        "devot",
+        "diacre",
+        "pretre",
+        "redemp"
+      ],
+      "arme": "eviscerator"
+    },
+    {
+      "nom": "Hache à deux mains avec exterminator",
+      "prix": 40,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "hache-a-deux-mains-avec-exterminator",
+      "roles": [
+        "devot"
+      ],
+      "arme": "hache-a-deux-mains-avec-exterminator"
+    },
+    {
+      "nom": "Marteau à deux mains avec exterminator",
+      "prix": 50,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "marteau-a-deux-mains-avec-exterminator",
+      "roles": [
+        "devot"
+      ],
+      "arme": "marteau-a-deux-mains-avec-exterminator"
+    },
+    {
+      "nom": "Charges explosives",
+      "prix": 35,
+      "categorie": "Grenades",
+      "id": "charges-explosives",
+      "arme": "charges-explosives"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Charges incendiaires",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "charges-incendiaires",
+      "arme": "charges-incendiaires"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Grenades",
+      "id": "grenades-asphyxiantes",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "pretre"
+      ],
+      "arme": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "pretre"
+      ],
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Manteau des Bas-Fonds",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "manteau-des-bas-fonds",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Bouclier de récupération",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "bouclier-de-recuperation",
+      "roles": [
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite",
+      "roles": [
+        "chef",
+        "diacre",
+        "pretre"
+      ]
+    },
+    {
+      "nom": "Armure carapace légère",
+      "prix": 80,
+      "categorie": "Armures",
+      "id": "armure-carapace-legere",
+      "roles": [
+        "pretre"
+      ]
+    },
+    {
+      "nom": "Haubert incombustible",
+      "prix": 20,
+      "categorie": "Armures",
+      "id": "haubert-incombustible",
+      "roles": [
+        "devot",
+        "diacre",
+        "pretre",
+        "redemp"
+      ]
+    },
+    {
+      "nom": "Rats livreurs de bombes",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "rats-livreurs-de-bombes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Icône du Culte",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "icone-du-culte",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "pretre"
+      ]
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin",
+      "roles": [
+        "champion",
+        "chef",
+        "devot",
+        "diacre",
+        "ganger",
+        "pretre",
+        "redemp"
+      ]
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "ganger",
+        "pretre",
+        "redemp"
+      ]
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "ganger",
+        "pretre",
+        "redemp"
+      ]
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "lame-sous-cutanee",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "ganger",
+        "novice",
+        "pretre",
+        "redemp"
+      ]
+    },
+    {
+      "nom": "Kit de démontage",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "kit-de-demontage",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "ganger",
+        "novice",
+        "pretre",
+        "redemp"
+      ]
+    },
+    {
+      "nom": "Livre de la Rédemption",
+      "prix": 50,
+      "categorie": "Équipement personnel",
+      "id": "livre-de-la-redemption",
+      "roles": [
+        "pretre"
+      ]
+    },
+    {
+      "nom": "Manteau pyromantique",
+      "prix": 45,
+      "categorie": "Équipement personnel",
+      "id": "manteau-pyromantique",
+      "roles": [
+        "devot",
+        "diacre",
+        "pretre",
+        "redemp"
+      ]
+    },
+    {
+      "nom": "Lunette (armes de base, spéciales et lourdes)",
+      "prix": 35,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-armes-de-base-speciales-et-lourdes",
+      "roles": [
+        "champion",
+        "chef",
+        "diacre",
+        "ganger",
+        "pretre",
+        "redemp"
+      ]
+    },
+    {
+      "nom": "Lunette infrarouge (pistolets, armes de base et spéciales)",
+      "prix": 40,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-infrarouge-pistolets-armes-de-base-et-speciales",
+      "roles": [
+        "diacre",
+        "pretre"
+      ]
+    },
+    {
+      "nom": "Sheen Bird (0-2)",
+      "prix": 90,
+      "categorie": "Bêtes exotiques",
+      "id": "sheen-bird-0-2",
+      "roles": [
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Chérubin-serviteur (0-3)",
+      "prix": 55,
+      "categorie": "Bêtes exotiques",
+      "id": "cherubin-serviteur-0-3",
+      "roles": [
+        "diacre",
+        "pretre"
+      ]
+    },
+    {
+      "nom": "Fétiche hexagrammique",
+      "prix": 35,
+      "categorie": "Champs protecteurs",
+      "id": "fetiche-hexagrammique",
+      "roles": [
+        "devot",
+        "diacre",
+        "pretre",
+        "redemp"
+      ]
+    },
+    {
+      "nom": "Champ réfracteur",
+      "prix": 50,
+      "categorie": "Champs protecteurs",
+      "id": "champ-refracteur",
+      "roles": [
+        "pretre"
+      ]
+    },
+    {
+      "nom": "Pistocrâne",
+      "prix": 65,
+      "categorie": "Servocrânes",
+      "id": "pistocrane",
+      "roles": [
+        "diacre",
+        "pretre"
+      ]
+    },
+    {
+      "nom": "Médicrâne",
+      "prix": 80,
+      "categorie": "Servocrânes",
+      "id": "medicrane",
+      "roles": [
+        "pretre"
+      ]
+    },
+    {
+      "nom": "Sensocrâne",
+      "prix": 60,
+      "categorie": "Servocrânes",
+      "id": "sensocrane",
+      "roles": [
+        "pretre"
+      ]
+    }
+  ],
+  "titre": "Cawdor (Maison de la Foi)",
+  "gangerArmes": [
+    "Armes de base",
+    "Pistolets",
+    "Armes de corps à corps"
+  ],
+  "promoSpec": {
+    "novice": [
+      "ganger",
+      "redemp"
+    ],
+    "devot": [
+      "redemp"
+    ]
+  },
+  "regles": [
+    {
+      "nom": "Liste Maison de la Foi",
+      "texte": "Version de la liste Cawdor parue dans Maison de la Foi, avec ses deux lignées (Cawdor et Rédemptionniste). L'ancienne liste Cawdor reste disponible à côté."
+    },
+    {
+      "nom": "Pieux ou Fanatique",
+      "texte": "Gardien des Mots, Porte-flambeau, Fidèle Cawdor et Glaneur d'Os sont Pieux (relance d'un double 1 au Sang-froid en test de Ralliement). Prêtre Rédempteur, Diacre, Fidèle Rédemptionniste et Dévot sont Fanatiques (relance d'un double 1 au Sang-froid en test de Nervosité)."
+    },
+    {
+      "nom": "Alignement",
+      "texte": "À la fondation, majorité de Pieux : gang Intègre (Cawdor) ; majorité de Fanatiques : gang Hors-la-Loi (Rédemptionniste) ; égalité : selon le Chef. En campagne, si la composition change, test de Volonté du Chef à la fin de l'après-bataille (+3 facultatif s'il partage l'alignement du gang) ; en cas d'échec, l'alignement bascule."
+    },
+    {
+      "nom": "Chef de gang",
+      "texte": "Un seul Chef (Gardien des Mots ou Prêtre Rédempteur), qui ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu."
+    },
+    {
+      "nom": "Hiérarchie du gang",
+      "texte": "Une fois le gang Dégonflé, si le Chef réussit son test de Sang-froid en phase de Fin, les Cawdor à 12\" ou moins réussissent automatiquement le leur (6\" pour un Champion). Chef et Champions font des actions d'après-bataille."
+    },
+    {
+      "nom": "Activation de groupe",
+      "texte": "Le Chef peut activer à sa suite 2 Cawdor Parés à 3\" ou moins, un Champion 1."
+    },
+    {
+      "nom": "Les Ficelles du Métier",
+      "texte": "Chefs, Champions et Spécialistes peuvent avoir plusieurs panoplies."
+    },
+    {
+      "nom": "Voies de la Foi",
+      "texte": "Le Chef choisit à la création une Voie (Fidèle, Fanatique, Damné ou Rédempteur) qui donne au gang des avantages et des Articles de Foi (dés de Foi, tests de Seuil) : voir le livre."
+    },
+    {
+      "nom": "Guerrier Pur (Porte-flambeau)",
+      "texte": "Une fois par bataille, il peut relancer ses dés de Foi lors d'un test de Seuil."
+    },
+    {
+      "nom": "Ferveur Fanatique (Diacre)",
+      "texte": "Une fois par bataille, en Charge, il peut doubler ses Attaques, mais avec -1 à chaque jet de touche."
+    },
+    {
+      "nom": "Masses Dévotes",
+      "texte": "En fin d'étape Choisir son Équipe, un Fidèle Cawdor supplémentaire et D3 Glaneurs d'Os supplémentaires peuvent rejoindre l'équipe, même au-delà de la taille imposée."
+    },
+    {
+      "nom": "Combattants du gang",
+      "texte": "Fidèles, Glaneurs d'Os et Dévots doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires)."
+    },
+    {
+      "nom": "Glaneur d'Os",
+      "texte": "Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Spécialiste Cawdor ou Rédemptionniste."
+    },
+    {
+      "nom": "Dévot",
+      "texte": "Tête brûlée et Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Spécialiste Rédemptionniste."
+    },
+    {
+      "nom": "Exterminator",
+      "texte": "Accessoire à usage unique monté sur une arme : un tir de lance-flammes (gabarit de Souffle)."
+    }
+  ]
+}

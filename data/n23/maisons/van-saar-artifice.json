@@ -1,0 +1,960 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Maison de l'Artifice (version française)",
+  "reglesDeCreation": {
+    "novice": "Subtek et Néotek ne prennent que dans leur propre liste (le Néotek a un cotre antigrav inclus).",
+    "armeSpeciale": "Un Tek ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, un seul Tek peut être promu Spécialiste : il accède alors à toute sa liste.",
+    "chefEtChampion": "Primus, Augmeks et Archéoteks commencent avec une compétence gratuite de leurs sets Primaires. Un Archéotek peut prendre gratuitement un objet de Cyberteknika de niveau Alpha (voir le livre)."
+  },
+  "id": "van-saar-artifice",
+  "nom": "Van Saar (Maison de l'Artifice)",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Primus",
+      "cout": 130,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "2+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "5+",
+        "A": "2",
+        "CD": "4+",
+        "SF": "5+",
+        "V": "5+",
+        "INT": "4+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé"
+      ]
+    },
+    {
+      "id": "champion",
+      "role": "Augmek",
+      "cout": 110,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "2+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "1",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "5+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé"
+      ],
+      "promotionDepuis": "neotek"
+    },
+    {
+      "id": "archeotek",
+      "role": "Archéotek",
+      "cout": 125,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "2+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "5+",
+        "A": "2",
+        "CD": "4+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "5+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé"
+      ],
+      "base": "champion",
+      "promotionDepuis": "neotek"
+    },
+    {
+      "id": "neotek",
+      "role": "Néotek",
+      "cout": 70,
+      "profil": {
+        "M": "5\"",
+        "CC": "5+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "8+",
+        "V": "9+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé",
+        "Cotre antigrav"
+      ],
+      "base": "novice"
+    },
+    {
+      "id": "ganger",
+      "role": "Tek",
+      "cout": 65,
+      "profil": {
+        "M": "4\"",
+        "CC": "4+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "5+",
+        "A": "1",
+        "CD": "6+",
+        "SF": "7+",
+        "V": "7+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé"
+      ]
+    },
+    {
+      "id": "novice",
+      "role": "Subtek",
+      "cout": 35,
+      "profil": {
+        "M": "5\"",
+        "CC": "5+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "8+",
+        "V": "9+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Justaucorps renforcé"
+      ]
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Autorité",
+        "Tir",
+        "Savoir"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Ruse",
+        "Tech"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Tir",
+        "Savoir"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse",
+        "Autorité",
+        "Tech"
+      ]
+    },
+    "archeotek": {
+      "primaires": [
+        "Savoir",
+        "Tech"
+      ],
+      "secondaires": [
+        "Ruse",
+        "Tir"
+      ]
+    },
+    "neotek": {
+      "primaires": [
+        "Agilité"
+      ],
+      "secondaires": [
+        "Tir",
+        "Savoir"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Tir",
+        "Savoir"
+      ],
+      "secondaires": [
+        "Combat",
+        "Ruse"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Agilité"
+      ],
+      "secondaires": [
+        "Tir",
+        "Savoir"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Fusil laser",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "neotek",
+        "novice"
+      ],
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Fusil laser de maître",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-laser-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Carabine laser de maître",
+      "prix": 25,
+      "categorie": "Armes de base",
+      "id": "carabine-laser-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "carabine-laser"
+    },
+    {
+      "nom": "Laser de suppression de maître",
+      "prix": 50,
+      "categorie": "Armes de base",
+      "id": "laser-de-suppression-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "laser-de-suppression"
+    },
+    {
+      "nom": "Carabine laser",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "carabine-laser",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "carabine-laser"
+    },
+    {
+      "nom": "Laser de suppression",
+      "prix": 40,
+      "categorie": "Armes de base",
+      "id": "laser-de-suppression",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "laser-de-suppression"
+    },
+    {
+      "nom": "Combi-pistolet modèle Van Saar (pistolet laser/fuseur)",
+      "prix": 130,
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-modele-van-saar-pistolet-laser-fuseur",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "combi-pistolet-modele-van-saar",
+      "modes": [
+        "pistolet laser",
+        "fuseur"
+      ]
+    },
+    {
+      "nom": "Combi-pistolet modèle Van Saar (pistolet laser/pistolet à plasma)",
+      "prix": 95,
+      "categorie": "Pistolets",
+      "id": "combi-pistolet-modele-van-saar-pistolet-laser-pistolet-a-plasma",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "combi-pistolet-modele-van-saar",
+      "modes": [
+        "pistolet laser",
+        "pistolet à plasma"
+      ]
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "neotek"
+      ],
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet laser de maître",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser-de-maitre",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef"
+      ],
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-plasma",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger",
+        "neotek"
+      ],
+      "arme": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Mitraillette laser",
+      "prix": 15,
+      "categorie": "Pistolets",
+      "id": "mitraillette-laser",
+      "roles": [
+        "archeotek",
+        "champion",
+        "ganger",
+        "neotek",
+        "novice"
+      ],
+      "arme": "mitraillette-laser"
+    },
+    {
+      "nom": "Mitraillette laser de maître",
+      "prix": 20,
+      "categorie": "Pistolets",
+      "id": "mitraillette-laser-de-maitre",
+      "roles": [
+        "archeotek",
+        "champion"
+      ],
+      "arme": "mitraillette-laser"
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-gravitons",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-gravitons"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "fuseur",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-plasma",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-plasma"
+    },
+    {
+      "nom": "Fusil à radiations",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-radiations",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-radiations"
+    },
+    {
+      "nom": "Irradiateur",
+      "prix": 70,
+      "compteDouble": true,
+      "categorie": "Armes spéciales",
+      "id": "irradiateur",
+      "roles": [
+        "archeotek"
+      ],
+      "arme": "irradiateur"
+    },
+    {
+      "nom": "Canon laser",
+      "prix": 155,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "canon-laser",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "canon-laser"
+    },
+    {
+      "nom": "Multi-fuseur",
+      "prix": 180,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "multi-fuseur",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "multi-fuseur"
+    },
+    {
+      "nom": "Canon à plasma",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "canon-a-plasma",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "canon-a-plasma"
+    },
+    {
+      "nom": "Canon à radiations",
+      "prix": 130,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "canon-a-radiations",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "canon-a-radiations"
+    },
+    {
+      "nom": "Bouclier d'énergie modèle Hystrar",
+      "prix": 50,
+      "categorie": "Armes de corps à corps",
+      "id": "bouclier-d-energie-modele-hystrar",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "neotek"
+      ],
+      "arme": "bouclier-d-energie-modele-hystrar"
+    },
+    {
+      "nom": "Couteau énergétique",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "couteau-energetique",
+      "arme": "couteau-energetique"
+    },
+    {
+      "nom": "Servopince",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "servopince",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "servopince"
+    },
+    {
+      "nom": "Électrobâton",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "electrobaton",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "electrobaton"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "electrosceptre",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "neotek",
+        "novice"
+      ],
+      "arme": "electrosceptre"
+    },
+    {
+      "nom": "Digilaser (0-3)",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "digilaser-0-3",
+      "roles": [
+        "archeotek"
+      ],
+      "arme": "digilaser"
+    },
+    {
+      "nom": "Arachnarnais",
+      "prix": 80,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "arachnarnais",
+      "roles": [
+        "archeotek"
+      ],
+      "arme": "arachnarnais"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades Krak",
+      "prix": 45,
+      "categorie": "Grenades",
+      "id": "grenades-krak",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "grenades-krak"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades à plasma",
+      "prix": 65,
+      "categorie": "Grenades",
+      "id": "grenades-a-plasma",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "neotek"
+      ],
+      "arme": "grenades-a-plasma"
+    },
+    {
+      "nom": "Grenades à radiations",
+      "prix": 25,
+      "categorie": "Grenades",
+      "id": "grenades-a-radiations",
+      "arme": "grenades-a-radiations"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-aveuglantes",
+      "roles": [
+        "archeotek",
+        "neotek"
+      ],
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 25,
+      "categorie": "Grenades",
+      "id": "grenades-incapacitantes",
+      "roles": [
+        "archeotek"
+      ],
+      "arme": "grenades-incapacitantes"
+    },
+    {
+      "nom": "Armure carapace légère",
+      "prix": 80,
+      "categorie": "Armures",
+      "id": "armure-carapace-legere",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Champ convecteur",
+      "prix": 60,
+      "categorie": "Champs protecteurs",
+      "id": "champ-convecteur",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Champ téléporteur",
+      "prix": 70,
+      "categorie": "Champs protecteurs",
+      "id": "champ-teleporteur",
+      "roles": [
+        "archeotek",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Champ réfracteur",
+      "prix": 50,
+      "categorie": "Champs protecteurs",
+      "id": "champ-refracteur",
+      "roles": [
+        "archeotek",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster"
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Filin",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filin",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Grav-chute",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "grav-chute",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Médikit",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "medikit",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Servo-harnais partiel",
+      "prix": 130,
+      "categorie": "Équipement personnel",
+      "id": "servo-harnais-partiel",
+      "roles": [
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Surgénérateur d'arme laser",
+      "prix": 20,
+      "categorie": "Accessoires d'armes",
+      "id": "surgenerateur-d-arme-laser",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger",
+        "neotek"
+      ]
+    },
+    {
+      "nom": "Pointeur laser",
+      "prix": 35,
+      "categorie": "Accessoires d'armes",
+      "id": "pointeur-laser",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger",
+        "neotek"
+      ]
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-infrarouge",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Lunette télescopique",
+      "prix": 25,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-telescopique",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Suspenseur",
+      "prix": 60,
+      "categorie": "Accessoires d'armes",
+      "id": "suspenseur",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Ampli-cristal (arme laser)",
+      "prix": 20,
+      "categorie": "Accessoires d'armes",
+      "id": "ampli-cristal-arme-laser",
+      "roles": [
+        "archeotek",
+        "champion",
+        "chef",
+        "neotek"
+      ]
+    },
+    {
+      "nom": "Cyberachnide (0-3)",
+      "prix": 75,
+      "categorie": "Bêtes exotiques",
+      "id": "cyberachnide-0-3",
+      "roles": [
+        "archeotek",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Cyberachnide (0-2)",
+      "prix": 75,
+      "categorie": "Bêtes exotiques",
+      "id": "cyberachnide-0-2",
+      "roles": [
+        "champion"
+      ]
+    }
+  ],
+  "titre": "Van Saar (Maison de l'Artifice)",
+  "gangerArmes": [
+    "Armes de base",
+    "Pistolets",
+    "Armes de corps à corps"
+  ],
+  "regles": [
+    {
+      "nom": "Liste Maison de l'Artifice",
+      "texte": "Version de la liste Van Saar parue dans Maison de l'Artifice. L'ancienne liste Van Saar reste disponible à côté."
+    },
+    {
+      "nom": "Justaucorps renforcé",
+      "texte": "Inclus pour tous : immunité au trait Radiations (sauf mention contraire) et +1 aux sauvegardes (6+ sans armure). Pas cumulable avec une sous-combinaison renforcée."
+    },
+    {
+      "nom": "Chef de gang",
+      "texte": "Un seul Primus, qui ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu."
+    },
+    {
+      "nom": "Hiérarchie du gang",
+      "texte": "Une fois le gang Dégonflé, si le Primus réussit son test de Sang-froid en phase de Fin, les Van Saar à 12\" ou moins réussissent automatiquement le leur (6\" pour un Augmek ou un Archéotek). Ces trois rangs font des actions d'après-bataille."
+    },
+    {
+      "nom": "Activation de groupe",
+      "texte": "Le Primus peut activer à sa suite 2 Van Saar Parés à 3\" ou moins, un Augmek ou un Archéotek 1."
+    },
+    {
+      "nom": "Maître de la Cyberteknika (Archéotek)",
+      "texte": "La Cyberteknika lui coûte moitié prix (arrondi aux 5 crédits)."
+    },
+    {
+      "nom": "Combattants du gang",
+      "texte": "Teks, Subteks et Néoteks doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires)."
+    },
+    {
+      "nom": "Néotek",
+      "texte": "Cotre antigrav inclus. Tête brûlée et Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Augmek ou Archéotek."
+    },
+    {
+      "nom": "Subtek",
+      "texte": "Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Spécialiste."
+    },
+    {
+      "nom": "Armes de maître et ampli-cristal",
+      "texte": "Les versions « de maître » ont le trait Facture de maître. L'ampli-cristal améliore une arme laser (détail : voir le livre)."
+    }
+  ]
+}

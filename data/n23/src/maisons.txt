@@ -1011,3 +1011,437 @@ Cyber-mastiff (0-2) | 100
 Champ de conversion | 60
 ## Équipement personnel [champion, chef, casseur, ganger, maitre, novice]
 Balles dum-dum (flingue) (5 cr) | 5
+
+= Van Saar (Maison de l'Artifice) => van-saar-artifice
+source: Maison de l'Artifice (version française)
+creation: novice | Subtek et Néotek ne prennent que dans leur propre liste (le Néotek a un cotre antigrav inclus).
+creation: armeSpeciale | Un Tek ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, un seul Tek peut être promu Spécialiste : il accède alors à toute sa liste.
+creation: chefEtChampion | Primus, Augmeks et Archéoteks commencent avec une compétence gratuite de leurs sets Primaires. Un Archéotek peut prendre gratuitement un objet de Cyberteknika de niveau Alpha (voir le livre).
+gangerArmes: Armes de base, Pistolets, Armes de corps à corps
+regle: Liste Maison de l'Artifice | Version de la liste Van Saar parue dans Maison de l'Artifice. L'ancienne liste Van Saar reste disponible à côté.
+regle: Justaucorps renforcé | Inclus pour tous : immunité au trait Radiations (sauf mention contraire) et +1 aux sauvegardes (6+ sans armure). Pas cumulable avec une sous-combinaison renforcée.
+regle: Chef de gang | Un seul Primus, qui ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu.
+regle: Hiérarchie du gang | Une fois le gang Dégonflé, si le Primus réussit son test de Sang-froid en phase de Fin, les Van Saar à 12" ou moins réussissent automatiquement le leur (6" pour un Augmek ou un Archéotek). Ces trois rangs font des actions d'après-bataille.
+regle: Activation de groupe | Le Primus peut activer à sa suite 2 Van Saar Parés à 3" ou moins, un Augmek ou un Archéotek 1.
+regle: Maître de la Cyberteknika (Archéotek) | La Cyberteknika lui coûte moitié prix (arrondi aux 5 crédits).
+regle: Combattants du gang | Teks, Subteks et Néoteks doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires).
+regle: Néotek | Cotre antigrav inclus. Tête brûlée et Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Augmek ou Archéotek.
+regle: Subtek | Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Spécialiste.
+regle: Armes de maître et ampli-cristal | Les versions « de maître » ont le trait Facture de maître. L'ampli-cristal améliore une arme laser (détail : voir le livre).
+combattant: Primus => Chef | 130 | 4" 4+ 2+ 3 3 2 5+ 2 4+ 5+ 5+ 4+ | Justaucorps renforcé
+combattant: Augmek => champion::neotek | 110 | 4" 4+ 2+ 3 3 2 4+ 1 5+ 6+ 6+ 5+ | Justaucorps renforcé
+combattant: Archéotek => archeotek:champion:neotek | 125 | 4" 4+ 2+ 3 3 2 5+ 2 4+ 6+ 6+ 5+ | Justaucorps renforcé
+combattant: Néotek => neotek:novice | 70 | 5" 5+ 4+ 3 3 1 4+ 1 9+ 8+ 9+ 7+ | Justaucorps renforcé, Cotre antigrav
+combattant: Tek => Ganger | 65 | 4" 4+ 3+ 3 3 1 5+ 1 6+ 7+ 7+ 6+ | Justaucorps renforcé
+combattant: Subtek => Novice | 35 | 5" 5+ 4+ 3 3 1 4+ 1 9+ 8+ 9+ 7+ | Justaucorps renforcé
+competences: Chef | Agilité S, Ruse S, Autorité P, Tir P, Savoir P, Tech S
+competences: Champion | Combat S, Ruse S, Autorité S, Tir P, Savoir P, Tech S
+competences: Archeotek | Ruse S, Tir S, Savoir P, Tech P
+competences: Neotek | Agilité P, Tir S, Savoir S
+competences: Spécialiste | Combat S, Ruse S, Tir P, Savoir P
+competences: Novice | Agilité P, Tir S, Savoir S
+## Armes de base [champion, chef, ganger, neotek, novice]
+Fusil laser | 10
+## Armes de base [champion, chef]
+Fusil laser de maître | 15
+Carabine laser de maître | 25
+Laser de suppression de maître | 50
+## Armes de base [champion, chef, ganger]
+Carabine laser | 20
+Laser de suppression | 40
+## Pistolets [champion, chef]
+Combi-pistolet modèle Van Saar (pistolet laser/fuseur) | 130
+Combi-pistolet modèle Van Saar (pistolet laser/pistolet à plasma) | 95
+## Pistolets [champion, chef, ganger, neotek]
+Lance-flammes léger | 75
+## Pistolets
+Pistolet laser | 5
+## Pistolets [archeotek, champion, chef]
+Pistolet laser de maître | 10
+## Pistolets [archeotek, champion, chef, ganger, neotek]
+Pistolet à plasma | 50
+## Pistolets [archeotek, champion, ganger, neotek, novice]
+Mitraillette laser | 15
+## Pistolets [archeotek, champion]
+Mitraillette laser de maître | 20
+## Armes spéciales [champion, chef, ganger]
+Lance-flammes | 140
+Fusil à gravitons | 120
+Fuseur | 135
+Fusil à plasma | 100
+Fusil à radiations | 100
+## Armes spéciales [archeotek]
+Irradiateur* | 70
+## Armes lourdes [champion, chef]
+Canon laser* | 155
+## Armes lourdes [champion, chef, ganger]
+Multi-fuseur* | 180
+Canon à plasma* | 130
+Canon à radiations* | 130
+## Armes de corps à corps [champion, chef, ganger, neotek]
+Bouclier d'énergie modèle Hystrar | 50
+## Armes de corps à corps
+Couteau énergétique | 25
+## Armes de corps à corps [archeotek, champion, chef, ganger, novice]
+Servopince | 30
+## Armes de corps à corps [champion, chef, ganger, novice]
+Électrobâton | 30
+## Armes de corps à corps [champion, chef, ganger, neotek, novice]
+Électrosceptre | 25
+## Armes de corps à corps [archeotek]
+Digilaser (0-3) | 25
+Arachnarnais* | 80
+## Grenades [archeotek, champion, chef, ganger, novice]
+Grenades Frag | 30
+Grenades Krak | 45
+Grenades fumigènes | 15
+## Grenades [archeotek, champion, chef, neotek]
+Grenades à plasma | 65
+## Grenades
+Grenades à radiations | 25
+## Grenades [archeotek, neotek]
+Grenades aveuglantes | 15
+## Grenades [archeotek]
+Grenades incapacitantes | 25
+## Armures [archeotek, champion, chef]
+Armure carapace légère | 80
+## Armures
+Armure Flak | 10
+Armure composite | 15
+## Champs protecteurs [archeotek, champion, chef]
+Champ convecteur | 60
+## Champs protecteurs [archeotek, chef]
+Champ téléporteur | 70
+Champ réfracteur | 50
+## Équipement personnel
+Bio-booster | 35
+Filtre nasal | 10
+Respirateur | 15
+## Équipement personnel [archeotek, champion, chef, ganger, novice]
+Filin | 10
+Photolunettes | 35
+## Équipement personnel [archeotek, champion, chef, ganger]
+Grav-chute | 40
+## Équipement personnel [champion, chef, ganger, novice]
+Médikit | 30
+## Équipement personnel [champion, chef]
+Servo-harnais partiel | 130
+## Accessoires d'armes [archeotek, champion, chef, ganger, neotek]
+Surgénérateur d'arme laser | 20
+Pointeur laser | 35
+## Accessoires d'armes [archeotek, champion, chef, ganger]
+Lunette infrarouge' | 25
+## Accessoires d'armes [archeotek, champion, chef]
+Lunette' | 35
+Lunette télescopique' | 25
+## Accessoires d'armes [champion, chef, ganger]
+Suspenseur | 60
+## Accessoires d'armes [archeotek, champion, chef, neotek]
+Ampli-cristal (arme laser) | 20
+## Bêtes exotiques [archeotek, chef]
+Cyberachnide (0-3) | 75
+## Bêtes exotiques [champion]
+Cyberachnide (0-2) | 75
+
+= Delaque (Maison de l'Ombre) => delaque-ombre
+source: Maison de l'Ombre (version française)
+creation: novice | Ombre et Psy-Gheist ne prennent que dans leur propre liste.
+creation: armeSpeciale | Un Fantôme ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, un seul Fantôme peut être promu Spécialiste : il accède alors à toute sa liste.
+creation: chefEtChampion | Maître de l'Ombre, Spectres et Nacht-Ghuls commencent avec une compétence gratuite de leurs sets Primaires.
+gangerArmes: Armes de base, Pistolets, Armes de corps à corps
+regle: Liste Maison de l'Ombre | Version de la liste Delaque parue dans Maison de l'Ombre. L'ancienne liste Delaque reste disponible à côté.
+regle: Chef de gang | Un seul Maître de l'Ombre, qui ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu.
+regle: Hiérarchie du gang | Une fois le gang Dégonflé, si le Maître de l'Ombre réussit son test de Sang-froid en phase de Fin, les Delaque à 12" ou moins réussissent automatiquement le leur (6" pour un Spectre ou un Nacht-Ghul). Ces trois rangs font des actions d'après-bataille.
+regle: Activation de groupe | Le Maître de l'Ombre peut activer à sa suite 2 Delaque Parés à 3" ou moins, un Spectre ou un Nacht-Ghul 1.
+regle: Murmures psychotériques | Maître de l'Ombre, Spectre et Nacht-Ghul peuvent devenir Psykers (Maîtrise psychotérique et Psyker clandestin) pour 30 crédits à la recrue, ou plus tard avec de l'XP.
+regle: Depuis les ombres (Nacht-Ghul) | Il peut être mis de côté au déploiement, puis placé au début d'un tour après la Priorité n'importe où hors de vue et à plus de 6" des ennemis.
+regle: Psy-Gheist | Psyker (Maîtrise psychotérique) : il choisit une discipline (Folie, Désillusion ou Ténèbres) et un Pouvoir Wyrd de cette discipline, d'autres pouvoirs à 30 crédits à la recrue ou avec l'XP (6 XP au hasard, 9 au choix). Psyker clandestin, Tête brûlée, Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Spectre ou Nacht-Ghul.
+regle: Combattants du gang | Fantômes, Ombres et Psy-Gheists doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires).
+regle: Ombre | Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, elle peut devenir Spécialiste.
+combattant: Maître de l'Ombre => Chef | 100 | 5" 3+ 3+ 3 3 2 3+ 2 6+ 6+ 5+ 6+ |
+combattant: Spectre => champion::gheist | 85 | 5" 3+ 3+ 3 3 2 4+ 2 7+ 6+ 6+ 6+ |
+combattant: Nacht-Ghul => nacht:champion:gheist | 110 | 6" 2+ 3+ 4 3 2 2+ 2 7+ 6+ 6+ 7+ |
+combattant: Psy-Gheist => gheist:novice | 60 | 6" 4+ 5+ 3 3 1 3+ 1 9+ 7+ 8+ 8+ |
+combattant: Fantôme => Ganger | 40 | 5" 4+ 4+ 3 3 1 4+ 1 7+ 6+ 7+ 7+ |
+combattant: Ombre => Novice | 25 | 6" 5+ 5+ 3 3 1 3+ 1 9+ 7+ 8+ 8+ |
+competences: Chef | Agilité P, Ruse P, Autorité P, Savoir S, Tir S, Obfuscation S
+competences: Champion | Agilité S, Ruse P, Autorité S, Savoir P, Tir S, Obfuscation P
+competences: Nacht | Agilité P, Ruse P, Autorité S, Tir S, Obfuscation S
+competences: Gheist | Agilité S, Ruse P, Savoir S
+competences: Spécialiste | Agilité S, Combat S, Ruse P, Savoir P
+competences: Novice | Agilité S, Ruse P, Savoir S
+## Armes de base [champion, chef, ganger]
+Fusil d'assaut | 15
+Fusil laser | 15
+Fusil à pompe (balles et grenaille) | 30
+## Armes de base [chef]
+Fusil d'assaut de maître | 20
+## Armes de base [champion, chef]
+Fusil laser de maître | 20
+Fusil à pompe (munitions Executioner) | 20
+## Armes de base
+Couteaux de lancer | 10
+## Pistolets
+Pistolet-mitrailleur | 5
+Pistolet laser | 10
+## Pistolets [chef]
+Pistolet-mitrailleur de maître | 10
+Pistolet à gravitons de maître | 110
+## Pistolets [champion, chef, ganger, nacht, novice]
+Pistolet à fléchettes | 30
+## Pistolets [champion, chef, nacht]
+Pistolet à fléchettes de maître | 40
+Pistolet laser de maître | 15
+## Pistolets [champion, chef, ganger]
+Pistolet à gravitons | 90
+Pistolet à plasma | 50
+## Pistolets [champion, chef, ganger, novice]
+Lance-flammes léger | 75
+Lance-toile léger | 80
+## Pistolets [champion, chef, ganger, gheist, novice]
+Flingue | 5
+## Pistolets [champion, chef, gheist]
+Balles dum-dum (flingue) | 5
+## Armes spéciales [champion, chef, ganger]
+Lance-flammes | 140
+Fusil à gravitons | 120
+Long fusil | 30
+Fuseur | 135
+Fusil à plasma | 100
+Lance-toile | 115
+## Armes spéciales [chef]
+Fusil à gravitons de maître | 145
+## Armes spéciales [champion, chef]
+Long fusil de maître | 35
+## Armes lourdes [champion, chef]
+Lance-flammes lourd* | 195
+## Armes de corps à corps [champion, chef, gheist, nacht]
+Digilaser | 25
+## Armes de corps à corps [champion, chef, ganger, novice]
+Électrosceptre | 25
+Gantelet lance-toile | 35
+## Armes de corps à corps [chef]
+Électrosceptre de maître | 30
+## Armes de corps à corps
+Stylet | 20
+## Armes de corps à corps [champion, chef, nacht]
+Stylet de maître | 25
+## Armes de corps à corps [nacht]
+Crochets de serpent* | 90
+Surineuse | 70
+## Grenades [champion, chef, ganger, nacht]
+Grenades asphyxiantes | 50
+Grenades aveuglantes | 15
+## Grenades
+Grenades cauchemar | 40
+Grenades fumigènes | 15
+Grenades incapacitantes | 10
+## Armures [chef]
+Armure carapace légère | 80
+## Armures
+Armure Flak | 10
+Armure composite | 15
+## Équipement personnel [champion, chef, nacht]
+Sous-combinaison renforcée | 25
+Cape caméléoline | 35
+Murmures psychotériques (Psyker) | 30
+## Équipement personnel [champion, chef, ganger, nacht]
+Bio-scanner | 30
+Lance-grappin | 25
+Solvant à toile | 20
+## Équipement personnel
+Filtre nasal | 10
+Photolunettes | 20
+Respirateur | 15
+Lame sous-cutanée | 10
+## Équipement personnel [gheist]
+Harnais de psychomancien | 110
+Pouvoir Wyrd supplémentaire | 30
+## Accessoires d'armes
+Silencieux | 10
+Lunette infrarouge' | 35
+## Accessoires d'armes [champion, chef, ganger]
+Lunette' | 35
+## Accessoires d'armes [champion, chef]
+Suspenseur | 60
+## Bêtes exotiques [champion, chef, gheist, nacht]
+Céphalopode Spektor (0-3) | 100
+## Bêtes exotiques [gheist]
+Wyrm psychotérique (0-2) | 70
+
+= Cawdor (Maison de la Foi) => cawdor-foi
+source: Maison de la Foi (version française)
+creation: novice | Glaneurs d'Os et Dévots ne prennent que dans leur propre liste.
+creation: armeSpeciale | Un Fidèle ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, un seul Fidèle (Cawdor ou Rédemptionniste) peut être promu Spécialiste : il accède alors à toute sa liste.
+creation: chefEtChampion | Gardien des Mots, Prêtre Rédempteur, Porte-flambeaux et Diacres commencent avec une compétence gratuite de leurs sets Primaires. Le Chef choisit la Voie de la Foi du gang.
+gangerArmes: Armes de base, Pistolets, Armes de corps à corps
+promoSpec: novice | ganger, redemp
+promoSpec: devot | redemp
+regle: Liste Maison de la Foi | Version de la liste Cawdor parue dans Maison de la Foi, avec ses deux lignées (Cawdor et Rédemptionniste). L'ancienne liste Cawdor reste disponible à côté.
+regle: Pieux ou Fanatique | Gardien des Mots, Porte-flambeau, Fidèle Cawdor et Glaneur d'Os sont Pieux (relance d'un double 1 au Sang-froid en test de Ralliement). Prêtre Rédempteur, Diacre, Fidèle Rédemptionniste et Dévot sont Fanatiques (relance d'un double 1 au Sang-froid en test de Nervosité).
+regle: Alignement | À la fondation, majorité de Pieux : gang Intègre (Cawdor) ; majorité de Fanatiques : gang Hors-la-Loi (Rédemptionniste) ; égalité : selon le Chef. En campagne, si la composition change, test de Volonté du Chef à la fin de l'après-bataille (+3 facultatif s'il partage l'alignement du gang) ; en cas d'échec, l'alignement bascule.
+regle: Chef de gang | Un seul Chef (Gardien des Mots ou Prêtre Rédempteur), qui ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu.
+regle: Hiérarchie du gang | Une fois le gang Dégonflé, si le Chef réussit son test de Sang-froid en phase de Fin, les Cawdor à 12" ou moins réussissent automatiquement le leur (6" pour un Champion). Chef et Champions font des actions d'après-bataille.
+regle: Activation de groupe | Le Chef peut activer à sa suite 2 Cawdor Parés à 3" ou moins, un Champion 1.
+regle: Les Ficelles du Métier | Chefs, Champions et Spécialistes peuvent avoir plusieurs panoplies.
+regle: Voies de la Foi | Le Chef choisit à la création une Voie (Fidèle, Fanatique, Damné ou Rédempteur) qui donne au gang des avantages et des Articles de Foi (dés de Foi, tests de Seuil) : voir le livre.
+regle: Guerrier Pur (Porte-flambeau) | Une fois par bataille, il peut relancer ses dés de Foi lors d'un test de Seuil.
+regle: Ferveur Fanatique (Diacre) | Une fois par bataille, en Charge, il peut doubler ses Attaques, mais avec -1 à chaque jet de touche.
+regle: Masses Dévotes | En fin d'étape Choisir son Équipe, un Fidèle Cawdor supplémentaire et D3 Glaneurs d'Os supplémentaires peuvent rejoindre l'équipe, même au-delà de la taille imposée.
+regle: Combattants du gang | Fidèles, Glaneurs d'Os et Dévots doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires).
+regle: Glaneur d'Os | Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Spécialiste Cawdor ou Rédemptionniste.
+regle: Dévot | Tête brûlée et Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Spécialiste Rédemptionniste.
+regle: Exterminator | Accessoire à usage unique monté sur une arme : un tir de lance-flammes (gabarit de Souffle).
+combattant: Gardien des Mots Cawdor => Chef | 100 | 5" 3+ 4+ 3 3 2 4+ 2 4+ 6+ 5+ 6+ |
+combattant: Prêtre Rédempteur => pretre:chef | 100 | 5" 3+ 4+ 3 3 2 4+ 2 5+ 6+ 4+ 7+ |
+combattant: Porte-flambeau Cawdor => Champion | 90 | 5" 4+ 3+ 3 3 2 4+ 2 5+ 6+ 7+ 6+ |
+combattant: Diacre Rédemptionniste => diacre:champion | 90 | 5" 4+ 3+ 3 3 2 4+ 2 6+ 6+ 5+ 7+ |
+combattant: Fidèle Cawdor => Ganger | 45 | 5" 4+ 4+ 3 3 1 4+ 1 7+ 7+ 7+ 7+ |
+combattant: Fidèle Rédemptionniste => redemp:ganger | 50 | 5" 4+ 4+ 3 3 1 4+ 1 8+ 6+ 6+ 9+ |
+combattant: Glaneur d'Os => Novice | 20 | 6" 5+ 5+ 3 3 1 3+ 1 8+ 8+ 8+ 9+ |
+combattant: Dévot => devot:novice | 40 | 6" 4+ 5+ 3 3 1 3+ 1 8+ 7+ 8+ 9+ |
+competences: Chef | Muscle P, Combat P, Férocité S, Autorité P, Tir S, Piété S
+competences: Pretre | Muscle S, Combat P, Férocité S, Autorité P, Tir S, Piété P
+competences: Champion | Agilité S, Muscle P, Combat P, Férocité S, Autorité S, Piété S
+competences: Diacre | Agilité S, Muscle P, Combat P, Férocité S, Autorité S, Piété P
+competences: Spécialiste | Agilité S, Muscle S, Combat P, Férocité P
+competences: Spécialiste redemp | Muscle S, Combat P, Férocité P, Piété S
+competences: Novice | Agilité S, Combat S, Férocité P
+competences: Devot | Combat S, Férocité P, Piété S
+## Armes de base [champion, chef, ganger]
+Haste avec fusil d'assaut Cawdor* | 20
+Haste avec tromblon Cawdor* (munitions à grappe & Purgation) | 40 | haste; tromblon, grappe; tromblon, Purgation
+Balles Emperor's Wrath (pour tromblon) | 35
+Fusil d'assaut de récup' | 10
+Fusil à canon scié | 15
+## Armes de base [champion, chef]
+Haste avec fusil d'assaut Cawdor de maître* | 25
+Haste avec tromblon Cawdor de maître* (munitions à grappe & Purgation) | 50 | haste; tromblon, grappe; tromblon, Purgation
+Balles (pour fusil à canon scié) | 10
+## Armes de base [diacre, pretre, redemp]
+Fusil d'assaut | 15
+Fusil d'assaut avec exterminator | 30
+Fusil à pompe (balles & grenaille) | 30 | balles; grenaille
+Fusil à pompe avec exterminator (balles & grenaille) | 45 | balles; grenaille; exterminator
+Fusil à pompe (munitions Inferno) | 15
+Fusil à pompe (munitions Retributor) | 20
+## Armes de base [diacre, pretre]
+Fusil d'assaut de maître | 20
+Fusil à pompe (munitions Executioner) | 20
+## Pistolets [champion, chef, diacre, ganger, pretre, redemp]
+Lance-flammes léger | 75
+## Pistolets [champion, chef, ganger, novice]
+Pistolet-mitrailleur de récup' | 5
+## Pistolets
+Flingue | 5
+Balles dum-dum (pour flingue) | 5
+## Pistolets [devot, diacre, pretre, redemp]
+Pistolet-mitrailleur | 10
+## Pistolets [diacre, pretre]
+Pistolet-mitrailleur de maître | 15
+## Armes spéciales [champion, chef, ganger, redemp]
+Arme combinée (fusil d'assaut/lance-flammes) | 110
+## Armes spéciales [champion, chef, ganger]
+Lance-flammes | 130
+Long fusil | 30
+## Armes spéciales [chef]
+Long fusil de maître | 35
+## Armes spéciales [diacre, pretre, redemp]
+Pique de feu | 140
+Lance-grenades (grenades Frag & Krak) | 65 | grenades Frag; grenades Krak
+Grenades aveuglantes (pour lance-grenades) | 15
+Grenades fumigènes (pour lance-grenades) | 15
+## Armes lourdes [champion, chef]
+Arbalète lourde Cawdor* (carreaux Frag & Krak) | 125
+Mitrailleuse* | 130
+## Armes lourdes [champion, chef, diacre, pretre, redemp]
+Lance-flammes lourd* | 195
+## Armes de corps à corps [champion, chef, ganger, novice]
+Hache | 10
+Hachoir | 20
+Fléau | 20
+Matraque lourde | 15
+Masse (matraque) | 10
+## Armes de corps à corps [champion, chef]
+Vouge tronçonneur* | 60
+Couteau de combat de maître | 20
+Espadon de maître* | 50
+Arme d'haste* | 30
+## Armes de corps à corps [chef]
+Vouge tronçonneur de maître* | 75
+Hache à deux mains de maître* | 40
+## Armes de corps à corps
+Couteau de combat | 15
+## Armes de corps à corps [champion, chef, ganger]
+Espadon* | 40
+## Armes de corps à corps [champion, chef, devot, ganger]
+Hache à deux mains* | 25
+Marteau à deux mains* | 35
+## Armes de corps à corps [diacre, pretre, redemp]
+Hache tronçonneuse | 30
+Hache tronçonneuse avec exterminator | 45
+## Armes de corps à corps [diacre, pretre]
+Hache tronçonneuse de maître | 35
+Épée tronçonneuse | 25
+Épée tronçonneuse de maître | 30
+Éviscérator de maître* | 110
+## Armes de corps à corps [devot, diacre, pretre, redemp]
+Éviscérator* | 90
+## Armes de corps à corps [devot]
+Hache à deux mains avec exterminator* | 40
+Marteau à deux mains avec exterminator* | 50
+## Grenades
+Charges explosives | 35
+Grenades Frag | 30
+Charges incendiaires | 40
+Grenades Krak | 45
+## Grenades [champion, chef, diacre, pretre]
+Grenades asphyxiantes | 50
+Grenades fumigènes | 15
+## Armures
+Armure Flak | 10
+## Armures [champion, chef, ganger, novice]
+Manteau des Bas-Fonds | 15
+## Armures [champion, chef]
+Bouclier de récupération | 15
+## Armures [chef, diacre, pretre]
+Armure composite | 15
+## Armures [pretre]
+Armure carapace légère | 80
+## Armures [devot, diacre, pretre, redemp]
+Haubert incombustible | 20
+## Équipement personnel [champion, chef, ganger, novice]
+Rats livreurs de bombes | 30
+## Équipement personnel [champion, chef, diacre, pretre]
+Icône du Culte | 40
+## Équipement personnel [champion, chef, devot, diacre, ganger, pretre, redemp]
+Filin | 10
+## Équipement personnel
+Filtre nasal | 10
+## Équipement personnel [champion, chef, diacre, ganger, pretre, redemp]
+Photolunettes | 35
+Respirateur | 15
+## Équipement personnel [champion, chef, diacre, ganger, novice, pretre, redemp]
+Lame sous-cutanée | 10
+Kit de démontage | 15
+## Équipement personnel [pretre]
+Livre de la Rédemption | 50
+## Équipement personnel [devot, diacre, pretre, redemp]
+Manteau pyromantique | 45
+## Accessoires d'armes [champion, chef, diacre, ganger, pretre, redemp]
+Lunette' (armes de base, spéciales et lourdes) | 35
+## Accessoires d'armes [diacre, pretre]
+Lunette infrarouge' (pistolets, armes de base et spéciales) | 40
+## Bêtes exotiques [champion, chef]
+Sheen Bird (0-2) | 90
+## Bêtes exotiques [diacre, pretre]
+Chérubin-serviteur (0-3) | 55
+## Champs protecteurs [devot, diacre, pretre, redemp]
+Fétiche hexagrammique | 35
+## Champs protecteurs [pretre]
+Champ réfracteur | 50
+## Servocrânes [diacre, pretre]
+Pistocrâne | 65
+## Servocrânes [pretre]
+Médicrâne | 80
+Sensocrâne | 60

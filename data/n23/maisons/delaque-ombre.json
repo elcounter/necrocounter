@@ -1,0 +1,899 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Maison de l'Ombre (version française)",
+  "reglesDeCreation": {
+    "novice": "Ombre et Psy-Gheist ne prennent que dans leur propre liste.",
+    "armeSpeciale": "Un Fantôme ne prend que des armes de base, pistolets et armes de corps à corps de sa liste. À la fondation, un seul Fantôme peut être promu Spécialiste : il accède alors à toute sa liste.",
+    "chefEtChampion": "Maître de l'Ombre, Spectres et Nacht-Ghuls commencent avec une compétence gratuite de leurs sets Primaires."
+  },
+  "id": "delaque-ombre",
+  "nom": "Delaque (Maison de l'Ombre)",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Maître de l'Ombre",
+      "cout": 100,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "3+",
+        "A": "2",
+        "CD": "6+",
+        "SF": "6+",
+        "V": "5+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "champion",
+      "role": "Spectre",
+      "cout": 85,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "3+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [],
+      "promotionDepuis": "gheist"
+    },
+    {
+      "id": "nacht",
+      "role": "Nacht-Ghul",
+      "cout": 110,
+      "profil": {
+        "M": "6\"",
+        "CC": "2+",
+        "CT": "3+",
+        "F": "4",
+        "E": "3",
+        "PV": "2",
+        "I": "2+",
+        "A": "2",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [],
+      "base": "champion",
+      "promotionDepuis": "gheist"
+    },
+    {
+      "id": "gheist",
+      "role": "Psy-Gheist",
+      "cout": 60,
+      "profil": {
+        "M": "6\"",
+        "CC": "4+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "7+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": [],
+      "base": "novice"
+    },
+    {
+      "id": "ganger",
+      "role": "Fantôme",
+      "cout": 40,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "6+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": []
+    },
+    {
+      "id": "novice",
+      "role": "Ombre",
+      "cout": 25,
+      "profil": {
+        "M": "6\"",
+        "CC": "5+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "3+",
+        "A": "1",
+        "CD": "9+",
+        "SF": "7+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": []
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Agilité",
+        "Ruse",
+        "Autorité"
+      ],
+      "secondaires": [
+        "Savoir",
+        "Tir",
+        "Obfuscation"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Ruse",
+        "Savoir",
+        "Obfuscation"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Autorité",
+        "Tir"
+      ]
+    },
+    "nacht": {
+      "primaires": [
+        "Agilité",
+        "Ruse"
+      ],
+      "secondaires": [
+        "Autorité",
+        "Tir",
+        "Obfuscation"
+      ]
+    },
+    "gheist": {
+      "primaires": [
+        "Ruse"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Savoir"
+      ]
+    },
+    "specialiste": {
+      "primaires": [
+        "Ruse",
+        "Savoir"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Combat"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Ruse"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Savoir"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Fusil d'assaut",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil laser",
+      "prix": 15,
+      "categorie": "Armes de base",
+      "id": "fusil-laser",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Fusil à pompe (balles et grenaille)",
+      "prix": 30,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-balles-et-grenaille",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Fusil d'assaut de maître",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fusil-d-assaut-de-maitre",
+      "roles": [
+        "chef"
+      ],
+      "arme": "fusil-d-assaut"
+    },
+    {
+      "nom": "Fusil laser de maître",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fusil-laser-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "fusil-laser"
+    },
+    {
+      "nom": "Fusil à pompe (munitions Executioner)",
+      "prix": 20,
+      "categorie": "Armes de base",
+      "id": "fusil-a-pompe-munitions-executioner",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "fusil-a-pompe"
+    },
+    {
+      "nom": "Couteaux de lancer",
+      "prix": 10,
+      "categorie": "Armes de base",
+      "id": "couteaux-de-lancer",
+      "arme": "couteaux-de-lancer"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet laser",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser",
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet-mitrailleur de maître",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur-de-maitre",
+      "roles": [
+        "chef"
+      ],
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Pistolet à gravitons de maître",
+      "prix": 110,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-gravitons-de-maitre",
+      "roles": [
+        "chef"
+      ],
+      "arme": "pistolet-a-gravitons"
+    },
+    {
+      "nom": "Pistolet à fléchettes",
+      "prix": 30,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-flechettes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "nacht",
+        "novice"
+      ],
+      "arme": "pistolet-a-flechettes"
+    },
+    {
+      "nom": "Pistolet à fléchettes de maître",
+      "prix": 40,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-flechettes-de-maitre",
+      "roles": [
+        "champion",
+        "chef",
+        "nacht"
+      ],
+      "arme": "pistolet-a-flechettes"
+    },
+    {
+      "nom": "Pistolet laser de maître",
+      "prix": 15,
+      "categorie": "Pistolets",
+      "id": "pistolet-laser-de-maitre",
+      "roles": [
+        "champion",
+        "chef",
+        "nacht"
+      ],
+      "arme": "pistolet-laser"
+    },
+    {
+      "nom": "Pistolet à gravitons",
+      "prix": 90,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-gravitons",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "pistolet-a-gravitons"
+    },
+    {
+      "nom": "Pistolet à plasma",
+      "prix": 50,
+      "categorie": "Pistolets",
+      "id": "pistolet-a-plasma",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "pistolet-a-plasma"
+    },
+    {
+      "nom": "Lance-flammes léger",
+      "prix": 75,
+      "categorie": "Pistolets",
+      "id": "lance-flammes-leger",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "lance-flammes-leger"
+    },
+    {
+      "nom": "Lance-toile léger",
+      "prix": 80,
+      "categorie": "Pistolets",
+      "id": "lance-toile-leger",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "lance-toile-leger"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "gheist",
+        "novice"
+      ],
+      "arme": "flingue"
+    },
+    {
+      "nom": "Balles dum-dum (flingue)",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "balles-dum-dum-flingue",
+      "roles": [
+        "champion",
+        "chef",
+        "gheist"
+      ]
+    },
+    {
+      "nom": "Lance-flammes",
+      "prix": 140,
+      "categorie": "Armes spéciales",
+      "id": "lance-flammes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-flammes"
+    },
+    {
+      "nom": "Fusil à gravitons",
+      "prix": 120,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-gravitons",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-gravitons"
+    },
+    {
+      "nom": "Long fusil",
+      "prix": 30,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Fuseur",
+      "prix": 135,
+      "categorie": "Armes spéciales",
+      "id": "fuseur",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fuseur"
+    },
+    {
+      "nom": "Fusil à plasma",
+      "prix": 100,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-plasma",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "fusil-a-plasma"
+    },
+    {
+      "nom": "Lance-toile",
+      "prix": 115,
+      "categorie": "Armes spéciales",
+      "id": "lance-toile",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ],
+      "arme": "lance-toile"
+    },
+    {
+      "nom": "Fusil à gravitons de maître",
+      "prix": 145,
+      "categorie": "Armes spéciales",
+      "id": "fusil-a-gravitons-de-maitre",
+      "roles": [
+        "chef"
+      ],
+      "arme": "fusil-a-gravitons"
+    },
+    {
+      "nom": "Long fusil de maître",
+      "prix": 35,
+      "categorie": "Armes spéciales",
+      "id": "long-fusil-de-maitre",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "long-fusil"
+    },
+    {
+      "nom": "Lance-flammes lourd",
+      "prix": 195,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "lance-flammes-lourd",
+      "roles": [
+        "champion",
+        "chef"
+      ],
+      "arme": "lance-flammes-lourd"
+    },
+    {
+      "nom": "Digilaser",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "digilaser",
+      "roles": [
+        "champion",
+        "chef",
+        "gheist",
+        "nacht"
+      ],
+      "arme": "digilaser"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "electrosceptre",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "electrosceptre"
+    },
+    {
+      "nom": "Gantelet lance-toile",
+      "prix": 35,
+      "categorie": "Armes de corps à corps",
+      "id": "gantelet-lance-toile",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "novice"
+      ],
+      "arme": "gantelet-lance-toile"
+    },
+    {
+      "nom": "Électrosceptre de maître",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "electrosceptre-de-maitre",
+      "roles": [
+        "chef"
+      ],
+      "arme": "electrosceptre"
+    },
+    {
+      "nom": "Stylet",
+      "prix": 20,
+      "categorie": "Armes de corps à corps",
+      "id": "stylet",
+      "arme": "stylet"
+    },
+    {
+      "nom": "Stylet de maître",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "stylet-de-maitre",
+      "roles": [
+        "champion",
+        "chef",
+        "nacht"
+      ],
+      "arme": "stylet"
+    },
+    {
+      "nom": "Crochets de serpent",
+      "prix": 90,
+      "compteDouble": true,
+      "categorie": "Armes de corps à corps",
+      "id": "crochets-de-serpent",
+      "roles": [
+        "nacht"
+      ],
+      "arme": "crochets-de-serpent"
+    },
+    {
+      "nom": "Surineuse",
+      "prix": 70,
+      "categorie": "Armes de corps à corps",
+      "id": "surineuse",
+      "roles": [
+        "nacht"
+      ],
+      "arme": "surineuse"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Grenades",
+      "id": "grenades-asphyxiantes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "nacht"
+      ],
+      "arme": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-aveuglantes",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "nacht"
+      ],
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades cauchemar",
+      "prix": 40,
+      "categorie": "Grenades",
+      "id": "grenades-cauchemar",
+      "arme": "grenades-cauchemar"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 10,
+      "categorie": "Grenades",
+      "id": "grenades-incapacitantes",
+      "arme": "grenades-incapacitantes"
+    },
+    {
+      "nom": "Armure carapace légère",
+      "prix": 80,
+      "categorie": "Armures",
+      "id": "armure-carapace-legere",
+      "roles": [
+        "chef"
+      ]
+    },
+    {
+      "nom": "Armure Flak",
+      "prix": 10,
+      "categorie": "Armures",
+      "id": "armure-flak"
+    },
+    {
+      "nom": "Armure composite",
+      "prix": 15,
+      "categorie": "Armures",
+      "id": "armure-composite"
+    },
+    {
+      "nom": "Sous-combinaison renforcée",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "sous-combinaison-renforcee",
+      "roles": [
+        "champion",
+        "chef",
+        "nacht"
+      ]
+    },
+    {
+      "nom": "Cape caméléoline",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "cape-cameleoline",
+      "roles": [
+        "champion",
+        "chef",
+        "nacht"
+      ]
+    },
+    {
+      "nom": "Murmures psychotériques (Psyker)",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "murmures-psychoteriques-psyker",
+      "roles": [
+        "champion",
+        "chef",
+        "nacht"
+      ]
+    },
+    {
+      "nom": "Bio-scanner",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "bio-scanner",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "nacht"
+      ]
+    },
+    {
+      "nom": "Lance-grappin",
+      "prix": 25,
+      "categorie": "Équipement personnel",
+      "id": "lance-grappin",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "nacht"
+      ]
+    },
+    {
+      "nom": "Solvant à toile",
+      "prix": 20,
+      "categorie": "Équipement personnel",
+      "id": "solvant-a-toile",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger",
+        "nacht"
+      ]
+    },
+    {
+      "nom": "Filtre nasal",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "filtre-nasal"
+    },
+    {
+      "nom": "Photolunettes",
+      "prix": 20,
+      "categorie": "Équipement personnel",
+      "id": "photolunettes"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Lame sous-cutanée",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "lame-sous-cutanee"
+    },
+    {
+      "nom": "Harnais de psychomancien",
+      "prix": 110,
+      "categorie": "Équipement personnel",
+      "id": "harnais-de-psychomancien",
+      "roles": [
+        "gheist"
+      ]
+    },
+    {
+      "nom": "Pouvoir Wyrd supplémentaire",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "pouvoir-wyrd-supplementaire",
+      "roles": [
+        "gheist"
+      ]
+    },
+    {
+      "nom": "Silencieux",
+      "prix": 10,
+      "categorie": "Accessoires d'armes",
+      "id": "silencieux"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette-infrarouge"
+    },
+    {
+      "nom": "Lunette",
+      "prix": 35,
+      "accessoireUnique": true,
+      "categorie": "Accessoires d'armes",
+      "id": "lunette",
+      "roles": [
+        "champion",
+        "chef",
+        "ganger"
+      ]
+    },
+    {
+      "nom": "Suspenseur",
+      "prix": 60,
+      "categorie": "Accessoires d'armes",
+      "id": "suspenseur",
+      "roles": [
+        "champion",
+        "chef"
+      ]
+    },
+    {
+      "nom": "Céphalopode Spektor (0-3)",
+      "prix": 100,
+      "categorie": "Bêtes exotiques",
+      "id": "cephalopode-spektor-0-3",
+      "roles": [
+        "champion",
+        "chef",
+        "gheist",
+        "nacht"
+      ]
+    },
+    {
+      "nom": "Wyrm psychotérique (0-2)",
+      "prix": 70,
+      "categorie": "Bêtes exotiques",
+      "id": "wyrm-psychoterique-0-2",
+      "roles": [
+        "gheist"
+      ]
+    }
+  ],
+  "titre": "Delaque (Maison de l'Ombre)",
+  "gangerArmes": [
+    "Armes de base",
+    "Pistolets",
+    "Armes de corps à corps"
+  ],
+  "regles": [
+    {
+      "nom": "Liste Maison de l'Ombre",
+      "texte": "Version de la liste Delaque parue dans Maison de l'Ombre. L'ancienne liste Delaque reste disponible à côté."
+    },
+    {
+      "nom": "Chef de gang",
+      "texte": "Un seul Maître de l'Ombre, qui ne prend jamais sa retraite en campagne ; s'il meurt ou quitte le gang, un autre combattant est promu."
+    },
+    {
+      "nom": "Hiérarchie du gang",
+      "texte": "Une fois le gang Dégonflé, si le Maître de l'Ombre réussit son test de Sang-froid en phase de Fin, les Delaque à 12\" ou moins réussissent automatiquement le leur (6\" pour un Spectre ou un Nacht-Ghul). Ces trois rangs font des actions d'après-bataille."
+    },
+    {
+      "nom": "Activation de groupe",
+      "texte": "Le Maître de l'Ombre peut activer à sa suite 2 Delaque Parés à 3\" ou moins, un Spectre ou un Nacht-Ghul 1."
+    },
+    {
+      "nom": "Murmures psychotériques",
+      "texte": "Maître de l'Ombre, Spectre et Nacht-Ghul peuvent devenir Psykers (Maîtrise psychotérique et Psyker clandestin) pour 30 crédits à la recrue, ou plus tard avec de l'XP."
+    },
+    {
+      "nom": "Depuis les ombres (Nacht-Ghul)",
+      "texte": "Il peut être mis de côté au déploiement, puis placé au début d'un tour après la Priorité n'importe où hors de vue et à plus de 6\" des ennemis."
+    },
+    {
+      "nom": "Psy-Gheist",
+      "texte": "Psyker (Maîtrise psychotérique) : il choisit une discipline (Folie, Désillusion ou Ténèbres) et un Pouvoir Wyrd de cette discipline, d'autres pouvoirs à 30 crédits à la recrue ou avec l'XP (6 XP au hasard, 9 au choix). Psyker clandestin, Tête brûlée, Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, il peut devenir Spectre ou Nacht-Ghul."
+    },
+    {
+      "nom": "Combattants du gang",
+      "texte": "Fantômes, Ombres et Psy-Gheists doivent être au moins aussi nombreux que les autres combattants (hors Aventuriers et Mercenaires)."
+    },
+    {
+      "nom": "Ombre",
+      "texte": "Apprentissage rapide. Au Temps Mort, à 5 progressions ou plus, elle peut devenir Spécialiste."
+    }
+  ]
+}

@@ -20,7 +20,7 @@ SRC = ROOT / "src"
 STATS = ["M", "CC", "CT", "F", "E", "PV", "I", "A", "CD", "SF", "V", "INT"]
 PROFILE = ["porC", "porL", "preC", "preL", "F", "PA", "D", "Mu"]
 SKILL_CATEGORIES = ["Agilité", "Muscle", "Combat", "Ruse", "Férocité", "Autorité", "Tir", "Savoir",
-                    "Sagesse des Anciens", "Désolations", "Formation Palanite", "Sauvagerie", "Pouvoirs Wyrd du Chaos", "Pouvoirs Wyrd Genestealer", "Bravade"]
+                    "Sagesse des Anciens", "Désolations", "Formation Palanite", "Sauvagerie", "Pouvoirs Wyrd du Chaos", "Pouvoirs Wyrd Genestealer", "Bravade", "Tech", "Obfuscation", "Bravoure", "Discrétion", "Piété", "Fierté"]
 WARNINGS = []
 
 
@@ -156,6 +156,9 @@ def parse_maisons():
             house.setdefault("creation", {})[key] = text
         elif line.startswith("option:"):
             house[line.split(":", 1)[1].strip()] = True
+        elif line.startswith("promoSpec:"):
+            frm, to = [c.strip() for c in line.split(":", 1)[1].split("|", 1)]
+            house.setdefault("promoSpec", {})[slug(frm)] = [slug(t) for t in to.split(",")]
         elif line.startswith("gangerArmes:"):
             house["gangerArmes"] = [c.strip() for c in line.split(":", 1)[1].split(",")]
         elif line.startswith("regle:"):
@@ -200,7 +203,7 @@ def link_weapons(houses, weapons):
     by_slug = sorted(weapons, key=lambda w: -len(w["id"]))
     for house in houses:
         for item in house["equipement"]:
-            if "arme" in item:
+            if "arme" in item or item["nom"].startswith("Balles"):
                 continue
             cat = item.get("categorieArme", item["categorie"]).split(" : ")[-1]
             if not cat.startswith("Armes") and cat not in ("Pistolets", "Grenades", "Couteaux", "Armement inclus", "Options d'armes"):

@@ -563,6 +563,21 @@
             "Incendiaire",
             "Limité"
           ]
+        },
+        {
+          "mode": "Retributor",
+          "porC": "4\"",
+          "porL": "8\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Incendiaire",
+            "Mitraille"
+          ]
         }
       ]
     },
@@ -715,6 +730,84 @@
           "traits": [
             "Contrecoup",
             "Abondance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pistolet-a-gravitons",
+      "nom": "Pistolet à gravitons",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "*",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Commotion",
+            "Explosion (3\")",
+            "Gravitons"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combi-pistolet-modele-van-saar",
+      "nom": "Combi-pistolet modèle Van Saar",
+      "categorie": "Pistolets",
+      "profils": [
+        {
+          "mode": "pistolet laser",
+          "porC": "8\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "2+",
+          "traits": [
+            "Abondance",
+            "Arme de Poing",
+            "Combi"
+          ]
+        },
+        {
+          "mode": "pistolet à plasma",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "5",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "5+",
+          "traits": [
+            "Combi",
+            "Rareté",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "fuseur",
+          "porC": "6\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "8",
+          "PA": "-4",
+          "D": "3",
+          "Mu": "4+",
+          "traits": [
+            "Combi",
+            "Fusion",
+            "Rareté"
           ]
         }
       ]
@@ -1376,6 +1469,66 @@
             "Rareté",
             "Souffle",
             "Toile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "irradiateur",
+      "nom": "Irradiateur",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": "tir concentré",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "3",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Radiations"
+          ]
+        },
+        {
+          "mode": "tir diffus",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Radiations",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soudeuse-d-assaut",
+      "nom": "Soudeuse d'assaut",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "8\"",
+          "porL": "16\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "5",
+          "PA": "-",
+          "D": "1",
+          "Mu": "3+",
+          "traits": [
+            "Choc",
+            "Hasardeux",
+            "Instable",
+            "Tir Rapide (3)"
           ]
         }
       ]
@@ -2763,6 +2916,29 @@
       ]
     },
     {
+      "id": "grenades-a-plasma",
+      "nom": "Grenades à plasma",
+      "categorie": "Grenades",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "Fx3",
+          "preC": "-",
+          "preL": "-",
+          "F": "5",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Explosion (3\")",
+            "Grenade",
+            "Instable"
+          ]
+        }
+      ]
+    },
+    {
       "id": "bombes-a-fusion",
       "nom": "Bombes à fusion",
       "categorie": "Grenades",
@@ -3102,6 +3278,80 @@
             "Explosion (5\")",
             "Gaz",
             "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crochets-de-serpent",
+      "nom": "Crochets de serpent",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "*",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Couplé",
+            "Mêlée",
+            "Perforant",
+            "Phase"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "surineuse",
+      "nom": "Surineuse",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Énergétique",
+            "Mêlée",
+            "Parade",
+            "Sectionner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arachnarnais",
+      "nom": "Arachnarnais",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "3\"",
+          "preC": "+1",
+          "preL": "+1",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Choc",
+            "Couplé",
+            "Empêtrement",
+            "Mêlée",
+            "Parade",
+            "Polyvalent"
           ]
         }
       ]
@@ -4977,6 +5227,389 @@
           "traits": [
             "Mêlée",
             "Encombrant",
+            "Polyvalent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "exterminator",
+      "nom": "Exterminator",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Incendiaire",
+            "Souffle",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-d-assaut-avec-exterminator",
+      "nom": "Fusil d'assaut avec exterminator",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": "fusil d'assaut",
+          "porC": "8\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "exterminator",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Incendiaire",
+            "Souffle",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-a-pompe-avec-exterminator",
+      "nom": "Fusil à pompe avec exterminator",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": "balles",
+          "porC": "8\"",
+          "porL": "16\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup"
+          ]
+        },
+        {
+          "mode": "grenaille",
+          "porC": "4\"",
+          "porL": "8\"",
+          "preC": "+2",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Mitraille"
+          ]
+        },
+        {
+          "mode": "exterminator",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Incendiaire",
+            "Souffle",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hache-tronconneuse-avec-exterminator",
+      "nom": "Hache tronçonneuse avec exterminator",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": "hache tronçonneuse",
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Désarmement",
+            "Mêlée",
+            "Parade",
+            "Perforant"
+          ]
+        },
+        {
+          "mode": "exterminator",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Incendiaire",
+            "Souffle",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hache-a-deux-mains-avec-exterminator",
+      "nom": "Hache à deux mains avec exterminator",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": "hache à deux mains",
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-1",
+          "F": "F+2",
+          "PA": "-",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Encombrant",
+            "Mêlée"
+          ]
+        },
+        {
+          "mode": "exterminator",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Incendiaire",
+            "Souffle",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marteau-a-deux-mains-avec-exterminator",
+      "nom": "Marteau à deux mains avec exterminator",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": "marteau à deux mains",
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-1",
+          "F": "F+1",
+          "PA": "-",
+          "D": "3",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Encombrant",
+            "Mêlée"
+          ]
+        },
+        {
+          "mode": "exterminator",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Incendiaire",
+            "Souffle",
+            "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pique-de-feu",
+      "nom": "Pique de feu",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "4",
+          "PA": "-2",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Incendiaire",
+            "Perforant",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eviscerator",
+      "nom": "Éviscérator",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": "mêlée",
+          "porC": "E",
+          "porL": "1\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Déchiqueter",
+            "Encombrant",
+            "Mêlée",
+            "Polyvalent",
+            "Sectionner"
+          ]
+        },
+        {
+          "mode": "tir",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "5+",
+          "traits": [
+            "Incendiaire",
+            "Rareté",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hachoir",
+      "nom": "Hachoir",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Désarmement",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "matraque-lourde",
+      "nom": "Matraque lourde",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Commotion",
+            "Mêlée"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "espadon",
+      "nom": "Espadon",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "1\"",
+          "preC": "-",
+          "preL": "+1",
+          "F": "F+1",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Mêlée",
+            "Encombrant",
+            "Polyvalent",
+            "Sectionner"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arme-d-haste",
+      "nom": "Arme d'haste",
+      "categorie": "Armes Maison de la Foi",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "F+1",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Encombrant",
+            "Mêlée",
             "Polyvalent"
           ]
         }

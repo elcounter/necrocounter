@@ -89,6 +89,27 @@
       "fichier": "maisons/orlock-fer.json"
     },
     {
+      "id": "van-saar-artifice",
+      "nom": "Van Saar (Maison de l'Artifice)",
+      "titre": "Van Saar (Maison de l'Artifice)",
+      "livre": "Maison de l'Artifice",
+      "fichier": "maisons/van-saar-artifice.json"
+    },
+    {
+      "id": "delaque-ombre",
+      "nom": "Delaque (Maison de l'Ombre)",
+      "titre": "Delaque (Maison de l'Ombre)",
+      "livre": "Maison de l'Ombre",
+      "fichier": "maisons/delaque-ombre.json"
+    },
+    {
+      "id": "cawdor-foi",
+      "nom": "Cawdor (Maison de la Foi)",
+      "titre": "Cawdor (Maison de la Foi)",
+      "livre": "Maison de la Foi",
+      "fichier": "maisons/cawdor-foi.json"
+    },
+    {
       "id": "venators",
       "nom": "Venators",
       "titre": "Venators (chasseurs de primes)",

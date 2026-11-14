@@ -41,6 +41,7 @@ Fusil à pompe
 - grenaille | 4" | 8" | +2 | - | 2 | - | 1 | 4+ | Mitraille
 - Executioner | 4" | 16" | -1 | +1 | 4 | -2 | 2 | 6+ | Contrecoup, Limité
 - Inferno | 4" | 16" | +1 | - | 4 | - | 2 | 5+ | Incendiaire, Limité
+- Retributor | 4" | 8" | +1 | - | 4 | - | 1 | 5+ | Incendiaire, Mitraille
 Fusil d'assaut | 8" | 24" | +1 | - | 3 | - | 1 | 4+ | Tir Rapide (1)
 Fusil d'assaut de récup' | 8" | 24" | +1 | - | 3 | - | 1 | 5+ | Tir Rapide (1)
 Fusil de combat
@@ -53,6 +54,11 @@ Laser de suppression
 - faisceau court | 8" | 16" | +1 | - | 4 | - | 2 | 4+ | Contrecoup, Abondance
 
 ## Pistolets
+Pistolet à gravitons | 6" | 12" | +1 | - | * | -1 | 2 | 5+ | Commotion, Explosion (3"), Gravitons
+Combi-pistolet modèle Van Saar
+- pistolet laser | 8" | 12" | +1 | - | 3 | - | 1 | 2+ | Abondance, Arme de Poing, Combi
+- pistolet à plasma | 12" | 24" | +2 | - | 5 | -1 | 2 | 5+ | Combi, Rareté, Tir Rapide (1)
+- fuseur | 6" | 12" | +1 | - | 8 | -4 | 3 | 4+ | Combi, Fusion, Rareté
 Lance-bolts | 8" | 20" | +1 | - | 4 | -1 | 1 | 4+ | Arme de Poing, Tir Rapide (1)
 Matrice de désintégration | 3" | 12" | - | -1 | 5 | -2 | 2 | 6+ | Arme de Poing, Instable, Rareté, Sectionner
 Déchargeur Volkite | 5" | 10" | - | - | 5 | - | 1 | 6+ | Arme de Poing, Déflagration
@@ -89,6 +95,10 @@ Pistolet-mitrailleur de récup' | 4" | 12" | +1 | - | 3 | - | 1 | 5+ | Arme de P
 Projecteur de toile (Cyberachnid Van Saar) | - | S | - | - | 2 | - | - | 6+ | Rareté, Souffle, Toile
 
 ## Armes spéciales
+Irradiateur
+- tir concentré | 12" | 24" | +2 | - | 3 | -2 | 1 | 5+ | Radiations
+- tir diffus | 12" | 24" | - | - | 2 | -2 | 1 | 5+ | Radiations, Tir Rapide (1)
+Soudeuse d'assaut | 8" | 16" | +1 | - | 5 | - | 1 | 3+ | Choc, Hasardeux, Instable, Tir Rapide (3)
 Bouclier miroir | 4" | 8" | - | -1 | - | - | - | 3+ | Aveuglant, Bouclier à Énergie
 Paire d'inciseurs à toile | 4" | 8" | - | - | 3 | - | - | 4+ | Silencieux, Tir Rapide (1), Toile
 Paire de gantelets laser Yeld | 10" | 20" | +1 | - | 3 | -1 | 1 | 3+ | Abondance, Tir Rapide (1)
@@ -171,6 +181,7 @@ Mitrailleuse jumelée (Stig-Shambler Cawdor) | 20" | 40" | - | -1 | 4 | -1 | 2 |
 Multi-fuseur | 12" | 24" | +1 | - | 8 | -4 | 3 | 4+ | Encombrant, Explosion (3"), Fusion, Rareté
 
 ## Grenades
+Grenades à plasma | - | Fx3 | - | - | 5 | -1 | 2 | 4+ | Explosion (3"), Grenade, Instable
 Bombes à fusion | - | Fx3 | - | -1 | 8 | -4 | 3 | 6+ | Démolition, Fusion, Grenade, Rareté
 Charges de démolition | - | Fx2 | - | - | 6 | -3 | 2 | * | Explosion (5"), Grenade, Usage Unique
 Charges explosives | - | Fx2 | - | - | 5 | -1 | 2 | 5+ | Contrecoup, Explosion (5"), Grenade
@@ -190,6 +201,9 @@ Piège à fusion | - | - | - | - | 8 | -4 | 3 | - | Explosion (5"), Fusion, Usag
 Piège à gaz | - | - | - | - | - | - | - | - | Explosion (5"), Gaz, Usage Unique
 
 ## Armes de corps à corps
+Crochets de serpent | - | E | - | - | F+2 | * | 1 | - | Couplé, Mêlée, Perforant, Phase
+Surineuse | - | E | - | +1 | F+1 | -1 | 1 | - | Énergétique, Mêlée, Parade, Sectionner
+Arachnarnais | E | 3" | +1 | +1 | F+1 | -1 | 1 | - | Choc, Couplé, Empêtrement, Mêlée, Parade, Polyvalent
 Marteau à arc | E | 1" | - | - | F+3 | -1 | 3 | - | Mêlée, Polyvalent, Pulvériser
 Paire de griffes déchiqueteuses Malcadon | E | E | - | - | F | -2 | 1 | - | Couplé, Mêlée
 Paire de fouets à toxine Malcadon | - | 2" | - | -1 | - | -2 | - | - | Couplé, Empêtrement, Mêlée, Polyvalent, Toxine
@@ -280,3 +294,30 @@ Hache à deux mains | - | E | - | -1 | F+2 | - | 2 | - | Mêlée, Encombrant
 Hache dentelée "déchiqueteuse" | - | E | - | - | F+2 | -1 | 2 | - | Mêlée, Pulvériser, Encombrant
 Marteau à deux mains | - | E | - | -1 | F+1 | - | 3 | - | Contrecoup, Mêlée, Encombrant
 Vouge tronçonneur | E | 2" | -1 | - | F+2 | -2 | 2 | - | Mêlée, Encombrant, Polyvalent
+
+## Armes Maison de la Foi
+Exterminator | - | S | - | - | 3 | -1 | 1 | - | Incendiaire, Souffle, Usage Unique
+Fusil d'assaut avec exterminator
+- fusil d'assaut | 8" | 24" | +1 | - | 3 | - | 1 | 4+ | Tir Rapide (1)
+- exterminator | - | S | - | - | 3 | -1 | 1 | - | Incendiaire, Souffle, Usage Unique
+Fusil à pompe avec exterminator
+- balles | 8" | 16" | +1 | - | 4 | - | 2 | 4+ | Contrecoup
+- grenaille | 4" | 8" | +2 | - | 2 | - | 1 | 4+ | Mitraille
+- exterminator | - | S | - | - | 3 | -1 | 1 | - | Incendiaire, Souffle, Usage Unique
+Hache tronçonneuse avec exterminator
+- hache tronçonneuse | - | E | - | +1 | F+1 | -1 | 1 | - | Désarmement, Mêlée, Parade, Perforant
+- exterminator | - | S | - | - | 3 | -1 | 1 | - | Incendiaire, Souffle, Usage Unique
+Hache à deux mains avec exterminator
+- hache à deux mains | - | E | - | -1 | F+2 | - | 2 | - | Encombrant, Mêlée
+- exterminator | - | S | - | - | 3 | -1 | 1 | - | Incendiaire, Souffle, Usage Unique
+Marteau à deux mains avec exterminator
+- marteau à deux mains | - | E | - | -1 | F+1 | - | 3 | - | Contrecoup, Encombrant, Mêlée
+- exterminator | - | S | - | - | 3 | -1 | 1 | - | Incendiaire, Souffle, Usage Unique
+Pique de feu | - | S | - | - | 4 | -2 | 1 | 5+ | Incendiaire, Perforant, Souffle
+Éviscérator
+- mêlée | E | 1" | - | - | F+1 | -1 | 1 | - | Déchiqueter, Encombrant, Mêlée, Polyvalent, Sectionner
+- tir | - | S | - | - | 3 | -1 | 1 | 5+ | Incendiaire, Rareté, Souffle
+Hachoir | - | E | - | - | F+1 | -1 | 1 | - | Désarmement, Mêlée
+Matraque lourde | - | E | - | - | F | - | 2 | - | Commotion, Mêlée
+Espadon | E | 1" | - | +1 | F+1 | -1 | 1 | - | Mêlée, Encombrant, Polyvalent, Sectionner
+Arme d'haste | E | 2" | -1 | - | F+1 | - | 1 | - | Encombrant, Mêlée, Polyvalent
