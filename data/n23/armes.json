@@ -3,6 +3,191 @@
   "source": "Livre de règles N23 (version française)",
   "armes": [
     {
+      "id": "bolter-enforcer",
+      "nom": "Bolter Enforcer",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": "balles standard",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "balles penetrator",
+          "porC": "12\"",
+          "porL": "24\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Instable",
+            "Perforant",
+            "Tir Rapide (1)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-enforcer",
+      "nom": "Fusil Enforcer",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": "salve",
+          "porC": "4\"",
+          "porL": "12\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-",
+          "D": "2",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup",
+            "Tir Rapide (1)"
+          ]
+        },
+        {
+          "mode": "nuage de grenaille",
+          "porC": "-",
+          "porL": "S",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Mitraille",
+            "Souffle"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lance-grenades-modele-subjugation",
+      "nom": "Lance-grenades modèle Subjugation",
+      "categorie": "Armes de base",
+      "profils": [
+        {
+          "mode": "grenades asphyxiantes",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Explosion (3\")",
+            "Gaz",
+            "Limité"
+          ]
+        },
+        {
+          "mode": "grenades Frag",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Contrecoup",
+            "Explosion (3\")"
+          ]
+        },
+        {
+          "mode": "grenades Krak",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "6",
+          "PA": "-2",
+          "D": "2",
+          "Mu": "6+",
+          "traits": []
+        },
+        {
+          "mode": "grenades aveuglantes",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Aveuglant",
+            "Explosion (5\")"
+          ]
+        },
+        {
+          "mode": "grenades cauchemar",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "-",
+          "traits": [
+            "Explosion (3\")",
+            "Gaz",
+            "Limité",
+            "Peur"
+          ]
+        },
+        {
+          "mode": "grenades fumigènes",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "4+",
+          "traits": [
+            "Explosion (*)",
+            "Fumée"
+          ]
+        },
+        {
+          "mode": "grenades incapacitantes",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "2",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Commotion"
+          ]
+        }
+      ]
+    },
+    {
       "id": "carabine-eclateur",
       "nom": "Carabine éclateur",
       "categorie": "Armes de base",
@@ -1128,6 +1313,52 @@
       ]
     },
     {
+      "id": "carabine-a-commotion",
+      "nom": "Carabine à commotion",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "9\"",
+          "porL": "18\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Commotion",
+            "Contrecoup",
+            "Explosion (3\")",
+            "Sismique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fusil-de-sniper",
+      "nom": "Fusil de sniper",
+      "categorie": "Armes spéciales",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "24\"",
+          "porL": "48\"",
+          "preC": "-",
+          "preL": "+1",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Contrecoup",
+            "Perforant"
+          ]
+        }
+      ]
+    },
+    {
       "id": "lance-venin",
       "nom": "Lance-venin",
       "categorie": "Armes spéciales",
@@ -1702,6 +1933,84 @@
           "D": "1",
           "Mu": "-",
           "traits": [
+            "Explosion (3\")"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "belier-a-percussion-lourd",
+      "nom": "Bélier à percussion lourd",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "15\"",
+          "porL": "30\"",
+          "preC": "+1",
+          "preL": "-",
+          "F": "4",
+          "PA": "-1",
+          "D": "1",
+          "Mu": "4+",
+          "traits": [
+            "Commotion",
+            "Contrecoup",
+            "Sismique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "belier-d-assaut-modele-slhg-fracasseur",
+      "nom": "Bélier d'assaut modèle SLHG Fracasseur",
+      "categorie": "Armes lourdes",
+      "profils": [
+        {
+          "mode": "bélier",
+          "porC": "E",
+          "porL": "2\"",
+          "preC": "-",
+          "preL": "-",
+          "F": "F+2",
+          "PA": "-1",
+          "D": "2",
+          "Mu": "-",
+          "traits": [
+            "Contrecoup",
+            "Mêlée",
+            "Polyvalent",
+            "Pulvériser"
+          ]
+        },
+        {
+          "mode": "lance-grenades auxiliaire, grenades asphyxiantes",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "-",
+          "PA": "-",
+          "D": "-",
+          "Mu": "5+",
+          "traits": [
+            "Explosion (3\")",
+            "Gaz",
+            "Limité"
+          ]
+        },
+        {
+          "mode": "lance-grenades auxiliaire, grenades Frag",
+          "porC": "6\"",
+          "porL": "24\"",
+          "preC": "-1",
+          "preL": "-",
+          "F": "3",
+          "PA": "-",
+          "D": "1",
+          "Mu": "6+",
+          "traits": [
+            "Contrecoup",
             "Explosion (3\")"
           ]
         }
@@ -2636,6 +2945,29 @@
             "Explosion (5\")",
             "Gaz",
             "Usage Unique"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bouclier-d-assaut-modele-vigilance",
+      "nom": "Bouclier d'assaut modèle Vigilance",
+      "categorie": "Armes de corps à corps",
+      "profils": [
+        {
+          "mode": null,
+          "porC": "-",
+          "porL": "E",
+          "preC": "-",
+          "preL": "-",
+          "F": "F",
+          "PA": "-",
+          "D": "1",
+          "Mu": "-",
+          "traits": [
+            "Bouclier d'Assaut",
+            "Contrecoup",
+            "Mêlée"
           ]
         }
       ]

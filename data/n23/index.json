@@ -45,6 +45,12 @@
       "fichier": "maisons/nomades.json"
     },
     {
+      "id": "enforcers",
+      "nom": "Palanite Enforcers",
+      "titre": "Palanite Enforcers",
+      "fichier": "maisons/enforcers.json"
+    },
+    {
       "id": "venators",
       "nom": "Venators",
       "titre": "Venators (chasseurs de primes)",

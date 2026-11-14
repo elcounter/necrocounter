@@ -487,6 +487,32 @@
         "nom": "Abattez-le",
         "resume": "(Nomades) Action Abattez-le (Élémentaire) : désigne un ennemi en vue ; jusqu'à la fin du tour, ses alliés et lui peuvent relancer leurs jets de touche contre cette cible (détail exact : voir le livre)."
       }
+    ],
+    "Formation Palanite": [
+      {
+        "nom": "Je te couvre",
+        "resume": "(Enforcers) Une fois par tour, Debout et Actif : quand un ennemi visible déclare une Charge, il interrompt pour faire une action Tirer sur lui avant le mouvement. Si la cible est Bloquée ou Gravement Blessée, son activation s'arrête."
+      },
+      {
+        "nom": "Justice de Helmawr",
+        "resume": "(Enforcers) Quand il porte un coup de grâce, il fait deux jets de Blessure Persistante et choisit le résultat."
+      },
+      {
+        "nom": "Communication non-verbale",
+        "resume": "(Enforcers) Action Communiquer (Double) : un ami à 6\" fait un test de Sang-froid ; réussi, son champ de vision passe à 360° jusqu'à la phase de Fin."
+      },
+      {
+        "nom": "Protocoles de maîtrise",
+        "resume": "(Enforcers) Peut remplacer un coup de grâce par une action Maîtriser (Simple) : chaque ennemi maîtrisé ajoute +1 au jet de Capture à la Conclusion."
+      },
+      {
+        "nom": "Travail d'équipe",
+        "resume": "(Enforcers) Peut faire une activation de groupe comme un Champion. Un Champion active deux combattants Parés à 3\" au lieu d'un, un Chef trois au lieu de deux."
+      },
+      {
+        "nom": "Réponse à la menace",
+        "resume": "(Enforcers) Si un ennemi finit une Charge à 6\" ou moins et que ce combattant est Debout, Actif et Paré, il Charge aussitôt cet ennemi avant ses attaques et peut Combattre s'il l'Engage. Il perd alors son pion Paré."
+      }
     ]
   },
   "statuts": [

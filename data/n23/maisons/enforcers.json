@@ -1,0 +1,550 @@
+{
+  "edition": "Necromunda N23",
+  "source": "Livre du Jugement (version française)",
+  "reglesDeCreation": {
+    "novice": "Le Patrouilleur Rookie ne coûte rien mais ne peut prendre que des pistolets, armes de base et armes de corps à corps. En campagne, un Rookie gratuit peut être recruté quand le gang raye des combattants morts ou retirés.",
+    "armeSpeciale": "Chaque type (Palanite ou Subjugator) prend ses armes dans sa propre liste, sans autre restriction de type d'arme.",
+    "chefEtChampion": "Capitaine et Sergents commencent avec une compétence gratuite de leurs sets Primaires. Un seul Capitaine, 0 à 2 Sergents."
+  },
+  "id": "enforcers",
+  "nom": "Palanite Enforcers",
+  "combattants": [
+    {
+      "id": "chef",
+      "role": "Capitaine Palanite",
+      "cout": 140,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "4+",
+        "SF": "6+",
+        "V": "5+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Flingue",
+        "Menottes Mag",
+        "Armure Flak",
+        "Sous-combinaison renforcée"
+      ]
+    },
+    {
+      "id": "chef-subjugator",
+      "role": "Capitaine Subjugator",
+      "cout": 150,
+      "profil": {
+        "M": "5\"",
+        "CC": "3+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "2",
+        "CD": "4+",
+        "SF": "6+",
+        "V": "5+",
+        "INT": "6+"
+      },
+      "equipementDeDepart": [
+        "Flingue",
+        "Menottes Mag",
+        "Armure Flak multicouche",
+        "Sous-combinaison renforcée"
+      ],
+      "base": "chef"
+    },
+    {
+      "id": "champion",
+      "role": "Sergent Palanite",
+      "cout": 100,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "1",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Flingue",
+        "Menottes Mag",
+        "Armure Flak",
+        "Sous-combinaison renforcée"
+      ]
+    },
+    {
+      "id": "champion-subjugator",
+      "role": "Sergent Subjugator",
+      "cout": 110,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "2",
+        "I": "4+",
+        "A": "1",
+        "CD": "5+",
+        "SF": "6+",
+        "V": "6+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Flingue",
+        "Menottes Mag",
+        "Armure Flak multicouche",
+        "Sous-combinaison renforcée"
+      ],
+      "base": "champion"
+    },
+    {
+      "id": "ganger",
+      "role": "Patrouilleur Palanite",
+      "cout": 70,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "7+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Flingue",
+        "Menottes Mag",
+        "Armure Flak",
+        "Sous-combinaison renforcée"
+      ]
+    },
+    {
+      "id": "ganger-subjugator",
+      "role": "Patrouilleur Subjugator",
+      "cout": 80,
+      "profil": {
+        "M": "5\"",
+        "CC": "4+",
+        "CT": "4+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "7+",
+        "SF": "7+",
+        "V": "7+",
+        "INT": "7+"
+      },
+      "equipementDeDepart": [
+        "Flingue",
+        "Menottes Mag",
+        "Armure Flak multicouche",
+        "Sous-combinaison renforcée"
+      ],
+      "base": "ganger"
+    },
+    {
+      "id": "novice",
+      "role": "Patrouilleur Rookie",
+      "cout": 0,
+      "profil": {
+        "M": "5\"",
+        "CC": "5+",
+        "CT": "5+",
+        "F": "3",
+        "E": "3",
+        "PV": "1",
+        "I": "4+",
+        "A": "1",
+        "CD": "8+",
+        "SF": "8+",
+        "V": "8+",
+        "INT": "8+"
+      },
+      "equipementDeDepart": [
+        "Flingue",
+        "Menottes Mag",
+        "Armure Flak",
+        "Sous-combinaison renforcée"
+      ]
+    }
+  ],
+  "competences": {
+    "chef": {
+      "primaires": [
+        "Muscle",
+        "Formation Palanite",
+        "Tir"
+      ],
+      "secondaires": [
+        "Férocité",
+        "Autorité"
+      ]
+    },
+    "champion": {
+      "primaires": [
+        "Ruse",
+        "Formation Palanite",
+        "Tir"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Férocité",
+        "Autorité"
+      ]
+    },
+    "ganger": {
+      "primaires": [
+        "Formation Palanite",
+        "Tir"
+      ],
+      "secondaires": [
+        "Muscle",
+        "Férocité"
+      ]
+    },
+    "novice": {
+      "primaires": [
+        "Formation Palanite"
+      ],
+      "secondaires": [
+        "Agilité",
+        "Tir"
+      ]
+    }
+  },
+  "equipement": [
+    {
+      "nom": "Bolter Enforcer",
+      "prix": 50,
+      "categorie": "Armes de base",
+      "id": "bolter-enforcer",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger",
+        "novice"
+      ],
+      "arme": "bolter-enforcer"
+    },
+    {
+      "nom": "Fusil Enforcer (salve et nuage de grenaille)",
+      "prix": 60,
+      "categorie": "Armes de base",
+      "id": "fusil-enforcer-salve-et-nuage-de-grenaille",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger",
+        "novice"
+      ],
+      "arme": "fusil-enforcer"
+    },
+    {
+      "nom": "Lance-grenades modèle Subjugation (grenades Frag et incapacitantes)",
+      "prix": 50,
+      "categorie": "Armes de base",
+      "id": "lance-grenades-modele-subjugation-grenades-frag-et-incapacitantes",
+      "roles": [
+        "chef-subjugator",
+        "champion-subjugator",
+        "ganger-subjugator"
+      ],
+      "modes": [
+        "grenades Frag",
+        "grenades incapacitantes"
+      ],
+      "arme": "lance-grenades-modele-subjugation"
+    },
+    {
+      "nom": "Flingue",
+      "prix": 5,
+      "categorie": "Pistolets",
+      "id": "flingue",
+      "arme": "flingue"
+    },
+    {
+      "nom": "Pistolet-mitrailleur",
+      "prix": 10,
+      "categorie": "Pistolets",
+      "id": "pistolet-mitrailleur",
+      "arme": "pistolet-mitrailleur"
+    },
+    {
+      "nom": "Carabine à commotion",
+      "prix": 30,
+      "categorie": "Armes spéciales",
+      "id": "carabine-a-commotion",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "carabine-a-commotion"
+    },
+    {
+      "nom": "Fusil de sniper",
+      "prix": 35,
+      "categorie": "Armes spéciales",
+      "id": "fusil-de-sniper",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger"
+      ],
+      "arme": "fusil-de-sniper"
+    },
+    {
+      "nom": "Bélier à percussion lourd",
+      "prix": 70,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "belier-a-percussion-lourd",
+      "roles": [
+        "chef-subjugator",
+        "champion-subjugator",
+        "ganger-subjugator"
+      ],
+      "arme": "belier-a-percussion-lourd"
+    },
+    {
+      "nom": "Bélier d'assaut modèle SLHG Fracasseur",
+      "prix": 90,
+      "compteDouble": true,
+      "categorie": "Armes lourdes",
+      "id": "belier-d-assaut-modele-slhg-fracasseur",
+      "roles": [
+        "chef-subjugator",
+        "champion-subjugator",
+        "ganger-subjugator"
+      ],
+      "arme": "belier-d-assaut-modele-slhg-fracasseur"
+    },
+    {
+      "nom": "Électrobâton",
+      "prix": 30,
+      "categorie": "Armes de corps à corps",
+      "id": "electrobaton",
+      "arme": "electrobaton"
+    },
+    {
+      "nom": "Électrosceptre",
+      "prix": 25,
+      "categorie": "Armes de corps à corps",
+      "id": "electrosceptre",
+      "arme": "electrosceptre"
+    },
+    {
+      "nom": "Bouclier d'assaut modèle Vigilance",
+      "prix": 40,
+      "categorie": "Armes de corps à corps",
+      "id": "bouclier-d-assaut-modele-vigilance",
+      "roles": [
+        "chef-subjugator",
+        "champion-subjugator",
+        "ganger-subjugator"
+      ],
+      "arme": "bouclier-d-assaut-modele-vigilance"
+    },
+    {
+      "nom": "Grenades asphyxiantes",
+      "prix": 50,
+      "categorie": "Grenades",
+      "id": "grenades-asphyxiantes",
+      "arme": "grenades-asphyxiantes"
+    },
+    {
+      "nom": "Grenades aveuglantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-aveuglantes",
+      "arme": "grenades-aveuglantes"
+    },
+    {
+      "nom": "Grenades Frag",
+      "prix": 30,
+      "categorie": "Grenades",
+      "id": "grenades-frag",
+      "arme": "grenades-frag"
+    },
+    {
+      "nom": "Grenades fumigènes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-fumigenes",
+      "arme": "grenades-fumigenes"
+    },
+    {
+      "nom": "Grenades incapacitantes",
+      "prix": 15,
+      "categorie": "Grenades",
+      "id": "grenades-incapacitantes",
+      "arme": "grenades-incapacitantes"
+    },
+    {
+      "nom": "Armure Flak renforcée",
+      "prix": 20,
+      "categorie": "Armures",
+      "id": "armure-flak-renforcee",
+      "roles": [
+        "chef",
+        "champion",
+        "ganger",
+        "novice"
+      ]
+    },
+    {
+      "nom": "Armure Flak multicouche renforcée",
+      "prix": 30,
+      "categorie": "Armures",
+      "id": "armure-flak-multicouche-renforcee",
+      "roles": [
+        "chef-subjugator",
+        "champion-subjugator",
+        "ganger-subjugator"
+      ]
+    },
+    {
+      "nom": "Cache de munitions",
+      "prix": 60,
+      "categorie": "Équipement de gang",
+      "id": "cache-de-munitions"
+    },
+    {
+      "nom": "Balles à fragmentation (pistolet-mitrailleur)",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "balles-a-fragmentation-pistolet-mitrailleur"
+    },
+    {
+      "nom": "Balles dum-dum (flingue)",
+      "prix": 5,
+      "categorie": "Équipement personnel",
+      "id": "balles-dum-dum-flingue"
+    },
+    {
+      "nom": "Balles Manstopper (pistolet-mitrailleur)",
+      "prix": 10,
+      "categorie": "Équipement personnel",
+      "id": "balles-manstopper-pistolet-mitrailleur"
+    },
+    {
+      "nom": "Balles Penetrator (bolter)",
+      "prix": 20,
+      "categorie": "Équipement personnel",
+      "id": "balles-penetrator-bolter"
+    },
+    {
+      "nom": "Bio-booster",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "bio-booster"
+    },
+    {
+      "nom": "Bio-scanner",
+      "prix": 20,
+      "categorie": "Équipement personnel",
+      "id": "bio-scanner"
+    },
+    {
+      "nom": "Grenades asphyxiantes pour lance-grenades",
+      "prix": 30,
+      "categorie": "Équipement personnel",
+      "id": "grenades-asphyxiantes-pour-lance-grenades"
+    },
+    {
+      "nom": "Grenades aveuglantes pour lance-grenades",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "grenades-aveuglantes-pour-lance-grenades"
+    },
+    {
+      "nom": "Grenades cauchemar pour lance-grenades",
+      "prix": 40,
+      "categorie": "Équipement personnel",
+      "id": "grenades-cauchemar-pour-lance-grenades"
+    },
+    {
+      "nom": "Grenades fumigènes pour lance-grenades",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "grenades-fumigenes-pour-lance-grenades"
+    },
+    {
+      "nom": "Grenades Krak pour lance-grenades",
+      "prix": 35,
+      "categorie": "Équipement personnel",
+      "id": "grenades-krak-pour-lance-grenades"
+    },
+    {
+      "nom": "Lampe torche",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "lampe-torche"
+    },
+    {
+      "nom": "Lunette infrarouge",
+      "prix": 40,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "lunette-infrarouge"
+    },
+    {
+      "nom": "Planque de stim",
+      "prix": 30,
+      "accessoireUnique": true,
+      "categorie": "Équipement personnel",
+      "id": "planque-de-stim"
+    },
+    {
+      "nom": "Respirateur",
+      "prix": 15,
+      "categorie": "Équipement personnel",
+      "id": "respirateur"
+    },
+    {
+      "nom": "Cyber-mastiff renforcé",
+      "prix": 70,
+      "categorie": "Équipement personnel",
+      "id": "cyber-mastiff-renforce"
+    }
+  ],
+  "titre": "Palanite Enforcers",
+  "regles": [
+    {
+      "nom": "Composition",
+      "texte": "Au moins deux Patrouilleurs à la fondation : Palanite si le Capitaine est Palanite, Subjugator si le Capitaine est Subjugator. Les Patrouilleurs doivent être au moins aussi nombreux que Capitaine et Sergents (hors Aventuriers et Rookies). Trois armes maximum par combattant."
+    },
+    {
+      "nom": "Subjugator",
+      "texte": "Capitaine, Sergents et Patrouilleurs peuvent être améliorés en Subjugator pour 10 crédits : armure Flak multicouche et Liste d'Armes de Subjugator à la place de celle de Palanite."
+    },
+    {
+      "nom": "Menottes Mag",
+      "texte": "Utilisables au contact comme une action Combattre : la cible fait un test d'Initiative, raté elle est immobilisée (plus de mouvement ni de tir, corps à corps seulement ; détail : voir le livre)."
+    },
+    {
+      "nom": "En campagne Dominion",
+      "texte": "Pas de Territoires : la patrouille démarre avec un Poste Palanite (revenu D6x10, impossible à perdre). Un Territoire gagné est Pacifié (contrôlé sans Bénéfice, D3+1 Réputation à la prise et à chaque défense réussie) ou Attribué à un autre gang. Un gang qui les défie en Prise de Contrôle attaque le Poste (Zone Mortalis, terrain posé par les Enforcers, Avantage du Territoire Domiciliaire) ; s'il gagne, il prend +5 Réputation. Pas de Triomphe Dominateur, mais Pacificateur si personne ne peut le revendiquer."
+    }
+  ]
+}

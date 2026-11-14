@@ -521,3 +521,72 @@ Lunette' | 35
 Lunette télescopique' | 25
 ## Accessoires d'armes [chef, sentinelle, ganger]
 Suspenseur | 60
+
+= Palanite Enforcers => enforcers
+source: Livre du Jugement (version française)
+creation: novice | Le Patrouilleur Rookie ne coûte rien mais ne peut prendre que des pistolets, armes de base et armes de corps à corps. En campagne, un Rookie gratuit peut être recruté quand le gang raye des combattants morts ou retirés.
+creation: armeSpeciale | Chaque type (Palanite ou Subjugator) prend ses armes dans sa propre liste, sans autre restriction de type d'arme.
+creation: chefEtChampion | Capitaine et Sergents commencent avec une compétence gratuite de leurs sets Primaires. Un seul Capitaine, 0 à 2 Sergents.
+regle: Composition | Au moins deux Patrouilleurs à la fondation : Palanite si le Capitaine est Palanite, Subjugator si le Capitaine est Subjugator. Les Patrouilleurs doivent être au moins aussi nombreux que Capitaine et Sergents (hors Aventuriers et Rookies). Trois armes maximum par combattant.
+regle: Subjugator | Capitaine, Sergents et Patrouilleurs peuvent être améliorés en Subjugator pour 10 crédits : armure Flak multicouche et Liste d'Armes de Subjugator à la place de celle de Palanite.
+regle: Menottes Mag | Utilisables au contact comme une action Combattre : la cible fait un test d'Initiative, raté elle est immobilisée (plus de mouvement ni de tir, corps à corps seulement ; détail : voir le livre).
+regle: En campagne Dominion | Pas de Territoires : la patrouille démarre avec un Poste Palanite (revenu D6x10, impossible à perdre). Un Territoire gagné est Pacifié (contrôlé sans Bénéfice, D3+1 Réputation à la prise et à chaque défense réussie) ou Attribué à un autre gang. Un gang qui les défie en Prise de Contrôle attaque le Poste (Zone Mortalis, terrain posé par les Enforcers, Avantage du Territoire Domiciliaire) ; s'il gagne, il prend +5 Réputation. Pas de Triomphe Dominateur, mais Pacificateur si personne ne peut le revendiquer.
+combattant: Capitaine Palanite => Chef | 140 | 5" 3+ 4+ 3 3 2 4+ 2 4+ 6+ 5+ 6+ | Flingue, Menottes Mag, Armure Flak, Sous-combinaison renforcée
+combattant: Capitaine Subjugator => chef-subjugator:chef | 150 | 5" 3+ 4+ 3 3 2 4+ 2 4+ 6+ 5+ 6+ | Flingue, Menottes Mag, Armure Flak multicouche, Sous-combinaison renforcée
+combattant: Sergent Palanite => Champion | 100 | 5" 4+ 4+ 3 3 2 4+ 1 5+ 6+ 6+ 7+ | Flingue, Menottes Mag, Armure Flak, Sous-combinaison renforcée
+combattant: Sergent Subjugator => champion-subjugator:champion | 110 | 5" 4+ 4+ 3 3 2 4+ 1 5+ 6+ 6+ 7+ | Flingue, Menottes Mag, Armure Flak multicouche, Sous-combinaison renforcée
+combattant: Patrouilleur Palanite => Ganger | 70 | 5" 4+ 4+ 3 3 1 4+ 1 7+ 7+ 7+ 7+ | Flingue, Menottes Mag, Armure Flak, Sous-combinaison renforcée
+combattant: Patrouilleur Subjugator => ganger-subjugator:ganger | 80 | 5" 4+ 4+ 3 3 1 4+ 1 7+ 7+ 7+ 7+ | Flingue, Menottes Mag, Armure Flak multicouche, Sous-combinaison renforcée
+combattant: Patrouilleur Rookie => Novice | 0 | 5" 5+ 5+ 3 3 1 4+ 1 8+ 8+ 8+ 8+ | Flingue, Menottes Mag, Armure Flak, Sous-combinaison renforcée
+competences: Chef | Muscle P, Férocité S, Autorité S, Formation Palanite P, Tir P
+competences: Champion | Muscle S, Ruse P, Férocité S, Autorité S, Formation Palanite P, Tir P
+competences: Ganger | Muscle S, Férocité S, Formation Palanite P, Tir P
+competences: Novice | Agilité S, Formation Palanite P, Tir S
+## Armes de base [chef, champion, ganger, novice]
+Bolter Enforcer | 50
+Fusil Enforcer (salve et nuage de grenaille) | 60
+## Armes de base [chef-subjugator, champion-subjugator, ganger-subjugator]
+Lance-grenades modèle Subjugation (grenades Frag et incapacitantes) | 50 | grenades Frag; grenades incapacitantes
+## Pistolets
+Flingue | 5
+Pistolet-mitrailleur | 10
+## Armes spéciales [chef, champion, ganger]
+Carabine à commotion | 30
+Fusil de sniper | 35
+## Armes lourdes [chef-subjugator, champion-subjugator, ganger-subjugator]
+Bélier à percussion lourd* | 70
+Bélier d'assaut modèle SLHG Fracasseur* | 90
+## Armes de corps à corps
+Électrobâton | 30
+Électrosceptre | 25
+## Armes de corps à corps [chef-subjugator, champion-subjugator, ganger-subjugator]
+Bouclier d'assaut modèle Vigilance | 40
+## Grenades
+Grenades asphyxiantes | 50
+Grenades aveuglantes | 15
+Grenades Frag | 30
+Grenades fumigènes | 15
+Grenades incapacitantes | 15
+## Armures [chef, champion, ganger, novice]
+Armure Flak renforcée | 20
+## Armures [chef-subjugator, champion-subjugator, ganger-subjugator]
+Armure Flak multicouche renforcée | 30
+## Équipement de gang
+Cache de munitions | 60
+## Équipement personnel
+Balles à fragmentation (pistolet-mitrailleur) | 10
+Balles dum-dum (flingue) | 5
+Balles Manstopper (pistolet-mitrailleur) | 10
+Balles Penetrator (bolter) | 20
+Bio-booster | 35
+Bio-scanner | 20
+Grenades asphyxiantes pour lance-grenades | 30
+Grenades aveuglantes pour lance-grenades | 15
+Grenades cauchemar pour lance-grenades | 40
+Grenades fumigènes pour lance-grenades | 15
+Grenades Krak pour lance-grenades | 35
+Lampe torche | 15
+Lunette infrarouge' | 40
+Planque de stim' | 30
+Respirateur | 15
+Cyber-mastiff renforcé | 70

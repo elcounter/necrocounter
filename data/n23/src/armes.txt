@@ -4,6 +4,20 @@
 # Une ligne terminée par "?" signale une valeur douteuse à vérifier dans le livre.
 
 ## Armes de base
+Bolter Enforcer
+- balles standard | 12" | 24" | +1 | - | 4 | -1 | 2 | 4+ | Tir Rapide (1)
+- balles penetrator | 12" | 24" | +1 | - | 4 | -2 | 2 | 4+ | Instable, Perforant, Tir Rapide (1)
+Fusil Enforcer
+- salve | 4" | 12" | +1 | - | 4 | - | 2 | 4+ | Contrecoup, Tir Rapide (1)
+- nuage de grenaille | - | S | - | - | 2 | - | 1 | 4+ | Mitraille, Souffle
+Lance-grenades modèle Subjugation
+- grenades asphyxiantes | 6" | 24" | -1 | - | - | - | - | 5+ | Explosion (3"), Gaz, Limité
+- grenades Frag | 6" | 24" | -1 | - | 3 | - | 1 | 6+ | Contrecoup, Explosion (3")
+- grenades Krak | 6" | 24" | -1 | - | 6 | -2 | 2 | 6+ | -
+- grenades aveuglantes | 6" | 24" | - | - | - | - | - | 5+ | Aveuglant, Explosion (5")
+- grenades cauchemar | 6" | 24" | -1 | - | - | - | - | - | Explosion (3"), Gaz, Limité, Peur
+- grenades fumigènes | 6" | 24" | -1 | - | - | - | - | 4+ | Explosion (*), Fumée
+- grenades incapacitantes | 6" | 24" | - | - | 2 | -1 | 1 | 4+ | Commotion
 Carabine éclateur | 10" | 24" | +2 | - | 3 | - | 1 | 5+ | Choc, Tir Rapide (1)
 Fusil éclateur | 10" | 24" | +1 | - | 3 | - | 1 | 4+ | Choc
 Bolter Ironhead | 12" | 24" | +1 | - | 4 | -1 | 2 | 6+ | Tir Rapide (2)
@@ -72,6 +86,8 @@ Pistolet-mitrailleur de récup' | 4" | 12" | +1 | - | 3 | - | 1 | 5+ | Arme de P
 Projecteur de toile (Cyberachnid Van Saar) | - | S | - | - | 2 | - | - | 6+ | Rareté, Souffle, Toile
 
 ## Armes spéciales
+Carabine à commotion | 9" | 18" | +1 | - | 3 | -1 | 1 | 4+ | Commotion, Contrecoup, Explosion (3"), Sismique
+Fusil de sniper | 24" | 48" | - | +1 | 4 | -1 | 1 | 4+ | Contrecoup, Perforant
 Lance-venin | - | S | - | - | - | -1 | - | 6+ | Rareté, Silencieux, Souffle, Toxine
 Fuseur Ironhead | 6" | 12" | +1 | - | 8 | -4 | 3 | 5+ | Fusion, Rareté, Tir Rapide (1)
 Lance-flammes Ironhead | - | S | - | - | 4 | -1 | 1 | 5+ | Déluge de Feu (1), Incendiaire, Souffle
@@ -107,6 +123,11 @@ Souffle à éruption gazeuse (Khimerix Escher) | - | S | - | - | - | - | - | - |
 Souffle à nuage chimique (Khimerix Escher) | 6" | 12" | +1 | - | 3 | -1 | 1 | - | Explosion (3")
 
 ## Armes lourdes
+Bélier à percussion lourd | 15" | 30" | +1 | - | 4 | -1 | 1 | 4+ | Commotion, Contrecoup, Sismique
+Bélier d'assaut modèle SLHG Fracasseur
+- bélier | E | 2" | - | - | F+2 | -1 | 2 | - | Contrecoup, Mêlée, Polyvalent, Pulvériser
+- lance-grenades auxiliaire, grenades asphyxiantes | 6" | 24" | -1 | - | - | - | - | 5+ | Explosion (3"), Gaz, Limité
+- lance-grenades auxiliaire, grenades Frag | 6" | 24" | -1 | - | 3 | - | 1 | 6+ | Contrecoup, Explosion (3")
 Éclateur lourd | 12" | 36" | +1 | - | 4 | -1 | 1 | 5+ | Choc, Encombrant, Tir Rapide (2)
 Lanceur de charges
 - roquette explosive | 20" | 40" | +1 | - | 4 | - | 1 | 6+ | Choc, Encombrant, Explosion (5")
@@ -162,6 +183,7 @@ Piège à fusion | - | - | - | - | 8 | -4 | 3 | - | Explosion (5"), Fusion, Usag
 Piège à gaz | - | - | - | - | - | - | - | - | Explosion (5"), Gaz, Usage Unique
 
 ## Armes de corps à corps
+Bouclier d'assaut modèle Vigilance | - | E | - | - | F | - | 1 | - | Bouclier d'Assaut, Contrecoup, Mêlée
 Bâton du hèle-tempête | E | 2" | - | - | F+1 | -2 | 1 | - | Encombrant, Lance, Mêlée, Polyvalent
 Couteau de rôdeur | - | E | - | +1 | F | -1 | 1 | - | Coup en Traître, Mêlée
 Lame longue | - | E | - | +1 | F | -2 | 1 | - | Mêlée, Parade
