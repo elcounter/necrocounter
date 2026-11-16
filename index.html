@@ -491,9 +491,9 @@
       background: var(--rust); transition: opacity .35s ease, visibility .35s ease;
     }
     #splash.done { opacity: 0; visibility: hidden; }
-    .sp-logo { display: flex; flex-direction: column; align-items: center; gap: 3px; transform: translateY(1px); }
-    #splash svg { width: 31.25px; height: 54px; animation: nc-spin 1.4s linear infinite; }
-    .sp-bar { width: 30px; height: 3.75px; background: var(--band); }
+    .sp-logo { display: flex; flex-direction: column; align-items: center; --u:calc(min(100vw,444px)*.001426); gap: calc(var(--u)*12); transform: translateY(calc(var(--u)*4)); }
+    #splash svg { width: calc(var(--u)*125); height: calc(var(--u)*216); animation: nc-spin 1.4s linear infinite; }
+    .sp-bar { width: calc(var(--u)*120); height: calc(var(--u)*15); background: var(--band); }
     @keyframes nc-spin { to { transform: rotate(360deg); } }
     @media (prefers-reduced-motion: reduce) { #splash svg { animation: none; } }
   </style>
@@ -522,7 +522,7 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.15.5 Necromunda N23 &amp; N26<br>
+      NecroCounter version 1.15.6 Necromunda N23 &amp; N26<br>
       MAJ 16-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span><br><br>
