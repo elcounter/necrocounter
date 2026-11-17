@@ -162,8 +162,8 @@
   function loadLeaflet(){
     if (window.L) return Promise.resolve();
     return new Promise((ok, ko) => {
-      const css = document.createElement("link"); css.rel = "stylesheet"; css.href = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"; document.head.appendChild(css);
-      const js = document.createElement("script"); js.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"; js.onload = ok; js.onerror = ko; document.head.appendChild(js);
+      const css = document.createElement("link"); css.rel = "stylesheet"; css.href = "vendor/leaflet/leaflet.css"; document.head.appendChild(css);
+      const js = document.createElement("script"); js.src = "vendor/leaflet/leaflet.js"; js.onload = ok; js.onerror = ko; document.head.appendChild(js);
     });
   }
   const mapHtml = () => `<div class="mapw"><p class="hint">Les joueurs qui ont choisi d'apparaître sur la carte, regroupés par ville. Pour y figurer : <a href="#compte">Mon compte</a>, puis Mon profil joueur.</p>
@@ -243,11 +243,14 @@
       <dt><b>Sans compte</b></dt><dd>Tes gangs et tes parties restent uniquement sur ton appareil. Rien n'est envoyé.</dd>
       <dt><b>Avec un compte (facultatif)</b></dt><dd>Sont enregistrés : ton adresse e-mail, ton mot de passe (chiffré, jamais lisible), tes gangs, ta partie en cours et ton historique. Ils servent uniquement à te connecter et à synchroniser tes données entre tes appareils. Le compte est commun à NecroCounter, WarCounter et SpearCounter.</dd>
       <dt><b>Profil joueur (facultatif)</b></dt><dd>Pseudo, ville (centre de la commune, jamais d'adresse), club et factions ou gangs joués. Ils ne sont visibles des autres joueurs que si tu coches « Apparaître sur la carte communautaire », et tu peux décocher à tout moment.</dd>
-      <dt><b>Hébergement</b></dt><dd>Supabase, sur des serveurs situés dans l'Union européenne.</dd>
+      <dt><b>Pourquoi c'est autorisé</b></dt><dd>Le compte et la synchronisation reposent sur l'exécution du service que tu demandes en t'inscrivant. L'affichage sur la carte communautaire repose sur ton consentement (la case à cocher), que tu peux retirer à tout moment.</dd>
+      <dt><b>Hébergement des données</b></dt><dd>Supabase (Supabase Inc.), sous-traitant lié par un accord de traitement des données conforme au RGPD. Les données sont stockées sur des serveurs situés dans l'Union européenne.</dd>
       <dt><b>Durée de conservation</b></dt><dd>Jusqu'à la suppression de ton compte.</dd>
-      <dt><b>Tes droits</b></dt><dd>Tu peux supprimer ton compte et toutes tes données en ligne à tout moment depuis la page Mon compte. Pour toute question (accès, rectification, suppression) : warcounter@proton.me.</dd>
-      <dt><b>Ce qu'on ne fait pas</b></dt><dd>Aucune publicité, aucune revente, aucun partage de tes données. La mesure d'audience (GoatCounter) est anonyme et sans cookie.</dd>
-      <dt><b>Responsable</b></dt><dd>elcounter, éditeur de NecroCounter, WarCounter et SpearCounter (warcounter@proton.me).</dd>
+      <dt><b>Tes droits</b></dt><dd>Tu as un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité. Tu peux supprimer ton compte et toutes tes données en ligne à tout moment depuis la page Mon compte. Pour toute autre demande : warcounter@proton.me (réponse sous un mois). Tu peux aussi adresser une réclamation à la CNIL (cnil.fr).</dd>
+      <dt><b>Sur ton appareil</b></dt><dd>Aucun cookie. L'app enregistre tes données et ta session de connexion dans le stockage local de ton navigateur, uniquement pour fonctionner.</dd>
+      <dt><b>Services tiers</b></dt><dd>Hébergement de l'app : GitHub Pages (GitHub Inc.), qui reçoit ton adresse IP comme tout hébergeur web. Recherche de ville : geo.api.gouv.fr (service public français). Fond de la carte : OpenStreetMap, chargé seulement quand tu ouvres la carte. Mesure d'audience : GoatCounter, anonyme et sans cookie. Les polices et la bibliothèque de carte sont hébergées avec l'app : aucun appel à Google ni à un autre CDN.</dd>
+      <dt><b>Ce qu'on ne fait pas</b></dt><dd>Aucune publicité, aucune revente, aucun partage de tes données.</dd>
+      <dt><b>Responsable et mentions légales</b></dt><dd>Éditeur et responsable du traitement : elcounter, particulier, éditeur de NecroCounter, WarCounter et SpearCounter (contact : warcounter@proton.me). Hébergeur de l'app : GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. Dernière mise à jour : 17-11-2026.</dd>
     </dl></div></div>`;
 
   // ---------- Événements ----------
