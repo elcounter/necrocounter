@@ -491,6 +491,8 @@
       background: var(--rust); transition: opacity .35s ease, visibility .35s ease;
     }
     #splash.done { opacity: 0; visibility: hidden; }
+    #splash { grid-template-rows: 1fr; }
+    #sp-msg { position: absolute; left: 0; right: 0; top: calc(50% + min(100vw,444px)*.26); margin: 0; min-height: 20px; text-align: center; font: 500 14px var(--display); letter-spacing: .08em; text-transform: uppercase; color: #ece6db; }
     .sp-logo { display: flex; flex-direction: column; align-items: center; --u:calc(min(100vw,444px)*.001426); gap: calc(var(--u)*12); transform: translateY(calc(var(--u)*4)); }
     #splash svg { width: calc(var(--u)*125); height: calc(var(--u)*216); animation: nc-spin 1.4s linear infinite; }
     .sp-bar { width: calc(var(--u)*120); height: calc(var(--u)*15); background: var(--band); }
@@ -499,7 +501,7 @@
   </style>
 </head>
 <body>
-  <div id="splash" aria-hidden="true"><div class="sp-logo"><svg viewBox="176 102 160 276" width="92" height="160"><path fill="#ece6db" d="M186 368V112h48l43 128V112h48v256h-38l-53-132v132z"/></svg><span class="sp-bar"></span></div></div>
+  <div id="splash" aria-hidden="true"><div class="sp-logo"><svg viewBox="176 102 160 276" width="92" height="160"><path fill="#ece6db" d="M186 368V112h48l43 128V112h48v256h-38l-53-132v132z"/></svg><span class="sp-bar"></span></div><p id="sp-msg"></p></div>
   <header class="bar">
     <div class="in top">
       <button class="back" id="back" type="button" aria-label="Retour" hidden>
@@ -522,8 +524,8 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.16.0 Necromunda N23 &amp; N26<br>
-      MAJ 17-11-2026<br>
+      NecroCounter version 1.17.0 Necromunda N23 &amp; N26<br>
+      MAJ 18-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span><br><br>
       « Big up aux fromagers 🧀 sans qui cette application n'aurait pas été possible »
@@ -2464,13 +2466,28 @@
           setTimeout(() => splash.remove(), 400);
         }, Math.max(0, MIN - (Date.now() - start)));
       };
-      if (document.readyState === "complete") hide(); else window.addEventListener("load", hide);
-      setTimeout(hide, 5000);
+      // Pendant qu'il tourne, l'app vérifie et installe une éventuelle mise à jour
+      const msg = $("sp-msg"), wait = ms => new Promise(r => setTimeout(r, ms));
+      let again = false;
+      try { again = sessionStorage.getItem("nc-upd") === "1"; sessionStorage.removeItem("nc-upd"); } catch (e) {}
+      async function checkUpdate() {
+        if (!("serviceWorker" in navigator)) return;
+        const reg = await navigator.serviceWorker.register("./sw.js");
+        if (!navigator.onLine || !navigator.serviceWorker.controller) return;
+        await Promise.race([reg.update(), wait(3000)]);
+        const sw = reg.installing || reg.waiting;
+        if (!sw) return;
+        if (msg) msg.textContent = "Mise à jour en cours…";
+        await Promise.race([new Promise(r => navigator.serviceWorker.addEventListener("controllerchange", r, { once: true })), wait(6000)]);
+        if (!again) {
+          try { sessionStorage.setItem("nc-upd", "1"); } catch (e) {}
+          location.reload(); return new Promise(() => {});
+        }
+      }
+      const loaded = new Promise(r => document.readyState === "complete" ? r() : window.addEventListener("load", r));
+      Promise.all([loaded, checkUpdate().catch(() => {})]).then(hide);
+      setTimeout(hide, 8000);
     })();
-
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("./sw.js").catch(() => {});
-    }
   })();
   </script>
 <script data-goatcounter="https://necrocounter.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
