@@ -524,8 +524,8 @@
     <div id="view"></div>
     <p class="copy">
       © 2026 elcounter<br>
-      NecroCounter version 1.17.0 Necromunda N23 &amp; N26<br>
-      MAJ 18-11-2026<br>
+      NecroCounter version 1.18.0 Necromunda N23 &amp; N26<br>
+      MAJ 23-11-2026<br>
       <span class="legal">Application non officielle, non affiliée à Games Workshop.<br>
       Necromunda est une marque de Games Workshop Ltd.</span><br><br>
       « Big up aux fromagers 🧀 sans qui cette application n'aurait pas été possible »
@@ -622,7 +622,6 @@
         <a class="fcard" href="#aide"><span class="ficon">${I('<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M9 7h6"/>')}</span><span><b>Aperçu rapide des règles</b><br><span>Round, actions, blessures, bottle, Side Job</span></span></a>
         <a class="fcard" href="mailto:warcounter@proton.me?subject=%5BNecroCounter%5D%20Retour"><span class="ficon">${I('<path d="M4 4h16v16H4z"/><path d="M4 8l8 5 8-5"/>')}</span><span><b>Signaler un bug / Suggestion</b><br><span>Si tu rencontres un problème, envoie un e-mail</span></span></a>
         <a class="fcard" href="#carte"><span class="ficon">${I('<path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/>')}</span><span><b>Carte des joueurs</b><br><span>Trouve des joueurs et des clubs près de chez toi</span></span></a>
-        <a class="fcard" href="#soutenir"><span class="ficon">${I('<path d="M12 21s-6-4.5-6-9a6 6 0 0 1 12 0c0 4.5-6 9-6 9z"/>')}</span><span><b>Soutenir le projet</b><br><span>Un don pour l'hébergement et le développement</span></span></a>
       </div>
       <div class="home-extra">
         <a class="btn-warcounter" href="https://elcounter.github.io/warcounter/" target="_blank" rel="noopener">
@@ -641,16 +640,6 @@
         <div class="placeholder">Section en construction — prochaines versions.</div></div>`;
     }
 
-    function supportHtml() {
-      return `<div class="page">
-        <h2>Soutenir le projet</h2>
-        <p>Projet piloté sur mon temps libre. Ton don servira à payer un meilleur hébergement et à me donner du temps pour peaufiner l'application.</p>
-        <p>NecroCounter est gratuit, sans publicité, et le restera.</p>
-        <div class="panel"><h3 class="sec">Faire un don</h3><div class="body">
-          <a class="btn primary" href="https://www.paypal.com/qrcodes/p2pqrc/MXBPC6EUBZBGN" target="_blank" rel="noopener">Faire un don avec PayPal</a>
-        </div></div>
-      </div>`;
-    }
 
     // ---- Éditions : N23 / N26 ----
     const EDITIONS = { n23: "Necromunda N23", n26: "N26 · à venir" };
@@ -2378,7 +2367,7 @@
       Object.values(tabs).forEach(id => { const el = $(id); if (el) el.removeAttribute("aria-current"); });
       if (tabs[section]) $(tabs[section]).setAttribute("aria-current", "page");
 
-      back.hidden = !(h === "soutenir" || h === "installer" || h === "compte" || h === "carte" || h === "confidentialite" || (section === "gangs" && house));
+      back.hidden = !(h === "installer" || h === "compte" || h === "carte" || h === "confidentialite" || (section === "gangs" && house));
       const homeBtn = $("home-btn");
       if (homeBtn) homeBtn.hidden = (h === "accueil" || h === "");
       if (section === "gangs" && edition === "n23" && house === "creer") {
@@ -2431,9 +2420,6 @@
       } else if (h === "installer") {
         title.textContent = "Installer";
         view.innerHTML = installHtml();
-      } else if (h === "soutenir") {
-        title.textContent = "Soutenir";
-        view.innerHTML = supportHtml();
       } else {
         title.textContent = "NecroCounter";
         sessionStorage.setItem("nc_aide_from", "accueil");
